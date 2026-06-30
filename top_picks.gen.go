@@ -33,7 +33,7 @@ type TopPicksServiceOp[T any] struct {
 func (s *TopPicksServiceOp[T]) AddTopPicks(ctx context.Context, sid uint64, req AddTopPicksRequest, tok string) (*AddTopPicksResponse, error) {
 	path := "/top_picks/add_top_picks"
 	resp := new(AddTopPicksResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -43,7 +43,7 @@ func (s *TopPicksServiceOp[T]) AddTopPicks(ctx context.Context, sid uint64, req 
 func (s *TopPicksServiceOp[T]) DeleteTopPicks(ctx context.Context, sid uint64, req DeleteTopPicksRequest, tok string) (*DeleteTopPicksResponse, error) {
 	path := "/top_picks/delete_top_picks"
 	resp := new(DeleteTopPicksResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -53,7 +53,7 @@ func (s *TopPicksServiceOp[T]) DeleteTopPicks(ctx context.Context, sid uint64, r
 func (s *TopPicksServiceOp[T]) GetTopPicksList(ctx context.Context, sid uint64, tok string) (*GetTopPicksListResponse, error) {
 	path := "/top_picks/get_top_picks_list"
 	resp := new(GetTopPicksListResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, nil, resp)
+	err := s.client.Post(ctx, path, nil, resp, sid, tok)
 	return resp, err
 }
 
@@ -63,6 +63,6 @@ func (s *TopPicksServiceOp[T]) GetTopPicksList(ctx context.Context, sid uint64, 
 func (s *TopPicksServiceOp[T]) UpdateTopPicks(ctx context.Context, sid uint64, req UpdateTopPicksRequest, tok string) (*UpdateTopPicksResponse, error) {
 	path := "/top_picks/update_top_picks"
 	resp := new(UpdateTopPicksResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }

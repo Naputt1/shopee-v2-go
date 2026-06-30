@@ -212,7 +212,7 @@ type LogisticsServiceOp[T any] struct {
 func (s *LogisticsServiceOp[T]) BatchShipOrder(ctx context.Context, sid uint64, req BatchShipOrderRequest, tok string) (*BatchShipOrderResponse, error) {
 	path := "/logistics/batch_ship_order"
 	resp := new(BatchShipOrderResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -226,7 +226,7 @@ func (s *LogisticsServiceOp[T]) BatchShipOrder(ctx context.Context, sid uint64, 
 func (s *LogisticsServiceOp[T]) BatchUpdateTpfWarehouseTrackingStatus(ctx context.Context, sid uint64, req BatchUpdateTpfWarehouseTrackingStatusRequest, tok string) (*BatchUpdateTpfWarehouseTrackingStatusResponse, error) {
 	path := "/logistics/batch_update_tpf_warehouse_tracking_status"
 	resp := new(BatchUpdateTpfWarehouseTrackingStatusResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -236,7 +236,7 @@ func (s *LogisticsServiceOp[T]) BatchUpdateTpfWarehouseTrackingStatus(ctx contex
 func (s *LogisticsServiceOp[T]) CheckPolygonUpdateStatus(ctx context.Context, sid uint64, req CheckPolygonUpdateStatusRequest, tok string) (*CheckPolygonUpdateStatusResponse, error) {
 	path := "/logistics/check_polygon_update_status"
 	resp := new(CheckPolygonUpdateStatusResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -246,7 +246,7 @@ func (s *LogisticsServiceOp[T]) CheckPolygonUpdateStatus(ctx context.Context, si
 func (s *LogisticsServiceOp[T]) CreateBookingShippingDocument(ctx context.Context, sid uint64, req CreateBookingShippingDocumentRequest, tok string) (*CreateBookingShippingDocumentResponse, error) {
 	path := "/logistics/create_booking_shipping_document"
 	resp := new(CreateBookingShippingDocumentResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -256,7 +256,7 @@ func (s *LogisticsServiceOp[T]) CreateBookingShippingDocument(ctx context.Contex
 func (s *LogisticsServiceOp[T]) CreateShippingDocument(ctx context.Context, sid uint64, req CreateShippingDocumentRequest, tok string) (*CreateShippingDocumentResponse, error) {
 	path := "/logistics/create_shipping_document"
 	resp := new(CreateShippingDocumentResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -266,7 +266,7 @@ func (s *LogisticsServiceOp[T]) CreateShippingDocument(ctx context.Context, sid 
 func (s *LogisticsServiceOp[T]) CreateShippingDocumentJob(ctx context.Context, sid uint64, req CreateShippingDocumentJobRequest, tok string) (*CreateShippingDocumentJobResponse, error) {
 	path := "/logistics/create_shipping_document_job"
 	resp := new(CreateShippingDocumentJobResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -276,7 +276,7 @@ func (s *LogisticsServiceOp[T]) CreateShippingDocumentJob(ctx context.Context, s
 func (s *LogisticsServiceOp[T]) DeleteAddress(ctx context.Context, sid uint64, req DeleteAddressRequest, tok string) (*DeleteAddressResponse, error) {
 	path := "/logistics/delete_address"
 	resp := new(DeleteAddressResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -286,7 +286,7 @@ func (s *LogisticsServiceOp[T]) DeleteAddress(ctx context.Context, sid uint64, r
 func (s *LogisticsServiceOp[T]) DeleteSpecialOperatingHour(ctx context.Context, sid uint64, req DeleteSpecialOperatingHourRequest, tok string) (*DeleteSpecialOperatingHourResponse, error) {
 	path := "/logistics/delete_special_operating_hour"
 	resp := new(DeleteSpecialOperatingHourResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -296,7 +296,7 @@ func (s *LogisticsServiceOp[T]) DeleteSpecialOperatingHour(ctx context.Context, 
 func (s *LogisticsServiceOp[T]) DownloadBookingShippingDocument(ctx context.Context, sid uint64, req DownloadBookingShippingDocumentRequest, tok string) (*DownloadBookingShippingDocumentResponse, error) {
 	path := "/logistics/download_booking_shipping_document"
 	resp := new(DownloadBookingShippingDocumentResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -306,7 +306,7 @@ func (s *LogisticsServiceOp[T]) DownloadBookingShippingDocument(ctx context.Cont
 func (s *LogisticsServiceOp[T]) DownloadShippingDocument(ctx context.Context, sid uint64, req DownloadShippingDocumentRequest, tok string) (*DownloadShippingDocumentResponse, error) {
 	path := "/logistics/download_shipping_document"
 	resp := new(DownloadShippingDocumentResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -316,7 +316,7 @@ func (s *LogisticsServiceOp[T]) DownloadShippingDocument(ctx context.Context, si
 func (s *LogisticsServiceOp[T]) DownloadShippingDocumentJob(ctx context.Context, sid uint64, req DownloadShippingDocumentJobRequest, tok string) (*DownloadShippingDocumentJobResponse, error) {
 	path := "/logistics/download_shipping_document_job"
 	resp := new(DownloadShippingDocumentJobResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -326,7 +326,7 @@ func (s *LogisticsServiceOp[T]) DownloadShippingDocumentJob(ctx context.Context,
 func (s *LogisticsServiceOp[T]) DownloadToLabel(ctx context.Context, sid uint64, req DownloadToLabelRequest, tok string) (*DownloadToLabelResponse, error) {
 	path := "/logistics/download_to_label"
 	resp := new(DownloadToLabelResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -336,7 +336,7 @@ func (s *LogisticsServiceOp[T]) DownloadToLabel(ctx context.Context, sid uint64,
 func (s *LogisticsServiceOp[T]) GetAddressList(ctx context.Context, sid uint64, tok string) (*GetAddressListResponse, error) {
 	path := "/logistics/get_address_list"
 	resp := new(GetAddressListResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -346,7 +346,7 @@ func (s *LogisticsServiceOp[T]) GetAddressList(ctx context.Context, sid uint64, 
 func (s *LogisticsServiceOp[T]) GetBookingShippingDocumentDataInfo(ctx context.Context, sid uint64, req GetBookingShippingDocumentDataInfoRequest, tok string) (*GetBookingShippingDocumentDataInfoResponse, error) {
 	path := "/logistics/get_booking_shipping_document_data_info"
 	resp := new(GetBookingShippingDocumentDataInfoResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -356,7 +356,7 @@ func (s *LogisticsServiceOp[T]) GetBookingShippingDocumentDataInfo(ctx context.C
 func (s *LogisticsServiceOp[T]) GetBookingShippingDocumentParameter(ctx context.Context, sid uint64, req GetBookingShippingDocumentParameterRequest, tok string) (*GetBookingShippingDocumentParameterResponse, error) {
 	path := "/logistics/get_booking_shipping_document_parameter"
 	resp := new(GetBookingShippingDocumentParameterResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -366,7 +366,7 @@ func (s *LogisticsServiceOp[T]) GetBookingShippingDocumentParameter(ctx context.
 func (s *LogisticsServiceOp[T]) GetBookingShippingDocumentResult(ctx context.Context, sid uint64, req GetBookingShippingDocumentResultRequest, tok string) (*GetBookingShippingDocumentResultResponse, error) {
 	path := "/logistics/get_booking_shipping_document_result"
 	resp := new(GetBookingShippingDocumentResultResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -376,7 +376,7 @@ func (s *LogisticsServiceOp[T]) GetBookingShippingDocumentResult(ctx context.Con
 func (s *LogisticsServiceOp[T]) GetBookingShippingParameter(ctx context.Context, sid uint64, opt GetBookingShippingParameterRequest, tok string) (*GetBookingShippingParameterResponse, error) {
 	path := "/logistics/get_booking_shipping_parameter"
 	resp := new(GetBookingShippingParameterResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -386,7 +386,7 @@ func (s *LogisticsServiceOp[T]) GetBookingShippingParameter(ctx context.Context,
 func (s *LogisticsServiceOp[T]) GetBookingTrackingInfo(ctx context.Context, sid uint64, opt GetBookingTrackingInfoRequest, tok string) (*GetBookingTrackingInfoResponse, error) {
 	path := "/logistics/get_booking_tracking_info"
 	resp := new(GetBookingTrackingInfoResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -396,7 +396,7 @@ func (s *LogisticsServiceOp[T]) GetBookingTrackingInfo(ctx context.Context, sid 
 func (s *LogisticsServiceOp[T]) GetBookingTrackingNumber(ctx context.Context, sid uint64, opt GetBookingTrackingNumberRequest, tok string) (*GetBookingTrackingNumberResponse, error) {
 	path := "/logistics/get_booking_tracking_number"
 	resp := new(GetBookingTrackingNumberResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -406,7 +406,7 @@ func (s *LogisticsServiceOp[T]) GetBookingTrackingNumber(ctx context.Context, si
 func (s *LogisticsServiceOp[T]) GetChannelList(ctx context.Context, sid uint64, tok string) (*LogisticsGetChannelListResponse, error) {
 	path := "/logistics/get_channel_list"
 	resp := new(LogisticsGetChannelListResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -416,7 +416,7 @@ func (s *LogisticsServiceOp[T]) GetChannelList(ctx context.Context, sid uint64, 
 func (s *LogisticsServiceOp[T]) GetMartPackagingInfo(ctx context.Context, sid uint64, tok string) (*GetMartPackagingInfoResponse, error) {
 	path := "/logistics/get_mart_packaging_info"
 	resp := new(GetMartPackagingInfoResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, nil, resp)
+	err := s.client.Post(ctx, path, nil, resp, sid, tok)
 	return resp, err
 }
 
@@ -426,7 +426,7 @@ func (s *LogisticsServiceOp[T]) GetMartPackagingInfo(ctx context.Context, sid ui
 func (s *LogisticsServiceOp[T]) GetMassShippingParameter(ctx context.Context, sid uint64, req GetMassShippingParameterRequest, tok string) (*GetMassShippingParameterResponse, error) {
 	path := "/logistics/get_mass_shipping_parameter"
 	resp := new(GetMassShippingParameterResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -436,7 +436,7 @@ func (s *LogisticsServiceOp[T]) GetMassShippingParameter(ctx context.Context, si
 func (s *LogisticsServiceOp[T]) GetMassTrackingNumber(ctx context.Context, sid uint64, req GetMassTrackingNumberRequest, tok string) (*GetMassTrackingNumberResponse, error) {
 	path := "/logistics/get_mass_tracking_number"
 	resp := new(GetMassTrackingNumberResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -446,7 +446,7 @@ func (s *LogisticsServiceOp[T]) GetMassTrackingNumber(ctx context.Context, sid u
 func (s *LogisticsServiceOp[T]) GetOperatingHourRestrictions(ctx context.Context, sid uint64, tok string) (*GetOperatingHourRestrictionsResponse, error) {
 	path := "/logistics/get_operating_hour_restrictions"
 	resp := new(GetOperatingHourRestrictionsResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -456,7 +456,7 @@ func (s *LogisticsServiceOp[T]) GetOperatingHourRestrictions(ctx context.Context
 func (s *LogisticsServiceOp[T]) GetOperatingHours(ctx context.Context, sid uint64, tok string) (*GetOperatingHoursResponse, error) {
 	path := "/logistics/get_operating_hours"
 	resp := new(GetOperatingHoursResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -466,7 +466,7 @@ func (s *LogisticsServiceOp[T]) GetOperatingHours(ctx context.Context, sid uint6
 func (s *LogisticsServiceOp[T]) GetPauseStatus(ctx context.Context, sid uint64, tok string) (*GetPauseStatusResponse, error) {
 	path := "/logistics/get_pause_status"
 	resp := new(GetPauseStatusResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -476,7 +476,7 @@ func (s *LogisticsServiceOp[T]) GetPauseStatus(ctx context.Context, sid uint64, 
 func (s *LogisticsServiceOp[T]) GetShippingDocumentDataInfo(ctx context.Context, sid uint64, req GetShippingDocumentDataInfoRequest, tok string) (*GetShippingDocumentDataInfoResponse, error) {
 	path := "/logistics/get_shipping_document_data_info"
 	resp := new(GetShippingDocumentDataInfoResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -486,7 +486,7 @@ func (s *LogisticsServiceOp[T]) GetShippingDocumentDataInfo(ctx context.Context,
 func (s *LogisticsServiceOp[T]) GetShippingDocumentJobStatus(ctx context.Context, sid uint64, req GetShippingDocumentJobStatusRequest, tok string) (*GetShippingDocumentJobStatusResponse, error) {
 	path := "/logistics/get_shipping_document_job_status"
 	resp := new(GetShippingDocumentJobStatusResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -496,7 +496,7 @@ func (s *LogisticsServiceOp[T]) GetShippingDocumentJobStatus(ctx context.Context
 func (s *LogisticsServiceOp[T]) GetShippingDocumentParameter(ctx context.Context, sid uint64, req GetShippingDocumentParameterRequest, tok string) (*GetShippingDocumentParameterResponse, error) {
 	path := "/logistics/get_shipping_document_parameter"
 	resp := new(GetShippingDocumentParameterResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -507,7 +507,7 @@ func (s *LogisticsServiceOp[T]) GetShippingDocumentParameter(ctx context.Context
 func (s *LogisticsServiceOp[T]) GetShippingDocumentResult(ctx context.Context, sid uint64, req GetShippingDocumentResultRequest, tok string) (*GetShippingDocumentResultResponse, error) {
 	path := "/logistics/get_shipping_document_result"
 	resp := new(GetShippingDocumentResultResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -517,7 +517,7 @@ func (s *LogisticsServiceOp[T]) GetShippingDocumentResult(ctx context.Context, s
 func (s *LogisticsServiceOp[T]) GetShippingParameter(ctx context.Context, sid uint64, opt GetShippingParameterRequest, tok string) (*GetShippingParameterResponse, error) {
 	path := "/logistics/get_shipping_parameter"
 	resp := new(GetShippingParameterResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -527,7 +527,7 @@ func (s *LogisticsServiceOp[T]) GetShippingParameter(ctx context.Context, sid ui
 func (s *LogisticsServiceOp[T]) GetTrackingInfo(ctx context.Context, sid uint64, opt GetTrackingInfoRequest, tok string) (*GetTrackingInfoResponse, error) {
 	path := "/logistics/get_tracking_info"
 	resp := new(GetTrackingInfoResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -537,7 +537,7 @@ func (s *LogisticsServiceOp[T]) GetTrackingInfo(ctx context.Context, sid uint64,
 func (s *LogisticsServiceOp[T]) GetTrackingNumber(ctx context.Context, sid uint64, opt GetTrackingNumberRequest, tok string) (*GetTrackingNumberResponse, error) {
 	path := "/logistics/get_tracking_number"
 	resp := new(GetTrackingNumberResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -547,7 +547,7 @@ func (s *LogisticsServiceOp[T]) GetTrackingNumber(ctx context.Context, sid uint6
 func (s *LogisticsServiceOp[T]) MassShipOrder(ctx context.Context, sid uint64, req MassShipOrderRequest, tok string) (*MassShipOrderResponse, error) {
 	path := "/logistics/mass_ship_order"
 	resp := new(MassShipOrderResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -557,7 +557,7 @@ func (s *LogisticsServiceOp[T]) MassShipOrder(ctx context.Context, sid uint64, r
 func (s *LogisticsServiceOp[T]) SetAddressConfig(ctx context.Context, sid uint64, req SetAddressConfigRequest, tok string) (*SetAddressConfigResponse, error) {
 	path := "/logistics/set_address_config"
 	resp := new(SetAddressConfigResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -567,7 +567,7 @@ func (s *LogisticsServiceOp[T]) SetAddressConfig(ctx context.Context, sid uint64
 func (s *LogisticsServiceOp[T]) SetMartPackagingInfo(ctx context.Context, sid uint64, req SetMartPackagingInfoRequest, tok string) (*SetMartPackagingInfoResponse, error) {
 	path := "/logistics/set_mart_packaging_info"
 	resp := new(SetMartPackagingInfoResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -577,7 +577,7 @@ func (s *LogisticsServiceOp[T]) SetMartPackagingInfo(ctx context.Context, sid ui
 func (s *LogisticsServiceOp[T]) SetPauseStatus(ctx context.Context, sid uint64, req SetPauseStatusRequest, tok string) (*SetPauseStatusResponse, error) {
 	path := "/logistics/set_pause_status"
 	resp := new(SetPauseStatusResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -587,7 +587,7 @@ func (s *LogisticsServiceOp[T]) SetPauseStatus(ctx context.Context, sid uint64, 
 func (s *LogisticsServiceOp[T]) ShipBooking(ctx context.Context, sid uint64, req ShipBookingRequest, tok string) (*ShipBookingResponse, error) {
 	path := "/logistics/ship_booking"
 	resp := new(ShipBookingResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -597,7 +597,7 @@ func (s *LogisticsServiceOp[T]) ShipBooking(ctx context.Context, sid uint64, req
 func (s *LogisticsServiceOp[T]) ShipOrder(ctx context.Context, sid uint64, req ShipOrderRequest, tok string) (*ShipOrderResponse, error) {
 	path := "/logistics/ship_order"
 	resp := new(ShipOrderResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -607,7 +607,7 @@ func (s *LogisticsServiceOp[T]) ShipOrder(ctx context.Context, sid uint64, req S
 func (s *LogisticsServiceOp[T]) UpdateAddress(ctx context.Context, sid uint64, req UpdateAddressRequest, tok string) (*UpdateAddressResponse, error) {
 	path := "/logistics/update_address"
 	resp := new(UpdateAddressResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -617,7 +617,7 @@ func (s *LogisticsServiceOp[T]) UpdateAddress(ctx context.Context, sid uint64, r
 func (s *LogisticsServiceOp[T]) UpdateChannel(ctx context.Context, sid uint64, req UpdateChannelRequest, tok string) (*UpdateChannelResponse, error) {
 	path := "/logistics/update_channel"
 	resp := new(UpdateChannelResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -627,7 +627,7 @@ func (s *LogisticsServiceOp[T]) UpdateChannel(ctx context.Context, sid uint64, r
 func (s *LogisticsServiceOp[T]) UpdateOperatingHours(ctx context.Context, sid uint64, req UpdateOperatingHoursRequest, tok string) (*UpdateOperatingHoursResponse, error) {
 	path := "/logistics/update_operating_hours"
 	resp := new(UpdateOperatingHoursResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -637,7 +637,7 @@ func (s *LogisticsServiceOp[T]) UpdateOperatingHours(ctx context.Context, sid ui
 func (s *LogisticsServiceOp[T]) UpdateSelfCollectionOrderLogistics(ctx context.Context, sid uint64, req UpdateSelfCollectionOrderLogisticsRequest, tok string) (*UpdateSelfCollectionOrderLogisticsResponse, error) {
 	path := "/logistics/update_self_collection_order_logistics"
 	resp := new(UpdateSelfCollectionOrderLogisticsResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -647,7 +647,7 @@ func (s *LogisticsServiceOp[T]) UpdateSelfCollectionOrderLogistics(ctx context.C
 func (s *LogisticsServiceOp[T]) UpdateShippingOrder(ctx context.Context, sid uint64, req UpdateShippingOrderRequest, tok string) (*UpdateShippingOrderResponse, error) {
 	path := "/logistics/update_shipping_order"
 	resp := new(UpdateShippingOrderResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -657,7 +657,7 @@ func (s *LogisticsServiceOp[T]) UpdateShippingOrder(ctx context.Context, sid uin
 func (s *LogisticsServiceOp[T]) UpdateTrackingStatus(ctx context.Context, sid uint64, req UpdateTrackingStatusRequest, tok string) (*UpdateTrackingStatusResponse, error) {
 	path := "/logistics/update_tracking_status"
 	resp := new(UpdateTrackingStatusResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -667,13 +667,13 @@ func (s *LogisticsServiceOp[T]) UpdateTrackingStatus(ctx context.Context, sid ui
 func (s *LogisticsServiceOp[T]) UploadServiceablePolygon(ctx context.Context, sid uint64, filename string, tok string) (*UploadServiceablePolygonResponse, error) {
 	path := "/logistics/upload_serviceable_polygon"
 	resp := new(UploadServiceablePolygonResponse)
-	err := s.client.WithShop(sid, tok).Upload(ctx, path, "image", filename, resp)
+	err := s.client.Upload(ctx, path, "image", filename, resp, sid, tok)
 	return resp, err
 }
 
 func (s *LogisticsServiceOp[T]) UploadServiceablePolygonFromReader(ctx context.Context, sid uint64, filename string, reader io.Reader, tok string) (*UploadServiceablePolygonResponse, error) {
 	path := "/logistics/upload_serviceable_polygon"
 	resp := new(UploadServiceablePolygonResponse)
-	err := s.client.WithShop(sid, tok).UploadFromReader(ctx, path, "image", filename, reader, resp)
+	err := s.client.UploadFromReader(ctx, path, "image", filename, reader, resp, sid, tok)
 	return resp, err
 }

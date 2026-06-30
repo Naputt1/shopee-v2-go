@@ -33,7 +33,7 @@ type FBSServiceOp[T any] struct {
 func (s *FBSServiceOp[T]) QueryBrShopBlockStatus(ctx context.Context, sid uint64, tok string) (*QueryBrShopBlockStatusResponse, error) {
 	path := "/fbs/query_br_shop_block_status"
 	resp := new(QueryBrShopBlockStatusResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, nil, resp)
+	err := s.client.Post(ctx, path, nil, resp, sid, tok)
 	return resp, err
 }
 
@@ -43,7 +43,7 @@ func (s *FBSServiceOp[T]) QueryBrShopBlockStatus(ctx context.Context, sid uint64
 func (s *FBSServiceOp[T]) QueryBrShopEnrollmentStatus(ctx context.Context, sid uint64, tok string) (*QueryBrShopEnrollmentStatusResponse, error) {
 	path := "/fbs/query_br_shop_enrollment_status"
 	resp := new(QueryBrShopEnrollmentStatusResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, nil, resp)
+	err := s.client.Post(ctx, path, nil, resp, sid, tok)
 	return resp, err
 }
 
@@ -53,7 +53,7 @@ func (s *FBSServiceOp[T]) QueryBrShopEnrollmentStatus(ctx context.Context, sid u
 func (s *FBSServiceOp[T]) QueryBrShopInvoiceError(ctx context.Context, sid uint64, req QueryBrShopInvoiceErrorRequest, tok string) (*QueryBrShopInvoiceErrorResponse, error) {
 	path := "/fbs/query_br_shop_invoice_error"
 	resp := new(QueryBrShopInvoiceErrorResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -63,6 +63,6 @@ func (s *FBSServiceOp[T]) QueryBrShopInvoiceError(ctx context.Context, sid uint6
 func (s *FBSServiceOp[T]) QueryBrSkuBlockStatus(ctx context.Context, sid uint64, req QueryBrSkuBlockStatusRequest, tok string) (*QueryBrSkuBlockStatusResponse, error) {
 	path := "/fbs/query_br_sku_block_status"
 	resp := new(QueryBrSkuBlockStatusResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }

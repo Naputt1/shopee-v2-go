@@ -57,7 +57,7 @@ type BundleDealServiceOp[T any] struct {
 func (s *BundleDealServiceOp[T]) AddBundleDeal(ctx context.Context, sid uint64, req AddBundleDealRequest, tok string) (*AddBundleDealResponse, error) {
 	path := "/bundle_deal/add_bundle_deal"
 	resp := new(AddBundleDealResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -67,7 +67,7 @@ func (s *BundleDealServiceOp[T]) AddBundleDeal(ctx context.Context, sid uint64, 
 func (s *BundleDealServiceOp[T]) AddBundleDealItem(ctx context.Context, sid uint64, req AddBundleDealItemRequest, tok string) (*AddBundleDealItemResponse, error) {
 	path := "/bundle_deal/add_bundle_deal_item"
 	resp := new(AddBundleDealItemResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -77,7 +77,7 @@ func (s *BundleDealServiceOp[T]) AddBundleDealItem(ctx context.Context, sid uint
 func (s *BundleDealServiceOp[T]) DeleteBundleDeal(ctx context.Context, sid uint64, req DeleteBundleDealRequest, tok string) (*DeleteBundleDealResponse, error) {
 	path := "/bundle_deal/delete_bundle_deal"
 	resp := new(DeleteBundleDealResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -87,7 +87,7 @@ func (s *BundleDealServiceOp[T]) DeleteBundleDeal(ctx context.Context, sid uint6
 func (s *BundleDealServiceOp[T]) DeleteBundleDealItem(ctx context.Context, sid uint64, req DeleteBundleDealItemRequest, tok string) (*DeleteBundleDealItemResponse, error) {
 	path := "/bundle_deal/delete_bundle_deal_item"
 	resp := new(DeleteBundleDealItemResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -97,7 +97,7 @@ func (s *BundleDealServiceOp[T]) DeleteBundleDealItem(ctx context.Context, sid u
 func (s *BundleDealServiceOp[T]) EndBundleDeal(ctx context.Context, sid uint64, req EndBundleDealRequest, tok string) (*EndBundleDealResponse, error) {
 	path := "/bundle_deal/end_bundle_deal"
 	resp := new(EndBundleDealResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -107,7 +107,7 @@ func (s *BundleDealServiceOp[T]) EndBundleDeal(ctx context.Context, sid uint64, 
 func (s *BundleDealServiceOp[T]) GetBundleDeal(ctx context.Context, sid uint64, opt GetBundleDealRequest, tok string) (*GetBundleDealResponse, error) {
 	path := "/bundle_deal/get_bundle_deal"
 	resp := new(GetBundleDealResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -117,7 +117,7 @@ func (s *BundleDealServiceOp[T]) GetBundleDeal(ctx context.Context, sid uint64, 
 func (s *BundleDealServiceOp[T]) GetBundleDealItem(ctx context.Context, sid uint64, req GetBundleDealItemRequest, tok string) (*GetBundleDealItemResponse, error) {
 	path := "/bundle_deal/get_bundle_deal_item"
 	resp := new(GetBundleDealItemResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -127,7 +127,7 @@ func (s *BundleDealServiceOp[T]) GetBundleDealItem(ctx context.Context, sid uint
 func (s *BundleDealServiceOp[T]) GetBundleDealList(ctx context.Context, sid uint64, opt GetBundleDealListRequest, tok string) (*GetBundleDealListResponse, error) {
 	path := "/bundle_deal/get_bundle_deal_list"
 	resp := new(GetBundleDealListResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -137,7 +137,7 @@ func (s *BundleDealServiceOp[T]) GetBundleDealList(ctx context.Context, sid uint
 func (s *BundleDealServiceOp[T]) UpdateBundleDeal(ctx context.Context, sid uint64, req UpdateBundleDealRequest, tok string) (*UpdateBundleDealResponse, error) {
 	path := "/bundle_deal/update_bundle_deal"
 	resp := new(UpdateBundleDealResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -147,6 +147,6 @@ func (s *BundleDealServiceOp[T]) UpdateBundleDeal(ctx context.Context, sid uint6
 func (s *BundleDealServiceOp[T]) UpdateBundleDealItem(ctx context.Context, sid uint64, req UpdateBundleDealItemRequest, tok string) (*UpdateBundleDealItemResponse, error) {
 	path := "/bundle_deal/update_bundle_deal_item"
 	resp := new(UpdateBundleDealItemResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }

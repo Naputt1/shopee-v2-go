@@ -161,7 +161,7 @@ type AMSServiceOp[T any] struct {
 func (s *AMSServiceOp[T]) AddAllProductsToOpenCampaign(ctx context.Context, sid uint64, req AddAllProductsToOpenCampaignRequest, tok string) (*AddAllProductsToOpenCampaignResponse, error) {
 	path := "/ams/add_all_products_to_open_campaign"
 	resp := new(AddAllProductsToOpenCampaignResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -171,7 +171,7 @@ func (s *AMSServiceOp[T]) AddAllProductsToOpenCampaign(ctx context.Context, sid 
 func (s *AMSServiceOp[T]) BatchAddProductsToOpenCampaign(ctx context.Context, sid uint64, req BatchAddProductsToOpenCampaignRequest, tok string) (*BatchAddProductsToOpenCampaignResponse, error) {
 	path := "/ams/batch_add_products_to_open_campaign"
 	resp := new(BatchAddProductsToOpenCampaignResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -181,7 +181,7 @@ func (s *AMSServiceOp[T]) BatchAddProductsToOpenCampaign(ctx context.Context, si
 func (s *AMSServiceOp[T]) BatchEditProductsOpenCampaignSetting(ctx context.Context, sid uint64, req BatchEditProductsOpenCampaignSettingRequest, tok string) (*BatchEditProductsOpenCampaignSettingResponse, error) {
 	path := "/ams/batch_edit_products_open_campaign_setting"
 	resp := new(BatchEditProductsOpenCampaignSettingResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -191,7 +191,7 @@ func (s *AMSServiceOp[T]) BatchEditProductsOpenCampaignSetting(ctx context.Conte
 func (s *AMSServiceOp[T]) BatchGetProductsSuggestedRate(ctx context.Context, sid uint64, opt BatchGetProductsSuggestedRateRequest, tok string) (*BatchGetProductsSuggestedRateResponse, error) {
 	path := "/ams/batch_get_products_suggested_rate"
 	resp := new(BatchGetProductsSuggestedRateResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -201,7 +201,7 @@ func (s *AMSServiceOp[T]) BatchGetProductsSuggestedRate(ctx context.Context, sid
 func (s *AMSServiceOp[T]) BatchRemoveProductsOpenCampaignSetting(ctx context.Context, sid uint64, req BatchRemoveProductsOpenCampaignSettingRequest, tok string) (*BatchRemoveProductsOpenCampaignSettingResponse, error) {
 	path := "/ams/batch_remove_products_open_campaign_setting"
 	resp := new(BatchRemoveProductsOpenCampaignSettingResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -211,7 +211,7 @@ func (s *AMSServiceOp[T]) BatchRemoveProductsOpenCampaignSetting(ctx context.Con
 func (s *AMSServiceOp[T]) CreateNewTargetedCampaign(ctx context.Context, sid uint64, req CreateNewTargetedCampaignRequest, tok string) (*CreateNewTargetedCampaignResponse, error) {
 	path := "/ams/create_new_targeted_campaign"
 	resp := new(CreateNewTargetedCampaignResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -221,7 +221,7 @@ func (s *AMSServiceOp[T]) CreateNewTargetedCampaign(ctx context.Context, sid uin
 func (s *AMSServiceOp[T]) EditAffiliateListOfTargetedCampaign(ctx context.Context, sid uint64, req EditAffiliateListOfTargetedCampaignRequest, tok string) (*EditAffiliateListOfTargetedCampaignResponse, error) {
 	path := "/ams/edit_affiliate_list_of_targeted_campaign"
 	resp := new(EditAffiliateListOfTargetedCampaignResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -231,7 +231,7 @@ func (s *AMSServiceOp[T]) EditAffiliateListOfTargetedCampaign(ctx context.Contex
 func (s *AMSServiceOp[T]) EditAllProductsOpenCampaignSetting(ctx context.Context, sid uint64, req EditAllProductsOpenCampaignSettingRequest, tok string) (*EditAllProductsOpenCampaignSettingResponse, error) {
 	path := "/ams/edit_all_products_open_campaign_setting"
 	resp := new(EditAllProductsOpenCampaignSettingResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -241,7 +241,7 @@ func (s *AMSServiceOp[T]) EditAllProductsOpenCampaignSetting(ctx context.Context
 func (s *AMSServiceOp[T]) EditProductListOfTargetedCampaign(ctx context.Context, sid uint64, req EditProductListOfTargetedCampaignRequest, tok string) (*EditProductListOfTargetedCampaignResponse, error) {
 	path := "/ams/edit_product_list_of_targeted_campaign"
 	resp := new(EditProductListOfTargetedCampaignResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -251,7 +251,7 @@ func (s *AMSServiceOp[T]) EditProductListOfTargetedCampaign(ctx context.Context,
 func (s *AMSServiceOp[T]) GetAffiliatePerformance(ctx context.Context, sid uint64, opt GetAffiliatePerformanceRequest, tok string) (*GetAffiliatePerformanceResponse, error) {
 	path := "/ams/get_affiliate_performance"
 	resp := new(GetAffiliatePerformanceResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -261,7 +261,7 @@ func (s *AMSServiceOp[T]) GetAffiliatePerformance(ctx context.Context, sid uint6
 func (s *AMSServiceOp[T]) GetAutoAddNewProductToggleStatus(ctx context.Context, sid uint64, tok string) (*GetAutoAddNewProductToggleStatusResponse, error) {
 	path := "/ams/get_auto_add_new_product_toggle_status"
 	resp := new(GetAutoAddNewProductToggleStatusResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -271,7 +271,7 @@ func (s *AMSServiceOp[T]) GetAutoAddNewProductToggleStatus(ctx context.Context, 
 func (s *AMSServiceOp[T]) GetCampaignKeyMetricsPerformance(ctx context.Context, sid uint64, opt GetCampaignKeyMetricsPerformanceRequest, tok string) (*GetCampaignKeyMetricsPerformanceResponse, error) {
 	path := "/ams/get_campaign_key_metrics_performance"
 	resp := new(GetCampaignKeyMetricsPerformanceResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -281,7 +281,7 @@ func (s *AMSServiceOp[T]) GetCampaignKeyMetricsPerformance(ctx context.Context, 
 func (s *AMSServiceOp[T]) GetContentPerformance(ctx context.Context, sid uint64, opt GetContentPerformanceRequest, tok string) (*GetContentPerformanceResponse, error) {
 	path := "/ams/get_content_performance"
 	resp := new(GetContentPerformanceResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -291,7 +291,7 @@ func (s *AMSServiceOp[T]) GetContentPerformance(ctx context.Context, sid uint64,
 func (s *AMSServiceOp[T]) GetConversionReport(ctx context.Context, sid uint64, opt GetConversionReportRequest, tok string) (*GetConversionReportResponse, error) {
 	path := "/ams/get_conversion_report"
 	resp := new(GetConversionReportResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -301,7 +301,7 @@ func (s *AMSServiceOp[T]) GetConversionReport(ctx context.Context, sid uint64, o
 func (s *AMSServiceOp[T]) GetManagedAffiliateList(ctx context.Context, sid uint64, opt GetManagedAffiliateListRequest, tok string) (*GetManagedAffiliateListResponse, error) {
 	path := "/ams/get_managed_affiliate_list"
 	resp := new(GetManagedAffiliateListResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -311,7 +311,7 @@ func (s *AMSServiceOp[T]) GetManagedAffiliateList(ctx context.Context, sid uint6
 func (s *AMSServiceOp[T]) GetOpenCampaignAddedProduct(ctx context.Context, sid uint64, opt GetOpenCampaignAddedProductRequest, tok string) (*GetOpenCampaignAddedProductResponse, error) {
 	path := "/ams/get_open_campaign_added_product"
 	resp := new(GetOpenCampaignAddedProductResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -321,7 +321,7 @@ func (s *AMSServiceOp[T]) GetOpenCampaignAddedProduct(ctx context.Context, sid u
 func (s *AMSServiceOp[T]) GetOpenCampaignBatchTaskResult(ctx context.Context, sid uint64, opt GetOpenCampaignBatchTaskResultRequest, tok string) (*GetOpenCampaignBatchTaskResultResponse, error) {
 	path := "/ams/get_open_campaign_batch_task_result"
 	resp := new(GetOpenCampaignBatchTaskResultResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -331,7 +331,7 @@ func (s *AMSServiceOp[T]) GetOpenCampaignBatchTaskResult(ctx context.Context, si
 func (s *AMSServiceOp[T]) GetOpenCampaignNotAddedProduct(ctx context.Context, sid uint64, opt GetOpenCampaignNotAddedProductRequest, tok string) (*GetOpenCampaignNotAddedProductResponse, error) {
 	path := "/ams/get_open_campaign_not_added_product"
 	resp := new(GetOpenCampaignNotAddedProductResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -341,7 +341,7 @@ func (s *AMSServiceOp[T]) GetOpenCampaignNotAddedProduct(ctx context.Context, si
 func (s *AMSServiceOp[T]) GetOpenCampaignPerformance(ctx context.Context, sid uint64, opt GetOpenCampaignPerformanceRequest, tok string) (*GetOpenCampaignPerformanceResponse, error) {
 	path := "/ams/get_open_campaign_performance"
 	resp := new(GetOpenCampaignPerformanceResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -351,7 +351,7 @@ func (s *AMSServiceOp[T]) GetOpenCampaignPerformance(ctx context.Context, sid ui
 func (s *AMSServiceOp[T]) GetOptimizationSuggestionProduct(ctx context.Context, sid uint64, opt GetOptimizationSuggestionProductRequest, tok string) (*GetOptimizationSuggestionProductResponse, error) {
 	path := "/ams/get_optimization_suggestion_product"
 	resp := new(GetOptimizationSuggestionProductResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -361,7 +361,7 @@ func (s *AMSServiceOp[T]) GetOptimizationSuggestionProduct(ctx context.Context, 
 func (s *AMSServiceOp[T]) GetPerformanceDataUpdateTime(ctx context.Context, sid uint64, opt GetPerformanceDataUpdateTimeRequest, tok string) (*GetPerformanceDataUpdateTimeResponse, error) {
 	path := "/ams/get_performance_data_update_time"
 	resp := new(GetPerformanceDataUpdateTimeResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -371,7 +371,7 @@ func (s *AMSServiceOp[T]) GetPerformanceDataUpdateTime(ctx context.Context, sid 
 func (s *AMSServiceOp[T]) GetProductPerformance(ctx context.Context, sid uint64, opt GetProductPerformanceRequest, tok string) (*GetProductPerformanceResponse, error) {
 	path := "/ams/get_product_performance"
 	resp := new(GetProductPerformanceResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -381,7 +381,7 @@ func (s *AMSServiceOp[T]) GetProductPerformance(ctx context.Context, sid uint64,
 func (s *AMSServiceOp[T]) GetRecommendedAffiliateList(ctx context.Context, sid uint64, opt GetRecommendedAffiliateListRequest, tok string) (*GetRecommendedAffiliateListResponse, error) {
 	path := "/ams/get_recommended_affiliate_list"
 	resp := new(GetRecommendedAffiliateListResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -391,7 +391,7 @@ func (s *AMSServiceOp[T]) GetRecommendedAffiliateList(ctx context.Context, sid u
 func (s *AMSServiceOp[T]) GetShopPerformance(ctx context.Context, sid uint64, opt GetShopPerformanceRequest, tok string) (*AMSGetShopPerformanceResponse, error) {
 	path := "/ams/get_shop_performance"
 	resp := new(AMSGetShopPerformanceResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -401,7 +401,7 @@ func (s *AMSServiceOp[T]) GetShopPerformance(ctx context.Context, sid uint64, op
 func (s *AMSServiceOp[T]) GetShopSuggestedRate(ctx context.Context, sid uint64, tok string) (*GetShopSuggestedRateResponse, error) {
 	path := "/ams/get_shop_suggested_rate"
 	resp := new(GetShopSuggestedRateResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -411,7 +411,7 @@ func (s *AMSServiceOp[T]) GetShopSuggestedRate(ctx context.Context, sid uint64, 
 func (s *AMSServiceOp[T]) GetTargetedCampaignAddableProductList(ctx context.Context, sid uint64, opt GetTargetedCampaignAddableProductListRequest, tok string) (*GetTargetedCampaignAddableProductListResponse, error) {
 	path := "/ams/get_targeted_campaign_addable_product_list"
 	resp := new(GetTargetedCampaignAddableProductListResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -421,7 +421,7 @@ func (s *AMSServiceOp[T]) GetTargetedCampaignAddableProductList(ctx context.Cont
 func (s *AMSServiceOp[T]) GetTargetedCampaignList(ctx context.Context, sid uint64, opt GetTargetedCampaignListRequest, tok string) (*GetTargetedCampaignListResponse, error) {
 	path := "/ams/get_targeted_campaign_list"
 	resp := new(GetTargetedCampaignListResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -431,7 +431,7 @@ func (s *AMSServiceOp[T]) GetTargetedCampaignList(ctx context.Context, sid uint6
 func (s *AMSServiceOp[T]) GetTargetedCampaignPerformance(ctx context.Context, sid uint64, opt GetTargetedCampaignPerformanceRequest, tok string) (*GetTargetedCampaignPerformanceResponse, error) {
 	path := "/ams/get_targeted_campaign_performance"
 	resp := new(GetTargetedCampaignPerformanceResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -441,7 +441,7 @@ func (s *AMSServiceOp[T]) GetTargetedCampaignPerformance(ctx context.Context, si
 func (s *AMSServiceOp[T]) GetTargetedCampaignSettings(ctx context.Context, sid uint64, opt GetTargetedCampaignSettingsRequest, tok string) (*GetTargetedCampaignSettingsResponse, error) {
 	path := "/ams/get_targeted_campaign_settings"
 	resp := new(GetTargetedCampaignSettingsResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -451,7 +451,7 @@ func (s *AMSServiceOp[T]) GetTargetedCampaignSettings(ctx context.Context, sid u
 func (s *AMSServiceOp[T]) GetValidationList(ctx context.Context, sid uint64, tok string) (*GetValidationListResponse, error) {
 	path := "/ams/get_validation_list"
 	resp := new(GetValidationListResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -461,7 +461,7 @@ func (s *AMSServiceOp[T]) GetValidationList(ctx context.Context, sid uint64, tok
 func (s *AMSServiceOp[T]) GetValidationReport(ctx context.Context, sid uint64, opt GetValidationReportRequest, tok string) (*GetValidationReportResponse, error) {
 	path := "/ams/get_validation_report"
 	resp := new(GetValidationReportResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -471,7 +471,7 @@ func (s *AMSServiceOp[T]) GetValidationReport(ctx context.Context, sid uint64, o
 func (s *AMSServiceOp[T]) QueryAffiliateList(ctx context.Context, sid uint64, opt QueryAffiliateListRequest, tok string) (*QueryAffiliateListResponse, error) {
 	path := "/ams/query_affiliate_list"
 	resp := new(QueryAffiliateListResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -481,7 +481,7 @@ func (s *AMSServiceOp[T]) QueryAffiliateList(ctx context.Context, sid uint64, op
 func (s *AMSServiceOp[T]) RemoveAllProductsOpenCampaignSetting(ctx context.Context, sid uint64, tok string) (*RemoveAllProductsOpenCampaignSettingResponse, error) {
 	path := "/ams/remove_all_products_open_campaign_setting"
 	resp := new(RemoveAllProductsOpenCampaignSettingResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, nil, resp)
+	err := s.client.Post(ctx, path, nil, resp, sid, tok)
 	return resp, err
 }
 
@@ -491,7 +491,7 @@ func (s *AMSServiceOp[T]) RemoveAllProductsOpenCampaignSetting(ctx context.Conte
 func (s *AMSServiceOp[T]) TerminateTargetedCampaign(ctx context.Context, sid uint64, req TerminateTargetedCampaignRequest, tok string) (*TerminateTargetedCampaignResponse, error) {
 	path := "/ams/terminate_targeted_campaign"
 	resp := new(TerminateTargetedCampaignResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -501,7 +501,7 @@ func (s *AMSServiceOp[T]) TerminateTargetedCampaign(ctx context.Context, sid uin
 func (s *AMSServiceOp[T]) UpdateAutoAddNewProductSetting(ctx context.Context, sid uint64, req UpdateAutoAddNewProductSettingRequest, tok string) (*UpdateAutoAddNewProductSettingResponse, error) {
 	path := "/ams/update_auto_add_new_product_setting"
 	resp := new(UpdateAutoAddNewProductSettingResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -511,6 +511,6 @@ func (s *AMSServiceOp[T]) UpdateAutoAddNewProductSetting(ctx context.Context, si
 func (s *AMSServiceOp[T]) UpdateBasicInfoOfTargetedCampaign(ctx context.Context, sid uint64, req UpdateBasicInfoOfTargetedCampaignRequest, tok string) (*UpdateBasicInfoOfTargetedCampaignResponse, error) {
 	path := "/ams/update_basic_info_of_targeted_campaign"
 	resp := new(UpdateBasicInfoOfTargetedCampaignResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }

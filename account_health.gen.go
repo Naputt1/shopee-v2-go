@@ -41,7 +41,7 @@ type AccountHealthServiceOp[T any] struct {
 func (s *AccountHealthServiceOp[T]) GetLateOrders(ctx context.Context, sid uint64, opt GetLateOrdersRequest, tok string) (*GetLateOrdersResponse, error) {
 	path := "/account_health/get_late_orders"
 	resp := new(GetLateOrdersResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -51,7 +51,7 @@ func (s *AccountHealthServiceOp[T]) GetLateOrders(ctx context.Context, sid uint6
 func (s *AccountHealthServiceOp[T]) GetListingsWithIssues(ctx context.Context, sid uint64, opt GetListingsWithIssuesRequest, tok string) (*GetListingsWithIssuesResponse, error) {
 	path := "/account_health/get_listings_with_issues"
 	resp := new(GetListingsWithIssuesResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -61,7 +61,7 @@ func (s *AccountHealthServiceOp[T]) GetListingsWithIssues(ctx context.Context, s
 func (s *AccountHealthServiceOp[T]) GetMetricSourceDetail(ctx context.Context, sid uint64, opt GetMetricSourceDetailRequest, tok string) (*GetMetricSourceDetailResponse, error) {
 	path := "/account_health/get_metric_source_detail"
 	resp := new(GetMetricSourceDetailResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -71,7 +71,7 @@ func (s *AccountHealthServiceOp[T]) GetMetricSourceDetail(ctx context.Context, s
 func (s *AccountHealthServiceOp[T]) GetPenaltyPointHistory(ctx context.Context, sid uint64, opt GetPenaltyPointHistoryRequest, tok string) (*GetPenaltyPointHistoryResponse, error) {
 	path := "/account_health/get_penalty_point_history"
 	resp := new(GetPenaltyPointHistoryResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -81,7 +81,7 @@ func (s *AccountHealthServiceOp[T]) GetPenaltyPointHistory(ctx context.Context, 
 func (s *AccountHealthServiceOp[T]) GetPunishmentHistory(ctx context.Context, sid uint64, opt GetPunishmentHistoryRequest, tok string) (*GetPunishmentHistoryResponse, error) {
 	path := "/account_health/get_punishment_history"
 	resp := new(GetPunishmentHistoryResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -91,6 +91,6 @@ func (s *AccountHealthServiceOp[T]) GetPunishmentHistory(ctx context.Context, si
 func (s *AccountHealthServiceOp[T]) GetShopPerformance(ctx context.Context, sid uint64, tok string) (*GetShopPerformanceResponse, error) {
 	path := "/account_health/get_shop_performance"
 	resp := new(GetShopPerformanceResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }

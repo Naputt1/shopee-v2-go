@@ -37,7 +37,7 @@ type SBSServiceOp[T any] struct {
 func (s *SBSServiceOp[T]) GetBoundWhsInfo(ctx context.Context, sid uint64, tok string) (*GetBoundWhsInfoResponse, error) {
 	path := "/sbs/get_bound_whs_info"
 	resp := new(GetBoundWhsInfoResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -47,7 +47,7 @@ func (s *SBSServiceOp[T]) GetBoundWhsInfo(ctx context.Context, sid uint64, tok s
 func (s *SBSServiceOp[T]) GetCurrentInventory(ctx context.Context, sid uint64, req GetCurrentInventoryRequest, tok string) (*GetCurrentInventoryResponse, error) {
 	path := "/sbs/get_current_inventory"
 	resp := new(GetCurrentInventoryResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -57,7 +57,7 @@ func (s *SBSServiceOp[T]) GetCurrentInventory(ctx context.Context, sid uint64, r
 func (s *SBSServiceOp[T]) GetExpiryReport(ctx context.Context, sid uint64, req GetExpiryReportRequest, tok string) (*GetExpiryReportResponse, error) {
 	path := "/sbs/get_expiry_report"
 	resp := new(GetExpiryReportResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -67,7 +67,7 @@ func (s *SBSServiceOp[T]) GetExpiryReport(ctx context.Context, sid uint64, req G
 func (s *SBSServiceOp[T]) GetStockAging(ctx context.Context, sid uint64, req GetStockAgingRequest, tok string) (*GetStockAgingResponse, error) {
 	path := "/sbs/get_stock_aging"
 	resp := new(GetStockAgingResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -77,6 +77,6 @@ func (s *SBSServiceOp[T]) GetStockAging(ctx context.Context, sid uint64, req Get
 func (s *SBSServiceOp[T]) GetStockMovement(ctx context.Context, sid uint64, req GetStockMovementRequest, tok string) (*GetStockMovementResponse, error) {
 	path := "/sbs/get_stock_movement"
 	resp := new(GetStockMovementResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }

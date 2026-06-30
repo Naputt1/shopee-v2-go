@@ -111,7 +111,7 @@ type AdsServiceOp[T any] struct {
 func (s *AdsServiceOp[T]) CheckCreateGmsProductCampaignEligibility(ctx context.Context, sid uint64, tok string) (*CheckCreateGmsProductCampaignEligibilityResponse, error) {
 	path := "/ads/check_create_gms_product_campaign_eligibility"
 	resp := new(CheckCreateGmsProductCampaignEligibilityResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -121,7 +121,7 @@ func (s *AdsServiceOp[T]) CheckCreateGmsProductCampaignEligibility(ctx context.C
 func (s *AdsServiceOp[T]) CreateGmsProductCampaign(ctx context.Context, sid uint64, req CreateGmsProductCampaignRequest, tok string) (*CreateGmsProductCampaignResponse, error) {
 	path := "/ads/create_gms_product_campaign"
 	resp := new(CreateGmsProductCampaignResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -131,7 +131,7 @@ func (s *AdsServiceOp[T]) CreateGmsProductCampaign(ctx context.Context, sid uint
 func (s *AdsServiceOp[T]) CreateManualProductAds(ctx context.Context, sid uint64, req CreateManualProductAdsRequest, tok string) (*CreateManualProductAdsResponse, error) {
 	path := "/ads/create_manual_product_ads"
 	resp := new(CreateManualProductAdsResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -141,7 +141,7 @@ func (s *AdsServiceOp[T]) CreateManualProductAds(ctx context.Context, sid uint64
 func (s *AdsServiceOp[T]) EditGmsItemProductCampaign(ctx context.Context, sid uint64, req EditGmsItemProductCampaignRequest, tok string) (*EditGmsItemProductCampaignResponse, error) {
 	path := "/ads/edit_gms_item_product_campaign"
 	resp := new(EditGmsItemProductCampaignResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -151,7 +151,7 @@ func (s *AdsServiceOp[T]) EditGmsItemProductCampaign(ctx context.Context, sid ui
 func (s *AdsServiceOp[T]) EditGmsProductCampaign(ctx context.Context, sid uint64, req EditGmsProductCampaignRequest, tok string) (*EditGmsProductCampaignResponse, error) {
 	path := "/ads/edit_gms_product_campaign"
 	resp := new(EditGmsProductCampaignResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -161,7 +161,7 @@ func (s *AdsServiceOp[T]) EditGmsProductCampaign(ctx context.Context, sid uint64
 func (s *AdsServiceOp[T]) EditManualProductAdKeywords(ctx context.Context, sid uint64, req EditManualProductAdKeywordsRequest, tok string) (*EditManualProductAdKeywordsResponse, error) {
 	path := "/ads/edit_manual_product_ad_keywords"
 	resp := new(EditManualProductAdKeywordsResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -171,7 +171,7 @@ func (s *AdsServiceOp[T]) EditManualProductAdKeywords(ctx context.Context, sid u
 func (s *AdsServiceOp[T]) EditManualProductAds(ctx context.Context, sid uint64, req EditManualProductAdsRequest, tok string) (*EditManualProductAdsResponse, error) {
 	path := "/ads/edit_manual_product_ads"
 	resp := new(EditManualProductAdsResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -181,7 +181,7 @@ func (s *AdsServiceOp[T]) EditManualProductAds(ctx context.Context, sid uint64, 
 func (s *AdsServiceOp[T]) GetAdsFcilShopRate(ctx context.Context, sid uint64, tok string) (*GetAdsFcilShopRateResponse, error) {
 	path := "/ads/get_ads_facil_shop_rate"
 	resp := new(GetAdsFcilShopRateResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, nil, resp)
+	err := s.client.Post(ctx, path, nil, resp, sid, tok)
 	return resp, err
 }
 
@@ -191,7 +191,7 @@ func (s *AdsServiceOp[T]) GetAdsFcilShopRate(ctx context.Context, sid uint64, to
 func (s *AdsServiceOp[T]) GetAllCpcAdsDailyPerformance(ctx context.Context, sid uint64, opt GetAllCpcAdsDailyPerformanceRequest, tok string) (*GetAllCpcAdsDailyPerformanceResponse, error) {
 	path := "/ads/get_all_cpc_ads_daily_performance"
 	resp := new(GetAllCpcAdsDailyPerformanceResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -201,7 +201,7 @@ func (s *AdsServiceOp[T]) GetAllCpcAdsDailyPerformance(ctx context.Context, sid 
 func (s *AdsServiceOp[T]) GetAllCpcAdsHourlyPerformance(ctx context.Context, sid uint64, opt GetAllCpcAdsHourlyPerformanceRequest, tok string) (*GetAllCpcAdsHourlyPerformanceResponse, error) {
 	path := "/ads/get_all_cpc_ads_hourly_performance"
 	resp := new(GetAllCpcAdsHourlyPerformanceResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -211,7 +211,7 @@ func (s *AdsServiceOp[T]) GetAllCpcAdsHourlyPerformance(ctx context.Context, sid
 func (s *AdsServiceOp[T]) GetCreateProductAdBudgetSuggestion(ctx context.Context, sid uint64, opt GetCreateProductAdBudgetSuggestionRequest, tok string) (*GetCreateProductAdBudgetSuggestionResponse, error) {
 	path := "/ads/get_create_product_ad_budget_suggestion"
 	resp := new(GetCreateProductAdBudgetSuggestionResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -221,7 +221,7 @@ func (s *AdsServiceOp[T]) GetCreateProductAdBudgetSuggestion(ctx context.Context
 func (s *AdsServiceOp[T]) GetGmsCampaignPerformance(ctx context.Context, sid uint64, req GetGmsCampaignPerformanceRequest, tok string) (*GetGmsCampaignPerformanceResponse, error) {
 	path := "/ads/get_gms_campaign_performance"
 	resp := new(GetGmsCampaignPerformanceResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -233,7 +233,7 @@ func (s *AdsServiceOp[T]) GetGmsCampaignPerformance(ctx context.Context, sid uin
 func (s *AdsServiceOp[T]) GetGmsItemPerformance(ctx context.Context, sid uint64, req GetGmsItemPerformanceRequest, tok string) (*GetGmsItemPerformanceResponse, error) {
 	path := "/ads/get_gms_item_performance"
 	resp := new(GetGmsItemPerformanceResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -243,7 +243,7 @@ func (s *AdsServiceOp[T]) GetGmsItemPerformance(ctx context.Context, sid uint64,
 func (s *AdsServiceOp[T]) GetProductCampaignDailyPerformance(ctx context.Context, sid uint64, opt GetProductCampaignDailyPerformanceRequest, tok string) (*GetProductCampaignDailyPerformanceResponse, error) {
 	path := "/ads/get_product_campaign_daily_performance"
 	resp := new(GetProductCampaignDailyPerformanceResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -253,7 +253,7 @@ func (s *AdsServiceOp[T]) GetProductCampaignDailyPerformance(ctx context.Context
 func (s *AdsServiceOp[T]) GetProductCampaignHourlyPerformance(ctx context.Context, sid uint64, opt GetProductCampaignHourlyPerformanceRequest, tok string) (*GetProductCampaignHourlyPerformanceResponse, error) {
 	path := "/ads/get_product_campaign_hourly_performance"
 	resp := new(GetProductCampaignHourlyPerformanceResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -263,7 +263,7 @@ func (s *AdsServiceOp[T]) GetProductCampaignHourlyPerformance(ctx context.Contex
 func (s *AdsServiceOp[T]) GetProductLevelCampaignIdList(ctx context.Context, sid uint64, opt GetProductLevelCampaignIdListRequest, tok string) (*GetProductLevelCampaignIdListResponse, error) {
 	path := "/ads/get_product_level_campaign_id_list"
 	resp := new(GetProductLevelCampaignIdListResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -273,7 +273,7 @@ func (s *AdsServiceOp[T]) GetProductLevelCampaignIdList(ctx context.Context, sid
 func (s *AdsServiceOp[T]) GetProductLevelCampaignSettingInfo(ctx context.Context, sid uint64, opt GetProductLevelCampaignSettingInfoRequest, tok string) (*GetProductLevelCampaignSettingInfoResponse, error) {
 	path := "/ads/get_product_level_campaign_setting_info"
 	resp := new(GetProductLevelCampaignSettingInfoResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -283,7 +283,7 @@ func (s *AdsServiceOp[T]) GetProductLevelCampaignSettingInfo(ctx context.Context
 func (s *AdsServiceOp[T]) GetProductRecommendedRoiTarget(ctx context.Context, sid uint64, opt GetProductRecommendedRoiTargetRequest, tok string) (*GetProductRecommendedRoiTargetResponse, error) {
 	path := "/ads/get_product_recommended_roi_target"
 	resp := new(GetProductRecommendedRoiTargetResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -293,7 +293,7 @@ func (s *AdsServiceOp[T]) GetProductRecommendedRoiTarget(ctx context.Context, si
 func (s *AdsServiceOp[T]) GetRecommendedItemList(ctx context.Context, sid uint64, tok string) (*GetRecommendedItemListResponse, error) {
 	path := "/ads/get_recommended_item_list"
 	resp := new(GetRecommendedItemListResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -303,7 +303,7 @@ func (s *AdsServiceOp[T]) GetRecommendedItemList(ctx context.Context, sid uint64
 func (s *AdsServiceOp[T]) GetRecommendedKeywordList(ctx context.Context, sid uint64, opt GetRecommendedKeywordListRequest, tok string) (*GetRecommendedKeywordListResponse, error) {
 	path := "/ads/get_recommended_keyword_list"
 	resp := new(GetRecommendedKeywordListResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -313,7 +313,7 @@ func (s *AdsServiceOp[T]) GetRecommendedKeywordList(ctx context.Context, sid uin
 func (s *AdsServiceOp[T]) GetShopToggleInfo(ctx context.Context, sid uint64, tok string) (*GetShopToggleInfoResponse, error) {
 	path := "/ads/get_shop_toggle_info"
 	resp := new(GetShopToggleInfoResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -323,7 +323,7 @@ func (s *AdsServiceOp[T]) GetShopToggleInfo(ctx context.Context, sid uint64, tok
 func (s *AdsServiceOp[T]) GetTotalBalance(ctx context.Context, sid uint64, tok string) (*GetTotalBalanceResponse, error) {
 	path := "/ads/get_total_balance"
 	resp := new(GetTotalBalanceResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -333,6 +333,6 @@ func (s *AdsServiceOp[T]) GetTotalBalance(ctx context.Context, sid uint64, tok s
 func (s *AdsServiceOp[T]) ListGmsUserDeletedItem(ctx context.Context, sid uint64, req ListGmsUserDeletedItemRequest, tok string) (*ListGmsUserDeletedItemResponse, error) {
 	path := "/ads/list_gms_user_deleted_item"
 	resp := new(ListGmsUserDeletedItemResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }

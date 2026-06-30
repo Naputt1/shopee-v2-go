@@ -48,14 +48,14 @@ type MediaServiceOp[T any] struct {
 func (s *MediaServiceOp[T]) CancelVideoUpload(ctx context.Context, sid uint64, filename string, tok string) (*CancelVideoUploadResponse, error) {
 	path := "/media/cancel_video_upload"
 	resp := new(CancelVideoUploadResponse)
-	err := s.client.WithMerchant(sid, tok).Upload(ctx, path, "image", filename, resp)
+	err := s.client.Upload(ctx, path, "image", filename, resp, sid, tok)
 	return resp, err
 }
 
 func (s *MediaServiceOp[T]) CancelVideoUploadFromReader(ctx context.Context, sid uint64, filename string, reader io.Reader, tok string) (*CancelVideoUploadResponse, error) {
 	path := "/media/cancel_video_upload"
 	resp := new(CancelVideoUploadResponse)
-	err := s.client.WithMerchant(sid, tok).UploadFromReader(ctx, path, "image", filename, reader, resp)
+	err := s.client.UploadFromReader(ctx, path, "image", filename, reader, resp, sid, tok)
 	return resp, err
 }
 
@@ -65,14 +65,14 @@ func (s *MediaServiceOp[T]) CancelVideoUploadFromReader(ctx context.Context, sid
 func (s *MediaServiceOp[T]) CompleteVideoUpload(ctx context.Context, sid uint64, filename string, tok string) (*CompleteVideoUploadResponse, error) {
 	path := "/media/complete_video_upload"
 	resp := new(CompleteVideoUploadResponse)
-	err := s.client.WithMerchant(sid, tok).Upload(ctx, path, "image", filename, resp)
+	err := s.client.Upload(ctx, path, "image", filename, resp, sid, tok)
 	return resp, err
 }
 
 func (s *MediaServiceOp[T]) CompleteVideoUploadFromReader(ctx context.Context, sid uint64, filename string, reader io.Reader, tok string) (*CompleteVideoUploadResponse, error) {
 	path := "/media/complete_video_upload"
 	resp := new(CompleteVideoUploadResponse)
-	err := s.client.WithMerchant(sid, tok).UploadFromReader(ctx, path, "image", filename, reader, resp)
+	err := s.client.UploadFromReader(ctx, path, "image", filename, reader, resp, sid, tok)
 	return resp, err
 }
 
@@ -82,14 +82,14 @@ func (s *MediaServiceOp[T]) CompleteVideoUploadFromReader(ctx context.Context, s
 func (s *MediaServiceOp[T]) GetVideoUploadResult(ctx context.Context, sid uint64, filename string, tok string) (*GetVideoUploadResultResponse, error) {
 	path := "/media/get_video_upload_result"
 	resp := new(GetVideoUploadResultResponse)
-	err := s.client.WithMerchant(sid, tok).Upload(ctx, path, "image", filename, resp)
+	err := s.client.Upload(ctx, path, "image", filename, resp, sid, tok)
 	return resp, err
 }
 
 func (s *MediaServiceOp[T]) GetVideoUploadResultFromReader(ctx context.Context, sid uint64, filename string, reader io.Reader, tok string) (*GetVideoUploadResultResponse, error) {
 	path := "/media/get_video_upload_result"
 	resp := new(GetVideoUploadResultResponse)
-	err := s.client.WithMerchant(sid, tok).UploadFromReader(ctx, path, "image", filename, reader, resp)
+	err := s.client.UploadFromReader(ctx, path, "image", filename, reader, resp, sid, tok)
 	return resp, err
 }
 
@@ -99,14 +99,14 @@ func (s *MediaServiceOp[T]) GetVideoUploadResultFromReader(ctx context.Context, 
 func (s *MediaServiceOp[T]) InitVideoUpload(ctx context.Context, sid uint64, filename string, tok string) (*InitVideoUploadResponse, error) {
 	path := "/media/init_video_upload"
 	resp := new(InitVideoUploadResponse)
-	err := s.client.WithMerchant(sid, tok).Upload(ctx, path, "image", filename, resp)
+	err := s.client.Upload(ctx, path, "image", filename, resp, sid, tok)
 	return resp, err
 }
 
 func (s *MediaServiceOp[T]) InitVideoUploadFromReader(ctx context.Context, sid uint64, filename string, reader io.Reader, tok string) (*InitVideoUploadResponse, error) {
 	path := "/media/init_video_upload"
 	resp := new(InitVideoUploadResponse)
-	err := s.client.WithMerchant(sid, tok).UploadFromReader(ctx, path, "image", filename, reader, resp)
+	err := s.client.UploadFromReader(ctx, path, "image", filename, reader, resp, sid, tok)
 	return resp, err
 }
 
@@ -116,14 +116,14 @@ func (s *MediaServiceOp[T]) InitVideoUploadFromReader(ctx context.Context, sid u
 func (s *MediaServiceOp[T]) UploadImage(ctx context.Context, sid uint64, filename string, tok string) (*MediaUploadImageResponse, error) {
 	path := "/media/upload_image"
 	resp := new(MediaUploadImageResponse)
-	err := s.client.WithMerchant(sid, tok).Upload(ctx, path, "image", filename, resp)
+	err := s.client.Upload(ctx, path, "image", filename, resp, sid, tok)
 	return resp, err
 }
 
 func (s *MediaServiceOp[T]) UploadImageFromReader(ctx context.Context, sid uint64, filename string, reader io.Reader, tok string) (*MediaUploadImageResponse, error) {
 	path := "/media/upload_image"
 	resp := new(MediaUploadImageResponse)
-	err := s.client.WithMerchant(sid, tok).UploadFromReader(ctx, path, "image", filename, reader, resp)
+	err := s.client.UploadFromReader(ctx, path, "image", filename, reader, resp, sid, tok)
 	return resp, err
 }
 
@@ -133,13 +133,13 @@ func (s *MediaServiceOp[T]) UploadImageFromReader(ctx context.Context, sid uint6
 func (s *MediaServiceOp[T]) UploadVideoPart(ctx context.Context, sid uint64, filename string, tok string) (*UploadVideoPartResponse, error) {
 	path := "/media/upload_video_part"
 	resp := new(UploadVideoPartResponse)
-	err := s.client.WithMerchant(sid, tok).Upload(ctx, path, "image", filename, resp)
+	err := s.client.Upload(ctx, path, "image", filename, resp, sid, tok)
 	return resp, err
 }
 
 func (s *MediaServiceOp[T]) UploadVideoPartFromReader(ctx context.Context, sid uint64, filename string, reader io.Reader, tok string) (*UploadVideoPartResponse, error) {
 	path := "/media/upload_video_part"
 	resp := new(UploadVideoPartResponse)
-	err := s.client.WithMerchant(sid, tok).UploadFromReader(ctx, path, "image", filename, reader, resp)
+	err := s.client.UploadFromReader(ctx, path, "image", filename, reader, resp, sid, tok)
 	return resp, err
 }

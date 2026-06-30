@@ -18,6 +18,7 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/google/go-querystring/query"
@@ -36,6 +37,23 @@ type App struct {
 	APIURL      string `env:"API_URL"`
 }
 
+type requestAuth struct {
+	shopID     uint64
+	merchantID uint64
+	token      string
+}
+
+type authKeyType struct{}
+
+var authKey = authKeyType{}
+
+func authFromContext(ctx context.Context) requestAuth {
+	if v, ok := ctx.Value(authKey).(requestAuth); ok {
+		return v
+	}
+	return requestAuth{}
+}
+
 type RateLimitInfo struct {
 	RequestCount      int
 	BucketSize        int
@@ -43,6 +61,7 @@ type RateLimitInfo struct {
 }
 
 type Client[T any] struct {
+	mu     sync.Mutex
 	Client *http.Client
 	log    LeveledLoggerInterface
 
@@ -54,10 +73,6 @@ type Client[T any] struct {
 	attempts int
 
 	RateLimits RateLimitInfo
-
-	ShopID      uint64
-	MerchantID  uint64
-	AccessToken string
 
 	RefreshToken   string
 	OnTokenRefresh func(res *RefreshAccessTokenResponse, meta T)
@@ -205,7 +220,7 @@ type RateLimitError struct {
 	RetryAfter int
 }
 
-func (c *Client[T]) NewRequest(ctx context.Context, method, relPath string, body, options, headers interface{}) (*http.Request, error) {
+func (c *Client[T]) NewRequest(ctx context.Context, method, relPath string, body, options, headers interface{}, sid uint64, mid uint64, tok string) (*http.Request, error) {
 	rel, err := url.Parse(relPath)
 	if err != nil {
 		return nil, err
@@ -260,6 +275,7 @@ func (c *Client[T]) NewRequest(ctx context.Context, method, relPath string, body
 		}
 	}
 
+	ctx = context.WithValue(ctx, authKey, requestAuth{shopID: sid, merchantID: mid, token: tok})
 	req, err := http.NewRequestWithContext(ctx, method, u.String(), bytes.NewBuffer(js))
 	if err != nil {
 		return nil, err
@@ -269,26 +285,9 @@ func (c *Client[T]) NewRequest(ctx context.Context, method, relPath string, body
 	req.Header.Add("Accept", "application/json")
 	req.Header.Add("User-Agent", UserAgent)
 
-	c.makeSignature(req)
+	c.makeSignature(req, sid, mid, tok)
 
 	return req, nil
-}
-
-func (c *Client[T]) WithShop(sid uint64, tok string) *Client[T] {
-	c.ShopID = sid
-	c.AccessToken = tok
-	return c
-}
-
-func (c *Client[T]) WithMerchant(mid uint64, tok string) *Client[T] {
-	c.MerchantID = mid
-	c.AccessToken = tok
-	return c
-}
-
-func (c *Client[T]) WithToken(tok string) *Client[T] {
-	c.AccessToken = tok
-	return c
 }
 
 func (c *Client[T]) WithRefreshToken(tok string) *Client[T] {
@@ -306,7 +305,7 @@ func (c *Client[T]) WithMeta(meta T) *Client[T] {
 	return c
 }
 
-func (c *Client[T]) makeSignature(req *http.Request) (string, int64) {
+func (c *Client[T]) makeSignature(req *http.Request, sid uint64, mid uint64, tok string) (string, int64) {
 	ts := time.Now().Unix()
 	path := req.URL.Path
 
@@ -320,14 +319,14 @@ func (c *Client[T]) makeSignature(req *http.Request) (string, int64) {
 		isPublicApi = true
 	}
 
-	if c.ShopID != 0 && !isPublicApi {
-		baseStr = fmt.Sprintf("%d%s%d%s%d", c.app.PartnerID, path, ts, c.AccessToken, c.ShopID)
-		query.Set("shop_id", fmt.Sprintf("%v", c.ShopID))
-		query.Set("access_token", c.AccessToken)
-	} else if c.MerchantID != 0 && !isPublicApi {
-		baseStr = fmt.Sprintf("%d%s%d%s%d", c.app.PartnerID, path, ts, c.AccessToken, c.MerchantID)
-		query.Set("merchant_id", fmt.Sprintf("%v", c.MerchantID))
-		query.Set("access_token", c.AccessToken)
+	if sid != 0 && !isPublicApi {
+		baseStr = fmt.Sprintf("%d%s%d%s%d", c.app.PartnerID, path, ts, tok, sid)
+		query.Set("shop_id", fmt.Sprintf("%v", sid))
+		query.Set("access_token", tok)
+	} else if mid != 0 && !isPublicApi {
+		baseStr = fmt.Sprintf("%d%s%d%s%d", c.app.PartnerID, path, ts, tok, mid)
+		query.Set("merchant_id", fmt.Sprintf("%v", mid))
+		query.Set("access_token", tok)
 	} else {
 		baseStr = fmt.Sprintf("%d%s%d", c.app.PartnerID, path, ts)
 	}
@@ -376,14 +375,16 @@ func (c *Client[T]) doGetHeaders(req *http.Request, v interface{}, skipBody bool
 			}
 
 			if shopeeErr == "error_invalid_access_token" || shopeeErr == "error_access_token_expired" || shopeeErr == "invalid_access_token" || shopeeErr == "invalid_acceess_token" {
-				refreshRes, err := c.Auth.RefreshAccessToken(req.Context(), c.ShopID, c.MerchantID, c.RefreshToken)
+				a := authFromContext(req.Context())
+				refreshRes, err := c.Auth.RefreshAccessToken(req.Context(), a.shopID, a.merchantID, c.RefreshToken)
 				if err == nil {
-					c.AccessToken = refreshRes.AccessToken
+					c.mu.Lock()
 					c.RefreshToken = refreshRes.RefreshToken
 					if c.OnTokenRefresh != nil {
 						c.OnTokenRefresh(refreshRes, c.Meta)
 					}
-					c.makeSignature(req)
+					c.mu.Unlock()
+					c.makeSignature(req, a.shopID, a.merchantID, refreshRes.AccessToken)
 					resp.Body.Close()
 					continue
 				}
@@ -517,41 +518,41 @@ func CheckResponseError(r *http.Response) error {
 	return wrapSpecificError(r, responseError)
 }
 
-func (c *Client[T]) CreateAndDo(ctx context.Context, method, relPath string, data, options, headers, resource interface{}) error {
-	_, err := c.createAndDoGetHeaders(ctx, method, relPath, data, options, headers, resource)
+func (c *Client[T]) CreateAndDo(ctx context.Context, method, relPath string, data, options, headers, resource interface{}, sid uint64, mid uint64, tok string) error {
+	_, err := c.createAndDoGetHeaders(ctx, method, relPath, data, options, headers, resource, sid, mid, tok)
 	return err
 }
 
-func (c *Client[T]) createAndDoGetHeaders(ctx context.Context, method, relPath string, data, options, headers, resource interface{}) (http.Header, error) {
+func (c *Client[T]) createAndDoGetHeaders(ctx context.Context, method, relPath string, data, options, headers, resource interface{}, sid uint64, mid uint64, tok string) (http.Header, error) {
 	if strings.HasPrefix(relPath, "/") {
 		relPath = strings.TrimLeft(relPath, "/")
 	}
 	relPath = path.Join("api/v2", relPath)
-	req, err := c.NewRequest(ctx, method, relPath, data, options, headers)
+	req, err := c.NewRequest(ctx, method, relPath, data, options, headers, sid, mid, tok)
 	if err != nil {
 		return nil, err
 	}
 	return c.doGetHeaders(req, resource, false)
 }
 
-func (c *Client[T]) Get(ctx context.Context, path string, resource, options interface{}) error {
-	return c.CreateAndDo(ctx, "GET", path, nil, options, nil, resource)
+func (c *Client[T]) Get(ctx context.Context, path string, resource, options interface{}, sid uint64, tok string) error {
+	return c.CreateAndDo(ctx, "GET", path, nil, options, nil, resource, sid, 0, tok)
 }
 
-func (c *Client[T]) Post(ctx context.Context, path string, data, resource interface{}) error {
-	return c.CreateAndDo(ctx, "POST", path, data, nil, nil, resource)
+func (c *Client[T]) Post(ctx context.Context, path string, data, resource interface{}, sid uint64, tok string) error {
+	return c.CreateAndDo(ctx, "POST", path, data, nil, nil, resource, sid, 0, tok)
 }
 
-func (c *Client[T]) Put(ctx context.Context, path string, data, resource interface{}) error {
-	return c.CreateAndDo(ctx, "PUT", path, data, nil, nil, resource)
+func (c *Client[T]) Put(ctx context.Context, path string, data, resource interface{}, sid uint64, tok string) error {
+	return c.CreateAndDo(ctx, "PUT", path, data, nil, nil, resource, sid, 0, tok)
 }
 
-func (c *Client[T]) Delete(ctx context.Context, path string) error {
-	return c.CreateAndDo(ctx, "DELETE", path, nil, nil, nil, nil)
+func (c *Client[T]) Delete(ctx context.Context, path string, sid uint64, tok string) error {
+	return c.CreateAndDo(ctx, "DELETE", path, nil, nil, nil, nil, sid, 0, tok)
 }
 
-func (c *Client[T]) Upload(ctx context.Context, relPath, fieldname, filename string, resource interface{}) error {
-	req, err := c.NewfileUploadRequest(ctx, relPath, fieldname, filename)
+func (c *Client[T]) Upload(ctx context.Context, relPath, fieldname, filename string, resource interface{}, sid uint64, tok string) error {
+	req, err := c.NewfileUploadRequest(ctx, relPath, fieldname, filename, sid, tok)
 	if err != nil {
 		return err
 	}
@@ -559,8 +560,8 @@ func (c *Client[T]) Upload(ctx context.Context, relPath, fieldname, filename str
 	return err
 }
 
-func (c *Client[T]) UploadFromReader(ctx context.Context, relPath, fieldname, filename string, reader io.Reader, resource interface{}) error {
-	req, err := c.NewUploadFromReaderRequest(ctx, relPath, fieldname, filename, reader)
+func (c *Client[T]) UploadFromReader(ctx context.Context, relPath, fieldname, filename string, reader io.Reader, resource interface{}, sid uint64, tok string) error {
+	req, err := c.NewUploadFromReaderRequest(ctx, relPath, fieldname, filename, reader, sid, tok)
 	if err != nil {
 		return err
 	}
@@ -568,7 +569,7 @@ func (c *Client[T]) UploadFromReader(ctx context.Context, relPath, fieldname, fi
 	return err
 }
 
-func (c *Client[T]) NewfileUploadRequest(ctx context.Context, relPath, paramName, filename string) (*http.Request, error) {
+func (c *Client[T]) NewfileUploadRequest(ctx context.Context, relPath, paramName, filename string, sid uint64, tok string) (*http.Request, error) {
 	if strings.HasPrefix(relPath, "/") {
 		relPath = strings.TrimLeft(relPath, "/")
 	}
@@ -600,6 +601,7 @@ func (c *Client[T]) NewfileUploadRequest(ctx context.Context, relPath, paramName
 		return nil, err
 	}
 
+	ctx = context.WithValue(ctx, authKey, requestAuth{shopID: sid, token: tok})
 	req, err := http.NewRequestWithContext(ctx, "POST", uri, body)
 	if err != nil {
 		return nil, err
@@ -607,12 +609,12 @@ func (c *Client[T]) NewfileUploadRequest(ctx context.Context, relPath, paramName
 	req.Header.Set("Content-Type", writer.FormDataContentType())
 	req.Header.Add("Accept", "application/json")
 	req.Header.Add("User-Agent", UserAgent)
-	c.makeSignature(req)
+	c.makeSignature(req, sid, 0, tok)
 
 	return req, nil
 }
 
-func (c *Client[T]) NewUploadFromReaderRequest(ctx context.Context, relPath, paramName, filename string, reader io.Reader) (*http.Request, error) {
+func (c *Client[T]) NewUploadFromReaderRequest(ctx context.Context, relPath, paramName, filename string, reader io.Reader, sid uint64, tok string) (*http.Request, error) {
 	if strings.HasPrefix(relPath, "/") {
 		relPath = strings.TrimLeft(relPath, "/")
 	}
@@ -638,6 +640,7 @@ func (c *Client[T]) NewUploadFromReaderRequest(ctx context.Context, relPath, par
 		return nil, err
 	}
 
+	ctx = context.WithValue(ctx, authKey, requestAuth{shopID: sid, token: tok})
 	req, err := http.NewRequestWithContext(ctx, "POST", uri, body)
 	if err != nil {
 		return nil, err
@@ -645,7 +648,7 @@ func (c *Client[T]) NewUploadFromReaderRequest(ctx context.Context, relPath, par
 	req.Header.Set("Content-Type", writer.FormDataContentType())
 	req.Header.Add("Accept", "application/json")
 	req.Header.Add("User-Agent", UserAgent)
-	c.makeSignature(req)
+	c.makeSignature(req, sid, 0, tok)
 
 	return req, nil
 }

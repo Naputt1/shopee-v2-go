@@ -53,7 +53,7 @@ type ShopServiceOp[T any] struct {
 func (s *ShopServiceOp[T]) GetAuthorisedResellerBrand(ctx context.Context, sid uint64, opt GetAuthorisedResellerBrandRequest, tok string) (*GetAuthorisedResellerBrandResponse, error) {
 	path := "/shop/get_authorised_reseller_brand"
 	resp := new(GetAuthorisedResellerBrandResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -63,7 +63,7 @@ func (s *ShopServiceOp[T]) GetAuthorisedResellerBrand(ctx context.Context, sid u
 func (s *ShopServiceOp[T]) GetBrShopOnboardingInfo(ctx context.Context, sid uint64, tok string) (*GetBrShopOnboardingInfoResponse, error) {
 	path := "/shop/get_br_shop_onboarding_info"
 	resp := new(GetBrShopOnboardingInfoResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -73,7 +73,7 @@ func (s *ShopServiceOp[T]) GetBrShopOnboardingInfo(ctx context.Context, sid uint
 func (s *ShopServiceOp[T]) GetProfile(ctx context.Context, sid uint64, tok string) (*GetProfileResponse, error) {
 	path := "/shop/get_profile"
 	resp := new(GetProfileResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -83,7 +83,7 @@ func (s *ShopServiceOp[T]) GetProfile(ctx context.Context, sid uint64, tok strin
 func (s *ShopServiceOp[T]) GetShopHolidayMode(ctx context.Context, sid uint64, tok string) (*GetShopHolidayModeResponse, error) {
 	path := "/shop/get_shop_holiday_mode"
 	resp := new(GetShopHolidayModeResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -93,7 +93,7 @@ func (s *ShopServiceOp[T]) GetShopHolidayMode(ctx context.Context, sid uint64, t
 func (s *ShopServiceOp[T]) GetShopInfo(ctx context.Context, sid uint64, tok string) (*GetShopInfoResponse, error) {
 	path := "/shop/get_shop_info"
 	resp := new(GetShopInfoResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -103,7 +103,7 @@ func (s *ShopServiceOp[T]) GetShopInfo(ctx context.Context, sid uint64, tok stri
 func (s *ShopServiceOp[T]) GetShopNotification(ctx context.Context, sid uint64, opt GetShopNotificationRequest, tok string) (*GetShopNotificationResponse, error) {
 	path := "/shop/get_shop_notification"
 	resp := new(GetShopNotificationResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -113,7 +113,7 @@ func (s *ShopServiceOp[T]) GetShopNotification(ctx context.Context, sid uint64, 
 func (s *ShopServiceOp[T]) GetWarehouseDetail(ctx context.Context, sid uint64, opt GetWarehouseDetailRequest, tok string) (*GetWarehouseDetailResponse, error) {
 	path := "/shop/get_warehouse_detail"
 	resp := new(GetWarehouseDetailResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -123,7 +123,7 @@ func (s *ShopServiceOp[T]) GetWarehouseDetail(ctx context.Context, sid uint64, o
 func (s *ShopServiceOp[T]) SetShopHolidayMode(ctx context.Context, sid uint64, req SetShopHolidayModeRequest, tok string) (*SetShopHolidayModeResponse, error) {
 	path := "/shop/set_shop_holiday_mode"
 	resp := new(SetShopHolidayModeResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -133,6 +133,6 @@ func (s *ShopServiceOp[T]) SetShopHolidayMode(ctx context.Context, sid uint64, r
 func (s *ShopServiceOp[T]) UpdateProfile(ctx context.Context, sid uint64, req UpdateProfileRequest, tok string) (*UpdateProfileResponse, error) {
 	path := "/shop/update_profile"
 	resp := new(UpdateProfileResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }

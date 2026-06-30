@@ -111,7 +111,7 @@ type OrderServiceOp[T any] struct {
 func (s *OrderServiceOp[T]) CancelOrder(ctx context.Context, sid uint64, req CancelOrderRequest, tok string) (*CancelOrderResponse, error) {
 	path := "/order/cancel_order"
 	resp := new(CancelOrderResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -121,7 +121,7 @@ func (s *OrderServiceOp[T]) CancelOrder(ctx context.Context, sid uint64, req Can
 func (s *OrderServiceOp[T]) DownloadFbsInvoices(ctx context.Context, sid uint64, req DownloadFbsInvoicesRequest, tok string) (*DownloadFbsInvoicesResponse, error) {
 	path := "/order/download_fbs_invoices"
 	resp := new(DownloadFbsInvoicesResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -132,7 +132,7 @@ func (s *OrderServiceOp[T]) DownloadFbsInvoices(ctx context.Context, sid uint64,
 func (s *OrderServiceOp[T]) DownloadInvoiceDoc(ctx context.Context, sid uint64, opt DownloadInvoiceDocRequest, tok string) (*DownloadInvoiceDocResponse, error) {
 	path := "/order/download_invoice_doc"
 	resp := new(DownloadInvoiceDocResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -144,7 +144,7 @@ func (s *OrderServiceOp[T]) DownloadInvoiceDoc(ctx context.Context, sid uint64, 
 func (s *OrderServiceOp[T]) GenerateFbsInvoices(ctx context.Context, sid uint64, req GenerateFbsInvoicesRequest, tok string) (*GenerateFbsInvoicesResponse, error) {
 	path := "/order/generate_fbs_invoices"
 	resp := new(GenerateFbsInvoicesResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -154,7 +154,7 @@ func (s *OrderServiceOp[T]) GenerateFbsInvoices(ctx context.Context, sid uint64,
 func (s *OrderServiceOp[T]) GetBookingDetail(ctx context.Context, sid uint64, opt GetBookingDetailRequest, tok string) (*GetBookingDetailResponse, error) {
 	path := "/order/get_booking_detail"
 	resp := new(GetBookingDetailResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -164,7 +164,7 @@ func (s *OrderServiceOp[T]) GetBookingDetail(ctx context.Context, sid uint64, op
 func (s *OrderServiceOp[T]) GetBookingList(ctx context.Context, sid uint64, opt GetBookingListRequest, tok string) (*GetBookingListResponse, error) {
 	path := "/order/get_booking_list"
 	resp := new(GetBookingListResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -174,7 +174,7 @@ func (s *OrderServiceOp[T]) GetBookingList(ctx context.Context, sid uint64, opt 
 func (s *OrderServiceOp[T]) GetBuyerInvoiceInfo(ctx context.Context, sid uint64, req GetBuyerInvoiceInfoRequest, tok string) (*GetBuyerInvoiceInfoResponse, error) {
 	path := "/order/get_buyer_invoice_info"
 	resp := new(GetBuyerInvoiceInfoResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -184,7 +184,7 @@ func (s *OrderServiceOp[T]) GetBuyerInvoiceInfo(ctx context.Context, sid uint64,
 func (s *OrderServiceOp[T]) GetEstimateCancelValue(ctx context.Context, sid uint64, req GetEstimateCancelValueRequest, tok string) (*GetEstimateCancelValueResponse, error) {
 	path := "/order/get_estimate_cancel_value"
 	resp := new(GetEstimateCancelValueResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -194,7 +194,7 @@ func (s *OrderServiceOp[T]) GetEstimateCancelValue(ctx context.Context, sid uint
 func (s *OrderServiceOp[T]) GetFbsInvoicesResult(ctx context.Context, sid uint64, req GetFbsInvoicesResultRequest, tok string) (*GetFbsInvoicesResultResponse, error) {
 	path := "/order/get_fbs_invoices_result"
 	resp := new(GetFbsInvoicesResultResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -204,7 +204,7 @@ func (s *OrderServiceOp[T]) GetFbsInvoicesResult(ctx context.Context, sid uint64
 func (s *OrderServiceOp[T]) GetOrderDetail(ctx context.Context, sid uint64, opt GetOrderDetailRequest, tok string) (*GetOrderDetailResponse, error) {
 	path := "/order/get_order_detail"
 	resp := new(GetOrderDetailResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -214,7 +214,7 @@ func (s *OrderServiceOp[T]) GetOrderDetail(ctx context.Context, sid uint64, opt 
 func (s *OrderServiceOp[T]) GetOrderList(ctx context.Context, sid uint64, opt GetOrderListRequest, tok string) (*GetOrderListResponse, error) {
 	path := "/order/get_order_list"
 	resp := new(GetOrderListResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -224,7 +224,7 @@ func (s *OrderServiceOp[T]) GetOrderList(ctx context.Context, sid uint64, opt Ge
 func (s *OrderServiceOp[T]) GetPackageDetail(ctx context.Context, sid uint64, opt GetPackageDetailRequest, tok string) (*GetPackageDetailResponse, error) {
 	path := "/order/get_package_detail"
 	resp := new(GetPackageDetailResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -234,7 +234,7 @@ func (s *OrderServiceOp[T]) GetPackageDetail(ctx context.Context, sid uint64, op
 func (s *OrderServiceOp[T]) GetPendingBuyerInvoiceOrderList(ctx context.Context, sid uint64, opt GetPendingBuyerInvoiceOrderListRequest, tok string) (*GetPendingBuyerInvoiceOrderListResponse, error) {
 	path := "/order/get_pending_buyer_invoice_order_list"
 	resp := new(GetPendingBuyerInvoiceOrderListResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -244,7 +244,7 @@ func (s *OrderServiceOp[T]) GetPendingBuyerInvoiceOrderList(ctx context.Context,
 func (s *OrderServiceOp[T]) GetShipmentList(ctx context.Context, sid uint64, opt GetShipmentListRequest, tok string) (*GetShipmentListResponse, error) {
 	path := "/order/get_shipment_list"
 	resp := new(GetShipmentListResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -254,7 +254,7 @@ func (s *OrderServiceOp[T]) GetShipmentList(ctx context.Context, sid uint64, opt
 func (s *OrderServiceOp[T]) GetWarehouseFilterConfig(ctx context.Context, sid uint64, tok string) (*GetWarehouseFilterConfigResponse, error) {
 	path := "/order/get_warehouse_filter_config"
 	resp := new(GetWarehouseFilterConfigResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -264,7 +264,7 @@ func (s *OrderServiceOp[T]) GetWarehouseFilterConfig(ctx context.Context, sid ui
 func (s *OrderServiceOp[T]) HandleBuyerCancellation(ctx context.Context, sid uint64, req HandleBuyerCancellationRequest, tok string) (*HandleBuyerCancellationResponse, error) {
 	path := "/order/handle_buyer_cancellation"
 	resp := new(HandleBuyerCancellationResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -274,7 +274,7 @@ func (s *OrderServiceOp[T]) HandleBuyerCancellation(ctx context.Context, sid uin
 func (s *OrderServiceOp[T]) HandlePrescriptionCheck(ctx context.Context, sid uint64, req HandlePrescriptionCheckRequest, tok string) (*HandlePrescriptionCheckResponse, error) {
 	path := "/order/handle_prescription_check"
 	resp := new(HandlePrescriptionCheckResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -284,7 +284,7 @@ func (s *OrderServiceOp[T]) HandlePrescriptionCheck(ctx context.Context, sid uin
 func (s *OrderServiceOp[T]) SearchPackageList(ctx context.Context, sid uint64, req SearchPackageListRequest, tok string) (*SearchPackageListResponse, error) {
 	path := "/order/search_package_list"
 	resp := new(SearchPackageListResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -294,7 +294,7 @@ func (s *OrderServiceOp[T]) SearchPackageList(ctx context.Context, sid uint64, r
 func (s *OrderServiceOp[T]) SetNote(ctx context.Context, sid uint64, req SetNoteRequest, tok string) (*SetNoteResponse, error) {
 	path := "/order/set_note"
 	resp := new(SetNoteResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -304,7 +304,7 @@ func (s *OrderServiceOp[T]) SetNote(ctx context.Context, sid uint64, req SetNote
 func (s *OrderServiceOp[T]) SplitOrder(ctx context.Context, sid uint64, req SplitOrderRequest, tok string) (*SplitOrderResponse, error) {
 	path := "/order/split_order"
 	resp := new(SplitOrderResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -314,7 +314,7 @@ func (s *OrderServiceOp[T]) SplitOrder(ctx context.Context, sid uint64, req Spli
 func (s *OrderServiceOp[T]) UnsplitOrder(ctx context.Context, sid uint64, req UnsplitOrderRequest, tok string) (*UnsplitOrderResponse, error) {
 	path := "/order/unsplit_order"
 	resp := new(UnsplitOrderResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -325,13 +325,13 @@ func (s *OrderServiceOp[T]) UnsplitOrder(ctx context.Context, sid uint64, req Un
 func (s *OrderServiceOp[T]) UploadInvoiceDoc(ctx context.Context, sid uint64, filename string, tok string) (*UploadInvoiceDocResponse, error) {
 	path := "/order/upload_invoice_doc"
 	resp := new(UploadInvoiceDocResponse)
-	err := s.client.WithShop(sid, tok).Upload(ctx, path, "image", filename, resp)
+	err := s.client.Upload(ctx, path, "image", filename, resp, sid, tok)
 	return resp, err
 }
 
 func (s *OrderServiceOp[T]) UploadInvoiceDocFromReader(ctx context.Context, sid uint64, filename string, reader io.Reader, tok string) (*UploadInvoiceDocResponse, error) {
 	path := "/order/upload_invoice_doc"
 	resp := new(UploadInvoiceDocResponse)
-	err := s.client.WithShop(sid, tok).UploadFromReader(ctx, path, "image", filename, reader, resp)
+	err := s.client.UploadFromReader(ctx, path, "image", filename, reader, resp, sid, tok)
 	return resp, err
 }

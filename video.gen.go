@@ -77,7 +77,7 @@ type VideoServiceOp[T any] struct {
 func (s *VideoServiceOp[T]) DeleteVideo(ctx context.Context, sid uint64, req DeleteVideoRequest, tok string) (*DeleteVideoResponse, error) {
 	path := "/video/delete_video"
 	resp := new(DeleteVideoResponse)
-	err := s.client.Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -87,7 +87,7 @@ func (s *VideoServiceOp[T]) DeleteVideo(ctx context.Context, sid uint64, req Del
 func (s *VideoServiceOp[T]) EditVideoInfo(ctx context.Context, sid uint64, req EditVideoInfoRequest, tok string) (*EditVideoInfoResponse, error) {
 	path := "/video/edit_video_info"
 	resp := new(EditVideoInfoResponse)
-	err := s.client.Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -97,7 +97,7 @@ func (s *VideoServiceOp[T]) EditVideoInfo(ctx context.Context, sid uint64, req E
 func (s *VideoServiceOp[T]) GetCoverList(ctx context.Context, sid uint64, opt GetCoverListRequest, tok string) (*GetCoverListResponse, error) {
 	path := "/video/get_cover_list"
 	resp := new(GetCoverListResponse)
-	err := s.client.Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -107,7 +107,7 @@ func (s *VideoServiceOp[T]) GetCoverList(ctx context.Context, sid uint64, opt Ge
 func (s *VideoServiceOp[T]) GetMetricTrend(ctx context.Context, sid uint64, opt GetMetricTrendRequest, tok string) (*GetMetricTrendResponse, error) {
 	path := "/video/get_metric_trend"
 	resp := new(GetMetricTrendResponse)
-	err := s.client.Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -117,7 +117,7 @@ func (s *VideoServiceOp[T]) GetMetricTrend(ctx context.Context, sid uint64, opt 
 func (s *VideoServiceOp[T]) GetOverviewPerformance(ctx context.Context, sid uint64, opt GetOverviewPerformanceRequest, tok string) (*GetOverviewPerformanceResponse, error) {
 	path := "/video/get_overview_performance"
 	resp := new(GetOverviewPerformanceResponse)
-	err := s.client.Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -127,7 +127,7 @@ func (s *VideoServiceOp[T]) GetOverviewPerformance(ctx context.Context, sid uint
 func (s *VideoServiceOp[T]) GetProdcutPerformanceList(ctx context.Context, sid uint64, opt GetProdcutPerformanceListRequest, tok string) (*GetProdcutPerformanceListResponse, error) {
 	path := "/video/get_prodcut_performance_list"
 	resp := new(GetProdcutPerformanceListResponse)
-	err := s.client.Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -137,7 +137,7 @@ func (s *VideoServiceOp[T]) GetProdcutPerformanceList(ctx context.Context, sid u
 func (s *VideoServiceOp[T]) GetUserDemographics(ctx context.Context, sid uint64, tok string) (*GetUserDemographicsResponse, error) {
 	path := "/video/get_user_demographics"
 	resp := new(GetUserDemographicsResponse)
-	err := s.client.Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -147,7 +147,7 @@ func (s *VideoServiceOp[T]) GetUserDemographics(ctx context.Context, sid uint64,
 func (s *VideoServiceOp[T]) GetVideoDetail(ctx context.Context, sid uint64, opt GetVideoDetailRequest, tok string) (*GetVideoDetailResponse, error) {
 	path := "/video/get_video_detail"
 	resp := new(GetVideoDetailResponse)
-	err := s.client.Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -157,7 +157,7 @@ func (s *VideoServiceOp[T]) GetVideoDetail(ctx context.Context, sid uint64, opt 
 func (s *VideoServiceOp[T]) GetVideoDetailAudienceDistribution(ctx context.Context, sid uint64, opt GetVideoDetailAudienceDistributionRequest, tok string) (*GetVideoDetailAudienceDistributionResponse, error) {
 	path := "/video/get_video_detail_audience_distribution"
 	resp := new(GetVideoDetailAudienceDistributionResponse)
-	err := s.client.Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -167,7 +167,7 @@ func (s *VideoServiceOp[T]) GetVideoDetailAudienceDistribution(ctx context.Conte
 func (s *VideoServiceOp[T]) GetVideoDetailMetricTrend(ctx context.Context, sid uint64, opt GetVideoDetailMetricTrendRequest, tok string) (*GetVideoDetailMetricTrendResponse, error) {
 	path := "/video/get_video_detail_metric_trend"
 	resp := new(GetVideoDetailMetricTrendResponse)
-	err := s.client.Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -177,7 +177,7 @@ func (s *VideoServiceOp[T]) GetVideoDetailMetricTrend(ctx context.Context, sid u
 func (s *VideoServiceOp[T]) GetVideoDetailPerformance(ctx context.Context, sid uint64, opt GetVideoDetailPerformanceRequest, tok string) (*GetVideoDetailPerformanceResponse, error) {
 	path := "/video/get_video_detail_performance"
 	resp := new(GetVideoDetailPerformanceResponse)
-	err := s.client.Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -187,7 +187,7 @@ func (s *VideoServiceOp[T]) GetVideoDetailPerformance(ctx context.Context, sid u
 func (s *VideoServiceOp[T]) GetVideoDetailProductPerformance(ctx context.Context, sid uint64, opt GetVideoDetailProductPerformanceRequest, tok string) (*GetVideoDetailProductPerformanceResponse, error) {
 	path := "/video/get_video_detail_product_performance"
 	resp := new(GetVideoDetailProductPerformanceResponse)
-	err := s.client.Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -197,7 +197,7 @@ func (s *VideoServiceOp[T]) GetVideoDetailProductPerformance(ctx context.Context
 func (s *VideoServiceOp[T]) GetVideoList(ctx context.Context, sid uint64, opt GetVideoListRequest, tok string) (*GetVideoListResponse, error) {
 	path := "/video/get_video_list"
 	resp := new(GetVideoListResponse)
-	err := s.client.Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -207,7 +207,7 @@ func (s *VideoServiceOp[T]) GetVideoList(ctx context.Context, sid uint64, opt Ge
 func (s *VideoServiceOp[T]) GetVideoPerformanceList(ctx context.Context, sid uint64, opt GetVideoPerformanceListRequest, tok string) (*GetVideoPerformanceListResponse, error) {
 	path := "/video/get_video_performance_list"
 	resp := new(GetVideoPerformanceListResponse)
-	err := s.client.Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -217,6 +217,6 @@ func (s *VideoServiceOp[T]) GetVideoPerformanceList(ctx context.Context, sid uin
 func (s *VideoServiceOp[T]) PostVideo(ctx context.Context, sid uint64, req PostVideoRequest, tok string) (*PostVideoResponse, error) {
 	path := "/video/post_video"
 	resp := new(PostVideoResponse)
-	err := s.client.Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }

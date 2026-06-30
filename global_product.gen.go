@@ -159,7 +159,7 @@ type GlobalProductServiceOp[T any] struct {
 func (s *GlobalProductServiceOp[T]) AddGlobalItem(ctx context.Context, sid uint64, req AddGlobalItemRequest, tok string) (*AddGlobalItemResponse, error) {
 	path := "/global_product/add_global_item"
 	resp := new(AddGlobalItemResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -170,7 +170,7 @@ func (s *GlobalProductServiceOp[T]) AddGlobalItem(ctx context.Context, sid uint6
 func (s *GlobalProductServiceOp[T]) AddGlobalModel(ctx context.Context, sid uint64, req AddGlobalModelRequest, tok string) (*AddGlobalModelResponse, error) {
 	path := "/global_product/add_global_model"
 	resp := new(AddGlobalModelResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -180,7 +180,7 @@ func (s *GlobalProductServiceOp[T]) AddGlobalModel(ctx context.Context, sid uint
 func (s *GlobalProductServiceOp[T]) CategoryRecommend(ctx context.Context, sid uint64, opt CategoryRecommendRequest, tok string) (*CategoryRecommendResponse, error) {
 	path := "/global_product/category_recommend"
 	resp := new(CategoryRecommendResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -190,7 +190,7 @@ func (s *GlobalProductServiceOp[T]) CategoryRecommend(ctx context.Context, sid u
 func (s *GlobalProductServiceOp[T]) CreatePublishTask(ctx context.Context, sid uint64, req CreatePublishTaskRequest, tok string) (*CreatePublishTaskResponse, error) {
 	path := "/global_product/create_publish_task"
 	resp := new(CreatePublishTaskResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -200,7 +200,7 @@ func (s *GlobalProductServiceOp[T]) CreatePublishTask(ctx context.Context, sid u
 func (s *GlobalProductServiceOp[T]) DeleteGlobalItem(ctx context.Context, sid uint64, req DeleteGlobalItemRequest, tok string) (*DeleteGlobalItemResponse, error) {
 	path := "/global_product/delete_global_item"
 	resp := new(DeleteGlobalItemResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -210,7 +210,7 @@ func (s *GlobalProductServiceOp[T]) DeleteGlobalItem(ctx context.Context, sid ui
 func (s *GlobalProductServiceOp[T]) DeleteGlobalModel(ctx context.Context, sid uint64, req DeleteGlobalModelRequest, tok string) (*DeleteGlobalModelResponse, error) {
 	path := "/global_product/delete_global_model"
 	resp := new(DeleteGlobalModelResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -220,7 +220,7 @@ func (s *GlobalProductServiceOp[T]) DeleteGlobalModel(ctx context.Context, sid u
 func (s *GlobalProductServiceOp[T]) GetAttributeTree(ctx context.Context, sid uint64, opt GetAttributeTreeRequest, tok string) (*GetAttributeTreeResponse, error) {
 	path := "/global_product/get_attribute_tree"
 	resp := new(GetAttributeTreeResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -230,7 +230,7 @@ func (s *GlobalProductServiceOp[T]) GetAttributeTree(ctx context.Context, sid ui
 func (s *GlobalProductServiceOp[T]) GetBrandList(ctx context.Context, sid uint64, opt GetBrandListRequest, tok string) (*GetBrandListResponse, error) {
 	path := "/global_product/get_brand_list"
 	resp := new(GetBrandListResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -240,7 +240,7 @@ func (s *GlobalProductServiceOp[T]) GetBrandList(ctx context.Context, sid uint64
 func (s *GlobalProductServiceOp[T]) GetCategory(ctx context.Context, sid uint64, opt GetCategoryRequest, tok string) (*GetCategoryResponse, error) {
 	path := "/global_product/get_category"
 	resp := new(GetCategoryResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -250,7 +250,7 @@ func (s *GlobalProductServiceOp[T]) GetCategory(ctx context.Context, sid uint64,
 func (s *GlobalProductServiceOp[T]) GetGlobalItemId(ctx context.Context, sid uint64, opt GetGlobalItemIdRequest, tok string) (*GetGlobalItemIdResponse, error) {
 	path := "/global_product/get_global_item_id"
 	resp := new(GetGlobalItemIdResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -260,7 +260,7 @@ func (s *GlobalProductServiceOp[T]) GetGlobalItemId(ctx context.Context, sid uin
 func (s *GlobalProductServiceOp[T]) GetGlobalItemInfo(ctx context.Context, sid uint64, opt GetGlobalItemInfoRequest, tok string) (*GetGlobalItemInfoResponse, error) {
 	path := "/global_product/get_global_item_info"
 	resp := new(GetGlobalItemInfoResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -270,7 +270,7 @@ func (s *GlobalProductServiceOp[T]) GetGlobalItemInfo(ctx context.Context, sid u
 func (s *GlobalProductServiceOp[T]) GetGlobalItemLimit(ctx context.Context, sid uint64, opt GetGlobalItemLimitRequest, tok string) (*GetGlobalItemLimitResponse, error) {
 	path := "/global_product/get_global_item_limit"
 	resp := new(GetGlobalItemLimitResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -280,7 +280,7 @@ func (s *GlobalProductServiceOp[T]) GetGlobalItemLimit(ctx context.Context, sid 
 func (s *GlobalProductServiceOp[T]) GetGlobalItemList(ctx context.Context, sid uint64, opt GetGlobalItemListRequest, tok string) (*GetGlobalItemListResponse, error) {
 	path := "/global_product/get_global_item_list"
 	resp := new(GetGlobalItemListResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -290,7 +290,7 @@ func (s *GlobalProductServiceOp[T]) GetGlobalItemList(ctx context.Context, sid u
 func (s *GlobalProductServiceOp[T]) GetGlobalModelList(ctx context.Context, sid uint64, opt GetGlobalModelListRequest, tok string) (*GetGlobalModelListResponse, error) {
 	path := "/global_product/get_global_model_list"
 	resp := new(GetGlobalModelListResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -300,7 +300,7 @@ func (s *GlobalProductServiceOp[T]) GetGlobalModelList(ctx context.Context, sid 
 func (s *GlobalProductServiceOp[T]) GetLocalAdjustmentRate(ctx context.Context, sid uint64, tok string) (*GetLocalAdjustmentRateResponse, error) {
 	path := "/global_product/get_local_adjustment_rate"
 	resp := new(GetLocalAdjustmentRateResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, nil, resp)
+	err := s.client.Post(ctx, path, nil, resp, sid, tok)
 	return resp, err
 }
 
@@ -311,7 +311,7 @@ func (s *GlobalProductServiceOp[T]) GetLocalAdjustmentRate(ctx context.Context, 
 func (s *GlobalProductServiceOp[T]) GetPublishableShop(ctx context.Context, sid uint64, opt GetPublishableShopRequest, tok string) (*GetPublishableShopResponse, error) {
 	path := "/global_product/get_publishable_shop"
 	resp := new(GetPublishableShopResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -322,7 +322,7 @@ func (s *GlobalProductServiceOp[T]) GetPublishableShop(ctx context.Context, sid 
 func (s *GlobalProductServiceOp[T]) GetPublishedList(ctx context.Context, sid uint64, opt GetPublishedListRequest, tok string) (*GetPublishedListResponse, error) {
 	path := "/global_product/get_published_list"
 	resp := new(GetPublishedListResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -332,7 +332,7 @@ func (s *GlobalProductServiceOp[T]) GetPublishedList(ctx context.Context, sid ui
 func (s *GlobalProductServiceOp[T]) GetPublishTaskResult(ctx context.Context, sid uint64, opt GetPublishTaskResultRequest, tok string) (*GetPublishTaskResultResponse, error) {
 	path := "/global_product/get_publish_task_result"
 	resp := new(GetPublishTaskResultResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -342,7 +342,7 @@ func (s *GlobalProductServiceOp[T]) GetPublishTaskResult(ctx context.Context, si
 func (s *GlobalProductServiceOp[T]) GetRecommendAttribute(ctx context.Context, sid uint64, opt GetRecommendAttributeRequest, tok string) (*GetRecommendAttributeResponse, error) {
 	path := "/global_product/get_recommend_attribute"
 	resp := new(GetRecommendAttributeResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -352,7 +352,7 @@ func (s *GlobalProductServiceOp[T]) GetRecommendAttribute(ctx context.Context, s
 func (s *GlobalProductServiceOp[T]) GetShopPublishableStatus(ctx context.Context, sid uint64, opt GetShopPublishableStatusRequest, tok string) (*GetShopPublishableStatusResponse, error) {
 	path := "/global_product/get_shop_publishable_status"
 	resp := new(GetShopPublishableStatusResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -362,7 +362,7 @@ func (s *GlobalProductServiceOp[T]) GetShopPublishableStatus(ctx context.Context
 func (s *GlobalProductServiceOp[T]) GetSizeChartDetail(ctx context.Context, sid uint64, req GetSizeChartDetailRequest, tok string) (*GetSizeChartDetailResponse, error) {
 	path := "/global_product/get_size_chart_detail"
 	resp := new(GetSizeChartDetailResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -372,7 +372,7 @@ func (s *GlobalProductServiceOp[T]) GetSizeChartDetail(ctx context.Context, sid 
 func (s *GlobalProductServiceOp[T]) GetSizeChartList(ctx context.Context, sid uint64, req GetSizeChartListRequest, tok string) (*GetSizeChartListResponse, error) {
 	path := "/global_product/get_size_chart_list"
 	resp := new(GetSizeChartListResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -382,7 +382,7 @@ func (s *GlobalProductServiceOp[T]) GetSizeChartList(ctx context.Context, sid ui
 func (s *GlobalProductServiceOp[T]) GetVariations(ctx context.Context, sid uint64, opt GetVariationsRequest, tok string) (*GetVariationsResponse, error) {
 	path := "/global_product/get_variations"
 	resp := new(GetVariationsResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -392,7 +392,7 @@ func (s *GlobalProductServiceOp[T]) GetVariations(ctx context.Context, sid uint6
 func (s *GlobalProductServiceOp[T]) InitTierVariation(ctx context.Context, sid uint64, req InitTierVariationRequest, tok string) (*InitTierVariationResponse, error) {
 	path := "/global_product/init_tier_variation"
 	resp := new(InitTierVariationResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -402,7 +402,7 @@ func (s *GlobalProductServiceOp[T]) InitTierVariation(ctx context.Context, sid u
 func (s *GlobalProductServiceOp[T]) SearchGlobalAttributeValueList(ctx context.Context, sid uint64, req SearchGlobalAttributeValueListRequest, tok string) (*SearchGlobalAttributeValueListResponse, error) {
 	path := "/global_product/search_global_attribute_value_list"
 	resp := new(SearchGlobalAttributeValueListResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -412,7 +412,7 @@ func (s *GlobalProductServiceOp[T]) SearchGlobalAttributeValueList(ctx context.C
 func (s *GlobalProductServiceOp[T]) SetSyncField(ctx context.Context, sid uint64, req SetSyncFieldRequest, tok string) (*SetSyncFieldResponse, error) {
 	path := "/global_product/set_sync_field"
 	resp := new(SetSyncFieldResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -423,7 +423,7 @@ func (s *GlobalProductServiceOp[T]) SetSyncField(ctx context.Context, sid uint64
 func (s *GlobalProductServiceOp[T]) SupportSizeChart(ctx context.Context, sid uint64, opt SupportSizeChartRequest, tok string) (*SupportSizeChartResponse, error) {
 	path := "/global_product/support_size_chart"
 	resp := new(SupportSizeChartResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -433,7 +433,7 @@ func (s *GlobalProductServiceOp[T]) SupportSizeChart(ctx context.Context, sid ui
 func (s *GlobalProductServiceOp[T]) UpdateGlobalItem(ctx context.Context, sid uint64, req UpdateGlobalItemRequest, tok string) (*UpdateGlobalItemResponse, error) {
 	path := "/global_product/update_global_item"
 	resp := new(UpdateGlobalItemResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -443,7 +443,7 @@ func (s *GlobalProductServiceOp[T]) UpdateGlobalItem(ctx context.Context, sid ui
 func (s *GlobalProductServiceOp[T]) UpdateGlobalModel(ctx context.Context, sid uint64, req UpdateGlobalModelRequest, tok string) (*UpdateGlobalModelResponse, error) {
 	path := "/global_product/update_global_model"
 	resp := new(UpdateGlobalModelResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -453,7 +453,7 @@ func (s *GlobalProductServiceOp[T]) UpdateGlobalModel(ctx context.Context, sid u
 func (s *GlobalProductServiceOp[T]) UpdateLocalAdjustmentRate(ctx context.Context, sid uint64, req UpdateLocalAdjustmentRateRequest, tok string) (*UpdateLocalAdjustmentRateResponse, error) {
 	path := "/global_product/update_local_adjustment_rate"
 	resp := new(UpdateLocalAdjustmentRateResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -463,7 +463,7 @@ func (s *GlobalProductServiceOp[T]) UpdateLocalAdjustmentRate(ctx context.Contex
 func (s *GlobalProductServiceOp[T]) UpdatePrice(ctx context.Context, sid uint64, req UpdatePriceRequest, tok string) (*UpdatePriceResponse, error) {
 	path := "/global_product/update_price"
 	resp := new(UpdatePriceResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -474,7 +474,7 @@ func (s *GlobalProductServiceOp[T]) UpdatePrice(ctx context.Context, sid uint64,
 func (s *GlobalProductServiceOp[T]) UpdateSizeChart(ctx context.Context, sid uint64, req UpdateSizeChartRequest, tok string) (*UpdateSizeChartResponse, error) {
 	path := "/global_product/update_size_chart"
 	resp := new(UpdateSizeChartResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -484,7 +484,7 @@ func (s *GlobalProductServiceOp[T]) UpdateSizeChart(ctx context.Context, sid uin
 func (s *GlobalProductServiceOp[T]) UpdateStock(ctx context.Context, sid uint64, req UpdateStockRequest, tok string) (*UpdateStockResponse, error) {
 	path := "/global_product/update_stock"
 	resp := new(UpdateStockResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -495,6 +495,6 @@ func (s *GlobalProductServiceOp[T]) UpdateStock(ctx context.Context, sid uint64,
 func (s *GlobalProductServiceOp[T]) UpdateTierVariation(ctx context.Context, sid uint64, req UpdateTierVariationRequest, tok string) (*UpdateTierVariationResponse, error) {
 	path := "/global_product/update_tier_variation"
 	resp := new(UpdateTierVariationResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }

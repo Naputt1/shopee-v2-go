@@ -45,7 +45,7 @@ type ShopCategoryServiceOp[T any] struct {
 func (s *ShopCategoryServiceOp[T]) AddItemList(ctx context.Context, sid uint64, req ShopCategoryAddItemListRequest, tok string) (*ShopCategoryAddItemListResponse, error) {
 	path := "/shop_category/add_item_list"
 	resp := new(ShopCategoryAddItemListResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -55,7 +55,7 @@ func (s *ShopCategoryServiceOp[T]) AddItemList(ctx context.Context, sid uint64, 
 func (s *ShopCategoryServiceOp[T]) AddShopCategory(ctx context.Context, sid uint64, req AddShopCategoryRequest, tok string) (*AddShopCategoryResponse, error) {
 	path := "/shop_category/add_shop_category"
 	resp := new(AddShopCategoryResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -65,7 +65,7 @@ func (s *ShopCategoryServiceOp[T]) AddShopCategory(ctx context.Context, sid uint
 func (s *ShopCategoryServiceOp[T]) DeleteItemList(ctx context.Context, sid uint64, req ShopCategoryDeleteItemListRequest, tok string) (*ShopCategoryDeleteItemListResponse, error) {
 	path := "/shop_category/delete_item_list"
 	resp := new(ShopCategoryDeleteItemListResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -75,7 +75,7 @@ func (s *ShopCategoryServiceOp[T]) DeleteItemList(ctx context.Context, sid uint6
 func (s *ShopCategoryServiceOp[T]) DeleteShopCategory(ctx context.Context, sid uint64, req DeleteShopCategoryRequest, tok string) (*DeleteShopCategoryResponse, error) {
 	path := "/shop_category/delete_shop_category"
 	resp := new(DeleteShopCategoryResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -85,7 +85,7 @@ func (s *ShopCategoryServiceOp[T]) DeleteShopCategory(ctx context.Context, sid u
 func (s *ShopCategoryServiceOp[T]) GetItemList(ctx context.Context, sid uint64, req ShopCategoryGetItemListRequest, tok string) (*ShopCategoryGetItemListResponse, error) {
 	path := "/shop_category/get_item_list"
 	resp := new(ShopCategoryGetItemListResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -95,7 +95,7 @@ func (s *ShopCategoryServiceOp[T]) GetItemList(ctx context.Context, sid uint64, 
 func (s *ShopCategoryServiceOp[T]) GetShopCategoryList(ctx context.Context, sid uint64, req GetShopCategoryListRequest, tok string) (*GetShopCategoryListResponse, error) {
 	path := "/shop_category/get_shop_category_list"
 	resp := new(GetShopCategoryListResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -105,6 +105,6 @@ func (s *ShopCategoryServiceOp[T]) GetShopCategoryList(ctx context.Context, sid 
 func (s *ShopCategoryServiceOp[T]) UpdateShopCategory(ctx context.Context, sid uint64, req UpdateShopCategoryRequest, tok string) (*UpdateShopCategoryResponse, error) {
 	path := "/shop_category/update_shop_category"
 	resp := new(UpdateShopCategoryResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }

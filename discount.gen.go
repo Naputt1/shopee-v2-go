@@ -65,7 +65,7 @@ type DiscountServiceOp[T any] struct {
 func (s *DiscountServiceOp[T]) AddDiscount(ctx context.Context, sid uint64, req AddDiscountRequest, tok string) (*AddDiscountResponse, error) {
 	path := "/discount/add_discount"
 	resp := new(AddDiscountResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -75,7 +75,7 @@ func (s *DiscountServiceOp[T]) AddDiscount(ctx context.Context, sid uint64, req 
 func (s *DiscountServiceOp[T]) AddDiscountItem(ctx context.Context, sid uint64, req AddDiscountItemRequest, tok string) (*AddDiscountItemResponse, error) {
 	path := "/discount/add_discount_item"
 	resp := new(AddDiscountItemResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -85,7 +85,7 @@ func (s *DiscountServiceOp[T]) AddDiscountItem(ctx context.Context, sid uint64, 
 func (s *DiscountServiceOp[T]) DeleteDiscount(ctx context.Context, sid uint64, req DeleteDiscountRequest, tok string) (*DeleteDiscountResponse, error) {
 	path := "/discount/delete_discount"
 	resp := new(DeleteDiscountResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -95,7 +95,7 @@ func (s *DiscountServiceOp[T]) DeleteDiscount(ctx context.Context, sid uint64, r
 func (s *DiscountServiceOp[T]) DeleteDiscountItem(ctx context.Context, sid uint64, req DeleteDiscountItemRequest, tok string) (*DeleteDiscountItemResponse, error) {
 	path := "/discount/delete_discount_item"
 	resp := new(DeleteDiscountItemResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -105,7 +105,7 @@ func (s *DiscountServiceOp[T]) DeleteDiscountItem(ctx context.Context, sid uint6
 func (s *DiscountServiceOp[T]) DeleteSipDiscount(ctx context.Context, sid uint64, req DeleteSipDiscountRequest, tok string) (*DeleteSipDiscountResponse, error) {
 	path := "/discount/delete_sip_discount"
 	resp := new(DeleteSipDiscountResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -115,7 +115,7 @@ func (s *DiscountServiceOp[T]) DeleteSipDiscount(ctx context.Context, sid uint64
 func (s *DiscountServiceOp[T]) EndDiscount(ctx context.Context, sid uint64, req EndDiscountRequest, tok string) (*EndDiscountResponse, error) {
 	path := "/discount/end_discount"
 	resp := new(EndDiscountResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -125,7 +125,7 @@ func (s *DiscountServiceOp[T]) EndDiscount(ctx context.Context, sid uint64, req 
 func (s *DiscountServiceOp[T]) GetDiscount(ctx context.Context, sid uint64, opt GetDiscountRequest, tok string) (*GetDiscountResponse, error) {
 	path := "/discount/get_discount"
 	resp := new(GetDiscountResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -135,7 +135,7 @@ func (s *DiscountServiceOp[T]) GetDiscount(ctx context.Context, sid uint64, opt 
 func (s *DiscountServiceOp[T]) GetDiscountList(ctx context.Context, sid uint64, req GetDiscountListRequest, tok string) (*GetDiscountListResponse, error) {
 	path := "/discount/get_discount_list"
 	resp := new(GetDiscountListResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -145,7 +145,7 @@ func (s *DiscountServiceOp[T]) GetDiscountList(ctx context.Context, sid uint64, 
 func (s *DiscountServiceOp[T]) GetSipDiscounts(ctx context.Context, sid uint64, opt GetSipDiscountsRequest, tok string) (*GetSipDiscountsResponse, error) {
 	path := "/discount/get_sip_discounts"
 	resp := new(GetSipDiscountsResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -155,7 +155,7 @@ func (s *DiscountServiceOp[T]) GetSipDiscounts(ctx context.Context, sid uint64, 
 func (s *DiscountServiceOp[T]) SetSipDiscount(ctx context.Context, sid uint64, req SetSipDiscountRequest, tok string) (*SetSipDiscountResponse, error) {
 	path := "/discount/set_sip_discount"
 	resp := new(SetSipDiscountResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -165,7 +165,7 @@ func (s *DiscountServiceOp[T]) SetSipDiscount(ctx context.Context, sid uint64, r
 func (s *DiscountServiceOp[T]) UpdateDiscount(ctx context.Context, sid uint64, req UpdateDiscountRequest, tok string) (*UpdateDiscountResponse, error) {
 	path := "/discount/update_discount"
 	resp := new(UpdateDiscountResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -175,6 +175,6 @@ func (s *DiscountServiceOp[T]) UpdateDiscount(ctx context.Context, sid uint64, r
 func (s *DiscountServiceOp[T]) UpdateDiscountItem(ctx context.Context, sid uint64, req UpdateDiscountItemRequest, tok string) (*UpdateDiscountItemResponse, error) {
 	path := "/discount/update_discount_item"
 	resp := new(UpdateDiscountItemResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }

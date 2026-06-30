@@ -82,7 +82,7 @@ type ReturnsServiceOp[T any] struct {
 func (s *ReturnsServiceOp[T]) AcceptOffer(ctx context.Context, sid uint64, req AcceptOfferRequest, tok string) (*AcceptOfferResponse, error) {
 	path := "/returns/accept_offer"
 	resp := new(AcceptOfferResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -92,7 +92,7 @@ func (s *ReturnsServiceOp[T]) AcceptOffer(ctx context.Context, sid uint64, req A
 func (s *ReturnsServiceOp[T]) CancelDispute(ctx context.Context, sid uint64, req CancelDisputeRequest, tok string) (*CancelDisputeResponse, error) {
 	path := "/returns/cancel_dispute"
 	resp := new(CancelDisputeResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -102,7 +102,7 @@ func (s *ReturnsServiceOp[T]) CancelDispute(ctx context.Context, sid uint64, req
 func (s *ReturnsServiceOp[T]) Confirm(ctx context.Context, sid uint64, req ConfirmRequest, tok string) (*ConfirmResponse, error) {
 	path := "/returns/confirm"
 	resp := new(ConfirmResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -112,7 +112,7 @@ func (s *ReturnsServiceOp[T]) Confirm(ctx context.Context, sid uint64, req Confi
 func (s *ReturnsServiceOp[T]) ConvertImage(ctx context.Context, sid uint64, req ConvertImageRequest, tok string) (*ConvertImageResponse, error) {
 	path := "/returns/convert_image"
 	resp := new(ConvertImageResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -124,7 +124,7 @@ func (s *ReturnsServiceOp[T]) ConvertImage(ctx context.Context, sid uint64, req 
 func (s *ReturnsServiceOp[T]) Dispute(ctx context.Context, sid uint64, req DisputeRequest, tok string) (*DisputeResponse, error) {
 	path := "/returns/dispute"
 	resp := new(DisputeResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -134,7 +134,7 @@ func (s *ReturnsServiceOp[T]) Dispute(ctx context.Context, sid uint64, req Dispu
 func (s *ReturnsServiceOp[T]) GetAvailableSolutions(ctx context.Context, sid uint64, opt GetAvailableSolutionsRequest, tok string) (*GetAvailableSolutionsResponse, error) {
 	path := "/returns/get_available_solutions"
 	resp := new(GetAvailableSolutionsResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -144,7 +144,7 @@ func (s *ReturnsServiceOp[T]) GetAvailableSolutions(ctx context.Context, sid uin
 func (s *ReturnsServiceOp[T]) GetReturnDetail(ctx context.Context, sid uint64, opt GetReturnDetailRequest, tok string) (*GetReturnDetailResponse, error) {
 	path := "/returns/get_return_detail"
 	resp := new(GetReturnDetailResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -154,7 +154,7 @@ func (s *ReturnsServiceOp[T]) GetReturnDetail(ctx context.Context, sid uint64, o
 func (s *ReturnsServiceOp[T]) GetReturnDisputeReason(ctx context.Context, sid uint64, opt GetReturnDisputeReasonRequest, tok string) (*GetReturnDisputeReasonResponse, error) {
 	path := "/returns/get_return_dispute_reason"
 	resp := new(GetReturnDisputeReasonResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -164,7 +164,7 @@ func (s *ReturnsServiceOp[T]) GetReturnDisputeReason(ctx context.Context, sid ui
 func (s *ReturnsServiceOp[T]) GetReturnList(ctx context.Context, sid uint64, opt GetReturnListRequest, tok string) (*GetReturnListResponse, error) {
 	path := "/returns/get_return_list"
 	resp := new(GetReturnListResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -174,7 +174,7 @@ func (s *ReturnsServiceOp[T]) GetReturnList(ctx context.Context, sid uint64, opt
 func (s *ReturnsServiceOp[T]) GetReverseTrackingInfo(ctx context.Context, sid uint64, opt GetReverseTrackingInfoRequest, tok string) (*GetReverseTrackingInfoResponse, error) {
 	path := "/returns/get_reverse_tracking_info"
 	resp := new(GetReverseTrackingInfoResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -184,7 +184,7 @@ func (s *ReturnsServiceOp[T]) GetReverseTrackingInfo(ctx context.Context, sid ui
 func (s *ReturnsServiceOp[T]) GetShippingCarrier(ctx context.Context, sid uint64, opt GetShippingCarrierRequest, tok string) (*GetShippingCarrierResponse, error) {
 	path := "/returns/get_shipping_carrier"
 	resp := new(GetShippingCarrierResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -194,7 +194,7 @@ func (s *ReturnsServiceOp[T]) GetShippingCarrier(ctx context.Context, sid uint64
 func (s *ReturnsServiceOp[T]) Offer(ctx context.Context, sid uint64, req OfferRequest, tok string) (*OfferResponse, error) {
 	path := "/returns/offer"
 	resp := new(OfferResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -204,7 +204,7 @@ func (s *ReturnsServiceOp[T]) Offer(ctx context.Context, sid uint64, req OfferRe
 func (s *ReturnsServiceOp[T]) QueryProof(ctx context.Context, sid uint64, opt QueryProofRequest, tok string) (*QueryProofResponse, error) {
 	path := "/returns/query_proof"
 	resp := new(QueryProofResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -214,14 +214,14 @@ func (s *ReturnsServiceOp[T]) QueryProof(ctx context.Context, sid uint64, opt Qu
 func (s *ReturnsServiceOp[T]) UploadProof(ctx context.Context, sid uint64, filename string, tok string) (*UploadProofResponse, error) {
 	path := "/returns/upload_proof"
 	resp := new(UploadProofResponse)
-	err := s.client.WithShop(sid, tok).Upload(ctx, path, "image", filename, resp)
+	err := s.client.Upload(ctx, path, "image", filename, resp, sid, tok)
 	return resp, err
 }
 
 func (s *ReturnsServiceOp[T]) UploadProofFromReader(ctx context.Context, sid uint64, filename string, reader io.Reader, tok string) (*UploadProofResponse, error) {
 	path := "/returns/upload_proof"
 	resp := new(UploadProofResponse)
-	err := s.client.WithShop(sid, tok).UploadFromReader(ctx, path, "image", filename, reader, resp)
+	err := s.client.UploadFromReader(ctx, path, "image", filename, reader, resp, sid, tok)
 	return resp, err
 }
 
@@ -231,13 +231,13 @@ func (s *ReturnsServiceOp[T]) UploadProofFromReader(ctx context.Context, sid uin
 func (s *ReturnsServiceOp[T]) UploadShippingProof(ctx context.Context, sid uint64, filename string, tok string) (*UploadShippingProofResponse, error) {
 	path := "/returns/upload_shipping_proof"
 	resp := new(UploadShippingProofResponse)
-	err := s.client.WithShop(sid, tok).Upload(ctx, path, "image", filename, resp)
+	err := s.client.Upload(ctx, path, "image", filename, resp, sid, tok)
 	return resp, err
 }
 
 func (s *ReturnsServiceOp[T]) UploadShippingProofFromReader(ctx context.Context, sid uint64, filename string, reader io.Reader, tok string) (*UploadShippingProofResponse, error) {
 	path := "/returns/upload_shipping_proof"
 	resp := new(UploadShippingProofResponse)
-	err := s.client.WithShop(sid, tok).UploadFromReader(ctx, path, "image", filename, reader, resp)
+	err := s.client.UploadFromReader(ctx, path, "image", filename, reader, resp, sid, tok)
 	return resp, err
 }

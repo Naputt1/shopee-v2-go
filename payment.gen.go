@@ -93,7 +93,7 @@ type PaymentServiceOp[T any] struct {
 func (s *PaymentServiceOp[T]) GenerateIncomeReport(ctx context.Context, sid uint64, req GenerateIncomeReportRequest, tok string) (*GenerateIncomeReportResponse, error) {
 	path := "/payment/generate_income_report"
 	resp := new(GenerateIncomeReportResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -103,7 +103,7 @@ func (s *PaymentServiceOp[T]) GenerateIncomeReport(ctx context.Context, sid uint
 func (s *PaymentServiceOp[T]) GenerateIncomeStatement(ctx context.Context, sid uint64, opt GenerateIncomeStatementRequest, tok string) (*GenerateIncomeStatementResponse, error) {
 	path := "/payment/generate_income_statement"
 	resp := new(GenerateIncomeStatementResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -113,7 +113,7 @@ func (s *PaymentServiceOp[T]) GenerateIncomeStatement(ctx context.Context, sid u
 func (s *PaymentServiceOp[T]) GetBillingTransactionInfo(ctx context.Context, sid uint64, req GetBillingTransactionInfoRequest, tok string) (*GetBillingTransactionInfoResponse, error) {
 	path := "/payment/get_billing_transaction_info"
 	resp := new(GetBillingTransactionInfoResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -123,7 +123,7 @@ func (s *PaymentServiceOp[T]) GetBillingTransactionInfo(ctx context.Context, sid
 func (s *PaymentServiceOp[T]) GetEscrowDetail(ctx context.Context, sid uint64, req GetEscrowDetailRequest, tok string) (*GetEscrowDetailResponse, error) {
 	path := "/payment/get_escrow_detail"
 	resp := new(GetEscrowDetailResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -133,7 +133,7 @@ func (s *PaymentServiceOp[T]) GetEscrowDetail(ctx context.Context, sid uint64, r
 func (s *PaymentServiceOp[T]) GetEscrowDetailBatch(ctx context.Context, sid uint64, req GetEscrowDetailBatchRequest, tok string) (*GetEscrowDetailBatchResponse, error) {
 	path := "/payment/get_escrow_detail_batch"
 	resp := new(GetEscrowDetailBatchResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -143,7 +143,7 @@ func (s *PaymentServiceOp[T]) GetEscrowDetailBatch(ctx context.Context, sid uint
 func (s *PaymentServiceOp[T]) GetEscrowList(ctx context.Context, sid uint64, req GetEscrowListRequest, tok string) (*GetEscrowListResponse, error) {
 	path := "/payment/get_escrow_list"
 	resp := new(GetEscrowListResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -155,7 +155,7 @@ func (s *PaymentServiceOp[T]) GetEscrowList(ctx context.Context, sid uint64, req
 func (s *PaymentServiceOp[T]) GetIncomeDetail(ctx context.Context, sid uint64, req GetIncomeDetailRequest, tok string) (*GetIncomeDetailResponse, error) {
 	path := "/payment/get_income_detail"
 	resp := new(GetIncomeDetailResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -167,7 +167,7 @@ func (s *PaymentServiceOp[T]) GetIncomeDetail(ctx context.Context, sid uint64, r
 func (s *PaymentServiceOp[T]) GetIncomeOverview(ctx context.Context, sid uint64, opt GetIncomeOverviewRequest, tok string) (*GetIncomeOverviewResponse, error) {
 	path := "/payment/get_income_overview"
 	resp := new(GetIncomeOverviewResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -177,7 +177,7 @@ func (s *PaymentServiceOp[T]) GetIncomeOverview(ctx context.Context, sid uint64,
 func (s *PaymentServiceOp[T]) GetIncomeReport(ctx context.Context, sid uint64, req GetIncomeReportRequest, tok string) (*GetIncomeReportResponse, error) {
 	path := "/payment/get_income_report"
 	resp := new(GetIncomeReportResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -187,7 +187,7 @@ func (s *PaymentServiceOp[T]) GetIncomeReport(ctx context.Context, sid uint64, r
 func (s *PaymentServiceOp[T]) GetIncomeStatement(ctx context.Context, sid uint64, opt GetIncomeStatementRequest, tok string) (*GetIncomeStatementResponse, error) {
 	path := "/payment/get_income_statement"
 	resp := new(GetIncomeStatementResponse)
-	err := s.client.WithShop(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -197,7 +197,7 @@ func (s *PaymentServiceOp[T]) GetIncomeStatement(ctx context.Context, sid uint64
 func (s *PaymentServiceOp[T]) GetItemInstallmentStatus(ctx context.Context, sid uint64, req GetItemInstallmentStatusRequest, tok string) (*GetItemInstallmentStatusResponse, error) {
 	path := "/payment/get_item_installment_status"
 	resp := new(GetItemInstallmentStatusResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -207,7 +207,7 @@ func (s *PaymentServiceOp[T]) GetItemInstallmentStatus(ctx context.Context, sid 
 func (s *PaymentServiceOp[T]) GetPaymentMethodList(ctx context.Context, sid uint64, tok string) (*GetPaymentMethodListResponse, error) {
 	path := "/payment/get_payment_method_list"
 	resp := new(GetPaymentMethodListResponse)
-	err := s.client.Post(ctx, path, nil, resp)
+	err := s.client.Post(ctx, path, nil, resp, sid, tok)
 	return resp, err
 }
 
@@ -217,7 +217,7 @@ func (s *PaymentServiceOp[T]) GetPaymentMethodList(ctx context.Context, sid uint
 func (s *PaymentServiceOp[T]) GetPayoutDetail(ctx context.Context, sid uint64, req GetPayoutDetailRequest, tok string) (*GetPayoutDetailResponse, error) {
 	path := "/payment/get_payout_detail"
 	resp := new(GetPayoutDetailResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -227,7 +227,7 @@ func (s *PaymentServiceOp[T]) GetPayoutDetail(ctx context.Context, sid uint64, r
 func (s *PaymentServiceOp[T]) GetPayoutInfo(ctx context.Context, sid uint64, req GetPayoutInfoRequest, tok string) (*GetPayoutInfoResponse, error) {
 	path := "/payment/get_payout_info"
 	resp := new(GetPayoutInfoResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -237,7 +237,7 @@ func (s *PaymentServiceOp[T]) GetPayoutInfo(ctx context.Context, sid uint64, req
 func (s *PaymentServiceOp[T]) GetShopInstallmentStatus(ctx context.Context, sid uint64, tok string) (*GetShopInstallmentStatusResponse, error) {
 	path := "/payment/get_shop_installment_status"
 	resp := new(GetShopInstallmentStatusResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, nil, resp)
+	err := s.client.Post(ctx, path, nil, resp, sid, tok)
 	return resp, err
 }
 
@@ -247,7 +247,7 @@ func (s *PaymentServiceOp[T]) GetShopInstallmentStatus(ctx context.Context, sid 
 func (s *PaymentServiceOp[T]) GetWalletTransactionList(ctx context.Context, sid uint64, req GetWalletTransactionListRequest, tok string) (*GetWalletTransactionListResponse, error) {
 	path := "/payment/get_wallet_transaction_list"
 	resp := new(GetWalletTransactionListResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -257,7 +257,7 @@ func (s *PaymentServiceOp[T]) GetWalletTransactionList(ctx context.Context, sid 
 func (s *PaymentServiceOp[T]) SetItemInstallmentStatus(ctx context.Context, sid uint64, req SetItemInstallmentStatusRequest, tok string) (*SetItemInstallmentStatusResponse, error) {
 	path := "/payment/set_item_installment_status"
 	resp := new(SetItemInstallmentStatusResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -267,6 +267,6 @@ func (s *PaymentServiceOp[T]) SetItemInstallmentStatus(ctx context.Context, sid 
 func (s *PaymentServiceOp[T]) SetShopInstallmentStatus(ctx context.Context, sid uint64, req SetShopInstallmentStatusRequest, tok string) (*SetShopInstallmentStatusResponse, error) {
 	path := "/payment/set_shop_installment_status"
 	resp := new(SetShopInstallmentStatusResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }

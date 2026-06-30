@@ -33,7 +33,7 @@ type PushServiceOp[T any] struct {
 func (s *PushServiceOp[T]) ConfirmConsumedLostPushMessage(ctx context.Context, sid uint64, req ConfirmConsumedLostPushMessageRequest, tok string) (*ConfirmConsumedLostPushMessageResponse, error) {
 	path := "/push/confirm_consumed_lost_push_message"
 	resp := new(ConfirmConsumedLostPushMessageResponse)
-	err := s.client.Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -43,7 +43,7 @@ func (s *PushServiceOp[T]) ConfirmConsumedLostPushMessage(ctx context.Context, s
 func (s *PushServiceOp[T]) GetAppPushConfig(ctx context.Context, sid uint64, tok string) (*GetAppPushConfigResponse, error) {
 	path := "/push/get_app_push_config"
 	resp := new(GetAppPushConfigResponse)
-	err := s.client.Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -53,7 +53,7 @@ func (s *PushServiceOp[T]) GetAppPushConfig(ctx context.Context, sid uint64, tok
 func (s *PushServiceOp[T]) GetLostPushMessage(ctx context.Context, sid uint64, tok string) (*GetLostPushMessageResponse, error) {
 	path := "/push/get_lost_push_message"
 	resp := new(GetLostPushMessageResponse)
-	err := s.client.Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -63,6 +63,6 @@ func (s *PushServiceOp[T]) GetLostPushMessage(ctx context.Context, sid uint64, t
 func (s *PushServiceOp[T]) SetAppPushConfig(ctx context.Context, sid uint64, req SetAppPushConfigRequest, tok string) (*SetAppPushConfigResponse, error) {
 	path := "/push/set_app_push_config"
 	resp := new(SetAppPushConfigResponse)
-	err := s.client.Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }

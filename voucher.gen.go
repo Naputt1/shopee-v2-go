@@ -41,7 +41,7 @@ type VoucherServiceOp[T any] struct {
 func (s *VoucherServiceOp[T]) AddVoucher(ctx context.Context, sid uint64, req AddVoucherRequest, tok string) (*AddVoucherResponse, error) {
 	path := "/voucher/add_voucher"
 	resp := new(AddVoucherResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -51,7 +51,7 @@ func (s *VoucherServiceOp[T]) AddVoucher(ctx context.Context, sid uint64, req Ad
 func (s *VoucherServiceOp[T]) DeleteVoucher(ctx context.Context, sid uint64, req DeleteVoucherRequest, tok string) (*DeleteVoucherResponse, error) {
 	path := "/voucher/delete_voucher"
 	resp := new(DeleteVoucherResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -61,7 +61,7 @@ func (s *VoucherServiceOp[T]) DeleteVoucher(ctx context.Context, sid uint64, req
 func (s *VoucherServiceOp[T]) EndVoucher(ctx context.Context, sid uint64, req EndVoucherRequest, tok string) (*EndVoucherResponse, error) {
 	path := "/voucher/end_voucher"
 	resp := new(EndVoucherResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -71,7 +71,7 @@ func (s *VoucherServiceOp[T]) EndVoucher(ctx context.Context, sid uint64, req En
 func (s *VoucherServiceOp[T]) GetVoucher(ctx context.Context, sid uint64, req GetVoucherRequest, tok string) (*GetVoucherResponse, error) {
 	path := "/voucher/get_voucher"
 	resp := new(GetVoucherResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -81,7 +81,7 @@ func (s *VoucherServiceOp[T]) GetVoucher(ctx context.Context, sid uint64, req Ge
 func (s *VoucherServiceOp[T]) GetVoucherList(ctx context.Context, sid uint64, req GetVoucherListRequest, tok string) (*GetVoucherListResponse, error) {
 	path := "/voucher/get_voucher_list"
 	resp := new(GetVoucherListResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -91,6 +91,6 @@ func (s *VoucherServiceOp[T]) GetVoucherList(ctx context.Context, sid uint64, re
 func (s *VoucherServiceOp[T]) UpdateVoucher(ctx context.Context, sid uint64, req UpdateVoucherRequest, tok string) (*UpdateVoucherResponse, error) {
 	path := "/voucher/update_voucher"
 	resp := new(UpdateVoucherResponse)
-	err := s.client.WithShop(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }

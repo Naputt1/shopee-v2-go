@@ -33,7 +33,7 @@ type PublicServiceOp[T any] struct {
 func (s *PublicServiceOp[T]) GetMerchantsByPartner(ctx context.Context, sid uint64, opt GetMerchantsByPartnerRequest, tok string) (*GetMerchantsByPartnerResponse, error) {
 	path := "/public/get_merchants_by_partner"
 	resp := new(GetMerchantsByPartnerResponse)
-	err := s.client.Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -43,7 +43,7 @@ func (s *PublicServiceOp[T]) GetMerchantsByPartner(ctx context.Context, sid uint
 func (s *PublicServiceOp[T]) GetShopeeIpRanges(ctx context.Context, sid uint64, tok string) (*GetShopeeIpRangesResponse, error) {
 	path := "/public/get_shopee_ip_ranges"
 	resp := new(GetShopeeIpRangesResponse)
-	err := s.client.Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -53,7 +53,7 @@ func (s *PublicServiceOp[T]) GetShopeeIpRanges(ctx context.Context, sid uint64, 
 func (s *PublicServiceOp[T]) GetShopsByPartner(ctx context.Context, sid uint64, opt GetShopsByPartnerRequest, tok string) (*GetShopsByPartnerResponse, error) {
 	path := "/public/get_shops_by_partner"
 	resp := new(GetShopsByPartnerResponse)
-	err := s.client.Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -63,6 +63,6 @@ func (s *PublicServiceOp[T]) GetShopsByPartner(ctx context.Context, sid uint64, 
 func (s *PublicServiceOp[T]) GetTokenByResendCode(ctx context.Context, sid uint64, req GetTokenByResendCodeRequest, tok string) (*GetTokenByResendCodeResponse, error) {
 	path := "/public/get_token_by_resend_code"
 	resp := new(GetTokenByResendCodeResponse)
-	err := s.client.Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }

@@ -43,7 +43,7 @@ type MerchantServiceOp[T any] struct {
 func (s *MerchantServiceOp[T]) GetMerchantInfo(ctx context.Context, sid uint64, tok string) (*GetMerchantInfoResponse, error) {
 	path := "/merchant/get_merchant_info"
 	resp := new(GetMerchantInfoResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, nil)
+	err := s.client.Get(ctx, path, resp, nil, sid, tok)
 	return resp, err
 }
 
@@ -53,7 +53,7 @@ func (s *MerchantServiceOp[T]) GetMerchantInfo(ctx context.Context, sid uint64, 
 func (s *MerchantServiceOp[T]) GetMerchantPrepaidAccountList(ctx context.Context, sid uint64, opt GetMerchantPrepaidAccountListRequest, tok string) (*GetMerchantPrepaidAccountListResponse, error) {
 	path := "/merchant/get_merchant_prepaid_account_list"
 	resp := new(GetMerchantPrepaidAccountListResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -63,7 +63,7 @@ func (s *MerchantServiceOp[T]) GetMerchantPrepaidAccountList(ctx context.Context
 func (s *MerchantServiceOp[T]) GetMerchantWarehouseList(ctx context.Context, sid uint64, req GetMerchantWarehouseListRequest, tok string) (*GetMerchantWarehouseListResponse, error) {
 	path := "/merchant/get_merchant_warehouse_list"
 	resp := new(GetMerchantWarehouseListResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
 
@@ -73,7 +73,7 @@ func (s *MerchantServiceOp[T]) GetMerchantWarehouseList(ctx context.Context, sid
 func (s *MerchantServiceOp[T]) GetMerchantWarehouseLocationList(ctx context.Context, sid uint64, tok string) (*GetMerchantWarehouseLocationListResponse, error) {
 	path := "/merchant/get_merchant_warehouse_location_list"
 	resp := new(GetMerchantWarehouseLocationListResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, nil, resp)
+	err := s.client.Post(ctx, path, nil, resp, sid, tok)
 	return resp, err
 }
 
@@ -84,7 +84,7 @@ func (s *MerchantServiceOp[T]) GetMerchantWarehouseLocationList(ctx context.Cont
 func (s *MerchantServiceOp[T]) GetShopListByMerchant(ctx context.Context, sid uint64, opt GetShopListByMerchantRequest, tok string) (*GetShopListByMerchantResponse, error) {
 	path := "/merchant/get_shop_list_by_merchant"
 	resp := new(GetShopListByMerchantResponse)
-	err := s.client.WithMerchant(sid, tok).Get(ctx, path, resp, opt)
+	err := s.client.Get(ctx, path, resp, opt, sid, tok)
 	return resp, err
 }
 
@@ -94,6 +94,6 @@ func (s *MerchantServiceOp[T]) GetShopListByMerchant(ctx context.Context, sid ui
 func (s *MerchantServiceOp[T]) GetWarehouseEligibleShopList(ctx context.Context, sid uint64, req GetWarehouseEligibleShopListRequest, tok string) (*GetWarehouseEligibleShopListResponse, error) {
 	path := "/merchant/get_warehouse_eligible_shop_list"
 	resp := new(GetWarehouseEligibleShopListResponse)
-	err := s.client.WithMerchant(sid, tok).Post(ctx, path, req, resp)
+	err := s.client.Post(ctx, path, req, resp, sid, tok)
 	return resp, err
 }
