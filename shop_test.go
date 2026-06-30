@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_Shop_GetAuthorisedResellerBrand(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/shop/get_authorised_reseller_brand", app.APIURL), responder)
 
 	var req GetAuthorisedResellerBrandRequest
-	res, err := client.Shop.GetAuthorisedResellerBrand(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Shop.GetAuthorisedResellerBrand(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Shop.GetAuthorisedResellerBrand returned error (possibly expected with mock data): %s", err)
 	}
@@ -47,7 +49,8 @@ func Test_Shop_GetBrShopOnboardingInfo(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/shop/get_br_shop_onboarding_info", app.APIURL), responder)
 
-	res, err := client.Shop.GetBrShopOnboardingInfo(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Shop.GetBrShopOnboardingInfo(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Shop.GetBrShopOnboardingInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -70,7 +73,8 @@ func Test_Shop_GetProfile(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/shop/get_profile", app.APIURL), responder)
 
-	res, err := client.Shop.GetProfile(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Shop.GetProfile(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Shop.GetProfile returned error (possibly expected with mock data): %s", err)
 	}
@@ -93,7 +97,8 @@ func Test_Shop_GetShopHolidayMode(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/shop/get_shop_holiday_mode", app.APIURL), responder)
 
-	res, err := client.Shop.GetShopHolidayMode(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Shop.GetShopHolidayMode(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Shop.GetShopHolidayMode returned error (possibly expected with mock data): %s", err)
 	}
@@ -116,7 +121,8 @@ func Test_Shop_GetShopInfo(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/shop/get_shop_info", app.APIURL), responder)
 
-	res, err := client.Shop.GetShopInfo(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Shop.GetShopInfo(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Shop.GetShopInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -140,7 +146,8 @@ func Test_Shop_GetShopNotification(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/shop/get_shop_notification", app.APIURL), responder)
 
 	var req GetShopNotificationRequest
-	res, err := client.Shop.GetShopNotification(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Shop.GetShopNotification(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Shop.GetShopNotification returned error (possibly expected with mock data): %s", err)
 	}
@@ -164,7 +171,8 @@ func Test_Shop_GetWarehouseDetail(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/shop/get_warehouse_detail", app.APIURL), responder)
 
 	var req GetWarehouseDetailRequest
-	res, err := client.Shop.GetWarehouseDetail(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Shop.GetWarehouseDetail(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Shop.GetWarehouseDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -188,7 +196,8 @@ func Test_Shop_SetShopHolidayMode(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop/set_shop_holiday_mode", app.APIURL), responder)
 
 	var req SetShopHolidayModeRequest
-	res, err := client.Shop.SetShopHolidayMode(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Shop.SetShopHolidayMode(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Shop.SetShopHolidayMode returned error (possibly expected with mock data): %s", err)
 	}
@@ -212,7 +221,8 @@ func Test_Shop_UpdateProfile(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop/update_profile", app.APIURL), responder)
 
 	var req UpdateProfileRequest
-	res, err := client.Shop.UpdateProfile(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Shop.UpdateProfile(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Shop.UpdateProfile returned error (possibly expected with mock data): %s", err)
 	}

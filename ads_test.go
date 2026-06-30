@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -23,7 +24,8 @@ func Test_Ads_CheckCreateGmsProductCampaignEligibility(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ads/check_create_gms_product_campaign_eligibility", app.APIURL), responder)
 
-	res, err := client.Ads.CheckCreateGmsProductCampaignEligibility(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.CheckCreateGmsProductCampaignEligibility(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Ads.CheckCreateGmsProductCampaignEligibility returned error (possibly expected with mock data): %s", err)
 	}
@@ -47,7 +49,8 @@ func Test_Ads_CreateGmsProductCampaign(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ads/create_gms_product_campaign", app.APIURL), responder)
 
 	var req CreateGmsProductCampaignRequest
-	res, err := client.Ads.CreateGmsProductCampaign(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.CreateGmsProductCampaign(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.CreateGmsProductCampaign returned error (possibly expected with mock data): %s", err)
 	}
@@ -71,7 +74,8 @@ func Test_Ads_CreateManualProductAds(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ads/create_manual_product_ads", app.APIURL), responder)
 
 	var req CreateManualProductAdsRequest
-	res, err := client.Ads.CreateManualProductAds(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.CreateManualProductAds(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.CreateManualProductAds returned error (possibly expected with mock data): %s", err)
 	}
@@ -95,7 +99,8 @@ func Test_Ads_EditGmsItemProductCampaign(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ads/edit_gms_item_product_campaign", app.APIURL), responder)
 
 	var req EditGmsItemProductCampaignRequest
-	res, err := client.Ads.EditGmsItemProductCampaign(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.EditGmsItemProductCampaign(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.EditGmsItemProductCampaign returned error (possibly expected with mock data): %s", err)
 	}
@@ -119,7 +124,8 @@ func Test_Ads_EditGmsProductCampaign(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ads/edit_gms_product_campaign", app.APIURL), responder)
 
 	var req EditGmsProductCampaignRequest
-	res, err := client.Ads.EditGmsProductCampaign(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.EditGmsProductCampaign(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.EditGmsProductCampaign returned error (possibly expected with mock data): %s", err)
 	}
@@ -143,7 +149,8 @@ func Test_Ads_EditManualProductAdKeywords(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ads/edit_manual_product_ad_keywords", app.APIURL), responder)
 
 	var req EditManualProductAdKeywordsRequest
-	res, err := client.Ads.EditManualProductAdKeywords(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.EditManualProductAdKeywords(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.EditManualProductAdKeywords returned error (possibly expected with mock data): %s", err)
 	}
@@ -167,7 +174,8 @@ func Test_Ads_EditManualProductAds(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ads/edit_manual_product_ads", app.APIURL), responder)
 
 	var req EditManualProductAdsRequest
-	res, err := client.Ads.EditManualProductAds(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.EditManualProductAds(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.EditManualProductAds returned error (possibly expected with mock data): %s", err)
 	}
@@ -190,7 +198,8 @@ func Test_Ads_GetAdsFcilShopRate(t *testing.T) {
 
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ads/get_ads_facil_shop_rate", app.APIURL), responder)
 
-	res, err := client.Ads.GetAdsFcilShopRate(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.GetAdsFcilShopRate(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Ads.GetAdsFcilShopRate returned error (possibly expected with mock data): %s", err)
 	}
@@ -214,7 +223,8 @@ func Test_Ads_GetAllCpcAdsDailyPerformance(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ads/get_all_cpc_ads_daily_performance", app.APIURL), responder)
 
 	var req GetAllCpcAdsDailyPerformanceRequest
-	res, err := client.Ads.GetAllCpcAdsDailyPerformance(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.GetAllCpcAdsDailyPerformance(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.GetAllCpcAdsDailyPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -238,7 +248,8 @@ func Test_Ads_GetAllCpcAdsHourlyPerformance(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ads/get_all_cpc_ads_hourly_performance", app.APIURL), responder)
 
 	var req GetAllCpcAdsHourlyPerformanceRequest
-	res, err := client.Ads.GetAllCpcAdsHourlyPerformance(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.GetAllCpcAdsHourlyPerformance(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.GetAllCpcAdsHourlyPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -262,7 +273,8 @@ func Test_Ads_GetCreateProductAdBudgetSuggestion(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ads/get_create_product_ad_budget_suggestion", app.APIURL), responder)
 
 	var req GetCreateProductAdBudgetSuggestionRequest
-	res, err := client.Ads.GetCreateProductAdBudgetSuggestion(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.GetCreateProductAdBudgetSuggestion(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.GetCreateProductAdBudgetSuggestion returned error (possibly expected with mock data): %s", err)
 	}
@@ -286,7 +298,8 @@ func Test_Ads_GetGmsCampaignPerformance(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ads/get_gms_campaign_performance", app.APIURL), responder)
 
 	var req GetGmsCampaignPerformanceRequest
-	res, err := client.Ads.GetGmsCampaignPerformance(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.GetGmsCampaignPerformance(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.GetGmsCampaignPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -310,7 +323,8 @@ func Test_Ads_GetGmsItemPerformance(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ads/get_gms_item_performance", app.APIURL), responder)
 
 	var req GetGmsItemPerformanceRequest
-	res, err := client.Ads.GetGmsItemPerformance(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.GetGmsItemPerformance(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.GetGmsItemPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -334,7 +348,8 @@ func Test_Ads_GetProductCampaignDailyPerformance(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ads/get_product_campaign_daily_performance", app.APIURL), responder)
 
 	var req GetProductCampaignDailyPerformanceRequest
-	res, err := client.Ads.GetProductCampaignDailyPerformance(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.GetProductCampaignDailyPerformance(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.GetProductCampaignDailyPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -358,7 +373,8 @@ func Test_Ads_GetProductCampaignHourlyPerformance(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ads/get_product_campaign_hourly_performance", app.APIURL), responder)
 
 	var req GetProductCampaignHourlyPerformanceRequest
-	res, err := client.Ads.GetProductCampaignHourlyPerformance(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.GetProductCampaignHourlyPerformance(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.GetProductCampaignHourlyPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -382,7 +398,8 @@ func Test_Ads_GetProductLevelCampaignIdList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ads/get_product_level_campaign_id_list", app.APIURL), responder)
 
 	var req GetProductLevelCampaignIdListRequest
-	res, err := client.Ads.GetProductLevelCampaignIdList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.GetProductLevelCampaignIdList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.GetProductLevelCampaignIdList returned error (possibly expected with mock data): %s", err)
 	}
@@ -406,7 +423,8 @@ func Test_Ads_GetProductLevelCampaignSettingInfo(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ads/get_product_level_campaign_setting_info", app.APIURL), responder)
 
 	var req GetProductLevelCampaignSettingInfoRequest
-	res, err := client.Ads.GetProductLevelCampaignSettingInfo(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.GetProductLevelCampaignSettingInfo(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.GetProductLevelCampaignSettingInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -430,7 +448,8 @@ func Test_Ads_GetProductRecommendedRoiTarget(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ads/get_product_recommended_roi_target", app.APIURL), responder)
 
 	var req GetProductRecommendedRoiTargetRequest
-	res, err := client.Ads.GetProductRecommendedRoiTarget(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.GetProductRecommendedRoiTarget(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.GetProductRecommendedRoiTarget returned error (possibly expected with mock data): %s", err)
 	}
@@ -453,7 +472,8 @@ func Test_Ads_GetRecommendedItemList(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ads/get_recommended_item_list", app.APIURL), responder)
 
-	res, err := client.Ads.GetRecommendedItemList(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.GetRecommendedItemList(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Ads.GetRecommendedItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -477,7 +497,8 @@ func Test_Ads_GetRecommendedKeywordList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ads/get_recommended_keyword_list", app.APIURL), responder)
 
 	var req GetRecommendedKeywordListRequest
-	res, err := client.Ads.GetRecommendedKeywordList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.GetRecommendedKeywordList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.GetRecommendedKeywordList returned error (possibly expected with mock data): %s", err)
 	}
@@ -500,7 +521,8 @@ func Test_Ads_GetShopToggleInfo(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ads/get_shop_toggle_info", app.APIURL), responder)
 
-	res, err := client.Ads.GetShopToggleInfo(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.GetShopToggleInfo(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Ads.GetShopToggleInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -523,7 +545,8 @@ func Test_Ads_GetTotalBalance(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ads/get_total_balance", app.APIURL), responder)
 
-	res, err := client.Ads.GetTotalBalance(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.GetTotalBalance(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Ads.GetTotalBalance returned error (possibly expected with mock data): %s", err)
 	}
@@ -547,7 +570,8 @@ func Test_Ads_ListGmsUserDeletedItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ads/list_gms_user_deleted_item", app.APIURL), responder)
 
 	var req ListGmsUserDeletedItemRequest
-	res, err := client.Ads.ListGmsUserDeletedItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Ads.ListGmsUserDeletedItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Ads.ListGmsUserDeletedItem returned error (possibly expected with mock data): %s", err)
 	}

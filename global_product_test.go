@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_GlobalProduct_AddGlobalItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/add_global_item", app.APIURL), responder)
 
 	var req AddGlobalItemRequest
-	res, err := client.GlobalProduct.AddGlobalItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.AddGlobalItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.AddGlobalItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -48,7 +50,8 @@ func Test_GlobalProduct_AddGlobalModel(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/add_global_model", app.APIURL), responder)
 
 	var req AddGlobalModelRequest
-	res, err := client.GlobalProduct.AddGlobalModel(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.AddGlobalModel(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.AddGlobalModel returned error (possibly expected with mock data): %s", err)
 	}
@@ -72,7 +75,8 @@ func Test_GlobalProduct_CategoryRecommend(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/global_product/category_recommend", app.APIURL), responder)
 
 	var req CategoryRecommendRequest
-	res, err := client.GlobalProduct.CategoryRecommend(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.CategoryRecommend(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.CategoryRecommend returned error (possibly expected with mock data): %s", err)
 	}
@@ -96,7 +100,8 @@ func Test_GlobalProduct_CreatePublishTask(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/create_publish_task", app.APIURL), responder)
 
 	var req CreatePublishTaskRequest
-	res, err := client.GlobalProduct.CreatePublishTask(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.CreatePublishTask(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.CreatePublishTask returned error (possibly expected with mock data): %s", err)
 	}
@@ -120,7 +125,8 @@ func Test_GlobalProduct_DeleteGlobalItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/delete_global_item", app.APIURL), responder)
 
 	var req DeleteGlobalItemRequest
-	res, err := client.GlobalProduct.DeleteGlobalItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.DeleteGlobalItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.DeleteGlobalItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -144,7 +150,8 @@ func Test_GlobalProduct_DeleteGlobalModel(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/delete_global_model", app.APIURL), responder)
 
 	var req DeleteGlobalModelRequest
-	res, err := client.GlobalProduct.DeleteGlobalModel(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.DeleteGlobalModel(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.DeleteGlobalModel returned error (possibly expected with mock data): %s", err)
 	}
@@ -168,7 +175,8 @@ func Test_GlobalProduct_GetAttributeTree(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/global_product/get_attribute_tree", app.APIURL), responder)
 
 	var req GetAttributeTreeRequest
-	res, err := client.GlobalProduct.GetAttributeTree(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.GetAttributeTree(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.GetAttributeTree returned error (possibly expected with mock data): %s", err)
 	}
@@ -192,7 +200,8 @@ func Test_GlobalProduct_GetBrandList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/global_product/get_brand_list", app.APIURL), responder)
 
 	var req GetBrandListRequest
-	res, err := client.GlobalProduct.GetBrandList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.GetBrandList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.GetBrandList returned error (possibly expected with mock data): %s", err)
 	}
@@ -216,7 +225,8 @@ func Test_GlobalProduct_GetCategory(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/global_product/get_category", app.APIURL), responder)
 
 	var req GetCategoryRequest
-	res, err := client.GlobalProduct.GetCategory(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.GetCategory(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.GetCategory returned error (possibly expected with mock data): %s", err)
 	}
@@ -240,7 +250,8 @@ func Test_GlobalProduct_GetGlobalItemId(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/global_product/get_global_item_id", app.APIURL), responder)
 
 	var req GetGlobalItemIdRequest
-	res, err := client.GlobalProduct.GetGlobalItemId(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.GetGlobalItemId(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.GetGlobalItemId returned error (possibly expected with mock data): %s", err)
 	}
@@ -264,7 +275,8 @@ func Test_GlobalProduct_GetGlobalItemInfo(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/global_product/get_global_item_info", app.APIURL), responder)
 
 	var req GetGlobalItemInfoRequest
-	res, err := client.GlobalProduct.GetGlobalItemInfo(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.GetGlobalItemInfo(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.GetGlobalItemInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -288,7 +300,8 @@ func Test_GlobalProduct_GetGlobalItemLimit(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/global_product/get_global_item_limit", app.APIURL), responder)
 
 	var req GetGlobalItemLimitRequest
-	res, err := client.GlobalProduct.GetGlobalItemLimit(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.GetGlobalItemLimit(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.GetGlobalItemLimit returned error (possibly expected with mock data): %s", err)
 	}
@@ -312,7 +325,8 @@ func Test_GlobalProduct_GetGlobalItemList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/global_product/get_global_item_list", app.APIURL), responder)
 
 	var req GetGlobalItemListRequest
-	res, err := client.GlobalProduct.GetGlobalItemList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.GetGlobalItemList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.GetGlobalItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -336,7 +350,8 @@ func Test_GlobalProduct_GetGlobalModelList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/global_product/get_global_model_list", app.APIURL), responder)
 
 	var req GetGlobalModelListRequest
-	res, err := client.GlobalProduct.GetGlobalModelList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.GetGlobalModelList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.GetGlobalModelList returned error (possibly expected with mock data): %s", err)
 	}
@@ -359,7 +374,8 @@ func Test_GlobalProduct_GetLocalAdjustmentRate(t *testing.T) {
 
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/get_local_adjustment_rate", app.APIURL), responder)
 
-	res, err := client.GlobalProduct.GetLocalAdjustmentRate(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.GetLocalAdjustmentRate(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.GetLocalAdjustmentRate returned error (possibly expected with mock data): %s", err)
 	}
@@ -383,7 +399,8 @@ func Test_GlobalProduct_GetPublishableShop(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/global_product/get_publishable_shop", app.APIURL), responder)
 
 	var req GetPublishableShopRequest
-	res, err := client.GlobalProduct.GetPublishableShop(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.GetPublishableShop(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.GetPublishableShop returned error (possibly expected with mock data): %s", err)
 	}
@@ -407,7 +424,8 @@ func Test_GlobalProduct_GetPublishedList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/global_product/get_published_list", app.APIURL), responder)
 
 	var req GetPublishedListRequest
-	res, err := client.GlobalProduct.GetPublishedList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.GetPublishedList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.GetPublishedList returned error (possibly expected with mock data): %s", err)
 	}
@@ -431,7 +449,8 @@ func Test_GlobalProduct_GetPublishTaskResult(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/global_product/get_publish_task_result", app.APIURL), responder)
 
 	var req GetPublishTaskResultRequest
-	res, err := client.GlobalProduct.GetPublishTaskResult(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.GetPublishTaskResult(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.GetPublishTaskResult returned error (possibly expected with mock data): %s", err)
 	}
@@ -455,7 +474,8 @@ func Test_GlobalProduct_GetRecommendAttribute(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/global_product/get_recommend_attribute", app.APIURL), responder)
 
 	var req GetRecommendAttributeRequest
-	res, err := client.GlobalProduct.GetRecommendAttribute(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.GetRecommendAttribute(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.GetRecommendAttribute returned error (possibly expected with mock data): %s", err)
 	}
@@ -479,7 +499,8 @@ func Test_GlobalProduct_GetShopPublishableStatus(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/global_product/get_shop_publishable_status", app.APIURL), responder)
 
 	var req GetShopPublishableStatusRequest
-	res, err := client.GlobalProduct.GetShopPublishableStatus(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.GetShopPublishableStatus(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.GetShopPublishableStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -503,7 +524,8 @@ func Test_GlobalProduct_GetSizeChartDetail(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/get_size_chart_detail", app.APIURL), responder)
 
 	var req GetSizeChartDetailRequest
-	res, err := client.GlobalProduct.GetSizeChartDetail(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.GetSizeChartDetail(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.GetSizeChartDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -527,7 +549,8 @@ func Test_GlobalProduct_GetSizeChartList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/get_size_chart_list", app.APIURL), responder)
 
 	var req GetSizeChartListRequest
-	res, err := client.GlobalProduct.GetSizeChartList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.GetSizeChartList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.GetSizeChartList returned error (possibly expected with mock data): %s", err)
 	}
@@ -551,7 +574,8 @@ func Test_GlobalProduct_GetVariations(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/global_product/get_variations", app.APIURL), responder)
 
 	var req GetVariationsRequest
-	res, err := client.GlobalProduct.GetVariations(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.GetVariations(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.GetVariations returned error (possibly expected with mock data): %s", err)
 	}
@@ -575,7 +599,8 @@ func Test_GlobalProduct_InitTierVariation(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/init_tier_variation", app.APIURL), responder)
 
 	var req InitTierVariationRequest
-	res, err := client.GlobalProduct.InitTierVariation(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.InitTierVariation(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.InitTierVariation returned error (possibly expected with mock data): %s", err)
 	}
@@ -599,7 +624,8 @@ func Test_GlobalProduct_SearchGlobalAttributeValueList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/search_global_attribute_value_list", app.APIURL), responder)
 
 	var req SearchGlobalAttributeValueListRequest
-	res, err := client.GlobalProduct.SearchGlobalAttributeValueList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.SearchGlobalAttributeValueList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.SearchGlobalAttributeValueList returned error (possibly expected with mock data): %s", err)
 	}
@@ -623,7 +649,8 @@ func Test_GlobalProduct_SetSyncField(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/set_sync_field", app.APIURL), responder)
 
 	var req SetSyncFieldRequest
-	res, err := client.GlobalProduct.SetSyncField(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.SetSyncField(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.SetSyncField returned error (possibly expected with mock data): %s", err)
 	}
@@ -647,7 +674,8 @@ func Test_GlobalProduct_SupportSizeChart(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/global_product/support_size_chart", app.APIURL), responder)
 
 	var req SupportSizeChartRequest
-	res, err := client.GlobalProduct.SupportSizeChart(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.SupportSizeChart(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.SupportSizeChart returned error (possibly expected with mock data): %s", err)
 	}
@@ -671,7 +699,8 @@ func Test_GlobalProduct_UpdateGlobalItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/update_global_item", app.APIURL), responder)
 
 	var req UpdateGlobalItemRequest
-	res, err := client.GlobalProduct.UpdateGlobalItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.UpdateGlobalItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.UpdateGlobalItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -695,7 +724,8 @@ func Test_GlobalProduct_UpdateGlobalModel(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/update_global_model", app.APIURL), responder)
 
 	var req UpdateGlobalModelRequest
-	res, err := client.GlobalProduct.UpdateGlobalModel(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.UpdateGlobalModel(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.UpdateGlobalModel returned error (possibly expected with mock data): %s", err)
 	}
@@ -719,7 +749,8 @@ func Test_GlobalProduct_UpdateLocalAdjustmentRate(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/update_local_adjustment_rate", app.APIURL), responder)
 
 	var req UpdateLocalAdjustmentRateRequest
-	res, err := client.GlobalProduct.UpdateLocalAdjustmentRate(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.UpdateLocalAdjustmentRate(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.UpdateLocalAdjustmentRate returned error (possibly expected with mock data): %s", err)
 	}
@@ -743,7 +774,8 @@ func Test_GlobalProduct_UpdatePrice(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/update_price", app.APIURL), responder)
 
 	var req UpdatePriceRequest
-	res, err := client.GlobalProduct.UpdatePrice(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.UpdatePrice(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.UpdatePrice returned error (possibly expected with mock data): %s", err)
 	}
@@ -767,7 +799,8 @@ func Test_GlobalProduct_UpdateSizeChart(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/update_size_chart", app.APIURL), responder)
 
 	var req UpdateSizeChartRequest
-	res, err := client.GlobalProduct.UpdateSizeChart(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.UpdateSizeChart(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.UpdateSizeChart returned error (possibly expected with mock data): %s", err)
 	}
@@ -791,7 +824,8 @@ func Test_GlobalProduct_UpdateStock(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/update_stock", app.APIURL), responder)
 
 	var req UpdateStockRequest
-	res, err := client.GlobalProduct.UpdateStock(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.UpdateStock(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.UpdateStock returned error (possibly expected with mock data): %s", err)
 	}
@@ -815,7 +849,8 @@ func Test_GlobalProduct_UpdateTierVariation(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/update_tier_variation", app.APIURL), responder)
 
 	var req UpdateTierVariationRequest
-	res, err := client.GlobalProduct.UpdateTierVariation(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.GlobalProduct.UpdateTierVariation(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("GlobalProduct.UpdateTierVariation returned error (possibly expected with mock data): %s", err)
 	}

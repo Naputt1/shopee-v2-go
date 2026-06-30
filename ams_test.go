@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_AMS_AddAllProductsToOpenCampaign(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ams/add_all_products_to_open_campaign", app.APIURL), responder)
 
 	var req AddAllProductsToOpenCampaignRequest
-	res, err := client.AMS.AddAllProductsToOpenCampaign(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.AddAllProductsToOpenCampaign(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.AddAllProductsToOpenCampaign returned error (possibly expected with mock data): %s", err)
 	}
@@ -48,7 +50,8 @@ func Test_AMS_BatchAddProductsToOpenCampaign(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ams/batch_add_products_to_open_campaign", app.APIURL), responder)
 
 	var req BatchAddProductsToOpenCampaignRequest
-	res, err := client.AMS.BatchAddProductsToOpenCampaign(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.BatchAddProductsToOpenCampaign(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.BatchAddProductsToOpenCampaign returned error (possibly expected with mock data): %s", err)
 	}
@@ -72,7 +75,8 @@ func Test_AMS_BatchEditProductsOpenCampaignSetting(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ams/batch_edit_products_open_campaign_setting", app.APIURL), responder)
 
 	var req BatchEditProductsOpenCampaignSettingRequest
-	res, err := client.AMS.BatchEditProductsOpenCampaignSetting(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.BatchEditProductsOpenCampaignSetting(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.BatchEditProductsOpenCampaignSetting returned error (possibly expected with mock data): %s", err)
 	}
@@ -96,7 +100,8 @@ func Test_AMS_BatchGetProductsSuggestedRate(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/batch_get_products_suggested_rate", app.APIURL), responder)
 
 	var req BatchGetProductsSuggestedRateRequest
-	res, err := client.AMS.BatchGetProductsSuggestedRate(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.BatchGetProductsSuggestedRate(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.BatchGetProductsSuggestedRate returned error (possibly expected with mock data): %s", err)
 	}
@@ -120,7 +125,8 @@ func Test_AMS_BatchRemoveProductsOpenCampaignSetting(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ams/batch_remove_products_open_campaign_setting", app.APIURL), responder)
 
 	var req BatchRemoveProductsOpenCampaignSettingRequest
-	res, err := client.AMS.BatchRemoveProductsOpenCampaignSetting(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.BatchRemoveProductsOpenCampaignSetting(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.BatchRemoveProductsOpenCampaignSetting returned error (possibly expected with mock data): %s", err)
 	}
@@ -144,7 +150,8 @@ func Test_AMS_CreateNewTargetedCampaign(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ams/create_new_targeted_campaign", app.APIURL), responder)
 
 	var req CreateNewTargetedCampaignRequest
-	res, err := client.AMS.CreateNewTargetedCampaign(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.CreateNewTargetedCampaign(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.CreateNewTargetedCampaign returned error (possibly expected with mock data): %s", err)
 	}
@@ -168,7 +175,8 @@ func Test_AMS_EditAffiliateListOfTargetedCampaign(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ams/edit_affiliate_list_of_targeted_campaign", app.APIURL), responder)
 
 	var req EditAffiliateListOfTargetedCampaignRequest
-	res, err := client.AMS.EditAffiliateListOfTargetedCampaign(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.EditAffiliateListOfTargetedCampaign(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.EditAffiliateListOfTargetedCampaign returned error (possibly expected with mock data): %s", err)
 	}
@@ -192,7 +200,8 @@ func Test_AMS_EditAllProductsOpenCampaignSetting(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ams/edit_all_products_open_campaign_setting", app.APIURL), responder)
 
 	var req EditAllProductsOpenCampaignSettingRequest
-	res, err := client.AMS.EditAllProductsOpenCampaignSetting(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.EditAllProductsOpenCampaignSetting(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.EditAllProductsOpenCampaignSetting returned error (possibly expected with mock data): %s", err)
 	}
@@ -216,7 +225,8 @@ func Test_AMS_EditProductListOfTargetedCampaign(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ams/edit_product_list_of_targeted_campaign", app.APIURL), responder)
 
 	var req EditProductListOfTargetedCampaignRequest
-	res, err := client.AMS.EditProductListOfTargetedCampaign(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.EditProductListOfTargetedCampaign(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.EditProductListOfTargetedCampaign returned error (possibly expected with mock data): %s", err)
 	}
@@ -240,7 +250,8 @@ func Test_AMS_GetAffiliatePerformance(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_affiliate_performance", app.APIURL), responder)
 
 	var req GetAffiliatePerformanceRequest
-	res, err := client.AMS.GetAffiliatePerformance(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetAffiliatePerformance(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetAffiliatePerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -263,7 +274,8 @@ func Test_AMS_GetAutoAddNewProductToggleStatus(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_auto_add_new_product_toggle_status", app.APIURL), responder)
 
-	res, err := client.AMS.GetAutoAddNewProductToggleStatus(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetAutoAddNewProductToggleStatus(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetAutoAddNewProductToggleStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -287,7 +299,8 @@ func Test_AMS_GetCampaignKeyMetricsPerformance(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_campaign_key_metrics_performance", app.APIURL), responder)
 
 	var req GetCampaignKeyMetricsPerformanceRequest
-	res, err := client.AMS.GetCampaignKeyMetricsPerformance(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetCampaignKeyMetricsPerformance(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetCampaignKeyMetricsPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -311,7 +324,8 @@ func Test_AMS_GetContentPerformance(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_content_performance", app.APIURL), responder)
 
 	var req GetContentPerformanceRequest
-	res, err := client.AMS.GetContentPerformance(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetContentPerformance(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetContentPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -335,7 +349,8 @@ func Test_AMS_GetConversionReport(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_conversion_report", app.APIURL), responder)
 
 	var req GetConversionReportRequest
-	res, err := client.AMS.GetConversionReport(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetConversionReport(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetConversionReport returned error (possibly expected with mock data): %s", err)
 	}
@@ -359,7 +374,8 @@ func Test_AMS_GetManagedAffiliateList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_managed_affiliate_list", app.APIURL), responder)
 
 	var req GetManagedAffiliateListRequest
-	res, err := client.AMS.GetManagedAffiliateList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetManagedAffiliateList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetManagedAffiliateList returned error (possibly expected with mock data): %s", err)
 	}
@@ -383,7 +399,8 @@ func Test_AMS_GetOpenCampaignAddedProduct(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_open_campaign_added_product", app.APIURL), responder)
 
 	var req GetOpenCampaignAddedProductRequest
-	res, err := client.AMS.GetOpenCampaignAddedProduct(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetOpenCampaignAddedProduct(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetOpenCampaignAddedProduct returned error (possibly expected with mock data): %s", err)
 	}
@@ -407,7 +424,8 @@ func Test_AMS_GetOpenCampaignBatchTaskResult(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_open_campaign_batch_task_result", app.APIURL), responder)
 
 	var req GetOpenCampaignBatchTaskResultRequest
-	res, err := client.AMS.GetOpenCampaignBatchTaskResult(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetOpenCampaignBatchTaskResult(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetOpenCampaignBatchTaskResult returned error (possibly expected with mock data): %s", err)
 	}
@@ -431,7 +449,8 @@ func Test_AMS_GetOpenCampaignNotAddedProduct(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_open_campaign_not_added_product", app.APIURL), responder)
 
 	var req GetOpenCampaignNotAddedProductRequest
-	res, err := client.AMS.GetOpenCampaignNotAddedProduct(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetOpenCampaignNotAddedProduct(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetOpenCampaignNotAddedProduct returned error (possibly expected with mock data): %s", err)
 	}
@@ -455,7 +474,8 @@ func Test_AMS_GetOpenCampaignPerformance(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_open_campaign_performance", app.APIURL), responder)
 
 	var req GetOpenCampaignPerformanceRequest
-	res, err := client.AMS.GetOpenCampaignPerformance(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetOpenCampaignPerformance(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetOpenCampaignPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -479,7 +499,8 @@ func Test_AMS_GetOptimizationSuggestionProduct(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_optimization_suggestion_product", app.APIURL), responder)
 
 	var req GetOptimizationSuggestionProductRequest
-	res, err := client.AMS.GetOptimizationSuggestionProduct(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetOptimizationSuggestionProduct(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetOptimizationSuggestionProduct returned error (possibly expected with mock data): %s", err)
 	}
@@ -503,7 +524,8 @@ func Test_AMS_GetPerformanceDataUpdateTime(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_performance_data_update_time", app.APIURL), responder)
 
 	var req GetPerformanceDataUpdateTimeRequest
-	res, err := client.AMS.GetPerformanceDataUpdateTime(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetPerformanceDataUpdateTime(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetPerformanceDataUpdateTime returned error (possibly expected with mock data): %s", err)
 	}
@@ -527,7 +549,8 @@ func Test_AMS_GetProductPerformance(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_product_performance", app.APIURL), responder)
 
 	var req GetProductPerformanceRequest
-	res, err := client.AMS.GetProductPerformance(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetProductPerformance(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetProductPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -551,7 +574,8 @@ func Test_AMS_GetRecommendedAffiliateList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_recommended_affiliate_list", app.APIURL), responder)
 
 	var req GetRecommendedAffiliateListRequest
-	res, err := client.AMS.GetRecommendedAffiliateList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetRecommendedAffiliateList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetRecommendedAffiliateList returned error (possibly expected with mock data): %s", err)
 	}
@@ -575,7 +599,8 @@ func Test_AMS_GetShopPerformance(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_shop_performance", app.APIURL), responder)
 
 	var req GetShopPerformanceRequest
-	res, err := client.AMS.GetShopPerformance(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetShopPerformance(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetShopPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -598,7 +623,8 @@ func Test_AMS_GetShopSuggestedRate(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_shop_suggested_rate", app.APIURL), responder)
 
-	res, err := client.AMS.GetShopSuggestedRate(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetShopSuggestedRate(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetShopSuggestedRate returned error (possibly expected with mock data): %s", err)
 	}
@@ -622,7 +648,8 @@ func Test_AMS_GetTargetedCampaignAddableProductList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_targeted_campaign_addable_product_list", app.APIURL), responder)
 
 	var req GetTargetedCampaignAddableProductListRequest
-	res, err := client.AMS.GetTargetedCampaignAddableProductList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetTargetedCampaignAddableProductList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetTargetedCampaignAddableProductList returned error (possibly expected with mock data): %s", err)
 	}
@@ -646,7 +673,8 @@ func Test_AMS_GetTargetedCampaignList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_targeted_campaign_list", app.APIURL), responder)
 
 	var req GetTargetedCampaignListRequest
-	res, err := client.AMS.GetTargetedCampaignList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetTargetedCampaignList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetTargetedCampaignList returned error (possibly expected with mock data): %s", err)
 	}
@@ -670,7 +698,8 @@ func Test_AMS_GetTargetedCampaignPerformance(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_targeted_campaign_performance", app.APIURL), responder)
 
 	var req GetTargetedCampaignPerformanceRequest
-	res, err := client.AMS.GetTargetedCampaignPerformance(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetTargetedCampaignPerformance(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetTargetedCampaignPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -694,7 +723,8 @@ func Test_AMS_GetTargetedCampaignSettings(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_targeted_campaign_settings", app.APIURL), responder)
 
 	var req GetTargetedCampaignSettingsRequest
-	res, err := client.AMS.GetTargetedCampaignSettings(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetTargetedCampaignSettings(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetTargetedCampaignSettings returned error (possibly expected with mock data): %s", err)
 	}
@@ -717,7 +747,8 @@ func Test_AMS_GetValidationList(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_validation_list", app.APIURL), responder)
 
-	res, err := client.AMS.GetValidationList(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetValidationList(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetValidationList returned error (possibly expected with mock data): %s", err)
 	}
@@ -741,7 +772,8 @@ func Test_AMS_GetValidationReport(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/get_validation_report", app.APIURL), responder)
 
 	var req GetValidationReportRequest
-	res, err := client.AMS.GetValidationReport(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.GetValidationReport(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.GetValidationReport returned error (possibly expected with mock data): %s", err)
 	}
@@ -765,7 +797,8 @@ func Test_AMS_QueryAffiliateList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ams/query_affiliate_list", app.APIURL), responder)
 
 	var req QueryAffiliateListRequest
-	res, err := client.AMS.QueryAffiliateList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.QueryAffiliateList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.QueryAffiliateList returned error (possibly expected with mock data): %s", err)
 	}
@@ -788,7 +821,8 @@ func Test_AMS_RemoveAllProductsOpenCampaignSetting(t *testing.T) {
 
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ams/remove_all_products_open_campaign_setting", app.APIURL), responder)
 
-	res, err := client.AMS.RemoveAllProductsOpenCampaignSetting(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.RemoveAllProductsOpenCampaignSetting(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("AMS.RemoveAllProductsOpenCampaignSetting returned error (possibly expected with mock data): %s", err)
 	}
@@ -812,7 +846,8 @@ func Test_AMS_TerminateTargetedCampaign(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ams/terminate_targeted_campaign", app.APIURL), responder)
 
 	var req TerminateTargetedCampaignRequest
-	res, err := client.AMS.TerminateTargetedCampaign(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.TerminateTargetedCampaign(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.TerminateTargetedCampaign returned error (possibly expected with mock data): %s", err)
 	}
@@ -836,7 +871,8 @@ func Test_AMS_UpdateAutoAddNewProductSetting(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ams/update_auto_add_new_product_setting", app.APIURL), responder)
 
 	var req UpdateAutoAddNewProductSettingRequest
-	res, err := client.AMS.UpdateAutoAddNewProductSetting(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.UpdateAutoAddNewProductSetting(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.UpdateAutoAddNewProductSetting returned error (possibly expected with mock data): %s", err)
 	}
@@ -860,7 +896,8 @@ func Test_AMS_UpdateBasicInfoOfTargetedCampaign(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ams/update_basic_info_of_targeted_campaign", app.APIURL), responder)
 
 	var req UpdateBasicInfoOfTargetedCampaignRequest
-	res, err := client.AMS.UpdateBasicInfoOfTargetedCampaign(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AMS.UpdateBasicInfoOfTargetedCampaign(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AMS.UpdateBasicInfoOfTargetedCampaign returned error (possibly expected with mock data): %s", err)
 	}

@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_Logistics_BatchShipOrder(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/batch_ship_order", app.APIURL), responder)
 
 	var req BatchShipOrderRequest
-	res, err := client.Logistics.BatchShipOrder(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.BatchShipOrder(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.BatchShipOrder returned error (possibly expected with mock data): %s", err)
 	}
@@ -48,7 +50,8 @@ func Test_Logistics_BatchUpdateTpfWarehouseTrackingStatus(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/batch_update_tpf_warehouse_tracking_status", app.APIURL), responder)
 
 	var req BatchUpdateTpfWarehouseTrackingStatusRequest
-	res, err := client.Logistics.BatchUpdateTpfWarehouseTrackingStatus(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.BatchUpdateTpfWarehouseTrackingStatus(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.BatchUpdateTpfWarehouseTrackingStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -72,7 +75,8 @@ func Test_Logistics_CheckPolygonUpdateStatus(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/check_polygon_update_status", app.APIURL), responder)
 
 	var req CheckPolygonUpdateStatusRequest
-	res, err := client.Logistics.CheckPolygonUpdateStatus(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.CheckPolygonUpdateStatus(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.CheckPolygonUpdateStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -96,7 +100,8 @@ func Test_Logistics_CreateBookingShippingDocument(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/create_booking_shipping_document", app.APIURL), responder)
 
 	var req CreateBookingShippingDocumentRequest
-	res, err := client.Logistics.CreateBookingShippingDocument(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.CreateBookingShippingDocument(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.CreateBookingShippingDocument returned error (possibly expected with mock data): %s", err)
 	}
@@ -120,7 +125,8 @@ func Test_Logistics_CreateShippingDocument(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/create_shipping_document", app.APIURL), responder)
 
 	var req CreateShippingDocumentRequest
-	res, err := client.Logistics.CreateShippingDocument(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.CreateShippingDocument(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.CreateShippingDocument returned error (possibly expected with mock data): %s", err)
 	}
@@ -144,7 +150,8 @@ func Test_Logistics_CreateShippingDocumentJob(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/create_shipping_document_job", app.APIURL), responder)
 
 	var req CreateShippingDocumentJobRequest
-	res, err := client.Logistics.CreateShippingDocumentJob(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.CreateShippingDocumentJob(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.CreateShippingDocumentJob returned error (possibly expected with mock data): %s", err)
 	}
@@ -168,7 +175,8 @@ func Test_Logistics_DeleteAddress(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/delete_address", app.APIURL), responder)
 
 	var req DeleteAddressRequest
-	res, err := client.Logistics.DeleteAddress(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.DeleteAddress(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.DeleteAddress returned error (possibly expected with mock data): %s", err)
 	}
@@ -192,7 +200,8 @@ func Test_Logistics_DeleteSpecialOperatingHour(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/delete_special_operating_hour", app.APIURL), responder)
 
 	var req DeleteSpecialOperatingHourRequest
-	res, err := client.Logistics.DeleteSpecialOperatingHour(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.DeleteSpecialOperatingHour(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.DeleteSpecialOperatingHour returned error (possibly expected with mock data): %s", err)
 	}
@@ -216,7 +225,8 @@ func Test_Logistics_DownloadBookingShippingDocument(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/download_booking_shipping_document", app.APIURL), responder)
 
 	var req DownloadBookingShippingDocumentRequest
-	res, err := client.Logistics.DownloadBookingShippingDocument(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.DownloadBookingShippingDocument(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.DownloadBookingShippingDocument returned error (possibly expected with mock data): %s", err)
 	}
@@ -240,7 +250,8 @@ func Test_Logistics_DownloadShippingDocument(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/download_shipping_document", app.APIURL), responder)
 
 	var req DownloadShippingDocumentRequest
-	res, err := client.Logistics.DownloadShippingDocument(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.DownloadShippingDocument(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.DownloadShippingDocument returned error (possibly expected with mock data): %s", err)
 	}
@@ -264,7 +275,8 @@ func Test_Logistics_DownloadShippingDocumentJob(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/download_shipping_document_job", app.APIURL), responder)
 
 	var req DownloadShippingDocumentJobRequest
-	res, err := client.Logistics.DownloadShippingDocumentJob(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.DownloadShippingDocumentJob(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.DownloadShippingDocumentJob returned error (possibly expected with mock data): %s", err)
 	}
@@ -288,7 +300,8 @@ func Test_Logistics_DownloadToLabel(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/download_to_label", app.APIURL), responder)
 
 	var req DownloadToLabelRequest
-	res, err := client.Logistics.DownloadToLabel(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.DownloadToLabel(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.DownloadToLabel returned error (possibly expected with mock data): %s", err)
 	}
@@ -311,7 +324,8 @@ func Test_Logistics_GetAddressList(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/logistics/get_address_list", app.APIURL), responder)
 
-	res, err := client.Logistics.GetAddressList(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetAddressList(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetAddressList returned error (possibly expected with mock data): %s", err)
 	}
@@ -335,7 +349,8 @@ func Test_Logistics_GetBookingShippingDocumentDataInfo(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/get_booking_shipping_document_data_info", app.APIURL), responder)
 
 	var req GetBookingShippingDocumentDataInfoRequest
-	res, err := client.Logistics.GetBookingShippingDocumentDataInfo(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetBookingShippingDocumentDataInfo(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetBookingShippingDocumentDataInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -359,7 +374,8 @@ func Test_Logistics_GetBookingShippingDocumentParameter(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/get_booking_shipping_document_parameter", app.APIURL), responder)
 
 	var req GetBookingShippingDocumentParameterRequest
-	res, err := client.Logistics.GetBookingShippingDocumentParameter(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetBookingShippingDocumentParameter(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetBookingShippingDocumentParameter returned error (possibly expected with mock data): %s", err)
 	}
@@ -383,7 +399,8 @@ func Test_Logistics_GetBookingShippingDocumentResult(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/get_booking_shipping_document_result", app.APIURL), responder)
 
 	var req GetBookingShippingDocumentResultRequest
-	res, err := client.Logistics.GetBookingShippingDocumentResult(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetBookingShippingDocumentResult(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetBookingShippingDocumentResult returned error (possibly expected with mock data): %s", err)
 	}
@@ -407,7 +424,8 @@ func Test_Logistics_GetBookingShippingParameter(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/logistics/get_booking_shipping_parameter", app.APIURL), responder)
 
 	var req GetBookingShippingParameterRequest
-	res, err := client.Logistics.GetBookingShippingParameter(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetBookingShippingParameter(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetBookingShippingParameter returned error (possibly expected with mock data): %s", err)
 	}
@@ -431,7 +449,8 @@ func Test_Logistics_GetBookingTrackingInfo(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/logistics/get_booking_tracking_info", app.APIURL), responder)
 
 	var req GetBookingTrackingInfoRequest
-	res, err := client.Logistics.GetBookingTrackingInfo(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetBookingTrackingInfo(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetBookingTrackingInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -455,7 +474,8 @@ func Test_Logistics_GetBookingTrackingNumber(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/logistics/get_booking_tracking_number", app.APIURL), responder)
 
 	var req GetBookingTrackingNumberRequest
-	res, err := client.Logistics.GetBookingTrackingNumber(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetBookingTrackingNumber(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetBookingTrackingNumber returned error (possibly expected with mock data): %s", err)
 	}
@@ -478,7 +498,8 @@ func Test_Logistics_GetChannelList(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/logistics/get_channel_list", app.APIURL), responder)
 
-	res, err := client.Logistics.GetChannelList(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetChannelList(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetChannelList returned error (possibly expected with mock data): %s", err)
 	}
@@ -501,7 +522,8 @@ func Test_Logistics_GetMartPackagingInfo(t *testing.T) {
 
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/get_mart_packaging_info", app.APIURL), responder)
 
-	res, err := client.Logistics.GetMartPackagingInfo(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetMartPackagingInfo(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetMartPackagingInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -525,7 +547,8 @@ func Test_Logistics_GetMassShippingParameter(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/get_mass_shipping_parameter", app.APIURL), responder)
 
 	var req GetMassShippingParameterRequest
-	res, err := client.Logistics.GetMassShippingParameter(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetMassShippingParameter(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetMassShippingParameter returned error (possibly expected with mock data): %s", err)
 	}
@@ -549,7 +572,8 @@ func Test_Logistics_GetMassTrackingNumber(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/get_mass_tracking_number", app.APIURL), responder)
 
 	var req GetMassTrackingNumberRequest
-	res, err := client.Logistics.GetMassTrackingNumber(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetMassTrackingNumber(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetMassTrackingNumber returned error (possibly expected with mock data): %s", err)
 	}
@@ -572,7 +596,8 @@ func Test_Logistics_GetOperatingHourRestrictions(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/logistics/get_operating_hour_restrictions", app.APIURL), responder)
 
-	res, err := client.Logistics.GetOperatingHourRestrictions(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetOperatingHourRestrictions(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetOperatingHourRestrictions returned error (possibly expected with mock data): %s", err)
 	}
@@ -595,7 +620,8 @@ func Test_Logistics_GetOperatingHours(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/logistics/get_operating_hours", app.APIURL), responder)
 
-	res, err := client.Logistics.GetOperatingHours(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetOperatingHours(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetOperatingHours returned error (possibly expected with mock data): %s", err)
 	}
@@ -618,7 +644,8 @@ func Test_Logistics_GetPauseStatus(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/logistics/get_pause_status", app.APIURL), responder)
 
-	res, err := client.Logistics.GetPauseStatus(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetPauseStatus(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetPauseStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -642,7 +669,8 @@ func Test_Logistics_GetShippingDocumentDataInfo(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/get_shipping_document_data_info", app.APIURL), responder)
 
 	var req GetShippingDocumentDataInfoRequest
-	res, err := client.Logistics.GetShippingDocumentDataInfo(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetShippingDocumentDataInfo(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetShippingDocumentDataInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -666,7 +694,8 @@ func Test_Logistics_GetShippingDocumentJobStatus(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/get_shipping_document_job_status", app.APIURL), responder)
 
 	var req GetShippingDocumentJobStatusRequest
-	res, err := client.Logistics.GetShippingDocumentJobStatus(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetShippingDocumentJobStatus(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetShippingDocumentJobStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -690,7 +719,8 @@ func Test_Logistics_GetShippingDocumentParameter(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/get_shipping_document_parameter", app.APIURL), responder)
 
 	var req GetShippingDocumentParameterRequest
-	res, err := client.Logistics.GetShippingDocumentParameter(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetShippingDocumentParameter(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetShippingDocumentParameter returned error (possibly expected with mock data): %s", err)
 	}
@@ -714,7 +744,8 @@ func Test_Logistics_GetShippingDocumentResult(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/get_shipping_document_result", app.APIURL), responder)
 
 	var req GetShippingDocumentResultRequest
-	res, err := client.Logistics.GetShippingDocumentResult(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetShippingDocumentResult(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetShippingDocumentResult returned error (possibly expected with mock data): %s", err)
 	}
@@ -738,7 +769,8 @@ func Test_Logistics_GetShippingParameter(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/logistics/get_shipping_parameter", app.APIURL), responder)
 
 	var req GetShippingParameterRequest
-	res, err := client.Logistics.GetShippingParameter(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetShippingParameter(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetShippingParameter returned error (possibly expected with mock data): %s", err)
 	}
@@ -762,7 +794,8 @@ func Test_Logistics_GetTrackingInfo(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/logistics/get_tracking_info", app.APIURL), responder)
 
 	var req GetTrackingInfoRequest
-	res, err := client.Logistics.GetTrackingInfo(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetTrackingInfo(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetTrackingInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -786,7 +819,8 @@ func Test_Logistics_GetTrackingNumber(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/logistics/get_tracking_number", app.APIURL), responder)
 
 	var req GetTrackingNumberRequest
-	res, err := client.Logistics.GetTrackingNumber(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.GetTrackingNumber(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.GetTrackingNumber returned error (possibly expected with mock data): %s", err)
 	}
@@ -810,7 +844,8 @@ func Test_Logistics_MassShipOrder(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/mass_ship_order", app.APIURL), responder)
 
 	var req MassShipOrderRequest
-	res, err := client.Logistics.MassShipOrder(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.MassShipOrder(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.MassShipOrder returned error (possibly expected with mock data): %s", err)
 	}
@@ -834,7 +869,8 @@ func Test_Logistics_SetAddressConfig(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/set_address_config", app.APIURL), responder)
 
 	var req SetAddressConfigRequest
-	res, err := client.Logistics.SetAddressConfig(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.SetAddressConfig(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.SetAddressConfig returned error (possibly expected with mock data): %s", err)
 	}
@@ -858,7 +894,8 @@ func Test_Logistics_SetMartPackagingInfo(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/set_mart_packaging_info", app.APIURL), responder)
 
 	var req SetMartPackagingInfoRequest
-	res, err := client.Logistics.SetMartPackagingInfo(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.SetMartPackagingInfo(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.SetMartPackagingInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -882,7 +919,8 @@ func Test_Logistics_SetPauseStatus(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/set_pause_status", app.APIURL), responder)
 
 	var req SetPauseStatusRequest
-	res, err := client.Logistics.SetPauseStatus(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.SetPauseStatus(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.SetPauseStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -906,7 +944,8 @@ func Test_Logistics_ShipBooking(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/ship_booking", app.APIURL), responder)
 
 	var req ShipBookingRequest
-	res, err := client.Logistics.ShipBooking(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.ShipBooking(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.ShipBooking returned error (possibly expected with mock data): %s", err)
 	}
@@ -930,7 +969,8 @@ func Test_Logistics_ShipOrder(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/ship_order", app.APIURL), responder)
 
 	var req ShipOrderRequest
-	res, err := client.Logistics.ShipOrder(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.ShipOrder(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.ShipOrder returned error (possibly expected with mock data): %s", err)
 	}
@@ -954,7 +994,8 @@ func Test_Logistics_UpdateAddress(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/update_address", app.APIURL), responder)
 
 	var req UpdateAddressRequest
-	res, err := client.Logistics.UpdateAddress(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.UpdateAddress(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.UpdateAddress returned error (possibly expected with mock data): %s", err)
 	}
@@ -978,7 +1019,8 @@ func Test_Logistics_UpdateChannel(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/update_channel", app.APIURL), responder)
 
 	var req UpdateChannelRequest
-	res, err := client.Logistics.UpdateChannel(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.UpdateChannel(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.UpdateChannel returned error (possibly expected with mock data): %s", err)
 	}
@@ -1002,7 +1044,8 @@ func Test_Logistics_UpdateOperatingHours(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/update_operating_hours", app.APIURL), responder)
 
 	var req UpdateOperatingHoursRequest
-	res, err := client.Logistics.UpdateOperatingHours(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.UpdateOperatingHours(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.UpdateOperatingHours returned error (possibly expected with mock data): %s", err)
 	}
@@ -1026,7 +1069,8 @@ func Test_Logistics_UpdateSelfCollectionOrderLogistics(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/update_self_collection_order_logistics", app.APIURL), responder)
 
 	var req UpdateSelfCollectionOrderLogisticsRequest
-	res, err := client.Logistics.UpdateSelfCollectionOrderLogistics(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.UpdateSelfCollectionOrderLogistics(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.UpdateSelfCollectionOrderLogistics returned error (possibly expected with mock data): %s", err)
 	}
@@ -1050,7 +1094,8 @@ func Test_Logistics_UpdateShippingOrder(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/update_shipping_order", app.APIURL), responder)
 
 	var req UpdateShippingOrderRequest
-	res, err := client.Logistics.UpdateShippingOrder(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.UpdateShippingOrder(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.UpdateShippingOrder returned error (possibly expected with mock data): %s", err)
 	}
@@ -1074,7 +1119,8 @@ func Test_Logistics_UpdateTrackingStatus(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/update_tracking_status", app.APIURL), responder)
 
 	var req UpdateTrackingStatusRequest
-	res, err := client.Logistics.UpdateTrackingStatus(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.UpdateTrackingStatus(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Logistics.UpdateTrackingStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -1097,7 +1143,8 @@ func Test_Logistics_UploadServiceablePolygon(t *testing.T) {
 
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/upload_serviceable_polygon", app.APIURL), responder)
 
-	res, err := client.Logistics.UploadServiceablePolygon(shopID, "fixtures/test.jpg", accessToken)
+	ctx := context.Background()
+	res, err := client.Logistics.UploadServiceablePolygon(ctx, shopID, "fixtures/test.jpg", accessToken)
 	if err != nil {
 		t.Logf("Logistics.UploadServiceablePolygon returned error (possibly expected with mock data): %s", err)
 	}

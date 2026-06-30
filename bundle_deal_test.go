@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_BundleDeal_AddBundleDeal(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/bundle_deal/add_bundle_deal", app.APIURL), responder)
 
 	var req AddBundleDealRequest
-	res, err := client.BundleDeal.AddBundleDeal(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.BundleDeal.AddBundleDeal(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("BundleDeal.AddBundleDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -48,7 +50,8 @@ func Test_BundleDeal_AddBundleDealItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/bundle_deal/add_bundle_deal_item", app.APIURL), responder)
 
 	var req AddBundleDealItemRequest
-	res, err := client.BundleDeal.AddBundleDealItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.BundleDeal.AddBundleDealItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("BundleDeal.AddBundleDealItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -72,7 +75,8 @@ func Test_BundleDeal_DeleteBundleDeal(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/bundle_deal/delete_bundle_deal", app.APIURL), responder)
 
 	var req DeleteBundleDealRequest
-	res, err := client.BundleDeal.DeleteBundleDeal(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.BundleDeal.DeleteBundleDeal(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("BundleDeal.DeleteBundleDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -96,7 +100,8 @@ func Test_BundleDeal_DeleteBundleDealItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/bundle_deal/delete_bundle_deal_item", app.APIURL), responder)
 
 	var req DeleteBundleDealItemRequest
-	res, err := client.BundleDeal.DeleteBundleDealItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.BundleDeal.DeleteBundleDealItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("BundleDeal.DeleteBundleDealItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -120,7 +125,8 @@ func Test_BundleDeal_EndBundleDeal(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/bundle_deal/end_bundle_deal", app.APIURL), responder)
 
 	var req EndBundleDealRequest
-	res, err := client.BundleDeal.EndBundleDeal(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.BundleDeal.EndBundleDeal(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("BundleDeal.EndBundleDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -144,7 +150,8 @@ func Test_BundleDeal_GetBundleDeal(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/bundle_deal/get_bundle_deal", app.APIURL), responder)
 
 	var req GetBundleDealRequest
-	res, err := client.BundleDeal.GetBundleDeal(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.BundleDeal.GetBundleDeal(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("BundleDeal.GetBundleDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -168,7 +175,8 @@ func Test_BundleDeal_GetBundleDealItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/bundle_deal/get_bundle_deal_item", app.APIURL), responder)
 
 	var req GetBundleDealItemRequest
-	res, err := client.BundleDeal.GetBundleDealItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.BundleDeal.GetBundleDealItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("BundleDeal.GetBundleDealItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -192,7 +200,8 @@ func Test_BundleDeal_GetBundleDealList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/bundle_deal/get_bundle_deal_list", app.APIURL), responder)
 
 	var req GetBundleDealListRequest
-	res, err := client.BundleDeal.GetBundleDealList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.BundleDeal.GetBundleDealList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("BundleDeal.GetBundleDealList returned error (possibly expected with mock data): %s", err)
 	}
@@ -216,7 +225,8 @@ func Test_BundleDeal_UpdateBundleDeal(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/bundle_deal/update_bundle_deal", app.APIURL), responder)
 
 	var req UpdateBundleDealRequest
-	res, err := client.BundleDeal.UpdateBundleDeal(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.BundleDeal.UpdateBundleDeal(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("BundleDeal.UpdateBundleDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -240,7 +250,8 @@ func Test_BundleDeal_UpdateBundleDealItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/bundle_deal/update_bundle_deal_item", app.APIURL), responder)
 
 	var req UpdateBundleDealItemRequest
-	res, err := client.BundleDeal.UpdateBundleDealItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.BundleDeal.UpdateBundleDealItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("BundleDeal.UpdateBundleDealItem returned error (possibly expected with mock data): %s", err)
 	}

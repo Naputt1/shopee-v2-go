@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_Payment_GenerateIncomeReport(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/payment/generate_income_report", app.APIURL), responder)
 
 	var req GenerateIncomeReportRequest
-	res, err := client.Payment.GenerateIncomeReport(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.GenerateIncomeReport(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Payment.GenerateIncomeReport returned error (possibly expected with mock data): %s", err)
 	}
@@ -48,7 +50,8 @@ func Test_Payment_GenerateIncomeStatement(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/payment/generate_income_statement", app.APIURL), responder)
 
 	var req GenerateIncomeStatementRequest
-	res, err := client.Payment.GenerateIncomeStatement(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.GenerateIncomeStatement(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Payment.GenerateIncomeStatement returned error (possibly expected with mock data): %s", err)
 	}
@@ -72,7 +75,8 @@ func Test_Payment_GetBillingTransactionInfo(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/payment/get_billing_transaction_info", app.APIURL), responder)
 
 	var req GetBillingTransactionInfoRequest
-	res, err := client.Payment.GetBillingTransactionInfo(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.GetBillingTransactionInfo(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Payment.GetBillingTransactionInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -96,7 +100,8 @@ func Test_Payment_GetEscrowDetail(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/payment/get_escrow_detail", app.APIURL), responder)
 
 	var req GetEscrowDetailRequest
-	res, err := client.Payment.GetEscrowDetail(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.GetEscrowDetail(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Payment.GetEscrowDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -120,7 +125,8 @@ func Test_Payment_GetEscrowDetailBatch(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/payment/get_escrow_detail_batch", app.APIURL), responder)
 
 	var req GetEscrowDetailBatchRequest
-	res, err := client.Payment.GetEscrowDetailBatch(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.GetEscrowDetailBatch(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Payment.GetEscrowDetailBatch returned error (possibly expected with mock data): %s", err)
 	}
@@ -144,7 +150,8 @@ func Test_Payment_GetEscrowList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/payment/get_escrow_list", app.APIURL), responder)
 
 	var req GetEscrowListRequest
-	res, err := client.Payment.GetEscrowList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.GetEscrowList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Payment.GetEscrowList returned error (possibly expected with mock data): %s", err)
 	}
@@ -168,7 +175,8 @@ func Test_Payment_GetIncomeDetail(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/payment/get_income_detail", app.APIURL), responder)
 
 	var req GetIncomeDetailRequest
-	res, err := client.Payment.GetIncomeDetail(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.GetIncomeDetail(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Payment.GetIncomeDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -192,7 +200,8 @@ func Test_Payment_GetIncomeOverview(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/payment/get_income_overview", app.APIURL), responder)
 
 	var req GetIncomeOverviewRequest
-	res, err := client.Payment.GetIncomeOverview(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.GetIncomeOverview(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Payment.GetIncomeOverview returned error (possibly expected with mock data): %s", err)
 	}
@@ -216,7 +225,8 @@ func Test_Payment_GetIncomeReport(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/payment/get_income_report", app.APIURL), responder)
 
 	var req GetIncomeReportRequest
-	res, err := client.Payment.GetIncomeReport(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.GetIncomeReport(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Payment.GetIncomeReport returned error (possibly expected with mock data): %s", err)
 	}
@@ -240,7 +250,8 @@ func Test_Payment_GetIncomeStatement(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/payment/get_income_statement", app.APIURL), responder)
 
 	var req GetIncomeStatementRequest
-	res, err := client.Payment.GetIncomeStatement(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.GetIncomeStatement(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Payment.GetIncomeStatement returned error (possibly expected with mock data): %s", err)
 	}
@@ -264,7 +275,8 @@ func Test_Payment_GetItemInstallmentStatus(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/payment/get_item_installment_status", app.APIURL), responder)
 
 	var req GetItemInstallmentStatusRequest
-	res, err := client.Payment.GetItemInstallmentStatus(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.GetItemInstallmentStatus(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Payment.GetItemInstallmentStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -287,7 +299,8 @@ func Test_Payment_GetPaymentMethodList(t *testing.T) {
 
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/payment/get_payment_method_list", app.APIURL), responder)
 
-	res, err := client.Payment.GetPaymentMethodList(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.GetPaymentMethodList(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Payment.GetPaymentMethodList returned error (possibly expected with mock data): %s", err)
 	}
@@ -311,7 +324,8 @@ func Test_Payment_GetPayoutDetail(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/payment/get_payout_detail", app.APIURL), responder)
 
 	var req GetPayoutDetailRequest
-	res, err := client.Payment.GetPayoutDetail(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.GetPayoutDetail(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Payment.GetPayoutDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -335,7 +349,8 @@ func Test_Payment_GetPayoutInfo(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/payment/get_payout_info", app.APIURL), responder)
 
 	var req GetPayoutInfoRequest
-	res, err := client.Payment.GetPayoutInfo(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.GetPayoutInfo(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Payment.GetPayoutInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -358,7 +373,8 @@ func Test_Payment_GetShopInstallmentStatus(t *testing.T) {
 
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/payment/get_shop_installment_status", app.APIURL), responder)
 
-	res, err := client.Payment.GetShopInstallmentStatus(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.GetShopInstallmentStatus(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Payment.GetShopInstallmentStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -382,7 +398,8 @@ func Test_Payment_GetWalletTransactionList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/payment/get_wallet_transaction_list", app.APIURL), responder)
 
 	var req GetWalletTransactionListRequest
-	res, err := client.Payment.GetWalletTransactionList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.GetWalletTransactionList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Payment.GetWalletTransactionList returned error (possibly expected with mock data): %s", err)
 	}
@@ -406,7 +423,8 @@ func Test_Payment_SetItemInstallmentStatus(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/payment/set_item_installment_status", app.APIURL), responder)
 
 	var req SetItemInstallmentStatusRequest
-	res, err := client.Payment.SetItemInstallmentStatus(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.SetItemInstallmentStatus(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Payment.SetItemInstallmentStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -430,7 +448,8 @@ func Test_Payment_SetShopInstallmentStatus(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/payment/set_shop_installment_status", app.APIURL), responder)
 
 	var req SetShopInstallmentStatusRequest
-	res, err := client.Payment.SetShopInstallmentStatus(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Payment.SetShopInstallmentStatus(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Payment.SetShopInstallmentStatus returned error (possibly expected with mock data): %s", err)
 	}

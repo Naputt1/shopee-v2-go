@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_Voucher_AddVoucher(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/voucher/add_voucher", app.APIURL), responder)
 
 	var req AddVoucherRequest
-	res, err := client.Voucher.AddVoucher(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Voucher.AddVoucher(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Voucher.AddVoucher returned error (possibly expected with mock data): %s", err)
 	}
@@ -48,7 +50,8 @@ func Test_Voucher_DeleteVoucher(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/voucher/delete_voucher", app.APIURL), responder)
 
 	var req DeleteVoucherRequest
-	res, err := client.Voucher.DeleteVoucher(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Voucher.DeleteVoucher(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Voucher.DeleteVoucher returned error (possibly expected with mock data): %s", err)
 	}
@@ -72,7 +75,8 @@ func Test_Voucher_EndVoucher(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/voucher/end_voucher", app.APIURL), responder)
 
 	var req EndVoucherRequest
-	res, err := client.Voucher.EndVoucher(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Voucher.EndVoucher(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Voucher.EndVoucher returned error (possibly expected with mock data): %s", err)
 	}
@@ -96,7 +100,8 @@ func Test_Voucher_GetVoucher(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/voucher/get_voucher", app.APIURL), responder)
 
 	var req GetVoucherRequest
-	res, err := client.Voucher.GetVoucher(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Voucher.GetVoucher(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Voucher.GetVoucher returned error (possibly expected with mock data): %s", err)
 	}
@@ -120,7 +125,8 @@ func Test_Voucher_GetVoucherList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/voucher/get_voucher_list", app.APIURL), responder)
 
 	var req GetVoucherListRequest
-	res, err := client.Voucher.GetVoucherList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Voucher.GetVoucherList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Voucher.GetVoucherList returned error (possibly expected with mock data): %s", err)
 	}
@@ -144,7 +150,8 @@ func Test_Voucher_UpdateVoucher(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/voucher/update_voucher", app.APIURL), responder)
 
 	var req UpdateVoucherRequest
-	res, err := client.Voucher.UpdateVoucher(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Voucher.UpdateVoucher(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Voucher.UpdateVoucher returned error (possibly expected with mock data): %s", err)
 	}

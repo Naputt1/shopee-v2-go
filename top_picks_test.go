@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_TopPicks_AddTopPicks(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/top_picks/add_top_picks", app.APIURL), responder)
 
 	var req AddTopPicksRequest
-	res, err := client.TopPicks.AddTopPicks(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.TopPicks.AddTopPicks(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("TopPicks.AddTopPicks returned error (possibly expected with mock data): %s", err)
 	}
@@ -48,7 +50,8 @@ func Test_TopPicks_DeleteTopPicks(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/top_picks/delete_top_picks", app.APIURL), responder)
 
 	var req DeleteTopPicksRequest
-	res, err := client.TopPicks.DeleteTopPicks(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.TopPicks.DeleteTopPicks(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("TopPicks.DeleteTopPicks returned error (possibly expected with mock data): %s", err)
 	}
@@ -71,7 +74,8 @@ func Test_TopPicks_GetTopPicksList(t *testing.T) {
 
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/top_picks/get_top_picks_list", app.APIURL), responder)
 
-	res, err := client.TopPicks.GetTopPicksList(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.TopPicks.GetTopPicksList(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("TopPicks.GetTopPicksList returned error (possibly expected with mock data): %s", err)
 	}
@@ -95,7 +99,8 @@ func Test_TopPicks_UpdateTopPicks(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/top_picks/update_top_picks", app.APIURL), responder)
 
 	var req UpdateTopPicksRequest
-	res, err := client.TopPicks.UpdateTopPicks(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.TopPicks.UpdateTopPicks(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("TopPicks.UpdateTopPicks returned error (possibly expected with mock data): %s", err)
 	}

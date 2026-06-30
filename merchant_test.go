@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -23,7 +24,8 @@ func Test_Merchant_GetMerchantInfo(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/merchant/get_merchant_info", app.APIURL), responder)
 
-	res, err := client.Merchant.GetMerchantInfo(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Merchant.GetMerchantInfo(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Merchant.GetMerchantInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -47,7 +49,8 @@ func Test_Merchant_GetMerchantPrepaidAccountList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/merchant/get_merchant_prepaid_account_list", app.APIURL), responder)
 
 	var req GetMerchantPrepaidAccountListRequest
-	res, err := client.Merchant.GetMerchantPrepaidAccountList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Merchant.GetMerchantPrepaidAccountList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Merchant.GetMerchantPrepaidAccountList returned error (possibly expected with mock data): %s", err)
 	}
@@ -71,7 +74,8 @@ func Test_Merchant_GetMerchantWarehouseList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/merchant/get_merchant_warehouse_list", app.APIURL), responder)
 
 	var req GetMerchantWarehouseListRequest
-	res, err := client.Merchant.GetMerchantWarehouseList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Merchant.GetMerchantWarehouseList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Merchant.GetMerchantWarehouseList returned error (possibly expected with mock data): %s", err)
 	}
@@ -94,7 +98,8 @@ func Test_Merchant_GetMerchantWarehouseLocationList(t *testing.T) {
 
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/merchant/get_merchant_warehouse_location_list", app.APIURL), responder)
 
-	res, err := client.Merchant.GetMerchantWarehouseLocationList(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Merchant.GetMerchantWarehouseLocationList(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Merchant.GetMerchantWarehouseLocationList returned error (possibly expected with mock data): %s", err)
 	}
@@ -118,7 +123,8 @@ func Test_Merchant_GetShopListByMerchant(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/merchant/get_shop_list_by_merchant", app.APIURL), responder)
 
 	var req GetShopListByMerchantRequest
-	res, err := client.Merchant.GetShopListByMerchant(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Merchant.GetShopListByMerchant(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Merchant.GetShopListByMerchant returned error (possibly expected with mock data): %s", err)
 	}
@@ -142,7 +148,8 @@ func Test_Merchant_GetWarehouseEligibleShopList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/merchant/get_warehouse_eligible_shop_list", app.APIURL), responder)
 
 	var req GetWarehouseEligibleShopListRequest
-	res, err := client.Merchant.GetWarehouseEligibleShopList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Merchant.GetWarehouseEligibleShopList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Merchant.GetWarehouseEligibleShopList returned error (possibly expected with mock data): %s", err)
 	}

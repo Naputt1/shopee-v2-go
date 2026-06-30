@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"crypto/hmac"
 	"crypto/sha256"
 	"encoding/hex"
@@ -19,11 +20,11 @@ type AuthService interface {
 
 	// GetAccessToken gets the access token.
 	// Path: /api/v2/auth/token/get
-	GetAccessToken(sid uint64, aid uint64, code string) (*AccessTokenResponse, error)
+	GetAccessToken(ctx context.Context, sid uint64, aid uint64, code string) (*AccessTokenResponse, error)
 
 	// RefreshAccessToken refreshes the access token.
 	// Path: /api/v2/auth/access_token/get
-	RefreshAccessToken(sid uint64, aid uint64, refresh string) (*RefreshAccessTokenResponse, error)
+	RefreshAccessToken(ctx context.Context, sid uint64, aid uint64, refresh string) (*RefreshAccessTokenResponse, error)
 }
 
 type AccessTokenResponse struct {
@@ -69,7 +70,7 @@ func (s *AuthServiceOp[T]) authURL(path string) (string, error) {
 	return fmt.Sprintf("%s%s?partner_id=%d&timestamp=%d&sign=%s&redirect=%s", s.client.app.APIURL, path, s.client.app.PartnerID, ts, sign, rurl), nil
 }
 
-func (s *AuthServiceOp[T]) GetAccessToken(sid uint64, aid uint64, code string) (*AccessTokenResponse, error) {
+func (s *AuthServiceOp[T]) GetAccessToken(ctx context.Context, sid uint64, aid uint64, code string) (*AccessTokenResponse, error) {
 	path := "/auth/token/get"
 	params := map[string]interface{}{
 		"code":       code,
@@ -81,11 +82,11 @@ func (s *AuthServiceOp[T]) GetAccessToken(sid uint64, aid uint64, code string) (
 		params["main_account_id"] = aid
 	}
 	resp := new(AccessTokenResponse)
-	err := s.client.Post(path, params, resp)
+	err := s.client.Post(ctx, path, params, resp)
 	return resp, err
 }
 
-func (s *AuthServiceOp[T]) RefreshAccessToken(sid uint64, aid uint64, refresh string) (*RefreshAccessTokenResponse, error) {
+func (s *AuthServiceOp[T]) RefreshAccessToken(ctx context.Context, sid uint64, aid uint64, refresh string) (*RefreshAccessTokenResponse, error) {
 	path := "/auth/access_token/get"
 	params := map[string]interface{}{
 		"refresh_token": refresh,
@@ -97,6 +98,6 @@ func (s *AuthServiceOp[T]) RefreshAccessToken(sid uint64, aid uint64, refresh st
 		params["main_account_id"] = aid
 	}
 	resp := new(RefreshAccessTokenResponse)
-	err := s.client.Post(path, params, resp)
+	err := s.client.Post(ctx, path, params, resp)
 	return resp, err
 }

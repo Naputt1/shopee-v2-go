@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_Livestream_AddItemList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/livestream/add_item_list", app.APIURL), responder)
 
 	var req AddItemListRequest
-	res, err := client.Livestream.AddItemList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.AddItemList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.AddItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -48,7 +50,8 @@ func Test_Livestream_ApplyItemSet(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/livestream/apply_item_set", app.APIURL), responder)
 
 	var req ApplyItemSetRequest
-	res, err := client.Livestream.ApplyItemSet(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.ApplyItemSet(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.ApplyItemSet returned error (possibly expected with mock data): %s", err)
 	}
@@ -72,7 +75,8 @@ func Test_Livestream_BanUserComment(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/livestream/ban_user_comment", app.APIURL), responder)
 
 	var req BanUserCommentRequest
-	res, err := client.Livestream.BanUserComment(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.BanUserComment(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.BanUserComment returned error (possibly expected with mock data): %s", err)
 	}
@@ -96,7 +100,8 @@ func Test_Livestream_CreateSession(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/livestream/create_session", app.APIURL), responder)
 
 	var req CreateSessionRequest
-	res, err := client.Livestream.CreateSession(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.CreateSession(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.CreateSession returned error (possibly expected with mock data): %s", err)
 	}
@@ -120,7 +125,8 @@ func Test_Livestream_DeleteItemList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/livestream/delete_item_list", app.APIURL), responder)
 
 	var req DeleteItemListRequest
-	res, err := client.Livestream.DeleteItemList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.DeleteItemList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.DeleteItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -144,7 +150,8 @@ func Test_Livestream_DeleteShowItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/livestream/delete_show_item", app.APIURL), responder)
 
 	var req DeleteShowItemRequest
-	res, err := client.Livestream.DeleteShowItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.DeleteShowItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.DeleteShowItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -168,7 +175,8 @@ func Test_Livestream_EndSession(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/livestream/end_session", app.APIURL), responder)
 
 	var req EndSessionRequest
-	res, err := client.Livestream.EndSession(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.EndSession(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.EndSession returned error (possibly expected with mock data): %s", err)
 	}
@@ -192,7 +200,8 @@ func Test_Livestream_GetItemCount(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/livestream/get_item_count", app.APIURL), responder)
 
 	var req GetItemCountRequest
-	res, err := client.Livestream.GetItemCount(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.GetItemCount(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.GetItemCount returned error (possibly expected with mock data): %s", err)
 	}
@@ -216,7 +225,8 @@ func Test_Livestream_GetItemList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/livestream/get_item_list", app.APIURL), responder)
 
 	var req GetItemListRequest
-	res, err := client.Livestream.GetItemList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.GetItemList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.GetItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -240,7 +250,8 @@ func Test_Livestream_GetItemSetItemList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/livestream/get_item_set_item_list", app.APIURL), responder)
 
 	var req GetItemSetItemListRequest
-	res, err := client.Livestream.GetItemSetItemList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.GetItemSetItemList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.GetItemSetItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -264,7 +275,8 @@ func Test_Livestream_GetItemSetList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/livestream/get_item_set_list", app.APIURL), responder)
 
 	var req GetItemSetListRequest
-	res, err := client.Livestream.GetItemSetList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.GetItemSetList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.GetItemSetList returned error (possibly expected with mock data): %s", err)
 	}
@@ -288,7 +300,8 @@ func Test_Livestream_GetLatestCommentList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/livestream/get_latest_comment_list", app.APIURL), responder)
 
 	var req GetLatestCommentListRequest
-	res, err := client.Livestream.GetLatestCommentList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.GetLatestCommentList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.GetLatestCommentList returned error (possibly expected with mock data): %s", err)
 	}
@@ -312,7 +325,8 @@ func Test_Livestream_GetLikeItemList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/livestream/get_like_item_list", app.APIURL), responder)
 
 	var req GetLikeItemListRequest
-	res, err := client.Livestream.GetLikeItemList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.GetLikeItemList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.GetLikeItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -336,7 +350,8 @@ func Test_Livestream_GetRecentItemList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/livestream/get_recent_item_list", app.APIURL), responder)
 
 	var req GetRecentItemListRequest
-	res, err := client.Livestream.GetRecentItemList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.GetRecentItemList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.GetRecentItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -360,7 +375,8 @@ func Test_Livestream_GetSessionDetail(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/livestream/get_session_detail", app.APIURL), responder)
 
 	var req GetSessionDetailRequest
-	res, err := client.Livestream.GetSessionDetail(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.GetSessionDetail(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.GetSessionDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -384,7 +400,8 @@ func Test_Livestream_GetSessionItemMetric(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/livestream/get_session_item_metric", app.APIURL), responder)
 
 	var req GetSessionItemMetricRequest
-	res, err := client.Livestream.GetSessionItemMetric(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.GetSessionItemMetric(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.GetSessionItemMetric returned error (possibly expected with mock data): %s", err)
 	}
@@ -408,7 +425,8 @@ func Test_Livestream_GetSessionMetric(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/livestream/get_session_metric", app.APIURL), responder)
 
 	var req GetSessionMetricRequest
-	res, err := client.Livestream.GetSessionMetric(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.GetSessionMetric(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.GetSessionMetric returned error (possibly expected with mock data): %s", err)
 	}
@@ -432,7 +450,8 @@ func Test_Livestream_GetShowItem(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/livestream/get_show_item", app.APIURL), responder)
 
 	var req GetShowItemRequest
-	res, err := client.Livestream.GetShowItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.GetShowItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.GetShowItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -456,7 +475,8 @@ func Test_Livestream_PostComment(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/livestream/post_comment", app.APIURL), responder)
 
 	var req PostCommentRequest
-	res, err := client.Livestream.PostComment(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.PostComment(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.PostComment returned error (possibly expected with mock data): %s", err)
 	}
@@ -480,7 +500,8 @@ func Test_Livestream_StartSession(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/livestream/start_session", app.APIURL), responder)
 
 	var req StartSessionRequest
-	res, err := client.Livestream.StartSession(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.StartSession(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.StartSession returned error (possibly expected with mock data): %s", err)
 	}
@@ -504,7 +525,8 @@ func Test_Livestream_UnbanUserComment(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/livestream/unban_user_comment", app.APIURL), responder)
 
 	var req UnbanUserCommentRequest
-	res, err := client.Livestream.UnbanUserComment(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.UnbanUserComment(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.UnbanUserComment returned error (possibly expected with mock data): %s", err)
 	}
@@ -528,7 +550,8 @@ func Test_Livestream_UpdateItemList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/livestream/update_item_list", app.APIURL), responder)
 
 	var req UpdateItemListRequest
-	res, err := client.Livestream.UpdateItemList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.UpdateItemList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.UpdateItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -552,7 +575,8 @@ func Test_Livestream_UpdateSession(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/livestream/update_session", app.APIURL), responder)
 
 	var req UpdateSessionRequest
-	res, err := client.Livestream.UpdateSession(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.UpdateSession(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.UpdateSession returned error (possibly expected with mock data): %s", err)
 	}
@@ -576,7 +600,8 @@ func Test_Livestream_UpdateShowItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/livestream/update_show_item", app.APIURL), responder)
 
 	var req UpdateShowItemRequest
-	res, err := client.Livestream.UpdateShowItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.UpdateShowItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Livestream.UpdateShowItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -599,7 +624,8 @@ func Test_Livestream_UploadImage(t *testing.T) {
 
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/livestream/upload_image", app.APIURL), responder)
 
-	res, err := client.Livestream.UploadImage(shopID, "fixtures/test.jpg", accessToken)
+	ctx := context.Background()
+	res, err := client.Livestream.UploadImage(ctx, shopID, "fixtures/test.jpg", accessToken)
 	if err != nil {
 		t.Logf("Livestream.UploadImage returned error (possibly expected with mock data): %s", err)
 	}

@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_Returns_AcceptOffer(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/returns/accept_offer", app.APIURL), responder)
 
 	var req AcceptOfferRequest
-	res, err := client.Returns.AcceptOffer(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Returns.AcceptOffer(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Returns.AcceptOffer returned error (possibly expected with mock data): %s", err)
 	}
@@ -48,7 +50,8 @@ func Test_Returns_CancelDispute(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/returns/cancel_dispute", app.APIURL), responder)
 
 	var req CancelDisputeRequest
-	res, err := client.Returns.CancelDispute(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Returns.CancelDispute(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Returns.CancelDispute returned error (possibly expected with mock data): %s", err)
 	}
@@ -72,7 +75,8 @@ func Test_Returns_Confirm(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/returns/confirm", app.APIURL), responder)
 
 	var req ConfirmRequest
-	res, err := client.Returns.Confirm(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Returns.Confirm(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Returns.Confirm returned error (possibly expected with mock data): %s", err)
 	}
@@ -96,7 +100,8 @@ func Test_Returns_ConvertImage(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/returns/convert_image", app.APIURL), responder)
 
 	var req ConvertImageRequest
-	res, err := client.Returns.ConvertImage(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Returns.ConvertImage(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Returns.ConvertImage returned error (possibly expected with mock data): %s", err)
 	}
@@ -120,7 +125,8 @@ func Test_Returns_Dispute(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/returns/dispute", app.APIURL), responder)
 
 	var req DisputeRequest
-	res, err := client.Returns.Dispute(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Returns.Dispute(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Returns.Dispute returned error (possibly expected with mock data): %s", err)
 	}
@@ -144,7 +150,8 @@ func Test_Returns_GetAvailableSolutions(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/returns/get_available_solutions", app.APIURL), responder)
 
 	var req GetAvailableSolutionsRequest
-	res, err := client.Returns.GetAvailableSolutions(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Returns.GetAvailableSolutions(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Returns.GetAvailableSolutions returned error (possibly expected with mock data): %s", err)
 	}
@@ -168,7 +175,8 @@ func Test_Returns_GetReturnDetail(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/returns/get_return_detail", app.APIURL), responder)
 
 	var req GetReturnDetailRequest
-	res, err := client.Returns.GetReturnDetail(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Returns.GetReturnDetail(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Returns.GetReturnDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -192,7 +200,8 @@ func Test_Returns_GetReturnDisputeReason(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/returns/get_return_dispute_reason", app.APIURL), responder)
 
 	var req GetReturnDisputeReasonRequest
-	res, err := client.Returns.GetReturnDisputeReason(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Returns.GetReturnDisputeReason(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Returns.GetReturnDisputeReason returned error (possibly expected with mock data): %s", err)
 	}
@@ -216,7 +225,8 @@ func Test_Returns_GetReturnList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/returns/get_return_list", app.APIURL), responder)
 
 	var req GetReturnListRequest
-	res, err := client.Returns.GetReturnList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Returns.GetReturnList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Returns.GetReturnList returned error (possibly expected with mock data): %s", err)
 	}
@@ -240,7 +250,8 @@ func Test_Returns_GetReverseTrackingInfo(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/returns/get_reverse_tracking_info", app.APIURL), responder)
 
 	var req GetReverseTrackingInfoRequest
-	res, err := client.Returns.GetReverseTrackingInfo(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Returns.GetReverseTrackingInfo(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Returns.GetReverseTrackingInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -264,7 +275,8 @@ func Test_Returns_GetShippingCarrier(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/returns/get_shipping_carrier", app.APIURL), responder)
 
 	var req GetShippingCarrierRequest
-	res, err := client.Returns.GetShippingCarrier(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Returns.GetShippingCarrier(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Returns.GetShippingCarrier returned error (possibly expected with mock data): %s", err)
 	}
@@ -288,7 +300,8 @@ func Test_Returns_Offer(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/returns/offer", app.APIURL), responder)
 
 	var req OfferRequest
-	res, err := client.Returns.Offer(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Returns.Offer(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Returns.Offer returned error (possibly expected with mock data): %s", err)
 	}
@@ -312,7 +325,8 @@ func Test_Returns_QueryProof(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/returns/query_proof", app.APIURL), responder)
 
 	var req QueryProofRequest
-	res, err := client.Returns.QueryProof(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Returns.QueryProof(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Returns.QueryProof returned error (possibly expected with mock data): %s", err)
 	}
@@ -335,7 +349,8 @@ func Test_Returns_UploadProof(t *testing.T) {
 
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/returns/upload_proof", app.APIURL), responder)
 
-	res, err := client.Returns.UploadProof(shopID, "fixtures/test.jpg", accessToken)
+	ctx := context.Background()
+	res, err := client.Returns.UploadProof(ctx, shopID, "fixtures/test.jpg", accessToken)
 	if err != nil {
 		t.Logf("Returns.UploadProof returned error (possibly expected with mock data): %s", err)
 	}
@@ -358,7 +373,8 @@ func Test_Returns_UploadShippingProof(t *testing.T) {
 
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/returns/upload_shipping_proof", app.APIURL), responder)
 
-	res, err := client.Returns.UploadShippingProof(shopID, "fixtures/test.jpg", accessToken)
+	ctx := context.Background()
+	res, err := client.Returns.UploadShippingProof(ctx, shopID, "fixtures/test.jpg", accessToken)
 	if err != nil {
 		t.Logf("Returns.UploadShippingProof returned error (possibly expected with mock data): %s", err)
 	}

@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -23,7 +24,8 @@ func Test_FBS_QueryBrShopBlockStatus(t *testing.T) {
 
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/fbs/query_br_shop_block_status", app.APIURL), responder)
 
-	res, err := client.FBS.QueryBrShopBlockStatus(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.FBS.QueryBrShopBlockStatus(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("FBS.QueryBrShopBlockStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -46,7 +48,8 @@ func Test_FBS_QueryBrShopEnrollmentStatus(t *testing.T) {
 
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/fbs/query_br_shop_enrollment_status", app.APIURL), responder)
 
-	res, err := client.FBS.QueryBrShopEnrollmentStatus(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.FBS.QueryBrShopEnrollmentStatus(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("FBS.QueryBrShopEnrollmentStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -70,7 +73,8 @@ func Test_FBS_QueryBrShopInvoiceError(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/fbs/query_br_shop_invoice_error", app.APIURL), responder)
 
 	var req QueryBrShopInvoiceErrorRequest
-	res, err := client.FBS.QueryBrShopInvoiceError(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FBS.QueryBrShopInvoiceError(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FBS.QueryBrShopInvoiceError returned error (possibly expected with mock data): %s", err)
 	}
@@ -94,7 +98,8 @@ func Test_FBS_QueryBrSkuBlockStatus(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/fbs/query_br_sku_block_status", app.APIURL), responder)
 
 	var req QueryBrSkuBlockStatusRequest
-	res, err := client.FBS.QueryBrSkuBlockStatus(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FBS.QueryBrSkuBlockStatus(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FBS.QueryBrSkuBlockStatus returned error (possibly expected with mock data): %s", err)
 	}

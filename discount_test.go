@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_Discount_AddDiscount(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/discount/add_discount", app.APIURL), responder)
 
 	var req AddDiscountRequest
-	res, err := client.Discount.AddDiscount(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Discount.AddDiscount(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Discount.AddDiscount returned error (possibly expected with mock data): %s", err)
 	}
@@ -48,7 +50,8 @@ func Test_Discount_AddDiscountItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/discount/add_discount_item", app.APIURL), responder)
 
 	var req AddDiscountItemRequest
-	res, err := client.Discount.AddDiscountItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Discount.AddDiscountItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Discount.AddDiscountItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -72,7 +75,8 @@ func Test_Discount_DeleteDiscount(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/discount/delete_discount", app.APIURL), responder)
 
 	var req DeleteDiscountRequest
-	res, err := client.Discount.DeleteDiscount(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Discount.DeleteDiscount(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Discount.DeleteDiscount returned error (possibly expected with mock data): %s", err)
 	}
@@ -96,7 +100,8 @@ func Test_Discount_DeleteDiscountItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/discount/delete_discount_item", app.APIURL), responder)
 
 	var req DeleteDiscountItemRequest
-	res, err := client.Discount.DeleteDiscountItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Discount.DeleteDiscountItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Discount.DeleteDiscountItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -120,7 +125,8 @@ func Test_Discount_DeleteSipDiscount(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/discount/delete_sip_discount", app.APIURL), responder)
 
 	var req DeleteSipDiscountRequest
-	res, err := client.Discount.DeleteSipDiscount(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Discount.DeleteSipDiscount(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Discount.DeleteSipDiscount returned error (possibly expected with mock data): %s", err)
 	}
@@ -144,7 +150,8 @@ func Test_Discount_EndDiscount(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/discount/end_discount", app.APIURL), responder)
 
 	var req EndDiscountRequest
-	res, err := client.Discount.EndDiscount(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Discount.EndDiscount(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Discount.EndDiscount returned error (possibly expected with mock data): %s", err)
 	}
@@ -168,7 +175,8 @@ func Test_Discount_GetDiscount(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/discount/get_discount", app.APIURL), responder)
 
 	var req GetDiscountRequest
-	res, err := client.Discount.GetDiscount(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Discount.GetDiscount(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Discount.GetDiscount returned error (possibly expected with mock data): %s", err)
 	}
@@ -192,7 +200,8 @@ func Test_Discount_GetDiscountList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/discount/get_discount_list", app.APIURL), responder)
 
 	var req GetDiscountListRequest
-	res, err := client.Discount.GetDiscountList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Discount.GetDiscountList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Discount.GetDiscountList returned error (possibly expected with mock data): %s", err)
 	}
@@ -216,7 +225,8 @@ func Test_Discount_GetSipDiscounts(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/discount/get_sip_discounts", app.APIURL), responder)
 
 	var req GetSipDiscountsRequest
-	res, err := client.Discount.GetSipDiscounts(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Discount.GetSipDiscounts(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Discount.GetSipDiscounts returned error (possibly expected with mock data): %s", err)
 	}
@@ -240,7 +250,8 @@ func Test_Discount_SetSipDiscount(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/discount/set_sip_discount", app.APIURL), responder)
 
 	var req SetSipDiscountRequest
-	res, err := client.Discount.SetSipDiscount(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Discount.SetSipDiscount(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Discount.SetSipDiscount returned error (possibly expected with mock data): %s", err)
 	}
@@ -264,7 +275,8 @@ func Test_Discount_UpdateDiscount(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/discount/update_discount", app.APIURL), responder)
 
 	var req UpdateDiscountRequest
-	res, err := client.Discount.UpdateDiscount(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Discount.UpdateDiscount(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Discount.UpdateDiscount returned error (possibly expected with mock data): %s", err)
 	}
@@ -288,7 +300,8 @@ func Test_Discount_UpdateDiscountItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/discount/update_discount_item", app.APIURL), responder)
 
 	var req UpdateDiscountItemRequest
-	res, err := client.Discount.UpdateDiscountItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Discount.UpdateDiscountItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Discount.UpdateDiscountItem returned error (possibly expected with mock data): %s", err)
 	}

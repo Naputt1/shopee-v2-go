@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_AddOnDeal_AddAddOnDeal(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/add_on_deal/add_add_on_deal", app.APIURL), responder)
 
 	var req AddAddOnDealRequest
-	res, err := client.AddOnDeal.AddAddOnDeal(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AddOnDeal.AddAddOnDeal(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AddOnDeal.AddAddOnDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -48,7 +50,8 @@ func Test_AddOnDeal_AddAddOnDealMainItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/add_on_deal/add_add_on_deal_main_item", app.APIURL), responder)
 
 	var req AddAddOnDealMainItemRequest
-	res, err := client.AddOnDeal.AddAddOnDealMainItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AddOnDeal.AddAddOnDealMainItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AddOnDeal.AddAddOnDealMainItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -72,7 +75,8 @@ func Test_AddOnDeal_AddAddOnDealSubItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/add_on_deal/add_add_on_deal_sub_item", app.APIURL), responder)
 
 	var req AddAddOnDealSubItemRequest
-	res, err := client.AddOnDeal.AddAddOnDealSubItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AddOnDeal.AddAddOnDealSubItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AddOnDeal.AddAddOnDealSubItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -96,7 +100,8 @@ func Test_AddOnDeal_DeleteAddOnDeal(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/add_on_deal/delete_add_on_deal", app.APIURL), responder)
 
 	var req DeleteAddOnDealRequest
-	res, err := client.AddOnDeal.DeleteAddOnDeal(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AddOnDeal.DeleteAddOnDeal(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AddOnDeal.DeleteAddOnDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -120,7 +125,8 @@ func Test_AddOnDeal_DeleteAddOnDealMainItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/add_on_deal/delete_add_on_deal_main_item", app.APIURL), responder)
 
 	var req DeleteAddOnDealMainItemRequest
-	res, err := client.AddOnDeal.DeleteAddOnDealMainItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AddOnDeal.DeleteAddOnDealMainItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AddOnDeal.DeleteAddOnDealMainItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -144,7 +150,8 @@ func Test_AddOnDeal_DeleteAddOnDealSubItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/add_on_deal/delete_add_on_deal_sub_item", app.APIURL), responder)
 
 	var req DeleteAddOnDealSubItemRequest
-	res, err := client.AddOnDeal.DeleteAddOnDealSubItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AddOnDeal.DeleteAddOnDealSubItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AddOnDeal.DeleteAddOnDealSubItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -168,7 +175,8 @@ func Test_AddOnDeal_EndAddOnDeal(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/add_on_deal/end_add_on_deal", app.APIURL), responder)
 
 	var req EndAddOnDealRequest
-	res, err := client.AddOnDeal.EndAddOnDeal(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AddOnDeal.EndAddOnDeal(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AddOnDeal.EndAddOnDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -192,7 +200,8 @@ func Test_AddOnDeal_GetAddOnDeal(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/add_on_deal/get_add_on_deal", app.APIURL), responder)
 
 	var req GetAddOnDealRequest
-	res, err := client.AddOnDeal.GetAddOnDeal(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AddOnDeal.GetAddOnDeal(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AddOnDeal.GetAddOnDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -216,7 +225,8 @@ func Test_AddOnDeal_GetAddOnDealList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/add_on_deal/get_add_on_deal_list", app.APIURL), responder)
 
 	var req GetAddOnDealListRequest
-	res, err := client.AddOnDeal.GetAddOnDealList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AddOnDeal.GetAddOnDealList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AddOnDeal.GetAddOnDealList returned error (possibly expected with mock data): %s", err)
 	}
@@ -240,7 +250,8 @@ func Test_AddOnDeal_GetAddOnDealMainItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/add_on_deal/get_add_on_deal_main_item", app.APIURL), responder)
 
 	var req GetAddOnDealMainItemRequest
-	res, err := client.AddOnDeal.GetAddOnDealMainItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AddOnDeal.GetAddOnDealMainItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AddOnDeal.GetAddOnDealMainItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -264,7 +275,8 @@ func Test_AddOnDeal_GetAddOnDealSubItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/add_on_deal/get_add_on_deal_sub_item", app.APIURL), responder)
 
 	var req GetAddOnDealSubItemRequest
-	res, err := client.AddOnDeal.GetAddOnDealSubItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AddOnDeal.GetAddOnDealSubItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AddOnDeal.GetAddOnDealSubItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -288,7 +300,8 @@ func Test_AddOnDeal_UpdateAddOnDeal(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/add_on_deal/update_add_on_deal", app.APIURL), responder)
 
 	var req UpdateAddOnDealRequest
-	res, err := client.AddOnDeal.UpdateAddOnDeal(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AddOnDeal.UpdateAddOnDeal(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AddOnDeal.UpdateAddOnDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -312,7 +325,8 @@ func Test_AddOnDeal_UpdateAddOnDealMainItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/add_on_deal/update_add_on_deal_main_item", app.APIURL), responder)
 
 	var req UpdateAddOnDealMainItemRequest
-	res, err := client.AddOnDeal.UpdateAddOnDealMainItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AddOnDeal.UpdateAddOnDealMainItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AddOnDeal.UpdateAddOnDealMainItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -336,7 +350,8 @@ func Test_AddOnDeal_UpdateAddOnDealSubItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/add_on_deal/update_add_on_deal_sub_item", app.APIURL), responder)
 
 	var req UpdateAddOnDealSubItemRequest
-	res, err := client.AddOnDeal.UpdateAddOnDealSubItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.AddOnDeal.UpdateAddOnDealSubItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("AddOnDeal.UpdateAddOnDealSubItem returned error (possibly expected with mock data): %s", err)
 	}

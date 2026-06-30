@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_Public_GetMerchantsByPartner(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/public/get_merchants_by_partner", app.APIURL), responder)
 
 	var req GetMerchantsByPartnerRequest
-	res, err := client.Public.GetMerchantsByPartner(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Public.GetMerchantsByPartner(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Public.GetMerchantsByPartner returned error (possibly expected with mock data): %s", err)
 	}
@@ -47,7 +49,8 @@ func Test_Public_GetShopeeIpRanges(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/public/get_shopee_ip_ranges", app.APIURL), responder)
 
-	res, err := client.Public.GetShopeeIpRanges(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Public.GetShopeeIpRanges(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Public.GetShopeeIpRanges returned error (possibly expected with mock data): %s", err)
 	}
@@ -71,7 +74,8 @@ func Test_Public_GetShopsByPartner(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/public/get_shops_by_partner", app.APIURL), responder)
 
 	var req GetShopsByPartnerRequest
-	res, err := client.Public.GetShopsByPartner(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Public.GetShopsByPartner(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Public.GetShopsByPartner returned error (possibly expected with mock data): %s", err)
 	}
@@ -95,7 +99,8 @@ func Test_Public_GetTokenByResendCode(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/public/get_token_by_resend_code", app.APIURL), responder)
 
 	var req GetTokenByResendCodeRequest
-	res, err := client.Public.GetTokenByResendCode(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Public.GetTokenByResendCode(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Public.GetTokenByResendCode returned error (possibly expected with mock data): %s", err)
 	}

@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_ShopCategory_AddItemList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_category/add_item_list", app.APIURL), responder)
 
 	var req ShopCategoryAddItemListRequest
-	res, err := client.ShopCategory.AddItemList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopCategory.AddItemList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("ShopCategory.AddItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -48,7 +50,8 @@ func Test_ShopCategory_AddShopCategory(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_category/add_shop_category", app.APIURL), responder)
 
 	var req AddShopCategoryRequest
-	res, err := client.ShopCategory.AddShopCategory(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopCategory.AddShopCategory(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("ShopCategory.AddShopCategory returned error (possibly expected with mock data): %s", err)
 	}
@@ -72,7 +75,8 @@ func Test_ShopCategory_DeleteItemList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_category/delete_item_list", app.APIURL), responder)
 
 	var req ShopCategoryDeleteItemListRequest
-	res, err := client.ShopCategory.DeleteItemList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopCategory.DeleteItemList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("ShopCategory.DeleteItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -96,7 +100,8 @@ func Test_ShopCategory_DeleteShopCategory(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_category/delete_shop_category", app.APIURL), responder)
 
 	var req DeleteShopCategoryRequest
-	res, err := client.ShopCategory.DeleteShopCategory(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopCategory.DeleteShopCategory(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("ShopCategory.DeleteShopCategory returned error (possibly expected with mock data): %s", err)
 	}
@@ -120,7 +125,8 @@ func Test_ShopCategory_GetItemList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_category/get_item_list", app.APIURL), responder)
 
 	var req ShopCategoryGetItemListRequest
-	res, err := client.ShopCategory.GetItemList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopCategory.GetItemList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("ShopCategory.GetItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -144,7 +150,8 @@ func Test_ShopCategory_GetShopCategoryList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_category/get_shop_category_list", app.APIURL), responder)
 
 	var req GetShopCategoryListRequest
-	res, err := client.ShopCategory.GetShopCategoryList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopCategory.GetShopCategoryList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("ShopCategory.GetShopCategoryList returned error (possibly expected with mock data): %s", err)
 	}
@@ -168,7 +175,8 @@ func Test_ShopCategory_UpdateShopCategory(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_category/update_shop_category", app.APIURL), responder)
 
 	var req UpdateShopCategoryRequest
-	res, err := client.ShopCategory.UpdateShopCategory(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopCategory.UpdateShopCategory(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("ShopCategory.UpdateShopCategory returned error (possibly expected with mock data): %s", err)
 	}

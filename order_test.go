@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_Order_CancelOrder(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/order/cancel_order", app.APIURL), responder)
 
 	var req CancelOrderRequest
-	res, err := client.Order.CancelOrder(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.CancelOrder(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.CancelOrder returned error (possibly expected with mock data): %s", err)
 	}
@@ -48,7 +50,8 @@ func Test_Order_DownloadFbsInvoices(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/order/download_fbs_invoices", app.APIURL), responder)
 
 	var req DownloadFbsInvoicesRequest
-	res, err := client.Order.DownloadFbsInvoices(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.DownloadFbsInvoices(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.DownloadFbsInvoices returned error (possibly expected with mock data): %s", err)
 	}
@@ -72,7 +75,8 @@ func Test_Order_DownloadInvoiceDoc(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/order/download_invoice_doc", app.APIURL), responder)
 
 	var req DownloadInvoiceDocRequest
-	res, err := client.Order.DownloadInvoiceDoc(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.DownloadInvoiceDoc(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.DownloadInvoiceDoc returned error (possibly expected with mock data): %s", err)
 	}
@@ -96,7 +100,8 @@ func Test_Order_GenerateFbsInvoices(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/order/generate_fbs_invoices", app.APIURL), responder)
 
 	var req GenerateFbsInvoicesRequest
-	res, err := client.Order.GenerateFbsInvoices(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.GenerateFbsInvoices(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.GenerateFbsInvoices returned error (possibly expected with mock data): %s", err)
 	}
@@ -120,7 +125,8 @@ func Test_Order_GetBookingDetail(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/order/get_booking_detail", app.APIURL), responder)
 
 	var req GetBookingDetailRequest
-	res, err := client.Order.GetBookingDetail(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.GetBookingDetail(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.GetBookingDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -144,7 +150,8 @@ func Test_Order_GetBookingList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/order/get_booking_list", app.APIURL), responder)
 
 	var req GetBookingListRequest
-	res, err := client.Order.GetBookingList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.GetBookingList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.GetBookingList returned error (possibly expected with mock data): %s", err)
 	}
@@ -168,7 +175,8 @@ func Test_Order_GetBuyerInvoiceInfo(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/order/get_buyer_invoice_info", app.APIURL), responder)
 
 	var req GetBuyerInvoiceInfoRequest
-	res, err := client.Order.GetBuyerInvoiceInfo(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.GetBuyerInvoiceInfo(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.GetBuyerInvoiceInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -192,7 +200,8 @@ func Test_Order_GetEstimateCancelValue(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/order/get_estimate_cancel_value", app.APIURL), responder)
 
 	var req GetEstimateCancelValueRequest
-	res, err := client.Order.GetEstimateCancelValue(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.GetEstimateCancelValue(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.GetEstimateCancelValue returned error (possibly expected with mock data): %s", err)
 	}
@@ -216,7 +225,8 @@ func Test_Order_GetFbsInvoicesResult(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/order/get_fbs_invoices_result", app.APIURL), responder)
 
 	var req GetFbsInvoicesResultRequest
-	res, err := client.Order.GetFbsInvoicesResult(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.GetFbsInvoicesResult(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.GetFbsInvoicesResult returned error (possibly expected with mock data): %s", err)
 	}
@@ -240,7 +250,8 @@ func Test_Order_GetOrderDetail(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/order/get_order_detail", app.APIURL), responder)
 
 	var req GetOrderDetailRequest
-	res, err := client.Order.GetOrderDetail(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.GetOrderDetail(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.GetOrderDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -264,7 +275,8 @@ func Test_Order_GetOrderList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/order/get_order_list", app.APIURL), responder)
 
 	var req GetOrderListRequest
-	res, err := client.Order.GetOrderList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.GetOrderList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.GetOrderList returned error (possibly expected with mock data): %s", err)
 	}
@@ -288,7 +300,8 @@ func Test_Order_GetPackageDetail(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/order/get_package_detail", app.APIURL), responder)
 
 	var req GetPackageDetailRequest
-	res, err := client.Order.GetPackageDetail(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.GetPackageDetail(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.GetPackageDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -312,7 +325,8 @@ func Test_Order_GetPendingBuyerInvoiceOrderList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/order/get_pending_buyer_invoice_order_list", app.APIURL), responder)
 
 	var req GetPendingBuyerInvoiceOrderListRequest
-	res, err := client.Order.GetPendingBuyerInvoiceOrderList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.GetPendingBuyerInvoiceOrderList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.GetPendingBuyerInvoiceOrderList returned error (possibly expected with mock data): %s", err)
 	}
@@ -336,7 +350,8 @@ func Test_Order_GetShipmentList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/order/get_shipment_list", app.APIURL), responder)
 
 	var req GetShipmentListRequest
-	res, err := client.Order.GetShipmentList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.GetShipmentList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.GetShipmentList returned error (possibly expected with mock data): %s", err)
 	}
@@ -359,7 +374,8 @@ func Test_Order_GetWarehouseFilterConfig(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/order/get_warehouse_filter_config", app.APIURL), responder)
 
-	res, err := client.Order.GetWarehouseFilterConfig(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.GetWarehouseFilterConfig(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Order.GetWarehouseFilterConfig returned error (possibly expected with mock data): %s", err)
 	}
@@ -383,7 +399,8 @@ func Test_Order_HandleBuyerCancellation(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/order/handle_buyer_cancellation", app.APIURL), responder)
 
 	var req HandleBuyerCancellationRequest
-	res, err := client.Order.HandleBuyerCancellation(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.HandleBuyerCancellation(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.HandleBuyerCancellation returned error (possibly expected with mock data): %s", err)
 	}
@@ -407,7 +424,8 @@ func Test_Order_HandlePrescriptionCheck(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/order/handle_prescription_check", app.APIURL), responder)
 
 	var req HandlePrescriptionCheckRequest
-	res, err := client.Order.HandlePrescriptionCheck(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.HandlePrescriptionCheck(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.HandlePrescriptionCheck returned error (possibly expected with mock data): %s", err)
 	}
@@ -431,7 +449,8 @@ func Test_Order_SearchPackageList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/order/search_package_list", app.APIURL), responder)
 
 	var req SearchPackageListRequest
-	res, err := client.Order.SearchPackageList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.SearchPackageList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.SearchPackageList returned error (possibly expected with mock data): %s", err)
 	}
@@ -455,7 +474,8 @@ func Test_Order_SetNote(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/order/set_note", app.APIURL), responder)
 
 	var req SetNoteRequest
-	res, err := client.Order.SetNote(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.SetNote(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.SetNote returned error (possibly expected with mock data): %s", err)
 	}
@@ -479,7 +499,8 @@ func Test_Order_SplitOrder(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/order/split_order", app.APIURL), responder)
 
 	var req SplitOrderRequest
-	res, err := client.Order.SplitOrder(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.SplitOrder(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.SplitOrder returned error (possibly expected with mock data): %s", err)
 	}
@@ -503,7 +524,8 @@ func Test_Order_UnsplitOrder(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/order/unsplit_order", app.APIURL), responder)
 
 	var req UnsplitOrderRequest
-	res, err := client.Order.UnsplitOrder(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Order.UnsplitOrder(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Order.UnsplitOrder returned error (possibly expected with mock data): %s", err)
 	}
@@ -526,7 +548,8 @@ func Test_Order_UploadInvoiceDoc(t *testing.T) {
 
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/order/upload_invoice_doc", app.APIURL), responder)
 
-	res, err := client.Order.UploadInvoiceDoc(shopID, "fixtures/test.jpg", accessToken)
+	ctx := context.Background()
+	res, err := client.Order.UploadInvoiceDoc(ctx, shopID, "fixtures/test.jpg", accessToken)
 	if err != nil {
 		t.Logf("Order.UploadInvoiceDoc returned error (possibly expected with mock data): %s", err)
 	}

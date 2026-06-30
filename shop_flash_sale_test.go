@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_ShopFlashSale_AddShopFlashSaleItems(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_flash_sale/add_shop_flash_sale_items", app.APIURL), responder)
 
 	var req AddShopFlashSaleItemsRequest
-	res, err := client.ShopFlashSale.AddShopFlashSaleItems(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopFlashSale.AddShopFlashSaleItems(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("ShopFlashSale.AddShopFlashSaleItems returned error (possibly expected with mock data): %s", err)
 	}
@@ -48,7 +50,8 @@ func Test_ShopFlashSale_CreateShopFlashSale(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_flash_sale/create_shop_flash_sale", app.APIURL), responder)
 
 	var req CreateShopFlashSaleRequest
-	res, err := client.ShopFlashSale.CreateShopFlashSale(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopFlashSale.CreateShopFlashSale(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("ShopFlashSale.CreateShopFlashSale returned error (possibly expected with mock data): %s", err)
 	}
@@ -72,7 +75,8 @@ func Test_ShopFlashSale_DeleteShopFlashSale(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_flash_sale/delete_shop_flash_sale", app.APIURL), responder)
 
 	var req DeleteShopFlashSaleRequest
-	res, err := client.ShopFlashSale.DeleteShopFlashSale(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopFlashSale.DeleteShopFlashSale(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("ShopFlashSale.DeleteShopFlashSale returned error (possibly expected with mock data): %s", err)
 	}
@@ -96,7 +100,8 @@ func Test_ShopFlashSale_DeleteShopFlashSaleItems(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_flash_sale/delete_shop_flash_sale_items", app.APIURL), responder)
 
 	var req DeleteShopFlashSaleItemsRequest
-	res, err := client.ShopFlashSale.DeleteShopFlashSaleItems(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopFlashSale.DeleteShopFlashSaleItems(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("ShopFlashSale.DeleteShopFlashSaleItems returned error (possibly expected with mock data): %s", err)
 	}
@@ -119,7 +124,8 @@ func Test_ShopFlashSale_GetItemCriteria(t *testing.T) {
 
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_flash_sale/get_item_criteria", app.APIURL), responder)
 
-	res, err := client.ShopFlashSale.GetItemCriteria(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopFlashSale.GetItemCriteria(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("ShopFlashSale.GetItemCriteria returned error (possibly expected with mock data): %s", err)
 	}
@@ -143,7 +149,8 @@ func Test_ShopFlashSale_GetShopFlashSale(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_flash_sale/get_shop_flash_sale", app.APIURL), responder)
 
 	var req GetShopFlashSaleRequest
-	res, err := client.ShopFlashSale.GetShopFlashSale(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopFlashSale.GetShopFlashSale(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("ShopFlashSale.GetShopFlashSale returned error (possibly expected with mock data): %s", err)
 	}
@@ -167,7 +174,8 @@ func Test_ShopFlashSale_GetShopFlashSaleItems(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_flash_sale/get_shop_flash_sale_items", app.APIURL), responder)
 
 	var req GetShopFlashSaleItemsRequest
-	res, err := client.ShopFlashSale.GetShopFlashSaleItems(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopFlashSale.GetShopFlashSaleItems(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("ShopFlashSale.GetShopFlashSaleItems returned error (possibly expected with mock data): %s", err)
 	}
@@ -191,7 +199,8 @@ func Test_ShopFlashSale_GetShopFlashSaleList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_flash_sale/get_shop_flash_sale_list", app.APIURL), responder)
 
 	var req GetShopFlashSaleListRequest
-	res, err := client.ShopFlashSale.GetShopFlashSaleList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopFlashSale.GetShopFlashSaleList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("ShopFlashSale.GetShopFlashSaleList returned error (possibly expected with mock data): %s", err)
 	}
@@ -215,7 +224,8 @@ func Test_ShopFlashSale_GetTimeSlotId(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_flash_sale/get_time_slot_id", app.APIURL), responder)
 
 	var req GetTimeSlotIdRequest
-	res, err := client.ShopFlashSale.GetTimeSlotId(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopFlashSale.GetTimeSlotId(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("ShopFlashSale.GetTimeSlotId returned error (possibly expected with mock data): %s", err)
 	}
@@ -239,7 +249,8 @@ func Test_ShopFlashSale_UpdateShopFlashSale(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_flash_sale/update_shop_flash_sale", app.APIURL), responder)
 
 	var req UpdateShopFlashSaleRequest
-	res, err := client.ShopFlashSale.UpdateShopFlashSale(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopFlashSale.UpdateShopFlashSale(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("ShopFlashSale.UpdateShopFlashSale returned error (possibly expected with mock data): %s", err)
 	}
@@ -263,7 +274,8 @@ func Test_ShopFlashSale_UpdateShopFlashSaleItems(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_flash_sale/update_shop_flash_sale_items", app.APIURL), responder)
 
 	var req UpdateShopFlashSaleItemsRequest
-	res, err := client.ShopFlashSale.UpdateShopFlashSaleItems(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.ShopFlashSale.UpdateShopFlashSaleItems(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("ShopFlashSale.UpdateShopFlashSaleItems returned error (possibly expected with mock data): %s", err)
 	}

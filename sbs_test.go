@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -23,7 +24,8 @@ func Test_SBS_GetBoundWhsInfo(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/sbs/get_bound_whs_info", app.APIURL), responder)
 
-	res, err := client.SBS.GetBoundWhsInfo(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.SBS.GetBoundWhsInfo(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("SBS.GetBoundWhsInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -47,7 +49,8 @@ func Test_SBS_GetCurrentInventory(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/sbs/get_current_inventory", app.APIURL), responder)
 
 	var req GetCurrentInventoryRequest
-	res, err := client.SBS.GetCurrentInventory(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.SBS.GetCurrentInventory(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("SBS.GetCurrentInventory returned error (possibly expected with mock data): %s", err)
 	}
@@ -71,7 +74,8 @@ func Test_SBS_GetExpiryReport(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/sbs/get_expiry_report", app.APIURL), responder)
 
 	var req GetExpiryReportRequest
-	res, err := client.SBS.GetExpiryReport(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.SBS.GetExpiryReport(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("SBS.GetExpiryReport returned error (possibly expected with mock data): %s", err)
 	}
@@ -95,7 +99,8 @@ func Test_SBS_GetStockAging(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/sbs/get_stock_aging", app.APIURL), responder)
 
 	var req GetStockAgingRequest
-	res, err := client.SBS.GetStockAging(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.SBS.GetStockAging(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("SBS.GetStockAging returned error (possibly expected with mock data): %s", err)
 	}
@@ -119,7 +124,8 @@ func Test_SBS_GetStockMovement(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/sbs/get_stock_movement", app.APIURL), responder)
 
 	var req GetStockMovementRequest
-	res, err := client.SBS.GetStockMovement(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.SBS.GetStockMovement(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("SBS.GetStockMovement returned error (possibly expected with mock data): %s", err)
 	}

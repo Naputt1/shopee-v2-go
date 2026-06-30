@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_FirstMile_BindCourierDeliveryFirstMileTrackingNumber(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/first_mile/bind_courier_delivery_first_mile_tracking_number", app.APIURL), responder)
 
 	var req BindCourierDeliveryFirstMileTrackingNumberRequest
-	res, err := client.FirstMile.BindCourierDeliveryFirstMileTrackingNumber(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FirstMile.BindCourierDeliveryFirstMileTrackingNumber(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FirstMile.BindCourierDeliveryFirstMileTrackingNumber returned error (possibly expected with mock data): %s", err)
 	}
@@ -48,7 +50,8 @@ func Test_FirstMile_BindFirstMileTrackingNumber(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/first_mile/bind_first_mile_tracking_number", app.APIURL), responder)
 
 	var req BindFirstMileTrackingNumberRequest
-	res, err := client.FirstMile.BindFirstMileTrackingNumber(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FirstMile.BindFirstMileTrackingNumber(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FirstMile.BindFirstMileTrackingNumber returned error (possibly expected with mock data): %s", err)
 	}
@@ -72,7 +75,8 @@ func Test_FirstMile_GenerateAndBindFirstMileTrackingNumber(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/first_mile/generate_and_bind_first_mile_tracking_number", app.APIURL), responder)
 
 	var req GenerateAndBindFirstMileTrackingNumberRequest
-	res, err := client.FirstMile.GenerateAndBindFirstMileTrackingNumber(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FirstMile.GenerateAndBindFirstMileTrackingNumber(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FirstMile.GenerateAndBindFirstMileTrackingNumber returned error (possibly expected with mock data): %s", err)
 	}
@@ -96,7 +100,8 @@ func Test_FirstMile_GenerateFirstMileTrackingNumber(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/first_mile/generate_first_mile_tracking_number", app.APIURL), responder)
 
 	var req GenerateFirstMileTrackingNumberRequest
-	res, err := client.FirstMile.GenerateFirstMileTrackingNumber(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FirstMile.GenerateFirstMileTrackingNumber(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FirstMile.GenerateFirstMileTrackingNumber returned error (possibly expected with mock data): %s", err)
 	}
@@ -120,7 +125,8 @@ func Test_FirstMile_GetChannelList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/first_mile/get_channel_list", app.APIURL), responder)
 
 	var req GetChannelListRequest
-	res, err := client.FirstMile.GetChannelList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FirstMile.GetChannelList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FirstMile.GetChannelList returned error (possibly expected with mock data): %s", err)
 	}
@@ -144,7 +150,8 @@ func Test_FirstMile_GetCourierDeliveryChannelList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/first_mile/get_courier_delivery_channel_list", app.APIURL), responder)
 
 	var req GetCourierDeliveryChannelListRequest
-	res, err := client.FirstMile.GetCourierDeliveryChannelList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FirstMile.GetCourierDeliveryChannelList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FirstMile.GetCourierDeliveryChannelList returned error (possibly expected with mock data): %s", err)
 	}
@@ -168,7 +175,8 @@ func Test_FirstMile_GetCourierDeliveryDetail(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/first_mile/get_courier_delivery_detail", app.APIURL), responder)
 
 	var req GetCourierDeliveryDetailRequest
-	res, err := client.FirstMile.GetCourierDeliveryDetail(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FirstMile.GetCourierDeliveryDetail(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FirstMile.GetCourierDeliveryDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -192,7 +200,8 @@ func Test_FirstMile_GetCourierDeliveryTrackingNumberList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/first_mile/get_courier_delivery_tracking_number_list", app.APIURL), responder)
 
 	var req GetCourierDeliveryTrackingNumberListRequest
-	res, err := client.FirstMile.GetCourierDeliveryTrackingNumberList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FirstMile.GetCourierDeliveryTrackingNumberList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FirstMile.GetCourierDeliveryTrackingNumberList returned error (possibly expected with mock data): %s", err)
 	}
@@ -216,7 +225,8 @@ func Test_FirstMile_GetCourierDeliveryWaybill(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/first_mile/get_courier_delivery_waybill", app.APIURL), responder)
 
 	var req GetCourierDeliveryWaybillRequest
-	res, err := client.FirstMile.GetCourierDeliveryWaybill(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FirstMile.GetCourierDeliveryWaybill(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FirstMile.GetCourierDeliveryWaybill returned error (possibly expected with mock data): %s", err)
 	}
@@ -240,7 +250,8 @@ func Test_FirstMile_GetDetail(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/first_mile/get_detail", app.APIURL), responder)
 
 	var req GetDetailRequest
-	res, err := client.FirstMile.GetDetail(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FirstMile.GetDetail(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FirstMile.GetDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -264,7 +275,8 @@ func Test_FirstMile_GetTrackingNumberList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/first_mile/get_tracking_number_list", app.APIURL), responder)
 
 	var req GetTrackingNumberListRequest
-	res, err := client.FirstMile.GetTrackingNumberList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FirstMile.GetTrackingNumberList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FirstMile.GetTrackingNumberList returned error (possibly expected with mock data): %s", err)
 	}
@@ -288,7 +300,8 @@ func Test_FirstMile_GetTransitWarehouseList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/first_mile/get_transit_warehouse_list", app.APIURL), responder)
 
 	var req GetTransitWarehouseListRequest
-	res, err := client.FirstMile.GetTransitWarehouseList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FirstMile.GetTransitWarehouseList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FirstMile.GetTransitWarehouseList returned error (possibly expected with mock data): %s", err)
 	}
@@ -312,7 +325,8 @@ func Test_FirstMile_GetUnbindOrderList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/first_mile/get_unbind_order_list", app.APIURL), responder)
 
 	var req GetUnbindOrderListRequest
-	res, err := client.FirstMile.GetUnbindOrderList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FirstMile.GetUnbindOrderList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FirstMile.GetUnbindOrderList returned error (possibly expected with mock data): %s", err)
 	}
@@ -336,7 +350,8 @@ func Test_FirstMile_GetWaybill(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/first_mile/get_waybill", app.APIURL), responder)
 
 	var req GetWaybillRequest
-	res, err := client.FirstMile.GetWaybill(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FirstMile.GetWaybill(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FirstMile.GetWaybill returned error (possibly expected with mock data): %s", err)
 	}
@@ -360,7 +375,8 @@ func Test_FirstMile_UnbindFirstMileTrackingNumber(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/first_mile/unbind_first_mile_tracking_number", app.APIURL), responder)
 
 	var req UnbindFirstMileTrackingNumberRequest
-	res, err := client.FirstMile.UnbindFirstMileTrackingNumber(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FirstMile.UnbindFirstMileTrackingNumber(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FirstMile.UnbindFirstMileTrackingNumber returned error (possibly expected with mock data): %s", err)
 	}
@@ -384,7 +400,8 @@ func Test_FirstMile_UnbindFirstMileTrackingNumberAll(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/first_mile/unbind_first_mile_tracking_number_all", app.APIURL), responder)
 
 	var req UnbindFirstMileTrackingNumberAllRequest
-	res, err := client.FirstMile.UnbindFirstMileTrackingNumberAll(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FirstMile.UnbindFirstMileTrackingNumberAll(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FirstMile.UnbindFirstMileTrackingNumberAll returned error (possibly expected with mock data): %s", err)
 	}

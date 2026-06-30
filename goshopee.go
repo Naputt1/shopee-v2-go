@@ -2,6 +2,7 @@ package goshopee
 
 import (
 	"bytes"
+	"context"
 	"crypto/hmac"
 	"crypto/sha256"
 	"encoding/hex"
@@ -204,7 +205,7 @@ type RateLimitError struct {
 	RetryAfter int
 }
 
-func (c *Client[T]) NewRequest(method, relPath string, body, options, headers interface{}) (*http.Request, error) {
+func (c *Client[T]) NewRequest(ctx context.Context, method, relPath string, body, options, headers interface{}) (*http.Request, error) {
 	rel, err := url.Parse(relPath)
 	if err != nil {
 		return nil, err
@@ -259,7 +260,7 @@ func (c *Client[T]) NewRequest(method, relPath string, body, options, headers in
 		}
 	}
 
-	req, err := http.NewRequest(method, u.String(), bytes.NewBuffer(js))
+	req, err := http.NewRequestWithContext(ctx, method, u.String(), bytes.NewBuffer(js))
 	if err != nil {
 		return nil, err
 	}
@@ -375,7 +376,7 @@ func (c *Client[T]) doGetHeaders(req *http.Request, v interface{}, skipBody bool
 			}
 
 			if shopeeErr == "error_invalid_access_token" || shopeeErr == "error_access_token_expired" || shopeeErr == "invalid_access_token" || shopeeErr == "invalid_acceess_token" {
-				refreshRes, err := c.Auth.RefreshAccessToken(c.ShopID, c.MerchantID, c.RefreshToken)
+				refreshRes, err := c.Auth.RefreshAccessToken(req.Context(), c.ShopID, c.MerchantID, c.RefreshToken)
 				if err == nil {
 					c.AccessToken = refreshRes.AccessToken
 					c.RefreshToken = refreshRes.RefreshToken
@@ -516,41 +517,41 @@ func CheckResponseError(r *http.Response) error {
 	return wrapSpecificError(r, responseError)
 }
 
-func (c *Client[T]) CreateAndDo(method, relPath string, data, options, headers, resource interface{}) error {
-	_, err := c.createAndDoGetHeaders(method, relPath, data, options, headers, resource)
+func (c *Client[T]) CreateAndDo(ctx context.Context, method, relPath string, data, options, headers, resource interface{}) error {
+	_, err := c.createAndDoGetHeaders(ctx, method, relPath, data, options, headers, resource)
 	return err
 }
 
-func (c *Client[T]) createAndDoGetHeaders(method, relPath string, data, options, headers, resource interface{}) (http.Header, error) {
+func (c *Client[T]) createAndDoGetHeaders(ctx context.Context, method, relPath string, data, options, headers, resource interface{}) (http.Header, error) {
 	if strings.HasPrefix(relPath, "/") {
 		relPath = strings.TrimLeft(relPath, "/")
 	}
 	relPath = path.Join("api/v2", relPath)
-	req, err := c.NewRequest(method, relPath, data, options, headers)
+	req, err := c.NewRequest(ctx, method, relPath, data, options, headers)
 	if err != nil {
 		return nil, err
 	}
 	return c.doGetHeaders(req, resource, false)
 }
 
-func (c *Client[T]) Get(path string, resource, options interface{}) error {
-	return c.CreateAndDo("GET", path, nil, options, nil, resource)
+func (c *Client[T]) Get(ctx context.Context, path string, resource, options interface{}) error {
+	return c.CreateAndDo(ctx, "GET", path, nil, options, nil, resource)
 }
 
-func (c *Client[T]) Post(path string, data, resource interface{}) error {
-	return c.CreateAndDo("POST", path, data, nil, nil, resource)
+func (c *Client[T]) Post(ctx context.Context, path string, data, resource interface{}) error {
+	return c.CreateAndDo(ctx, "POST", path, data, nil, nil, resource)
 }
 
-func (c *Client[T]) Put(path string, data, resource interface{}) error {
-	return c.CreateAndDo("PUT", path, data, nil, nil, resource)
+func (c *Client[T]) Put(ctx context.Context, path string, data, resource interface{}) error {
+	return c.CreateAndDo(ctx, "PUT", path, data, nil, nil, resource)
 }
 
-func (c *Client[T]) Delete(path string) error {
-	return c.CreateAndDo("DELETE", path, nil, nil, nil, nil)
+func (c *Client[T]) Delete(ctx context.Context, path string) error {
+	return c.CreateAndDo(ctx, "DELETE", path, nil, nil, nil, nil)
 }
 
-func (c *Client[T]) Upload(relPath, fieldname, filename string, resource interface{}) error {
-	req, err := c.NewfileUploadRequest(relPath, fieldname, filename)
+func (c *Client[T]) Upload(ctx context.Context, relPath, fieldname, filename string, resource interface{}) error {
+	req, err := c.NewfileUploadRequest(ctx, relPath, fieldname, filename)
 	if err != nil {
 		return err
 	}
@@ -558,8 +559,8 @@ func (c *Client[T]) Upload(relPath, fieldname, filename string, resource interfa
 	return err
 }
 
-func (c *Client[T]) UploadFromReader(relPath, fieldname, filename string, reader io.Reader, resource interface{}) error {
-	req, err := c.NewUploadFromReaderRequest(relPath, fieldname, filename, reader)
+func (c *Client[T]) UploadFromReader(ctx context.Context, relPath, fieldname, filename string, reader io.Reader, resource interface{}) error {
+	req, err := c.NewUploadFromReaderRequest(ctx, relPath, fieldname, filename, reader)
 	if err != nil {
 		return err
 	}
@@ -567,7 +568,7 @@ func (c *Client[T]) UploadFromReader(relPath, fieldname, filename string, reader
 	return err
 }
 
-func (c *Client[T]) NewfileUploadRequest(relPath, paramName, filename string) (*http.Request, error) {
+func (c *Client[T]) NewfileUploadRequest(ctx context.Context, relPath, paramName, filename string) (*http.Request, error) {
 	if strings.HasPrefix(relPath, "/") {
 		relPath = strings.TrimLeft(relPath, "/")
 	}
@@ -599,7 +600,7 @@ func (c *Client[T]) NewfileUploadRequest(relPath, paramName, filename string) (*
 		return nil, err
 	}
 
-	req, err := http.NewRequest("POST", uri, body)
+	req, err := http.NewRequestWithContext(ctx, "POST", uri, body)
 	if err != nil {
 		return nil, err
 	}
@@ -611,7 +612,7 @@ func (c *Client[T]) NewfileUploadRequest(relPath, paramName, filename string) (*
 	return req, nil
 }
 
-func (c *Client[T]) NewUploadFromReaderRequest(relPath, paramName, filename string, reader io.Reader) (*http.Request, error) {
+func (c *Client[T]) NewUploadFromReaderRequest(ctx context.Context, relPath, paramName, filename string, reader io.Reader) (*http.Request, error) {
 	if strings.HasPrefix(relPath, "/") {
 		relPath = strings.TrimLeft(relPath, "/")
 	}
@@ -637,7 +638,7 @@ func (c *Client[T]) NewUploadFromReaderRequest(relPath, paramName, filename stri
 		return nil, err
 	}
 
-	req, err := http.NewRequest("POST", uri, body)
+	req, err := http.NewRequestWithContext(ctx, "POST", uri, body)
 	if err != nil {
 		return nil, err
 	}

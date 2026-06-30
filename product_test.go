@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_Product_AddItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/add_item", app.APIURL), responder)
 
 	var req AddItemRequest
-	res, err := client.Product.AddItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.AddItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.AddItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -48,7 +50,8 @@ func Test_Product_AddKitItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/add_kit_item", app.APIURL), responder)
 
 	var req AddKitItemRequest
-	res, err := client.Product.AddKitItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.AddKitItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.AddKitItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -72,7 +75,8 @@ func Test_Product_AddModel(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/add_model", app.APIURL), responder)
 
 	var req AddModelRequest
-	res, err := client.Product.AddModel(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.AddModel(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.AddModel returned error (possibly expected with mock data): %s", err)
 	}
@@ -96,7 +100,8 @@ func Test_Product_BatchAddItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/batch_add_item", app.APIURL), responder)
 
 	var req BatchAddItemRequest
-	res, err := client.Product.BatchAddItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.BatchAddItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.BatchAddItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -120,7 +125,8 @@ func Test_Product_BatchPublishItemToOutletShop(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/batch_publish_item_to_outlet_shop", app.APIURL), responder)
 
 	var req BatchPublishItemToOutletShopRequest
-	res, err := client.Product.BatchPublishItemToOutletShop(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.BatchPublishItemToOutletShop(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.BatchPublishItemToOutletShop returned error (possibly expected with mock data): %s", err)
 	}
@@ -144,7 +150,8 @@ func Test_Product_BatchUpdateOutletPrice(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/batch_update_outlet_price", app.APIURL), responder)
 
 	var req BatchUpdateOutletPriceRequest
-	res, err := client.Product.BatchUpdateOutletPrice(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.BatchUpdateOutletPrice(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.BatchUpdateOutletPrice returned error (possibly expected with mock data): %s", err)
 	}
@@ -168,7 +175,8 @@ func Test_Product_BatchUpdateOutletStock(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/batch_update_outlet_stock", app.APIURL), responder)
 
 	var req BatchUpdateOutletStockRequest
-	res, err := client.Product.BatchUpdateOutletStock(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.BatchUpdateOutletStock(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.BatchUpdateOutletStock returned error (possibly expected with mock data): %s", err)
 	}
@@ -192,7 +200,8 @@ func Test_Product_BoostItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/boost_item", app.APIURL), responder)
 
 	var req BoostItemRequest
-	res, err := client.Product.BoostItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.BoostItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.BoostItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -216,7 +225,8 @@ func Test_Product_CategoryRecommend(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/category_recommend", app.APIURL), responder)
 
 	var req ProductCategoryRecommendRequest
-	res, err := client.Product.CategoryRecommend(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.CategoryRecommend(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.CategoryRecommend returned error (possibly expected with mock data): %s", err)
 	}
@@ -240,7 +250,8 @@ func Test_Product_DeleteItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/delete_item", app.APIURL), responder)
 
 	var req DeleteItemRequest
-	res, err := client.Product.DeleteItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.DeleteItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.DeleteItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -264,7 +275,8 @@ func Test_Product_DeleteModel(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/delete_model", app.APIURL), responder)
 
 	var req DeleteModelRequest
-	res, err := client.Product.DeleteModel(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.DeleteModel(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.DeleteModel returned error (possibly expected with mock data): %s", err)
 	}
@@ -288,7 +300,8 @@ func Test_Product_GenerateKitImage(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/generate_kit_image", app.APIURL), responder)
 
 	var req GenerateKitImageRequest
-	res, err := client.Product.GenerateKitImage(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GenerateKitImage(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GenerateKitImage returned error (possibly expected with mock data): %s", err)
 	}
@@ -312,7 +325,8 @@ func Test_Product_GetAitemByPitemId(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_aitem_by_pitem_id", app.APIURL), responder)
 
 	var req GetAitemByPitemIdRequest
-	res, err := client.Product.GetAitemByPitemId(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetAitemByPitemId(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetAitemByPitemId returned error (possibly expected with mock data): %s", err)
 	}
@@ -336,7 +350,8 @@ func Test_Product_GetAllVehicleList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_all_vehicle_list", app.APIURL), responder)
 
 	var req GetAllVehicleListRequest
-	res, err := client.Product.GetAllVehicleList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetAllVehicleList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetAllVehicleList returned error (possibly expected with mock data): %s", err)
 	}
@@ -360,7 +375,8 @@ func Test_Product_GetAttributeTree(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_attribute_tree", app.APIURL), responder)
 
 	var req ProductGetAttributeTreeRequest
-	res, err := client.Product.GetAttributeTree(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetAttributeTree(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetAttributeTree returned error (possibly expected with mock data): %s", err)
 	}
@@ -384,7 +400,8 @@ func Test_Product_GetBatchTaskResult(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/get_batch_task_result", app.APIURL), responder)
 
 	var req GetBatchTaskResultRequest
-	res, err := client.Product.GetBatchTaskResult(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetBatchTaskResult(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetBatchTaskResult returned error (possibly expected with mock data): %s", err)
 	}
@@ -407,7 +424,8 @@ func Test_Product_GetBoostedList(t *testing.T) {
 
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_boosted_list", app.APIURL), responder)
 
-	res, err := client.Product.GetBoostedList(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetBoostedList(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Product.GetBoostedList returned error (possibly expected with mock data): %s", err)
 	}
@@ -431,7 +449,8 @@ func Test_Product_GetBrandList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_brand_list", app.APIURL), responder)
 
 	var req ProductGetBrandListRequest
-	res, err := client.Product.GetBrandList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetBrandList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetBrandList returned error (possibly expected with mock data): %s", err)
 	}
@@ -455,7 +474,8 @@ func Test_Product_GetCategory(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_category", app.APIURL), responder)
 
 	var req ProductGetCategoryRequest
-	res, err := client.Product.GetCategory(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetCategory(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetCategory returned error (possibly expected with mock data): %s", err)
 	}
@@ -479,7 +499,8 @@ func Test_Product_GetComment(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_comment", app.APIURL), responder)
 
 	var req GetCommentRequest
-	res, err := client.Product.GetComment(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetComment(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetComment returned error (possibly expected with mock data): %s", err)
 	}
@@ -503,7 +524,8 @@ func Test_Product_GetDirectItemList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_direct_item_list", app.APIURL), responder)
 
 	var req GetDirectItemListRequest
-	res, err := client.Product.GetDirectItemList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetDirectItemList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetDirectItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -527,7 +549,8 @@ func Test_Product_GetDirectShopRecommendedPrice(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_direct_shop_recommended_price", app.APIURL), responder)
 
 	var req GetDirectShopRecommendedPriceRequest
-	res, err := client.Product.GetDirectShopRecommendedPrice(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetDirectShopRecommendedPrice(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetDirectShopRecommendedPrice returned error (possibly expected with mock data): %s", err)
 	}
@@ -551,7 +574,8 @@ func Test_Product_GetItemBaseInfo(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_item_base_info", app.APIURL), responder)
 
 	var req GetItemBaseInfoRequest
-	res, err := client.Product.GetItemBaseInfo(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetItemBaseInfo(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetItemBaseInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -575,7 +599,8 @@ func Test_Product_GetItemContentDiagnosisResult(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/get_item_content_diagnosis_result", app.APIURL), responder)
 
 	var req GetItemContentDiagnosisResultRequest
-	res, err := client.Product.GetItemContentDiagnosisResult(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetItemContentDiagnosisResult(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetItemContentDiagnosisResult returned error (possibly expected with mock data): %s", err)
 	}
@@ -599,7 +624,8 @@ func Test_Product_GetItemExtraInfo(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_item_extra_info", app.APIURL), responder)
 
 	var req GetItemExtraInfoRequest
-	res, err := client.Product.GetItemExtraInfo(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetItemExtraInfo(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetItemExtraInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -623,7 +649,8 @@ func Test_Product_GetItemLimit(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_item_limit", app.APIURL), responder)
 
 	var req GetItemLimitRequest
-	res, err := client.Product.GetItemLimit(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetItemLimit(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetItemLimit returned error (possibly expected with mock data): %s", err)
 	}
@@ -647,7 +674,8 @@ func Test_Product_GetItemList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_item_list", app.APIURL), responder)
 
 	var req ProductGetItemListRequest
-	res, err := client.Product.GetItemList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetItemList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -671,7 +699,8 @@ func Test_Product_GetItemListByContentDiagnosis(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/get_item_list_by_content_diagnosis", app.APIURL), responder)
 
 	var req GetItemListByContentDiagnosisRequest
-	res, err := client.Product.GetItemListByContentDiagnosis(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetItemListByContentDiagnosis(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetItemListByContentDiagnosis returned error (possibly expected with mock data): %s", err)
 	}
@@ -695,7 +724,8 @@ func Test_Product_GetItemPromotion(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_item_promotion", app.APIURL), responder)
 
 	var req GetItemPromotionRequest
-	res, err := client.Product.GetItemPromotion(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetItemPromotion(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetItemPromotion returned error (possibly expected with mock data): %s", err)
 	}
@@ -719,7 +749,8 @@ func Test_Product_GetItemViolationInfo(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/get_item_violation_info", app.APIURL), responder)
 
 	var req GetItemViolationInfoRequest
-	res, err := client.Product.GetItemViolationInfo(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetItemViolationInfo(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetItemViolationInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -743,7 +774,8 @@ func Test_Product_GetKitItemInfo(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_kit_item_info", app.APIURL), responder)
 
 	var req GetKitItemInfoRequest
-	res, err := client.Product.GetKitItemInfo(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetKitItemInfo(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetKitItemInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -767,7 +799,8 @@ func Test_Product_GetKitItemLimit(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_kit_item_limit", app.APIURL), responder)
 
 	var req GetKitItemLimitRequest
-	res, err := client.Product.GetKitItemLimit(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetKitItemLimit(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetKitItemLimit returned error (possibly expected with mock data): %s", err)
 	}
@@ -791,7 +824,8 @@ func Test_Product_GetMainItemList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_main_item_list", app.APIURL), responder)
 
 	var req GetMainItemListRequest
-	res, err := client.Product.GetMainItemList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetMainItemList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetMainItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -815,7 +849,8 @@ func Test_Product_GetMartItemByOutletItemId(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/get_mart_item_by_outlet_item_id", app.APIURL), responder)
 
 	var req GetMartItemByOutletItemIdRequest
-	res, err := client.Product.GetMartItemByOutletItemId(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetMartItemByOutletItemId(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetMartItemByOutletItemId returned error (possibly expected with mock data): %s", err)
 	}
@@ -839,7 +874,8 @@ func Test_Product_GetMartItemMappingById(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/get_mart_item_mapping_by_id", app.APIURL), responder)
 
 	var req GetMartItemMappingByIdRequest
-	res, err := client.Product.GetMartItemMappingById(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetMartItemMappingById(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetMartItemMappingById returned error (possibly expected with mock data): %s", err)
 	}
@@ -863,7 +899,8 @@ func Test_Product_GetModelList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_model_list", app.APIURL), responder)
 
 	var req GetModelListRequest
-	res, err := client.Product.GetModelList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetModelList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetModelList returned error (possibly expected with mock data): %s", err)
 	}
@@ -887,7 +924,8 @@ func Test_Product_GetProductCertificationRule(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/get_product_certification_rule", app.APIURL), responder)
 
 	var req GetProductCertificationRuleRequest
-	res, err := client.Product.GetProductCertificationRule(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetProductCertificationRule(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetProductCertificationRule returned error (possibly expected with mock data): %s", err)
 	}
@@ -911,7 +949,8 @@ func Test_Product_GetRecommendAttribute(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_recommend_attribute", app.APIURL), responder)
 
 	var req ProductGetRecommendAttributeRequest
-	res, err := client.Product.GetRecommendAttribute(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetRecommendAttribute(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetRecommendAttribute returned error (possibly expected with mock data): %s", err)
 	}
@@ -935,7 +974,8 @@ func Test_Product_GetSizeChartDetail(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_size_chart_detail", app.APIURL), responder)
 
 	var req ProductGetSizeChartDetailRequest
-	res, err := client.Product.GetSizeChartDetail(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetSizeChartDetail(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetSizeChartDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -959,7 +999,8 @@ func Test_Product_GetSizeChartList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_size_chart_list", app.APIURL), responder)
 
 	var req ProductGetSizeChartListRequest
-	res, err := client.Product.GetSizeChartList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetSizeChartList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetSizeChartList returned error (possibly expected with mock data): %s", err)
 	}
@@ -983,7 +1024,8 @@ func Test_Product_GetVariations(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_variation_tree", app.APIURL), responder)
 
 	var req ProductGetVariationsRequest
-	res, err := client.Product.GetVariations(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetVariations(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetVariations returned error (possibly expected with mock data): %s", err)
 	}
@@ -1007,7 +1049,8 @@ func Test_Product_GetVehicleListByCompatibilityDetail(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_vehicle_list_by_compatibility_detail", app.APIURL), responder)
 
 	var req GetVehicleListByCompatibilityDetailRequest
-	res, err := client.Product.GetVehicleListByCompatibilityDetail(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetVehicleListByCompatibilityDetail(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetVehicleListByCompatibilityDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -1031,7 +1074,8 @@ func Test_Product_GetWeightRecommendation(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/get_weight_recommendation", app.APIURL), responder)
 
 	var req GetWeightRecommendationRequest
-	res, err := client.Product.GetWeightRecommendation(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.GetWeightRecommendation(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.GetWeightRecommendation returned error (possibly expected with mock data): %s", err)
 	}
@@ -1055,7 +1099,8 @@ func Test_Product_InitTierVariation(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/init_tier_variation", app.APIURL), responder)
 
 	var req ProductInitTierVariationRequest
-	res, err := client.Product.InitTierVariation(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.InitTierVariation(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.InitTierVariation returned error (possibly expected with mock data): %s", err)
 	}
@@ -1078,7 +1123,8 @@ func Test_Product_PublishItemToOutletShop(t *testing.T) {
 
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/", app.APIURL), responder)
 
-	res, err := client.Product.PublishItemToOutletShop(shopID, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.PublishItemToOutletShop(ctx, shopID, accessToken)
 	if err != nil {
 		t.Logf("Product.PublishItemToOutletShop returned error (possibly expected with mock data): %s", err)
 	}
@@ -1102,7 +1148,8 @@ func Test_Product_RegisterBrand(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/register_brand", app.APIURL), responder)
 
 	var req RegisterBrandRequest
-	res, err := client.Product.RegisterBrand(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.RegisterBrand(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.RegisterBrand returned error (possibly expected with mock data): %s", err)
 	}
@@ -1126,7 +1173,8 @@ func Test_Product_ReplyComment(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/reply_comment", app.APIURL), responder)
 
 	var req ReplyCommentRequest
-	res, err := client.Product.ReplyComment(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.ReplyComment(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.ReplyComment returned error (possibly expected with mock data): %s", err)
 	}
@@ -1150,7 +1198,8 @@ func Test_Product_SearchAttributeValueList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/search_attribute_value_list", app.APIURL), responder)
 
 	var req SearchAttributeValueListRequest
-	res, err := client.Product.SearchAttributeValueList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.SearchAttributeValueList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.SearchAttributeValueList returned error (possibly expected with mock data): %s", err)
 	}
@@ -1174,7 +1223,8 @@ func Test_Product_SearchItem(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/search_item", app.APIURL), responder)
 
 	var req SearchItemRequest
-	res, err := client.Product.SearchItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.SearchItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.SearchItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -1198,7 +1248,8 @@ func Test_Product_SearchUnpackagedModelList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/search_unpackaged_model_list", app.APIURL), responder)
 
 	var req SearchUnpackagedModelListRequest
-	res, err := client.Product.SearchUnpackagedModelList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.SearchUnpackagedModelList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.SearchUnpackagedModelList returned error (possibly expected with mock data): %s", err)
 	}
@@ -1222,7 +1273,8 @@ func Test_Product_UnlistItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/unlist_item", app.APIURL), responder)
 
 	var req UnlistItemRequest
-	res, err := client.Product.UnlistItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.UnlistItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.UnlistItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -1246,7 +1298,8 @@ func Test_Product_UpdateItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/update_item", app.APIURL), responder)
 
 	var req UpdateItemRequest
-	res, err := client.Product.UpdateItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.UpdateItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.UpdateItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -1270,7 +1323,8 @@ func Test_Product_UpdateKitItem(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/update_kit_item", app.APIURL), responder)
 
 	var req UpdateKitItemRequest
-	res, err := client.Product.UpdateKitItem(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.UpdateKitItem(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.UpdateKitItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -1294,7 +1348,8 @@ func Test_Product_UpdateModel(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/update_model", app.APIURL), responder)
 
 	var req UpdateModelRequest
-	res, err := client.Product.UpdateModel(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.UpdateModel(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.UpdateModel returned error (possibly expected with mock data): %s", err)
 	}
@@ -1318,7 +1373,8 @@ func Test_Product_UpdatePrice(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/update_price", app.APIURL), responder)
 
 	var req ProductUpdatePriceRequest
-	res, err := client.Product.UpdatePrice(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.UpdatePrice(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.UpdatePrice returned error (possibly expected with mock data): %s", err)
 	}
@@ -1342,7 +1398,8 @@ func Test_Product_UpdateSipItemPrice(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/update_sip_item_price", app.APIURL), responder)
 
 	var req UpdateSipItemPriceRequest
-	res, err := client.Product.UpdateSipItemPrice(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.UpdateSipItemPrice(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.UpdateSipItemPrice returned error (possibly expected with mock data): %s", err)
 	}
@@ -1366,7 +1423,8 @@ func Test_Product_UpdateStock(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/update_stock", app.APIURL), responder)
 
 	var req ProductUpdateStockRequest
-	res, err := client.Product.UpdateStock(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.UpdateStock(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.UpdateStock returned error (possibly expected with mock data): %s", err)
 	}
@@ -1390,7 +1448,8 @@ func Test_Product_UpdateTierVariation(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/update_tier_variation", app.APIURL), responder)
 
 	var req ProductUpdateTierVariationRequest
-	res, err := client.Product.UpdateTierVariation(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.Product.UpdateTierVariation(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("Product.UpdateTierVariation returned error (possibly expected with mock data): %s", err)
 	}

@@ -1,6 +1,7 @@
 package goshopee
 
 import (
+	"context"
 	"fmt"
 	"testing"
 
@@ -24,7 +25,8 @@ func Test_FollowPrize_AddFollowPrize(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/follow_prize/add_follow_prize", app.APIURL), responder)
 
 	var req AddFollowPrizeRequest
-	res, err := client.FollowPrize.AddFollowPrize(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FollowPrize.AddFollowPrize(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FollowPrize.AddFollowPrize returned error (possibly expected with mock data): %s", err)
 	}
@@ -48,7 +50,8 @@ func Test_FollowPrize_DeleteFollowPrize(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/follow_prize/delete_follow_prize", app.APIURL), responder)
 
 	var req DeleteFollowPrizeRequest
-	res, err := client.FollowPrize.DeleteFollowPrize(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FollowPrize.DeleteFollowPrize(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FollowPrize.DeleteFollowPrize returned error (possibly expected with mock data): %s", err)
 	}
@@ -72,7 +75,8 @@ func Test_FollowPrize_EndFollowPrize(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/follow_prize/end_follow_prize", app.APIURL), responder)
 
 	var req EndFollowPrizeRequest
-	res, err := client.FollowPrize.EndFollowPrize(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FollowPrize.EndFollowPrize(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FollowPrize.EndFollowPrize returned error (possibly expected with mock data): %s", err)
 	}
@@ -96,7 +100,8 @@ func Test_FollowPrize_GetFollowPrizeDetail(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/follow_prize/get_follow_prize_detail", app.APIURL), responder)
 
 	var req GetFollowPrizeDetailRequest
-	res, err := client.FollowPrize.GetFollowPrizeDetail(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FollowPrize.GetFollowPrizeDetail(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FollowPrize.GetFollowPrizeDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -120,7 +125,8 @@ func Test_FollowPrize_GetFollowPrizeList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/follow_prize/get_follow_prize_list", app.APIURL), responder)
 
 	var req GetFollowPrizeListRequest
-	res, err := client.FollowPrize.GetFollowPrizeList(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FollowPrize.GetFollowPrizeList(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FollowPrize.GetFollowPrizeList returned error (possibly expected with mock data): %s", err)
 	}
@@ -144,7 +150,8 @@ func Test_FollowPrize_UpdateFollowPrize(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/follow_prize/update_follow_prize", app.APIURL), responder)
 
 	var req UpdateFollowPrizeRequest
-	res, err := client.FollowPrize.UpdateFollowPrize(shopID, req, accessToken)
+	ctx := context.Background()
+	res, err := client.FollowPrize.UpdateFollowPrize(ctx, shopID, req, accessToken)
 	if err != nil {
 		t.Logf("FollowPrize.UpdateFollowPrize returned error (possibly expected with mock data): %s", err)
 	}
