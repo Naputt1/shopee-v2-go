@@ -1,0 +1,11 @@
+{
+	"response": {
+		"id": 123456,
+		"file_name": "weekly_report_20241111.pdf",
+		"status": 1,
+		"generated_time": 12345678987654,
+		"file_link": "https://seller.uat.shopee.sg/api/v4/accounting/pc/seller_income/income_report/get_income_document_file?path=0/ODljOWY0MjYtOTExMS00MmIxLTkzOGEtNzQ1MmEyZThiZGJi/weekly_report_20241111.pdf"
+	},
+	"error": "-",
+	"message": "-"
+}

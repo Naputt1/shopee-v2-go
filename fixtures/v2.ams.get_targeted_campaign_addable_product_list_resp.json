@@ -1,0 +1,19 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"response": {
+		"item_list": [
+			{
+				"item_id": 101,
+				"item_name": "item a",
+				"sales": 1554,
+				"display_price": "95250",
+				"stock": 20,
+				"is_in_blacklist": false
+			}
+		],
+		"total_count": 20,
+		"cursor": "abcd"
+	}
+}

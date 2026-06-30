@@ -1,0 +1,32 @@
+{
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"error": "",
+	"message": "",
+	"response": {
+		"callback_url": "https://open.shopee.com/",
+		"live_push_status": "suspended",
+		"suspended_time": 1577416181,
+		"blocked_shop_id": [
+			10010,
+			20020,
+			30030
+		],
+		"push_config_on_list": [
+			1,
+			2,
+			3
+		],
+		"push_config_off_list": [
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13
+		]
+	}
+}

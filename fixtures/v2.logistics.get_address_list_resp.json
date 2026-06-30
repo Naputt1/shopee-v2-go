@@ -1,0 +1,46 @@
+{
+    "error": "",
+    "message": "",
+    "response": {
+        "show_pickup_address": false,
+        "address_list": [
+            {
+                "address_id": 1173,
+                "region": "TH",
+                "state": "จังหวัดกาฬสินธุ์",
+                "city": "อำเภอห้วยผึ้ง",
+                "address": "unit 1, building 2",
+                "zipcode": "46240",
+                "district": "",
+                "town": "",
+                "address_type": []
+            },
+            {
+                "address_id": 1191,
+                "region": "TH",
+                "state": "จังหวัดชลบุรี",
+                "city": "อำเภอเกาะสีชัง",
+                "address": "unit 123",
+                "zipcode": "20120",
+                "district": "",
+                "town": "",
+                "address_type": [
+                    "PICK_UP_ADDRESS",
+                    "RETURN_ADDRESS"
+                ]
+            },
+            {
+                "address_id": 1238,
+                "region": "TH",
+                "state": "จังหวัดชลบุรี",
+                "city": "อำเภอพานทอง",
+                "address": "2312312313",
+                "zipcode": "12323",
+                "district": "",
+                "town": "",
+                "address_type": []
+            }
+        ]
+    },
+    "request_id": "675015f4f59943a39f2f69c22da431f8"
+}

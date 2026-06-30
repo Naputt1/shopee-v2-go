@@ -1,0 +1,42 @@
+{
+	"request_id": "862fc4d77de74edf9bf045c7650f1988",
+	"error": "error_auth",
+	"message": "Invalid access_token.",
+	"response": {
+		"recipient_address_info": {
+			"key": "name",
+			"image": "data:image/png;base64,/9j/4AAQSkZJRgABAgEASABIAAD/……"
+		},
+		"shipping_document_info": {
+			"shipping_carrier": "Standard Delivery",
+			"recipient_sort_code": {
+				"first_recipient_sort_code": "B-151-ATP-ATP-010",
+				"second_recipient_sort_code": "-",
+				"third_recipient_sort_code": "SAN ROQUE 009"
+			},
+			"sender_sort_code": {
+				"first_sender_sort_code": "-",
+				"second_sender_sort_code": "-",
+				"third_sender_sort_code": "-"
+			},
+			"return_sort_code": {
+				"return_first_sort_code": "RTS-FM-MAN"
+			},
+			"tracking_number": "MY200448706479IT",
+			"pickup_hub": "-",
+			"delivery_hub": "-",
+			"deliver_area": "SAN ROQUE 009",
+			"ec_booking_no": "-",
+			"create_date_ymd_sl": "2022/12/05",
+			"manufacturers_name": "-",
+			"manufacturers_website": "-",
+			"spx_sub_district": "-",
+			"spx_receive_station": {
+				"spx_first_receive_station": "-"
+			},
+			"zone": "-",
+			"zone_code": "-",
+			"destination_base_code": "-"
+		}
+	}
+}

@@ -1,0 +1,18 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "e3e3e7f32deed04cc72ddcb0da0c5301:010002a07d0bfcf4:0000007fae5e5a35",
+    "response": {
+        "fail_list": [
+            {
+                "fail_reason": "Package is not under the specified fulfilment channel",
+                "package_number": "OFG192433773204150"
+            }
+        ],
+        "success_list": [
+            {
+                "package_number": "OFG192433821205164"
+            }
+        ]
+    }
+}

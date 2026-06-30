@@ -1,0 +1,17 @@
+{
+    "message": "",
+    "request_id": "c1712c064039dfea0eefe73c7f8cc26d",
+    "response": {
+        "start_time": 1656601200,
+        "purchase_min_spend": 0,
+        "source": 1,
+        "add_on_deal_id": 12069,
+        "promotion_purchase_limit": 100,
+        "end_time": 1656604800,
+        "add_on_deal_name": "add on deal test",
+        "per_gift_num": 0,
+        "promotion_type": 0,
+        "sub_item_priority": []
+    },
+    "error": ""
+}

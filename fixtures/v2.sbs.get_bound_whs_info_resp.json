@@ -1,0 +1,17 @@
+{
+	"message": "",
+	"response": {
+		"list": [
+			{
+				"shop_id": 123,
+				"bound_whs": [
+					{
+						"whs_region": "SG",
+						"whs_ids": "SGL,SGC"
+					}
+				]
+			}
+		]
+	},
+	"error": ""
+}

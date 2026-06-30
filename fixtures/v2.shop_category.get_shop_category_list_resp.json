@@ -1,0 +1,81 @@
+{
+    "request_id": "26982ef64176bd5730503d0342514f9e",
+    "message": "",
+    "error": "",
+    "response": {
+        "shop_categorys": [
+            {
+                "shop_category_id": 114559550,
+                "status": 2,
+                "name": "rule-based joandy test",
+                "sort_weight": 52,
+                "created_by": "Seller | Rule Selection"
+            },
+            {
+                "shop_category_id": 136321997,
+                "status": 2,
+                "name": "12345",
+                "sort_weight": 31,
+                "created_by": "Seller | Rule Selection"
+            },
+            {
+                "shop_category_id": 136318379,
+                "status": 2,
+                "name": "rule",
+                "sort_weight": 30,
+                "created_by": "Seller | Rule Selection"
+            },
+            {
+                "shop_category_id": 136315463,
+                "status": 2,
+                "name": "123",
+                "sort_weight": 29,
+                "created_by": "Seller | Rule Selection"
+            },
+            {
+                "shop_category_id": 134037428,
+                "status": 2,
+                "name": "test",
+                "sort_weight": 27,
+                "created_by": "Seller | Rule Selection"
+            },
+            {
+                "shop_category_id": 129856824,
+                "status": 2,
+                "name": "最近",
+                "sort_weight": 25,
+                "created_by": "Seller | Manual Selection"
+            },
+            {
+                "shop_category_id": 129739934,
+                "status": 2,
+                "name": "Dream_test",
+                "sort_weight": 24,
+                "created_by": "Seller | Manual Selection"
+            },
+            {
+                "shop_category_id": 147916931,
+                "status": 2,
+                "name": "Pants & Leggings",
+                "sort_weight": -1,
+                "created_by": "System | Pants & Leggings"
+            },
+            {
+                "shop_category_id": 147916930,
+                "status": 2,
+                "name": "Shorts",
+                "sort_weight": -1,
+                "created_by": "System | Shorts"
+            },
+            {
+                "shop_category_id": 147916929,
+                "status": 2,
+                "name": "Anklets",
+                "sort_weight": -1,
+                "created_by": "System | Anklets"
+            }
+        ],
+        "more": true,
+        "total_count": 45
+    }
+}

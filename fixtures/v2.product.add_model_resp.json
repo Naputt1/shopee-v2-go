@@ -1,0 +1,25 @@
+{
+	"error": "-",
+	"message": "-",
+	"warning": "-",
+	"request_id": "-",
+	"response": {
+		"model": [
+			{
+				"model_sku": "sku",
+				"price_info": [
+					{
+						"original_price": 52.4
+					}
+				],
+				"seller_stock": [
+					{
+						"location_id": "-",
+						"stock": 0
+					}
+				],
+				"weight": 1.1
+			}
+		]
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"response": {
+		"rates": [
+			{
+				"item_id": 123,
+				"min_rate": 1.1,
+				"max_rate": 1.2
+			}
+		]
+	}
+}

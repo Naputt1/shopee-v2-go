@@ -1,0 +1,19 @@
+{
+	"error": "",
+	"message": "",
+	"warning": "",
+	"request_id": "e3e3e7f33ee88a7454c64e7a0b546e01",
+	"response": {
+		"status": "SUCCEEDED",
+		"reason": "",
+                "update_time": 1758018336,
+		"video_info": {
+			"video_url": "http://play-src.vod.shopee.com/api/v4/11110201/mms/sg-11110201-6kh48-mepm7a0ttcw3c3.",
+			"video_thumbnail_url": "http://img.sp.mms.shopee.sg/sg-11110201-6kh48-mepm7a0ttcw3c3_cover",
+			"thumbnail_width": 1920,
+			"thumbnail_height": 1080,
+			"duration": 105,
+			"resolution": "960x540"
+		}
+	}
+}

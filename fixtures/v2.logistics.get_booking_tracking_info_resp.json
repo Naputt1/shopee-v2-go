@@ -1,0 +1,16 @@
+{
+	"request_id": "862fc4d77de74edf9bf045c7650f1988",
+	"error": "error_auth",
+	"message": "Invalid access_token.",
+	"response": {
+		"booking_sn": "201214JASXYXY6",
+		"logistics_status": "LOGISTICS_REQUEST_CREATED",
+		"tracking_info": [
+			{
+				"update_time": 1587375600,
+				"description": "Your parcel is ready to ship from the seller",
+				"logistics_status": "PICKED_UP"
+			}
+		]
+	}
+}

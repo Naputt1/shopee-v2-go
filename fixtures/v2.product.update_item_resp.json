@@ -1,0 +1,65 @@
+{
+	"message": "-",
+	"warning": "-",
+	"request_id": "326527603d034fd1b2dd6a74d70ade54",
+	"response": {
+		"description": "Hello product product 6xnhI3ug5D2rFpH3QoJSNNOrfUSP8rw5",
+		"weight": 0.9,
+		"pre_order": {
+			"days_to_ship": 2,
+			"is_pre_order": true
+		},
+		"item_name": "Hello QdlHimD4nto0OGIQ",
+		"item_status": "UNLIST",
+		"images": {
+			"image_id_list": [
+				"-"
+			],
+			"image_url_list": [
+				"-"
+			]
+		},
+		"logistic_info": [
+			{
+				"estimated_shipping_fee": 1.49,
+				"logistic_name": "Ninja Van",
+				"enabled": true,
+				"logistic_id": 10007,
+				"is_free": true
+			}
+		],
+		"item_id": 2800143058,
+		"category_id": 34106,
+		"dimension": {
+			"package_width": 14,
+			"package_length": 12,
+			"package_height": 13
+		},
+		"condition": "USED",
+		"brand": {
+			"brand_id": 0,
+			"original_brand_name": "nike"
+		},
+		"item_dangerous": 0,
+		"complaint_policy": {
+			"warranty_time": "-",
+			"exclude_entrepreneur_warranty": true,
+			"additional_information": "-"
+		},
+		"description_info": {
+			"extended_description": {
+				"field_list": [
+					{
+						"field_type": "-",
+						"text": "-",
+						"image_info": {
+							"image_id": "-"
+						}
+					}
+				]
+			}
+		},
+		"description_type": "-"
+	},
+	"error": "-"
+}

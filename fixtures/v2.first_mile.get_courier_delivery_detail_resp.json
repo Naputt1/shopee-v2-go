@@ -1,0 +1,29 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "317a860d2521de21d4bc5741129c0b00:04000077b1103060:030002321ac1f301",
+    "response": {
+        "binding_id": "DCN249237197572VU",
+        "declare_date": "2024-10-18",
+        "first_mile_tracking_number": "ZJS1729224232",
+        "more": false,
+        "next_cursor": "",
+        "order_list": [
+            {
+                "arrived_transit_warehouse": false,
+                "order_sn": "2410106R6X5Q85",
+                "package_number": "OFG182232162204802",
+                "pick_up_done": false,
+                "sls_tracking_number": "SG246207786489JU"
+            },
+            {
+                "arrived_transit_warehouse": false,
+                "order_sn": "2410106R64DKEU",
+                "package_number": "OFG182232134204369",
+                "pick_up_done": false,
+                "sls_tracking_number": "SG247643248250PU"
+            }
+        ],
+        "status": "ORDER_RECEIVED"
+    }
+}

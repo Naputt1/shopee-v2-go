@@ -1,0 +1,19 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "2cda1f9c9b44449aedbc11dwer3ced242",
+    "response": {
+        "bundle_deal_id": 6833,
+        "name": "bundle name",
+        "start_time":1655654412,
+        "end_time": 1658246412,
+        "bundle_deal_rule": {
+            "rule_type": 1, 
+            "discount_value": 11.0,
+            "fix_price": 11.0,
+            "discount_percentage": 33, 
+            "min_amount": 123         
+        },
+        "purchase_limit": 3
+    }
+}

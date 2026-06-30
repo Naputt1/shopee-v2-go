@@ -1,0 +1,29 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "ae9e59cf358b59d7f940552176cb9d01",
+	"response": {
+		"more": true,
+		"next_offset": 10,
+		"list": [
+			{
+				"item_id": 1,
+				"shop_id": 1,
+				"name": "test",
+				"image_url": "https://cf.shopee.sg/file/id-11134104-7r98o-m9pjrv63z8lxe7",
+				"price_info": {
+					"currency": "SGD",
+					"current_price": 100,
+					"original_price": 110
+				},
+				"affiliate_info": {
+					"commission_rate": 0.1,
+					"is_campaign": true,
+					"campaign_mcn_name": "mcn",
+					"campaign_start_time": 1735870969,
+					"campaign_end_time": 1735870969
+				}
+			}
+		]
+	}
+}

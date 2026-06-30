@@ -1,0 +1,16 @@
+{
+    "error":"",
+    "message":"",
+    "request_id":"e3e3e7f334afb1ec6b29b57e1285f801",
+    "response": {
+        "enable": true,
+        "dimension": {
+            "length": 15,
+            "width": 15,
+            "height": 15
+        },
+        "packaging_fee": {
+            "value": 100.00
+        }
+    }
+}

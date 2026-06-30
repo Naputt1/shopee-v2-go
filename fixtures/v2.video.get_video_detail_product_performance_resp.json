@@ -1,0 +1,29 @@
+{
+	"error": "",
+	"message": "",
+	"response": {
+		"total_count": 1,
+		"list": [
+			{
+				"shop_id": "111",
+				"item_id": "222",
+				"item_cover_image_url": "https://cf.shopee.co.id/file/id-11134207-7rasc-m3buy7g7hhp039",
+				"item_name": "Woman clothes",
+				"item_description": "test",
+				"likes": 1,
+				"comments": 2,
+				"placed_orders": 0,
+				"placed_sales": 0,
+				"unique_buyers": 0,
+				"conversion_rate": 0,
+				"product_clicks": 0,
+				"product_click_rate": 0,
+				"sold_items": 0,
+				"sales_per_order": 0,
+				"sales_per_buyer": 0
+			}
+		],
+		"has_more": false
+	},
+	"request_id": "e443e246-d834-454e-8541-6687dbaa2c27"
+}

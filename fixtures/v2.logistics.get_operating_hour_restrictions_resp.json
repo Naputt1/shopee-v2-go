@@ -1,0 +1,249 @@
+{
+	"error": "error_auth",
+	"message": "Invalid access_token.",
+	"request_id": "3dad66f43b8447d282ae6da36626c6b7",
+	"response": {
+		"regular_operating_hour_restrictions": {
+			"minimum_working_days_in_week": 5,
+			"working_day_config": {
+				"monday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"tuesday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"wednesday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"thursday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"friday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"saturday": {
+					"mandatory": false,
+					"minimum_operating_hour": 0,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"sunday": {
+					"mandatory": false,
+					"minimum_operating_hour": 0,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"public_holiday": {
+					"mandatory": false,
+					"minimum_operating_hour": 0,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				}
+			}
+		},
+		"instant_operating_hour_restrictions": {
+			"minimum_working_days_in_week": 5,
+			"working_day_config": {
+				"monday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"tuesday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"wednesday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"thursday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"friday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"saturday": {
+					"mandatory": false,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"sunday": {
+					"mandatory": false,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"public_holiday": {
+					"mandatory": false,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				}
+			}
+		},
+		"special_operating_hour_restrictions": {
+			"special_day": {
+				"mandatory": false,
+				"minimum_operating_hour": 6,
+				"minimum_start_time": "07:00",
+				"maximum_start_time": "10:00",
+				"minimum_end_time": "16:00",
+				"maximum_end_time": "21:00",
+				"operating_24_hour_toggle": false
+			}
+		},
+		"shop_collection_operating_hour_restrictions": {
+			"minimum_working_days_in_week": 5,
+			"working_day_config": {
+				"monday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"tuesday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": "false"
+				},
+				"wednesday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"thursday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"friday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"saturday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"sunday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				},
+				"public_holiday": {
+					"mandatory": true,
+					"minimum_operating_hour": 6,
+					"minimum_start_time": "07:00",
+					"maximum_start_time": "10:00",
+					"minimum_end_time": "16:00",
+					"maximum_end_time": "21:00",
+					"operating_24_hour_toggle": false
+				}
+			}
+		}
+	}
+}

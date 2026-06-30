@@ -1,0 +1,19 @@
+{
+    "message": "",
+    "request_id": "a8a6c05ae225bef9e562c7b78a0b2677",
+    "response": {
+        "start_time": 1656601200,
+        "purchase_min_spend": 0,
+        "source": 1,
+        "add_on_deal_id": 12069,
+        "promotion_purchase_limit": 100,
+        "end_time": 1656604800,
+        "add_on_deal_name": "bundle deal test qweass",
+        "per_gift_num": 0,
+        "promotion_type": 0,
+        "sub_item_priority": [
+            100760424
+        ]
+    },
+    "error": ""
+}

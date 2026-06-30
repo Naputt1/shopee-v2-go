@@ -1,0 +1,5 @@
+{
+	"error": "logistics.not_available_for_self_collection",
+	"message": "Buyer self collection unavailable for this order",
+	"request_id": "3dad66f43b8447d282ae6da36626c6b7"
+}

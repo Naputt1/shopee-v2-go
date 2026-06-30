@@ -1,0 +1,26 @@
+{
+	"error": "",
+	"message": "",
+	"response": {
+		"packages_list": [
+			{
+				"order_sn": "250211UJM7EVM7",
+				"package_number": "OFG192947720204989",
+				"logistics_channel_id": 50021,
+				"product_location_id": "VN0005EIZ",
+				"sorting_group": "North",
+				"is_shipment_arranged": false
+			}
+		],
+		"pagination": {
+			"total_count": 320,
+			"next_cursor": "1730437200,184066343203459",
+			"more": true
+		},
+		"sort": {
+			"sort_type": 1,
+			"is_asc": false
+		}
+	},
+	"request_id": "69ee3f61ec6f4e3f85836391e5b78dbc "
+}

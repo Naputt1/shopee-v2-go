@@ -1,0 +1,27 @@
+{
+	"error": "-",
+	"message": "-",
+	"warning": "-",
+	"request_id": "-",
+	"response": {
+		"campaign_id": 12412421,
+		"report": {
+			"broad_cir": 100.12,
+			"broad_gmv": 100.12,
+			"broad_order": 123,
+			"broad_order_amount": 123,
+			"broad_roi": 123.12,
+			"clicks": 123,
+			"expense": 123.12,
+			"cpc": 123.12,
+			"cpdc": 123.12,
+			"cr": 123.12,
+			"direct_cr": 123.12,
+			"direct_cir": 123.12,
+			"direct_order": 123,
+			"direct_order_amount": 123,
+			"direct_roi": 123.12,
+			"impression": 123.12
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "ae9e59cf358b59d7f940552176cb9d01",
+	"response": {
+		"more": true,
+		"next_offset": 0,
+		"list": [
+			{
+				"item_id": 0,
+				"shop_id": 0,
+				"name": "-",
+				"image_url": "-",
+				"price_info": {
+					"currency": "-",
+					"current_price": 0.1,
+					"original_price": 0.1
+				},
+				"affiliate_info": {
+					"commission_rate": 0.1,
+					"is_campaign": true,
+					"campaign_mcn_name": "-",
+					"campaign_start_time": 0,
+					"campaign_end_time": 0
+				}
+			}
+		]
+	}
+}

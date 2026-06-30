@@ -1,0 +1,298 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "e3e3e7f32bcee492460a0c6f610ab401:01000259bd426768:000000195ef6df10",
+    "response": {
+        "info_needed": {
+            "dropoff": [],
+            "pickup": [
+                "address_id",
+                "pickup_time_id"
+            ]
+        },
+        "dropoff": {
+            "branch_list": null
+        },
+        "pickup": {
+            "address_list": [
+                {
+                    "address": "112 Nguyễn Du",
+                    "address_flag": [],
+                    "address_id": 200000001,
+                    "city": "Quận 1",
+                    "district": "Phường Bến Thành",
+                    "region": "VN",
+                    "state": "TP. Hồ Chí Minh",
+                    "time_slot_list": [
+                        {
+                            "date": 1737018000,
+                            "pickup_time_id": "1737018000"
+                        },
+                        {
+                            "date": 1737104400,
+                            "pickup_time_id": "1737104400"
+                        },
+                        {
+                            "date": 1737190800,
+                            "pickup_time_id": "1737190800"
+                        },
+                        {
+                            "date": 1737277200,
+                            "pickup_time_id": "1737277200"
+                        },
+                        {
+                            "date": 1737363600,
+                            "pickup_time_id": "1737363600"
+                        },
+                        {
+                            "date": 1737450000,
+                            "pickup_time_id": "1737450000"
+                        },
+                        {
+                            "date": 1737536400,
+                            "pickup_time_id": "1737536400"
+                        },
+                        {
+                            "date": 1737622800,
+                            "pickup_time_id": "1737622800"
+                        },
+                        {
+                            "date": 1737709200,
+                            "pickup_time_id": "1737709200"
+                        },
+                        {
+                            "date": 1737795600,
+                            "pickup_time_id": "1737795600"
+                        },
+                        {
+                            "date": 1737882000,
+                            "pickup_time_id": "1737882000"
+                        },
+                        {
+                            "date": 1737968400,
+                            "pickup_time_id": "1737968400"
+                        },
+                        {
+                            "date": 1738054800,
+                            "pickup_time_id": "1738054800"
+                        }
+                    ],
+                    "town": "",
+                    "zipcode": ""
+                },
+                {
+                    "address": "capital place",
+                    "address_flag": [],
+                    "address_id": 200000012,
+                    "city": "Quận Ba Đình",
+                    "district": "Phường Liễu Giai",
+                    "region": "VN",
+                    "state": "Hà Nội",
+                    "time_slot_list": [
+                        {
+                            "date": 1737018000,
+                            "pickup_time_id": "1737018000"
+                        },
+                        {
+                            "date": 1737104400,
+                            "pickup_time_id": "1737104400"
+                        },
+                        {
+                            "date": 1737190800,
+                            "pickup_time_id": "1737190800"
+                        },
+                        {
+                            "date": 1737277200,
+                            "pickup_time_id": "1737277200"
+                        },
+                        {
+                            "date": 1737363600,
+                            "pickup_time_id": "1737363600"
+                        },
+                        {
+                            "date": 1737450000,
+                            "pickup_time_id": "1737450000"
+                        },
+                        {
+                            "date": 1737536400,
+                            "pickup_time_id": "1737536400"
+                        },
+                        {
+                            "date": 1737622800,
+                            "pickup_time_id": "1737622800"
+                        },
+                        {
+                            "date": 1737709200,
+                            "pickup_time_id": "1737709200"
+                        },
+                        {
+                            "date": 1737795600,
+                            "pickup_time_id": "1737795600"
+                        },
+                        {
+                            "date": 1737882000,
+                            "pickup_time_id": "1737882000"
+                        },
+                        {
+                            "date": 1737968400,
+                            "pickup_time_id": "1737968400"
+                        },
+                        {
+                            "date": 1738054800,
+                            "pickup_time_id": "1738054800"
+                        }
+                    ],
+                    "town": "",
+                    "zipcode": ""
+                },
+                {
+                    "address": "15 Lê Thánh Tôn",
+                    "address_flag": [
+                        "current_address"
+                    ],
+                    "address_id": 200000014,
+                    "city": "Quận 1",
+                    "district": "Phường Bến Nghé",
+                    "region": "VN",
+                    "state": "TP. Hồ Chí Minh",
+                    "time_slot_list": [
+                        {
+                            "date": 1737018000,
+                            "pickup_time_id": "1737018000"
+                        },
+                        {
+                            "date": 1737104400,
+                            "pickup_time_id": "1737104400"
+                        },
+                        {
+                            "date": 1737190800,
+                            "pickup_time_id": "1737190800"
+                        },
+                        {
+                            "date": 1737277200,
+                            "pickup_time_id": "1737277200"
+                        },
+                        {
+                            "date": 1737363600,
+                            "pickup_time_id": "1737363600"
+                        },
+                        {
+                            "date": 1737450000,
+                            "pickup_time_id": "1737450000"
+                        },
+                        {
+                            "date": 1737536400,
+                            "pickup_time_id": "1737536400"
+                        },
+                        {
+                            "date": 1737622800,
+                            "pickup_time_id": "1737622800"
+                        },
+                        {
+                            "date": 1737709200,
+                            "pickup_time_id": "1737709200"
+                        },
+                        {
+                            "date": 1737795600,
+                            "pickup_time_id": "1737795600"
+                        },
+                        {
+                            "date": 1737882000,
+                            "pickup_time_id": "1737882000"
+                        },
+                        {
+                            "date": 1737968400,
+                            "pickup_time_id": "1737968400"
+                        },
+                        {
+                            "date": 1738054800,
+                            "pickup_time_id": "1738054800"
+                        }
+                    ],
+                    "town": "",
+                    "zipcode": ""
+                },
+                {
+                    "address": "167/2 Đ. Nguyễn Ảnh Thủ",
+                    "address_flag": [],
+                    "address_id": 200000016,
+                    "city": "Quận 12",
+                    "district": "Phường Trung Mỹ Tây",
+                    "region": "VN",
+                    "state": "TP. Hồ Chí Minh",
+                    "time_slot_list": [
+                        {
+                            "date": 1737018000,
+                            "pickup_time_id": "1737018000"
+                        },
+                        {
+                            "date": 1737104400,
+                            "pickup_time_id": "1737104400"
+                        },
+                        {
+                            "date": 1737190800,
+                            "pickup_time_id": "1737190800"
+                        },
+                        {
+                            "date": 1737277200,
+                            "pickup_time_id": "1737277200"
+                        },
+                        {
+                            "date": 1737363600,
+                            "pickup_time_id": "1737363600"
+                        },
+                        {
+                            "date": 1737450000,
+                            "pickup_time_id": "1737450000"
+                        },
+                        {
+                            "date": 1737536400,
+                            "pickup_time_id": "1737536400"
+                        },
+                        {
+                            "date": 1737622800,
+                            "pickup_time_id": "1737622800"
+                        },
+                        {
+                            "date": 1737709200,
+                            "pickup_time_id": "1737709200"
+                        },
+                        {
+                            "date": 1737795600,
+                            "pickup_time_id": "1737795600"
+                        },
+                        {
+                            "date": 1737882000,
+                            "pickup_time_id": "1737882000"
+                        },
+                        {
+                            "date": 1737968400,
+                            "pickup_time_id": "1737968400"
+                        },
+                        {
+                            "date": 1738054800,
+                            "pickup_time_id": "1738054800"
+                        }
+                    ],
+                    "town": "",
+                    "zipcode": ""
+                }
+            ]
+        },
+        "success_list": [
+            {
+                "package_number": "OFG190576613214356"
+            }
+        ],
+        "fail_list": [
+            {
+                "fail_reason": "Package is not under the specified warehouse",
+                "package_number": "OFG188728166212046"
+            },
+            {
+                "fail_reason": "Package is not under the specified warehouse",
+                "package_number": "OFG189588735210225"
+            }
+        ]
+    }
+}

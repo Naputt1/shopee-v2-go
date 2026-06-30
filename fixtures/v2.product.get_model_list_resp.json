@@ -1,0 +1,82 @@
+{
+	"message": "-",
+	"warning": "-",
+	"request_id": "75c2b01e50764cec8cfdc61e75c1f26d",
+	"response": {
+		"tier_variation": [
+			{
+				"option_list": [
+					{
+						"option": "testsku1",
+						"image": {
+							"image_id": "-",
+							"image_url": "-"
+						}
+					}
+				],
+				"name": "-"
+			}
+		],
+		"model": [
+			{
+				"price_info": [
+					{
+						"currency": "TWD",
+						"current_price": 100,
+						"original_price": 100,
+						"inflated_price_of_original_price": 100,
+						"inflated_price_of_current_price": 100,
+						"sip_item_price": 100,
+						"sip_item_price_source": "manual",
+						"sip_item_price_currency": "CNY"
+					}
+				],
+				"model_sku": "blue bag",
+				"model_status": "MODEL_NORMAL",
+				"pre_order": {
+					"is_pre_order": false,
+					"days_to_ship": 3
+				},
+				"stock_info_v2": {
+					"summary_info": {
+						"total_reserved_stock": 0,
+						"total_available_stock": 0
+					},
+					"seller_stock": [
+						{
+							"location_id": "-",
+							"stock": 0,
+							"if_saleable": true
+						}
+					],
+					"shopee_stock": [
+						{
+							"location_id": "-",
+							"stock": "-"
+						}
+					]
+				},
+				"gtin_code": "-",
+				"weight": "1.1",
+                                "dimension": {
+                                    "package_height": 11,
+                                    "package_length": 11,
+                                    "package_width": 11
+                },
+			}
+		],
+		"standardise_tier_variation": [
+			{
+				"variation_name": "-",
+				"variation_option_list": [
+					{
+						"variation_option_name": "-",
+						"image_id": "-",
+						"image_url": "-"
+					}
+				]
+			}
+		]
+	},
+	"error": "-"
+}

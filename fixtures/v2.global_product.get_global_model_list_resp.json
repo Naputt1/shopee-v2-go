@@ -1,0 +1,118 @@
+{
+    "error": "",
+    "message": "",
+    "warning": "",
+    "request_id": "369c79e9a42147f6912e2bf21c96ba23",
+    "response": {
+        "tier_variation": [
+            {
+                "name": "tier name 1",
+                "option_list": [
+                    {
+                        "option": "tier option 1",
+                        "image": {
+                            "image_url": "https://cf.shopee.sg/file/c54265d475b85e00ffb2404585e32b6f",
+                            "image_id": "c54265d475b85e00ffb2404585e32b6f"
+                        }
+                    },
+                    {
+                        "option": "tier option 2",
+                        "image": {
+                            "image_url": "https://cf.shopee.sg/file/c54265d475b85e00ffb2404585e32b61",
+                            "image_id": "c54265d475b85e00ffb2404585e32b61"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "tier name 2",
+                "option_list": [
+                    {
+                        "option": "tier option 1",
+                        "image": {
+                            "image_url": "https://cf.shopee.sg/file/c54265d475b85e00ffb2404585e32b66",
+                            "image_id": "c54265d475b85e00ffb2404585e32b66"
+                        }
+                    },
+                    {
+                        "option": "tier option 2",
+                        "image": {
+                            "image_url": "https://cf.shopee.sg/file/c54265d475b85e00ffb2404585e32b69",
+                            "image_id": "c54265d475b85e00ffb2404585e32b69"
+                        }
+                    }
+                ]
+            }
+        ],
+        "global_model": [
+            {
+                "global_model_id": 2000449065,
+                "global_model_sku": "model sku",
+                "price_info": {
+                    "original_price": 100.5
+                },
+                "stock_info": [
+                    {
+                        "stock_type": 1,
+                        "stock_location_id": 1020,
+                        "current_stock": 10,
+                        "normal_stock": 10,
+                        "reserved_stock": 10
+                    }
+                ],
+                "tier_index": [0, 0]
+            },
+            {
+                "global_model_id": 2000449066,
+                "global_model_sku": "model sku",
+                "price_info": {
+                    "original_price": 100.5
+                },
+                "stock_info": [
+                    {
+                        "stock_type": 1,
+                        "stock_location_id": 1020,
+                        "current_stock": 10,
+                        "normal_stock": 10,
+                        "reserved_stock": 10
+                    }
+                ],
+                "tier_index": [0, 1]
+            },
+            {
+                "global_model_id": 2000449067,
+                "global_model_sku": "model sku",
+                "price_info": {
+                    "original_price": 100.5
+                },
+                "stock_info": [
+                    {
+                        "stock_type": 1,
+                        "stock_location_id": 1020,
+                        "current_stock": 10,
+                        "normal_stock": 10,
+                        "reserved_stock": 10
+                    }
+                ],
+                "tier_index": [1, 0]
+            },
+            {
+                "global_model_id": 2000449068,
+                "global_model_sku": "model sku",
+                "price_info": {
+                    "original_price": 100.5
+                },
+                "stock_info": [
+                    {
+                        "stock_type": 1,
+                        "stock_location_id": 1020,
+                        "current_stock": 10,
+                        "normal_stock": 10,
+                        "reserved_stock": 10
+                    }
+                ],
+                "tier_index": [1, 1]
+            }
+        ]
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "error": "",
+    "message": "",
+    "response": {
+        "result_list": [
+            {
+                "order_sn": "201201E81SYYKE",
+                "package_number": "60489687088750",
+                "suggest_shipping_document_type": "THERMAL_AIR_WAYBILL",
+                "selectable_shipping_document_type": [
+                    "THERMAL_AIR_WAYBILL"
+                ]
+            },
+            {
+                "order_sn": "201201V81SYYDG",
+                "fail_error": "logistics.order_not_exist",
+                "fail_message": "The order_sn 201201V81SYYDG you provided is not exist. Please check"
+            }
+        ]
+    },
+    "warning": [
+        {
+            "order_sn": "201201V81SYYDG"
+        }
+    ],
+    "request_id": "8412939d0fbd48c9a548fba4b710a7f6"
+}

@@ -1,0 +1,23 @@
+{
+	"request_id": "6f235f4a343e4feb8a9ed74c439f6663",
+	"response": [
+		{
+			"date": "17-03-2021",
+			"impression": 123456,
+			"clicks": 123456,
+			"ctr": 1.23,
+			"direct_order": 123456,
+			"broad_order": 123456,
+			"direct_conversions": 1.23,
+			"broad_conversions": 1.23,
+			"direct_item_sold": 123,
+			"broad_item_sold": 123,
+			"direct_gmv": 1.23,
+			"broad_gmv": 1.23,
+			"expense": 1.23,
+			"cost_per_conversion": 1.23,
+			"direct_roas": 1.23,
+			"broad_roas": 1.23
+		}
+	]
+}

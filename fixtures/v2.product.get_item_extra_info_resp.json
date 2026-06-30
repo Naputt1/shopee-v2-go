@@ -1,0 +1,26 @@
+{
+    "error": "",
+    "message": "",
+    "warning": "",
+    "request_id": "175d7db49b4245e68cc0e43df07f721c",
+    "response": {
+        "item_list": [
+            {
+                "item_id": 2500139861,
+                "sale": 1,
+                "views": 2,
+                "likes": 3,
+                "rating_star": 4,
+                "comment_count": 5
+            },
+            {
+                "item_id": 2400140868,
+                "sale": 0,
+                "views": 0,
+                "likes": 0,
+                "rating_star": 0,
+                "comment_count": 0
+            }
+        ]
+    }
+}

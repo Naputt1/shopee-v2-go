@@ -1,0 +1,24 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"response": {
+		"total_count": 30,
+		"campaign_list": [
+			{
+				"campaign_id": 101,
+				"campaign_name": "campaign a",
+				"campaign_status": "Ongoing",
+				"campaign_source": "Seller",
+				"period_start_time": 1735660800,
+				"period_end_time": 32503651199,
+				"last_editor": "example@example.com",
+				"last_edit_time": 1735660800,
+				"affiliate_count": 20,
+				"item_count": 20,
+				"min_rate": 10,
+				"max_rate": 25
+			}
+		]
+	}
+}

@@ -1,0 +1,36 @@
+{
+	"error": "-",
+	"message": "-",
+	"request_id": "-",
+	"response": {
+		"item_list": [
+			{
+				"item_id": "900626943",
+				"item_name": "跨境商品测试00002 - 1666171546",
+				"item_image": "http://mms.img.susercontent.com/08b3fc410c8eaa7e3f52b06b486a8658",
+				"sku_list": [
+					{
+						"mtsku_id": "900626943_15359982",
+						"model_id": "15359982",
+						"fulfill_mapping_mode": 1,
+						"model_name": "Orange,Large",
+						"barcode": "1231",
+						"whs_list": [
+							{
+								"whs_id": "CNN",
+								"qty_of_stock_age_one": 0,
+								"qty_of_stock_age_two": 0,
+								"qty_of_stock_age_three": 0,
+								"qty_of_stock_age_four": 0,
+								"qty_of_stock_age_five": 0,
+								"qty_of_stock_age_six": 0,
+								"excess_stock": 0,
+								"aging_storage_tag": 0
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

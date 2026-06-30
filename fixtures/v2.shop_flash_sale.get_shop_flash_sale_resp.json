@@ -1,0 +1,15 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "4f0c979980b49d02f352fdc81dace741",
+    "response": {
+        "enabled_item_count": 0,
+        "end_time": 1725040799,
+        "flash_sale_id": 802063533822541,
+        "item_count": 0,
+        "start_time": 1725033600,
+        "status": 3,
+        "timeslot_id": 237859372232704,
+        "type": 1
+    }
+}

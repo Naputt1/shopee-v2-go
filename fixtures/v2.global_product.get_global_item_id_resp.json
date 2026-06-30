@@ -1,0 +1,12 @@
+{
+"error": "",
+"message": "",
+"warning": "",
+"request_id": "aaaaaaa",
+"response": {
+"item_id_map": [{
+"item_id": 123,
+"global_item_id": 456
+}]
+}
+}

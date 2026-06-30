@@ -1,0 +1,16 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "ae9e59cf358b59d7f940552176cb9d01",
+	"response": {
+		"more": true,
+		"next_offset": 10,
+		"list": [
+			{
+				"item_set_id": 1,
+				"item_set_name": "set",
+				"item_count": 10
+			}
+		]
+	}
+}

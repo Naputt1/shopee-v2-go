@@ -1,0 +1,25 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"response": {
+		"list": [
+			{
+				"affiliate_id": 11146330000,
+				"affiliate_name": "id0807.9",
+				"affiliate_username": "interspaceindonesia",
+				"sales": "47190",
+				"items_sold": 365,
+				"orders": 269,
+				"clicks": 3372,
+				"est_commission": "947253",
+				"roi": "46.8",
+				"total_buyers": 589,
+				"new_buyers": 260
+			}
+		],
+		"total_count": 589,
+		"has_more": true,
+		"fetched_date_range": "20250801-20250831"
+	}
+}

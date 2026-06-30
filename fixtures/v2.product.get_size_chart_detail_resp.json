@@ -1,0 +1,95 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "835424602d9bb0d8ea657fac2a35e020:020000ee07bc4e72:01000064d091d3e2",
+    "response": {
+        "size_chart_id": 700024639,
+        "size_chart_name": "testtestt",
+        "size_chart_table": {
+            "column_list": [
+                {
+                    "measurement": {
+                        "display_name": "test single input number",
+                        "input_type": "Input Single Number",
+                        "unit": "cm"
+                    },
+                    "measurement_value_list": [
+                        {
+                            "max_value": null,
+                            "min_value": null,
+                            "option": null,
+                            "value": 1
+                        },
+                        {
+                            "max_value": null,
+                            "min_value": null,
+                            "option": null,
+                            "value": 2
+                        },
+                        {
+                            "max_value": null,
+                            "min_value": null,
+                            "option": null,
+                            "value": 3
+                        }
+                    ]
+                },
+                {
+                    "measurement": {
+                        "display_name": "susu_input_range_number_with_special_unit_kg",
+                        "input_type": "Input Range Number",
+                        "unit": "kg"
+                    },
+                    "measurement_value_list": [
+                        {
+                            "max_value": 13,
+                            "min_value": 12,
+                            "option": null,
+                            "value": null
+                        },
+                        {
+                            "max_value": 14,
+                            "min_value": 13,
+                            "option": null,
+                            "value": null
+                        },
+                        {
+                            "max_value": 16,
+                            "min_value": 14,
+                            "option": null,
+                            "value": null
+                        }
+                    ]
+                },
+                {
+                    "measurement": {
+                        "display_name": "regional 001 dropdowm",
+                        "input_type": "Single Dropdown",
+                        "unit": "cm"
+                    },
+                    "measurement_value_list": [
+                        {
+                            "max_value": null,
+                            "min_value": null,
+                            "option": "01s",
+                            "value": null
+                        },
+                        {
+                            "max_value": null,
+                            "min_value": null,
+                            "option": "01m",
+                            "value": null
+                        },
+                        {
+                            "max_value": null,
+                            "min_value": null,
+                            "option": "01l",
+                            "value": null
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "warning": ""
+}

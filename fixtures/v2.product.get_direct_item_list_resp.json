@@ -1,0 +1,19 @@
+{
+	"error": "-",
+	"message": "-",
+	"warning": "-",
+	"request_id": "-",
+	"response": {
+		"list": [
+			{
+				"main_item_id": 801931707,
+				"direct_item_list": [
+					{
+						"direct_shop_id": 224499453,
+						"direct_item_id": 843997552
+					}
+				]
+			}
+		]
+	}
+}

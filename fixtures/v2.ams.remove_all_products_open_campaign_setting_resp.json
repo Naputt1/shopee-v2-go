@@ -1,0 +1,9 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"response": {
+		"task_type": "batch_remove_open_campaigns",
+		"task_id": "abcd-abcd-abcd"
+	}
+}

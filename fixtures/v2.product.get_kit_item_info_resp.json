@@ -1,0 +1,143 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "04af1e367f32142ecc4cf9be502b6141",
+    "response": {
+        "product_info": {
+            "attributes": [],
+            "brand_info": {
+                "brand_id": 0,
+                "original_brand_name": "No brand"
+            },
+            "category_id": 107290,
+            "create_time": 1725439928,
+            "description_info": {
+                "extended_description": {
+                    "field_list": [
+                        {
+                            "field_type": "text",
+                            "text": "item description sample"
+                        }
+                    ]
+                }
+            },
+            "description_type": "extended",
+            "dimension": {
+                "package_height": 10,
+                "package_length": 10,
+                "package_width": 10
+            },
+            "image": {
+                "image_id_list": [
+                    "br-11134207-7r98o-lzri4neb5vcv18",
+                    "br-11134207-7r98o-lzri4neb0933bc",
+                    "br-11134207-7r98o-lzri4neba3275b"
+                ],
+                "image_ratio": "1:1",
+                "image_url_list": [
+                    "https://cf.shopee.com.br/file/br-11134207-7r98o-lzri4neb5vcv18",
+                    "https://cf.shopee.com.br/file/br-11134207-7r98o-lzri4neb0933bc",
+                    "https://cf.shopee.com.br/file/br-11134207-7r98o-lzri4neba3275b"
+                ]
+            },
+            "item_id": 885138291,
+            "item_name": "item name sample",
+            "item_sku": "item sku sample",
+            "item_status": "NORMAL",
+            "logistic_info": [
+                {
+                    "enabled": true,
+                    "is_free": false,
+                    "logistic_id": 90003,
+                    "logistic_name": "Correios",
+                    "size_id": 0
+                }
+            ],
+            "model_list": [
+                {
+                    "component_list": [
+                        {
+                            "component_item_id": 892571386,
+                            "component_item_name": "test item 1",
+                            "component_model_id": 18500720947,
+                            "component_model_name": "test model 1",
+                            "component_item_or_model_image": "br-11134207-7r98o-lzr1wsi9uadba5",
+                            "component_item_or_model_sku": "test item 1",
+                            "main_component": false,
+                            "quantity": 3
+                        },
+                        {
+                            "component_item_id": 892571385,
+                            "component_item_name": "test item 2",
+                            "component_model_id": 18500720944,
+                            "component_model_name": "test model 2",
+                            "component_item_or_model_image": "br-11134207-7r98o-lzr1lyf8hji786",
+                            "component_item_or_model_sku": "test item 2",
+                            "main_component": false,
+                            "quantity": 2
+                        }
+                    ],
+                    "model_id": 19250366170,
+                    "model_sku": "",
+                    "original_price": 14,
+                    "tier_index": [
+                        0
+                    ]
+                },
+                {
+                    "component_list": [
+                        {
+                            "component_item_id": 892571386,
+                            "component_item_name": "test item 3",
+                            "component_model_id": 18500720950,
+                            "component_model_name": "test model 3",
+                            "component_item_or_model_image": "br-11134207-7r98o-lzr1wsi9uadba5",
+                            "component_item_or_model_sku": "test item 3",
+                            "main_component": true,
+                            "quantity": 1
+                        },
+                        {
+                            "component_item_id": 892571385,
+                            "component_item_name": "test item 4",
+                            "component_model_id": 18500720943,
+                            "component_model_name": "test model 4",
+                            "component_item_or_model_image": "br-11134207-7r98o-lzr1lyf8hji786",
+                            "component_item_or_model_sku": "test item 4",
+                            "main_component": false,
+                            "quantity": 2
+                        }
+                    ],
+                    "model_id": 19250366171,
+                    "model_sku": "",
+                    "original_price": 12,
+                    "tier_index": [
+                        1
+                    ]
+                }
+            ],
+            "pre_order_info": {
+                "days_to_ship": 2,
+                "is_pre_order": false
+            },
+            "sync_setting": {
+                "auto_sync_dts": false
+            },
+            "tier_variation_list": [
+                {
+                    "name": "variation name sample",
+                    "option_list": [
+                        {
+                            "option": "Kit Variation 1"
+                        },
+                        {
+                            "option": "Kit Variation 2"
+                        }
+                    ]
+                }
+            ],
+            "update_time": 1725881434,
+            "video_list": [],
+            "weight": "1.5"
+        }
+    }
+}

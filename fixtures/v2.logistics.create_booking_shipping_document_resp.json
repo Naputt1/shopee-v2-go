@@ -1,0 +1,19 @@
+{
+	"request_id": "a8e1b94f51d64540bf5762abe7783073",
+	"error": "common.error_auth",
+	"message": "Invalid access_token.",
+	"warning": [
+		{
+			"booking_sn": "201201E81SYYKE"
+		}
+	],
+	"response": {
+		"result_list": [
+			{
+				"booking_sn": "201201E81SYYKE",
+				"fail_error": "logistics.booking_not_exist",
+				"fail_message": "The booking_sn 201201V81SYYDG you provided is not exist. "
+			}
+		]
+	}
+}

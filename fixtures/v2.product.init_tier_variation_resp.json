@@ -1,0 +1,110 @@
+{
+  "error": "-",
+  "message": "-",
+  "warning": "-",
+  "request_id": "req-123456",
+  "response": {
+    "tier_variation": [
+      {
+        "name": "Color",
+        "option_list": [
+          {
+            "image": { "image_url": "https://cf.shopee.sg/file/img-cream" },
+            "option": "Cream stripe"
+          },
+          {
+            "image": { "image_url": "https://cf.shopee.sg/file/img-blue" },
+            "option": "Blue stripe"
+          },
+          {
+            "image": { "image_url": "https://cf.shopee.sg/file/img-mint" },
+            "option": "Mint stripe"
+          }
+        ]
+      },
+      {
+        "name": "Size",
+        "option_list": [
+          { "option": "S" },
+          { "option": "M" },
+          { "option": "L" }
+        ]
+      }
+    ],
+    "model": [
+      {
+        "tier_index": [0,0],
+        "model_id": 43464493931,
+        "model_sku": "SKU-Cream-S",
+        "price_info": [{ "original_price": 100000 }],
+        "seller_stock": [{ "location_id": "-", "stock": 3 }],
+        "weight": 1.1
+      },
+      {
+        "tier_index": [0,1],
+        "model_id": 43464493932,
+        "model_sku": "SKU-Cream-M",
+        "price_info": [{ "original_price": 100000 }],
+        "seller_stock": [{ "location_id": "-", "stock": 2 }],
+        "weight": 1.1
+      },
+      {
+        "tier_index": [0,2],
+        "model_id": 43464493933,
+        "model_sku": "SKU-Cream-L",
+        "price_info": [{ "original_price": 100000 }],
+        "seller_stock": [{ "location_id": "-", "stock": 0 }],
+        "weight": 1.1
+      },
+      {
+        "tier_index": [1,0],
+        "model_id": 43464493934,
+        "model_sku": "SKU-Blue-S",
+        "price_info": [{ "original_price": 100000 }],
+        "seller_stock": [{ "location_id": "-", "stock": 1 }],
+        "weight": 1.1
+      },
+      {
+        "tier_index": [1,1],
+        "model_id": 43464493935,
+        "model_sku": "SKU-Blue-M",
+        "price_info": [{ "original_price": 100000 }],
+        "seller_stock": [{ "location_id": "-", "stock": 4 }],
+        "weight": 1.1
+      },
+      {
+        "tier_index": [1,2],
+        "model_id": 43464493936,
+        "model_sku": "SKU-Blue-L",
+        "price_info": [{ "original_price": 100000 }],
+        "seller_stock": [{ "location_id": "-", "stock": 3 }],
+        "weight": 1.1
+      },
+      {
+        "tier_index": [2,0],
+        "model_id": 43464493937,
+        "model_sku": "SKU-Mint-S",
+        "price_info": [{ "original_price": 100000 }],
+        "seller_stock": [{ "location_id": "-", "stock": 1 }],
+        "weight": 1.1
+      },
+      {
+        "tier_index": [2,1],
+        "model_id": 43464493938,
+        "model_sku": "SKU-Mint-M",
+        "price_info": [{ "original_price": 100000 }],
+        "seller_stock": [{ "location_id": "-", "stock": 2 }],
+        "weight": 1.1
+      },
+      {
+        "tier_index": [2,2],
+        "model_id": 43464493939,
+        "model_sku": "SKU-Mint-L",
+        "price_info": [{ "original_price": 100000 }],
+        "seller_stock": [{ "location_id": "-", "stock": 5 }],
+        "weight": 1.1
+      }
+    ]
+  }
+}
+

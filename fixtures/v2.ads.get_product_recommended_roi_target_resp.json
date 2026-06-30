@@ -1,0 +1,20 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "e3e3e7f327774e57cc0b80c5b9288d01",
+    "response": {
+        "exact": {
+            "percentile": 50,
+            "value": 8.7
+        },
+        "lower_bound": {
+            "percentile": 80,
+            "value": 5.9
+        },
+        "upper_bound": {
+            "percentile": 20,
+            "value": 10.6
+        }
+    },
+    "warning": ""
+}

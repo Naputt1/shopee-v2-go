@@ -1,0 +1,35 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"response": {
+		"campaign_name": "campaign name",
+		"commission_status": "Ongoing",
+		"period_start_time": 1735660800,
+		"period_end_time": 32503651199,
+		"is_set_budget": true,
+		"budget": 10000,
+		"budget_cost": 500.5,
+		"seller_message": "Hello, pleasant cooperation.",
+		"pending_terminated_time": 1735660800,
+		"affiliate_list": [
+			{
+				"affiliate_id": 11301234567
+			}
+		],
+		"item_list": [
+			{
+				"item_id": 101,
+				"item_name": "item a",
+				"rate": 1.1,
+				"max_commission_rate_current_day": 1.1,
+				"commission_protection_list": [
+					{
+						"commission_rate": 1.1,
+						"protection_period_end_time": 1735660800
+					}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"error": "-",
+	"message": "-",
+	"warning": "-",
+	"request_id": "6f235f4a343e4feb8a9ed74c439f6663",
+	"response": {
+		"is_eligible": false,
+		"reason": "exclusive_with_other_campaign"
+	}
+}

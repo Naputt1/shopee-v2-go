@@ -1,0 +1,23 @@
+{
+	"request_id": "e3e3e7f32b90e1a2b73dc8ca69586501",
+	"error": "-",
+	"message": "success",
+	"response": [
+		{
+			"success_list": [
+				{
+					"order_sn": "2003160SXK2A3T",
+					"package_number": "OFG38027870177402"
+				}
+			],
+			"fail_list": [
+				{
+					"order_sn": "201214JASXYXY6",
+					"package_number": "OFG134731496217591",
+					"fail_error": "common.error_server",
+					"fail_message": "Something wrong. Please try later."
+				}
+			]
+		}
+	]
+}

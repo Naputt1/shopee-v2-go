@@ -1,0 +1,206 @@
+{
+  "error": "",
+  "message": "",
+  "request_id": "686fe13cb4c852300e2bf0c5d7527021",
+  "response": {
+    "logistics_channel_list": [
+      {
+        "block_seller_cover_shipping_fee": false,
+        "cod_enabled": true,
+        "enabled": true,
+        "fee_type": "SIZE_INPUT",
+        "force_enable": false,
+        "item_max_dimension": {
+          "dimension_sum": 90,
+          "height": 30,
+          "length": 30,
+          "unit": "cm",
+          "width": 30
+        },
+        "logistics_capability": {
+          "seller_logistics": false
+        },
+        "logistics_channel_id": 40029,
+        "logistics_channel_name": "Shopee Self Pick-up",
+        "logistics_description": "Shopee Self Collect operating hours are from Monday to Sunday, 9AM to 9PM (could varied by Collect)<br>Enable buyer to pick up their parcels at their convenient time and get parcels early.<br>You will have 7 days to collect once parcels arrive at selected Xpress Collect.<br>Shopee Xpress will notify by push notification and SMS or you can also check parcel status at in-app My Order page.\nShopee currently offer Free Shipping for buyer self collect option<br>You can find the Xpress Collect location near you in the Shopee Xpress Collect website<br>Please remember to bring your personal ID (same as the account buyer name) upon self collect for non- Cash of Delivery order.",
+        "mask_channel_id": 0,
+        "seller_logistic_has_configuration": null,
+        "size_list": [],
+        "support_cross_border": false,
+        "volume_limit": {
+          "item_max_volume": 0,
+          "item_min_volume": 0
+        },
+        "weight_limit": {
+          "item_max_weight": 5,
+          "item_min_weight": 0
+        },
+        "support_pause": false
+      },
+      {
+        "block_seller_cover_shipping_fee": false,
+        "cod_enabled": true,
+        "enabled": false,
+        "fee_type": "SIZE_INPUT",
+        "force_enable": false,
+        "item_max_dimension": {
+          "dimension_sum": 0,
+          "height": 0,
+          "length": 0,
+          "unit": "UNKNOWN",
+          "width": 0
+        },
+        "logistics_capability": {
+          "seller_logistics": false
+        },
+        "logistics_channel_id": 4002,
+        "logistics_channel_name": "Sulit Local",
+        "logistics_description": "",
+        "mask_channel_id": 0,
+        "seller_logistic_has_configuration": null,
+        "size_list": [],
+        "support_cross_border": false,
+        "volume_limit": {
+          "item_max_volume": 0,
+          "item_min_volume": 0
+        },
+        "weight_limit": {
+          "item_max_weight": 0,
+          "item_min_weight": 0
+        },
+        "support_pause": false
+      },
+      {
+        "block_seller_cover_shipping_fee": false,
+        "cod_enabled": true,
+        "enabled": true,
+        "fee_type": "SIZE_INPUT",
+        "force_enable": false,
+        "item_max_dimension": {
+          "dimension_sum": 0,
+          "height": 0,
+          "length": 0,
+          "unit": "UNKNOWN",
+          "width": 0
+        },
+        "logistics_capability": {
+          "seller_logistics": false
+        },
+        "logistics_channel_id": 4000,
+        "logistics_channel_name": "Standard Local",
+        "logistics_description": "",
+        "mask_channel_id": 0,
+        "seller_logistic_has_configuration": null,
+        "size_list": [],
+        "support_cross_border": false,
+        "volume_limit": {
+          "item_max_volume": 0,
+          "item_min_volume": 0
+        },
+        "weight_limit": {
+          "item_max_weight": 0,
+          "item_min_weight": 0
+        },
+        "support_pause": false
+      },
+      {
+        "block_seller_cover_shipping_fee": false,
+        "cod_enabled": true,
+        "enabled": true,
+        "fee_type": "SIZE_INPUT",
+        "force_enable": false,
+        "item_max_dimension": {
+          "dimension_sum": 0,
+          "height": 150,
+          "length": 150,
+          "unit": "cm",
+          "width": 150
+        },
+        "logistics_capability": {
+          "seller_logistics": false
+        },
+        "logistics_channel_id": 40018,
+        "logistics_channel_name": "J&T Express",
+        "logistics_description": "J&T branches operating hours are from Monday to Sunday, 9:00 AM to 5:00 PM\nEnable this channel to offer <a href=\"https://seller.shopee.ph/edu/article/1443\" target=\"_blank\">Free Shipping</a> to your buyers.<br><br>\nMaximum dimensions in centimeters (length x width x height): 150 cm x 150 cm x 150 cm\nMaximum weight in kilograms: 30 kg<br><br>\nYou need to provide your own packaging and shipping label/air waybill (AWB) on A6 size sticker paper. Air waybills (AWB) can be printed through Seller Centre upon arrangement of pickup.<br><br>\nYou can schedule pickup with J&T Express via Shopee app or Seller Centre.\nBooking cut-off time for <a href=\"https://seller.shopee.ph/edu/article/3848\" target=\"_blank\">same-day pickup:</a> 10:00 AM<br><br>\nYou can also drop off your parcels at any J&T Express participating branches stated in the <a href=\"http://www.jtexpress.ph/\" target=\"_blank\">J&T Express website.</a><br><br>\nBuyers can return parcels to sellers via integrated <a href=\"https://seller.shopee.ph/edu/article/5735\" target=\"_blank\">J&T Express Drop-off service.</a> This service is available in all participating J&T Express branches nationwide.",
+        "mask_channel_id": 4000,
+        "seller_logistic_has_configuration": null,
+        "size_list": [],
+        "support_cross_border": false,
+        "volume_limit": {
+          "item_max_volume": 0,
+          "item_min_volume": 0
+        },
+        "weight_limit": {
+          "item_max_weight": 50,
+          "item_min_weight": 0
+        },
+        "support_pause": true
+      },
+      {
+        "block_seller_cover_shipping_fee": false,
+        "cod_enabled": true,
+        "enabled": false,
+        "fee_type": "SIZE_INPUT",
+        "force_enable": false,
+        "item_max_dimension": {
+          "dimension_sum": 300,
+          "height": 150,
+          "length": 150,
+          "unit": "cm",
+          "width": 150
+        },
+        "logistics_capability": {
+          "seller_logistics": false
+        },
+        "logistics_channel_id": 40025,
+        "logistics_channel_name": "Flash Express",
+        "logistics_description": "<p>3pl Name: Flash Express Max Dimensions: 150 cm each side Max Actual Weight: 50kg Service Time: Monday to Sunday Pickup period - every day(including weekend and public holiday) 11am to 6pm Deliver period - every day(including weekend and public holiday) 9am to 6pm</p>",
+        "mask_channel_id": 4000,
+        "seller_logistic_has_configuration": null,
+        "size_list": [],
+        "support_cross_border": false,
+        "volume_limit": {
+          "item_max_volume": 0,
+          "item_min_volume": 0
+        },
+        "weight_limit": {
+          "item_max_weight": 50,
+          "item_min_weight": 0
+        }
+      },
+      {
+        "block_seller_cover_shipping_fee": false,
+        "cod_enabled": true,
+        "enabled": false,
+        "fee_type": "SIZE_INPUT",
+        "force_enable": false,
+        "item_max_dimension": {
+          "dimension_sum": 0,
+          "height": 150,
+          "length": 150,
+          "unit": "cm",
+          "width": 150
+        },
+        "logistics_capability": {
+          "seller_logistics": false
+        },
+        "logistics_channel_id": 40032,
+        "logistics_channel_name": "YTO Express",
+        "logistics_description": "",
+        "mask_channel_id": 4002,
+        "seller_logistic_has_configuration": null,
+        "size_list": [],
+        "support_cross_border": false,
+        "volume_limit": {
+          "item_max_volume": 0,
+          "item_min_volume": 0
+        },
+        "weight_limit": {
+          "item_max_weight": 80,
+          "item_min_weight": 0
+        },
+        "support_pause": false
+      }
+    ]
+  }
+}

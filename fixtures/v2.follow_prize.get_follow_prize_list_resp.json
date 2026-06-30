@@ -1,0 +1,19 @@
+{
+    "response": {
+        "more": false,
+        "follow_prize_list": [
+            {
+                "campaign_id": 27,
+                "campaign_status": "upcoming",
+                "follow_prize_name": "shop_follow_prize3",
+                "start_time": 1655341211,
+                "end_time": 1657760411,
+                "usage_quantity": 2000,
+                "claimed": 0
+            }
+        ]
+    },
+    "request_id": "57a48cf80bec43c7891909bd9acaedb6",
+    "error": "",
+    "message": ""
+}

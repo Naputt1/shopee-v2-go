@@ -1,0 +1,21 @@
+{
+	"error": "-",
+	"message": "-",
+	"warning": "-",
+	"request_id": "-",
+	"response": {
+		"failure_list": [
+			{
+				"model_id": 0,
+				"failed_reason": "-"
+			}
+		],
+		"success_list": [
+			{
+				"model_id": 0,
+				"location_id": "-",
+				"stock": 0
+			}
+		]
+	}
+}

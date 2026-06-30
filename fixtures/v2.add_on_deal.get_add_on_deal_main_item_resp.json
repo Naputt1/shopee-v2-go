@@ -1,0 +1,14 @@
+{
+    "message": "",
+    "request_id": "1d62706c18d2b40692cc41976a27e01e",
+    "response": {
+        "main_item_list": [
+            {
+                "status": 1,
+                "item_id": 100862623
+            }
+        ],
+        "add_on_deal_id": 12069
+    },
+    "error": ""
+}

@@ -1,0 +1,93 @@
+{
+    "error": "",
+    "income_detail_list": {
+        "list": [
+            {
+                "actual_payout_time": 1762532978,
+                "currency": "IDR",
+                "order_sn": "251101MPY3RDD3",
+                "payment_method": "Cash on Delivery",
+                "released_amount": 19246,
+                "status": "Dana telah dilepaskan"
+            },
+            {
+                "actual_payout_time": 1762532566,
+                "currency": "IDR",
+                "order_sn": "251102PVD4RMNF",
+                "payment_method": "Cash on Delivery",
+                "released_amount": 19125,
+                "status": "Dana telah dilepaskan"
+            },
+            {
+                "actual_payout_time": 1762530072,
+                "currency": "IDR",
+                "order_sn": "251101KV5GUESA",
+                "payment_method": "ShopeePay Balance",
+                "released_amount": 21455,
+                "status": "Dana telah dilepaskan"
+            },
+            {
+                "actual_payout_time": 1762529568,
+                "currency": "IDR",
+                "order_sn": "251101MMCCDJ3N",
+                "payment_method": "Cash on Delivery",
+                "released_amount": 19246,
+                "status": "Dana telah dilepaskan"
+            },
+            {
+                "actual_payout_time": 1762529117,
+                "currency": "IDR",
+                "order_sn": "251103RVWNM3HC",
+                "payment_method": "Cash on Delivery",
+                "released_amount": 39743,
+                "status": "Dana telah dilepaskan"
+            },
+            {
+                "actual_payout_time": 1762528957,
+                "currency": "IDR",
+                "order_sn": "251103RBJT4SNQ",
+                "payment_method": "Cash on Delivery",
+                "released_amount": 31619,
+                "status": "Dana telah dilepaskan"
+            },
+            {
+                "actual_payout_time": 1762528198,
+                "currency": "IDR",
+                "order_sn": "251028ABKCKESK",
+                "payment_method": "Cash on Delivery",
+                "released_amount": 40993,
+                "status": "Dana telah dilepaskan"
+            },
+            {
+                "actual_payout_time": 1762527039,
+                "currency": "IDR",
+                "order_sn": "2510251MRCQ5NM",
+                "payment_method": "Cash on Delivery",
+                "released_amount": 21472,
+                "status": "Dana telah dilepaskan"
+            },
+            {
+                "actual_payout_time": 1762526637,
+                "currency": "IDR",
+                "order_sn": "251103SE7GQU1Y",
+                "payment_method": "Online Payment",
+                "released_amount": 224214,
+                "status": "Dana telah dilepaskan"
+            },
+            {
+                "actual_payout_time": 1762524417,
+                "currency": "IDR",
+                "order_sn": "251102PTG2QQNT",
+                "payment_method": "Cash on Delivery",
+                "released_amount": 19246,
+                "status": "Dana telah dilepaskan"
+            }
+        ],
+        "next_page": {
+            "cursor": "216223606250140",
+            "page_size": 10
+        }
+    },
+    "message": "",
+    "request_id": "956651be4362b78fb565545dcc83a400"
+}

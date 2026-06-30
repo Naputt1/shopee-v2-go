@@ -1,0 +1,223 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "086b7ce7cece47d2217cb4ffa0bd9f41",
+    "response": {
+        "metric_list": [
+            {
+                "current_period": null,
+                "last_period": null,
+                "metric_id": 3,
+                "metric_name": "non_fulfillment_rate",
+                "metric_type": 1,
+                "parent_metric_id": 0,
+                "target": {
+                    "comparator": "<",
+                    "value": 10
+                },
+                "unit": 2
+            },
+            {
+                "current_period": null,
+                "last_period": null,
+                "metric_id": 42,
+                "metric_name": "cancellation_rate",
+                "metric_type": 1,
+                "parent_metric_id": 3,
+                "target": {
+                    "comparator": "<",
+                    "value": 5
+                },
+                "unit": 2
+            },
+            {
+                "current_period": null,
+                "last_period": null,
+                "metric_id": 43,
+                "metric_name": "return_refund_rate",
+                "metric_type": 1,
+                "parent_metric_id": 3,
+                "target": {
+                    "comparator": "<",
+                    "value": 5
+                },
+                "unit": 2
+            },
+            {
+                "current_period": null,
+                "last_period": null,
+                "metric_id": 1,
+                "metric_name": "late_shipment_rate",
+                "metric_type": 1,
+                "parent_metric_id": 0,
+                "target": {
+                    "comparator": "<",
+                    "value": 10
+                },
+                "unit": 2
+            },
+            {
+                "current_period": null,
+                "last_period": null,
+                "metric_id": 4,
+                "metric_name": "preparation_time",
+                "metric_type": 1,
+                "parent_metric_id": 0,
+                "target": {
+                    "comparator": "<",
+                    "value": 2
+                },
+                "unit": 4
+            },
+            {
+                "current_period": null,
+                "last_period": null,
+                "metric_id": 25,
+                "metric_name": "same_day_handover_rate",
+                "metric_type": 1,
+                "parent_metric_id": 0,
+                "target": {
+                    "comparator": ">=",
+                    "value": 60
+                },
+                "unit": 2
+            },
+            {
+                "current_period": 0,
+                "last_period": 0,
+                "metric_id": 52,
+                "metric_name": "severe_listing_violations",
+                "metric_type": 2,
+                "parent_metric_id": 0,
+                "target": {
+                    "comparator": "<=",
+                    "value": 0
+                },
+                "unit": 1
+            },
+            {
+                "current_period": 0,
+                "last_period": 0,
+                "metric_id": 56,
+                "metric_name": "spam_listings",
+                "metric_type": 2,
+                "parent_metric_id": 52,
+                "target": {
+                    "comparator": "<=",
+                    "value": 0
+                },
+                "unit": 1
+            },
+            {
+                "current_period": 0,
+                "last_period": 0,
+                "metric_id": 55,
+                "metric_name": "counterfeit_ip_infringement",
+                "metric_type": 2,
+                "parent_metric_id": 52,
+                "target": {
+                    "comparator": "<=",
+                    "value": 0
+                },
+                "unit": 1
+            },
+            {
+                "current_period": 0,
+                "last_period": 0,
+                "metric_id": 54,
+                "metric_name": "prohibited_listings",
+                "metric_type": 2,
+                "parent_metric_id": 52,
+                "target": {
+                    "comparator": "<=",
+                    "value": 0
+                },
+                "unit": 1
+            },
+            {
+                "current_period": 0,
+                "last_period": 0,
+                "metric_id": 12,
+                "metric_name": "pre_order_listing_rate",
+                "metric_type": 2,
+                "parent_metric_id": 0,
+                "target": {
+                    "comparator": "<=",
+                    "value": 5
+                },
+                "unit": 2
+            },
+            {
+                "current_period": 0,
+                "last_period": 0,
+                "metric_id": 15,
+                "metric_name": "the_amount_of_pre_order_listing",
+                "metric_type": 2,
+                "parent_metric_id": 12,
+                "target": {
+                    "comparator": "<",
+                    "value": 6
+                },
+                "unit": 1
+            },
+            {
+                "current_period": 0,
+                "last_period": 0,
+                "metric_id": 53,
+                "metric_name": "other_listing_violations",
+                "metric_type": 2,
+                "parent_metric_id": 0,
+                "target": {
+                    "comparator": "<=",
+                    "value": 0
+                },
+                "unit": 1
+            },
+            {
+                "current_period": 57,
+                "last_period": 57,
+                "metric_id": 11,
+                "metric_name": "response_rate",
+                "metric_type": 3,
+                "parent_metric_id": 0,
+                "target": {
+                    "comparator": ">=",
+                    "value": 70
+                },
+                "unit": 2
+            },
+            {
+                "current_period": null,
+                "last_period": null,
+                "metric_id": 21,
+                "metric_name": "response_time",
+                "metric_type": 3,
+                "parent_metric_id": 0,
+                "target": {
+                    "comparator": "<",
+                    "value": 1
+                },
+                "unit": 4
+            },
+            {
+                "current_period": null,
+                "last_period": null,
+                "metric_id": 22,
+                "metric_name": "shop_rating",
+                "metric_type": 3,
+                "parent_metric_id": 0,
+                "target": {
+                    "comparator": ">=",
+                    "value": 4.5
+                },
+                "unit": 1
+            }
+        ],
+        "overall_performance": {
+            "custom_service_failed": 1,
+            "fulfillment_failed": 0,
+            "listing_failed": 0,
+            "rating": 3
+        }
+    }
+}

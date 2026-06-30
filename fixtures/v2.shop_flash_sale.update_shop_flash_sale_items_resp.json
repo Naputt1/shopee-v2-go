@@ -1,0 +1,21 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "00f747c0ed91a2504a4e4d96e70ecf41",
+    "response": {
+        "failed_items": [
+            {
+                "err_code": 1400101718,
+                "err_msg": "This item cannot be added as it does not meet the criteria required. Please check the Product Criteria.",
+                "item_id": 3744624265,
+                "model_id": 438069051,
+                "unqualified_conditions": [
+                    {
+                        "unqualified_code": 10009,
+                        "unqualified_msg": "Not meet the Promotion Price criteria"
+                    }
+                ]
+            }
+        ]
+    }
+}

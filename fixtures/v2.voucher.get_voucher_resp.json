@@ -1,0 +1,23 @@
+{
+    "response": {
+        "voucher_id": 123,
+        "voucher_code": "MKTSRWE",
+        "voucher_name": "test",
+        "voucher_type": 1,
+        "reward_type": 1,
+        "usage_quantity": 1,
+        "current_usage": 0,
+        "start_time": 1622198847,
+        "end_time": 1622807247,
+        "is_admin": false,
+        "voucher_purpose": 0,
+        "discount_amount": 12,
+        "cmt_voucher_status": 1,
+        "min_basket_price": 20,
+        "display_channel_list": []
+        "display_start_time": 162078900
+    },
+    "request_id": "6737e37ec1b411ebb7fbacde48001122",
+    "error": "",
+    "message": ""
+}

@@ -1,0 +1,53 @@
+{
+    "error": "",
+    "message": "",
+    "warning": "",
+    "request_id": "79121bb8ce90449e81743a15067410f3",
+    "response": {
+        "global_item_list": [
+            {
+                "global_item_id": 2300146833,
+                "update_time": 1608967817
+            },
+            {
+                "global_item_id": 2300146832,
+                "update_time": 1608967814
+            },
+            {
+                "global_item_id": 2300146831,
+                "update_time": 1608967813
+            },
+            {
+                "global_item_id": 2300146830,
+                "update_time": 1608967809
+            },
+            {
+                "global_item_id": 2300146829,
+                "update_time": 1608967809
+            },
+            {
+                "global_item_id": 2300146828,
+                "update_time": 1608967805
+            },
+            {
+                "global_item_id": 2300146827,
+                "update_time": 1608967802
+            },
+            {
+                "global_item_id": 2300146826,
+                "update_time": 1608967802
+            },
+            {
+                "global_item_id": 2300146825,
+                "update_time": 1608967801
+            },
+            {
+                "global_item_id": 2300146824,
+                "update_time": 1608967800
+            }
+        ],
+        "total_count": 826,
+        "has_next_page": true,
+        "offset": "AAAAFA=="
+    }
+}

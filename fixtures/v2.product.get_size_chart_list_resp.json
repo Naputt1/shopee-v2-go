@@ -1,0 +1,21 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "8a7d65b766b436dd2422f48cef581020:02000076382d9b5f:010000e448da4e30",
+    "response": {
+        "next_cursor": "",
+        "size_chart_list": [
+            {
+                "size_chart_id": 700024641
+            },
+            {
+                "size_chart_id": 700024613
+            },
+            {
+                "size_chart_id": 700024605
+            }
+        ],
+        "total_count": 3
+    },
+    "warning": ""
+}

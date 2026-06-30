@@ -1,0 +1,236 @@
+{
+    "error": null,
+    "message": null,
+    "request_id": "9b73908eb0237c86670147a8883b7210",
+    "response": {
+        "cursor": {
+            "next_id": null,
+            "page_size": 30,
+            "prev_id": null
+        },
+        "total_count": 12,
+        "warehouse_list": [
+            {
+                "address": {
+                    "address": "Calle Becal, MZ28 LT23, test",
+                    "address_name": "mx tester",
+                    "city": "Tlalpan",
+                    "district": "Ciudad de México",
+                    "region": "MX",
+                    "state": "Ciudad de México",
+                    "town": "Lomas de Padierna",
+                    "zip_code": "14240"
+                },
+                "enterprise_info": null,
+                "location_id": "MX1004MQZ",
+                "warehouse_id": 10001027,
+                "warehouse_name": "MX Warehouse 1",
+                "warehouse_region": "MX",
+                "warehouse_type": 1
+            },
+            {
+                "address": {
+                    "address": "Rodovia Raposo Tavares, 001",
+                    "address_name": "xinjian chen",
+                    "city": "Sorocaba",
+                    "district": "Parque Reserva Fazenda Imperial",
+                    "region": "BR",
+                    "state": "São Paulo",
+                    "town": "",
+                    "zip_code": "18052775"
+                },
+                "enterprise_info": {
+                    "cnpj": "52069476000182",
+                    "company_name": "J.filho Comercio Atacado e Var",
+                    "is_freight_payer": true,
+                    "state_registration_number": "798873714116"
+                },
+                "location_id": "BR1004MQZ",
+                "warehouse_id": 10001024,
+                "warehouse_name": "BR Warehouse 1",
+                "warehouse_region": "BR",
+                "warehouse_type": 1
+            },
+            {
+                "address": {
+                    "address": "南山街道",
+                    "address_name": "yuangx",
+                    "city": "深圳市",
+                    "district": "南山区",
+                    "region": "CN",
+                    "state": "广东省",
+                    "town": "",
+                    "zip_code": "518000"
+                },
+                "enterprise_info": null,
+                "location_id": "CNZ",
+                "warehouse_id": 10001022,
+                "warehouse_name": "CN Warehouse",
+                "warehouse_region": "CN",
+                "warehouse_type": 1
+            },
+            {
+                "address": {
+                    "address": "新北市樹林區味王街197號",
+                    "address_name": "Jwadi",
+                    "city": "樹林區",
+                    "district": "",
+                    "region": "TW",
+                    "state": "新北市",
+                    "town": "",
+                    "zip_code": "238"
+                },
+                "enterprise_info": null,
+                "location_id": "TW1003UYZ",
+                "warehouse_id": 10001021,
+                "warehouse_name": "TW Warehouse 2",
+                "warehouse_region": "TW",
+                "warehouse_type": 1
+            },
+            {
+                "address": {
+                    "address": "18 Mosque St,Singapore 059498, #2",
+                    "address_name": "Grabovich",
+                    "city": "",
+                    "district": "",
+                    "region": "SG",
+                    "state": "",
+                    "town": "",
+                    "zip_code": "059498"
+                },
+                "enterprise_info": null,
+                "location_id": "SG1006Y4Z",
+                "warehouse_id": 10001020,
+                "warehouse_name": "SG Warehouse 2",
+                "warehouse_region": "SG",
+                "warehouse_type": 1
+            },
+            {
+                "address": {
+                    "address": "11",
+                    "address_name": "insed",
+                    "city": "KAB. BADUNG",
+                    "district": "ABIANSEMAL",
+                    "region": "ID",
+                    "state": "BALI",
+                    "town": "",
+                    "zip_code": "80352"
+                },
+                "enterprise_info": null,
+                "location_id": "ID1003VGZ",
+                "warehouse_id": 10001018,
+                "warehouse_name": "ID Warehouse 1",
+                "warehouse_region": "ID",
+                "warehouse_type": 1
+            },
+            {
+                "address": {
+                    "address": "11",
+                    "address_name": "Jerick Tolsky",
+                    "city": "Batu Pahat",
+                    "district": "",
+                    "region": "MY",
+                    "state": "Johor",
+                    "town": "",
+                    "zip_code": "16434"
+                },
+                "enterprise_info": null,
+                "location_id": "MY1004MSZ",
+                "warehouse_id": 10001017,
+                "warehouse_name": "MY Warehouse 1",
+                "warehouse_region": "MY",
+                "warehouse_type": 1
+            },
+            {
+                "address": {
+                    "address": "12",
+                    "address_name": "J Wa Neil",
+                    "city": "อำเภอคลองท่อม",
+                    "district": "ตำบลคลองท่อมใต้",
+                    "region": "TH",
+                    "state": "จังหวัดกระบี่",
+                    "town": "",
+                    "zip_code": "81120"
+                },
+                "enterprise_info": null,
+                "location_id": "TH1004MQZ",
+                "warehouse_id": 10001016,
+                "warehouse_name": "TH Warehouse 1",
+                "warehouse_region": "TH",
+                "warehouse_type": 1
+            },
+            {
+                "address": {
+                    "address": "11",
+                    "address_name": "Alchomyaceae",
+                    "city": "Metro Manila",
+                    "district": "Santa Cruz",
+                    "region": "PH",
+                    "state": "Metro Manila",
+                    "town": "Barangay 297",
+                    "zip_code": "1003"
+                },
+                "enterprise_info": null,
+                "location_id": "PH1003UYZ",
+                "warehouse_id": 10001015,
+                "warehouse_name": "PH Warehouse 1",
+                "warehouse_region": "PH",
+                "warehouse_type": 1
+            },
+            {
+                "address": {
+                    "address": "11",
+                    "address_name": "Dũng Nguyễn",
+                    "city": "Thành Phố Thủ Đức",
+                    "district": "Phường An Khánh",
+                    "region": "VN",
+                    "state": "TP. Hồ Chí Minh",
+                    "town": "",
+                    "zip_code": ""
+                },
+                "enterprise_info": null,
+                "location_id": "VN1002BGZ",
+                "warehouse_id": 10001014,
+                "warehouse_name": "VN Warehouse 1",
+                "warehouse_region": "VN",
+                "warehouse_type": 1
+            },
+            {
+                "address": {
+                    "address": "台北市大同區民生西路63號",
+                    "address_name": "Sal Tori",
+                    "city": "大同區",
+                    "district": "",
+                    "region": "TW",
+                    "state": "臺北市",
+                    "town": "",
+                    "zip_code": "103"
+                },
+                "enterprise_info": null,
+                "location_id": "TW10066AZ",
+                "warehouse_id": 10001013,
+                "warehouse_name": "TW Warehouse 1",
+                "warehouse_region": "TW",
+                "warehouse_type": 1
+            },
+            {
+                "address": {
+                    "address": "32 Tras St, CLUB HIROSHIMA, Singapore 078972, #1",
+                    "address_name": "Alois Ospelt",
+                    "city": "",
+                    "district": "",
+                    "region": "SG",
+                    "state": "",
+                    "town": "",
+                    "zip_code": "078972"
+                },
+                "enterprise_info": null,
+                "location_id": "SG10066CZ",
+                "warehouse_id": 10001012,
+                "warehouse_name": "SG Warehouse 1",
+                "warehouse_region": "SG",
+                "warehouse_type": 1
+            }
+        ]
+    }
+}

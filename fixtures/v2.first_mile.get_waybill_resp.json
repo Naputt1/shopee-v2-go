@@ -1,0 +1,7 @@
+If Success, this api will return a waybill file.
+If Fail, this api will return the error message as the example below.
+{
+    "error":"xxxx",
+    "message":" .......",
+    "request_id":"814468c0f07157681b78f6f0b58030db"
+}

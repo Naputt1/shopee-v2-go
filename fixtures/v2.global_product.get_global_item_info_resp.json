@@ -1,0 +1,401 @@
+{
+    "error": "",
+    "message": "",
+    "warning": "",
+    "request_id": "6f235f4a343e4feb8a9ed74c439f6663",
+    "response": {
+        "global_item_list": [
+            {
+                "global_item_id": 2700141503,
+                "global_item_name": "MY OLD NEW two tier model item 5",
+                "description": "MY OLD NEW default no model itemMY OLD NEW default no model itemMY OLD NEW default no model item",
+                "global_item_sku": "",
+                "global_item_status": 1,
+                "create_time": 1605247451,
+                "update_time": 1605247451,
+                "image": {
+                    "image_id_list": [
+                        "bf5a022e4624ff6c01ef151001762db7",
+                        "1a689fb0124a6d8762761f3ae13815ed",
+                        "7432bfa3713715bc1f88f4025241eb6d"
+                    ],
+                    "image_url_list": [
+                        "https://s-cf-tw.shopeesz.com/file/bf5a022e4624ff6c01ef151001762db7",
+                        "https://s-cf-tw.shopeesz.com/file/1a689fb0124a6d8762761f3ae13815ed",
+                        "https://s-cf-tw.shopeesz.com/file/7432bfa3713715bc1f88f4025241eb6d"
+                    ]
+                },
+                "weight": 1,
+                "dimension": {
+                    "package_length": 0,
+                    "package_width": 0,
+                    "package_height": 0
+                },
+                "pre_order": {
+                    "days_to_ship": 2
+                },
+                "size_chart": "",
+                "condition": "NEW",
+                "has_model": true
+            },
+            {
+                "global_item_id": 2700141501,
+                "global_item_name": "MY OLD NEW two tier model item 9",
+                "description": "MY OLD NEW default no model itemMY OLD NEW default no model itemMY OLD NEW default no model item",
+                "global_item_sku": "",
+                "global_item_status": 1,
+                "create_time": 1605247451,
+                "update_time": 1605247451,
+                "image": {
+                    "image_id_list": [
+                        "bf5a022e4624ff6c01ef151001762db7",
+                        "1a689fb0124a6d8762761f3ae13815ed",
+                        "7432bfa3713715bc1f88f4025241eb6d"
+                    ],
+                    "image_url_list": [
+                        "https://s-cf-tw.shopeesz.com/file/bf5a022e4624ff6c01ef151001762db7",
+                        "https://s-cf-tw.shopeesz.com/file/1a689fb0124a6d8762761f3ae13815ed",
+                        "https://s-cf-tw.shopeesz.com/file/7432bfa3713715bc1f88f4025241eb6d"
+                    ]
+                },
+                "weight": 1,
+                "dimension": {
+                    "package_length": 0,
+                    "package_width": 0,
+                    "package_height": 0
+                },
+                "pre_order": {
+                    "days_to_ship": 2
+                },
+                "size_chart": "",
+                "condition": "NEW",
+                "has_model": true
+            },
+            {
+                "global_item_id": 2700141500,
+                "global_item_name": "MY OLD NEW default no model item",
+                "description": "MY OLD NEW default no model itemMY OLD NEW default no model item",
+                "global_item_sku": "",
+                "global_item_status": 1,
+                "create_time": 1605247451,
+                "update_time": 1605247451,
+                "stock_info": [
+                    {
+                        "stock_type": 2,
+                        "stock_location_id": "KRZ",
+                        "normal_stock": 44,
+                        "reserved_stock": 0
+                    }
+                ],
+                "price_info": [
+                    {
+                        "currency": "CNY",
+                        "original_price": 0,
+                        "sip_item_price":0,
+                        "sip_item_price_source":"auto"
+                    }
+                ],
+                "image": {
+                    "image_id_list": [
+                        "bf5a022e4624ff6c01ef151001762db7",
+                        "1a689fb0124a6d8762761f3ae13815ed"
+                    ],
+                    "image_url_list": [
+                        "https://s-cf-tw.shopeesz.com/file/bf5a022e4624ff6c01ef151001762db7",
+                        "https://s-cf-tw.shopeesz.com/file/1a689fb0124a6d8762761f3ae13815ed"
+                    ]
+                },
+                "weight": 1,
+                "dimension": {
+                    "package_length": 0,
+                    "package_width": 0,
+                    "package_height": 0
+                },
+                "pre_order": {
+                    "days_to_ship": 2
+                },
+                "size_chart": "",
+                "condition": "NEW",
+                "has_model": false
+            },
+            {
+                "global_item_id": 2700141449,
+                "global_item_name": "MY OLD NEW one tier model item 8",
+                "description": "MY OLD NEW default no model itemMY OLD NEW default no model itemMY OLD NEW default no model item",
+                "global_item_sku": "",
+                "global_item_status": 1,
+                "create_time": 1605247451,
+                "update_time": 1605247451,
+                "image": {
+                    "image_id_list": [
+                        "bf5a022e4624ff6c01ef151001762db7",
+                        "1a689fb0124a6d8762761f3ae13815ed",
+                        "906948af93fcc0b36efa60983c200987"
+                    ],
+                    "image_url_list": [
+                        "https://s-cf-tw.shopeesz.com/file/bf5a022e4624ff6c01ef151001762db7",
+                        "https://s-cf-tw.shopeesz.com/file/1a689fb0124a6d8762761f3ae13815ed",
+                        "https://s-cf-tw.shopeesz.com/file/906948af93fcc0b36efa60983c200987"
+                    ]
+                },
+                "weight": 1,
+                "dimension": {
+                    "package_length": 0,
+                    "package_width": 0,
+                    "package_height": 0
+                },
+                "pre_order": {
+                    "days_to_ship": 2
+                },
+                "size_chart": "",
+                "condition": "NEW",
+                "has_model": true
+            },
+            {
+                "global_item_id": 2700141448,
+                "global_item_name": "MY OLD NEW two tier model item 8",
+                "description": "MY OLD NEW default no model itemMY OLD NEW default no model itemMY OLD NEW default no model item",
+                "global_item_sku": "",
+                "global_item_status": 1,
+                "create_time": 1605247451,
+                "update_time": 1605247451,
+                "image": {
+                    "image_id_list": [
+                        "bf5a022e4624ff6c01ef151001762db7",
+                        "1a689fb0124a6d8762761f3ae13815ed",
+                        "7432bfa3713715bc1f88f4025241eb6d"
+                    ],
+                    "image_url_list": [
+                        "https://s-cf-tw.shopeesz.com/file/bf5a022e4624ff6c01ef151001762db7",
+                        "https://s-cf-tw.shopeesz.com/file/1a689fb0124a6d8762761f3ae13815ed",
+                        "https://s-cf-tw.shopeesz.com/file/7432bfa3713715bc1f88f4025241eb6d"
+                    ]
+                },
+                "weight": 1,
+                "dimension": {
+                    "package_length": 0,
+                    "package_width": 0,
+                    "package_height": 0
+                },
+                "pre_order": {
+                    "days_to_ship": 2
+                },
+                "size_chart": "",
+                "condition": "NEW",
+                "has_model": true
+            },
+            {
+                "global_item_id": 2700141447,
+                "global_item_name": "MY OLD NEW two tier model item 6",
+                "description": "MY OLD NEW default no model itemMY OLD NEW default no model itemMY OLD NEW default no model item",
+                "global_item_sku": "",
+                "global_item_status": 1,
+                "create_time": 1605247451,
+                "update_time": 1605247451,
+                "image": {
+                    "image_id_list": [
+                        "bf5a022e4624ff6c01ef151001762db7",
+                        "1a689fb0124a6d8762761f3ae13815ed",
+                        "7432bfa3713715bc1f88f4025241eb6d"
+                    ],
+                    "image_url_list": [
+                        "https://s-cf-tw.shopeesz.com/file/bf5a022e4624ff6c01ef151001762db7",
+                        "https://s-cf-tw.shopeesz.com/file/1a689fb0124a6d8762761f3ae13815ed",
+                        "https://s-cf-tw.shopeesz.com/file/7432bfa3713715bc1f88f4025241eb6d"
+                    ]
+                },
+                "weight": 1,
+                "dimension": {
+                    "package_length": 0,
+                    "package_width": 0,
+                    "package_height": 0
+                },
+                "pre_order": {
+                    "days_to_ship": 2
+                },
+                "size_chart": "",
+                "condition": "NEW",
+                "has_model": true
+            },
+            {
+                "global_item_id": 2700141319,
+                "global_item_name": "MY OLD NEW one tier model item 1",
+                "description": "MY OLD NEW default no model itemMY OLD NEW default no model itemMY OLD NEW default no model item",
+                "global_item_sku": "",
+                "global_item_status": 1,
+                "create_time": 1605247451,
+                "update_time": 1605247451,
+                "image": {
+                    "image_id_list": [
+                        "bf5a022e4624ff6c01ef151001762db7",
+                        "1a689fb0124a6d8762761f3ae13815ed",
+                        "906948af93fcc0b36efa60983c200987"
+                    ],
+                    "image_url_list": [
+                        "https://s-cf-tw.shopeesz.com/file/bf5a022e4624ff6c01ef151001762db7",
+                        "https://s-cf-tw.shopeesz.com/file/1a689fb0124a6d8762761f3ae13815ed",
+                        "https://s-cf-tw.shopeesz.com/file/906948af93fcc0b36efa60983c200987"
+                    ]
+                },
+                "weight": 1,
+                "dimension": {
+                    "package_length": 0,
+                    "package_width": 0,
+                    "package_height": 0
+                },
+                "pre_order": {
+                    "days_to_ship": 2
+                },
+                "size_chart": "",
+                "condition": "NEW",
+                "has_model": true
+            },
+            {
+                "global_item_id": 2700141318,
+                "global_item_name": "MY OLD NEW two tier model item 7",
+                "description": "MY OLD NEW default no model itemMY OLD NEW default no model itemMY OLD NEW default no model item",
+                "global_item_sku": "",
+                "global_item_status": 1,
+                "create_time": 1605247451,
+                "update_time": 1605247451,
+                "image": {
+                    "image_id_list": [
+                        "bf5a022e4624ff6c01ef151001762db7",
+                        "1a689fb0124a6d8762761f3ae13815ed",
+                        "7432bfa3713715bc1f88f4025241eb6d"
+                    ],
+                    "image_url_list": [
+                        "https://s-cf-tw.shopeesz.com/file/bf5a022e4624ff6c01ef151001762db7",
+                        "https://s-cf-tw.shopeesz.com/file/1a689fb0124a6d8762761f3ae13815ed",
+                        "https://s-cf-tw.shopeesz.com/file/7432bfa3713715bc1f88f4025241eb6d"
+                    ]
+                },
+                "weight": 1,
+                "dimension": {
+                    "package_length": 0,
+                    "package_width": 0,
+                    "package_height": 0
+                },
+                "pre_order": {
+                    "days_to_ship": 2
+                },
+                "size_chart": "",
+                "condition": "NEW",
+                "has_model": true
+            },
+            {
+                "global_item_id": 2700141317,
+                "global_item_name": "MY OLD NEW one tier model item 0",
+                "description": "MY OLD NEW default no model itemMY OLD NEW default no model itemMY OLD NEW default no model item",
+                "global_item_sku": "",
+                "global_item_status": 1,
+                "create_time": 1605247451,
+                "update_time": 1605247451,
+                "image": {
+                    "image_id_list": [
+                        "bf5a022e4624ff6c01ef151001762db7",
+                        "1a689fb0124a6d8762761f3ae13815ed",
+                        "906948af93fcc0b36efa60983c200987"
+                    ],
+                    "image_url_list": [
+                        "https://s-cf-tw.shopeesz.com/file/bf5a022e4624ff6c01ef151001762db7",
+                        "https://s-cf-tw.shopeesz.com/file/1a689fb0124a6d8762761f3ae13815ed",
+                        "https://s-cf-tw.shopeesz.com/file/906948af93fcc0b36efa60983c200987"
+                    ]
+                },
+                "weight": 1,
+                "dimension": {
+                    "package_length": 0,
+                    "package_width": 0,
+                    "package_height": 0
+                },
+                "pre_order": {
+                    "days_to_ship": 2
+                },
+                "size_chart": "",
+                "condition": "NEW",
+                "has_model": true
+            },
+            {
+                "global_item_id": 2700141316,
+                "global_item_name": "MY OLD NEW two tier model item 2",
+                "description": "MY OLD NEW default no model itemMY OLD NEW default no model itemMY OLD NEW default no model item",
+                "global_item_sku": "",
+                "global_item_status": 1,
+                "create_time": 1605247451,
+                "update_time": 1605247451,
+                "image": {
+                    "image_id_list": [
+                        "bf5a022e4624ff6c01ef151001762db7",
+                        "1a689fb0124a6d8762761f3ae13815ed",
+                        "7432bfa3713715bc1f88f4025241eb6d"
+                    ],
+                    "image_url_list": [
+                        "https://s-cf-tw.shopeesz.com/file/bf5a022e4624ff6c01ef151001762db7",
+                        "https://s-cf-tw.shopeesz.com/file/1a689fb0124a6d8762761f3ae13815ed",
+                        "https://s-cf-tw.shopeesz.com/file/7432bfa3713715bc1f88f4025241eb6d"
+                    ]
+                },
+                "weight": 1,
+                "dimension": {
+                    "package_length": 0,
+                    "package_width": 0,
+                    "package_height": 0
+                },
+                "pre_order": {
+                    "days_to_ship": 2
+                },
+                "size_chart": "",
+                "condition": "NEW",
+                "has_model": true,
+                "brand":{
+                    "brand_id":123,
+                    "original_brand_name":"nike"
+                },
+                "attribute_list": [
+                    {
+                        "attribute_id": 4811,
+                        "original_attribute_name": "Brand: L2 Default [14644]",
+                        "is_mandatory": false,
+                        "attribute_value_list":[
+                              {
+                                  "value_id": 0,
+                                  "original_value_name": "",
+                                  "value_unit": ""
+                              }
+                        ]
+                    }
+                ],
+"description_type":"extended",
+"description_info":{
+                    "extended_description":{
+                        "field_list":[
+                            {
+                                "field_type":"text",
+                                "text":"text description 1"
+                            },
+                            {
+                                "field_type":"image",
+                                "image_info":{
+                                    "image_id":"1e076dff0699d8e778c06dd6c02df1fe",
+                                    "image_url":"https://cf.shopee.sg/file/1e076dff0699d8e778c06dd6c02df1fe"
+                                }
+                            },
+                            {
+                                "field_type":"image",
+                                "image_info":{
+                                    "image_id":"c07ac95ba7bb624d731e37fe2f0349de",
+                                    "image_url":"https://cf.shopee.sg/file/c07ac95ba7bb624d731e37fe2f0349de"
+                                }
+                            },
+                            {
+                                "field_type":"text",
+                                "text":"text description 1"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

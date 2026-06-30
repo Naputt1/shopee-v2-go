@@ -1,0 +1,24 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "69aa79bae99af55acb97f3b1f9827441",
+    "response": {
+        "has_next_page": true,
+        "next_offset": 4,
+        "shop_publishable_status_list": [
+            {
+                "region": "MY",
+                "shop_id": 221367014,
+                "shop_publishable_status": false,
+                "unpublishable_reason": "The shop is Affiliate Shop"
+            },
+            {
+                "region": "SG",
+                "shop_id": 222113141,
+                "shop_publishable_status": false,
+                "unpublishable_reason": "Shop is not authorized"
+            }
+        ]
+    },
+    "warning": ""
+}

@@ -1,0 +1,60 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "da1037d29ee6ace6d18aa6055d825a41:020000fbf46a4f4b:010000107ff628b4",
+    "response": {
+        "failure_item_list": [
+            {
+                "failed_reason": "Query failed due to invalid item ID. Please verify the ID and try again",
+                "item_id": 843988729
+            }
+        ],
+        "success_item_list": [
+            {
+                "item_id": 100760653,
+                "quality_level": 3
+            },
+            {
+                "item_id": 100957110,
+                "quality_level": 2,
+                "unfinished_task": [
+                    {
+                        "issue_type": 10,
+                        "suggestion": "Add video"
+                    },
+                    {
+                        "issue_type": 8,
+                        "suggestion": "Add characters for name to 25~100"
+                    },
+                    {
+                        "issue_type": 7,
+                        "suggestion": "Add at least 100 characters or 1 image for description"
+                    },
+                    {
+                        "issue_type": 11,
+                        "suggestion": "Add at least 3 attributes"
+                    }
+                ]
+            },
+            {
+                "item_id": 100918814,
+                "quality_level": 1,
+                "unfinished_task": [
+                    {
+                        "issue_type": 1,
+                        "suggestion": "Add at least 3 images"
+                    },
+                    {
+                        "issue_type": 3,
+                        "suggestion": "Add at least 1 attribute"
+                    }
+                ]
+            },
+            {
+                "item_id": 102202080,
+                "quality_level": 0
+            }
+        ]
+    },
+    "warning": ""
+}

@@ -1,0 +1,55 @@
+{
+    "response": {
+        "payout_list": [
+            {
+                "from_currency": "SGD",
+                "payout_currency": "SGD",
+                "from_amount": 1,
+                "payout_amount": 1,
+                "exchange_rate": "1",
+                "payout_time": 1691638015,
+                "pay_service": "",
+                "payee_id": "",
+                "encrypted_payout_id": "11796795500890875355"
+            },
+            {
+                "from_currency": "SGD",
+                "payout_currency": "SGD",
+                "from_amount": -594.78,
+                "payout_amount": -594.78,
+                "exchange_rate": "1",
+                "payout_time": 1691637692,
+                "pay_service": "",
+                "payee_id": "",
+                "encrypted_payout_id": "1037637926329180766"
+            },
+            {
+                "from_currency": "SGD",
+                "payout_currency": "SGD",
+                "from_amount": 594.78,
+                "payout_amount": 594.78,
+                "exchange_rate": "1",
+                "payout_time": 1691637245,
+                "pay_service": "",
+                "payee_id": "",
+                "encrypted_payout_id": "17595368892219955875"
+            },
+            {
+                "from_currency": "SGD",
+                "payout_currency": "SGD",
+                "from_amount": -1769.01,
+                "payout_amount": -1769.01,
+                "exchange_rate": "1",
+                "payout_time": 1691050374,
+                "pay_service": "",
+                "payee_id": "",
+                "encrypted_payout_id": "16061973102097436445"
+            }
+        ],
+        "more": false,
+        "next_cursor": ""
+    },
+    "error": "",
+    "message": "",
+    "request_id": "bdb077c90923be4527a374c1e6db2400"
+}

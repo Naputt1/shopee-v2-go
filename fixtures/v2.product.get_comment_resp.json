@@ -1,0 +1,27 @@
+{
+  "error": "",
+  "message": "",
+  "response": {
+    "item_comment_list": [
+      {
+        "comment_id": 120590834,
+        "comment": "Very nice",
+        "buyer_username": "tom",
+        "order_sn": "200922CTK2J6KN",
+        "item_id": 16509872,
+        "model_id": 0,
+        "create_time": 1603153057,
+        "rating_star": 5,
+        "editable": "EDITABLE",
+        "hidden": false,
+        "cmt_reply": {
+          "reply": "Thank you for your support. Look forward to your next visit.",
+          "hidden": false
+        }
+      }
+    ],
+    "more": true,
+    "next_cursor": "20"
+  },
+  "request_id": "3e0976b06baa4e059b278ef1fdae1f01"
+}

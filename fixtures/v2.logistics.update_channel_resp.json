@@ -1,0 +1,21 @@
+{
+	"request_id": "df17f35abb4244938b22a675211dc99c",
+	"error": "error_auth",
+	"message": "Invalid access_token.",
+	"response": {
+		"shop_id": 123123,
+		"enabled": true,
+		"cod_enabled": false,
+		"logistics_channel_id": 14623,
+                "is_multi_warehouse": true,
+		"update_channels": [{
+			"channel_id": 1000,
+			"channel_display_name": "",
+			"unsupport_warehouse": [{
+				"warehouse_id": 1,
+				"warehouse_name": "abc"
+			}]
+		}]
+	}
+
+}

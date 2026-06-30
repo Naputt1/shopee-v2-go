@@ -1,0 +1,79 @@
+{
+    "request_id":"5bd2a33faed0007f4883797f590e2a26",
+    "error":"",
+    "message":"",
+    "response":{
+        "more":false,
+        "payout_list":[
+            {
+                "payout_info":{
+                    "from_currency":"VND",
+                    "payout_currency":"USD",
+                    "from_amount":591797912,
+                    "payout_amount":25678.64,
+                    "exchange_rate":"0.00",
+                    "payout_time":1651842208,
+                    "pay_service":"Payoneer",
+                    "payee_id":"279016275538"
+                },
+                "escrow_list":[
+                    {
+                        "escrow_amount":20865,
+                        "currency":"VND",
+                        "order_sn":"220404NF3CFFNY"
+                    },
+                    {
+                        "escrow_amount":53122,
+                        "currency":"VND",
+                        "order_sn":"220411AQSDPW3U"
+                    },
+                    {
+                        "escrow_amount":41451,
+                        "currency":"VND",
+                        "order_sn":"2204108JRAHQ1B"
+                    },
+                    {
+                        "escrow_amount":9018,
+                        "currency":"VND",
+                        "order_sn":"220404MGU5BKPQ"
+                    }
+                ],
+                "offline_adjustment_list":[
+                    {
+                        "adjustment_amount":2,
+                        "module":"Commission Fee",
+                        "remark":"DRC commission fee adjustment",
+                        "scenario":"Commission Fee Adjustment",
+                        "adjustment_level":"shop",
+                        "order_sn":"220322JUMMT0S0"
+                    },
+                    {
+                        "adjustment_amount":8928,
+                        "module":"Commission Fee",
+                        "remark":"DRC commission fee adjustment",
+                        "scenario":"Commission Fee Adjustment",
+                        "adjustment_level":"shop",
+                        "order_sn":"220310J24P8WCW"
+                    },
+                    {
+                        "adjustment_amount":45,
+                        "module":"Refund Amount",
+                        "remark":"Order 220312Q2BN0SH1, New RR, compensate seller but system failed to refund seller. Refund seller according to email Re: [VN] New R/R flow - Offline Compensation for Mall CB Sellers",
+                        "scenario":"Refund Compensation",
+                        "adjustment_level":"shop",
+                        "order_sn":"220312Q2BN0SH1"
+                    },
+                    {
+                        "adjustment_amount":1572,
+                        "module":"Commission Fee",
+                        "remark":"DRC commission fee adjustment",
+                        "scenario":"Commission Fee Adjustment",
+                        "adjustment_level":"shop",
+                        "order_sn":"220313SMG81WP8"
+                    }
+                ]
+            }
+        ]
+    }
+}
+

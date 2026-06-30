@@ -1,0 +1,21 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"response": {
+		"item_list": [
+			{
+				"item_id": 123,
+				"item_name": "test",
+				"sales": 123,
+				"display_price": "29.12",
+				"stock": 19999,
+				"is_in_blacklist": false,
+				"with_open_campaign": true
+			}
+		],
+		"total_count": 100,
+		"cursor": "1234,5678",
+		"has_more": true
+	}
+}

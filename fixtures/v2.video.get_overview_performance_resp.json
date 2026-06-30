@@ -1,0 +1,41 @@
+{
+	"error": "-",
+	"message": "-",
+	"request_id": "2af852cd-7420-4714-b7cd-33317f6fe548",
+	"response": {
+		"key_metric": {
+			"placed_sales": 1,
+			"confirmed_sales": 1,
+			"placed_orders": 2,
+			"confirmed_orders": 2,
+			"placed_item_sold": 3,
+			"confirmed_item_sold": 3,
+			"total_viewers": 4,
+			"effective_views": 4,
+			"avg_view_duration": 5
+		},
+		"conversion": {
+			"placed_buyers": 2,
+			"confirmed_buyers": 2,
+			"total_atc": 2,
+			"ctr": 3,
+			"placed_co_rate": 1,
+			"confirmed_co_rate": 1,
+			"placed_abs": 1,
+			"confirmed_abs": 2,
+			"placed_gpm": 3,
+			"confirmed_gpm": 4,
+			"video_with_products": 2,
+			"placed_revenue_generating_videos": 1,
+			"confirmed_revenue_generating_videos": 1
+		},
+		"engagement": {
+			"total_views": 1,
+			"total_likes": 1,
+			"total_shares": 1,
+			"total_comments": 1,
+			"video_new_followers": 1
+		},
+		"fetched_date_range": "2025-02-28"
+	}
+}

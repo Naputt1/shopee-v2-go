@@ -1,0 +1,46 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "e54894ee0160e1e4a52b108b5a845f41:000000c23066d66c:0000000000000000",
+    "response": {
+        "order_sn": "230914AV5TVWC2",
+        "package_list": [
+            {
+                "item_list": [
+                    {
+                        "item_id": 101089151,
+                        "model_id": 10004405040,
+                        "model_quantity": 2,
+                        "order_item_id": 1,
+                        "promotion_group_id": 0
+                    }
+                ],
+                "package_number": "OFG148375269133791"
+            },
+            {
+                "item_list": [
+                    {
+                        "item_id": 843019657,
+                        "model_id": 0,
+                        "model_quantity": 1,
+                        "order_item_id": 2,
+                        "promotion_group_id": 0
+                    }
+                ],
+                "package_number": "OFG148375269133792"
+            },
+            {
+                "item_list": [
+                    {
+                        "item_id": 843019657,
+                        "model_id": 0,
+                        "model_quantity": 1,
+                        "order_item_id": 2,
+                        "promotion_group_id": 0
+                    }
+                ],
+                "package_number": "OFG148375269133793"
+            }
+        ]
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "request_id": "2bf799cd6f6bb4a1486519c3def3280c",
+    "message": "",
+    "error": "",
+    "response": {
+        "shop_category_id": 29333,
+        "current_count": 0,
+        "invalid_item_id_list": [
+            {
+                "item_id": 100908152,
+                "fail_message": "The item id you provided not exist in category. Please check.",
+                "fail_error": "err_not_exist_item"
+            },
+            {
+                "item_id": 100908153,
+                "fail_message": "The item id you provided not exist in category. Please check.",
+                "fail_error": "err_not_exist_item"
+            }
+        ]
+    }
+}

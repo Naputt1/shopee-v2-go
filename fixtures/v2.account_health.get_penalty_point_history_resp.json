@@ -1,0 +1,66 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "e3e3e7f32548a9975af4ea6b51bd3c01:01000278f354dc17:00000049413a0a7b",
+    "response": {
+        "penalty_point_list": [
+            {
+                "issue_time": 1728634527,
+                "latest_point_num": 1,
+                "original_point_num": 1,
+                "reference_id": 764883879797459160,
+                "violation_type": 12
+            },
+            {
+                "issue_time": 1728633960,
+                "latest_point_num": 1,
+                "original_point_num": 1,
+                "reference_id": 764881498321979246,
+                "violation_type": 3064
+            },
+            {
+                "issue_time": 1728633764,
+                "latest_point_num": 1,
+                "original_point_num": 1,
+                "reference_id": 764880677236639231,
+                "violation_type": 13
+            },
+            {
+                "issue_time": 1728552596,
+                "latest_point_num": 1,
+                "original_point_num": 1,
+                "reference_id": 764540236400165696,
+                "violation_type": 3072
+            },
+            {
+                "issue_time": 1728552398,
+                "latest_point_num": 1,
+                "original_point_num": 1,
+                "reference_id": 764539404640322244,
+                "violation_type": 23
+            },
+            {
+                "issue_time": 1728552246,
+                "latest_point_num": 3,
+                "original_point_num": 3,
+                "reference_id": 764538765474529390,
+                "violation_type": 13
+            },
+            {
+                "issue_time": 1728489600,
+                "latest_point_num": 1,
+                "original_point_num": 1,
+                "reference_id": 17286145180003722,
+                "violation_type": 24
+            },
+            {
+                "issue_time": 1728489600,
+                "latest_point_num": 1,
+                "original_point_num": 1,
+                "reference_id": 17286145690002512,
+                "violation_type": 24
+            }
+        ],
+        "total_count": 8
+    }
+}

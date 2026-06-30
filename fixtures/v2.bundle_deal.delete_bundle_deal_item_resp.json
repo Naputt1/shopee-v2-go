@@ -1,0 +1,19 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "fed23116ae34ca00d67f2c7bf57c2d22",
+    "response": {
+        "failed_list": [
+            {
+                "item_id": 1234,
+                "fail_error": "bundle.bundle_deal_item_not_exist",
+                "fail_message": "Please update item of bundel deal"
+            }
+        ],
+        "success_list": [
+            1111,
+            2222,
+            3333
+        ]
+    }
+}

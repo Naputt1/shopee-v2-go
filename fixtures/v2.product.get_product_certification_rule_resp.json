@@ -1,0 +1,14 @@
+{
+	"message": "-",
+	"warning": "-",
+	"request_id": "326527603d034fd1b2dd6a74d70ade54",
+	"response": {
+		"certification_rule_list": [
+			{
+				"certification_type": 3,
+				"is_mandatory": true
+			}
+		]
+	},
+	"error": "-"
+}

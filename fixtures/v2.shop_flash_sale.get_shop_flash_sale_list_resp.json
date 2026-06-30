@@ -1,0 +1,130 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "ea1b97881ec32a4917c31ef67e334841",
+    "response": {
+        "flash_sale_list": [
+            {
+                "click_count": 0,
+                "enabled_item_count": 0,
+                "end_time": 1725040799,
+                "flash_sale_id": 802063533822541,
+                "item_count": 0,
+                "remindme_count": 0,
+                "start_time": 1725033600,
+                "status": 3,
+                "timeslot_id": 237859372232704,
+                "type": 1
+            },
+            {
+                "click_count": 0,
+                "enabled_item_count": 0,
+                "end_time": 1725040799,
+                "flash_sale_id": 802063460422221,
+                "item_count": 0,
+                "remindme_count": 0,
+                "start_time": 1725033600,
+                "status": 1,
+                "timeslot_id": 237859372232704,
+                "type": 1
+            },
+            {
+                "click_count": 0,
+                "enabled_item_count": 0,
+                "end_time": 1725040799,
+                "flash_sale_id": 802063428973133,
+                "item_count": 0,
+                "remindme_count": 0,
+                "start_time": 1725033600,
+                "status": 1,
+                "timeslot_id": 237859372232704,
+                "type": 1
+            },
+            {
+                "click_count": 0,
+                "enabled_item_count": 0,
+                "end_time": 1725040799,
+                "flash_sale_id": 802063403799117,
+                "item_count": 0,
+                "remindme_count": 0,
+                "start_time": 1725033600,
+                "status": 1,
+                "timeslot_id": 237859372232704,
+                "type": 1
+            },
+            {
+                "click_count": 0,
+                "enabled_item_count": 0,
+                "end_time": 1725040799,
+                "flash_sale_id": 802056428671565,
+                "item_count": 0,
+                "remindme_count": 0,
+                "start_time": 1725033600,
+                "status": 1,
+                "timeslot_id": 237859372232704,
+                "type": 1
+            },
+            {
+                "click_count": 0,
+                "enabled_item_count": 0,
+                "end_time": 1723737599,
+                "flash_sale_id": 802053532512845,
+                "item_count": 0,
+                "remindme_count": 0,
+                "start_time": 1723734000,
+                "status": 1,
+                "timeslot_id": 236768131772416,
+                "type": 1
+            },
+            {
+                "click_count": 0,
+                "enabled_item_count": 0,
+                "end_time": 1723694399,
+                "flash_sale_id": 802053471670861,
+                "item_count": 0,
+                "remindme_count": 0,
+                "start_time": 1723690800,
+                "status": 2,
+                "timeslot_id": 236758518403072,
+                "type": 1
+            },
+            {
+                "click_count": 0,
+                "enabled_item_count": 2,
+                "end_time": 1723859999,
+                "flash_sale_id": 802024002515533,
+                "item_count": 3,
+                "remindme_count": 0,
+                "start_time": 1723856400,
+                "status": 2,
+                "timeslot_id": 218099200790528,
+                "type": 1
+            },
+            {
+                "click_count": 0,
+                "enabled_item_count": 0,
+                "end_time": 1722275999,
+                "flash_sale_id": 798811027231309,
+                "item_count": 0,
+                "remindme_count": 0,
+                "start_time": 1722272400,
+                "status": 1,
+                "timeslot_id": 230377048469504,
+                "type": 3
+            },
+            {
+                "click_count": 0,
+                "enabled_item_count": 0,
+                "end_time": 1722272399,
+                "flash_sale_id": 798802932232781,
+                "item_count": 0,
+                "remindme_count": 0,
+                "start_time": 1722268800,
+                "status": 1,
+                "timeslot_id": 230205119754240,
+                "type": 3
+            }
+        ],
+        "total_count": 107
+    }
+}

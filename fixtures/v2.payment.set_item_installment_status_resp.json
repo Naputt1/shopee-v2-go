@@ -1,0 +1,40 @@
+1.All success(Error&message is empty)
+{
+    "response": {
+        "item_installment_list": [{
+            "item_id": 1,
+            "tenure_list": [3, 6, 9]
+        }]
+    },
+    "error": "",
+    "message": "",
+    "request_id": "xduiwekui134"
+}
+
+2. Partial success (error&message is empty and returns the reason why the item failed)
+{
+    "response": {
+        "item_installment_list": [{
+                "item_id": 1,
+                "tenure_list": [3, 6, 9]
+            },
+            {
+                "item_id": 2,
+                "fail_error": "xxxx",
+                "fail_message": "xxxxx"
+            }
+        ]
+    },
+    "error": "",
+    "message": "",
+    "request_id": "xduiwekui134"
+}
+3.All fail (error&message is not empty and shows)
+{
+    "response": {
+        "item_installment_list": []
+    },
+    "error": "xxxxx",
+    "message": "xxxxx",
+    "request_id": "xduiwekui134"
+}

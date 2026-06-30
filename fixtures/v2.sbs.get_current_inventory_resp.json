@@ -1,0 +1,44 @@
+{
+	"request_id": "123456abc",
+	"error": "-",
+	"message": "-",
+	"response": {
+		"cursor": "eyJDdXJyZW50UGFnZU5vIjoxLCJMZWZ0U29ydFZhbHVlcyI6WyI5MDA2MjU0MzgiXSwiUmlnaHRTb3J0VmFsdWVzIjpbIjkwMDYyNjk0NCJdfQ==",
+		"item_list": [
+			{
+				"item_id": "900625438",
+				"item_name": "跨境商品测试00002 - 1666171590",
+				"item_image": "http://img.ws.mms.shopee.sg/08b3fc410c8eaa7e3f52b06b486a8658",
+				"sku_list": [
+					{
+						"mtsku_id": "900625438_10010402373",
+						"model_id": "10010402373",
+						"fulfill_mapping_mode": 1,
+						"model_name": "Yellow,Middle",
+						"not_moving_tag": 0,
+						"whs_list": [
+							{
+								"whs_id": "CNN",
+								"stock_level": -1,
+								"ir_approval_qty": 0,
+								"in_transit_pending_putaway_qty": 0,
+								"sellable_qty": 47,
+								"reserved_qty": 3,
+								"unsellable_qty": 0,
+								"excess_stock": 0,
+								"coverage_days": 0.1,
+								"in_whs_coverage_days": 0.1,
+								"selling_speed": 0.2,
+								"last_7_sold": 0,
+								"last_15_sold": 0,
+								"last_30_sold": 0,
+								"last_60_sold": 0,
+								"last_90_sold": 0
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

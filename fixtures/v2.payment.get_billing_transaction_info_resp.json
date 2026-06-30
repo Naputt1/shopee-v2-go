@@ -1,0 +1,22 @@
+{
+    "response": {
+        "transactions": [
+            {
+                "amount": -594.78,
+                "currency": "SGD",
+                "order_sn": "230712RFB30UES",
+                "cost_header": "Refund Amount",
+                "scenario": "Return Refund After Order Completed",
+                "remark": "Deduction on return refund requests raised after order is completed",
+                "level": "ORDER",
+                "billing_transaction_type": "ADJUSTMENT",
+                "billing_transaction_status": "RELEASED"
+            }
+        ],
+        "more": false,
+        "next_cursor": ""
+    },
+    "error": "",
+    "message": "",
+    "request_id": "dec735be0923db4f300912f713010900"
+}

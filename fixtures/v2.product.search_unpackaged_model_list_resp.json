@@ -1,0 +1,23 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "e3e3e7f3385f4c70a0cb5b51a64a1001:020000d4bb579ca4:0100035fc1c9bf17",
+    "response": {
+        "total_count": 13,
+        "next_cursor": "1742200912,14254207168",
+        "model_list": [
+            {
+                "item_id": 844078646,
+                "item_name": "JIT Item 1",
+                "model_id": 14254207169,
+                "unpackaged_sku_id": "844078646_14254207169"
+            },
+            {
+                "item_id": 844078646,
+                "item_name": "JIT Item 1",
+                "unpackaged_sku_id": "844078646_14254207168",
+                "model_id": 14254207168
+            }
+        ]
+    }
+}

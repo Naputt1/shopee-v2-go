@@ -1,0 +1,33 @@
+{
+	"error": "-",
+	"message": "-",
+	"warning": "-",
+	"request_id": "-",
+	"response": {
+		"image_info": {
+			"image_id": "-",
+			"image_url_list": [
+				{
+					"image_url_region": "-",
+					"image_url": "-"
+				}
+			]
+		},
+		"image_info_list": [
+			{
+				"id": 0,
+				"error": "-",
+				"message": "-",
+				"image_info": {
+					"image_id": "-",
+					"image_url_list": [
+						{
+							"image_url_region": "-",
+							"image_url": "-"
+						}
+					]
+				}
+			}
+		]
+	}
+}

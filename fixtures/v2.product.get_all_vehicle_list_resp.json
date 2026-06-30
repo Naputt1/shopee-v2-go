@@ -1,0 +1,22 @@
+{
+    "error": "",
+    "message": "",
+    "warning": "",
+    "request_id": "27c00663928149802cc4f6180ae55a41",
+    "response": {
+        "vehicle_list": [
+            {
+                "brand_id": 1234,
+                "brand_name": "Toyota",
+                "model_id": 2345,
+                "model_name": "Etios",
+                "year_id": 3456,
+                "year_name": "2023",
+                "version_id": 4567,
+                "version_name": "1.0"
+            }
+        ],
+        "has_next_page": true,
+        "next_offset": 1
+    }
+}

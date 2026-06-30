@@ -1,0 +1,84 @@
+{
+    "error": "",
+    "message": "",
+    "warning": "",
+    "request_id": "52d4f1700c6fd2ce4648a367c68b9b52",
+    "response": {
+        "attribute_list": [
+            {
+                "attribute_id": 100003,
+                "original_attribute_name": "項鍊長度",
+                "display_attribute_name": "項鍊長度",
+                "is_mandatory": false,
+                "input_validation_type": "DATE_TYPE",
+                "format_type": "NORMAL",
+                "date_format_type": "YEAR_MONTH_DATE",
+                "input_type": "MULTIPLE_SELECT_COMBO_BOX",
+                "attribute_unit": [],
+                "attribute_value_list": [
+                    {
+                        "value_id": 39,
+                        "original_value_name": "1625155200",
+                        "display_value_name": "1625155200"
+                    },
+                    {
+                        "value_id": 38,
+                        "original_value_name": "1626105600",
+                        "display_value_name": "1626105600"
+                    }
+                ]
+            },
+            {
+                "attribute_id": 100007,
+                "original_attribute_name": "Volume",
+                "display_attribute_name": "Volume",
+                "is_mandatory": false,
+                "input_validation_type": "FLOAT_TYPE",
+                "format_type": "QUANTITATIVE",
+                "input_type": "COMBO_BOX",
+                "attribute_unit": [
+                    "ml",
+                    "L"
+                ],
+                "attribute_value_list": [
+                    {
+                        "value_id": 12,
+                        "original_value_name": "111",
+                        "display_value_name": "111",
+                        "value_unit": "ml"
+                    },
+                    {
+                        "value_id": 13,
+                        "original_value_name": "11111",
+                        "display_value_name": "11111",
+                        "value_unit": "L"
+                    }
+                ]
+            },
+            {
+                "attribute_id": 100009,
+                "original_attribute_name": "Model",
+                "display_attribute_name": "Product Model",
+                "is_mandatory": false,
+                "input_validation_type": "NO_VALIDATE_TYPE",
+                "format_type": "NORMAL",
+                "date_format_type": "YEAR_MONTH_DATE",
+                "input_type": "DROP_DOWN",
+                "attribute_unit": [],
+                "attribute_value_list": [
+                    {
+                        "value_id": 3,
+                        "original_value_name": "Model Y",
+                        "display_value_name": "Model Y"
+                    },
+                    {
+                        "value_id": 1,
+                        "original_value_name": "Model A",
+                        "display_value_name": "Model A"
+                    }
+                ]
+            }
+           
+        ]
+    }
+}

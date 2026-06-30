@@ -1,0 +1,38 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "e3e3e7f32549047c2083b6f047624c01:0100020ab84cd22c:0000007ad1030734",
+    "response": {
+        "listing_list": [
+            {
+                "item_id": 100963774,
+                "reason": 1
+            },
+            {
+                "item_id": 100920076,
+                "reason": 2
+            },
+            {
+                "item_id": 100920056,
+                "reason": 3
+            },
+            {
+                "item_id": 100920055,
+                "reason": 4
+            },
+            {
+                "item_id": 100902880,
+                "reason": 5
+            },
+            {
+                "item_id": 100816024,
+                "reason": 6
+            },
+            {
+                "item_id": 100816023,
+                "reason": 7
+            }
+        ],
+        "total_count": 7
+    }
+}

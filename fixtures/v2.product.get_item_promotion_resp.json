@@ -1,0 +1,69 @@
+{
+    "error": "",
+    "message": "",
+    "warning": "",
+    "request_id": "c878e05df6313b180d40ba67cac74caf",
+    "response": {
+        "success_list": [
+            {
+                "item_id": 800188562,
+                "promotion": [
+                    {
+                        "promotion_type": "Discount Promotions",
+                        "promotion_id": 649305216139969,
+                        "model_id": 9184960,
+                        "start_time": 1650609000,
+                        "end_time": 1650616200,
+                        "promotion_price_info": [
+                            {
+                                "promotion_price": 160
+                            }
+                        ],
+                        "promotion_staging": "upcoming",
+                        "promotion_stock_info_v2": {
+                            "summary_info": {
+                                "total_reserved_stock": 0
+                            }
+                        }
+                    },
+                    {
+                        "promotion_type": "Discount Promotions",
+                        "promotion_id": 649305216139969,
+                        "model_id": 9182545,
+                        "start_time": 1650609000,
+                        "end_time": 1650616200,
+                        "promotion_price_info": [
+                            {
+                                "promotion_price": 160
+                            }
+                        ],
+                        "promotion_staging": "upcoming",
+                        "promotion_stock_info_v2": {
+                            "summary_info": {
+                                "total_reserved_stock": 20
+                            }
+                        }
+                    },
+                    {
+                        "promotion_type": "Discount Promotions",
+                        "promotion_id": 649305216139969,
+                        "model_id": 9182546,
+                        "start_time": 1650609000,
+                        "end_time": 1650616200,
+                        "promotion_price_info": [
+                            {
+                                "promotion_price": 160
+                            }
+                        ],
+                        "promotion_staging": "upcoming",
+                        "promotion_stock_info_v2": {
+                            "summary_info": {
+                                "total_reserved_stock": 20
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

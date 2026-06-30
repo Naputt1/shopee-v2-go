@@ -1,0 +1,18 @@
+{
+	"error": "",
+	"message": "",
+	"warning": "",
+	"request_id": "6f235f4a343e4feb8a9ed74c439f6663",
+	"response": [
+		{
+			"campaign_id": 123,
+			"failed_edits": [
+				{
+					"keyword": "keyword",
+					"error": "",
+					"message": ""
+				}
+			]
+		}
+	]
+}

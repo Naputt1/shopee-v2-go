@@ -1,0 +1,53 @@
+{
+	"error": "-",
+	"message": "-",
+	"warning": "-",
+	"request_id": "-",
+	"response": {
+		"list": [
+			{
+				"attribute_tree": [
+					{
+						"attribute_id": 0,
+						"mandatory": true,
+						"name": "-",
+						"attribute_value_list": [
+							{
+								"value_id": 0,
+								"name": "-",
+								"value_unit": "-",
+								"child_attribute_list": [
+									{}
+								],
+								"multi_lang": {
+									"language": "-",
+									"value": "-"
+								}
+							}
+						],
+						"attribute_info": {
+							"input_type": 0,
+							"input_validation_type": 0,
+							"format_type": 0,
+							"date_format_type": 0,
+							"attribute_unit_list": [
+								"-"
+							],
+							"mandatory_region": [
+								"-"
+							],
+							"max_value_count": 0
+						},
+						"multi_lang": [
+							{
+								"language": "-",
+								"value": "-"
+							}
+						]
+					}
+				],
+				"category_id": 0
+			}
+		]
+	}
+}

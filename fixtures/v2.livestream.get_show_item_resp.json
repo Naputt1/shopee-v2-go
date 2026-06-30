@@ -1,0 +1,20 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "ae9e59cf358b59d7f940552176cb9d01",
+	"response": {
+		"has_show_item": true,
+		"item": {
+			"item_no": 1,
+			"item_id": 123,
+			"shop_id": 123,
+			"name": "test",
+			"image_url": "https://cf.shopee.sg/file/id-11134104-7r98o-m9pjrv63z8lxe7",
+			"price_info": {
+				"currency": "SGD",
+				"current_price": 100,
+				"original_price": 120
+			}
+		}
+	}
+}

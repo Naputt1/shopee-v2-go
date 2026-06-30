@@ -1,0 +1,32 @@
+{
+	"error": "-",
+	"message": "-",
+	"request_id": "d929c6ca9b4dbff5ed8fb33bb45c30a8",
+	"response": {
+		"bundle_deal_list": [
+			{
+				"bundle_deal_id": 1111432,
+				"name": "Bundle Deal Test",
+				"start_time": 1655654412,
+				"end_time": 1658246412,
+				"bundle_deal_rule": {
+					"rule_type": 1,
+					"discount_value": 11,
+					"fix_price": 11,
+					"discount_percentage": 33,
+					"min_amount": 123,
+					"additional_tiers": [
+						{
+							"min_amount": 123,
+							"fix_price": 11,
+							"discount_value": 11,
+							"discount_percentage": 33
+						}
+					]
+				},
+				"purchase_limit": 6
+			}
+		],
+		"more": true
+	}
+}

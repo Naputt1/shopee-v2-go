@@ -1,0 +1,65 @@
+{
+	"error": "",
+	"message": "",
+	"response": {
+		"age": {
+			"1": 1661565,
+			"2": 1476662,
+			"3": 515374,
+			"4": 171766
+		},
+		"gender": {
+			"male": 1350736,
+			"female": 1299539,
+			"predictedMale": 650656,
+			"predictedFemale": 780550,
+			"unknown": 249717
+		},
+		"location": {
+			"KAB. MAGETAN": 9138,
+			"KAB. SERDANG BEDAGAI": 4138,
+			"KAB. ACEH TENGGARA": 592,
+			"KAB. LUWU UTARA": 1450,
+			"KAB. MAJENE": 872,
+			"KAB. KLATEN": 17108,
+			"KAB. MINAHASA TENGGARA": 274,
+			"KOTA BATU": 4900,
+			"KAB. MOJOKERTO": 20307,
+			"KAB. TANJUNG JABUNG BARAT": 2277,
+			"KOTA BLITAR": 3548,
+			"KAB. KEPULAUAN ANAMBAS": 267,
+			"KAB. SAROLANGUN": 1993,
+			"KAB. KAYONG UTARA": 822
+		},
+		"activity": {
+			"2": 1,
+			"7": 1,
+			"12": 1,
+			"14": 1,
+			"15": 1,
+			"18": 2,
+			"19": 1
+		},
+		"identity": {
+			"0": 4331198
+		},
+		"content": {
+			"Family & Relationships": 48005042,
+			"Beauty & Fashion": 42070550,
+			"Entertainment": 131205196,
+			"Comedy & Acting": 114127400,
+			"Society": 63745038,
+			"Daily Life": 175538650
+		},
+		"shopping": {
+			"Beauty": 259060,
+			"Women Clothes": 141713,
+			"Food & Beverages": 85413,
+			"Health": 84079,
+			"Baby & Kids Fashion": 82957,
+			"Men Clothes": 81115,
+			"Home & Living": 248660
+		}
+	},
+	"request_id": "9bf7184d-3583-4047-ba0e-a8e7dcd6fbc1"
+}

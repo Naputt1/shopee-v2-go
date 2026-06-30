@@ -1,0 +1,24 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "e3e3e7f3360690a5b55f0689f8a4e801",
+	"response": {
+		"session_id": 6236215,
+		"title": "test title",
+		"description": "test description",
+		"cover_image_url": "https://cf.shopee.sg/file/id-11134104-7r98o-m9y7ly25ngg927",
+		"status": 1,
+		"share_url": "https://live.test.shopee.co.id/share?from=live&session=6905656",
+		"is_test": false,
+		"create_time": 1747651742003,
+		"update_time": 1747651742003,
+		"start_time": 1747651742003,
+		"end_time": 1747651742003,
+		"stream_url_list": {
+			"push_url": "rtmp://push-zl.lvb.test.shopee.co.id/live",
+			"push_key": "id-test-1987885338002432-6905656?zlSecret=61ef843a6d8e48357ac3d94db52447bf&zlTime=682FF4B1&pushDomain=push-zl.lvb.test.shopee.co.id&cdnID=ZENLAYER&session_id=6905656",
+			"play_url": "http://play-zl.livestream.test.shopee.co.id/live/id-test-1987885338002432-6905656.flv?auditkey=1.0~9EzaSlc1o3iNfkh_yixD-7yKuXaLPvJNR3CXbUw_8mN08xmA2QEcpACaVOBSP61kDO4cbhwVwM5B10kAms4mgKsTQJS-ji50MBDkH-m81cE~e298bae2599bf1447f21131e2d73a6baf97bd9edcbe460a17e09cdce2c80c40d&cdnID=ZENLAYER&expire_ts=1747714157",
+			"domain_id": 57
+		}
+	}
+}

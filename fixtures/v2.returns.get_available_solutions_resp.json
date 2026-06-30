@@ -1,0 +1,20 @@
+{
+	"request_id": "fdeb0c1463fc46349f7d6f448e1f00d6",
+	"error": " ",
+	"message": " ",
+	"response": {
+		"return_sn": "220106202649696",
+		"offer_return_refund": {
+			"eligibility": true,
+			"refund_amount_adjustable": true,
+			"max_refund_amount": 15.0,
+			"min_refund_amount": 5.0
+		},
+		"offer_refund": {
+			"eligibility": true,
+			"refund_amount_adjustable": true,
+			"max_refund_amount": 10.0,
+			"min_refund_amount": 5.0
+		}
+	}
+}

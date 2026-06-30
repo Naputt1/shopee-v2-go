@@ -1,0 +1,62 @@
+{
+"request_id": "fbb8eb389cf94bad423f32e2735cc0dc",
+"error": "",
+"message": "",
+"response": [{
+"payment_method": [
+"Cybersource",
+"Nicepay CC (ANZ) 18x installment plan",
+"Nicepay CC (ANZ) 24x installment plan"
+],
+"region": "ID"
+},
+{
+"payment_method": [
+"MOLPay",
+"WeChat Pay (New)",
+"iPay88 CC Installment Public Bank 6x"
+],
+"region": "MY"
+},
+{
+"payment_method": [
+"Dragonpay - Online EastWestBanker",
+"Shopee Credit x12"
+],
+"region": "PH"
+},
+{
+"payment_method": [
+"Android Pay",
+"Cybersource"
+],
+"region": "SG"
+},
+{
+"payment_method": [
+"Online Payment (KBANK)",
+"Shopee Credit x12"
+],
+"region": "TH"
+},
+{
+"payment_method": [
+"Cybersource",
+"Airpay Credit Card Installment HWATAI BANK 24x",
+"Bank Transfer (CTBC VA)"
+],
+"region": "TW"
+},
+{
+"payment_method": [
+"WeChat Pay (New)",
+"Free",
+"Airpay Credit  Card",
+"WeChat Pay",
+"Cybersource Installment Citibank 6x",
+"Cybersource Installment HDBank 12x"
+],
+"region": "VN"
+}
+]
+}

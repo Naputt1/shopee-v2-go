@@ -1,0 +1,19 @@
+ {
+    "request_id": "ce13698485624ddb953e954e17b51229",
+    "error": "",
+    "message": "",
+    "response": {
+        "collection_list": [{
+            "is_activated": false,
+            "item_list": [{
+                "item_name": "tools Sep 28 2020 16:57:068",
+                "item_id": 3400134771,
+                "current_price": "2000.00",
+                "inflated_price_of_current_price": "3000.00",
+                "sales": 0
+            }],
+            "top_picks_id": 62,
+            "name": "test1234"
+        }]
+    }
+}

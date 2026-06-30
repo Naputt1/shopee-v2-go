@@ -1,0 +1,30 @@
+{
+    "error": null,
+    "message": null,
+    "request_id": "94bec7620823b3e78ed50fa6c8ec8381",
+    "response": {
+        "cursor": {
+            "next_id": 222859324,
+            "page_size": 4,
+            "prev_id": null
+        },
+        "shop_list": [
+            {
+                "shop_id": 222859294,
+                "shop_name": "test_shop11"
+            },
+            {
+                "shop_id": 222859295,
+                "shop_name": "test_shop12"
+            },
+            {
+                "shop_id": 222859296,
+                "shop_name": "test_shop13"
+            },
+            {
+                "shop_id": 222859324,
+                "shop_name": "test_shop14"
+            }
+        ]
+    }
+}

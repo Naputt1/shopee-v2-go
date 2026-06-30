@@ -1,0 +1,66 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "317a860d24812fc85ab2ed5d6a202300:04000034d2b0cc2a:030002ec3134cdf2",
+    "response": {
+        "logistics_channel_list": [
+            {
+                "logistics_product_id": 1010003,
+                "logistics_product_name": "kuaidi100 to C",
+                "courier_list": [
+                    {
+                        "courier_name": "德邦快递",
+                        "courier_service_id": "LCN80001",
+                        "courier_service_name": "德邦快递"
+                    },
+                    {
+                        "courier_name": "京东快递",
+                        "courier_service_id": "LCN80002",
+                        "courier_service_name": "京东快递"
+                    },
+                    {
+                        "courier_name": "中通快递",
+                        "courier_service_id": "LCN80003",
+                        "courier_service_name": "中通快递"
+                    },
+                    {
+                        "courier_name": "顺丰速运",
+                        "courier_service_id": "LCN80004",
+                        "courier_service_name": "顺丰速运"
+                    },
+                    {
+                        "courier_name": "顺丰快运",
+                        "courier_service_id": "LCN80005",
+                        "courier_service_name": "顺丰快运"
+                    },
+                    {
+                        "courier_name": "顺心捷达",
+                        "courier_service_id": "LCN80006",
+                        "courier_service_name": "顺心捷达"
+                    }
+                ]
+            },
+            {
+                "logistics_product_id": 1010004,
+                "logistics_product_name": "kuaidi100 prepaid(MP)",
+                "courier_list": [
+                    {
+                        "courier_name": "安能快运",
+                        "courier_service_id": "LCN70001",
+                        "courier_service_name": "标准快递"
+                    },
+                    {
+                        "courier_name": "京东快递",
+                        "courier_service_id": "LCN70002",
+                        "courier_service_name": "标准快递"
+                    },
+                    {
+                        "courier_name": "顺丰速运",
+                        "courier_service_id": "LCN70003",
+                        "courier_service_name": "顺丰特快"
+                    }
+                ]
+            }
+        ]
+    }
+}

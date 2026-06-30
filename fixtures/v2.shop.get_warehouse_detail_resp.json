@@ -1,0 +1,23 @@
+{
+	"request_id": "16488d76e337c606s5504f26",
+	"error": "warehouse.error_not_in_whitelist",
+	"message": "Your shop is not in multi-warehouse whitelist.",
+	"response": [
+		{
+			"warehouse_id": 6,
+			"warehouse_name": "warehouse1",
+                        "warehouse_type": 1,
+			"location_id": "IDZ",
+                        "address_id": 118454205,
+			"region": "ID",
+			"state": "ACEH",
+			"city": "KAB. ACEH UTARA",
+			"district": "Mato Grosso",
+			"town": "Av Maria H A dos Santos",
+			"address": "Parque Sagrada Família",
+			"zipcode": "24379",
+			"state_code": "12345",
+			"holiday_mode_state": 0
+		}
+	]
+}

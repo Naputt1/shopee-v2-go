@@ -1,0 +1,176 @@
+{
+    "error": "",
+    "message": "success",
+    "request_id": "openapi-e3e3e7f32a7c6d903377b902ac7e7a00:01000237d706e07e:0000004e4d5c1f2f",
+    "response": {
+        "dispute_reason_list": [
+            {
+                "dispute_reason": 50,
+                "dispute_requirement": "กรุณาส่งหลักฐานมาให้เราเพื่อประกอบการพิจารณาข้อพิพาท โดยสามารถดูตัวอย่างการส่งหลักฐานได้ที่นี่/Regarding to your refund request, Shopee would like to request more information as follows :\n\n",
+                "evidence_module_list": [
+                    {
+                        "is_required": true,
+                        "module_index": 1,
+                        "requirement": "รูปภาพและวิดีโอเปิดกล่องสินค้าที่ได้รับคืนทั้งหมด โดยแสดงให้เห็นใบปะหน้าพัสดุชัดเจน/ Photo(s) or Video of unboxing the returned parcel with the consignment note (Airway Bill)."
+                    },
+                    {
+                        "is_required": true,
+                        "module_index": 2,
+                        "requirement": "รูปภาพและวิดีโอสินค้าที่ได้รับคืน /Photo(s) or Video of all returned item(s) "
+                    },
+                    {
+                        "is_required": true,
+                        "module_index": 3,
+                        "requirement": "รูปภาพและวิดีโอการบรรจุสินค้าลงกล่องพัสดุก่อนนำส่ง โดยเห็นใบปะหน้าสินค้าอย่างชัดเจน/ Photo(s) or Video while packing the parcel with the consignment note (Airway Bill)."
+                    },
+                    {
+                        "is_required": true,
+                        "module_index": 4,
+                        "requirement": "รูปภาพภาพและวิดีโอหลักฐานตรวจสอบสินค้า /Photo or Video  of the product that is follow the details in description."
+                    }
+                ],
+                "sample_evidence": [
+                    {
+                        "thumbnail": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_e9c9e5473d3345d08671a8cc3bc1a6de_tn.jpg",
+                        "type": 1,
+                        "url": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_e9c9e5473d3345d08671a8cc3bc1a6de.jpg"
+                    },
+                    {
+                        "thumbnail": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_1733e9f051994b56ae748d4ebd40d0ee_tn.jpg",
+                        "type": 1,
+                        "url": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_1733e9f051994b56ae748d4ebd40d0ee.jpg"
+                    },
+                    {
+                        "thumbnail": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_7ba5c34525ef401ea326388c45c5cece_tn.jpg",
+                        "type": 1,
+                        "url": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_7ba5c34525ef401ea326388c45c5cece.jpg"
+                    }
+                ]
+            },
+            {
+                "dispute_reason": 49,
+                "dispute_requirement": "กรุณาส่งหลักฐานมาให้เราเพื่อประกอบการพิจารณาข้อพิพาท โดยสามารถดูตัวอย่างการส่งหลักฐานได้ที่นี่/Regarding to your refund request, Shopee would like to request more information as follows ;",
+                "evidence_module_list": [
+                    {
+                        "is_required": true,
+                        "module_index": 1,
+                        "requirement": "รูปภาพและวิดีโอเปิดกล่องสินค้าที่ได้รับคืนทั้งหมด โดยแสดงให้เห็นใบปะหน้าพัสดุชัดเจน/ Photo(s) or Video of unboxing the returned parcel with the consignment note (Airway Bill). "
+                    },
+                    {
+                        "is_required": true,
+                        "module_index": 2,
+                        "requirement": "รูปภาพและวิดีโอสินค้าที่ได้รับคืน /Photo(s) or Video of all returned item(s) "
+                    },
+                    {
+                        "is_required": true,
+                        "module_index": 3,
+                        "requirement": "รูปภาพและวิดีโอการบรรจุสินค้าลงกล่องพัสดุก่อนนำส่ง โดยเห็นใบปะหน้าสินค้าอย่างชัดเจน/ Photo(s) or Video while packing the parcel with the consignment note (Airway Bill)."
+                    }
+                ],
+                "sample_evidence": [
+                    {
+                        "thumbnail": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_fa3b61a46dda4e95b0dfbc6c68c6dd17_tn.jpg",
+                        "type": 1,
+                        "url": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_fa3b61a46dda4e95b0dfbc6c68c6dd17.jpg"
+                    },
+                    {
+                        "thumbnail": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_fef717d33acc402098d8e526d25b1e24_tn.jpg",
+                        "type": 1,
+                        "url": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_fef717d33acc402098d8e526d25b1e24.jpg"
+                    },
+                    {
+                        "thumbnail": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_11cfc95634cd461ab4b2d672b169f12a_tn.jpg",
+                        "type": 1,
+                        "url": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_11cfc95634cd461ab4b2d672b169f12a.jpg"
+                    }
+                ]
+            },
+            {
+                "dispute_reason": 48,
+                "dispute_requirement": "กรุณาส่งหลักฐานมาให้เราเพื่อประกอบการพิจารณาข้อพิพาท โดยสามารถดูตัวอย่างการส่งหลักฐานได้ที่นี่/Regarding to your refund request, Shopee would like to request more information as follows ;:",
+                "evidence_module_list": [
+                    {
+                        "is_required": true,
+                        "module_index": 1,
+                        "requirement": "รูปภาพและวิดีโอเปิดกล่องสินค้าที่ได้รับคืนทั้งหมด โดยแสดงให้เห็นใบปะหน้าพัสดุชัดเจน/ Photo(s) or Video of unboxing the returned parcel with the consignment note (Airway Bill). "
+                    },
+                    {
+                        "is_required": true,
+                        "module_index": 2,
+                        "requirement": "รูปภาพและวิดีโอสินค้าที่ได้รับคืน /Photo(s) or Video of all returned item(s) "
+                    },
+                    {
+                        "is_required": true,
+                        "module_index": 3,
+                        "requirement": "  รูปภาพและวิดีโอการบรรจุสินค้าลงกล่องพัสดุก่อนนำส่ง โดยเห็นใบปะหน้าสินค้าอย่างชัดเจน/ Photo(s) or Video while packing the parcel with the consignment note (Airway Bill)."
+                    },
+                    {
+                        "is_required": true,
+                        "module_index": 4,
+                        "requirement": "วีดีโอหรือรูปภาพจำลองการชั่งน้ำหนักสินค้าทุกชิ้นที่จัดส่งพร้อมบรรจุภัณฑ์ขณะอยู่บนตราชั่ง โดยให้เห็นสินค้าและน้ำหนักอย่างชัดเจน /Clear Video or Photo showing the weight measurement of parcel with all items (able to see the weight and all items clearly)."
+                    }
+                ],
+                "sample_evidence": [
+                    {
+                        "thumbnail": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_295ac2f409ef472ea4296f32d3cc3780_tn.jpg",
+                        "type": 1,
+                        "url": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_295ac2f409ef472ea4296f32d3cc3780.jpg"
+                    },
+                    {
+                        "thumbnail": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_1fbc593ce18940bdbdc6f86b1b7bd856_tn.jpg",
+                        "type": 1,
+                        "url": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_1fbc593ce18940bdbdc6f86b1b7bd856.jpg"
+                    },
+                    {
+                        "thumbnail": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_7a6295db5fda4c7691fbeb05e1162526_tn.jpg",
+                        "type": 1,
+                        "url": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_7a6295db5fda4c7691fbeb05e1162526.jpg"
+                    }
+                ]
+            },
+            {
+                "dispute_reason": 47,
+                "dispute_requirement": "กรุณาส่งหลักฐานมาให้เราเพื่อประกอบการพิจารณาข้อพิพาท โดยสามารถดูตัวอย่างการส่งหลักฐานได้ที่นี่/Regarding to your refund request, Shopee would like to request more information as follows ;",
+                "evidence_module_list": [
+                    {
+                        "is_required": true,
+                        "module_index": 1,
+                        "requirement": "รูปภาพและวิดีโอเปิดกล่องสินค้าที่ได้รับคืนทั้งหมด โดยแสดงให้เห็นใบปะหน้าพัสดุชัดเจน/ Photo(s) or Video of unboxing the returned parcel with the consignment note (Airway Bill)."
+                    },
+                    {
+                        "is_required": true,
+                        "module_index": 2,
+                        "requirement": "รูปภาพและวิดีโอสินค้าที่ได้รับคืนที่เกิดความเสียหาย /Photo(s) or Video showing the damaged point(s) of returned item(s)."
+                    },
+                    {
+                        "is_required": true,
+                        "module_index": 3,
+                        "requirement": "รูปภาพและวิดีโอการบรรจุสินค้าลงกล่องพัสดุก่อนนำส่ง โดยเห็นใบปะหน้าสินค้าอย่างชัดเจน/ Photo(s) or Video while packing the parcel with the consignment note (Airway Bill)."
+                    },
+                    {
+                        "is_required": true,
+                        "module_index": 4,
+                        "requirement": "รูปภาพกล่องพัสดุที่ได้รับคืนทุกด้าน/ Photo(s) showing all side of the received parcel."
+                    }
+                ],
+                "sample_evidence": [
+                    {
+                        "thumbnail": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_2b6fc7719dce44daa2982c6444028498_tn.jpg",
+                        "type": 1,
+                        "url": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_2b6fc7719dce44daa2982c6444028498.jpg"
+                    },
+                    {
+                        "thumbnail": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_15ff73d4f4a34d6fbb2944ceb49bdd19_tn.jpg",
+                        "type": 1,
+                        "url": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_15ff73d4f4a34d6fbb2944ceb49bdd19.jpg"
+                    },
+                    {
+                        "thumbnail": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_6c884dd6f7924b7e9f8d54a2a9d100e6_tn.jpg",
+                        "type": 1,
+                        "url": "https://fileproxy.scsusercontent.com/api/v2/files/c2hvcGVlLWRyYzAx/bf10d801_6c884dd6f7924b7e9f8d54a2a9d100e6.jpg"
+                    }
+                ]
+            }
+        ]
+    }
+}

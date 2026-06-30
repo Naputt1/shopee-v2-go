@@ -1,0 +1,102 @@
+{
+    "error": "",
+    "request_id": "77d031430cb946209c877fef646be9f5",
+    "response": {
+        "list": [
+            {
+                "prepaid_account_check_man": "",
+                "prepaid_account_courier_key": "jd",
+                "prepaid_account_courier_name": "京东快递",
+                "prepaid_account_id": 19,
+                "prepaid_account_is_default": true,
+                "prepaid_account_partner_code": "",
+                "prepaid_account_partner_id": "020K3075414",
+                "prepaid_account_partner_name": "",
+                "prepaid_account_partner_net": ""
+            },
+            {
+                "prepaid_account_check_man": "",
+                "prepaid_account_courier_key": "shunfeng",
+                "prepaid_account_courier_name": "顺丰（丰密面单）",
+                "prepaid_account_id": 139,
+                "prepaid_account_is_default": false,
+                "prepaid_account_partner_code": "qingqiang test",
+                "prepaid_account_partner_id": "qingqiang test",
+                "prepaid_account_partner_key": "***********est",
+                "prepaid_account_partner_name": "",
+                "prepaid_account_partner_net": "",
+                "prepaid_account_partner_secret": "***********est"
+            },
+            {
+                "prepaid_account_check_man": "",
+                "prepaid_account_courier_key": "shunfengkuaiyun",
+                "prepaid_account_courier_name": "顺丰快运",
+                "prepaid_account_id": 136,
+                "prepaid_account_is_default": false,
+                "prepaid_account_partner_code": "",
+                "prepaid_account_partner_id": "ajdfkajskdfjsa",
+                "prepaid_account_partner_name": "",
+                "prepaid_account_partner_net": ""
+            },
+            {
+                "prepaid_account_check_man": "",
+                "prepaid_account_courier_key": "huitongkuaidi",
+                "prepaid_account_courier_name": "百世快递",
+                "prepaid_account_id": 135,
+                "prepaid_account_is_default": false,
+                "prepaid_account_partner_code": "",
+                "prepaid_account_partner_id": "dafdsfs",
+                "prepaid_account_partner_key": "***asf",
+                "prepaid_account_partner_name": "",
+                "prepaid_account_partner_net": ""
+            },
+            {
+                "prepaid_account_check_man": "232323",
+                "prepaid_account_courier_key": "yundadiantongda",
+                "prepaid_account_courier_name": "韵达点通达",
+                "prepaid_account_id": 134,
+                "prepaid_account_is_default": false,
+                "prepaid_account_partner_code": "",
+                "prepaid_account_partner_id": "",
+                "prepaid_account_partner_name": "",
+                "prepaid_account_partner_net": "2323"
+            },
+            {
+                "prepaid_account_check_man": "",
+                "prepaid_account_courier_key": "jtexpress",
+                "prepaid_account_courier_name": "极兔速递",
+                "prepaid_account_id": 133,
+                "prepaid_account_is_default": false,
+                "prepaid_account_partner_code": "",
+                "prepaid_account_partner_id": "238237823",
+                "prepaid_account_partner_key": "*****323",
+                "prepaid_account_partner_name": "",
+                "prepaid_account_partner_net": ""
+            },
+            {
+                "prepaid_account_check_man": "",
+                "prepaid_account_courier_key": "debangkuaidi",
+                "prepaid_account_courier_name": "德邦快递",
+                "prepaid_account_id": 132,
+                "prepaid_account_is_default": false,
+                "prepaid_account_partner_code": "",
+                "prepaid_account_partner_id": "2344343",
+                "prepaid_account_partner_name": "",
+                "prepaid_account_partner_net": ""
+            },
+            {
+                "prepaid_account_check_man": "",
+                "prepaid_account_courier_key": "debangwuliu",
+                "prepaid_account_courier_name": "德邦物流",
+                "prepaid_account_id": 131,
+                "prepaid_account_is_default": false,
+                "prepaid_account_partner_code": "",
+                "prepaid_account_partner_id": "1233444",
+                "prepaid_account_partner_name": "",
+                "prepaid_account_partner_net": ""
+            }
+        ],
+        "more": false,
+        "total": 8
+    }
+}

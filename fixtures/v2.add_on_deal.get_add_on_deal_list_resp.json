@@ -1,0 +1,22 @@
+{
+    "message": "",
+    "request_id": "dc46d78810be446693995d31d03312c0",
+    "response": {
+        "add_on_deal_list": [
+            {
+                "start_time": 1617105600,
+                "purchase_min_spend": "3.0",
+                "promotion_type": 0,
+                "source": 1,
+                "add_on_deal_id": 20183,
+                "end_time": 1617195600,
+                "add_on_deal_name": "Bundle deal name test",
+                "per_gift_num": 1,
+                "promotion_purchase_limit": 12,
+                "sub_item_priority":[]
+            }
+        ],
+        "more": true
+    },
+    "error": ""
+}

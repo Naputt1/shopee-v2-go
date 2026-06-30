@@ -1,0 +1,25 @@
+{
+	"error": "-",
+	"message": "-",
+	"warning": "-",
+	"request_id": "7b9da0c6926642199c33ee9dd3a266f5",
+	"response": {
+		"direct_item_price": [
+			{
+				"shop_id": 224499453,
+				"region": "SG",
+				"hidden_price": 0.1,
+				"item_model_price_list": [
+					{
+						"model_id": 1234,
+						"tier_index": [
+							0,
+							1
+						],
+						"price": 1000.5
+					}
+				]
+			}
+		]
+	}
+}

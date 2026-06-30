@@ -1,0 +1,44 @@
+{
+	"error": "",
+	"message": "",
+	"warning": "",
+	"request_id": "6f235f4a343e4feb8a9ed74c439f6663",
+	"response": [
+		{
+			"shop_id": 123,
+			"region": "SG",
+			"campaign_list": [
+				{
+					"campaign_id": 12121,
+					"ad_type": "auto",
+					"campaign_placement": "search",
+					"ad_name": "name",
+					"metrics_list": [
+						{
+							"hour": 14,
+							"date": "12-12-2023",
+							"impression": 111,
+							"clicks": 222,
+							"ctr": 12.23,
+							"expense": 11.22,
+							"broad_gmv": 1.2,
+							"broad_order": 100,
+							"broad_order_amount": 200,
+							"broad_roi": 2.3,
+							"broad_cir": 3.4,
+							"cr": 4.5,
+							"cpc": 5.6,
+							"direct_order": 999,
+							"direct_order_amount": 1111,
+							"direct_gmv": 12.23,
+							"direct_roi": 23.34,
+							"direct_cir": 34.45,
+							"direct_cr": 45.56,
+							"cpdc": 56.67
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+    "request_id": "XaGzWciZTDGoPrbfptSparmIwYkUycPb",
+    "error": "firstmile.batch_api_all_failed",
+    "message": "All failed, please check result_list for detail",
+    "response": {
+        "first_mile_tracking_number": "CNF918114805245200519",
+        "order_list": [
+            {
+                "order_sn": "2004239MRBBFPJ",
+                "fail_message": "The status of order(order_sn: 2004239MRBBFPJ) is invalid.",
+                "fail_error": "firstmile.invalid_order_status"
+            },
+            {
+                "order_sn": "20042025DAD68U",
+                "package_number": "2332058284081153446",
+                "fail_message": "Inner error, please try later. [4]",
+                "fail_error": "error_network"
+            }
+        ]
+    },
+    "warning": [
+        {
+            "order_sn": "2004239MRBBFPJ"
+        },
+        {
+            "order_sn": "20042025DAD68U",
+            "package_number": "2332058284081153446"
+        }
+    ]
+}

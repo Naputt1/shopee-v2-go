@@ -1,0 +1,14 @@
+{
+	"error": "error_shop_not_exists",
+	"message": "Invalid partner_id or shopid.",
+	"request_id": "6745b892295d750abf83a29430510400",
+	"response": {
+		"holiday_mode_on": true,
+		"holiday_mode_mtime": 1763435974,
+		"holiday_mode_type": 1,
+		"holiday_mode_start_time": 1770883200,
+		"holiday_mode_end_time": 1773305999,
+		"holiday_mode_description": "\"Spring Festival\"",
+		"debug_msg": "\"\""
+	}
+}

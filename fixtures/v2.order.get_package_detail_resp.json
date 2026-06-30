@@ -1,0 +1,93 @@
+{
+	"error": "-",
+	"message": "-",
+	"request_id": "69ee3f61ec6f4e3f85836391e5b78dbc",
+	"response": {
+		"package_list": [
+			{
+				"order_sn": "220831EGF1JMXF",
+				"package_number": "OFG1156498731071468",
+				"fulfillment_status": "LOGISTICS_READY",
+				"update_time": 1661950674,
+				"logistics_channel_id": 80008,
+				"shipping_carrier": "JNE Trucking (JTR) LPS",
+				"allow_self_design_awb": true,
+				"days_to_ship": 3,
+				"ship_by_date": 1662209873,
+				"pending_terms": [
+					"SYSTEM_PENDING"
+				],
+				"pending_description": [
+					"Order is being processed by Shopee"
+				],
+				"tracking_number": "-",
+				"tracking_number_expiration_date": 0,
+				"pickup_done_time": 0,
+				"is_split_up": false,
+				"item_list": [
+					{
+						"item_id": 2200149592,
+						"model_id": 0,
+						"item_sku": "-",
+						"model_sku": "-",
+						"model_quantity": 1,
+						"order_item_id": 2200149592,
+						"promotion_group_id": 0,
+						"product_location_id": "-",
+						"consultation_id": "-"
+					}
+				],
+				"recipient_address": {
+					"name": "b***r",
+					"phone": "******78",
+					"town": "****",
+					"district": "****",
+					"city": "****",
+					"state": "****",
+					"region": "****",
+					"zipcode": "****",
+					"full_address": "******11",
+					"geolocation": {
+						"latitude": -23.567851,
+						"longitude": -46.6912611
+					}
+				},
+				"parcel_chargeable_weight_gram": 0,
+				"group_shipment_id": 0,
+				"virtual_contact_number": "-",
+				"package_query_number": "false",
+				"sorting_group": "North",
+				"is_shipment_arranged": false,
+				"status_info_tag": {
+					"tag_id": 0,
+					"timestamp": 0
+				},
+				"can_split_order": false,
+				"can_unsplit_order": false,
+				"is_pre_order": false,
+				"prescription_images": [
+					"-"
+				],
+				"pharmacist_name": "-",
+				"prescription_approval_time": 1767679728656,
+				"prescription_rejection_time": 1767679728656,
+				"is_buyer_shop_collection": true,
+				"buyer_proof_of_collection": [
+					"-"
+				],
+				"preparation_end_time": 1772276400,
+				"driver_info": {
+					"driver_name": "",
+					"driver_phone": "",
+					"vehicle_type": "",
+					"license_plate": "",
+					"courier_photo": "",
+					"eta_start_time": 0,
+					"eta_end_time": 0,
+					"driver_status": "Driver is on the way"
+				}
+			}
+		]
+	},
+	"warning": "-"
+}

@@ -1,0 +1,63 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "317a860d2481e13608bce6ecdedcbf00:040000072c02e6ec:0300023fec684eac",
+    "response": {
+        "transit_warehouse_list": [
+            {
+                "warehouse_id": "ECP03",
+                "warehouse_name_en": "Shopee Quanzhou Transit Warehouse",
+                "warehouse_name_cn": "Shopee泉州仓",
+                "warehouse_type": 0
+            },
+            {
+                "warehouse_id": "ECP04",
+                "warehouse_name_en": "Shopee Yiwu Transit Warehouse",
+                "warehouse_name_cn": "Shopee义乌仓",
+                "warehouse_type": 0
+            },
+            {
+                "warehouse_id": "TWGZ",
+                "warehouse_name_en": "Shopee Guangzhou Transit Warehouse",
+                "warehouse_name_cn": "Shopee广州仓",
+                "warehouse_type": 0
+            },
+            {
+                "warehouse_id": "TWHZ",
+                "warehouse_name_en": "Shopee Huizhou Transit Warehouse",
+                "warehouse_name_cn": "Shopee惠州仓",
+                "warehouse_type": 0
+            },
+            {
+                "warehouse_id": "TWJN",
+                "warehouse_name_en": "Shopee North china Front TWS",
+                "warehouse_name_cn": "Shopee华北前置仓",
+                "warehouse_type": 0
+            },
+            {
+                "warehouse_id": "TWNN",
+                "warehouse_name_en": "Shopee Nanning Transit Warehouse",
+                "warehouse_name_cn": "Shopee南宁仓",
+                "warehouse_type": 0
+            },
+            {
+                "warehouse_id": "TWNS",
+                "warehouse_name_en": "Shopee Nanning Transit Warehouse",
+                "warehouse_name_cn": "Shopee南宁仓",
+                "warehouse_type": 0
+            },
+            {
+                "warehouse_id": "TWS01",
+                "warehouse_name_en": "Shopee Shenzhen Transit Warehouse",
+                "warehouse_name_cn": "Shopee深圳仓",
+                "warehouse_type": 0
+            },
+            {
+                "warehouse_id": "TWS02",
+                "warehouse_name_en": "Shopee HongKong Transit Warehouse",
+                "warehouse_name_cn": "Shopee香港仓",
+                "warehouse_type": 0
+            }
+        ]
+    }
+}

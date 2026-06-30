@@ -1,0 +1,22 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "317a860d24f7d1b81a941ef69e6f4300:040000adff1a0067:0300023c865b00dd",
+    "response": {
+        "binding_id": "DCN247547439397PU",
+        "success_list": [
+            {
+                "order_sn": "2410106R7DE3BX",
+                "package_number": "OFG182232177201507"
+            }
+        ],
+        "fail_list": [
+            {
+                "order_sn": "2004239MRBBFPJ",
+                "package_number": "",
+                "fail_error": "firstmile.invalid_order_status",
+                "fail_message": "The status of order(order_sn: 2004239MRBBFPJ) is invalid."
+            }
+        ]
+    }
+}

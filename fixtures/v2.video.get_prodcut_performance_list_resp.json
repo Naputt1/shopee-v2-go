@@ -1,0 +1,25 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "2af852cd-7420-4714-b7cd-33317f6fe548",
+	"response": {
+		"total_count": 0,
+		"has_more": true,
+		"list": [
+			{
+				"shop_id": 1,
+				"item_id": 1,
+				"item_name": "test item name",
+				"item_cover_image_url": "-",
+				"item_description": "desc",
+				"placed_orders": 1,
+				"confirmed_orders": 1,
+				"placed_sales": 1,
+				"confirmed_sales": 1,
+				"placed_unique_buyers": 1,
+				"confirmed_unique_buyers": 1,
+				"fetched_date_range": "2025-10-30"
+			}
+		]
+	}
+}

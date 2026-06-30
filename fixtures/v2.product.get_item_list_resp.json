@@ -1,0 +1,21 @@
+{
+    "error": "",
+    "message": "",
+    "warning": "",
+    "request_id": "6faac36a4a3242aabad2941e3acd7297",
+    "response": {
+        "item": [
+            {
+                "item_id": 2500139861,
+                "item_status": "NORMAL",
+                "tag": {
+                    "kit": false
+                },
+                "update_time": 1608128470
+            }
+        ],
+        "total_count": 19,
+        "has_next_page": true,
+        "next_offset": 10
+    }
+}

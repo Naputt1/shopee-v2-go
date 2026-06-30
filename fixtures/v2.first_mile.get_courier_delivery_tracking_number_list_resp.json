@@ -1,0 +1,71 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "317a860d25221bd255d8aa2e718e7300:04000014ae0c0981:0300024ff59aa73f",
+    "response": {
+        "more": false,
+        "next_cursor": "",
+        "tracking_number_list": [
+            {
+                "binding_id": "DCN240065737910MU",
+                "declare_date": "2024-10-23",
+                "first_mile_tracking_number": "",
+                "status": "NOT_AVAILABLE"
+            },
+            {
+                "binding_id": "DCN243847671461EU",
+                "declare_date": "2024-10-23",
+                "first_mile_tracking_number": "",
+                "status": "NOT_AVAILABLE"
+            },
+            {
+                "binding_id": "DCN244153350355GU",
+                "declare_date": "2024-10-23",
+                "first_mile_tracking_number": "",
+                "status": "NOT_AVAILABLE"
+            },
+            {
+                "binding_id": "DCN247810351044KU",
+                "declare_date": "2024-10-23",
+                "first_mile_tracking_number": "",
+                "status": "NOT_AVAILABLE"
+            },
+            {
+                "binding_id": "DCN248683500538OU",
+                "declare_date": "2024-10-23",
+                "first_mile_tracking_number": "",
+                "status": "NOT_AVAILABLE"
+            },
+            {
+                "binding_id": "DCN240492263001HU",
+                "declare_date": "2024-10-21",
+                "first_mile_tracking_number": "",
+                "status": "NOT_AVAILABLE"
+            },
+            {
+                "binding_id": "DCN249117217487NU",
+                "declare_date": "2024-10-21",
+                "first_mile_tracking_number": "",
+                "status": "NOT_AVAILABLE"
+            },
+            {
+                "binding_id": "DCN243600274945JU",
+                "declare_date": "2024-10-18",
+                "first_mile_tracking_number": "",
+                "status": "NOT_AVAILABLE"
+            },
+            {
+                "binding_id": "DCN245484954087LU",
+                "declare_date": "2024-10-18",
+                "first_mile_tracking_number": "",
+                "status": "NOT_AVAILABLE"
+            },
+            {
+                "binding_id": "DCN248699144540RU",
+                "declare_date": "2024-10-18",
+                "first_mile_tracking_number": "ZJS1729224232",
+                "status": "ORDER_RECEIVED"
+            }
+        ]
+    }
+}

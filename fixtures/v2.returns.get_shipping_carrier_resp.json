@@ -1,0 +1,21 @@
+{
+	"request_id": "d52ca43b277a4f9292fb8be658bfd33d",
+	"error": "-",
+	"message": "-",
+	"response": {
+		"is_shipping_proof_mandatory": true,
+		"has_uploaded_seller_arrange_proof": false,
+		"shipping_proof_template": [
+			{
+				"is_tracking_number_required": true,
+				"is_shipping_image_file_mandatory": true
+			}
+		],
+		"reverse_logistics_carrier_list": [
+			{
+				"reverse_logistics_carrier_id": 0,
+				"reverse_logistics_carrier_name": "test_reverse_logistics_carrier_name"
+			}
+		]
+	}
+}

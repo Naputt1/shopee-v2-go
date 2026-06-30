@@ -1,0 +1,80 @@
+{
+  "error":"",
+  "message": "",
+  "request_id": "11f7272477404b9989ba77183656e8b7",
+  "response": {
+    "status": "SUCCEEDED",
+    "message": "success",
+    "video_info": {
+      "video_url_list": [
+        {
+          "video_url_region": "TW",
+          "video_url": "https://cvf.shopee.tw/file/ddb50833eee1c9fda5c522a2e6fc0ea6"
+        },
+        {
+          "video_url_region": "VN",
+          "video_url": "https://cvf.shopee.vn/file/ddb50833eee1c9fda5c522a2e6fc0ea6"
+        },
+        {
+          "video_url_region": "PH",
+          "video_url": "https://cvf.shopee.ph/file/ddb50833eee1c9fda5c522a2e6fc0ea6"
+        },
+        {
+          "video_url_region": "TH",
+          "video_url": "https://cvf.shopee.co.th/file/ddb50833eee1c9fda5c522a2e6fc0ea6"
+        },
+        {
+          "video_url_region": "ID",
+          "video_url": "https://cvf.shopee.co.id/file/ddb50833eee1c9fda5c522a2e6fc0ea6"
+        },
+        {
+          "video_url_region": "MY",
+          "video_url": "https://cvf.shopee.com.my/file/ddb50833eee1c9fda5c522a2e6fc0ea6"
+        },
+        {
+          "video_url_region": "BR",
+          "video_url": "https://cvf.shopee.com.br/file/ddb50833eee1c9fda5c522a2e6fc0ea6"
+        },
+        {
+          "video_url_region": "SG",
+          "video_url": "https://cvf.shopee.sg/file/ddb50833eee1c9fda5c522a2e6fc0ea6"
+        }
+      ],
+      "thumbnail_url_list": [
+        {
+          "image_url_region": "TW",
+          "image_url": "https://cf.shopee.tw/file/75eba55932c987851abc39895047dd54"
+        },
+        {
+          "image_url_region": "VN",
+          "image_url": "https://cf.shopee.vn/file/75eba55932c987851abc39895047dd54"
+        },
+        {
+          "image_url_region": "PH",
+          "image_url": "https://cf.shopee.ph/file/75eba55932c987851abc39895047dd54"
+        },
+        {
+          "image_url_region": "TH",
+          "image_url": "https://cf.shopee.co.th/file/75eba55932c987851abc39895047dd54"
+        },
+        {
+          "image_url_region": "ID",
+          "image_url": "https://cf.shopee.co.id/file/75eba55932c987851abc39895047dd54"
+        },
+        {
+          "image_url_region": "MY",
+          "image_url": "https://cf.shopee.com.my/file/75eba55932c987851abc39895047dd54"
+        },
+        {
+          "image_url_region": "BR",
+          "image_url": "https://cf.shopee.com.br/file/75eba55932c987851abc39895047dd54"
+        },
+        {
+          "image_url_region": "SG",
+          "image_url": "https://cf.shopee.sg/file/75eba55932c987851abc39895047dd54"
+        }
+      ],
+      "duration": 15
+    }
+  }
+}

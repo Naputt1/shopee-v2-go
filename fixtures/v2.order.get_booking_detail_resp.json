@@ -1,0 +1,50 @@
+{
+	"request_id": "a8e1b94f51d64540bf5762abe7783073",
+	"error": "common.error_auth",
+	"message": "Invalid access_token.",
+	"response": {
+		"booking_list": [
+			{
+				"booking_sn": "201214JASXYXY6",
+				"order_sn": "201218V2Y6E59M",
+				"region": "MY",
+				"booking_status": "CANCELLED",
+				"match_status": "MATCH_PENDING",
+				"shipping_carrier": "Standard Delivery",
+				"create_time": 1607930885,
+				"update_time": 1608134691,
+				"recipient_address": {
+					"name": "Max",
+					"phone": "3828203",
+					"town": "Sara",
+					"district": "Dada",
+					"city": "Asajaya",
+					"state": "Sarawak",
+					"region": "MY",
+					"zipcode": "40009",
+					"full_address": "C-15-14 BLOK C JALAN 30/146, Asajaya, 40009, Sarawak"
+				},
+				"item_list": [
+					{
+						"item_name": "backpack",
+						"item_sku": "sku",
+						"model_name": "-",
+						"model_sku": "-",
+						"weight": 12,
+						"product_location_id": "-",
+						"image_info": {
+							"image_url": "-"
+						}
+					}
+				],
+				"dropshipper": "-",
+				"dropshipper_phone": "-",
+				"cancel_by": "system",
+				"cancel_reason": "BACKEND_LOGISTICS_NOT_STARTED",
+				"fulfillment_flag": "fulfilled_by_shopee",
+				"pickup_done_time": 0
+			}
+		]
+	},
+	"warning": "string[]"
+}

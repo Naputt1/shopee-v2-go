@@ -1,0 +1,30 @@
+{
+    "error": "",
+    "message": "",
+    "warning": "",
+    "request_id": "053ee90ef2bf472598b98208af02c8ad",
+    "response": {
+        "item_list": [
+            {
+                "item_id": 3200139749,
+                "cool_down_second": 59
+            },
+            {
+                "item_id": 3400138725,
+                "cool_down_second": 59
+            },
+            {
+                "item_id": 2400143710,
+                "cool_down_second": 59
+            },
+            {
+                "item_id": 2300069665,
+                "cool_down_second": 59
+            },
+            {
+                "item_id": 2700128119,
+                "cool_down_second": 59
+            }
+        ]
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "error": "",
+    "message": "",
+    "warning": "",
+    "request_id": "f87047722d944258827fd0c5ee5a3e4b",
+    "response": {
+        "failure_list": [
+            {
+                "item_id": 2300069665,
+                "failed_reason": "can not boost item repeatedly"
+            },
+            {
+                "item_id": 2400143710,
+                "failed_reason": "can not boost item repeatedly"
+            },
+            {
+                "item_id": 2700128119,
+                "failed_reason": "can not boost item repeatedly"
+            },
+            {
+                "item_id": 3200139749,
+                "failed_reason": "can not boost item repeatedly"
+            }
+        ],
+        "success_list": {
+            "item_id_list": [
+                3400138725
+            ]
+        }
+    }
+}

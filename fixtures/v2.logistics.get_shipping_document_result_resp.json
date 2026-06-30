@@ -1,0 +1,31 @@
+{
+  "message": "",
+  "warning": [
+    {
+      "order_sn": "210129H577K4AM",
+      "package_number": "2537712267513857625"
+    }
+  ],
+  "request_id": "2028925e9f1440a3b8f9c3f8f21dee8d",
+  "response": {
+    "result_list": [
+      {
+        "status": "READY",
+        "order_sn": "210129H5A7WVSE",
+        "package_number": "2537708677189632625"
+      },
+      {
+        "status": "READY",
+        "order_sn": "210129H5A7WVSE",
+        "package_number": "2537708677189633625"
+      },
+      {
+        "fail_message": "The package can not print now, please create shipping document first.Detail: order_sn",
+        "order_sn": "210129H577K4AM",
+        "fail_error": "logistics.shipping_document_should_print_first",
+        "package_number": "2537712267513857625"
+      }
+    ]
+  },
+  "error": ""
+}

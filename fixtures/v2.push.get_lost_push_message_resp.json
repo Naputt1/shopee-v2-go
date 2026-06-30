@@ -1,0 +1,18 @@
+{
+	"error": "-",
+	"message": "-",
+	"warning": "-",
+	"request_id": "1f34a2c99335ffe85744d98e07fe7d41",
+	"response": {
+		"push_message_list": [
+			{
+				"shop_id": 727720655,
+				"code": 3,
+				"timestamp": 1660123127,
+				"data": "{\"data\":{\"items\":[],\"ordersn\":\"220810QSK8S7BX\",\"status\":\"PROCESSED\",\"completed_scenario\":\"\",\"update_time\":1660123127},\"shop_id\":727720655,\"code\":3,\"timestamp\":1660123127}"
+			}
+		],
+		"has_next_page": false,
+		"last_message_id": 176610
+	}
+}

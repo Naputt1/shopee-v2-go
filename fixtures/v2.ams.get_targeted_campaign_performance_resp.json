@@ -1,0 +1,20 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"response": {
+		"list": [
+			{
+				"campaign_id": 25109087,
+				"affiliates": 199,
+				"sales": "4851",
+				"item_sold": 6,
+				"est_commission": "56",
+				"campaign_name": "sysy"
+			}
+		],
+		"total_count": 589,
+		"has_more": true,
+		"fetched_date_range": "20250801-20250831"
+	}
+}

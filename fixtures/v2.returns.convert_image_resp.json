@@ -1,0 +1,9 @@
+{
+	"request_id": "openapi-5c30ac4af4a567464b3bcb85f327d0de",
+	"error": " ",
+	"message": "success",
+	"response": {
+		"url": "https://file-proxy.seller.test.shopee.com/api/v2/files/c2hvcGVlLWRyYzAx/6cd5662c25964655827057bb2bfa69e2.png",
+		"thumbnail": "https://file-proxy.seller.test.shopee.com/api/v2/files/c2hvcGVlLWRyYzAx/6cd5662c25964655827057bb2bfa69e2.png"
+	}
+}

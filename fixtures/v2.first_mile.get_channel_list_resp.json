@@ -1,0 +1,34 @@
+{
+    "request_id": "BzadQEPmuYhHPhkzhuKDeRhZuFYLFRBC",
+    "error": "",
+    "message": "",
+    "response": {
+        "logistics_channel_list": [
+            {
+                "shipment_method": "dropoff",
+                "logistics_channel_id": 1,
+                "logistics_channel_name": "金岸物流"
+            },
+            {
+                "shipment_method": "dropoff",
+                "logistics_channel_id": 2,
+                "logistics_channel_name": "海带宝"
+            },
+            {
+                "shipment_method": "dropoff",
+                "logistics_channel_id": 3,
+                "logistics_channel_name": "斑马物流"
+            },
+            {
+                "shipment_method": "dropoff",
+                "logistics_channel_id": 4,
+                "logistics_channel_name": "信丰物流"
+            },
+            {
+                "shipment_method": "dropoff",
+                "logistics_channel_id": 5,
+                "logistics_channel_name": "宜送物流"
+            }
+        ]
+    }
+}

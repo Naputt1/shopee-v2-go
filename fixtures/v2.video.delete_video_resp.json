@@ -1,0 +1,14 @@
+{
+	"error": "",
+	"message": "",
+	"response": {
+		"success_list": [
+			{
+				"success_video_upload_id": "sg-11110199-6v8gq-mgbni6rb44qz04",
+				"success_post_id": null
+			}
+		],
+		"failure_list": []
+	},
+	"request_id": "63d15f2f-018d-4581-9b25-b67aff42c688"
+}

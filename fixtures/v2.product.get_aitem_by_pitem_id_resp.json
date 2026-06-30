@@ -1,0 +1,32 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "317a860d2520b24b2698b922b3bbe600",
+    "response": {
+        "aitem_list": [
+            {
+                "aitem_id": 843997618,
+                "ashop_id": 223009454,
+                "ashop_region": "SG",
+                "model_mapping_list": [
+                    {
+                        "amodel_id": 11055093,
+                        "pmodel_id": 11055090
+                    }
+                ]
+            },
+            {
+                "aitem_id": 843997617,
+                "ashop_id": 223409366,
+                "ashop_region": "PH",
+                "model_mapping_list": [
+                    {
+                        "amodel_id": 11055092,
+                        "pmodel_id": 11055090
+                    }
+                ]
+            }
+        ]
+    },
+    "warning": ""
+}

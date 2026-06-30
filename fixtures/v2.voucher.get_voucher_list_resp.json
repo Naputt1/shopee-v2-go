@@ -1,0 +1,42 @@
+{
+    "response": {
+        "more": true,
+        "voucher_list": [
+            {
+                "voucher_id": 395841407827968,
+                "voucher_code": "TESTTEST1",
+                "voucher_name": "test voucher",
+                "voucher_type": 1,
+                "reward_type": 1,
+                "usage_quantity": 11,
+                "current_usage": 0,
+                "start_time": 1656647700,
+                "end_time": 1659243300,
+                "is_admin": false,
+                "voucher_purpose": 0,
+                "discount_amount": 60,
+                "target_voucher": 0,
+                "display_start_time": 0
+            },
+            {
+                "voucher_id": 136496996696064,
+                "voucher_code": "SFP-136496996696064",
+                "voucher_name": "67657",
+                "voucher_type": 1,
+                "reward_type": 3,
+                "usage_quantity": 4,
+                "current_usage": 0,
+                "start_time": 1626249840,
+                "end_time": 1627027500,
+                "is_admin": false,
+                "voucher_purpose": 3,
+                "percentage": 5,
+                "target_voucher": 0,
+                "display_start_time": 0
+            }
+        ]
+    },
+    "request_id": "c926b49d489a143f415e7197adc9686b",
+    "error": "",
+    "message": ""
+}

@@ -1,0 +1,10 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"response": {
+		"status": "Doing",
+		"progress_rate": 80,
+		"fail_reason": ""
+	}
+}

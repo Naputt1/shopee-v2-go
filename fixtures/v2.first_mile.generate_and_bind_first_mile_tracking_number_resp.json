@@ -1,0 +1,22 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "317a860d24a78058b47d1a5ae67ff700:040000d06621af77:0300021f9befdc9c",
+    "response": {
+        "binding_id": "DCN241681623620GU",
+        "success_list": [
+            {
+                "order_sn": "2410106R7TSAJR",
+                "package_number": null
+            }
+        ]
+        "fail_list": [
+            {
+                "order_sn": "2004239MRBBFPJ",
+                "package_number": "",
+                "fail_error": "firstmile.package_has_bind",
+                "fail_message": "Package (order_sn: 2004239MRBBFPJ, package_number: ) has been bind to first mile code."
+            }
+        ]
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "error": "",
+    "message": "",
+    "warning": "",
+    "request_id": "558ce5454c9b461aad47aa5cd8bb1e9f",
+    "response":{
+        "brand_id":1234,
+        "original_brand_name":"brand_name"
+    }
+}

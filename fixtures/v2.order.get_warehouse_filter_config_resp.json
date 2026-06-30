@@ -1,0 +1,16 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "",
+	"response": {
+		"warehouse_filters": [
+			{
+				"warehouse_name": "Warehouse1",
+				"warehouse_type": 1,
+				"product_location_id": "VN001GGYZ",
+				"address_id": 200000016,
+				"address": "167/2 Đ. Nguyễn Ảnh Thủ"
+			}
+		]
+	}
+}

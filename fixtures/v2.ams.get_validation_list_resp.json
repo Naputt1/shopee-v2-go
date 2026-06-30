@@ -1,0 +1,31 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"response": {
+		"validation_list": [
+			{
+				"validation_id": "363636002508",
+				"payment_method": 1,
+				"validation_month": 202508,
+				"campaign_source": "ShopeeManaged",
+				"online_bill": {
+					"total_amount": 300,
+					"bill_status": 2,
+					"deducted_amount": 300,
+					"ams_credit_deducted_amount": 200,
+					"pending_amount": 0
+				},
+				"offline_bills": [
+					{
+						"order_place_month": 202507,
+						"total_amount": 420.5,
+						"commission_amount": 200,
+						"commission_amount_after_tax": 220,
+						"ams_credit_deducted_amount": 200.5
+					}
+				]
+			}
+		]
+	}
+}

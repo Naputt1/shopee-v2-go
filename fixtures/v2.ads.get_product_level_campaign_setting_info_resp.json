@@ -1,0 +1,56 @@
+{
+	"error": "-",
+	"message": "-",
+	"warning": "-",
+	"request_id": "6f235f4a343e4feb8a9ed74c439f6663",
+	"response": {
+		"shop_id": 121212,
+		"region": "SG",
+		"campaign_list": [
+			{
+				"campaign_id": 11111,
+				"common_info": {
+					"ad_type": "auto",
+					"ad_name": "name",
+					"campaign_status": "ongoing",
+					"bidding_method": "auto",
+					"campaign_placement": "all",
+					"campaign_budget": 12.5,
+					"campaign_duration": {
+						"start_time": 1234567890,
+						"end_time": 0
+					},
+                                       "item_id_list": [1]
+				},
+				"manual_bidding_info": {
+					"enhanced_cpc": true,
+					"selected_keywords": [
+						{
+							"keyword": "keyword",
+							"status": "deleted",
+							"match_type": "exact",
+							"bid_price_per_click": 10.5
+						}
+					],
+					"discovery_ads_locations": [
+						{
+							"location": "daily_discover",
+							"status": "active",
+							"bid_price": 11.5
+						}
+					]
+				},
+				"auto_bidding_info": {
+					"roas_target": 6.5
+				},
+				"auto_product_ads_info": [
+					{
+						"product_name": "name1",
+						"status": "learning",
+						"item_id": 1
+					}
+				]
+			}
+		]
+	}
+}

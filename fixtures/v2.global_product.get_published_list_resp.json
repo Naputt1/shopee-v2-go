@@ -1,0 +1,16 @@
+{
+    "error": "",
+    "message": "",
+    "warning": "",
+    "request_id": "369c79e9a42147f6912e2bf21c96ba23",
+    "response": {
+        "published_item": [
+            {
+                "shop_id": 1000567,
+                "shop_region": "TW",
+                "item_id": 1899023,
+                "item_status": 1
+            }
+        ]
+    }
+}

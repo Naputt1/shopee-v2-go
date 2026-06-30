@@ -1,0 +1,39 @@
+{
+	"request_id": "2880a5a28510424eaa3288fd941fae2c",
+	"error": "error_auth",
+	"message": "Invalid access_token.",
+	"response": {
+		"info_needed": {
+			"dropoff": [],
+			"pickup": [
+				"address_id",
+				"pickup_time_id"
+			]
+		},
+		"pickup": {
+			"address_list": [
+				{
+					"region": "SG",
+					"state": "Sarawak",
+					"city": "-",
+					"district": "-",
+					"town": "haha",
+					"address": "-",
+					"zipcode": "50003",
+					"address_flag": [
+						"-"
+					],
+					"time_slot_list": [
+						{
+							"date": 1718341672250,
+							"time_text": "-",
+							"pickup_time_id": "-",
+							"error": "-",
+							"msg": "-"
+						}
+					]
+				}
+			]
+		}
+	}
+}

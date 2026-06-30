@@ -1,0 +1,69 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "5a03a5f0-5283-48a2-8546-e1d4809046a3",
+	"response": {
+		"age": {
+			"1": 450,
+			"2": 580
+			"3": 558,
+			"4": 530
+		},
+		"gender": {
+			"Male": 635,
+			"Female": 1483
+		},
+		"identity": {
+			"follow": 1694,
+			"unfollow": 424
+		},
+		"location": {
+			"KOTA JAKARTA SELATAN": 1270,
+			"KAB. BADUNG": 848
+		},
+		"activity": {
+			"0": 56,
+			"1": 35,
+			"2": 24,
+			"3": 16,
+			"4": 11,
+			"5": 21,
+			"6": 32,
+			"7": 48,
+			"8": 59,
+			"9": 70,
+			"10": 85,
+			"11": 35,
+			"12": 25,
+			"13": 85,
+			"14": 28,
+			"15": 61,
+			"16": 90,
+			"17": 89,
+			"18": 261,
+			"19": 250,
+			"20": 228,
+			"21": 154,
+			"22": 166,
+			"23": 189
+		},
+		"content": {
+			"Beauty & Fashion": 728,
+			"Travel": 519,
+			"Auto & Vehicle": 353,
+			"Entertainment": 194,
+			"Technology": 163,
+			"Comedy & Acting": 88,
+			"Food & Drink": 73
+		},
+		"shopping": {
+			"Beauty": 768,
+			"Home & Living": 549
+			"Women Clothes": 373,
+			"Muslim Fashion": 154,
+			"Mom & Baby": 133,
+			"Health": 78,
+			"Mobile & Gadgets": 63
+		}
+	}
+}

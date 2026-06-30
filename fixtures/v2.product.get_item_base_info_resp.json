@@ -1,0 +1,150 @@
+{
+    "error": "-",
+    "message": "-",
+    "warning": "-",
+    "request_id": "7b9da0c6926642199c33ee9dd3a266f5",
+    "response": {
+        "item_list": [
+            {
+                "item_id": 34002,
+                "category_id": 14646,
+                "item_name": "seller discount",
+                "description": "first product 001first product",
+                "item_sku": "-",
+                "create_time": 1600572637,
+                "update_time": 1600572640,
+                "attribute_list": [
+                    {
+                        "attribute_id": 4811,
+                        "original_attribute_name": "Brand: L2 Default [14644]",
+                        "is_mandatory": true,
+                        "attribute_value_list": [
+                            {
+                                "value_id": 0,
+                                "original_value_name": "Default",
+                                "value_unit": "g"
+                            }
+                        ]
+                    }
+                ],
+                "price_info": [
+                    {
+                        "currency": "SGD",
+                        "original_price": 122.02,
+                        "current_price": 122.02,
+                        "inflated_price_of_original_price": 222.02,
+                        "inflated_price_of_current_price": 111.02,
+                        "sip_item_price": 100.02,
+                        "sip_item_price_source": "auto"
+                    }
+                ],
+                "image": {
+                    "image_url_list": [
+                        "-"
+                    ],
+                    "image_id_list": [
+                        "-"
+                    ]
+                },
+                "weight": "10.02",
+                "dimension": {
+                    "package_length": 11,
+                    "package_width": 12,
+                    "package_height": 13
+                },
+                "logistic_info": [
+                    {
+                        "logistic_id": 80012,
+                        "logistic_name": "-",
+                        "enabled": true,
+                        "shipping_fee": 5.02,
+                        "size_id": 0,
+                        "is_free": true,
+                        "estimated_shipping_fee": 4.02
+                    }
+                ],
+                "pre_order": {
+                    "is_pre_order": true,
+                    "days_to_ship": 3
+                },
+                "wholesales": [
+                    {
+                        "min_count": 1,
+                        "max_count": 2,
+                        "unit_price": 4.02,
+                        "inflated_price_of_unit_price": 5.02
+                    }
+                ],
+                "condition": "NEW/USED",
+                "size_chart": "-",
+                "item_status": "NORMAL",
+                "deboost": "false",
+                "has_model": true,
+                "promotion_id": 13123,
+                "video_info": [
+                    {
+                        "video_url": "-",
+                        "thumbnail_url": "-",
+                        "duration": 0
+                    }
+                ],
+                "brand": {
+                    "brand_id": 123,
+                    "original_brand_name": "nike"
+                },
+                "item_dangerous": 0,
+                "complaint_policy": {
+                    "warranty_time": " ONE_YEAR",
+                    "exclude_entrepreneur_warranty": true,
+                    "complaint_address_id": 0,
+                    "additional_information": "-"
+                },
+                "tax_info": {
+                    "ncm": "-",
+                    "diff_state_cfop": "-",
+                    "csosn": "-",
+                    "origin": "-",
+                    "cest": "-",
+                    "measure_unit": "-",
+                    "invoice_option": "-",
+                    "vat_rate": "-",
+                    "hs_code": "-",
+                    "tax_code": "-"
+                },
+                "description_info": {
+                    "extended_description": {
+                        "field_list": [
+                            {
+                                "field_type": "-",
+                                "text": "-",
+                                "image_info": {
+                                    "image_id": "-",
+                                    "image_url": "-"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "description_type": "-",
+                "stock_info_v2": {
+                    "summary_info": {
+                        "total_reserved_stock": 100,
+                        "total_available_stock": 100
+                    },
+                    "seller_stock": [
+                        {
+                            "location_id": "-",
+                            "stock": 10
+                        }
+                    ],
+                    "shopee_stock": [
+                        {
+                            "location_id": "-",
+                            "stock": 0
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

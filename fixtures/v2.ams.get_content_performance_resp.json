@@ -1,0 +1,27 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"response": {
+		"list": [
+			{
+				"content_id": "2056471137109586",
+				"content_title": "Have been buying from this brand since 2 years ago and still loving it",
+				"post_time": 1753376400,
+				"affiliate_name": "id0807.9",
+				"affiliate_username": "interspaceindonesia",
+				"products": 11,
+				"views": 114812,
+				"likes": 93,
+				"comments": 45,
+				"sales": "78445100",
+				"orders": 78952,
+				"items_sold": 27,
+				"channel": "ShopeeVideo"
+			}
+		],
+		"total_count": 789,
+		"has_more": true,
+		"fetched_date_range": "20250801-20250831"
+	}
+}

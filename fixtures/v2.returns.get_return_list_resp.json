@@ -1,0 +1,78 @@
+{
+	"request_id": "33e099960cdf420393ca5d5c35016f6d",
+	"error": "-",
+	"message": "-",
+	"response": {
+		"more": true,
+		"return": [
+			{
+				"image": [
+					"https://cf.shopee.sg/file/166f23cbfb31bd882f51cfe7f90d3826"
+				],
+				"reason": "PHYSICAL_DMG",
+				"text_reason": "return reason",
+				"return_sn": "200203171852695",
+				"refund_amount": 1409,
+				"currency": "SGD",
+				"create_time": 1580721513,
+				"update_time": 1580729377,
+				"status": "CANCELLED",
+				"due_date": 1580721513,
+				"tracking_number": "RNSHS00177569",
+				"dispute_reason": [
+					"UNKNOWN"
+				],
+				"dispute_text_reason": [
+					"reason"
+				],
+				"needs_logistics": true,
+				"amount_before_discount": 1409,
+				"user": {
+					"username": "abcdefg",
+					"email": "***********r1@shopee.com",
+					"portrait": "https://cf.shopee.sg/file/166f23cbfb31bd882f51cfe7f90d3826"
+				},
+				"item": [
+					{
+						"model_id": 0,
+						"name": "agsabdmnambd",
+						"images": [
+							"https://cf.shopee.sg/file/166f23cbfb31bd882f51cfe7f90d3826"
+						],
+						"amount": 1,
+						"item_price": 1409.9,
+						"is_add_on_deal": false,
+						"is_main_item": false,
+						"add_on_deal_id": 0,
+						"item_id": 2147533133,
+						"item_sku": "USB",
+						"variation_sku": "RED"
+					}
+				],
+				"order_sn": "200203C6W0AR27",
+				"return_ship_due_date": 1655438336,
+				"return_seller_due_date": 1655438336,
+				"negotiation_status": "PENDING_RESPOND",
+				"seller_proof_status": "PENDING",
+				"seller_compensation_status": "PENDING_REQUEST",
+				"return_refund_type": "RRAOC",
+				"return_solution": 0,
+				"is_seller_arrange": false,
+				"is_shipping_proof_mandatory": false,
+				"return_refund_request_type": 0,
+				"validation_type": "seller_validation",
+				"is_arrived_at_warehouse": 3,
+				"follow_up_action_list": [
+					{
+						"item_id": 2700126223,
+						"model_id": 2000458802,
+						"qty": 2,
+						"current_status": 2,
+						"related_order_sn_list": [],
+						"resell_failed_next_step": ""
+					}
+				]
+			}
+		]
+	}
+}

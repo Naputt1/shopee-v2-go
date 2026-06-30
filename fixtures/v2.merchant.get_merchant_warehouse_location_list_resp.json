@@ -1,0 +1,11 @@
+{
+    "error": null,
+    "message": null,
+    "request_id": "7131251eb8519f10dd18e03167a42d71",
+    "response": [
+        {
+            "location_id": "CNZ",
+            "warehouse_name": "warehouse1"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "request_id": "KJRsHFgoobrFfXkoglPDnfKbjXxtRrRX",
+    "error": "",
+    "message": "",
+    "response": {
+        "first_mile_tracking_number": "CNF731738838434210105",
+        "shipment_method": "pickup",
+        "logistics_channel_id": 813,
+        "status": "PICKED_UP",
+        "declare_date": "2020-05-19",
+        "order_list": [
+            {
+                "order_sn": "20012328KKGVR0",
+                "package_number": "25333320394471234567",
+                "sls_tracking_number": "TW211342705212345",
+                "pick_up_done": false,
+                "arrived_transit_warehouse": false
+            }
+        ],
+        "more": false,
+        "next_cursor": ""
+    }
+}

@@ -1,0 +1,18 @@
+{
+	"request_id": "6f235f4a343e4feb8a9ed74c439f6663",
+	"response": [
+		{
+			"item_id": 1234,
+			"item_status_list": [
+				"blocked"
+			],
+			"sku_tag_list": [
+				"best selling"
+			],
+			"ongoing_ad_type_list": [
+				"search ads",
+				"discovery ads"
+			]
+		}
+	]
+}

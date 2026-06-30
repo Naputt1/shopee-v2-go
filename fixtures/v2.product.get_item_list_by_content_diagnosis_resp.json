@@ -1,0 +1,106 @@
+{
+	"error": "",
+	"message": "",
+	"warning": "",
+	"request_id": "7c2998c41e6e2f21b60ed29ffb786100:01000054f0a3a783:00000050d2a0ccaa",
+	"response": {
+		"item_list": [
+			{
+				"item_id": 2150094574,
+				"quality_level": 2,
+				"unfinished_task": [
+					{
+						"issue_type": 10,
+						"suggestion": "Add video"
+					},
+					{
+						"issue_type": 8,
+						"suggestion": "Add characters for name to 25~100"
+					},
+					{
+						"issue_type": 7,
+						"suggestion": "Add at least 100 characters or 1 image for description"
+					},
+					{
+						"issue_type": 6,
+						"suggestion": "Add brand info"
+					}
+				]
+			},
+			{
+				"item_id": 2200146625,
+				"quality_level": 2,
+				"unfinished_task": [
+					{
+						"issue_type": 10,
+						"suggestion": "Add video"
+					},
+					{
+						"issue_type": 8,
+						"suggestion": "Add characters for name to 25~100"
+					},
+					{
+						"issue_type": 7,
+						"suggestion": "Add at least 100 characters or 1 image for description"
+					},
+					{
+						"issue_type": 6,
+						"suggestion": "Add brand info"
+					}
+				]
+			},
+			{
+				"item_id": 2200147334,
+				"quality_level": 2,
+				"unfinished_task": [
+					{
+						"issue_type": 10,
+						"suggestion": "Add video"
+					},
+					{
+						"issue_type": 8,
+						"suggestion": "Add characters for name to 25~100"
+					},
+					{
+						"issue_type": 7,
+						"suggestion": "Add at least 100 characters or 1 image for description"
+					},
+					{
+						"issue_type": 6,
+						"suggestion": "Add brand info"
+					}
+				]
+			},
+			{
+				"item_id": 3100134130,
+				"quality_level": 1,
+				"unfinished_task": [
+					{
+						"issue_type": 1,
+						"suggestion": "Add at least 3 images"
+					},
+					{
+						"issue_type": 3,
+						"suggestion": "Add at least 1 attribute"
+					}
+				]
+			},
+			{
+				"item_id": 3202976219,
+				"quality_level": 1,
+				"unfinished_task": [
+					{
+						"issue_type": 1,
+						"suggestion": "Add at least 3 images"
+					},
+					{
+						"issue_type": 3,
+						"suggestion": "Add at least 1 attribute"
+					}
+				]
+			}
+		],
+		"total_count": 10,
+		"next_offset": "3503522871,1717384659,3503522871"
+	}
+}

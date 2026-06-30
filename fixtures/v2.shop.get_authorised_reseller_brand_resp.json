@@ -1,0 +1,20 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "b8b833d5a7284dfd80f3fe8b108a1a15",
+    "response": {
+        "authorised_brand_list": [
+            {
+                "brand_id": 1,
+                "brand_name": "test brand 1"
+            },
+            {
+                "brand_id": 2,
+                "brand_name": "test brand 2"
+            }
+        ],
+        "is_authorised_reseller": true,
+        "more": false,
+        "total_count": 2
+    }
+}

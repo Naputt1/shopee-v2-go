@@ -1,0 +1,29 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "e3e3e7f3360690a5b55f0689f8a4e801",
+	"response": {
+		"more": true,
+		"next_offset": 10,
+		"list": [
+			{
+				"item": {
+					"item_id": 1,
+					"shop_id": 1,
+					"name": "test item",
+					"image_url": "-",
+					"price_info": {
+						"currency": "SGD",
+						"current_price": 100,
+						"original_price": 120
+					}
+				},
+				"metric": {
+					"item_clicks": 1,
+					"atc": 1,
+					"sold_items": 1
+				}
+			}
+		]
+	}
+}

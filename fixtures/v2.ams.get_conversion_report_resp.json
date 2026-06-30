@@ -1,0 +1,50 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"response": {
+		"list": [
+			{
+				"order_sn": "YSWVY8D7OU",
+				"order_status": "Pending",
+				"verified_status": "Unverified",
+				"place_order_time": "2025/8/10 15:36:22",
+				"order_completed_time": "2025/8/10 13:10:00",
+				"conversion_completed_time": "2025/8/9 17:38:54",
+				"affiliate_id": 11393990003,
+				"affiliate_name": "Yoyi popup",
+				"affiliate_username": "yiyi.test.0206.19",
+				"linked_mcn": "auto.id.108",
+				"order_brand_commission": "2999.7",
+				"channel": "Telegram",
+				"order_type": "Direct Order",
+				"buyer_status": "Existing",
+				"items": [
+					{
+						"item_id": 3903624400,
+						"item_name": "item1",
+						"model_id": 1232348722,
+						"l1_category_id": 104136,
+						"l2_category_id": 204136,
+						"l3_category_id": 404136,
+						"promotion_id": "36262963_0_0",
+						"price": 9090,
+						"qty": 1,
+						"seller_campaign_type": "Seller Open Campaign",
+						"attr_campaign_id": 1130273167000412,
+						"purchase_value": 9099,
+						"refund_amount": "50",
+						"item_brand_commission": "899.91",
+						"item_brand_commission_rate_to_affiliate": "10%",
+						"item_brand_commission_to_affiliate": "899.91",
+						"item_brand_commission_rate_to_mcn": "33%",
+						"item_brand_commission_to_mcn": "2999.7"
+					}
+				],
+				"campaign_partner": "testid.mcn.0"
+			}
+		],
+		"total_count": 345,
+		"has_more": true
+	}
+}

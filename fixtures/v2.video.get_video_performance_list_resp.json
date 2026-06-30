@@ -1,0 +1,34 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "2af852cd-7420-4714-b7cd-33317f6fe548",
+	"response": {
+		"total_count": 1,
+		"has_more": false,
+		"list": [
+			{
+				"video_upload_id": "id-11110201-6ko2m-mczrffx878mba3",
+				"post_id": "YwOo_gZqCACXbM0UAAAAAA==",
+				"post_time": 1761188662147,
+				"video_url": "https://down-bs-id.vod.susercontent.com/c3/50007225/201/A3oxONdWALgpg8thEbEBACc.mp4",
+				"status": 300,
+				"cover_image_url": "https://down-sp-id.vod.susercontent.com/c3/50007225/201/A3oyOUXSAFAbg8thIfYBBgAn.jpg",
+				"caption": "#tt Tt1",
+				"duration": "6866",
+				"views": 1,
+				"likes": 1,
+				"comments": 1,
+				"shares": 1,
+				"avg_views_duration": 1,
+				"completion_rate": 1,
+				"placed_orders": 1,
+				"confirmed_orders": 1,
+				"placed_sales": 1.2,
+				"confirmed_sales": 1,
+				"placed_item_sold": 1,
+				"confirmed_item_sold": 1,
+				"fetched_date_range": "2025-10-30"
+			}
+		]
+	}
+}

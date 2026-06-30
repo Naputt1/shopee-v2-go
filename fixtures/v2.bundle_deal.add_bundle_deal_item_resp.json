@@ -1,0 +1,19 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "fdsfsdafdasfbgvfdgergd",
+    "response": {
+        "failed_list": [
+            {
+                "item_id": 1234,
+                "fail_error": "bundle.bundle_deal_no_shipping_channel",
+                "fail_message": "This product does not set shipping channel."
+            }
+        ],
+        "success_list": [
+            1111,
+            2222,
+            3333
+        ]
+    }
+}

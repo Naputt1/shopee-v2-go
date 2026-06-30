@@ -1,0 +1,50 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "e3e3e7f32548e92b41e998f5fdaaa601:0100028f2ced96f3:0000004e400ff9e3",
+    "response": {
+        "punishment_list": [
+            {
+                "end_time": 1731053730,
+                "issue_time": 1728634530,
+                "punishment_type": 1110,
+                "reason": 1110,
+                "reference_id": 764883890656512286,
+                "start_time": 1728634530
+            },
+            {
+                "end_time": 1731053161,
+                "issue_time": 1728633961,
+                "punishment_type": 602,
+                "reason": 3,
+                "reference_id": 764881502478534572,
+                "start_time": 1728633961
+            },
+            {
+                "end_time": 1731053161,
+                "issue_time": 1728633961,
+                "punishment_type": 108,
+                "reason": 3,
+                "reference_id": 764881502478534575,
+                "start_time": 1728633961
+            },
+            {
+                "end_time": 1731053161,
+                "issue_time": 1728633961,
+                "punishment_type": 107,
+                "reason": 3,
+                "reference_id": 764881502478534574,
+                "start_time": 1728633961
+            },
+            {
+                "end_time": 1730971452,
+                "issue_time": 1728552252,
+                "punishment_type": 1109,
+                "reason": 1109,
+                "reference_id": 764538790430638657,
+                "start_time": 1728552252
+            }
+        ],
+        "total_count": 5
+    }
+}

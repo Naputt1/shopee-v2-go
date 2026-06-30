@@ -1,0 +1,20 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "e3e3e7f3360690a5b55f0689f8a4e801",
+	"response": {
+		"gmv": 1,
+		"atc": 1,
+		"ctr": 0.1,
+		"co": 0.1,
+		"orders": 1,
+		"ccu": 1,
+		"engage_ccu_1m": 1,
+		"peak_ccu": 1,
+		"likes": 1,
+		"comments": 1,
+		"shares": 1,
+		"views": 1,
+		"avg_viewing_duration": 1
+	}
+}

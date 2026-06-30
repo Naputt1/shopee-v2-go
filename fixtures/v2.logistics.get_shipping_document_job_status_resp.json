@@ -1,0 +1,10 @@
+{
+	"request_id": "5551ce8db5314c70a362dfe33544f074",
+	"error": "",
+	"message": "",
+	"response": {
+		"job_id": "SDK0001_a86148a97a6e04ce2ed468968de344b7",
+		"job_name": "SKU ID (Thermal).*0.pdf",
+		"job_status": "READY"
+	}
+}

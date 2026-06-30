@@ -1,0 +1,89 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "688cd3b6725f12caadbe1e8e804c5041",
+    "response": {
+        "item_info": [
+            {
+                "image": "08b3fc410c8eaa7e3f52b06b486a8658",
+                "item_id": 3744623870,
+                "item_name": "platform sale product - 1723605523",
+                "status": 1
+            },
+            {
+                "image": "sg-11134201-7rbk0-lz7jo094tt1ubf",
+                "item_id": 3744624265,
+                "item_name": "2 Var diff price",
+                "status": 1
+            }
+        ],
+        "models": [
+            {
+                "campaign_stock": 2,
+                "input_promotion_price": 69.3,
+                "item_id": 3744623870,
+                "model_id": 5414485721,
+                "model_name": "Yellow",
+                "original_price": 77,
+                "promotion_price_with_tax": 75.54,
+                "purchase_limit": 0,
+                "reject_reason": "",
+                "status": 1,
+                "stock": 909
+            },
+            {
+                "campaign_stock": 1234,
+                "input_promotion_price": 1803.6,
+                "item_id": 3744624265,
+                "model_id": 438069048,
+                "model_name": "tesr,33",
+                "original_price": 2004,
+                "promotion_price_with_tax": 1965.92,
+                "purchase_limit": 0,
+                "reject_reason": "",
+                "status": 1,
+                "stock": 0
+            },
+            {
+                "campaign_stock": 1234,
+                "input_promotion_price": 1800.9,
+                "item_id": 3744624265,
+                "model_id": 438069049,
+                "model_name": "tes,22",
+                "original_price": 2001,
+                "promotion_price_with_tax": 1962.98,
+                "purchase_limit": 0,
+                "reject_reason": "",
+                "status": 1,
+                "stock": 0
+            },
+            {
+                "campaign_stock": 1234,
+                "input_promotion_price": 1801.8,
+                "item_id": 3744624265,
+                "model_id": 438069050,
+                "model_name": "tes,33",
+                "original_price": 2002,
+                "promotion_price_with_tax": 1963.96,
+                "purchase_limit": 0,
+                "reject_reason": "",
+                "status": 0,
+                "stock": 1234
+            },
+            {
+                "campaign_stock": 1234,
+                "input_promotion_price": 1802.7,
+                "item_id": 3744624265,
+                "model_id": 438069051,
+                "model_name": "tesr,22",
+                "original_price": 2003,
+                "promotion_price_with_tax": 1964.94,
+                "purchase_limit": 0,
+                "reject_reason": "",
+                "status": 0,
+                "stock": 1234
+            }
+        ],
+        "total_count": 2
+    }
+}

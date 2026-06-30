@@ -1,0 +1,27 @@
+{
+	"request_id": "e3e3e7f33c4d75f91fb48ecb41aa2a01:010003d71ed9e184:00000066cec6b739",
+	"error": "-",
+	"message": "-",
+	"response": {
+		"order_sn": "2409177JCSRTEU",
+		"package_number": "-",
+		"logistics_status": "LOGISTICS_DELIVERY_FAILED",
+		"tracking_info": [
+			{
+				"update_time": 1726561500,
+				"description": "包裹正退回物流中心",
+				"logistics_status": "FAILED_DELIVERED",
+				"return_code": "1234"
+			}
+		],
+		"collection_pin_code": "562891",
+		"reversed_tracking_number": "SG246907296501CU",
+		"reversed_courier_name": "SPX Express",
+		"reversed_tracking_info": [
+			{
+				"update_time": 1729842624,
+				"description": "当地仓库已备货，包裹准备发运"
+			}
+		]
+	}
+}

@@ -1,0 +1,40 @@
+{
+	"error": "",
+	"message": "",
+	"response": {
+		"video_upload_id": "tw-11110201-6kfko-mda7ss66t17u37",
+		"video_url": "https://down-aws-tw.vod.susercontent.com/c3/50007225/201/A3oyORCrABD=ZmJiIf8CCAAm.mp4",
+		"caption": "#Tt -1",
+		"cover_image_url": "https://down-tw.img.susercontent.com/tw-11134117-7ra0t-mda438ewc5xb85",
+		"duration": 18079,
+		"status": 600,
+		"item_list": [
+			{
+				"shop_id": "1452990768",
+				"item_id": "42469018866",
+				"item_name": "PM test 絕不出貨",
+				"max_price": 100,
+				"min_price": 100,
+				"item_cover_image_url": "https://cf.shopee.tw/file/tw-11134207-81ztf-meo0mustbwua34",
+				"stock": 100,
+				"custom_item_name": null
+			}
+		],
+		"allow_info": {
+			"allow_stitch": true,
+			"allow_duet": true
+		},
+		"scheduled_info": {
+			"scheduled_post": false,
+			"scheduled_post_time": null
+		},
+		"update_time": 1761805451657,
+		"views": null,
+		"likes": null,
+		"comments": null,
+		"has_performance": false,
+		"post_time": null,
+		"post_id": null
+	},
+	"request_id": "64d05306-daf9-407b-93ea-aa0de01b1e1a"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "shopee-go-v2",
+  "type": "module",
+  "scripts": {
+    "generate": "bash generate.sh"
+  },
+  "devDependencies": {
+    "@doclient/cli": "*",
+    "@doclient/core": "*",
+    "@doclient/renderer-go": "*"
+  }
+}

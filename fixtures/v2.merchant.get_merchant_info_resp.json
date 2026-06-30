@@ -1,0 +1,12 @@
+{
+    "merchant_name": "CNSC Company 7",
+    "is_cnsc": true,
+    "request_id": "4022b2fcf376045bba533b504e02476a",
+    "auth_time": 1650624369,
+    "expire_time": 1682179199,
+    "merchant_currency": "CNY",
+    "merchant_region": "CN",
+    "is_upgraded_cbsc": true,
+    "error": "",
+    "message": ""
+}

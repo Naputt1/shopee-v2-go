@@ -1,0 +1,33 @@
+{
+	"request_id": "-",
+	"error": "-",
+	"message": "-",
+	"response": {
+		"item_list": [
+			{
+				"item_id": "900625438",
+				"item_name": "跨境商品测试00002 - 1666171590",
+				"item_image": "http://mms.img.susercontent.com/08b3fc410c8eaa7e3f52b06b486a8658",
+				"sku_list": [
+					{
+						"mtsku_id": "900625438_10010402373",
+						"model_id": "10010402373",
+						"fulfill_mapping_mode": 1,
+						"variation": "Yellow,Middle",
+						"whs_list": [
+							{
+								"whs_id": "CNN",
+								"expiring_qty": 0,
+								"expired_qty": 0,
+								"expiry_blocked_qty": 0,
+								"damaged_qty": 0,
+								"normal_qty": 10,
+								"total_qty": 10
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

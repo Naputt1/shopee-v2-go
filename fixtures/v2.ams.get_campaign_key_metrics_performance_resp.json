@@ -1,0 +1,20 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"response": {
+		"open_campaign_key_metircs": {
+			"affiliates": 34,
+			"items_sold": 44,
+			"sales": "3233454",
+			"est_commission": "5675675"
+		},
+		"targeted_campaign_key_metircs": {
+			"affiliates": 34,
+			"items_sold": 56,
+			"sales": "6767",
+			"est_commission": "46775"
+		},
+		"fetched_date_range": "20250801-20250831"
+	}
+}

@@ -1,0 +1,32 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "714ef30d3afbbc83c14386b6e9644341",
+    "response": [
+        {
+            "end_time": 1723654799,
+            "start_time": 1723651200,
+            "timeslot_id": 236767490043904
+        },
+        {
+            "end_time": 1723741199,
+            "start_time": 1723737600,
+            "timeslot_id": 238023522603008
+        },
+        {
+            "end_time": 1723784399,
+            "start_time": 1723780800,
+            "timeslot_id": 238528592310272
+        },
+        {
+            "end_time": 1723823999,
+            "start_time": 1723820400,
+            "timeslot_id": 238024130777088
+        },
+        {
+            "end_time": 1723913999,
+            "start_time": 1723910400,
+            "timeslot_id": 238580874309632
+        }
+    ]
+}

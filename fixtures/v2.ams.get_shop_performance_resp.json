@@ -1,0 +1,16 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"response": {
+		"sales": "15000",
+		"gross_item_sold": 9684221,
+		"orders": 68,
+		"clicks": 1564852,
+		"est_commission": "2000",
+		"roi": "18.8",
+		"total_buyers": 894,
+		"new_buyers": 260,
+		"fetched_date_range": "20250801-20250831"
+	}
+}

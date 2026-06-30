@@ -1,0 +1,14 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "e3e3e7f3300e04ac796fc84da9585701",
+    "response": {
+        "create_time": 1741686627,
+        "end_time": 1757240426,
+        "region": "TH",
+        "sip_discount_rate": 15,
+        "start_time": 1741688426,
+        "status": "upcoming",
+        "update_time": 1741686627
+    }
+}

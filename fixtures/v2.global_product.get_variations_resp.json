@@ -1,0 +1,188 @@
+{
+    "error": "",
+    "message": "",
+    "warning": "success",
+    "request_id": "xxx",
+    "data": {
+        "standardise_variation_list": [
+            {
+                "variation_id": 101054,
+                "variation_name": "颜色",
+                "variation_group_list": [
+                    {
+                        "variation_group_id": 849982774362112,
+                        "variation_group_name": "组别 1",
+                        "variation_option_list": [
+                            {
+                                "variation_option_id": 6245,
+                                "variation_option_name": "color-Green"
+                            },
+                            {
+                                "variation_option_id": 6246,
+                                "variation_option_name": "color-blue"
+                            },
+                            {
+                                "variation_option_id": 6255,
+                                "variation_option_name": "colorful"
+                            },
+                            {
+                                "variation_option_id": 6242,
+                                "variation_option_name": "红色"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "variation_id": 305033,
+                "variation_name": "尺寸",
+                "variation_group_list": [
+                    {
+                        "variation_group_id": 871392007506432,
+                        "variation_group_name": "衣服",
+                        "variation_option_list": [
+                            {
+                                "variation_option_id": 24472484,
+                                "variation_option_name": "大码"
+                            },
+                            {
+                                "variation_option_id": 24472485,
+                                "variation_option_name": "中码"
+                            },
+                            {
+                                "variation_option_id": 24472486,
+                                "variation_option_name": "小码"
+                            },
+                            {
+                                "variation_option_id": 24472487,
+                                "variation_option_name": "加大码"
+                            }
+                        ]
+                    },
+                    {
+                        "variation_group_id": 871392023830528,
+                        "variation_group_name": "鞋子码数",
+                        "variation_option_list": [
+                            {
+                                "variation_option_id": 24472488,
+                                "variation_option_name": "42码"
+                            },
+                            {
+                                "variation_option_id": 24472489,
+                                "variation_option_name": "41码"
+                            },
+                            {
+                                "variation_option_id": 24472490,
+                                "variation_option_name": "40码"
+                            },
+                            {
+                                "variation_option_id": 24472491,
+                                "variation_option_name": "39码"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "variation_id": 305034,
+                "variation_name": "颜色",
+                "variation_group_list": [
+                    {
+                        "variation_group_id": 871392669004800,
+                        "variation_group_name": "纯色",
+                        "variation_option_list": [
+                            {
+                                "variation_option_id": 24472492,
+                                "variation_option_name": "蓝色"
+                            },
+                            {
+                                "variation_option_id": 24472493,
+                                "variation_option_name": "黄色"
+                            },
+                            {
+                                "variation_option_id": 24472494,
+                                "variation_option_name": "红色"
+                            },
+                            {
+                                "variation_option_id": 24472495,
+                                "variation_option_name": "绿色"
+                            }
+                        ]
+                    },
+                    {
+                        "variation_group_id": 871392669039616,
+                        "variation_group_name": "混合色",
+                        "variation_option_list": [
+                            {
+                                "variation_option_id": 24472496,
+                                "variation_option_name": "蓝红"
+                            },
+                            {
+                                "variation_option_id": 24472497,
+                                "variation_option_name": "黄绿"
+                            },
+                            {
+                                "variation_option_id": 24472498,
+                                "variation_option_name": "黄红"
+                            },
+                            {
+                                "variation_option_id": 24472499,
+                                "variation_option_name": "红绿"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "variation_id": 305046,
+                "variation_name": "图案",
+                "variation_group_list": [
+                    {
+                        "variation_group_id": 871436002087936,
+                        "variation_group_name": "动物",
+                        "variation_option_list": [
+                            {
+                                "variation_option_id": 24474016,
+                                "variation_option_name": "狗"
+                            },
+                            {
+                                "variation_option_id": 24474017,
+                                "variation_option_name": "猫"
+                            },
+                            {
+                                "variation_option_id": 24474018,
+                                "variation_option_name": "鸟"
+                            },
+                            {
+                                "variation_option_id": 24474019,
+                                "variation_option_name": "鱼"
+                            }
+                        ]
+                    },
+                    {
+                        "variation_group_id": 871436011700224,
+                        "variation_group_name": "花朵",
+                        "variation_option_list": [
+                            {
+                                "variation_option_id": 24474012,
+                                "variation_option_name": "玫瑰"
+                            },
+                            {
+                                "variation_option_id": 24474013,
+                                "variation_option_name": "向日葵"
+                            },
+                            {
+                                "variation_option_id": 24474014,
+                                "variation_option_name": "郁金香"
+                            },
+                            {
+                                "variation_option_id": 24474015,
+                                "variation_option_name": "兰花"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

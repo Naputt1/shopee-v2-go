@@ -1,0 +1,122 @@
+{
+	"request_id": "3dad66f43b8447d282ae6da36626c6b7",
+	"error": "error_auth",
+	"message": "Invalid access_token.",
+	"repsonse": {
+		"regular_operating_hour": {
+			"monday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"tuesday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"wednesday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"thursday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"friday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"saturday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"sunday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"public_holiday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			}
+		},
+		"instant_operating_hour": {
+			"monday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"tuesday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"wednesday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"thursday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"friday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"saturday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"sunday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"public_holiday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			}
+		},
+		"special_operating_hour": {
+			"name": "9.9 Campaign",
+			"start_date": "YYYY-MM-DD",
+			"end_date": "YYYY-MM-DD",
+			"operating_hours": [
+				{
+					"date": "YYYY-MM-DD",
+					"start_time": "09:00",
+					"end_time": "18:30",
+					"enable": false
+				}
+			]
+		},
+		"shop_collection_operating_hour": {
+			"monday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"tuesday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"wednesday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"thursday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"friday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"saturday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"sunday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			},
+			"public_holiday": {
+				"start_time": "09:00",
+				"end_time": "18:30"
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "317a860d2521fa85e76cd76ba52bec00:040000c64b5983c6:0300026bdab1778e",
+    "response": {
+        "waybill_list": [
+            {
+                "binding_id": "DCN248699144540RU",
+                "shipping_label_url": "http://api.kuaidi100.com/label/getImage/20240620/AE6449DBB3FF4E7F80A36EA1A0DF17E2"
+            }
+        ]
+    }
+}

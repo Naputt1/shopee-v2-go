@@ -1,0 +1,14 @@
+{
+    "error": "",
+    "message": "",
+    "warning": "",
+    "request_id": "369c79e9a42147f6912e2bf21c96ba23",
+    "response": {
+        "publishable_shop": [
+            {
+                "shop_id": 1000567,
+                "shop_region": "TW"
+            }
+        ]
+    }
+}

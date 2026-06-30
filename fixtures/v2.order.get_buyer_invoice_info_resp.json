@@ -1,0 +1,31 @@
+{
+    "request_id": "a2c45ca2683caf1651ecab5a4d5942ce",
+    "error": "",
+    "message": "",
+    "invoice_info_list": [
+        {
+            "order_sn": "2209160VNPKXF7",
+            "invoice_type": "personal",
+            "invoice_detail": {
+                "name": "Kevin Yap",
+                "email": "testing.just@op.pl",
+                "address": "Ordona 7B Warszawa, Warszawa, 01237",
+                "phone_number": "",
+                "tax_id": "",
+                "address_breakdown": {
+                    "region": "Poland",
+                    "state": "",
+                    "city": "Warszawa",
+                    "district": "",
+                    "town": "Warszawa",
+                    "postcode": "01237",
+                    "detailed_address": "Ordona 7B Warszawa",
+                    "additional_info": "",
+                    "full_address": "Ordona 7B Warszawa, Warszawa, 01237"
+                }
+            },
+            "is_requested": false,
+            "error": ""
+        }
+    ]
+}

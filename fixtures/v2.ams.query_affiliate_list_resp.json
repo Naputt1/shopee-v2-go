@@ -1,0 +1,58 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"response": {
+		"total_count": 200,
+		"affiliate_list": {
+			"affiliate_id": 12345678,
+			"affiliate_name": "affiliate a",
+			"user_name": "ss",
+			"portrait_url": "-",
+			"popular_social_media": [
+				{
+					"platform": "meta",
+					"follower_count": 0
+				}
+			],
+			"social_medias": [
+				{
+					"platform": "shopee live",
+					"follower_count": 1000,
+					"social_media_user_name": "dafffd"
+				}
+			],
+			"total_click": 10000,
+			"order_range": [
+				200,
+				400
+			],
+			"gmv_range": [
+				100000000,
+				500000000
+			],
+			"is_orange_tick_kol": true,
+			"is_good_fulfillment": true,
+			"promote_category_ids": [
+				100013,
+				100644,
+				100010
+			],
+			"top_popular_contents": [
+				{
+					"platform": "shopee live",
+					"comment_count": 100,
+					"like_count": 300,
+					"view_count": 1000,
+					"cover_url": "https://123456",
+					"media_url": "-"
+				}
+			],
+			"top_selling_products": [
+				{
+					"item_id": 12345678
+				}
+			]
+		}
+	}
+}

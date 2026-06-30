@@ -1,0 +1,14 @@
+{
+    "error": "",
+    "message": "",
+    "warning": "",
+    "request_id": "98eae35efff24dd0974c21a847127184",
+    "response": {
+        "failure_delete_item": [
+            {
+                "shop_id": 14599,
+                "item_id": 20001863
+            }
+        ]
+    }
+}

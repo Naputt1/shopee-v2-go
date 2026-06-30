@@ -1,0 +1,25 @@
+{
+	"error": "error_auth",
+	"message": "Invalid access_token.",
+	"request_id": "3dad66f43b8447d282ae6da36626c6b7",
+	"response": {
+		"result_list": {
+			"regular_operating_hour": {
+				"status": "Success",
+				"fail_message": "-"
+			},
+			"special_operating_hour": {
+				"status": "Success",
+				"fail_message": "-"
+			},
+			"instant_operating_hour": {
+				"status": "Success",
+				"fail_message": "-"
+			},
+			"shop_collection_operating_hour": {
+				"status": "Success",
+				"fail_message": "-"
+			}
+		}
+	}
+}

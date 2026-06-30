@@ -1,0 +1,45 @@
+{
+    "error":"",
+    "message":"",
+    "request_id": "e3e3e7f3300de2e82e651bc000846f01",
+    "response": {
+        "discount_list": [
+            {
+                "create_time": 1741233412,
+                "end_time": 1756787212,
+                "region": "SG",
+                "sip_discount_rate": 10,
+                "start_time": 1741235212,
+                "status": "ongoing",
+                "update_time": 1741233412
+            },
+            {
+                "create_time": 1741686019,
+                "end_time": 1757239818,
+                "region": "TW",
+                "sip_discount_rate": 30,
+                "start_time": 1741687818,
+                "status": "upcoming",
+                "update_time": 1741686019
+            },
+            {
+                "create_time": 1741147131,
+                "end_time": 1756700931,
+                "region": "MY",
+                "sip_discount_rate": 20,
+                "start_time": 1741148931,
+                "status": "ongoing",
+                "update_time": 1741147131
+            },
+            {
+                "create_time": 1740563735,
+                "end_time": 1756117535,
+                "region": "PH",
+                "sip_discount_rate": 20,
+                "start_time": 1740565535,
+                "status": "ongoing",
+                "update_time": 1740563735
+            }
+        ]
+    }
+}

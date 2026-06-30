@@ -1,0 +1,15 @@
+{
+	"error": "Indicate error type if hit error. Empty if no error happened.",
+	"message": "Indicate error details if hit error. Empty if no error happened.",
+	"warning": "Indicate warning details if hit warning. Empty if no warning happened.",
+	"request_id": "The identifier for an API request for error tracking.",
+	"response": {
+		"campaign_id": 12412412,
+		"item_id_list": [
+			112321324,
+			122323241,
+			2232142
+		],
+		"total": 200
+	}
+}

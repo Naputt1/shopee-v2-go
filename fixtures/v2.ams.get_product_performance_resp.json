@@ -1,0 +1,24 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"response": {
+		"list": [
+			{
+				"item_id": 14016184405,
+				"item_name": "SKIN1004 Madagascar Centella Tone Brightening Capsule Ampoule 100ml",
+				"sales": "150000",
+				"items_sold": 4895,
+				"orders": 575,
+				"clicks": 78542,
+				"est_commission": "5898",
+				"roi": "18.8",
+				"total_buyers": 589,
+				"new_buyers": 260
+			}
+		],
+		"total_count": 589,
+		"has_more": false,
+		"fetched_date_range": "20250801-20250831"
+	}
+}

@@ -1,0 +1,17 @@
+{
+    "response": {
+        "campaign_status": "ongoing",
+        "campaign_id": 1551,
+        "usage_quantity": 100,
+        "start_time": 1655891400,
+        "end_time": 1656581220,
+        "min_spend": 100,
+        "reward_type": 3,
+        "follow_prize_name": "follow prize01",
+        "percentage": 1,
+        "max_price": 20
+    },
+    "request_id": "4f0cdb3819658dfb1809a7c39bb785d1",
+    "error": "",
+    "message": ""
+}

@@ -1,0 +1,42 @@
+{
+    "message": null,
+    "request_id": "3cc224310e5b57eeb70a9b202ba5d341",
+    "response":{
+        "item_list":[
+            {
+                "item_id": 800903588,
+                "item_name":"testing product",
+                "item_status":"BANNED",
+                "deboost":true,
+                "item_status_details":[
+                    {
+                        "violation_type":"Prohibited Listing",
+                        "violation_reason":"License Reason",
+                        "suggestion":"Upload license",
+                        "update_time": 1705054788,
+                        "fix_deadline_time": 1705227588
+                    }
+                ],
+                "deboost_details":[
+                    {
+                        "violation_type":"Prohibited Listing",
+                        "violation_reason":"Wrong Category",
+                        "suggestion":"The item is in wrong category, please update to the suggested_category",
+                        "suggested_category":[
+                            {
+                                "category_id":100005,
+                                "category_name":"Health"
+                            },
+                            {
+                                "category_id":107478,
+                                "category_name":"Personal Care"
+                            }
+                        ],
+                        "update_time": 1704943027,
+                        "fix_deadline_time": 1705202227,
+                    }
+                ]
+            }
+        ]
+    }
+}

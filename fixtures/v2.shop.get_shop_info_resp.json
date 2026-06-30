@@ -1,0 +1,27 @@
+{
+    "error": "",
+    "message": "",
+    "request_id": "e3e3e7f3314a5c09fbf56b4649990b01",
+    "auth_time": 1741944925,
+    "expire_time": 1773503999,
+    "shop_name": "mysipuat",
+    "region": "MY",
+    "status": "NORMAL",
+    "shop_fulfillment_flag": "Others",
+    "is_cb": false,
+    "is_upgraded_cbsc": false,
+    "merchant_id": null,
+    "is_sip": true,
+    "sip_affi_shops": [
+
+    ],
+    "is_main_shop": true,
+    "is_direct_shop": false,
+    "linked_direct_shop_list": [
+        {
+            "direct_shop_id": 223009454,
+            "direct_shop_region": "SG"
+        }
+    ],
+    "linked_main_shop_id": 0
+}

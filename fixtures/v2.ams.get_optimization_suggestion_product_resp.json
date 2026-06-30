@@ -1,0 +1,33 @@
+{
+	"error": "",
+	"message": "",
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"response": {
+		"item_list": [
+			{
+				"item_id": 123,
+				"item_name": "test",
+				"rcmd_reason": [
+					"severe_shortage",
+					"high_popularity"
+				],
+				"campaign_id": 123,
+				"commission_rate": 1.1,
+				"period_start_time": 1735660800,
+				"period_end_time": 1735660800,
+				"affiliate_count": 123,
+				"item_sold": 123,
+				"campaign_status": "Ongoing",
+				"l2_category_order_count": 123,
+				"suggest_min_rate": 1.1,
+				"suggest_max_rate": 1.2,
+				"prefill_rate": 1.1,
+				"prefill_subsidy_rate": 1.2,
+				"display_price": "1.23",
+				"has_subsidy_data": true
+			}
+		],
+		"total": 1000,
+		"has_more": true
+	}
+}

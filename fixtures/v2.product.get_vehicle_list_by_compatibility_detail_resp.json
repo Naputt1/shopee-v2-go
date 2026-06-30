@@ -1,0 +1,22 @@
+{
+    "error": "",
+    "message": "",
+    "warning": "",
+    "request_id": "7f7771c7b35d69d46886ac8b83f69341",
+    "response": {
+        "vehicle_list": [
+            {
+                "brand_id": 1234,
+                "brand_name": "Toyota"
+            },
+            {
+                "brand_id": 13524,
+                "brand_name": "Renault"
+            },
+            {
+                "brand_id": 14235,
+                "brand_name": "Chevrolet"
+            }
+        ]
+    }
+}

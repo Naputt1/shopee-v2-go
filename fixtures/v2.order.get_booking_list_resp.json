@@ -1,0 +1,16 @@
+{
+	"request_id": "b937c04e554847789cbf3fe33a0ad5f1",
+	"error": "common.error_auth",
+	"message": "Invalid access_token.",
+	"response": {
+		"more": false,
+		"booking_list": [
+			{
+				"booking_sn": "201218V2Y6E59M",
+				"order_sn": "201218V2Y6E59M",
+				"booking_status": "READY_TO_SHIP",
+				"next_cursor": "20"
+			}
+		]
+	}
+}

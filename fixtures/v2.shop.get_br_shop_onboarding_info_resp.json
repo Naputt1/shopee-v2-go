@@ -1,0 +1,25 @@
+{
+    "response": {
+        "billing_address": {
+            "address": "api, str, ",
+            "city": "Barracão",
+            "name": "",
+            "neighborhood": "Operario",
+            "phone": "",
+            "state": "Rio Grande do Sul",
+            "zipcode": "95370000"
+        },
+        "cnae_main": "47.51-2-01 - Comércio varejista especializado de equipamentos e suprimentos de informática",
+        "cnae_secondary": "[\"47.42-3-00 - Comércio varejista de material elétrico\",\"47.89-0-99 - Comércio varejista de outros produtos não especificados anteriormente\",\"45.30-7-03 - Comércio a varejo de peças e acessórios novos para veículos automotores\",\"47.57-1-00 - Comércio varejista especializado de peças e acessórios para aparelhos eletroeletrônicos para uso doméstico, exceto informática e comunicação\",\"47.52-1-00 - Comércio varejista especializado de equipamentos de telefonia e comunicação\",\"47.81-4-00 - Comércio varejista de artigos do vestuário e acessórios\",\"45.41-2-06 - Comércio a varejo de peças e acessórios novos para motocicletas e motonetas\",\"47.63-6-03 - Comércio varejista de bicicletas e triciclos; peças e acessórios\",\"47.63-6-02 - Comércio varejista de artigos esportivos\",\"47.54-7-03 - Comércio varejista de artigos de iluminação\",\"47.82-2-02 - Comércio varejista de artigos de viagem\",\"47.89-0-07 - Comércio varejista de equipamentos para escritório\",\"47.82-2-01 - Comércio varejista de calçados\",\"47.83-1-02 - Comércio varejista de artigos de relojoaria\",\"47.83-1-01 - Comércio varejista de artigos de joalheria\"]",
+        "cnpj_id": "55585487000103",
+        "legal_entity_name": "55.585.487 Luiz Felipe Santos Spanholi",
+        "mei_check": "1",
+        "onboarding_passed": true,
+        "onboarding_status": 7,
+        "state_registration": "8003688866",
+        "submission_time": 1761559361,
+        "tax_id": "55585487000103",
+        "tax_id_type": 2
+    },
+    "request_id": "2e17701b64d646e293bfa53f1882d440"
+}
