@@ -32,6 +32,7 @@ func (s *FBSServiceOp[T]) QueryBrShopBlockStatus(sid uint64, tok string) (*Query
 	err := s.client.WithShop(sid, tok).Post(path, nil, resp)
 	return resp, err
 }
+
 // QueryBrShopEnrollmentStatus This API checks whether a given shop_id is eligible to enroll in the Brazil Fulfilled-by-Shopee (FBS) service.
 // Path: /api/v2/fbs/query_br_shop_enrollment_status
 // https://open.shopee.com/documents/v2/v2.fbs.query_br_shop_enrollment_status?module=126&type=1
@@ -41,6 +42,7 @@ func (s *FBSServiceOp[T]) QueryBrShopEnrollmentStatus(sid uint64, tok string) (*
 	err := s.client.WithShop(sid, tok).Post(path, nil, resp)
 	return resp, err
 }
+
 // QueryBrShopInvoiceError This API handles failed invoice issuance for FBS-related processes, covering Inbound Requests, RTS Requests, Sales Orders, and Move Transfer Orders.
 // Path: /api/v2/fbs/query_br_shop_invoice_error
 // https://open.shopee.com/documents/v2/v2.fbs.query_br_shop_invoice_error?module=126&type=1
@@ -50,6 +52,7 @@ func (s *FBSServiceOp[T]) QueryBrShopInvoiceError(sid uint64, req QueryBrShopInv
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // QueryBrSkuBlockStatus This API checks whether an FBS product is blocked due to invoice-related issues. When blocked, the product cannot be included in new Inbound Requests, and its warehouse inventory is restricted from being sold.
 // Path: /api/v2/fbs/query_br_sku_block_status
 // https://open.shopee.com/documents/v2/v2.fbs.query_br_sku_block_status?module=126&type=1

@@ -40,6 +40,7 @@ func (s *VoucherServiceOp[T]) AddVoucher(sid uint64, req AddVoucherRequest, tok 
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // DeleteVoucher Delete voucher
 // Path: /api/v2/voucher/delete_voucher
 // https://open.shopee.com/documents/v2/v2.voucher.delete_voucher?module=112&type=1
@@ -49,6 +50,7 @@ func (s *VoucherServiceOp[T]) DeleteVoucher(sid uint64, req DeleteVoucherRequest
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // EndVoucher End Voucher
 // Path: /api/v2/voucher/end_voucher
 // https://open.shopee.com/documents/v2/v2.voucher.end_voucher?module=112&type=1
@@ -58,6 +60,7 @@ func (s *VoucherServiceOp[T]) EndVoucher(sid uint64, req EndVoucherRequest, tok 
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetVoucher Get Voucher Detail
 // Path: /api/v2/voucher/get_voucher
 // https://open.shopee.com/documents/v2/v2.voucher.get_voucher?module=112&type=1
@@ -67,6 +70,7 @@ func (s *VoucherServiceOp[T]) GetVoucher(sid uint64, req GetVoucherRequest, tok 
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetVoucherList Get Voucher List
 // Path: /api/v2/voucher/get_voucher_list
 // https://open.shopee.com/documents/v2/v2.voucher.get_voucher_list?module=112&type=1
@@ -76,6 +80,7 @@ func (s *VoucherServiceOp[T]) GetVoucherList(sid uint64, req GetVoucherListReque
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateVoucher Update voucher
 // Path: /api/v2/voucher/update_voucher
 // https://open.shopee.com/documents/v2/v2.voucher.update_voucher?module=112&type=1

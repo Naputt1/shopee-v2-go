@@ -44,6 +44,7 @@ func (s *ShopCategoryServiceOp[T]) AddItemList(sid uint64, req ShopCategoryAddIt
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // AddShopCategory Use this call to add a new shop collecion
 // Path: /api/v2/shop_category/add_shop_category
 // https://open.shopee.com/documents/v2/v2.shop_category.add_shop_category?module=101&type=1
@@ -53,6 +54,7 @@ func (s *ShopCategoryServiceOp[T]) AddShopCategory(sid uint64, req AddShopCatego
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // DeleteItemList Use this api to delete items from shop category
 // Path: /api/v2/shop_category/delete_item_list
 // https://open.shopee.com/documents/v2/v2.shop_category.delete_item_list?module=101&type=1
@@ -62,6 +64,7 @@ func (s *ShopCategoryServiceOp[T]) DeleteItemList(sid uint64, req ShopCategoryDe
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // DeleteShopCategory Use this call to delete a existing shop collecion
 // Path: /api/v2/shop_category/delete_shop_category
 // https://open.shopee.com/documents/v2/v2.shop_category.delete_shop_category?module=101&type=1
@@ -71,6 +74,7 @@ func (s *ShopCategoryServiceOp[T]) DeleteShopCategory(sid uint64, req DeleteShop
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetItemList Use this call to get items list of certain shop_category
 // Path: /api/v2/shop_category/get_item_list
 // https://open.shopee.com/documents/v2/v2.shop_category.get_item_list?module=101&type=1
@@ -80,6 +84,7 @@ func (s *ShopCategoryServiceOp[T]) GetItemList(sid uint64, req ShopCategoryGetIt
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetShopCategoryList Use this call to get list of shop categories
 // Path: /api/v2/shop_category/get_shop_category_list
 // https://open.shopee.com/documents/v2/v2.shop_category.get_shop_category_list?module=101&type=1
@@ -89,6 +94,7 @@ func (s *ShopCategoryServiceOp[T]) GetShopCategoryList(sid uint64, req GetShopCa
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateShopCategory Use this call to update a existing collecion
 // Path: /api/v2/shop_category/update_shop_category
 // https://open.shopee.com/documents/v2/v2.shop_category.update_shop_category?module=101&type=1

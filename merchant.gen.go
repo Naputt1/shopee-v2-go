@@ -18,8 +18,8 @@ type MerchantService interface {
 	// https://open.shopee.com/documents/v2/v2.merchant.get_merchant_warehouse_location_list?module=93&type=1
 	GetMerchantWarehouseLocationList(sid uint64, tok string) (*GetMerchantWarehouseLocationListResponse, error)
 	// GetShopListByMerchant Use this call to get shop_list bound to merchant_id.
-	// 
-	// 
+	//
+	//
 	// Path: /api/v2/merchant/get_shop_list_by_merchant
 	// https://open.shopee.com/documents/v2/v2.merchant.get_shop_list_by_merchant?module=93&type=1
 	GetShopListByMerchant(sid uint64, opt GetShopListByMerchantRequest, tok string) (*GetShopListByMerchantResponse, error)
@@ -42,6 +42,7 @@ func (s *MerchantServiceOp[T]) GetMerchantInfo(sid uint64, tok string) (*GetMerc
 	err := s.client.WithMerchant(sid, tok).Get(path, resp, nil)
 	return resp, err
 }
+
 // GetMerchantPrepaidAccountList Use this api to get seller’s courier prepaid account.
 // Path: /api/v2/merchant/get_merchant_prepaid_account_list
 // https://open.shopee.com/documents/v2/v2.merchant.get_merchant_prepaid_account_list?module=93&type=1
@@ -51,6 +52,7 @@ func (s *MerchantServiceOp[T]) GetMerchantPrepaidAccountList(sid uint64, opt Get
 	err := s.client.WithMerchant(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetMerchantWarehouseList Get merchant warehouse with page
 // Path: /api/v2/merchant/get_merchant_warehouse_list
 // https://open.shopee.com/documents/v2/v2.merchant.get_merchant_warehouse_list?module=93&type=1
@@ -60,6 +62,7 @@ func (s *MerchantServiceOp[T]) GetMerchantWarehouseList(sid uint64, req GetMerch
 	err := s.client.WithMerchant(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetMerchantWarehouseLocationList get merchant warehouse location list
 // Path: /api/v2/merchant/get_merchant_warehouse_location_list
 // https://open.shopee.com/documents/v2/v2.merchant.get_merchant_warehouse_location_list?module=93&type=1
@@ -69,9 +72,9 @@ func (s *MerchantServiceOp[T]) GetMerchantWarehouseLocationList(sid uint64, tok 
 	err := s.client.WithMerchant(sid, tok).Post(path, nil, resp)
 	return resp, err
 }
+
 // GetShopListByMerchant Use this call to get shop_list bound to merchant_id.
-// 
-// 
+//
 // Path: /api/v2/merchant/get_shop_list_by_merchant
 // https://open.shopee.com/documents/v2/v2.merchant.get_shop_list_by_merchant?module=93&type=1
 func (s *MerchantServiceOp[T]) GetShopListByMerchant(sid uint64, opt GetShopListByMerchantRequest, tok string) (*GetShopListByMerchantResponse, error) {
@@ -80,6 +83,7 @@ func (s *MerchantServiceOp[T]) GetShopListByMerchant(sid uint64, opt GetShopList
 	err := s.client.WithMerchant(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetWarehouseEligibleShopList Get eligible shop list by warehouse id
 // Path: /api/v2/merchant/get_warehouse_eligible_shop_list
 // https://open.shopee.com/documents/v2/v2.merchant.get_warehouse_eligible_shop_list?module=93&type=1

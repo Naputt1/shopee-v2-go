@@ -19,22 +19,22 @@ type MediaSpaceService interface {
 	GetVideoUploadResult(sid uint64, filename string, tok string) (*MediaSpaceGetVideoUploadResultResponse, error)
 	GetVideoUploadResultFromReader(sid uint64, filename string, reader io.Reader, tok string) (*MediaSpaceGetVideoUploadResultResponse, error)
 	// InitVideoUpload Initiate video upload session.
-	// 
+	//
 	// Video duration should be between 10s and 60s (inclusive).
 	// Path: /api/v2/media_space/init_video_upload
 	// https://open.shopee.com/documents/v2/v2.media_space.init_video_upload?module=91&type=1
 	InitVideoUpload(sid uint64, filename string, tok string) (*MediaSpaceInitVideoUploadResponse, error)
 	InitVideoUploadFromReader(sid uint64, filename string, reader io.Reader, tok string) (*MediaSpaceInitVideoUploadResponse, error)
-	// UploadImage Use this API to upload multiple image files (less than 9 images). 
+	// UploadImage Use this API to upload multiple image files (less than 9 images).
 	// Path: /api/v2/media_space/upload_image
 	// https://open.shopee.com/documents/v2/v2.media_space.upload_image?module=91&type=1
 	UploadImage(sid uint64, filename string, tok string) (*MediaSpaceUploadImageResponse, error)
 	UploadImageFromReader(sid uint64, filename string, reader io.Reader, tok string) (*MediaSpaceUploadImageResponse, error)
 	// UploadVideoPart Upload video file by part using the upload_id in initiate_video_upload.
-	// 
+	//
 	// The request Content-Type of this API should be of multipart/form-data
-	// 
-	// 
+	//
+	//
 	// Path: /api/v2/media_space/upload_video_part
 	// https://open.shopee.com/documents/v2/v2.media_space.upload_video_part?module=91&type=1
 	UploadVideoPart(sid uint64, filename string, tok string) (*MediaSpaceUploadVideoPartResponse, error)
@@ -97,7 +97,7 @@ func (s *MediaSpaceServiceOp[T]) GetVideoUploadResultFromReader(sid uint64, file
 }
 
 // InitVideoUpload Initiate video upload session.
-// 
+//
 // Video duration should be between 10s and 60s (inclusive).
 // Path: /api/v2/media_space/init_video_upload
 // https://open.shopee.com/documents/v2/v2.media_space.init_video_upload?module=91&type=1
@@ -115,7 +115,7 @@ func (s *MediaSpaceServiceOp[T]) InitVideoUploadFromReader(sid uint64, filename 
 	return resp, err
 }
 
-// UploadImage Use this API to upload multiple image files (less than 9 images). 
+// UploadImage Use this API to upload multiple image files (less than 9 images).
 // Path: /api/v2/media_space/upload_image
 // https://open.shopee.com/documents/v2/v2.media_space.upload_image?module=91&type=1
 func (s *MediaSpaceServiceOp[T]) UploadImage(sid uint64, filename string, tok string) (*MediaSpaceUploadImageResponse, error) {
@@ -133,10 +133,9 @@ func (s *MediaSpaceServiceOp[T]) UploadImageFromReader(sid uint64, filename stri
 }
 
 // UploadVideoPart Upload video file by part using the upload_id in initiate_video_upload.
-// 
+//
 // The request Content-Type of this API should be of multipart/form-data
-// 
-// 
+//
 // Path: /api/v2/media_space/upload_video_part
 // https://open.shopee.com/documents/v2/v2.media_space.upload_video_part?module=91&type=1
 func (s *MediaSpaceServiceOp[T]) UploadVideoPart(sid uint64, filename string, tok string) (*MediaSpaceUploadVideoPartResponse, error) {
@@ -152,4 +151,3 @@ func (s *MediaSpaceServiceOp[T]) UploadVideoPartFromReader(sid uint64, filename 
 	err := s.client.WithMerchant(sid, tok).UploadFromReader(path, "image", filename, reader, resp)
 	return resp, err
 }
-

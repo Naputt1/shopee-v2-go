@@ -60,6 +60,7 @@ func (s *ShopFlashSaleServiceOp[T]) AddShopFlashSaleItems(sid uint64, req AddSho
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // CreateShopFlashSale creat shop flash sale
 // Path: /api/v2/shop_flash_sale/create_shop_flash_sale
 // https://open.shopee.com/documents/v2/v2.shop_flash_sale.create_shop_flash_sale?module=123&type=1
@@ -69,6 +70,7 @@ func (s *ShopFlashSaleServiceOp[T]) CreateShopFlashSale(sid uint64, req CreateSh
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // DeleteShopFlashSale delete shop flash sale
 // Path: /api/v2/shop_flash_sale/delete_shop_flash_sale
 // https://open.shopee.com/documents/v2/v2.shop_flash_sale.delete_shop_flash_sale?module=123&type=1
@@ -78,6 +80,7 @@ func (s *ShopFlashSaleServiceOp[T]) DeleteShopFlashSale(sid uint64, req DeleteSh
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // DeleteShopFlashSaleItems delete shop flash sale items
 // Path: /api/v2/shop_flash_sale/delete_shop_flash_sale_items
 // https://open.shopee.com/documents/v2/v2.shop_flash_sale.delete_shop_flash_sale_items?module=123&type=1
@@ -87,6 +90,7 @@ func (s *ShopFlashSaleServiceOp[T]) DeleteShopFlashSaleItems(sid uint64, req Del
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetItemCriteria get shop flash sale item criteria
 // Path: /api/v2/shop_flash_sale/get_item_criteria
 // https://open.shopee.com/documents/v2/v2.shop_flash_sale.get_item_criteria?module=123&type=1
@@ -96,6 +100,7 @@ func (s *ShopFlashSaleServiceOp[T]) GetItemCriteria(sid uint64, tok string) (*Ge
 	err := s.client.WithShop(sid, tok).Post(path, nil, resp)
 	return resp, err
 }
+
 // GetShopFlashSale get shop flash sale detail
 // Path: /api/v2/shop_flash_sale/get_shop_flash_sale
 // https://open.shopee.com/documents/v2/v2.shop_flash_sale.get_shop_flash_sale?module=123&type=1
@@ -105,6 +110,7 @@ func (s *ShopFlashSaleServiceOp[T]) GetShopFlashSale(sid uint64, req GetShopFlas
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetShopFlashSaleItems get shop flash sale items and item detail
 // Path: /api/v2/shop_flash_sale/get_shop_flash_sale_items
 // https://open.shopee.com/documents/v2/v2.shop_flash_sale.get_shop_flash_sale_items?module=123&type=1
@@ -114,6 +120,7 @@ func (s *ShopFlashSaleServiceOp[T]) GetShopFlashSaleItems(sid uint64, req GetSho
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetShopFlashSaleList get shop flash sale list
 // Path: /api/v2/shop_flash_sale/get_shop_flash_sale_list
 // https://open.shopee.com/documents/v2/v2.shop_flash_sale.get_shop_flash_sale_list?module=123&type=1
@@ -123,6 +130,7 @@ func (s *ShopFlashSaleServiceOp[T]) GetShopFlashSaleList(sid uint64, req GetShop
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetTimeSlotId get time slot id
 // Path: /api/v2/shop_flash_sale/get_time_slot_id
 // https://open.shopee.com/documents/v2/v2.shop_flash_sale.get_time_slot_id?module=123&type=1
@@ -132,6 +140,7 @@ func (s *ShopFlashSaleServiceOp[T]) GetTimeSlotId(sid uint64, req GetTimeSlotIdR
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateShopFlashSale edit shop flash sale(enable, disable)
 // Path: /api/v2/shop_flash_sale/update_shop_flash_sale
 // https://open.shopee.com/documents/v2/v2.shop_flash_sale.update_shop_flash_sale?module=123&type=1
@@ -141,6 +150,7 @@ func (s *ShopFlashSaleServiceOp[T]) UpdateShopFlashSale(sid uint64, req UpdateSh
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateShopFlashSaleItems edit shop flash sale item, you can only edit the models in disbaled or enabled status
 // Path: /api/v2/shop_flash_sale/update_shop_flash_sale_items
 // https://open.shopee.com/documents/v2/v2.shop_flash_sale.update_shop_flash_sale_items?module=123&type=1

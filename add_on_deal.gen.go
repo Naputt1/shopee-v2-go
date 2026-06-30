@@ -72,6 +72,7 @@ func (s *AddOnDealServiceOp[T]) AddAddOnDeal(sid uint64, req AddAddOnDealRequest
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // AddAddOnDealMainItem Add Add-on Deal Main Item
 // Path: /api/v2/add_on_deal/add_add_on_deal_main_item
 // https://open.shopee.com/documents/v2/v2.add_on_deal.add_add_on_deal_main_item?module=111&type=1
@@ -81,6 +82,7 @@ func (s *AddOnDealServiceOp[T]) AddAddOnDealMainItem(sid uint64, req AddAddOnDea
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // AddAddOnDealSubItem Add Add-on Deal Sub Item
 // Path: /api/v2/add_on_deal/add_add_on_deal_sub_item
 // https://open.shopee.com/documents/v2/v2.add_on_deal.add_add_on_deal_sub_item?module=111&type=1
@@ -90,6 +92,7 @@ func (s *AddOnDealServiceOp[T]) AddAddOnDealSubItem(sid uint64, req AddAddOnDeal
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // DeleteAddOnDeal Delete Add-on Deal
 // Path: /api/v2/add_on_deal/delete_add_on_deal
 // https://open.shopee.com/documents/v2/v2.add_on_deal.delete_add_on_deal?module=111&type=1
@@ -99,6 +102,7 @@ func (s *AddOnDealServiceOp[T]) DeleteAddOnDeal(sid uint64, req DeleteAddOnDealR
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // DeleteAddOnDealMainItem Delete Add-on Deal Main Item
 // Path: /api/v2/add_on_deal/delete_add_on_deal_main_item
 // https://open.shopee.com/documents/v2/v2.add_on_deal.delete_add_on_deal_main_item?module=111&type=1
@@ -108,6 +112,7 @@ func (s *AddOnDealServiceOp[T]) DeleteAddOnDealMainItem(sid uint64, req DeleteAd
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // DeleteAddOnDealSubItem Delete Add-on Deal Sub Item
 // Path: /api/v2/add_on_deal/delete_add_on_deal_sub_item
 // https://open.shopee.com/documents/v2/v2.add_on_deal.delete_add_on_deal_sub_item?module=111&type=1
@@ -117,6 +122,7 @@ func (s *AddOnDealServiceOp[T]) DeleteAddOnDealSubItem(sid uint64, req DeleteAdd
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // EndAddOnDeal End Add-on Deal
 // Path: /api/v2/add_on_deal/end_add_on_deal
 // https://open.shopee.com/documents/v2/v2.add_on_deal.end_add_on_deal?module=111&type=1
@@ -126,6 +132,7 @@ func (s *AddOnDealServiceOp[T]) EndAddOnDeal(sid uint64, req EndAddOnDealRequest
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetAddOnDeal Get Add-on Deal
 // Path: /api/v2/add_on_deal/get_add_on_deal
 // https://open.shopee.com/documents/v2/v2.add_on_deal.get_add_on_deal?module=111&type=1
@@ -135,6 +142,7 @@ func (s *AddOnDealServiceOp[T]) GetAddOnDeal(sid uint64, req GetAddOnDealRequest
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetAddOnDealList Get Add-on Deal List
 // Path: /api/v2/add_on_deal/get_add_on_deal_list
 // https://open.shopee.com/documents/v2/v2.add_on_deal.get_add_on_deal_list?module=111&type=1
@@ -144,6 +152,7 @@ func (s *AddOnDealServiceOp[T]) GetAddOnDealList(sid uint64, req GetAddOnDealLis
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetAddOnDealMainItem Get Add-on Deal Main Item
 // Path: /api/v2/add_on_deal/get_add_on_deal_main_item
 // https://open.shopee.com/documents/v2/v2.add_on_deal.get_add_on_deal_main_item?module=111&type=1
@@ -153,6 +162,7 @@ func (s *AddOnDealServiceOp[T]) GetAddOnDealMainItem(sid uint64, req GetAddOnDea
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetAddOnDealSubItem Get Add-on Deal Sub Item
 // Path: /api/v2/add_on_deal/get_add_on_deal_sub_item
 // https://open.shopee.com/documents/v2/v2.add_on_deal.get_add_on_deal_sub_item?module=111&type=1
@@ -162,6 +172,7 @@ func (s *AddOnDealServiceOp[T]) GetAddOnDealSubItem(sid uint64, req GetAddOnDeal
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateAddOnDeal Update Add-on Deal
 // Path: /api/v2/add_on_deal/update_add_on_deal
 // https://open.shopee.com/documents/v2/v2.add_on_deal.update_add_on_deal?module=111&type=1
@@ -171,6 +182,7 @@ func (s *AddOnDealServiceOp[T]) UpdateAddOnDeal(sid uint64, req UpdateAddOnDealR
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateAddOnDealMainItem Update Add-on Deal Main Item
 // Path: /api/v2/add_on_deal/update_add_on_deal_main_item
 // https://open.shopee.com/documents/v2/v2.add_on_deal.update_add_on_deal_main_item?module=111&type=1
@@ -180,6 +192,7 @@ func (s *AddOnDealServiceOp[T]) UpdateAddOnDealMainItem(sid uint64, req UpdateAd
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateAddOnDealSubItem Update Add-on Deal Sub Item
 // Path: /api/v2/add_on_deal/update_add_on_deal_sub_item
 // https://open.shopee.com/documents/v2/v2.add_on_deal.update_add_on_deal_sub_item?module=111&type=1

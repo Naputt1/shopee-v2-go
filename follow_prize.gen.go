@@ -40,6 +40,7 @@ func (s *FollowPrizeServiceOp[T]) AddFollowPrize(sid uint64, req AddFollowPrizeR
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // DeleteFollowPrize delete_follow_prize
 // Path: /api/v2/follow_prize/delete_follow_prize
 // https://open.shopee.com/documents/v2/v2.follow_prize.delete_follow_prize?module=113&type=1
@@ -49,6 +50,7 @@ func (s *FollowPrizeServiceOp[T]) DeleteFollowPrize(sid uint64, req DeleteFollow
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // EndFollowPrize end follow prize
 // Path: /api/v2/follow_prize/end_follow_prize
 // https://open.shopee.com/documents/v2/v2.follow_prize.end_follow_prize?module=113&type=1
@@ -58,6 +60,7 @@ func (s *FollowPrizeServiceOp[T]) EndFollowPrize(sid uint64, req EndFollowPrizeR
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetFollowPrizeDetail get_follow_prize_detail
 // Path: /api/v2/follow_prize/get_follow_prize_detail
 // https://open.shopee.com/documents/v2/v2.follow_prize.get_follow_prize_detail?module=113&type=1
@@ -67,6 +70,7 @@ func (s *FollowPrizeServiceOp[T]) GetFollowPrizeDetail(sid uint64, req GetFollow
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetFollowPrizeList OpenAPI get_follow_prize_list
 // Path: /api/v2/follow_prize/get_follow_prize_list
 // https://open.shopee.com/documents/v2/v2.follow_prize.get_follow_prize_list?module=113&type=1
@@ -76,6 +80,7 @@ func (s *FollowPrizeServiceOp[T]) GetFollowPrizeList(sid uint64, req GetFollowPr
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateFollowPrize update_follow_prize
 // Path: /api/v2/follow_prize/update_follow_prize
 // https://open.shopee.com/documents/v2/v2.follow_prize.update_follow_prize?module=113&type=1

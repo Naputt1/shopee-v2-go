@@ -62,35 +62,35 @@ type Client[T any] struct {
 	OnTokenRefresh func(res *RefreshAccessTokenResponse, meta T)
 	Meta           T
 
-		AccountHealth AccountHealthService
-	AddOnDeal AddOnDealService
-	Ads AdsService
-	AMS AMSService
-	Auth AuthService
-	BundleDeal BundleDealService
-	Discount DiscountService
-	FBS FBSService
-	FirstMile FirstMileService
-	FollowPrize FollowPrizeService
+	AccountHealth AccountHealthService
+	AddOnDeal     AddOnDealService
+	Ads           AdsService
+	AMS           AMSService
+	Auth          AuthService
+	BundleDeal    BundleDealService
+	Discount      DiscountService
+	FBS           FBSService
+	FirstMile     FirstMileService
+	FollowPrize   FollowPrizeService
 	GlobalProduct GlobalProductService
-	Livestream LivestreamService
-	Logistics LogisticsService
-	Media MediaService
-	MediaSpace MediaSpaceService
-	Merchant MerchantService
-	Order OrderService
-	Payment PaymentService
-	Product ProductService
-	Public PublicService
-	Push PushService
-	Returns ReturnsService
-	SBS SBSService
-	Shop ShopService
-	ShopCategory ShopCategoryService
+	Livestream    LivestreamService
+	Logistics     LogisticsService
+	Media         MediaService
+	MediaSpace    MediaSpaceService
+	Merchant      MerchantService
+	Order         OrderService
+	Payment       PaymentService
+	Product       ProductService
+	Public        PublicService
+	Push          PushService
+	Returns       ReturnsService
+	SBS           SBSService
+	Shop          ShopService
+	ShopCategory  ShopCategoryService
 	ShopFlashSale ShopFlashSaleService
-	TopPicks TopPicksService
-	Video VideoService
-	Voucher VoucherService
+	TopPicks      TopPicksService
+	Video         VideoService
+	Voucher       VoucherService
 }
 
 type DefaultClient = Client[any]
@@ -108,7 +108,7 @@ func NewClient[T any](app App, opts ...Option[T]) *Client[T] {
 		baseURL: baseURL,
 	}
 
-		c.AccountHealth = &AccountHealthServiceOp[T]{client: c}
+	c.AccountHealth = &AccountHealthServiceOp[T]{client: c}
 	c.AddOnDeal = &AddOnDealServiceOp[T]{client: c}
 	c.Ads = &AdsServiceOp[T]{client: c}
 	c.AMS = &AMSServiceOp[T]{client: c}
@@ -157,11 +157,11 @@ type ResponseError struct {
 	RequestID   string
 }
 
-func (e ResponseError) GetStatus() int    { return e.Status }
-func (e ResponseError) GetMessage() string { return e.Message }
-func (e ResponseError) GetErrors() []string { return e.Errors }
+func (e ResponseError) GetStatus() int         { return e.Status }
+func (e ResponseError) GetMessage() string     { return e.Message }
+func (e ResponseError) GetErrors() []string    { return e.Errors }
 func (e ResponseError) GetShopeeError() string { return e.ShopeeError }
-func (e ResponseError) GetRequestID() string { return e.RequestID }
+func (e ResponseError) GetRequestID() string   { return e.RequestID }
 
 func (e ResponseError) Error() string {
 	msg := e.Message
@@ -433,21 +433,33 @@ func (c *Client[T]) doGetHeaders(req *http.Request, v interface{}, skipBody bool
 }
 
 func (c *Client[T]) logRequest(req *http.Request, skipBody bool) {
-	if req == nil { return }
-	if req.URL != nil { c.log.Debugf("%s: %s", req.Method, req.URL.String()) }
-	if !skipBody { c.logBody(&req.Body, "SENT: %s") }
+	if req == nil {
+		return
+	}
+	if req.URL != nil {
+		c.log.Debugf("%s: %s", req.Method, req.URL.String())
+	}
+	if !skipBody {
+		c.logBody(&req.Body, "SENT: %s")
+	}
 }
 
 func (c *Client[T]) logResponse(res *http.Response) {
-	if res == nil { return }
+	if res == nil {
+		return
+	}
 	c.log.Debugf("RECV %d: %s", res.StatusCode, res.Status)
 	c.logBody(&res.Body, "RESP: %s")
 }
 
 func (c *Client[T]) logBody(body *io.ReadCloser, format string) {
-	if body == nil || *body == nil { return }
+	if body == nil || *body == nil {
+		return
+	}
 	b, _ := io.ReadAll(*body)
-	if len(b) > 0 { c.log.Debugf(format, string(b)) }
+	if len(b) > 0 {
+		c.log.Debugf(format, string(b))
+	}
 	*body = io.NopCloser(bytes.NewBuffer(b))
 }
 
@@ -473,7 +485,9 @@ func CheckResponseError(r *http.Response) error {
 	}{}
 
 	bodyBytes, err := io.ReadAll(r.Body)
-	if err != nil { return err }
+	if err != nil {
+		return err
+	}
 
 	defer func() {
 		r.Body = io.NopCloser(bytes.NewBuffer(bodyBytes))
@@ -482,7 +496,9 @@ func CheckResponseError(r *http.Response) error {
 	if len(bodyBytes) > 0 {
 		err := json.Unmarshal(bodyBytes, &shopeeError)
 		if err != nil {
-			if r.StatusCode == http.StatusOK { return nil }
+			if r.StatusCode == http.StatusOK {
+				return nil
+			}
 			return ResponseDecodingError{Body: bodyBytes, Message: err.Error(), Status: r.StatusCode}
 		}
 	}
@@ -511,7 +527,9 @@ func (c *Client[T]) createAndDoGetHeaders(method, relPath string, data, options,
 	}
 	relPath = path.Join("api/v2", relPath)
 	req, err := c.NewRequest(method, relPath, data, options, headers)
-	if err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
 	return c.doGetHeaders(req, resource, false)
 }
 
@@ -533,14 +551,18 @@ func (c *Client[T]) Delete(path string) error {
 
 func (c *Client[T]) Upload(relPath, fieldname, filename string, resource interface{}) error {
 	req, err := c.NewfileUploadRequest(relPath, fieldname, filename)
-	if err != nil { return err }
+	if err != nil {
+		return err
+	}
 	_, err = c.doGetHeaders(req, resource, true)
 	return err
 }
 
 func (c *Client[T]) UploadFromReader(relPath, fieldname, filename string, reader io.Reader, resource interface{}) error {
 	req, err := c.NewUploadFromReaderRequest(relPath, fieldname, filename, reader)
-	if err != nil { return err }
+	if err != nil {
+		return err
+	}
 	_, err = c.doGetHeaders(req, resource, true)
 	return err
 }
@@ -551,24 +573,36 @@ func (c *Client[T]) NewfileUploadRequest(relPath, paramName, filename string) (*
 	}
 	relPath = path.Join("api/v2", relPath)
 	rel, err := url.Parse(relPath)
-	if err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
 	u := c.baseURL.ResolveReference(rel)
 	uri := u.String()
 
 	file, err := os.Open(filename)
-	if err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
 	defer file.Close()
 
 	body := &bytes.Buffer{}
 	writer := multipart.NewWriter(body)
 	part, err := writer.CreateFormFile(paramName, filepath.Base(filename))
-	if err != nil { return nil, err }
-	if _, err = io.Copy(part, file); err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
+	if _, err = io.Copy(part, file); err != nil {
+		return nil, err
+	}
 	err = writer.Close()
-	if err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", uri, body)
-	if err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
 	req.Header.Set("Content-Type", writer.FormDataContentType())
 	req.Header.Add("Accept", "application/json")
 	req.Header.Add("User-Agent", UserAgent)
@@ -583,20 +617,30 @@ func (c *Client[T]) NewUploadFromReaderRequest(relPath, paramName, filename stri
 	}
 	relPath = path.Join("api/v2", relPath)
 	rel, err := url.Parse(relPath)
-	if err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
 	u := c.baseURL.ResolveReference(rel)
 	uri := u.String()
 
 	body := &bytes.Buffer{}
 	writer := multipart.NewWriter(body)
 	part, err := writer.CreateFormFile(paramName, filepath.Base(filename))
-	if err != nil { return nil, err }
-	if _, err = io.Copy(part, reader); err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
+	if _, err = io.Copy(part, reader); err != nil {
+		return nil, err
+	}
 	err = writer.Close()
-	if err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", uri, body)
-	if err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
 	req.Header.Set("Content-Type", writer.FormDataContentType())
 	req.Header.Add("Accept", "application/json")
 	req.Header.Add("User-Agent", UserAgent)
@@ -609,15 +653,25 @@ type BoolString bool
 
 func (bs *BoolString) UnmarshalJSON(data []byte) error {
 	s := strings.Trim(string(data), "\"")
-	if strings.ToUpper(s) == "TRUE" { *bs = true; return nil }
-	if strings.ToUpper(s) == "FALSE" { *bs = false; return nil }
+	if strings.ToUpper(s) == "TRUE" {
+		*bs = true
+		return nil
+	}
+	if strings.ToUpper(s) == "FALSE" {
+		*bs = false
+		return nil
+	}
 	var b bool
-	if err := json.Unmarshal(data, &b); err != nil { return err }
+	if err := json.Unmarshal(data, &b); err != nil {
+		return err
+	}
 	*bs = BoolString(b)
 	return nil
 }
 
 func (bs BoolString) String() string {
-	if bs { return "TRUE" }
+	if bs {
+		return "TRUE"
+	}
 	return "FALSE"
 }

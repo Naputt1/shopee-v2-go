@@ -160,6 +160,7 @@ func (s *AMSServiceOp[T]) AddAllProductsToOpenCampaign(sid uint64, req AddAllPro
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // BatchAddProductsToOpenCampaign Batch add products to the Open Campaign for a given list of product IDs
 // Path: /api/v2/ams/batch_add_products_to_open_campaign
 // https://open.shopee.com/documents/v2/v2.ams.batch_add_products_to_open_campaign?module=127&type=1
@@ -169,6 +170,7 @@ func (s *AMSServiceOp[T]) BatchAddProductsToOpenCampaign(sid uint64, req BatchAd
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // BatchEditProductsOpenCampaignSetting Batch update open campaign settings for a given list of product IDs
 // Path: /api/v2/ams/batch_edit_products_open_campaign_setting
 // https://open.shopee.com/documents/v2/v2.ams.batch_edit_products_open_campaign_setting?module=127&type=1
@@ -178,6 +180,7 @@ func (s *AMSServiceOp[T]) BatchEditProductsOpenCampaignSetting(sid uint64, req B
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // BatchGetProductsSuggestedRate Fetch suggested rates for a given list of product IDs
 // Path: /api/v2/ams/batch_get_products_suggested_rate
 // https://open.shopee.com/documents/v2/v2.ams.batch_get_products_suggested_rate?module=127&type=1
@@ -187,6 +190,7 @@ func (s *AMSServiceOp[T]) BatchGetProductsSuggestedRate(sid uint64, opt BatchGet
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // BatchRemoveProductsOpenCampaignSetting Batch update products from Open Campaign for a given list of product IDs
 // Path: /api/v2/ams/batch_remove_products_open_campaign_setting
 // https://open.shopee.com/documents/v2/v2.ams.batch_remove_products_open_campaign_setting?module=127&type=1
@@ -196,6 +200,7 @@ func (s *AMSServiceOp[T]) BatchRemoveProductsOpenCampaignSetting(sid uint64, req
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // CreateNewTargetedCampaign Create a new campaign with custom product & affiliate selections, and basic info filling.
 // Path: /api/v2/ams/create_new_targeted_campaign
 // https://open.shopee.com/documents/v2/v2.ams.create_new_targeted_campaign?module=127&type=1
@@ -205,6 +210,7 @@ func (s *AMSServiceOp[T]) CreateNewTargetedCampaign(sid uint64, req CreateNewTar
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // EditAffiliateListOfTargetedCampaign Modify the selected affiliate list in an existing target campaign
 // Path: /api/v2/ams/edit_affiliate_list_of_targeted_campaign
 // https://open.shopee.com/documents/v2/v2.ams.edit_affiliate_list_of_targeted_campaign?module=127&type=1
@@ -214,6 +220,7 @@ func (s *AMSServiceOp[T]) EditAffiliateListOfTargetedCampaign(sid uint64, req Ed
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // EditAllProductsOpenCampaignSetting Update for all products in the Open Campaign. We will only return the general error that caused the whole task failure, without returning the specific error for each product in the v2.ams.get_open_campaign_batch_task_result API. If you want to get the result for each products, you can use v2.ams.batch_edit_products_open_campaign_setting by pagination manually, or check the product status by using the GET API after the task progress turn to 100%.
 // Path: /api/v2/ams/edit_all_products_open_campaign_setting
 // https://open.shopee.com/documents/v2/v2.ams.edit_all_products_open_campaign_setting?module=127&type=1
@@ -223,6 +230,7 @@ func (s *AMSServiceOp[T]) EditAllProductsOpenCampaignSetting(sid uint64, req Edi
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // EditProductListOfTargetedCampaign Modify the selected product list in an existing target campaign
 // Path: /api/v2/ams/edit_product_list_of_targeted_campaign
 // https://open.shopee.com/documents/v2/v2.ams.edit_product_list_of_targeted_campaign?module=127&type=1
@@ -232,6 +240,7 @@ func (s *AMSServiceOp[T]) EditProductListOfTargetedCampaign(sid uint64, req Edit
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetAffiliatePerformance Retrieve affiliate performance of the shop.
 // Path: /api/v2/ams/get_affiliate_performance
 // https://open.shopee.com/documents/v2/v2.ams.get_affiliate_performance?module=127&type=1
@@ -241,6 +250,7 @@ func (s *AMSServiceOp[T]) GetAffiliatePerformance(sid uint64, opt GetAffiliatePe
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetAutoAddNewProductToggleStatus Check if auto-add new product is currently enabled
 // Path: /api/v2/ams/get_auto_add_new_product_toggle_status
 // https://open.shopee.com/documents/v2/v2.ams.get_auto_add_new_product_toggle_status?module=127&type=1
@@ -250,6 +260,7 @@ func (s *AMSServiceOp[T]) GetAutoAddNewProductToggleStatus(sid uint64, tok strin
 	err := s.client.WithShop(sid, tok).Get(path, resp, nil)
 	return resp, err
 }
+
 // GetCampaignKeyMetricsPerformance Retrieve key metrics for Open and Targeted campaigns
 // Path: /api/v2/ams/get_campaign_key_metrics_performance
 // https://open.shopee.com/documents/v2/v2.ams.get_campaign_key_metrics_performance?module=127&type=1
@@ -259,6 +270,7 @@ func (s *AMSServiceOp[T]) GetCampaignKeyMetricsPerformance(sid uint64, opt GetCa
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetContentPerformance Retrieve content performance of the shop
 // Path: /api/v2/ams/get_content_performance
 // https://open.shopee.com/documents/v2/v2.ams.get_content_performance?module=127&type=1
@@ -268,6 +280,7 @@ func (s *AMSServiceOp[T]) GetContentPerformance(sid uint64, opt GetContentPerfor
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetConversionReport Retrieve the shop's conversion report with details about each order, item, affiliate, campaign.You can filter results using one or multiple time ranges, and the final result will be the intersection of these ranges. Due to data volume limitations, the maximum queryable time span is three months, etc.Maximum data can be viewed is 500 pages, please export data for more details.
 // Path: /api/v2/ams/get_conversion_report
 // https://open.shopee.com/documents/v2/v2.ams.get_conversion_report?module=127&type=1
@@ -277,6 +290,7 @@ func (s *AMSServiceOp[T]) GetConversionReport(sid uint64, opt GetConversionRepor
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetManagedAffiliateList Returns affiliates that are saved to managed affiliate list
 // Path: /api/v2/ams/get_managed_affiliate_list
 // https://open.shopee.com/documents/v2/v2.ams.get_managed_affiliate_list?module=127&type=1
@@ -286,6 +300,7 @@ func (s *AMSServiceOp[T]) GetManagedAffiliateList(sid uint64, opt GetManagedAffi
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetOpenCampaignAddedProduct Retrieve all products currently in the Open Campaign, including campaign status, commission rate, and promotion period
 // Path: /api/v2/ams/get_open_campaign_added_product
 // https://open.shopee.com/documents/v2/v2.ams.get_open_campaign_added_product?module=127&type=1
@@ -295,6 +310,7 @@ func (s *AMSServiceOp[T]) GetOpenCampaignAddedProduct(sid uint64, opt GetOpenCam
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetOpenCampaignBatchTaskResult Get open campaign batch task result
 // Path: /api/v2/ams/get_open_campaign_batch_task_result
 // https://open.shopee.com/documents/v2/v2.ams.get_open_campaign_batch_task_result?module=127&type=1
@@ -304,6 +320,7 @@ func (s *AMSServiceOp[T]) GetOpenCampaignBatchTaskResult(sid uint64, opt GetOpen
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetOpenCampaignNotAddedProduct Retrieve eligible products not yet added to the Open Campaign
 // Path: /api/v2/ams/get_open_campaign_not_added_product
 // https://open.shopee.com/documents/v2/v2.ams.get_open_campaign_not_added_product?module=127&type=1
@@ -313,6 +330,7 @@ func (s *AMSServiceOp[T]) GetOpenCampaignNotAddedProduct(sid uint64, opt GetOpen
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetOpenCampaignPerformance Retrieve all products in the Open Campaign along with performance data
 // Path: /api/v2/ams/get_open_campaign_performance
 // https://open.shopee.com/documents/v2/v2.ams.get_open_campaign_performance?module=127&type=1
@@ -322,6 +340,7 @@ func (s *AMSServiceOp[T]) GetOpenCampaignPerformance(sid uint64, opt GetOpenCamp
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetOptimizationSuggestionProduct Retrieve products with suggestions to improve performance
 // Path: /api/v2/ams/get_optimization_suggestion_product
 // https://open.shopee.com/documents/v2/v2.ams.get_optimization_suggestion_product?module=127&type=1
@@ -331,6 +350,7 @@ func (s *AMSServiceOp[T]) GetOptimizationSuggestionProduct(sid uint64, opt GetOp
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetPerformanceDataUpdateTime Retrieve the latest date of AMS dashboard data metrics update.
 // Path: /api/v2/ams/get_performance_data_update_time
 // https://open.shopee.com/documents/v2/v2.ams.get_performance_data_update_time?module=127&type=1
@@ -340,6 +360,7 @@ func (s *AMSServiceOp[T]) GetPerformanceDataUpdateTime(sid uint64, opt GetPerfor
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetProductPerformance Retrieve product performance of the shop.
 // Path: /api/v2/ams/get_product_performance
 // https://open.shopee.com/documents/v2/v2.ams.get_product_performance?module=127&type=1
@@ -349,6 +370,7 @@ func (s *AMSServiceOp[T]) GetProductPerformance(sid uint64, opt GetProductPerfor
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetRecommendedAffiliateList Returns top 200 recommended affiliates that can be added to a campaign
 // Path: /api/v2/ams/get_recommended_affiliate_list
 // https://open.shopee.com/documents/v2/v2.ams.get_recommended_affiliate_list?module=127&type=1
@@ -358,6 +380,7 @@ func (s *AMSServiceOp[T]) GetRecommendedAffiliateList(sid uint64, opt GetRecomme
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetShopPerformance Retrieve overall key metrics for all channels or specific channels.
 // Path: /api/v2/ams/get_shop_performance
 // https://open.shopee.com/documents/v2/v2.ams.get_shop_performance?module=127&type=1
@@ -367,6 +390,7 @@ func (s *AMSServiceOp[T]) GetShopPerformance(sid uint64, opt GetShopPerformanceR
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetShopSuggestedRate Retrieve suggested rates for all eligible products
 // Path: /api/v2/ams/get_shop_suggested_rate
 // https://open.shopee.com/documents/v2/v2.ams.get_shop_suggested_rate?module=127&type=1
@@ -376,6 +400,7 @@ func (s *AMSServiceOp[T]) GetShopSuggestedRate(sid uint64, tok string) (*GetShop
 	err := s.client.WithShop(sid, tok).Get(path, resp, nil)
 	return resp, err
 }
+
 // GetTargetedCampaignAddableProductList Returns a list of products that can be added to a targeted campaign
 // Path: /api/v2/ams/get_targeted_campaign_addable_product_list
 // https://open.shopee.com/documents/v2/v2.ams.get_targeted_campaign_addable_product_list?module=127&type=1
@@ -385,6 +410,7 @@ func (s *AMSServiceOp[T]) GetTargetedCampaignAddableProductList(sid uint64, opt 
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetTargetedCampaignList {"content":"<p>Retrieve all current targeted campaigns created by the seller</p>","raw_content":[{"name":"paragraph","children":[{"data":"Retrieve all current targeted campaigns created by the seller"}]}]}
 // Path: /api/v2/ams/get_targeted_campaign_list
 // https://open.shopee.com/documents/v2/v2.ams.get_targeted_campaign_list?module=127&type=1
@@ -394,6 +420,7 @@ func (s *AMSServiceOp[T]) GetTargetedCampaignList(sid uint64, opt GetTargetedCam
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetTargetedCampaignPerformance Retrieve a list of Targeted Campaigns and their performance data
 // Path: /api/v2/ams/get_targeted_campaign_performance
 // https://open.shopee.com/documents/v2/v2.ams.get_targeted_campaign_performance?module=127&type=1
@@ -403,6 +430,7 @@ func (s *AMSServiceOp[T]) GetTargetedCampaignPerformance(sid uint64, opt GetTarg
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetTargetedCampaignSettings For each campaign, return: campaign basic info (name, status, promotion period, message), selected product list (with product name & ID), selected affiliate list (with affiliate names)
 // Path: /api/v2/ams/get_targeted_campaign_settings
 // https://open.shopee.com/documents/v2/v2.ams.get_targeted_campaign_settings?module=127&type=1
@@ -412,6 +440,7 @@ func (s *AMSServiceOp[T]) GetTargetedCampaignSettings(sid uint64, opt GetTargete
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetValidationList Retrieve the seller's AMS validation bill
 // Path: /api/v2/ams/get_validation_list
 // https://open.shopee.com/documents/v2/v2.ams.get_validation_list?module=127&type=1
@@ -421,6 +450,7 @@ func (s *AMSServiceOp[T]) GetValidationList(sid uint64, tok string) (*GetValidat
 	err := s.client.WithShop(sid, tok).Get(path, resp, nil)
 	return resp, err
 }
+
 // GetValidationReport Retrieve detailed information for a specific validation bill
 // Path: /api/v2/ams/get_validation_report
 // https://open.shopee.com/documents/v2/v2.ams.get_validation_report?module=127&type=1
@@ -430,6 +460,7 @@ func (s *AMSServiceOp[T]) GetValidationReport(sid uint64, opt GetValidationRepor
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // QueryAffiliateList Retrieve affiliate information by affiliate id.
 // Path: /api/v2/ams/query_affiliate_list
 // https://open.shopee.com/documents/v2/v2.ams.query_affiliate_list?module=127&type=1
@@ -439,6 +470,7 @@ func (s *AMSServiceOp[T]) QueryAffiliateList(sid uint64, opt QueryAffiliateListR
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // RemoveAllProductsOpenCampaignSetting Remove the entire product list of Open Campaign. We will only return the general error that caused the whole task failure, without returning the specific error for each product in the v2.ams.get_open_campaign_batch_task_result API. If you want to get the result for each products, you can use v2.ams. batch_remove_products_open_campaign_setting by pagination manually, or check the product status by using the GET API after the task progress turn to 100%.
 // Path: /api/v2/ams/remove_all_products_open_campaign_setting
 // https://open.shopee.com/documents/v2/v2.ams.remove_all_products_open_campaign_setting?module=127&type=1
@@ -448,6 +480,7 @@ func (s *AMSServiceOp[T]) RemoveAllProductsOpenCampaignSetting(sid uint64, tok s
 	err := s.client.WithShop(sid, tok).Post(path, nil, resp)
 	return resp, err
 }
+
 // TerminateTargetedCampaign Change target campaign status to "terminated" to stop all affiliate promotion activity
 // Path: /api/v2/ams/terminate_targeted_campaign
 // https://open.shopee.com/documents/v2/v2.ams.terminate_targeted_campaign?module=127&type=1
@@ -457,6 +490,7 @@ func (s *AMSServiceOp[T]) TerminateTargetedCampaign(sid uint64, req TerminateTar
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateAutoAddNewProductSetting Change auto-add toggle and default commission rate setting
 // Path: /api/v2/ams/update_auto_add_new_product_setting
 // https://open.shopee.com/documents/v2/v2.ams.update_auto_add_new_product_setting?module=127&type=1
@@ -466,6 +500,7 @@ func (s *AMSServiceOp[T]) UpdateAutoAddNewProductSetting(sid uint64, req UpdateA
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateBasicInfoOfTargetedCampaign Edit campaign name, promotion period, message, and budget (if the shop is whitelisted) of target campaign
 // Path: /api/v2/ams/update_basic_info_of_targeted_campaign
 // https://open.shopee.com/documents/v2/v2.ams.update_basic_info_of_targeted_campaign?module=127&type=1

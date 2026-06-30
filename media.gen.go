@@ -140,4 +140,3 @@ func (s *MediaServiceOp[T]) UploadVideoPartFromReader(sid uint64, filename strin
 	err := s.client.WithMerchant(sid, tok).UploadFromReader(path, "image", filename, reader, resp)
 	return resp, err
 }
-

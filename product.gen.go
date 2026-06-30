@@ -161,7 +161,7 @@ type ProductService interface {
 	// Path: /api/v2/product/get_size_chart_list
 	// https://open.shopee.com/documents/v2/v2.product.get_size_chart_list?module=89&type=1
 	GetSizeChartList(sid uint64, opt ProductGetSizeChartListRequest, tok string) (*ProductGetSizeChartListResponse, error)
-	// GetVariations Get the standardized tier variation defined by Shopee, which is currently a three-layer tree structure. 
+	// GetVariations Get the standardized tier variation defined by Shopee, which is currently a three-layer tree structure.
 	// The top layer is variations, the second layer is groups, groups are used to divide options, and the third layer is options.
 	// Path: /api/v2/product/get_variation_tree
 	// https://open.shopee.com/documents/v2/v2.product.get_variations?module=89&type=1
@@ -178,7 +178,7 @@ type ProductService interface {
 	// Path: /api/v2/product/init_tier_variation
 	// https://open.shopee.com/documents/v2/v2.product.init_tier_variation?module=89&type=1
 	InitTierVariation(sid uint64, req ProductInitTierVariationRequest, tok string) (*ProductInitTierVariationResponse, error)
-	// PublishItemToOutletShop 
+	// PublishItemToOutletShop
 	// Path: /api/v2/
 	// https://open.shopee.com/documents/v2/v2.product.publish_item_to_outlet_shop?module=89&type=1
 	PublishItemToOutletShop(sid uint64, tok string) (*PublishItemToOutletShopResponse, error)
@@ -249,6 +249,7 @@ func (s *ProductServiceOp[T]) AddItem(sid uint64, req AddItemRequest, tok string
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // AddKitItem Create the kit item by selecting multiple items and setting main component and quantity per kit.
 // Path: /api/v2/product/add_kit_item
 // https://open.shopee.com/documents/v2/v2.product.add_kit_item?module=89&type=1
@@ -258,6 +259,7 @@ func (s *ProductServiceOp[T]) AddKitItem(sid uint64, req AddKitItemRequest, tok 
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // AddModel Add model. More detail please check: https://open.shopee.com/developer-guide/219
 // Path: /api/v2/product/add_model
 // https://open.shopee.com/documents/v2/v2.product.add_model?module=89&type=1
@@ -267,6 +269,7 @@ func (s *ProductServiceOp[T]) AddModel(sid uint64, req AddModelRequest, tok stri
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // BatchAddItem {"content":"<p>Create asynchronous task to batch add item</p>","raw_content":[{"name":"paragraph","children":[{"data":"Create asynchronous task to batch add item"}]}]}
 // Path: /api/v2/product/batch_add_item
 // https://open.shopee.com/documents/v2/v2.product.batch_add_item?module=89&type=1
@@ -276,6 +279,7 @@ func (s *ProductServiceOp[T]) BatchAddItem(sid uint64, req BatchAddItemRequest, 
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // BatchPublishItemToOutletShop {"content":"<p>Create asynchronous task to batch publish outlet item</p>","raw_content":[{"name":"paragraph","children":[{"data":"Create asynchronous task to batch publish outlet item"}]}]}
 // Path: /api/v2/product/batch_publish_item_to_outlet_shop
 // https://open.shopee.com/documents/v2/v2.product.batch_publish_item_to_outlet_shop?module=89&type=1
@@ -285,6 +289,7 @@ func (s *ProductServiceOp[T]) BatchPublishItemToOutletShop(sid uint64, req Batch
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // BatchUpdateOutletPrice {"content":"<p>Create asynchronous task to batch update outlet item's price</p>","raw_content":[{"name":"paragraph","children":[{"data":"Create asynchronous task to batch update outlet item's price"}]}]}
 // Path: /api/v2/product/batch_update_outlet_price
 // https://open.shopee.com/documents/v2/v2.product.batch_update_outlet_price?module=89&type=1
@@ -294,6 +299,7 @@ func (s *ProductServiceOp[T]) BatchUpdateOutletPrice(sid uint64, req BatchUpdate
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // BatchUpdateOutletStock {"content":"<p>Create asynchronous task to batch update outlet stock</p>","raw_content":[{"name":"paragraph","children":[{"data":"Create asynchronous task to batch update outlet stock"}]}]}
 // Path: /api/v2/product/batch_update_outlet_stock
 // https://open.shopee.com/documents/v2/v2.product.batch_update_outlet_stock?module=89&type=1
@@ -303,6 +309,7 @@ func (s *ProductServiceOp[T]) BatchUpdateOutletStock(sid uint64, req BatchUpdate
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // BoostItem Boost item.
 // Path: /api/v2/product/boost_item
 // https://open.shopee.com/documents/v2/v2.product.boost_item?module=89&type=1
@@ -312,6 +319,7 @@ func (s *ProductServiceOp[T]) BoostItem(sid uint64, req BoostItemRequest, tok st
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // CategoryRecommend Recommend category by item name.
 // Path: /api/v2/product/category_recommend
 // https://open.shopee.com/documents/v2/v2.product.category_recommend?module=89&type=1
@@ -321,6 +329,7 @@ func (s *ProductServiceOp[T]) CategoryRecommend(sid uint64, opt ProductCategoryR
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // DeleteItem Use this call to delete a product item.
 // Path: /api/v2/product/delete_item
 // https://open.shopee.com/documents/v2/v2.product.delete_item?module=89&type=1
@@ -330,6 +339,7 @@ func (s *ProductServiceOp[T]) DeleteItem(sid uint64, req DeleteItemRequest, tok 
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // DeleteModel Delete item model.
 // Path: /api/v2/product/delete_model
 // https://open.shopee.com/documents/v2/v2.product.delete_model?module=89&type=1
@@ -339,6 +349,7 @@ func (s *ProductServiceOp[T]) DeleteModel(sid uint64, req DeleteModelRequest, to
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GenerateKitImage This API generates a single consolidated image by combining the cover images of all selected items. It is typically used to create a unified product display image for kits or bundles.
 // Path: /api/v2/product/generate_kit_image
 // https://open.shopee.com/documents/v2/v2.product.generate_kit_image?module=89&type=1
@@ -348,6 +359,7 @@ func (s *ProductServiceOp[T]) GenerateKitImage(sid uint64, req GenerateKitImageR
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetAitemByPitemId Get the list of A Items under SIP Affiliate Shop corresponding to P Items under SIP Primary Shop.
 // Path: /api/v2/product/get_aitem_by_pitem_id
 // https://open.shopee.com/documents/v2/v2.product.get_aitem_by_pitem_id?module=89&type=1
@@ -357,6 +369,7 @@ func (s *ProductServiceOp[T]) GetAitemByPitemId(sid uint64, opt GetAitemByPitemI
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetAllVehicleList Use this Open API to get all vehicle list.
 // Path: /api/v2/product/get_all_vehicle_list
 // https://open.shopee.com/documents/v2/v2.product.get_all_vehicle_list?module=89&type=1
@@ -366,6 +379,7 @@ func (s *ProductServiceOp[T]) GetAllVehicleList(sid uint64, opt GetAllVehicleLis
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetAttributeTree Get the attribute tree for categories
 // Path: /api/v2/product/get_attribute_tree
 // https://open.shopee.com/documents/v2/v2.product.get_attribute_tree?module=89&type=1
@@ -375,6 +389,7 @@ func (s *ProductServiceOp[T]) GetAttributeTree(sid uint64, opt ProductGetAttribu
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetBatchTaskResult {"content":"<p>Query batch task result</p>","raw_content":[{"name":"paragraph","children":[{"data":"Query batch task result"}]}]}
 // Path: /api/v2/product/get_batch_task_result
 // https://open.shopee.com/documents/v2/v2.product.get_batch_task_result?module=89&type=1
@@ -384,6 +399,7 @@ func (s *ProductServiceOp[T]) GetBatchTaskResult(sid uint64, req GetBatchTaskRes
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetBoostedList Get boosted item list.
 // Path: /api/v2/product/get_boosted_list
 // https://open.shopee.com/documents/v2/v2.product.get_boosted_list?module=89&type=1
@@ -393,6 +409,7 @@ func (s *ProductServiceOp[T]) GetBoostedList(sid uint64, tok string) (*GetBooste
 	err := s.client.WithShop(sid, tok).Get(path, resp, nil)
 	return resp, err
 }
+
 // GetBrandList Get the brand data of a leaf category. More detail please check: https://open.shopee.com/developer-guide/209
 // Path: /api/v2/product/get_brand_list
 // https://open.shopee.com/documents/v2/v2.product.get_brand_list?module=89&type=1
@@ -402,6 +419,7 @@ func (s *ProductServiceOp[T]) GetBrandList(sid uint64, opt ProductGetBrandListRe
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetCategory Get category tree data. More detail please check https://open.shopee.com/developer-guide/209
 // Path: /api/v2/product/get_category
 // https://open.shopee.com/documents/v2/v2.product.get_category?module=89&type=1
@@ -411,6 +429,7 @@ func (s *ProductServiceOp[T]) GetCategory(sid uint64, opt ProductGetCategoryRequ
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetComment Use this api to get comment by shop_id, item_id, or comment_id, get up to 1000 comments.
 // Path: /api/v2/product/get_comment
 // https://open.shopee.com/documents/v2/v2.product.get_comment?module=89&type=1
@@ -420,6 +439,7 @@ func (s *ProductServiceOp[T]) GetComment(sid uint64, opt GetCommentRequest, tok 
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetDirectItemList get direct item by main item.
 // Path: /api/v2/product/get_direct_item_list
 // https://open.shopee.com/documents/v2/v2.product.get_direct_item_list?module=89&type=1
@@ -429,6 +449,7 @@ func (s *ProductServiceOp[T]) GetDirectItemList(sid uint64, opt GetDirectItemLis
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetDirectShopRecommendedPrice get recommend price for direct shop.
 // Path: /api/v2/product/get_direct_shop_recommended_price
 // https://open.shopee.com/documents/v2/v2.product.get_direct_shop_recommended_price?module=89&type=1
@@ -438,6 +459,7 @@ func (s *ProductServiceOp[T]) GetDirectShopRecommendedPrice(sid uint64, opt GetD
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetItemBaseInfo Use this api to get basic info of item by item_id list.
 // Path: /api/v2/product/get_item_base_info
 // https://open.shopee.com/documents/v2/v2.product.get_item_base_info?module=89&type=1
@@ -447,6 +469,7 @@ func (s *ProductServiceOp[T]) GetItemBaseInfo(sid uint64, opt GetItemBaseInfoReq
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetItemContentDiagnosisResult Get the content quality details (including content quality level, content issues, and system suggestions) for specific product list.
 // Path: /api/v2/product/get_item_content_diagnosis_result
 // https://open.shopee.com/documents/v2/v2.product.get_item_content_diagnosis_result?module=89&type=1
@@ -456,6 +479,7 @@ func (s *ProductServiceOp[T]) GetItemContentDiagnosisResult(sid uint64, req GetI
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetItemExtraInfo Use this api to get extra info of item by item_id list.
 // Path: /api/v2/product/get_item_extra_info
 // https://open.shopee.com/documents/v2/v2.product.get_item_extra_info?module=89&type=1
@@ -465,6 +489,7 @@ func (s *ProductServiceOp[T]) GetItemExtraInfo(sid uint64, opt GetItemExtraInfoR
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetItemLimit Get item upload control.
 // Path: /api/v2/product/get_item_limit
 // https://open.shopee.com/documents/v2/v2.product.get_item_limit?module=89&type=1
@@ -474,6 +499,7 @@ func (s *ProductServiceOp[T]) GetItemLimit(sid uint64, opt GetItemLimitRequest, 
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetItemList Use this call to get a list of items.
 // Path: /api/v2/product/get_item_list
 // https://open.shopee.com/documents/v2/v2.product.get_item_list?module=89&type=1
@@ -483,6 +509,7 @@ func (s *ProductServiceOp[T]) GetItemList(sid uint64, opt ProductGetItemListRequ
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetItemListByContentDiagnosis Query the list of products and their content quality details by content quality level or content issues.
 // Path: /api/v2/product/get_item_list_by_content_diagnosis
 // https://open.shopee.com/documents/v2/v2.product.get_item_list_by_content_diagnosis?module=89&type=1
@@ -492,6 +519,7 @@ func (s *ProductServiceOp[T]) GetItemListByContentDiagnosis(sid uint64, req GetI
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetItemPromotion Get item promotion info.
 // Path: /api/v2/product/get_item_promotion
 // https://open.shopee.com/documents/v2/v2.product.get_item_promotion?module=89&type=1
@@ -501,6 +529,7 @@ func (s *ProductServiceOp[T]) GetItemPromotion(sid uint64, opt GetItemPromotionR
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetItemViolationInfo get item violation info
 // Path: /api/v2/product/get_item_violation_info
 // https://open.shopee.com/documents/v2/v2.product.get_item_violation_info?module=89&type=1
@@ -510,6 +539,7 @@ func (s *ProductServiceOp[T]) GetItemViolationInfo(sid uint64, req GetItemViolat
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetKitItemInfo Get the kit basic information and kit components.
 // Path: /api/v2/product/get_kit_item_info
 // https://open.shopee.com/documents/v2/v2.product.get_kit_item_info?module=89&type=1
@@ -519,6 +549,7 @@ func (s *ProductServiceOp[T]) GetKitItemInfo(sid uint64, opt GetKitItemInfoReque
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetKitItemLimit Get the limit of Kit item.
 // Path: /api/v2/product/get_kit_item_limit
 // https://open.shopee.com/documents/v2/v2.product.get_kit_item_limit?module=89&type=1
@@ -528,6 +559,7 @@ func (s *ProductServiceOp[T]) GetKitItemLimit(sid uint64, opt GetKitItemLimitReq
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetMainItemList get main item by direct item.
 // Path: /api/v2/product/get_main_item_list
 // https://open.shopee.com/documents/v2/v2.product.get_main_item_list?module=89&type=1
@@ -537,6 +569,7 @@ func (s *ProductServiceOp[T]) GetMainItemList(sid uint64, opt GetMainItemListReq
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetMartItemByOutletItemId {"content":"<p>Get the mapping information between a Mart item and its corresponding outlet item by outlet item ID.</p><p><br>&nbsp;</p>","raw_content":[{"name":"paragraph","children":[{"data":"Get the mapping information between a Mart item and its corresponding outlet item by outlet item ID."}]},{"name":"paragraph","children":[{"name":"softBreak"},{"data":" "}]}]}
 // Path: /api/v2/product/get_mart_item_by_outlet_item_id
 // https://open.shopee.com/documents/v2/v2.product.get_mart_item_by_outlet_item_id?module=89&type=1
@@ -546,6 +579,7 @@ func (s *ProductServiceOp[T]) GetMartItemByOutletItemId(sid uint64, req GetMartI
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetMartItemMappingById Get the mapping information between a Mart item and its corresponding outlet item by item ID.
 // Path: /api/v2/product/get_mart_item_mapping_by_id
 // https://open.shopee.com/documents/v2/v2.product.get_mart_item_mapping_by_id?module=89&type=1
@@ -555,6 +589,7 @@ func (s *ProductServiceOp[T]) GetMartItemMappingById(sid uint64, req GetMartItem
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetModelList Get model list of an item.
 // Path: /api/v2/product/get_model_list
 // https://open.shopee.com/documents/v2/v2.product.get_model_list?module=89&type=1
@@ -564,6 +599,7 @@ func (s *ProductServiceOp[T]) GetModelList(sid uint64, opt GetModelListRequest, 
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetProductCertificationRule Get product certification rule
 // Path: /api/v2/product/get_product_certification_rule
 // https://open.shopee.com/documents/v2/v2.product.get_product_certification_rule?module=89&type=1
@@ -573,6 +609,7 @@ func (s *ProductServiceOp[T]) GetProductCertificationRule(sid uint64, req GetPro
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetRecommendAttribute Get recommend attributes.
 // Path: /api/v2/product/get_recommend_attribute
 // https://open.shopee.com/documents/v2/v2.product.get_recommend_attribute?module=89&type=1
@@ -582,6 +619,7 @@ func (s *ProductServiceOp[T]) GetRecommendAttribute(sid uint64, opt ProductGetRe
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetSizeChartDetail Get new size chart detail. Now only local shop support to use this api to get new size chart detail.
 // Path: /api/v2/product/get_size_chart_detail
 // https://open.shopee.com/documents/v2/v2.product.get_size_chart_detail?module=89&type=1
@@ -591,6 +629,7 @@ func (s *ProductServiceOp[T]) GetSizeChartDetail(sid uint64, opt ProductGetSizeC
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetSizeChartList Get new size chat list. Now only support local shop to use new size chart.
 // Path: /api/v2/product/get_size_chart_list
 // https://open.shopee.com/documents/v2/v2.product.get_size_chart_list?module=89&type=1
@@ -600,7 +639,8 @@ func (s *ProductServiceOp[T]) GetSizeChartList(sid uint64, opt ProductGetSizeCha
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
-// GetVariations Get the standardized tier variation defined by Shopee, which is currently a three-layer tree structure. 
+
+// GetVariations Get the standardized tier variation defined by Shopee, which is currently a three-layer tree structure.
 // The top layer is variations, the second layer is groups, groups are used to divide options, and the third layer is options.
 // Path: /api/v2/product/get_variation_tree
 // https://open.shopee.com/documents/v2/v2.product.get_variations?module=89&type=1
@@ -610,6 +650,7 @@ func (s *ProductServiceOp[T]) GetVariations(sid uint64, opt ProductGetVariations
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetVehicleListByCompatibilityDetail Use this Open API to get vehicle list by brand, model, year, and version.
 // Path: /api/v2/product/get_vehicle_list_by_compatibility_detail
 // https://open.shopee.com/documents/v2/v2.product.get_vehicle_list_by_compatibility_detail?module=89&type=1
@@ -619,6 +660,7 @@ func (s *ProductServiceOp[T]) GetVehicleListByCompatibilityDetail(sid uint64, op
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetWeightRecommendation Get recommended weight. Now only BR shop support to use this api to get recommended weight.
 // Path: /api/v2/product/get_weight_recommendation
 // https://open.shopee.com/documents/v2/v2.product.get_weight_recommendation?module=89&type=1
@@ -628,6 +670,7 @@ func (s *ProductServiceOp[T]) GetWeightRecommendation(sid uint64, req GetWeightR
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // InitTierVariation This API allows you to update the tier structure of a product. Defining only color creates one tier, while color + size creates two tiers (maximum supported). Supported changes include: no tier ↔ one/two tiers, one tier ↔ two/no tier, and two tiers ↔ one/no tier. For details, see Developer Guide.  Please wait at least 5 seconds after creating an item before creating variants, as processing may be delayed.
 // Path: /api/v2/product/init_tier_variation
 // https://open.shopee.com/documents/v2/v2.product.init_tier_variation?module=89&type=1
@@ -637,7 +680,8 @@ func (s *ProductServiceOp[T]) InitTierVariation(sid uint64, req ProductInitTierV
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
-// PublishItemToOutletShop 
+
+// PublishItemToOutletShop
 // Path: /api/v2/
 // https://open.shopee.com/documents/v2/v2.product.publish_item_to_outlet_shop?module=89&type=1
 func (s *ProductServiceOp[T]) PublishItemToOutletShop(sid uint64, tok string) (*PublishItemToOutletShopResponse, error) {
@@ -646,6 +690,7 @@ func (s *ProductServiceOp[T]) PublishItemToOutletShop(sid uint64, tok string) (*
 	err := s.client.WithShop(sid, tok).Post(path, nil, resp)
 	return resp, err
 }
+
 // RegisterBrand Use this call to register a brand.
 // Path: /api/v2/product/register_brand
 // https://open.shopee.com/documents/v2/v2.product.register_brand?module=89&type=1
@@ -655,6 +700,7 @@ func (s *ProductServiceOp[T]) RegisterBrand(sid uint64, req RegisterBrandRequest
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // ReplyComment Use this api to reply comments from buyers in batch.
 // Path: /api/v2/product/reply_comment
 // https://open.shopee.com/documents/v2/v2.product.reply_comment?module=89&type=1
@@ -664,6 +710,7 @@ func (s *ProductServiceOp[T]) ReplyComment(sid uint64, req ReplyCommentRequest, 
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // SearchAttributeValueList this api is for searching attribute value list for attribute with support_search_value flag
 // Path: /api/v2/product/search_attribute_value_list
 // https://open.shopee.com/documents/v2/v2.product.search_attribute_value_list?module=89&type=1
@@ -673,6 +720,7 @@ func (s *ProductServiceOp[T]) SearchAttributeValueList(sid uint64, req SearchAtt
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // SearchItem Use this call to search item.
 // Path: /api/v2/product/search_item
 // https://open.shopee.com/documents/v2/v2.product.search_item?module=89&type=1
@@ -682,6 +730,7 @@ func (s *ProductServiceOp[T]) SearchItem(sid uint64, opt SearchItemRequest, tok 
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // SearchUnpackagedModelList Use this API to retrieve Unpackaged SKU ID information for items that toggle on logistics channel 30029.
 // Path: /api/v2/product/search_unpackaged_model_list
 // https://open.shopee.com/documents/v2/v2.product.search_unpackaged_model_list?module=89&type=1
@@ -691,6 +740,7 @@ func (s *ProductServiceOp[T]) SearchUnpackagedModelList(sid uint64, req SearchUn
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UnlistItem Unlist item.
 // Path: /api/v2/product/unlist_item
 // https://open.shopee.com/documents/v2/v2.product.unlist_item?module=89&type=1
@@ -700,6 +750,7 @@ func (s *ProductServiceOp[T]) UnlistItem(sid uint64, req UnlistItemRequest, tok 
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateItem {"content":"<p>Update item.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Update item."}]}]}
 // Path: /api/v2/product/update_item
 // https://open.shopee.com/documents/v2/v2.product.update_item?module=89&type=1
@@ -709,6 +760,7 @@ func (s *ProductServiceOp[T]) UpdateItem(sid uint64, req UpdateItemRequest, tok 
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateKitItem Update the kit basic information and kit components, only support adding kit variations and updating existing kit variation’s image, price, and model_sku, don’t support deleting existing kit variations and updating the items, main component and quantity per kit of existing kit variations.
 // Path: /api/v2/product/update_kit_item
 // https://open.shopee.com/documents/v2/v2.product.update_kit_item?module=89&type=1
@@ -718,6 +770,7 @@ func (s *ProductServiceOp[T]) UpdateKitItem(sid uint64, req UpdateKitItemRequest
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateModel Update seller sku/ pre order/ model status for model.
 // Path: /api/v2/product/update_model
 // https://open.shopee.com/documents/v2/v2.product.update_model?module=89&type=1
@@ -727,6 +780,7 @@ func (s *ProductServiceOp[T]) UpdateModel(sid uint64, req UpdateModelRequest, to
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdatePrice Update price.
 // Path: /api/v2/product/update_price
 // https://open.shopee.com/documents/v2/v2.product.update_price?module=89&type=1
@@ -736,6 +790,7 @@ func (s *ProductServiceOp[T]) UpdatePrice(sid uint64, req ProductUpdatePriceRequ
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateSipItemPrice Update sip item price.
 // Path: /api/v2/product/update_sip_item_price
 // https://open.shopee.com/documents/v2/v2.product.update_sip_item_price?module=89&type=1
@@ -745,6 +800,7 @@ func (s *ProductServiceOp[T]) UpdateSipItemPrice(sid uint64, req UpdateSipItemPr
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateStock Use this API to update one item_id for each call, but still can support updating multiple model_ids stock of the same item_id (If you need batch modification, please call multiple times)This API will update only "seller_stock".Whenever there is a promotion ongoing or upcoming, the total stock must be larger than or equal to real-time “reserved_stock” promotion stock (Please check v2.get_item_promotion API for more details). Items that are deleted will not be allowed to modify stock.
 // Path: /api/v2/product/update_stock
 // https://open.shopee.com/documents/v2/v2.product.update_stock?module=89&type=1
@@ -754,6 +810,7 @@ func (s *ProductServiceOp[T]) UpdateStock(sid uint64, req ProductUpdateStockRequ
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateTierVariation This api can only be used without changing the tier structure, you can add options, delete options, and update the option image by this api. More detail please check: https://open.shopee.com/developer-guide/219
 // Path: /api/v2/product/update_tier_variation
 // https://open.shopee.com/documents/v2/v2.product.update_tier_variation?module=89&type=1

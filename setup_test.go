@@ -10,22 +10,22 @@ import (
 )
 
 var (
-	client      *DefaultClient
-	app         App
-	shopID      uint64 = 123456
-	merchantID  uint64 = 789012
-	accessToken        = "test_access_token"
-	skippedMu   sync.Mutex
+	client        *DefaultClient
+	app           App
+	shopID        uint64 = 123456
+	merchantID    uint64 = 789012
+	accessToken          = "test_access_token"
+	skippedMu     sync.Mutex
 	skippedRoutes []string
 )
 
 func setup() {
 	httpmock.Activate()
 	app = App{
-		PartnerID:  123456,
-		PartnerKey: "test_partner_key",
+		PartnerID:   123456,
+		PartnerKey:  "test_partner_key",
 		RedirectURL: "https://example.com/callback",
-		APIURL:     "https://open-api.test.com",
+		APIURL:      "https://open-api.test.com",
 	}
 	client = NewDefaultClient(app)
 }

@@ -30,17 +30,25 @@ func NewLeveledLogger(debug, info, warn, err io.Writer) *LeveledLogger {
 }
 
 func (l *LeveledLogger) Debugf(format string, v ...interface{}) {
-	if l.DebugLogger != nil { l.DebugLogger.Output(2, fmt.Sprintf(format, v...)) }
+	if l.DebugLogger != nil {
+		l.DebugLogger.Output(2, fmt.Sprintf(format, v...))
+	}
 }
 
 func (l *LeveledLogger) Infof(format string, v ...interface{}) {
-	if l.InfoLogger != nil { l.InfoLogger.Output(2, fmt.Sprintf(format, v...)) }
+	if l.InfoLogger != nil {
+		l.InfoLogger.Output(2, fmt.Sprintf(format, v...))
+	}
 }
 
 func (l *LeveledLogger) Warnf(format string, v ...interface{}) {
-	if l.WarnLogger != nil { l.WarnLogger.Output(2, fmt.Sprintf(format, v...)) }
+	if l.WarnLogger != nil {
+		l.WarnLogger.Output(2, fmt.Sprintf(format, v...))
+	}
 }
 
 func (l *LeveledLogger) Errorf(format string, v ...interface{}) {
-	if l.ErrorLogger != nil { l.ErrorLogger.Output(2, fmt.Sprintf(format, v...)) }
+	if l.ErrorLogger != nil {
+		l.ErrorLogger.Output(2, fmt.Sprintf(format, v...))
+	}
 }

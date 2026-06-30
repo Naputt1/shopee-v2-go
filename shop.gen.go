@@ -52,6 +52,7 @@ func (s *ShopServiceOp[T]) GetAuthorisedResellerBrand(sid uint64, opt GetAuthori
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetBrShopOnboardingInfo [For BR Shop Only] Use this API to get shop KYC registration and qualification information.
 // Path: /api/v2/shop/get_br_shop_onboarding_info
 // https://open.shopee.com/documents/v2/v2.shop.get_br_shop_onboarding_info?module=92&type=1
@@ -61,6 +62,7 @@ func (s *ShopServiceOp[T]) GetBrShopOnboardingInfo(sid uint64, tok string) (*Get
 	err := s.client.WithShop(sid, tok).Get(path, resp, nil)
 	return resp, err
 }
+
 // GetProfile This API support to get information of shop.
 // Path: /api/v2/shop/get_profile
 // https://open.shopee.com/documents/v2/v2.shop.get_profile?module=92&type=1
@@ -70,6 +72,7 @@ func (s *ShopServiceOp[T]) GetProfile(sid uint64, tok string) (*GetProfileRespon
 	err := s.client.WithShop(sid, tok).Get(path, resp, nil)
 	return resp, err
 }
+
 // GetShopHolidayMode Use this API to check whether a shop has enabled holiday mode and its ongoing and upcoming holiday mode period.
 // Path: /api/v2/shop/get_shop_holiday_mode
 // https://open.shopee.com/documents/v2/v2.shop.get_shop_holiday_mode?module=92&type=1
@@ -79,6 +82,7 @@ func (s *ShopServiceOp[T]) GetShopHolidayMode(sid uint64, tok string) (*GetShopH
 	err := s.client.WithShop(sid, tok).Get(path, resp, nil)
 	return resp, err
 }
+
 // GetShopInfo {"content":"<p>Use this call to get information of shop</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this call to get information of shop"}]}]}
 // Path: /api/v2/shop/get_shop_info
 // https://open.shopee.com/documents/v2/v2.shop.get_shop_info?module=92&type=1
@@ -88,6 +92,7 @@ func (s *ShopServiceOp[T]) GetShopInfo(sid uint64, tok string) (*GetShopInfoResp
 	err := s.client.WithShop(sid, tok).Get(path, resp, nil)
 	return resp, err
 }
+
 // GetShopNotification get Seller Center notification, the permission is controlled by App type
 // Path: /api/v2/shop/get_shop_notification
 // https://open.shopee.com/documents/v2/v2.shop.get_shop_notification?module=92&type=1
@@ -97,6 +102,7 @@ func (s *ShopServiceOp[T]) GetShopNotification(sid uint64, opt GetShopNotificati
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetWarehouseDetail For given shop id and region, return warehouse info including warehouse id, address id and location id, return all warehouse with once call.
 // Path: /api/v2/shop/get_warehouse_detail
 // https://open.shopee.com/documents/v2/v2.shop.get_warehouse_detail?module=92&type=1
@@ -106,6 +112,7 @@ func (s *ShopServiceOp[T]) GetWarehouseDetail(sid uint64, opt GetWarehouseDetail
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // SetShopHolidayMode Use this API to set holiday periods in advance for automatic on/off of holiday mode and there are two holiday modes allowing sellers to choose whether to accept new orders during holiday.
 // Path: /api/v2/shop/set_shop_holiday_mode
 // https://open.shopee.com/documents/v2/v2.shop.set_shop_holiday_mode?module=92&type=1
@@ -115,6 +122,7 @@ func (s *ShopServiceOp[T]) SetShopHolidayMode(sid uint64, req SetShopHolidayMode
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateProfile This API support to let sellers to update the shop name, shop logo, and shop description.
 // Path: /api/v2/shop/update_profile
 // https://open.shopee.com/documents/v2/v2.shop.update_profile?module=92&type=1

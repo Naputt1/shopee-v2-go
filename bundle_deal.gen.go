@@ -56,6 +56,7 @@ func (s *BundleDealServiceOp[T]) AddBundleDeal(sid uint64, req AddBundleDealRequ
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // AddBundleDealItem add product to bundle deal
 // Path: /api/v2/bundle_deal/add_bundle_deal_item
 // https://open.shopee.com/documents/v2/v2.bundle_deal.add_bundle_deal_item?module=110&type=1
@@ -65,6 +66,7 @@ func (s *BundleDealServiceOp[T]) AddBundleDealItem(sid uint64, req AddBundleDeal
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // DeleteBundleDeal delete bundle deal
 // Path: /api/v2/bundle_deal/delete_bundle_deal
 // https://open.shopee.com/documents/v2/v2.bundle_deal.delete_bundle_deal?module=110&type=1
@@ -74,6 +76,7 @@ func (s *BundleDealServiceOp[T]) DeleteBundleDeal(sid uint64, req DeleteBundleDe
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // DeleteBundleDealItem delete product in bundle deal
 // Path: /api/v2/bundle_deal/delete_bundle_deal_item
 // https://open.shopee.com/documents/v2/v2.bundle_deal.delete_bundle_deal_item?module=110&type=1
@@ -83,6 +86,7 @@ func (s *BundleDealServiceOp[T]) DeleteBundleDealItem(sid uint64, req DeleteBund
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // EndBundleDeal end bundle deal
 // Path: /api/v2/bundle_deal/end_bundle_deal
 // https://open.shopee.com/documents/v2/v2.bundle_deal.end_bundle_deal?module=110&type=1
@@ -92,6 +96,7 @@ func (s *BundleDealServiceOp[T]) EndBundleDeal(sid uint64, req EndBundleDealRequ
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetBundleDeal get bundle deal detail
 // Path: /api/v2/bundle_deal/get_bundle_deal
 // https://open.shopee.com/documents/v2/v2.bundle_deal.get_bundle_deal?module=110&type=1
@@ -101,6 +106,7 @@ func (s *BundleDealServiceOp[T]) GetBundleDeal(sid uint64, opt GetBundleDealRequ
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetBundleDealItem get bundle deal item
 // Path: /api/v2/bundle_deal/get_bundle_deal_item
 // https://open.shopee.com/documents/v2/v2.bundle_deal.get_bundle_deal_item?module=110&type=1
@@ -110,6 +116,7 @@ func (s *BundleDealServiceOp[T]) GetBundleDealItem(sid uint64, req GetBundleDeal
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetBundleDealList get bundle deal list
 // Path: /api/v2/bundle_deal/get_bundle_deal_list
 // https://open.shopee.com/documents/v2/v2.bundle_deal.get_bundle_deal_list?module=110&type=1
@@ -119,6 +126,7 @@ func (s *BundleDealServiceOp[T]) GetBundleDealList(sid uint64, opt GetBundleDeal
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // UpdateBundleDeal update bundle deal. Relevant restrictions refer to FAQ：https://open.shopee.com/faq/254
 // Path: /api/v2/bundle_deal/update_bundle_deal
 // https://open.shopee.com/documents/v2/v2.bundle_deal.update_bundle_deal?module=110&type=1
@@ -128,6 +136,7 @@ func (s *BundleDealServiceOp[T]) UpdateBundleDeal(sid uint64, req UpdateBundleDe
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // UpdateBundleDealItem update product in bundle deal
 // Path: /api/v2/bundle_deal/update_bundle_deal_item
 // https://open.shopee.com/documents/v2/v2.bundle_deal.update_bundle_deal_item?module=110&type=1

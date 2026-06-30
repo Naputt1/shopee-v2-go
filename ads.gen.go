@@ -110,6 +110,7 @@ func (s *AdsServiceOp[T]) CheckCreateGmsProductCampaignEligibility(sid uint64, t
 	err := s.client.WithShop(sid, tok).Get(path, resp, nil)
 	return resp, err
 }
+
 // CreateGmsProductCampaign Create a GMS campaign
 // Path: /api/v2/ads/create_gms_product_campaign
 // https://open.shopee.com/documents/v2/v2.ads.create_gms_product_campaign?module=117&type=1
@@ -119,6 +120,7 @@ func (s *AdsServiceOp[T]) CreateGmsProductCampaign(sid uint64, req CreateGmsProd
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // CreateManualProductAds Use this API to create Manual Selection Product Ads
 // Path: /api/v2/ads/create_manual_product_ads
 // https://open.shopee.com/documents/v2/v2.ads.create_manual_product_ads?module=117&type=1
@@ -128,6 +130,7 @@ func (s *AdsServiceOp[T]) CreateManualProductAds(sid uint64, req CreateManualPro
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // EditGmsItemProductCampaign Add/remove items to/from the GMS Campaign
 // Path: /api/v2/ads/edit_gms_item_product_campaign
 // https://open.shopee.com/documents/v2/v2.ads.edit_gms_item_product_campaign?module=117&type=1
@@ -137,6 +140,7 @@ func (s *AdsServiceOp[T]) EditGmsItemProductCampaign(sid uint64, req EditGmsItem
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // EditGmsProductCampaign Edit a GMS campaign
 // Path: /api/v2/ads/edit_gms_product_campaign
 // https://open.shopee.com/documents/v2/v2.ads.edit_gms_product_campaign?module=117&type=1
@@ -146,6 +150,7 @@ func (s *AdsServiceOp[T]) EditGmsProductCampaign(sid uint64, req EditGmsProductC
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // EditManualProductAdKeywords Use this API to edit Manual Selection Product Ad Keywords
 // Path: /api/v2/ads/edit_manual_product_ad_keywords
 // https://open.shopee.com/documents/v2/v2.ads.edit_manual_product_ad_keywords?module=117&type=1
@@ -155,6 +160,7 @@ func (s *AdsServiceOp[T]) EditManualProductAdKeywords(sid uint64, req EditManual
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // EditManualProductAds Use this API to edit Manual Selection Product Ads
 // Path: /api/v2/ads/edit_manual_product_ads
 // https://open.shopee.com/documents/v2/v2.ads.edit_manual_product_ads?module=117&type=1
@@ -164,6 +170,7 @@ func (s *AdsServiceOp[T]) EditManualProductAds(sid uint64, req EditManualProduct
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetAdsFcilShopRate Get shop rate for Ads Facil Program
 // Path: /api/v2/ads/get_ads_facil_shop_rate
 // https://open.shopee.com/documents/v2/v2.ads.get_ads_fácil_shop_rate?module=117&type=1
@@ -173,6 +180,7 @@ func (s *AdsServiceOp[T]) GetAdsFcilShopRate(sid uint64, tok string) (*GetAdsFci
 	err := s.client.WithShop(sid, tok).Post(path, nil, resp)
 	return resp, err
 }
+
 // GetAllCpcAdsDailyPerformance Use this API to get Shop level CPC ads multiple-days daily performance.
 // Path: /api/v2/ads/get_all_cpc_ads_daily_performance
 // https://open.shopee.com/documents/v2/v2.ads.get_all_cpc_ads_daily_performance?module=117&type=1
@@ -182,6 +190,7 @@ func (s *AdsServiceOp[T]) GetAllCpcAdsDailyPerformance(sid uint64, opt GetAllCpc
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetAllCpcAdsHourlyPerformance Use this API to get Shop level CPC ads single-date hourly performance.
 // Path: /api/v2/ads/get_all_cpc_ads_hourly_performance
 // https://open.shopee.com/documents/v2/v2.ads.get_all_cpc_ads_hourly_performance?module=117&type=1
@@ -191,6 +200,7 @@ func (s *AdsServiceOp[T]) GetAllCpcAdsHourlyPerformance(sid uint64, opt GetAllCp
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetCreateProductAdBudgetSuggestion Call this API to get budget suggestion for product ads creation
 // Path: /api/v2/ads/get_create_product_ad_budget_suggestion
 // https://open.shopee.com/documents/v2/v2.ads.get_create_product_ad_budget_suggestion?module=117&type=1
@@ -200,6 +210,7 @@ func (s *AdsServiceOp[T]) GetCreateProductAdBudgetSuggestion(sid uint64, opt Get
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetGmsCampaignPerformance Get GMS Campaign performance
 // Path: /api/v2/ads/get_gms_campaign_performance
 // https://open.shopee.com/documents/v2/v2.ads.get_gms_campaign_performance?module=117&type=1
@@ -209,6 +220,7 @@ func (s *AdsServiceOp[T]) GetGmsCampaignPerformance(sid uint64, req GetGmsCampai
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetGmsItemPerformance Get GMS Item performance
 // 1. The response returned is sorted by item_id
 // 2. Only items with performance will be returned
@@ -220,6 +232,7 @@ func (s *AdsServiceOp[T]) GetGmsItemPerformance(sid uint64, req GetGmsItemPerfor
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetProductCampaignDailyPerformance Use this API to get Product level ads multiple-days daily performance.
 // Path: /api/v2/ads/get_product_campaign_daily_performance
 // https://open.shopee.com/documents/v2/v2.ads.get_product_campaign_daily_performance?module=117&type=1
@@ -229,6 +242,7 @@ func (s *AdsServiceOp[T]) GetProductCampaignDailyPerformance(sid uint64, opt Get
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetProductCampaignHourlyPerformance Use this API to get Product level ads single-day hourly performance.
 // Path: /api/v2/ads/get_product_campaign_hourly_performance
 // https://open.shopee.com/documents/v2/v2.ads.get_product_campaign_hourly_performance?module=117&type=1
@@ -238,6 +252,7 @@ func (s *AdsServiceOp[T]) GetProductCampaignHourlyPerformance(sid uint64, opt Ge
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetProductLevelCampaignIdList Call this API to fetch all the product campaign ids displayed on advertiser platform under a specific Shop
 // Path: /api/v2/ads/get_product_level_campaign_id_list
 // https://open.shopee.com/documents/v2/v2.ads.get_product_level_campaign_id_list?module=117&type=1
@@ -247,6 +262,7 @@ func (s *AdsServiceOp[T]) GetProductLevelCampaignIdList(sid uint64, opt GetProdu
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetProductLevelCampaignSettingInfo Call this API to fetch all the campaign setting info under this Shop.
 // Path: /api/v2/ads/get_product_level_campaign_setting_info
 // https://open.shopee.com/documents/v2/v2.ads.get_product_level_campaign_setting_info?module=117&type=1
@@ -256,6 +272,7 @@ func (s *AdsServiceOp[T]) GetProductLevelCampaignSettingInfo(sid uint64, opt Get
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetProductRecommendedRoiTarget Get Product Recommended ROI Target
 // Path: /api/v2/ads/get_product_recommended_roi_target
 // https://open.shopee.com/documents/v2/v2.ads.get_product_recommended_roi_target?module=117&type=1
@@ -265,6 +282,7 @@ func (s *AdsServiceOp[T]) GetProductRecommendedRoiTarget(sid uint64, opt GetProd
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetRecommendedItemList Use this API to get the list of recommended SKU (Shop level) with the corresponding tag, i.e top search/best selling/best ROI tag.
 // Path: /api/v2/ads/get_recommended_item_list
 // https://open.shopee.com/documents/v2/v2.ads.get_recommended_item_list?module=117&type=1
@@ -274,6 +292,7 @@ func (s *AdsServiceOp[T]) GetRecommendedItemList(sid uint64, tok string) (*GetRe
 	err := s.client.WithShop(sid, tok).Get(path, resp, nil)
 	return resp, err
 }
+
 // GetRecommendedKeywordList Use this API to get the list of Recommended keywords by item and optionally a search keyword
 // Path: /api/v2/ads/get_recommended_keyword_list
 // https://open.shopee.com/documents/v2/v2.ads.get_recommended_keyword_list?module=117&type=1
@@ -283,6 +302,7 @@ func (s *AdsServiceOp[T]) GetRecommendedKeywordList(sid uint64, opt GetRecommend
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetShopToggleInfo Use this API to get Shop level info - i.e. seller's toggle status is on/off
 // Path: /api/v2/ads/get_shop_toggle_info
 // https://open.shopee.com/documents/v2/v2.ads.get_shop_toggle_info?module=117&type=1
@@ -292,6 +312,7 @@ func (s *AdsServiceOp[T]) GetShopToggleInfo(sid uint64, tok string) (*GetShopTog
 	err := s.client.WithShop(sid, tok).Get(path, resp, nil)
 	return resp, err
 }
+
 // GetTotalBalance Use this API to return the seller's Real-time total balance of their ads credit including the paid credits and free credits.
 // Path: /api/v2/ads/get_total_balance
 // https://open.shopee.com/documents/v2/v2.ads.get_total_balance?module=117&type=1
@@ -301,6 +322,7 @@ func (s *AdsServiceOp[T]) GetTotalBalance(sid uint64, tok string) (*GetTotalBala
 	err := s.client.WithShop(sid, tok).Get(path, resp, nil)
 	return resp, err
 }
+
 // ListGmsUserDeletedItem List GMS items that have been removed from the Campaign by seller
 // Path: /api/v2/ads/list_gms_user_deleted_item
 // https://open.shopee.com/documents/v2/v2.ads.list_gms_user_deleted_item?module=117&type=1

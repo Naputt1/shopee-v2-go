@@ -40,6 +40,7 @@ func (s *AccountHealthServiceOp[T]) GetLateOrders(sid uint64, opt GetLateOrdersR
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetListingsWithIssues Get the Problematic Listings to improve the listings to avoid incurring penalty points.
 // Path: /api/v2/account_health/get_listings_with_issues
 // https://open.shopee.com/documents/v2/v2.account_health.get_listings_with_issues?module=103&type=1
@@ -49,6 +50,7 @@ func (s *AccountHealthServiceOp[T]) GetListingsWithIssues(sid uint64, opt GetLis
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetMetricSourceDetail {"content":"<p>Get the Affected Orders / Relevant Listings / Relevant Violations details of metrics.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Get the Affected Orders / Relevant Listings / Relevant Violations details of metrics."}]}]}
 // Path: /api/v2/account_health/get_metric_source_detail
 // https://open.shopee.com/documents/v2/v2.account_health.get_metric_source_detail?module=103&type=1
@@ -58,6 +60,7 @@ func (s *AccountHealthServiceOp[T]) GetMetricSourceDetail(sid uint64, opt GetMet
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetPenaltyPointHistory Get the penalty point records generated in the current quarter.
 // Path: /api/v2/account_health/get_penalty_point_history
 // https://open.shopee.com/documents/v2/v2.account_health.get_penalty_point_history?module=103&type=1
@@ -67,6 +70,7 @@ func (s *AccountHealthServiceOp[T]) GetPenaltyPointHistory(sid uint64, opt GetPe
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetPunishmentHistory Get the punishment records generated in the current quarter.
 // Path: /api/v2/account_health/get_punishment_history
 // https://open.shopee.com/documents/v2/v2.account_health.get_punishment_history?module=103&type=1
@@ -76,6 +80,7 @@ func (s *AccountHealthServiceOp[T]) GetPunishmentHistory(sid uint64, opt GetPuni
 	err := s.client.WithShop(sid, tok).Get(path, resp, opt)
 	return resp, err
 }
+
 // GetShopPerformance {"content":"<p>The data metrics of shop performance.<br>&nbsp;</p>","raw_content":[{"name":"paragraph","children":[{"data":"The data metrics of shop performance."},{"name":"softBreak"},{"data":" "}]}]}
 // Path: /api/v2/account_health/get_shop_performance
 // https://open.shopee.com/documents/v2/v2.account_health.get_shop_performance?module=103&type=1

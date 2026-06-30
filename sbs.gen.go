@@ -36,6 +36,7 @@ func (s *SBSServiceOp[T]) GetBoundWhsInfo(sid uint64, tok string) (*GetBoundWhsI
 	err := s.client.WithShop(sid, tok).Get(path, resp, nil)
 	return resp, err
 }
+
 // GetCurrentInventory Get Seller Center Current Inventory Page Data
 // Path: /api/v2/sbs/get_current_inventory
 // https://open.shopee.com/documents/v2/v2.sbs.get_current_inventory?module=124&type=1
@@ -45,6 +46,7 @@ func (s *SBSServiceOp[T]) GetCurrentInventory(sid uint64, req GetCurrentInventor
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetExpiryReport Seller Center Expiry Report page data
 // Path: /api/v2/sbs/get_expiry_report
 // https://open.shopee.com/documents/v2/v2.sbs.get_expiry_report?module=124&type=1
@@ -54,6 +56,7 @@ func (s *SBSServiceOp[T]) GetExpiryReport(sid uint64, req GetExpiryReportRequest
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetStockAging Get Seller Center Stock Aging page data
 // Path: /api/v2/sbs/get_stock_aging
 // https://open.shopee.com/documents/v2/v2.sbs.get_stock_aging?module=124&type=1
@@ -63,6 +66,7 @@ func (s *SBSServiceOp[T]) GetStockAging(sid uint64, req GetStockAgingRequest, to
 	err := s.client.WithShop(sid, tok).Post(path, req, resp)
 	return resp, err
 }
+
 // GetStockMovement Get Seller Center，Stock Movement page data
 // Path: /api/v2/sbs/get_stock_movement
 // https://open.shopee.com/documents/v2/v2.sbs.get_stock_movement?module=124&type=1

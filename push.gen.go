@@ -5,7 +5,7 @@ type PushService interface {
 	// Path: /api/v2/push/confirm_consumed_lost_push_message
 	// https://open.shopee.com/documents/v2/v2.push.confirm_consumed_lost_push_message?module=105&type=1
 	ConfirmConsumedLostPushMessage(sid uint64, req ConfirmConsumedLostPushMessageRequest, tok string) (*ConfirmConsumedLostPushMessageResponse, error)
-	// GetAppPushConfig you can get your app current push config setting through this api 
+	// GetAppPushConfig you can get your app current push config setting through this api
 	// Path: /api/v2/push/get_app_push_config
 	// https://open.shopee.com/documents/v2/v2.push.get_app_push_config?module=105&type=1
 	GetAppPushConfig(sid uint64, tok string) (*GetAppPushConfigResponse, error)
@@ -32,7 +32,8 @@ func (s *PushServiceOp[T]) ConfirmConsumedLostPushMessage(sid uint64, req Confir
 	err := s.client.Post(path, req, resp)
 	return resp, err
 }
-// GetAppPushConfig you can get your app current push config setting through this api 
+
+// GetAppPushConfig you can get your app current push config setting through this api
 // Path: /api/v2/push/get_app_push_config
 // https://open.shopee.com/documents/v2/v2.push.get_app_push_config?module=105&type=1
 func (s *PushServiceOp[T]) GetAppPushConfig(sid uint64, tok string) (*GetAppPushConfigResponse, error) {
@@ -41,6 +42,7 @@ func (s *PushServiceOp[T]) GetAppPushConfig(sid uint64, tok string) (*GetAppPush
 	err := s.client.Get(path, resp, nil)
 	return resp, err
 }
+
 // GetLostPushMessage Get the lost push messages that were lost within 3 days of the current time and not confirmed to have been consumed
 // Path: /api/v2/push/get_lost_push_message
 // https://open.shopee.com/documents/v2/v2.push.get_lost_push_message?module=105&type=1
@@ -50,6 +52,7 @@ func (s *PushServiceOp[T]) GetLostPushMessage(sid uint64, tok string) (*GetLostP
 	err := s.client.Get(path, resp, nil)
 	return resp, err
 }
+
 // SetAppPushConfig you can turn on or turn off your app push config setting through this open api
 // Path: /api/v2/push/set_app_push_config
 // https://open.shopee.com/documents/v2/v2.push.set_app_push_config?module=105&type=1
