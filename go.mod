@@ -1,4 +1,4 @@
-module github.com/naputt1/shopee-go-v2
+module github.com/naputt1/shopee-v2-go
 
 go 1.22
 
