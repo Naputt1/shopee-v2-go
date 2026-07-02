@@ -1,12 +1,13 @@
 {
   "name": "shopee-go-v2",
   "type": "module",
+  "packageManager": "pnpm@11.9.0",
   "scripts": {
-    "generate": "bash generate.sh"
+    "generate": "doclient"
   },
   "devDependencies": {
-    "@doclient/cli": "*",
-    "@doclient/core": "*",
-    "@doclient/renderer-go": "*"
+    "@doclient/cli": "^0.0.2",
+    "@doclient/renderer-go": "^0.0.2",
+    "tsx": "^4.19.0"
   }
 }

@@ -6,8 +6,8 @@ import type {
   IRError,
   IRParam,
   SourceAdapter,
-} from '@doclient/core';
-import { getModuleDisplayName, toPascalCase, createCachedFetcher } from '@doclient/core';
+} from '@doclient/cli';
+import { getModuleDisplayName, toPascalCase, createCachedFetcher } from '@doclient/cli';
 
 const BASE = 'https://open.shopee.com/opservice/api/v1/doc';
 

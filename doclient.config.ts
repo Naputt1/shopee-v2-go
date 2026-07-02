@@ -1,4 +1,4 @@
-import { defineConfig } from '@doclient/core';
+import { defineConfig } from '@doclient/cli';
 import { createGoRenderer } from '@doclient/renderer-go';
 import { shopeeSource } from './source-shopee';
 
