@@ -9,5 +9,10 @@
     "@doclient/cli": "^0.0.2",
     "@doclient/renderer-go": "^0.0.2",
     "tsx": "^4.19.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
