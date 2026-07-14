@@ -9,26 +9,29 @@ importers:
   .:
     devDependencies:
       '@doclient/cli':
-        specifier: ^0.0.2
-        version: 0.0.2
+        specifier: ^0.0.3
+        version: 0.0.3
       '@doclient/renderer-go':
-        specifier: ^0.0.2
-        version: 0.0.2
+        specifier: ^0.0.6
+        version: 0.0.6
       tsx:
         specifier: ^4.19.0
         version: 4.23.1
 
 packages:
 
-  '@doclient/cli@0.0.2':
-    resolution: {integrity: sha512-a69SEWp/Jz3JEitqNHvt8w2tVWd/uKeRYL+E7x2+EPzT9y3TgTKDLJtMHxzwq+rNjAQmXw8RroUR/5OQAKWglg==}
+  '@doclient/cli@0.0.3':
+    resolution: {integrity: sha512-v1K8ZLl5mAL3NYoNBbu8+90o+Pb+1INxULk7r5jWL6wGlcu6RMNSZyx+9woIxbq8/+ebXThi8ONnZ21ajhu/3w==}
     hasBin: true
 
   '@doclient/core@0.0.2':
     resolution: {integrity: sha512-W0Tz3LoSxXroY0NAdBAvNZMO47kxwmCVLvGi2aHYo1S7uFUUEJoz+sYu6659qlT16xdZRu1clpEX4gPWE7V5iA==}
 
-  '@doclient/renderer-go@0.0.2':
-    resolution: {integrity: sha512-Li60s/7/+DBtRUpadqC6kpYQiwOQ7Qmafd4AggITjmkU9658rGTeFQ/99hIMDNz5oKmSkYODZPUNnfpixUNQXw==}
+  '@doclient/renderer-go@0.0.3':
+    resolution: {integrity: sha512-KEM7GpbJO9HAPolcz/n6DakQ3rgt8YcU0K255dwilPIOb2yzy08U7b1fMmhfIFTYQPJ0tXsfjLZK+ZfJracFIg==}
+
+  '@doclient/renderer-go@0.0.6':
+    resolution: {integrity: sha512-ZInhclPeeUAlWfU/+jBIEvA/Xpy1JlIHb5uxZzubm+JQ616Vrt7vhu52Zz8zsjOFscgzoAYqpwvBjsHnRVcVLg==}
 
   '@esbuild/aix-ppc64@0.28.1':
     resolution: {integrity: sha512-Svl7tq8k/08+p6CXPpRjQ1fKX+1odH/BQbb48fV6fj3CWHhsoIOoY87w1oHXm0qEpkIK3ZfVgp0hed3XBXzXMQ==}
@@ -203,15 +206,19 @@ packages:
 
 snapshots:
 
-  '@doclient/cli@0.0.2':
+  '@doclient/cli@0.0.3':
     dependencies:
       '@doclient/core': 0.0.2
-      '@doclient/renderer-go': 0.0.2
+      '@doclient/renderer-go': 0.0.3
       tsx: 4.23.1
 
   '@doclient/core@0.0.2': {}
 
-  '@doclient/renderer-go@0.0.2':
+  '@doclient/renderer-go@0.0.3':
+    dependencies:
+      '@doclient/core': 0.0.2
+
+  '@doclient/renderer-go@0.0.6':
     dependencies:
       '@doclient/core': 0.0.2
 

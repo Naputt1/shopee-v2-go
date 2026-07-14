@@ -10,20 +10,9 @@ import (
 )
 
 type AuthService interface {
-	// GetAuthURL returns the URL to authorize the app.
-	// Path: /api/v2/shop/auth_partner
 	GetAuthURL() (string, error)
-
-	// GetCancelAuthURL returns the URL to cancel the authorization.
-	// Path: /api/v2/shop/cancel_auth_partner
 	GetCancelAuthURL() (string, error)
-
-	// GetAccessToken gets the access token.
-	// Path: /api/v2/auth/token/get
 	GetAccessToken(ctx context.Context, sid uint64, aid uint64, code string) (*AccessTokenResponse, error)
-
-	// RefreshAccessToken refreshes the access token.
-	// Path: /api/v2/auth/access_token/get
 	RefreshAccessToken(ctx context.Context, sid uint64, aid uint64, refresh string) (*RefreshAccessTokenResponse, error)
 }
 
@@ -82,7 +71,7 @@ func (s *AuthServiceOp[T]) GetAccessToken(ctx context.Context, sid uint64, aid u
 		params["main_account_id"] = aid
 	}
 	resp := new(AccessTokenResponse)
-	err := s.client.Post(ctx, path, params, resp, 0, "")
+	err := s.client.Post(ctx, path, params, resp, 0, 0, "")
 	return resp, err
 }
 
@@ -98,6 +87,6 @@ func (s *AuthServiceOp[T]) RefreshAccessToken(ctx context.Context, sid uint64, a
 		params["main_account_id"] = aid
 	}
 	resp := new(RefreshAccessTokenResponse)
-	err := s.client.Post(ctx, path, params, resp, 0, "")
+	err := s.client.Post(ctx, path, params, resp, 0, 0, "")
 	return resp, err
 }

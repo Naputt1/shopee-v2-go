@@ -2,7 +2,7 @@ package goshopee
 
 type QueryBrShopBlockStatusResponse struct {
 	BaseResponse                                    // Common response fields
-	Response     QueryBrShopBlockStatusResponseData `json:"response"` //
+	Response     QueryBrShopBlockStatusResponseData `json:"response"` // Response data
 }
 type QueryBrShopBlockStatusResponseData struct {
 	ShopId  int64 `json:"shop_id"`  // [Required] <p>Shopee's unique identifier for a shop.</p>
@@ -10,7 +10,7 @@ type QueryBrShopBlockStatusResponseData struct {
 }
 type QueryBrShopEnrollmentStatusResponse struct {
 	BaseResponse                                         // Common response fields
-	Response     QueryBrShopEnrollmentStatusResponseData `json:"response"` //
+	Response     QueryBrShopEnrollmentStatusResponseData `json:"response"` // Response data
 }
 type QueryBrShopEnrollmentStatusResponseData struct {
 	ShopId               int64 `json:"shop_id"`                // [Required] <p>Shopee's unique identifier for a shop</p>
@@ -23,7 +23,7 @@ type QueryBrShopInvoiceErrorRequest struct {
 }
 type QueryBrShopInvoiceErrorResponse struct {
 	BaseResponse                                     // Common response fields
-	Response     QueryBrShopInvoiceErrorResponseData `json:"response"` //
+	Response     QueryBrShopInvoiceErrorResponseData `json:"response"` // Response data
 }
 type QueryBrShopInvoiceErrorResponseData struct {
 	Total int64                                     `json:"total"` // [Required]
@@ -45,7 +45,7 @@ type QueryBrSkuBlockStatusRequest struct {
 }
 type QueryBrSkuBlockStatusResponse struct {
 	BaseResponse                                   // Common response fields
-	Response     QueryBrSkuBlockStatusResponseData `json:"response"` //
+	Response     QueryBrSkuBlockStatusResponseData `json:"response"` // Response data
 }
 type QueryBrSkuBlockStatusResponseData struct {
 	ShopSkuId     string `json:"shop_sku_id"`     // [Required] <p>itemID_modelID</p>

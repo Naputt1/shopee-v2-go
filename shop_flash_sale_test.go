@@ -26,7 +26,7 @@ func Test_ShopFlashSale_AddShopFlashSaleItems(t *testing.T) {
 
 	var req AddShopFlashSaleItemsRequest
 	ctx := context.Background()
-	res, err := client.ShopFlashSale.AddShopFlashSaleItems(ctx, shopID, req, accessToken)
+	res, err := client.ShopFlashSale.AddShopFlashSaleItems(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("ShopFlashSale.AddShopFlashSaleItems returned error (possibly expected with mock data): %s", err)
 	}
@@ -51,7 +51,7 @@ func Test_ShopFlashSale_CreateShopFlashSale(t *testing.T) {
 
 	var req CreateShopFlashSaleRequest
 	ctx := context.Background()
-	res, err := client.ShopFlashSale.CreateShopFlashSale(ctx, shopID, req, accessToken)
+	res, err := client.ShopFlashSale.CreateShopFlashSale(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("ShopFlashSale.CreateShopFlashSale returned error (possibly expected with mock data): %s", err)
 	}
@@ -76,7 +76,7 @@ func Test_ShopFlashSale_DeleteShopFlashSale(t *testing.T) {
 
 	var req DeleteShopFlashSaleRequest
 	ctx := context.Background()
-	res, err := client.ShopFlashSale.DeleteShopFlashSale(ctx, shopID, req, accessToken)
+	res, err := client.ShopFlashSale.DeleteShopFlashSale(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("ShopFlashSale.DeleteShopFlashSale returned error (possibly expected with mock data): %s", err)
 	}
@@ -101,7 +101,7 @@ func Test_ShopFlashSale_DeleteShopFlashSaleItems(t *testing.T) {
 
 	var req DeleteShopFlashSaleItemsRequest
 	ctx := context.Background()
-	res, err := client.ShopFlashSale.DeleteShopFlashSaleItems(ctx, shopID, req, accessToken)
+	res, err := client.ShopFlashSale.DeleteShopFlashSaleItems(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("ShopFlashSale.DeleteShopFlashSaleItems returned error (possibly expected with mock data): %s", err)
 	}
@@ -125,7 +125,7 @@ func Test_ShopFlashSale_GetItemCriteria(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/shop_flash_sale/get_item_criteria", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.ShopFlashSale.GetItemCriteria(ctx, shopID, accessToken)
+	res, err := client.ShopFlashSale.GetItemCriteria(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("ShopFlashSale.GetItemCriteria returned error (possibly expected with mock data): %s", err)
 	}
@@ -150,7 +150,7 @@ func Test_ShopFlashSale_GetShopFlashSale(t *testing.T) {
 
 	var req GetShopFlashSaleRequest
 	ctx := context.Background()
-	res, err := client.ShopFlashSale.GetShopFlashSale(ctx, shopID, req, accessToken)
+	res, err := client.ShopFlashSale.GetShopFlashSale(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("ShopFlashSale.GetShopFlashSale returned error (possibly expected with mock data): %s", err)
 	}
@@ -175,7 +175,7 @@ func Test_ShopFlashSale_GetShopFlashSaleItems(t *testing.T) {
 
 	var req GetShopFlashSaleItemsRequest
 	ctx := context.Background()
-	res, err := client.ShopFlashSale.GetShopFlashSaleItems(ctx, shopID, req, accessToken)
+	res, err := client.ShopFlashSale.GetShopFlashSaleItems(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("ShopFlashSale.GetShopFlashSaleItems returned error (possibly expected with mock data): %s", err)
 	}
@@ -200,7 +200,7 @@ func Test_ShopFlashSale_GetShopFlashSaleList(t *testing.T) {
 
 	var req GetShopFlashSaleListRequest
 	ctx := context.Background()
-	res, err := client.ShopFlashSale.GetShopFlashSaleList(ctx, shopID, req, accessToken)
+	res, err := client.ShopFlashSale.GetShopFlashSaleList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("ShopFlashSale.GetShopFlashSaleList returned error (possibly expected with mock data): %s", err)
 	}
@@ -225,7 +225,7 @@ func Test_ShopFlashSale_GetTimeSlotId(t *testing.T) {
 
 	var req GetTimeSlotIdRequest
 	ctx := context.Background()
-	res, err := client.ShopFlashSale.GetTimeSlotId(ctx, shopID, req, accessToken)
+	res, err := client.ShopFlashSale.GetTimeSlotId(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("ShopFlashSale.GetTimeSlotId returned error (possibly expected with mock data): %s", err)
 	}
@@ -250,7 +250,7 @@ func Test_ShopFlashSale_UpdateShopFlashSale(t *testing.T) {
 
 	var req UpdateShopFlashSaleRequest
 	ctx := context.Background()
-	res, err := client.ShopFlashSale.UpdateShopFlashSale(ctx, shopID, req, accessToken)
+	res, err := client.ShopFlashSale.UpdateShopFlashSale(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("ShopFlashSale.UpdateShopFlashSale returned error (possibly expected with mock data): %s", err)
 	}
@@ -275,7 +275,7 @@ func Test_ShopFlashSale_UpdateShopFlashSaleItems(t *testing.T) {
 
 	var req UpdateShopFlashSaleItemsRequest
 	ctx := context.Background()
-	res, err := client.ShopFlashSale.UpdateShopFlashSaleItems(ctx, shopID, req, accessToken)
+	res, err := client.ShopFlashSale.UpdateShopFlashSaleItems(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("ShopFlashSale.UpdateShopFlashSaleItems returned error (possibly expected with mock data): %s", err)
 	}

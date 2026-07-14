@@ -26,7 +26,7 @@ func Test_AccountHealth_GetLateOrders(t *testing.T) {
 
 	var req GetLateOrdersRequest
 	ctx := context.Background()
-	res, err := client.AccountHealth.GetLateOrders(ctx, shopID, req, accessToken)
+	res, err := client.AccountHealth.GetLateOrders(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AccountHealth.GetLateOrders returned error (possibly expected with mock data): %s", err)
 	}
@@ -51,7 +51,7 @@ func Test_AccountHealth_GetListingsWithIssues(t *testing.T) {
 
 	var req GetListingsWithIssuesRequest
 	ctx := context.Background()
-	res, err := client.AccountHealth.GetListingsWithIssues(ctx, shopID, req, accessToken)
+	res, err := client.AccountHealth.GetListingsWithIssues(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AccountHealth.GetListingsWithIssues returned error (possibly expected with mock data): %s", err)
 	}
@@ -76,7 +76,7 @@ func Test_AccountHealth_GetMetricSourceDetail(t *testing.T) {
 
 	var req GetMetricSourceDetailRequest
 	ctx := context.Background()
-	res, err := client.AccountHealth.GetMetricSourceDetail(ctx, shopID, req, accessToken)
+	res, err := client.AccountHealth.GetMetricSourceDetail(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AccountHealth.GetMetricSourceDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -101,7 +101,7 @@ func Test_AccountHealth_GetPenaltyPointHistory(t *testing.T) {
 
 	var req GetPenaltyPointHistoryRequest
 	ctx := context.Background()
-	res, err := client.AccountHealth.GetPenaltyPointHistory(ctx, shopID, req, accessToken)
+	res, err := client.AccountHealth.GetPenaltyPointHistory(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AccountHealth.GetPenaltyPointHistory returned error (possibly expected with mock data): %s", err)
 	}
@@ -126,7 +126,7 @@ func Test_AccountHealth_GetPunishmentHistory(t *testing.T) {
 
 	var req GetPunishmentHistoryRequest
 	ctx := context.Background()
-	res, err := client.AccountHealth.GetPunishmentHistory(ctx, shopID, req, accessToken)
+	res, err := client.AccountHealth.GetPunishmentHistory(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AccountHealth.GetPunishmentHistory returned error (possibly expected with mock data): %s", err)
 	}
@@ -150,7 +150,7 @@ func Test_AccountHealth_GetShopPerformance(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/account_health/get_shop_performance", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.AccountHealth.GetShopPerformance(ctx, shopID, accessToken)
+	res, err := client.AccountHealth.GetShopPerformance(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("AccountHealth.GetShopPerformance returned error (possibly expected with mock data): %s", err)
 	}

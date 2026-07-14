@@ -6,7 +6,7 @@ type AddAddOnDealMainItemRequest struct {
 }
 type AddAddOnDealMainItemResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     AddAddOnDealMainItemResponseData `json:"response"` //
+	Response     AddAddOnDealMainItemResponseData `json:"response"` // Response data
 }
 type AddAddOnDealMainItemResponseData struct {
 	MainItemList []MainItem `json:"main_item_list"` // [Required] The main items added in this add on deal promotion.
@@ -23,7 +23,7 @@ type AddAddOnDealRequest struct {
 }
 type AddAddOnDealResponse struct {
 	BaseResponse                          // Common response fields
-	Response     AddAddOnDealResponseData `json:"response"` //
+	Response     AddAddOnDealResponseData `json:"response"` // Response data
 }
 type AddAddOnDealResponseData struct {
 	AddOnDealId int64 `json:"add_on_deal_id"` // [Required] Shopee's unique identifier for an add on deal activity.
@@ -34,7 +34,7 @@ type AddAddOnDealSubItemRequest struct {
 }
 type AddAddOnDealSubItemResponse struct {
 	BaseResponse                                 // Common response fields
-	Response     AddAddOnDealSubItemResponseData `json:"response"` //
+	Response     AddAddOnDealSubItemResponseData `json:"response"` // Response data
 }
 type AddAddOnDealSubItemResponseData struct {
 	SubItemList []ResponseDataSubItem `json:"sub_item_list"`  // [Required] The sub items added in this add on deal promotion.
@@ -58,7 +58,7 @@ type DeleteAddOnDealMainItemRequest struct {
 }
 type DeleteAddOnDealMainItemResponse struct {
 	BaseResponse                                     // Common response fields
-	Response     DeleteAddOnDealMainItemResponseData `json:"response"` //
+	Response     DeleteAddOnDealMainItemResponseData `json:"response"` // Response data
 }
 type DeleteAddOnDealMainItemResponseData struct {
 	MainItemList []int64 `json:"main_item_list"` // [Required] The main items added in this add on deal promotion.
@@ -69,7 +69,7 @@ type DeleteAddOnDealRequest struct {
 }
 type DeleteAddOnDealResponse struct {
 	BaseResponse                             // Common response fields
-	Response     DeleteAddOnDealResponseData `json:"response"` //
+	Response     DeleteAddOnDealResponseData `json:"response"` // Response data
 }
 type DeleteAddOnDealResponseData struct {
 	AddOnDealId int64 `json:"add_on_deal_id"` // [Required] Shopee's unique identifier for an add on deal activity.
@@ -80,7 +80,7 @@ type DeleteAddOnDealSubItemRequest struct {
 }
 type DeleteAddOnDealSubItemResponse struct {
 	BaseResponse                                    // Common response fields
-	Response     DeleteAddOnDealSubItemResponseData `json:"response"` //
+	Response     DeleteAddOnDealSubItemResponseData `json:"response"` // Response data
 }
 type DeleteAddOnDealSubItemResponseData struct {
 	SubItemList []DeleteAddOnDealSubItemResponseDataSubItem `json:"sub_item_list"`  // [Required] The sub items added in this add on deal promotion.
@@ -91,7 +91,7 @@ type EndAddOnDealRequest struct {
 }
 type EndAddOnDealResponse struct {
 	BaseResponse                          // Common response fields
-	Response     EndAddOnDealResponseData `json:"response"` //
+	Response     EndAddOnDealResponseData `json:"response"` // Response data
 }
 type EndAddOnDealResponseData struct {
 	AddOnDealId int64 `json:"add_on_deal_id"` // [Required] The identifier of the API request for error tracking
@@ -103,7 +103,7 @@ type GetAddOnDealListRequest struct {
 }
 type GetAddOnDealListResponse struct {
 	BaseResponse                              // Common response fields
-	Response     GetAddOnDealListResponseData `json:"response"` //
+	Response     GetAddOnDealListResponseData `json:"response"` // Response data
 }
 type GetAddOnDealListResponseData struct {
 	AddOnDealList []AddOnDeal `json:"add_on_deal_list"` // [Required] The list of add on deal id
@@ -114,7 +114,7 @@ type GetAddOnDealMainItemRequest struct {
 }
 type GetAddOnDealMainItemResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     GetAddOnDealMainItemResponseData `json:"response"` //
+	Response     GetAddOnDealMainItemResponseData `json:"response"` // Response data
 }
 type GetAddOnDealMainItemResponseData struct {
 	MainItemList []MainItem `json:"main_item_list"` // [Required] The main items added in this add on deal promotion.
@@ -125,7 +125,7 @@ type GetAddOnDealRequest struct {
 }
 type GetAddOnDealResponse struct {
 	BaseResponse                          // Common response fields
-	Response     GetAddOnDealResponseData `json:"response"` //
+	Response     GetAddOnDealResponseData `json:"response"` // Response data
 }
 type GetAddOnDealResponseData struct {
 	StartTime              int64   `json:"start_time"`               // [Required] The time when add on deal activity start.
@@ -144,7 +144,7 @@ type GetAddOnDealSubItemRequest struct {
 }
 type GetAddOnDealSubItemResponse struct {
 	BaseResponse                                 // Common response fields
-	Response     GetAddOnDealSubItemResponseData `json:"response"` //
+	Response     GetAddOnDealSubItemResponseData `json:"response"` // Response data
 }
 type GetAddOnDealSubItemResponseData struct {
 	SubItemList []GetAddOnDealSubItemResponseDataSubItem `json:"sub_item_list"`  // [Required] The sub items added in this add on deal promotion.
@@ -181,8 +181,8 @@ type UpdateAddOnDealMainItemRequest struct {
 }
 type UpdateAddOnDealMainItemResponse struct {
 	BaseResponse                                     // Common response fields
+	Response     UpdateAddOnDealMainItemResponseData `json:"response"`                 // Response data
 	AddOnDealId  int64                               `json:"add_on_deal_id,omitempty"` // Shopee's unique identifier for add on deal activity.
-	Response     UpdateAddOnDealMainItemResponseData `json:"response"`                 //
 }
 type UpdateAddOnDealMainItemResponseData struct {
 	MainItemList []MainItem `json:"main_item_list"` // [Required] The main items added in this add on deal promotion.
@@ -199,7 +199,7 @@ type UpdateAddOnDealRequest struct {
 }
 type UpdateAddOnDealResponse struct {
 	BaseResponse                             // Common response fields
-	Response     UpdateAddOnDealResponseData `json:"response"` //
+	Response     UpdateAddOnDealResponseData `json:"response"` // Response data
 }
 type UpdateAddOnDealResponseData struct {
 	StartTime              int64   `json:"start_time"`               // [Required] The time when add on deal activity start.
@@ -217,8 +217,8 @@ type UpdateAddOnDealSubItemRequest struct {
 }
 type UpdateAddOnDealSubItemResponse struct {
 	BaseResponse                                    // Common response fields
+	Response     UpdateAddOnDealSubItemResponseData `json:"response"`                 // Response data
 	AddOnDealId  int64                              `json:"add_on_deal_id,omitempty"` // Shopee's unique identifier for add on deal activity.
-	Response     UpdateAddOnDealSubItemResponseData `json:"response"`                 //
 }
 type UpdateAddOnDealSubItemResponseData struct {
 	SubItemList []UpdateAddOnDealSubItemResponseDataSubItem `json:"sub_item_list"` // [Required] The sub items added in this add on deal promotion.

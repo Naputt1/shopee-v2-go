@@ -25,7 +25,7 @@ func Test_FBS_QueryBrShopBlockStatus(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/fbs/query_br_shop_block_status", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.FBS.QueryBrShopBlockStatus(ctx, shopID, accessToken)
+	res, err := client.FBS.QueryBrShopBlockStatus(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("FBS.QueryBrShopBlockStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -49,7 +49,7 @@ func Test_FBS_QueryBrShopEnrollmentStatus(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/fbs/query_br_shop_enrollment_status", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.FBS.QueryBrShopEnrollmentStatus(ctx, shopID, accessToken)
+	res, err := client.FBS.QueryBrShopEnrollmentStatus(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("FBS.QueryBrShopEnrollmentStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -74,7 +74,7 @@ func Test_FBS_QueryBrShopInvoiceError(t *testing.T) {
 
 	var req QueryBrShopInvoiceErrorRequest
 	ctx := context.Background()
-	res, err := client.FBS.QueryBrShopInvoiceError(ctx, shopID, req, accessToken)
+	res, err := client.FBS.QueryBrShopInvoiceError(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FBS.QueryBrShopInvoiceError returned error (possibly expected with mock data): %s", err)
 	}
@@ -99,7 +99,7 @@ func Test_FBS_QueryBrSkuBlockStatus(t *testing.T) {
 
 	var req QueryBrSkuBlockStatusRequest
 	ctx := context.Background()
-	res, err := client.FBS.QueryBrSkuBlockStatus(ctx, shopID, req, accessToken)
+	res, err := client.FBS.QueryBrSkuBlockStatus(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FBS.QueryBrSkuBlockStatus returned error (possibly expected with mock data): %s", err)
 	}

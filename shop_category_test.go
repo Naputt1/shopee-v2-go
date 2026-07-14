@@ -26,7 +26,7 @@ func Test_ShopCategory_AddItemList(t *testing.T) {
 
 	var req ShopCategoryAddItemListRequest
 	ctx := context.Background()
-	res, err := client.ShopCategory.AddItemList(ctx, shopID, req, accessToken)
+	res, err := client.ShopCategory.AddItemList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("ShopCategory.AddItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -51,7 +51,7 @@ func Test_ShopCategory_AddShopCategory(t *testing.T) {
 
 	var req AddShopCategoryRequest
 	ctx := context.Background()
-	res, err := client.ShopCategory.AddShopCategory(ctx, shopID, req, accessToken)
+	res, err := client.ShopCategory.AddShopCategory(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("ShopCategory.AddShopCategory returned error (possibly expected with mock data): %s", err)
 	}
@@ -76,7 +76,7 @@ func Test_ShopCategory_DeleteItemList(t *testing.T) {
 
 	var req ShopCategoryDeleteItemListRequest
 	ctx := context.Background()
-	res, err := client.ShopCategory.DeleteItemList(ctx, shopID, req, accessToken)
+	res, err := client.ShopCategory.DeleteItemList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("ShopCategory.DeleteItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -101,7 +101,7 @@ func Test_ShopCategory_DeleteShopCategory(t *testing.T) {
 
 	var req DeleteShopCategoryRequest
 	ctx := context.Background()
-	res, err := client.ShopCategory.DeleteShopCategory(ctx, shopID, req, accessToken)
+	res, err := client.ShopCategory.DeleteShopCategory(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("ShopCategory.DeleteShopCategory returned error (possibly expected with mock data): %s", err)
 	}
@@ -126,7 +126,7 @@ func Test_ShopCategory_GetItemList(t *testing.T) {
 
 	var req ShopCategoryGetItemListRequest
 	ctx := context.Background()
-	res, err := client.ShopCategory.GetItemList(ctx, shopID, req, accessToken)
+	res, err := client.ShopCategory.GetItemList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("ShopCategory.GetItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -151,7 +151,7 @@ func Test_ShopCategory_GetShopCategoryList(t *testing.T) {
 
 	var req GetShopCategoryListRequest
 	ctx := context.Background()
-	res, err := client.ShopCategory.GetShopCategoryList(ctx, shopID, req, accessToken)
+	res, err := client.ShopCategory.GetShopCategoryList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("ShopCategory.GetShopCategoryList returned error (possibly expected with mock data): %s", err)
 	}
@@ -176,7 +176,7 @@ func Test_ShopCategory_UpdateShopCategory(t *testing.T) {
 
 	var req UpdateShopCategoryRequest
 	ctx := context.Background()
-	res, err := client.ShopCategory.UpdateShopCategory(ctx, shopID, req, accessToken)
+	res, err := client.ShopCategory.UpdateShopCategory(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("ShopCategory.UpdateShopCategory returned error (possibly expected with mock data): %s", err)
 	}

@@ -25,7 +25,7 @@ func Test_Media_CancelVideoUpload(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/media/cancel_video_upload", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Media.CancelVideoUpload(ctx, shopID, "fixtures/test.jpg", accessToken)
+	res, err := client.Media.CancelVideoUpload(ctx, sid, mid, tok, "fixtures/test.jpg")
 	if err != nil {
 		t.Logf("Media.CancelVideoUpload returned error (possibly expected with mock data): %s", err)
 	}
@@ -49,7 +49,7 @@ func Test_Media_CompleteVideoUpload(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/media/complete_video_upload", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Media.CompleteVideoUpload(ctx, shopID, "fixtures/test.jpg", accessToken)
+	res, err := client.Media.CompleteVideoUpload(ctx, sid, mid, tok, "fixtures/test.jpg")
 	if err != nil {
 		t.Logf("Media.CompleteVideoUpload returned error (possibly expected with mock data): %s", err)
 	}
@@ -73,7 +73,7 @@ func Test_Media_GetVideoUploadResult(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/media/get_video_upload_result", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Media.GetVideoUploadResult(ctx, shopID, "fixtures/test.jpg", accessToken)
+	res, err := client.Media.GetVideoUploadResult(ctx, sid, mid, tok, "fixtures/test.jpg")
 	if err != nil {
 		t.Logf("Media.GetVideoUploadResult returned error (possibly expected with mock data): %s", err)
 	}
@@ -97,7 +97,7 @@ func Test_Media_InitVideoUpload(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/media/init_video_upload", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Media.InitVideoUpload(ctx, shopID, "fixtures/test.jpg", accessToken)
+	res, err := client.Media.InitVideoUpload(ctx, sid, mid, tok, "fixtures/test.jpg")
 	if err != nil {
 		t.Logf("Media.InitVideoUpload returned error (possibly expected with mock data): %s", err)
 	}
@@ -121,7 +121,7 @@ func Test_Media_UploadImage(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/media/upload_image", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Media.UploadImage(ctx, shopID, "fixtures/test.jpg", accessToken)
+	res, err := client.Media.UploadImage(ctx, sid, mid, tok, "fixtures/test.jpg")
 	if err != nil {
 		t.Logf("Media.UploadImage returned error (possibly expected with mock data): %s", err)
 	}
@@ -145,7 +145,7 @@ func Test_Media_UploadVideoPart(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/media/upload_video_part", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Media.UploadVideoPart(ctx, shopID, "fixtures/test.jpg", accessToken)
+	res, err := client.Media.UploadVideoPart(ctx, sid, mid, tok, "fixtures/test.jpg")
 	if err != nil {
 		t.Logf("Media.UploadVideoPart returned error (possibly expected with mock data): %s", err)
 	}

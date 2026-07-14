@@ -25,7 +25,7 @@ type DeleteVideoRequest struct {
 }
 type DeleteVideoResponse struct {
 	BaseResponse                         // Common response fields
-	Response     DeleteVideoResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     DeleteVideoResponseData `json:"response"` // Response data
 }
 type DeleteVideoResponseData struct {
 	SuccessList []DeleteVideoResponseDataSuccess `json:"success_list"` // [Required] <p>The list of video delete successfully.</p>
@@ -45,7 +45,7 @@ type EditVideoInfoRequest struct {
 }
 type EditVideoInfoResponse struct {
 	BaseResponse                           // Common response fields
-	Response     EditVideoInfoResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     EditVideoInfoResponseData `json:"response"` // Response data
 }
 type EditVideoInfoResponseData struct {
 	SuccessList []string                           `json:"success_list"` // [Required] <p>The list of video_upload_id edit successfully.</p>
@@ -67,7 +67,7 @@ type GetCoverListRequest struct {
 }
 type GetCoverListResponse struct {
 	BaseResponse                          // Common response fields
-	Response     GetCoverListResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetCoverListResponseData `json:"response"` // Response data
 }
 type GetCoverListResponseData struct {
 	ImageUrlList []string `json:"image_url_list"` // [Required] <p>List of image url for each frame of the uploaded video, you can select one as the video cover when calling v2.video.edit_video_info.</p>
@@ -78,7 +78,7 @@ type GetMetricTrendRequest struct {
 }
 type GetMetricTrendResponse struct {
 	BaseResponse                            // Common response fields
-	Response     GetMetricTrendResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetMetricTrendResponseData `json:"response"` // Response data
 }
 type GetMetricTrendResponseData struct {
 	VideoTotalMetricList []VideoTotalMetric `json:"video_total_metric_list"` // [Required]
@@ -89,7 +89,7 @@ type GetOverviewPerformanceRequest struct {
 }
 type GetOverviewPerformanceResponse struct {
 	BaseResponse                                    // Common response fields
-	Response     GetOverviewPerformanceResponseData `json:"response"` //
+	Response     GetOverviewPerformanceResponseData `json:"response"` // Response data
 }
 type GetOverviewPerformanceResponseData struct {
 	KeyMetric        *KeyMetric  `json:"key_metric"`         // [Required]
@@ -109,7 +109,7 @@ type GetProdcutPerformanceListRequest struct {
 }
 type GetProdcutPerformanceListResponse struct {
 	BaseResponse                                       // Common response fields
-	Response     GetProdcutPerformanceListResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetProdcutPerformanceListResponseData `json:"response"` // Response data
 }
 type GetProdcutPerformanceListResponseData struct {
 	TotalCount int64                                       `json:"total_count"` // [Required] <p>The total count of product that match the condition.</p>
@@ -132,7 +132,7 @@ type GetProdcutPerformanceListResponseDataList struct {
 }
 type GetUserDemographicsResponse struct {
 	BaseResponse                                 // Common response fields
-	Response     GetUserDemographicsResponseData `json:"response"` //
+	Response     GetUserDemographicsResponseData `json:"response"` // Response data
 }
 type GetUserDemographicsResponseData struct {
 	Age      interface{} `json:"age"`      // [Required] <p>The age distribution of your viewers.</p><p><br /></p><p>Note: The type of age is a map. The key is an enumerated value corresponding to an age range:&nbsp;</p><p>-1: Unknown</p><p>1: 18-24 years old</p><p>2: 25-34 years old</p><p>3: 35-44 years old</p><p>4: 45+ years old</p><p><br /></p><p>The value is the number of viewers in each age group.</p>
@@ -148,7 +148,7 @@ type GetVideoDetailAudienceDistributionRequest struct {
 }
 type GetVideoDetailAudienceDistributionResponse struct {
 	BaseResponse                                                // Common response fields
-	Response     GetVideoDetailAudienceDistributionResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetVideoDetailAudienceDistributionResponseData `json:"response"` // Response data
 }
 type GetVideoDetailAudienceDistributionResponseData struct {
 	Age      interface{} `json:"age"`      // [Required] <p>The age distribution of your viewers.</p><p><br /></p><p>Note: The type of age is a map. The key is an enumerated value corresponding to an age range:&nbsp;</p><p>-1: Unknown</p><p>1: 18-24 years old</p><p>2: 25-34 years old</p><p>3: 35-44 years old</p><p>4: 45+ years old</p><p><br /></p><p>The value is the number of viewers in each age group.</p>
@@ -165,7 +165,7 @@ type GetVideoDetailMetricTrendRequest struct {
 }
 type GetVideoDetailMetricTrendResponse struct {
 	BaseResponse                                       // Common response fields
-	Response     GetVideoDetailMetricTrendResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetVideoDetailMetricTrendResponseData `json:"response"` // Response data
 }
 type GetVideoDetailMetricTrendResponseData struct {
 	MetricTrend interface{} `json:"metric_trend"` // [Required] <p>The type of metric_trend is a map. The key is date (in millisecond timestamp format), and the value is the number corresponding to metric.</p>
@@ -175,7 +175,7 @@ type GetVideoDetailPerformanceRequest struct {
 }
 type GetVideoDetailPerformanceResponse struct {
 	BaseResponse                                       // Common response fields
-	Response     GetVideoDetailPerformanceResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetVideoDetailPerformanceResponseData `json:"response"` // Response data
 }
 type GetVideoDetailPerformanceResponseData struct {
 	VideoInfo        *GetVideoDetailPerformanceResponseDataVideoInfo `json:"video_info"`        // [Required] <p>Video post detail informations you are querying.</p>
@@ -199,7 +199,7 @@ type GetVideoDetailProductPerformanceRequest struct {
 }
 type GetVideoDetailProductPerformanceResponse struct {
 	BaseResponse                                              // Common response fields
-	Response     GetVideoDetailProductPerformanceResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetVideoDetailProductPerformanceResponseData `json:"response"` // Response data
 }
 type GetVideoDetailProductPerformanceResponseData struct {
 	List       []GetVideoDetailProductPerformanceResponseDataList `json:"list"`        // [Required] <p>The list of item that match the condition.</p>
@@ -230,7 +230,7 @@ type GetVideoDetailRequest struct {
 }
 type GetVideoDetailResponse struct {
 	BaseResponse                            // Common response fields
-	Response     GetVideoDetailResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetVideoDetailResponseData `json:"response"` // Response data
 }
 type GetVideoDetailResponseData struct {
 	VideoUploadId  string                           `json:"video_upload_id"` // [Required] <p>ID of uploaded video.</p>
@@ -267,7 +267,7 @@ type GetVideoListRequest struct {
 }
 type GetVideoListResponse struct {
 	BaseResponse                          // Common response fields
-	Response     GetVideoListResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetVideoListResponseData `json:"response"` // Response data
 }
 type GetVideoListResponseData struct {
 	TotalCount int64                         `json:"total_count"` // [Required] <p>The total count of video that match the condition.</p>
@@ -303,7 +303,7 @@ type GetVideoPerformanceListRequest struct {
 }
 type GetVideoPerformanceListResponse struct {
 	BaseResponse                                     // Common response fields
-	Response     GetVideoPerformanceListResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetVideoPerformanceListResponseData `json:"response"` // Response data
 }
 type GetVideoPerformanceListResponseData struct {
 	TotalCount int64                                     `json:"total_count"` // [Required] <p>The total count of video that match the condition.</p>
@@ -349,7 +349,7 @@ type PostVideoRequest struct {
 }
 type PostVideoResponse struct {
 	BaseResponse                       // Common response fields
-	Response     PostVideoResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     PostVideoResponseData `json:"response"` // Response data
 }
 type PostVideoResponseData struct {
 	SuccessList []PostVideoResponseDataSuccess     `json:"success_list"` // [Required] <p>The list of video post successfully.</p>

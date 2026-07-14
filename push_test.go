@@ -26,7 +26,7 @@ func Test_Push_ConfirmConsumedLostPushMessage(t *testing.T) {
 
 	var req ConfirmConsumedLostPushMessageRequest
 	ctx := context.Background()
-	res, err := client.Push.ConfirmConsumedLostPushMessage(ctx, shopID, req, accessToken)
+	res, err := client.Push.ConfirmConsumedLostPushMessage(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Push.ConfirmConsumedLostPushMessage returned error (possibly expected with mock data): %s", err)
 	}
@@ -50,7 +50,7 @@ func Test_Push_GetAppPushConfig(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/push/get_app_push_config", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Push.GetAppPushConfig(ctx, shopID, accessToken)
+	res, err := client.Push.GetAppPushConfig(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("Push.GetAppPushConfig returned error (possibly expected with mock data): %s", err)
 	}
@@ -74,7 +74,7 @@ func Test_Push_GetLostPushMessage(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/push/get_lost_push_message", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Push.GetLostPushMessage(ctx, shopID, accessToken)
+	res, err := client.Push.GetLostPushMessage(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("Push.GetLostPushMessage returned error (possibly expected with mock data): %s", err)
 	}
@@ -99,7 +99,7 @@ func Test_Push_SetAppPushConfig(t *testing.T) {
 
 	var req SetAppPushConfigRequest
 	ctx := context.Background()
-	res, err := client.Push.SetAppPushConfig(ctx, shopID, req, accessToken)
+	res, err := client.Push.SetAppPushConfig(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Push.SetAppPushConfig returned error (possibly expected with mock data): %s", err)
 	}

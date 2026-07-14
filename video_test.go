@@ -26,7 +26,7 @@ func Test_Video_DeleteVideo(t *testing.T) {
 
 	var req DeleteVideoRequest
 	ctx := context.Background()
-	res, err := client.Video.DeleteVideo(ctx, shopID, req, accessToken)
+	res, err := client.Video.DeleteVideo(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Video.DeleteVideo returned error (possibly expected with mock data): %s", err)
 	}
@@ -51,7 +51,7 @@ func Test_Video_EditVideoInfo(t *testing.T) {
 
 	var req EditVideoInfoRequest
 	ctx := context.Background()
-	res, err := client.Video.EditVideoInfo(ctx, shopID, req, accessToken)
+	res, err := client.Video.EditVideoInfo(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Video.EditVideoInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -76,7 +76,7 @@ func Test_Video_GetCoverList(t *testing.T) {
 
 	var req GetCoverListRequest
 	ctx := context.Background()
-	res, err := client.Video.GetCoverList(ctx, shopID, req, accessToken)
+	res, err := client.Video.GetCoverList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Video.GetCoverList returned error (possibly expected with mock data): %s", err)
 	}
@@ -101,7 +101,7 @@ func Test_Video_GetMetricTrend(t *testing.T) {
 
 	var req GetMetricTrendRequest
 	ctx := context.Background()
-	res, err := client.Video.GetMetricTrend(ctx, shopID, req, accessToken)
+	res, err := client.Video.GetMetricTrend(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Video.GetMetricTrend returned error (possibly expected with mock data): %s", err)
 	}
@@ -126,7 +126,7 @@ func Test_Video_GetOverviewPerformance(t *testing.T) {
 
 	var req GetOverviewPerformanceRequest
 	ctx := context.Background()
-	res, err := client.Video.GetOverviewPerformance(ctx, shopID, req, accessToken)
+	res, err := client.Video.GetOverviewPerformance(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Video.GetOverviewPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -151,7 +151,7 @@ func Test_Video_GetProdcutPerformanceList(t *testing.T) {
 
 	var req GetProdcutPerformanceListRequest
 	ctx := context.Background()
-	res, err := client.Video.GetProdcutPerformanceList(ctx, shopID, req, accessToken)
+	res, err := client.Video.GetProdcutPerformanceList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Video.GetProdcutPerformanceList returned error (possibly expected with mock data): %s", err)
 	}
@@ -175,7 +175,7 @@ func Test_Video_GetUserDemographics(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/video/get_user_demographics", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Video.GetUserDemographics(ctx, shopID, accessToken)
+	res, err := client.Video.GetUserDemographics(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("Video.GetUserDemographics returned error (possibly expected with mock data): %s", err)
 	}
@@ -200,7 +200,7 @@ func Test_Video_GetVideoDetail(t *testing.T) {
 
 	var req GetVideoDetailRequest
 	ctx := context.Background()
-	res, err := client.Video.GetVideoDetail(ctx, shopID, req, accessToken)
+	res, err := client.Video.GetVideoDetail(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Video.GetVideoDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -225,7 +225,7 @@ func Test_Video_GetVideoDetailAudienceDistribution(t *testing.T) {
 
 	var req GetVideoDetailAudienceDistributionRequest
 	ctx := context.Background()
-	res, err := client.Video.GetVideoDetailAudienceDistribution(ctx, shopID, req, accessToken)
+	res, err := client.Video.GetVideoDetailAudienceDistribution(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Video.GetVideoDetailAudienceDistribution returned error (possibly expected with mock data): %s", err)
 	}
@@ -250,7 +250,7 @@ func Test_Video_GetVideoDetailMetricTrend(t *testing.T) {
 
 	var req GetVideoDetailMetricTrendRequest
 	ctx := context.Background()
-	res, err := client.Video.GetVideoDetailMetricTrend(ctx, shopID, req, accessToken)
+	res, err := client.Video.GetVideoDetailMetricTrend(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Video.GetVideoDetailMetricTrend returned error (possibly expected with mock data): %s", err)
 	}
@@ -275,7 +275,7 @@ func Test_Video_GetVideoDetailPerformance(t *testing.T) {
 
 	var req GetVideoDetailPerformanceRequest
 	ctx := context.Background()
-	res, err := client.Video.GetVideoDetailPerformance(ctx, shopID, req, accessToken)
+	res, err := client.Video.GetVideoDetailPerformance(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Video.GetVideoDetailPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -300,7 +300,7 @@ func Test_Video_GetVideoDetailProductPerformance(t *testing.T) {
 
 	var req GetVideoDetailProductPerformanceRequest
 	ctx := context.Background()
-	res, err := client.Video.GetVideoDetailProductPerformance(ctx, shopID, req, accessToken)
+	res, err := client.Video.GetVideoDetailProductPerformance(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Video.GetVideoDetailProductPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -325,7 +325,7 @@ func Test_Video_GetVideoList(t *testing.T) {
 
 	var req GetVideoListRequest
 	ctx := context.Background()
-	res, err := client.Video.GetVideoList(ctx, shopID, req, accessToken)
+	res, err := client.Video.GetVideoList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Video.GetVideoList returned error (possibly expected with mock data): %s", err)
 	}
@@ -350,7 +350,7 @@ func Test_Video_GetVideoPerformanceList(t *testing.T) {
 
 	var req GetVideoPerformanceListRequest
 	ctx := context.Background()
-	res, err := client.Video.GetVideoPerformanceList(ctx, shopID, req, accessToken)
+	res, err := client.Video.GetVideoPerformanceList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Video.GetVideoPerformanceList returned error (possibly expected with mock data): %s", err)
 	}
@@ -375,7 +375,7 @@ func Test_Video_PostVideo(t *testing.T) {
 
 	var req PostVideoRequest
 	ctx := context.Background()
-	res, err := client.Video.PostVideo(ctx, shopID, req, accessToken)
+	res, err := client.Video.PostVideo(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Video.PostVideo returned error (possibly expected with mock data): %s", err)
 	}

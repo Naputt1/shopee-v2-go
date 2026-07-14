@@ -11,7 +11,7 @@ type AddShopCategoryRequest struct {
 }
 type AddShopCategoryResponse struct {
 	BaseResponse                             // Common response fields
-	Response     AddShopCategoryResponseData `json:"response"` //
+	Response     AddShopCategoryResponseData `json:"response"` // Response data
 }
 type AddShopCategoryResponseData struct {
 	ShopCategoryId int64 `json:"shop_category_id"` // [Required] ShopCategory's unique identifier.
@@ -26,7 +26,7 @@ type DeleteShopCategoryRequest struct {
 }
 type DeleteShopCategoryResponse struct {
 	BaseResponse                                // Common response fields
-	Response     DeleteShopCategoryResponseData `json:"response"` //
+	Response     DeleteShopCategoryResponseData `json:"response"` // Response data
 }
 type DeleteShopCategoryResponseData struct {
 	ShopCategoryId int64  `json:"shop_category_id"` // [Required] ShopCategory's unique identifier.
@@ -43,7 +43,7 @@ type GetShopCategoryListRequest struct {
 }
 type GetShopCategoryListResponse struct {
 	BaseResponse                                 // Common response fields
-	Response     GetShopCategoryListResponseData `json:"response"` //
+	Response     GetShopCategoryListResponseData `json:"response"` // Response data
 }
 type GetShopCategoryListResponseData struct {
 	ShopCategorys []ShopCategorys `json:"shop_categorys"` // [Required] ShopCategory's unique identifier.
@@ -56,7 +56,7 @@ type ShopCategoryAddItemListRequest struct {
 }
 type ShopCategoryAddItemListResponse struct {
 	BaseResponse                         // Common response fields
-	Response     AddItemListResponseData `json:"response"` //
+	Response     AddItemListResponseData `json:"response"` // Response data
 }
 type ShopCategoryDeleteItemListRequest struct {
 	ItemList       []int64 `json:"item_list"`        // [Required] ShopCategory's unique identifier.
@@ -64,7 +64,7 @@ type ShopCategoryDeleteItemListRequest struct {
 }
 type ShopCategoryDeleteItemListResponse struct {
 	BaseResponse                            // Common response fields
-	Response     DeleteItemListResponseData `json:"response"` //
+	Response     DeleteItemListResponseData `json:"response"` // Response data
 }
 type ShopCategoryGetItemListRequest struct {
 	PageNo         *int64 `json:"page_no,omitempty"`   // [Optional] If many items are available to retrieve, you may need to call this api multiple times to retrieve all the data. And the default will be 0. page_size*page_no should be [0, 2147483446].
@@ -73,7 +73,7 @@ type ShopCategoryGetItemListRequest struct {
 }
 type ShopCategoryGetItemListResponse struct {
 	BaseResponse                                     // Common response fields
-	Response     ShopCategoryGetItemListResponseData `json:"response"` //
+	Response     ShopCategoryGetItemListResponseData `json:"response"` // Response data
 }
 type ShopCategoryGetItemListResponseData struct {
 	ItemList   []int64 `json:"item_list"`   // [Required] A list of Shopee's unique identifiers for items.
@@ -94,7 +94,7 @@ type UpdateShopCategoryRequest struct {
 }
 type UpdateShopCategoryResponse struct {
 	BaseResponse                                // Common response fields
-	Response     UpdateShopCategoryResponseData `json:"response"` //
+	Response     UpdateShopCategoryResponseData `json:"response"` // Response data
 }
 type UpdateShopCategoryResponseData struct {
 	ShopCategoryId int64  `json:"shop_category_id"` // [Required] This is to indicate whether the shop categories list is more than one page. If this value is true, you may want to continue to check next page to retrieve the rest of shop categories

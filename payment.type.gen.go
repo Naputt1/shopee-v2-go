@@ -163,8 +163,8 @@ type GenerateIncomeReportRequest struct {
 }
 type GenerateIncomeReportResponse struct {
 	BaseResponse                                  // Common response fields
+	Response     GenerateIncomeReportResponseData `json:"response"`      // Response data
 	Msg          string                           `json:"msg,omitempty"` // <p>error message</p>
-	Response     GenerateIncomeReportResponseData `json:"response"`      //
 }
 type GenerateIncomeReportResponseData struct {
 	Id int64 `json:"id"` // [Required] <p>Identifier of income report file.</p>
@@ -176,7 +176,7 @@ type GenerateIncomeStatementRequest struct {
 }
 type GenerateIncomeStatementResponse struct {
 	BaseResponse                                     // Common response fields
-	Response     GenerateIncomeStatementResponseData `json:"response"` //
+	Response     GenerateIncomeStatementResponseData `json:"response"` // Response data
 }
 type GenerateIncomeStatementResponseData struct {
 	Id int64 `json:"id"` // [Required] <p>Identifier of income statement file.</p>
@@ -189,7 +189,7 @@ type GetBillingTransactionInfoRequest struct {
 }
 type GetBillingTransactionInfoResponse struct {
 	BaseResponse                                       // Common response fields
-	Response     GetBillingTransactionInfoResponseData `json:"response"` //
+	Response     GetBillingTransactionInfoResponseData `json:"response"` // Response data
 }
 type GetBillingTransactionInfoResponseData struct {
 	Transactions *Transactions `json:"transactions"` // [Required]
@@ -201,7 +201,7 @@ type GetEscrowDetailBatchRequest struct {
 }
 type GetEscrowDetailBatchResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     GetEscrowDetailBatchResponseData `json:"response"` //
+	Response     GetEscrowDetailBatchResponseData `json:"response"` // Response data
 }
 type GetEscrowDetailBatchResponseData struct {
 	EscrowDetail *EscrowDetail `json:"escrow_detail"` // [Required] <p>The escrow detail for one order</p>
@@ -211,7 +211,7 @@ type GetEscrowDetailRequest struct {
 }
 type GetEscrowDetailResponse struct {
 	BaseResponse                             // Common response fields
-	Response     GetEscrowDetailResponseData `json:"response"` //
+	Response     GetEscrowDetailResponseData `json:"response"` // Response data
 }
 type GetEscrowDetailResponseData struct {
 	OrderSn           string            `json:"order_sn"`             // [Required]  Shopee's unique identifier for an order.
@@ -228,7 +228,7 @@ type GetEscrowListRequest struct {
 }
 type GetEscrowListResponse struct {
 	BaseResponse                           // Common response fields
-	Response     GetEscrowListResponseData `json:"response"` // The business content of the response
+	Response     GetEscrowListResponseData `json:"response"` // Response data
 }
 type GetEscrowListResponseData struct {
 	EscrowList []Escrow `json:"escrow_list"` // [Required] <p>The list of escrow order sn.</p>
@@ -250,7 +250,7 @@ type GetIncomeOverviewRequest struct {
 }
 type GetIncomeOverviewResponse struct {
 	BaseResponse                               // Common response fields
-	Response     GetIncomeOverviewResponseData `json:"response"` //
+	Response     GetIncomeOverviewResponseData `json:"response"` // Response data
 }
 type GetIncomeOverviewResponseData struct {
 	LatestPayoutDate string       `json:"latest_payout_date"` // [Required] <p>The latest payout date for the released income. Format: YYYY-MM-DD. Only for CN shops.</p>
@@ -261,8 +261,8 @@ type GetIncomeReportRequest struct {
 }
 type GetIncomeReportResponse struct {
 	BaseResponse                             // Common response fields
+	Response     GetIncomeReportResponseData `json:"response"`      // Response data
 	Msg          string                      `json:"msg,omitempty"` // <p>Error Message</p>
-	Response     GetIncomeReportResponseData `json:"response"`      //
 }
 type GetIncomeReportResponseData struct {
 	Id            int64  `json:"id"`             // [Required] <p>The identifier for income statement file request.<br /></p>
@@ -276,7 +276,7 @@ type GetIncomeStatementRequest struct {
 }
 type GetIncomeStatementResponse struct {
 	BaseResponse                                // Common response fields
-	Response     GetIncomeStatementResponseData `json:"response"` //
+	Response     GetIncomeStatementResponseData `json:"response"` // Response data
 }
 type GetIncomeStatementResponseData struct {
 	Id            int64  `json:"id"`             // [Required] <p>The identifier for income statement file request.<br /></p>
@@ -290,7 +290,7 @@ type GetItemInstallmentStatusRequest struct {
 }
 type GetItemInstallmentStatusResponse struct {
 	BaseResponse                                      // Common response fields
-	Response     GetItemInstallmentStatusResponseData `json:"response"` // The business content of the response
+	Response     GetItemInstallmentStatusResponseData `json:"response"` // Response data
 }
 type GetItemInstallmentStatusResponseData struct {
 	ItemInstallmentList []ItemInstallment `json:"item_installment_list"` // [Required]
@@ -298,7 +298,7 @@ type GetItemInstallmentStatusResponseData struct {
 }
 type GetPaymentMethodListResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     GetPaymentMethodListResponseData `json:"response"` //
+	Response     GetPaymentMethodListResponseData `json:"response"` // Response data
 }
 type GetPaymentMethodListResponseData struct {
 	PaymentMethod []string `json:"payment_method"` // [Required]
@@ -312,7 +312,7 @@ type GetPayoutDetailRequest struct {
 }
 type GetPayoutDetailResponse struct {
 	BaseResponse                             // Common response fields
-	Response     GetPayoutDetailResponseData `json:"response"` // The business content of the response
+	Response     GetPayoutDetailResponseData `json:"response"` // Response data
 }
 type GetPayoutDetailResponseData struct {
 	More       bool     `json:"more"`        // [Required]
@@ -326,7 +326,7 @@ type GetPayoutInfoRequest struct {
 }
 type GetPayoutInfoResponse struct {
 	BaseResponse                           // Common response fields
-	Response     GetPayoutInfoResponseData `json:"response"` //
+	Response     GetPayoutInfoResponseData `json:"response"` // Response data
 }
 type GetPayoutInfoResponseData struct {
 	PayoutList *ResponseDataPayout `json:"payout_list"` // [Required]
@@ -335,7 +335,7 @@ type GetPayoutInfoResponseData struct {
 }
 type GetShopInstallmentStatusResponse struct {
 	BaseResponse                                      // Common response fields
-	Response     GetShopInstallmentStatusResponseData `json:"response"` // The business content of the response.
+	Response     GetShopInstallmentStatusResponseData `json:"response"` // Response data
 }
 type GetShopInstallmentStatusResponseData struct {
 	InstallmentStatus int64 `json:"installment_status"` // [Required] <p>The installment status for the shop</p>
@@ -352,7 +352,7 @@ type GetWalletTransactionListRequest struct {
 }
 type GetWalletTransactionListResponse struct {
 	BaseResponse                                      // Common response fields
-	Response     GetWalletTransactionListResponseData `json:"response"` //
+	Response     GetWalletTransactionListResponseData `json:"response"` // Response data
 }
 type GetWalletTransactionListResponseData struct {
 	TransactionList []Transaction `json:"transaction_list"` // [Required]
@@ -601,7 +601,7 @@ type SetItemInstallmentStatusRequest struct {
 }
 type SetItemInstallmentStatusResponse struct {
 	BaseResponse                                      // Common response fields
-	Response     SetItemInstallmentStatusResponseData `json:"response"` // The business content of the response
+	Response     SetItemInstallmentStatusResponseData `json:"response"` // Response data
 }
 type SetItemInstallmentStatusResponseData struct {
 	ItemInstallmentList []ItemInstallment           `json:"item_installment_list"` // [Required]
@@ -612,7 +612,7 @@ type SetShopInstallmentStatusRequest struct {
 }
 type SetShopInstallmentStatusResponse struct {
 	BaseResponse                                      // Common response fields
-	Response     SetShopInstallmentStatusResponseData `json:"response"` //
+	Response     SetShopInstallmentStatusResponseData `json:"response"` // Response data
 }
 type SetShopInstallmentStatusResponseData struct {
 	InstallmentStatus int64 `json:"installment_status"` // [Required]

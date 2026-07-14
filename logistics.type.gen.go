@@ -35,7 +35,7 @@ type BatchShipOrderRequest struct {
 }
 type BatchShipOrderResponse struct {
 	BaseResponse                            // Common response fields
-	Response     BatchShipOrderResponseData `json:"response"` //
+	Response     BatchShipOrderResponseData `json:"response"` // Response data
 }
 type BatchShipOrderResponseData struct {
 	ResultList []Fail `json:"result_list"` // [Required]
@@ -47,7 +47,7 @@ type BatchUpdateTpfWarehouseTrackingStatusRequest struct {
 }
 type BatchUpdateTpfWarehouseTrackingStatusResponse struct {
 	BaseResponse                                                   // Common response fields
-	Response     BatchUpdateTpfWarehouseTrackingStatusResponseData `json:"response"` //
+	Response     BatchUpdateTpfWarehouseTrackingStatusResponseData `json:"response"` // Response data
 }
 type BatchUpdateTpfWarehouseTrackingStatusResponseData struct {
 	SuccessList []Order `json:"success_list"` // [Required] <p>Update success order list.</p>
@@ -83,7 +83,7 @@ type CheckPolygonUpdateStatusRequest struct {
 }
 type CheckPolygonUpdateStatusResponse struct {
 	BaseResponse                                      // Common response fields
-	Response     CheckPolygonUpdateStatusResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     CheckPolygonUpdateStatusResponseData `json:"response"` // Response data
 }
 type CheckPolygonUpdateStatusResponseData struct {
 	Status  int64  `json:"status"`  // [Required] <p>Serviceable polygon file upload status. Applicable values:&nbsp;</p><p>0: Task completed<br />1: Task in progress<br />2: KML file related errors</p>
@@ -94,7 +94,7 @@ type CreateBookingShippingDocumentRequest struct {
 }
 type CreateBookingShippingDocumentResponse struct {
 	BaseResponse                                           // Common response fields
-	Response     CreateBookingShippingDocumentResponseData `json:"response"` // <p>Detail informations you are querying.<br /></p>
+	Response     CreateBookingShippingDocumentResponseData `json:"response"` // Response data
 }
 type CreateBookingShippingDocumentResponseData struct {
 	ResultList []ResponseDataResult `json:"result_list"` // [Required] <p>The list of the result data.<br /></p>
@@ -106,7 +106,7 @@ type CreateShippingDocumentJobRequest struct {
 }
 type CreateShippingDocumentJobResponse struct {
 	BaseResponse                                       // Common response fields
-	Response     CreateShippingDocumentJobResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     CreateShippingDocumentJobResponseData `json:"response"` // Response data
 }
 type CreateShippingDocumentJobResponseData struct {
 	JobId         string             `json:"job_id"`          // [Required] <p>Generated Job ID which will be used for status tracking and download the Shipping Document</p>
@@ -118,7 +118,7 @@ type CreateShippingDocumentRequest struct {
 }
 type CreateShippingDocumentResponse struct {
 	BaseResponse                                    // Common response fields
-	Response     CreateShippingDocumentResponseData `json:"response"` // Detail informations you are querying.
+	Response     CreateShippingDocumentResponseData `json:"response"` // Response data
 }
 type CreateShippingDocumentResponseData struct {
 	ResultList []Fail `json:"result_list"` // [Required] The list of the result data.
@@ -179,7 +179,7 @@ type Fail struct {
 }
 type GetAddressListResponse struct {
 	BaseResponse                            // Common response fields
-	Response     GetAddressListResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetAddressListResponseData `json:"response"` // Response data
 }
 type GetAddressListResponseData struct {
 	ShowPickupAddress bool      `json:"show_pickup_address"` // [Required] Show pickup address or not.
@@ -191,7 +191,7 @@ type GetBookingShippingDocumentDataInfoRequest struct {
 }
 type GetBookingShippingDocumentDataInfoResponse struct {
 	BaseResponse                                                // Common response fields
-	Response     GetBookingShippingDocumentDataInfoResponseData `json:"response"` // <p>Detail informations you are querying.<br /></p>
+	Response     GetBookingShippingDocumentDataInfoResponseData `json:"response"` // Response data
 }
 type GetBookingShippingDocumentDataInfoResponseData struct {
 	RecipientAddressInfo *ResponseDataRecipientAddressInfo `json:"recipient_address_info"` // [Required]
@@ -202,7 +202,7 @@ type GetBookingShippingDocumentParameterRequest struct {
 }
 type GetBookingShippingDocumentParameterResponse struct {
 	BaseResponse                                                 // Common response fields
-	Response     GetBookingShippingDocumentParameterResponseData `json:"response"` // <p>Detail informations you are querying.<br /></p>
+	Response     GetBookingShippingDocumentParameterResponseData `json:"response"` // Response data
 }
 type GetBookingShippingDocumentParameterResponseData struct {
 	ResultList []GetBookingShippingDocumentParameterResponseDataResult `json:"result_list"` // [Required] <p>The list of the result data.<br /></p>
@@ -223,7 +223,7 @@ type GetBookingShippingDocumentResultRequestBooking struct {
 }
 type GetBookingShippingDocumentResultResponse struct {
 	BaseResponse                                              // Common response fields
-	Response     GetBookingShippingDocumentResultResponseData `json:"response"` // <p>Detail informations you are querying.<br /></p>
+	Response     GetBookingShippingDocumentResultResponseData `json:"response"` // Response data
 }
 type GetBookingShippingDocumentResultResponseData struct {
 	ResultList []GetBookingShippingDocumentResultResponseDataResult `json:"result_list"` // [Required] <p>The list of the result data.<br /></p>
@@ -239,7 +239,7 @@ type GetBookingShippingParameterRequest struct {
 }
 type GetBookingShippingParameterResponse struct {
 	BaseResponse                                         // Common response fields
-	Response     GetBookingShippingParameterResponseData `json:"response"` // <p>Detail information you are querying.<br /></p>
+	Response     GetBookingShippingParameterResponseData `json:"response"` // Response data
 }
 type GetBookingShippingParameterResponseData struct {
 	InfoNeeded *InfoNeeded         `json:"info_needed"` // [Required] <p>The parameters required based on each specific booking to Init. Must use the fields included under info_needed to call Init.<br /></p>
@@ -250,7 +250,7 @@ type GetBookingTrackingInfoRequest struct {
 }
 type GetBookingTrackingInfoResponse struct {
 	BaseResponse                                    // Common response fields
-	Response     GetBookingTrackingInfoResponseData `json:"response"` // <p>Detail informations you are querying.<br /></p>
+	Response     GetBookingTrackingInfoResponseData `json:"response"` // Response data
 }
 type GetBookingTrackingInfoResponseData struct {
 	BookingSn       string          `json:"booking_sn"`       // [Required] <p>Shopee's unique identifier for a booking.<br /></p>
@@ -290,7 +290,7 @@ type GetChannelListResponseDataLogisticsChannel struct {
 }
 type GetMartPackagingInfoResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     GetMartPackagingInfoResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetMartPackagingInfoResponseData `json:"response"` // Response data
 }
 type GetMartPackagingInfoResponseData struct {
 	Enable       bool                   `json:"enable"`        // [Required] <p>Indicates whether the seller has enabled or disabled the packaging fee configuration.</p><p><b>True:</b>&nbsp;The seller charges a packaging fee.</p><p><b>False:</b>&nbsp;The seller does not charge a packaging fee.</p>
@@ -304,7 +304,7 @@ type GetMassShippingParameterRequest struct {
 }
 type GetMassShippingParameterResponse struct {
 	BaseResponse                                      // Common response fields
-	Response     GetMassShippingParameterResponseData `json:"response"` //
+	Response     GetMassShippingParameterResponseData `json:"response"` // Response data
 }
 type GetMassShippingParameterResponseData struct {
 	InfoNeeded  *ResponseDataInfoNeeded                     `json:"info_needed"`  // [Required] <p>The parameters required based on each specific order to Init. Must use the fields included under info_needed to call Init. For logistic_id 80003 and 80004, both Regular and JOB shipping methods are supported. If you choose Regular shipping method, please use "tracking_no" to call Init API. If you choose JOB shipping method, please use "sender_real_name" to call Init API. Note that only one of "tracking_no" and "sender_real_name" can be selected.</p>
@@ -326,7 +326,7 @@ type GetMassTrackingNumberRequest struct {
 }
 type GetMassTrackingNumberResponse struct {
 	BaseResponse                                   // Common response fields
-	Response     GetMassTrackingNumberResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetMassTrackingNumberResponseData `json:"response"` // Response data
 }
 type GetMassTrackingNumberResponseData struct {
 	SuccessList []GetMassTrackingNumberResponseDataSuccess `json:"success_list"` // [Required] <p>Success package list.</p>
@@ -343,7 +343,7 @@ type GetMassTrackingNumberResponseDataSuccess struct {
 }
 type GetOperatingHourRestrictionsResponse struct {
 	BaseResponse                                          // Common response fields
-	Response     GetOperatingHourRestrictionsResponseData `json:"response"` //
+	Response     GetOperatingHourRestrictionsResponseData `json:"response"` // Response data
 }
 type GetOperatingHourRestrictionsResponseData struct {
 	RegularOperatingHourRestrictions        *RegularOperatingHourRestrictions        `json:"regular_operating_hour_restrictions"`         // [Required] <p>The restrictions for Pickup Operating Hours / Preferred Pickup Hours</p>
@@ -357,7 +357,7 @@ type GetOperatingHoursResponse struct {
 }
 type GetPauseStatusResponse struct {
 	BaseResponse                            // Common response fields
-	Response     GetPauseStatusResponseData `json:"response"` //
+	Response     GetPauseStatusResponseData `json:"response"` // Response data
 }
 type GetPauseStatusResponseData struct {
 	IsPaused            bool  `json:"is_paused"`             // [Required] <p>Indicate the current pause status of logistics channels under the shop. Applicable values:&nbsp;</p><p>- true: All relevant channels are currently paused and will not have any new incoming orders</p><p>- false: No channels are paused and may have new incoming orders</p><p><br /></p><p>Note: Please first call v2.logistics.get_pause_status to query the current suspension status of instant orders for the store. If is_paused = true, then call v2.logistics.get_channel_list and identify the range of channels affected by the pause function through support_pause = true.</p>
@@ -371,7 +371,7 @@ type GetShippingDocumentDataInfoRequest struct {
 }
 type GetShippingDocumentDataInfoResponse struct {
 	BaseResponse                                         // Common response fields
-	Response     GetShippingDocumentDataInfoResponseData `json:"response"` // <p>Detail informations you are querying.<br /></p><p><br /></p><p>Note: For parcels that support pre-shipment printing, calling this API before shipment will only return the following fields:</p><p><br /></p><p>response</p><p style="padding-left:2em;">recipient_address_info</p><p style="padding-left:4em;">key</p><p style="padding-left:4em;">image</p><p style="padding-left:2em;">shipping_document_info</p><p style="padding-left:4em;">cod</p><p style="padding-left:4em;"></p><p style="padding-left:4em;"></p><p style="padding-left:4em;">cod_amount</p><p style="padding-left:4em;"></p><p style="padding-left:4em;"></p><p style="padding-left:4em;">order_weight</p><p style="padding-left:4em;"></p><p style="padding-left:4em;"></p><p style="padding-left:4em;">logistics_channel_id</p><p style="padding-left:4em;"></p><p style="padding-left:4em;"></p><p style="padding-left:4em;">shipping_carrier</p><p style="padding-left:4em;"></p><p style="padding-left:4em;"></p><p style="padding-left:4em;">pickup_code</p>
+	Response     GetShippingDocumentDataInfoResponseData `json:"response"` // Response data
 }
 type GetShippingDocumentDataInfoResponseData struct {
 	RecipientAddressInfo *ResponseDataRecipientAddressInfo `json:"recipient_address_info"` // [Required]
@@ -382,7 +382,7 @@ type GetShippingDocumentJobStatusRequest struct {
 }
 type GetShippingDocumentJobStatusResponse struct {
 	BaseResponse                                          // Common response fields
-	Response     GetShippingDocumentJobStatusResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetShippingDocumentJobStatusResponseData `json:"response"` // Response data
 }
 type GetShippingDocumentJobStatusResponseData struct {
 	JobId     string `json:"job_id"`     // [Required] <p>Generated Job ID for status tracking and download the Shipping Document</p>
@@ -394,7 +394,7 @@ type GetShippingDocumentParameterRequest struct {
 }
 type GetShippingDocumentParameterResponse struct {
 	BaseResponse                                          // Common response fields
-	Response     GetShippingDocumentParameterResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetShippingDocumentParameterResponseData `json:"response"` // Response data
 }
 type GetShippingDocumentParameterResponseData struct {
 	ResultList []GetShippingDocumentParameterResponseDataResult `json:"result_list"` // [Required] The list of the result data.
@@ -417,7 +417,7 @@ type GetShippingDocumentResultRequestOrder struct {
 }
 type GetShippingDocumentResultResponse struct {
 	BaseResponse                                       // Common response fields
-	Response     GetShippingDocumentResultResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetShippingDocumentResultResponseData `json:"response"` // Response data
 }
 type GetShippingDocumentResultResponseData struct {
 	ResultList []GetShippingDocumentResultResponseDataResult `json:"result_list"` // [Required] The result data list of the API response.
@@ -435,7 +435,7 @@ type GetShippingParameterRequest struct {
 }
 type GetShippingParameterResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     GetShippingParameterResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetShippingParameterResponseData `json:"response"` // Response data
 }
 type GetShippingParameterResponseData struct {
 	InfoNeeded *ResponseDataInfoNeeded                     `json:"info_needed"` // [Required] The parameters required based on each specific order to Init. Must use the fields included under info_needed to call Init. For logistic_id 80003 and 80004, both Regular and JOB shipping methods are supported. If you choose Regular shipping method, please use "tracking_no" to call Init API. If you choose JOB shipping method, please use "sender_real_name" to call Init API. Note that only one of "tracking_no" and "sender_real_name" can be selected.
@@ -452,7 +452,7 @@ type GetTrackingInfoRequest struct {
 }
 type GetTrackingInfoResponse struct {
 	BaseResponse                             // Common response fields
-	Response     GetTrackingInfoResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetTrackingInfoResponseData `json:"response"` // Response data
 }
 type GetTrackingInfoResponseData struct {
 	OrderSn                string                     `json:"order_sn"`                 // [Required] Shopee's unique identifier for an order.
@@ -471,7 +471,7 @@ type GetTrackingNumberRequest struct {
 }
 type GetTrackingNumberResponse struct {
 	BaseResponse                               // Common response fields
-	Response     GetTrackingNumberResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetTrackingNumberResponseData `json:"response"` // Response data
 }
 type GetTrackingNumberResponseData struct {
 	TrackingNumber          string `json:"tracking_number"`            // [Required] The tracking number of this order.
@@ -511,7 +511,7 @@ type LogisticsChannelWeightLimit struct {
 }
 type LogisticsGetChannelListResponse struct {
 	BaseResponse                                     // Common response fields
-	Response     LogisticsGetChannelListResponseData `json:"response"` // Detail informations you are querying.
+	Response     LogisticsGetChannelListResponseData `json:"response"` // Response data
 }
 type LogisticsGetChannelListResponseData struct {
 	LogisticsChannelList []GetChannelListResponseDataLogisticsChannel `json:"logistics_channel_list"` // [Required] The list of logistics channel.
@@ -767,7 +767,7 @@ type SetMartPackagingInfoRequest struct {
 }
 type SetMartPackagingInfoResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     SetMartPackagingInfoResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     SetMartPackagingInfoResponseData `json:"response"` // Response data
 }
 type SetMartPackagingInfoResponseData struct {
 	Enable       bool                   `json:"enable"`        // [Required] <p>Indicates whether the seller has enabled or disabled the packaging fee configuration.</p><p><b>True:</b>&nbsp;The seller charges a packaging fee.</p><p><b>False:</b>&nbsp;The seller does not charge a packaging fee.</p>
@@ -779,7 +779,7 @@ type SetPauseStatusRequest struct {
 }
 type SetPauseStatusResponse struct {
 	BaseResponse                            // Common response fields
-	Response     SetPauseStatusResponseData `json:"response"` //
+	Response     SetPauseStatusResponseData `json:"response"` // Response data
 }
 type SetPauseStatusResponseData struct {
 	IsPaused            bool  `json:"is_paused"`             // [Required] <p>Indicate the current pause status of logistics channels under the shop. Applicable values:&nbsp;</p><p>- true: All relevant channels are currently paused and will not have any new incoming orders</p><p>- false: No channels are paused and may have new incoming orders</p><p><br /></p><p>Note: Please first call v2.logistics.get_pause_status to query the current suspension status of instant orders for the store. If is_paused = true, then call v2.logistics.get_channel_list and identify the range of channels affected by the pause function through support_pause = true.</p>
@@ -986,7 +986,7 @@ type UpdateChannelRequest struct {
 }
 type UpdateChannelResponse struct {
 	BaseResponse                           // Common response fields
-	Response     UpdateChannelResponseData `json:"response"` // Detail informations you are querying.
+	Response     UpdateChannelResponseData `json:"response"` // Response data
 }
 type UpdateChannelResponseData struct {
 	ShopId                int64                         `json:"shop_id"`                  // [Required] Shopee's unique identifier for a shop.
@@ -1010,7 +1010,7 @@ type UpdateOperatingHoursRequest struct {
 }
 type UpdateOperatingHoursResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     UpdateOperatingHoursResponseData `json:"response"` //
+	Response     UpdateOperatingHoursResponseData `json:"response"` // Response data
 }
 type UpdateOperatingHoursResponseData struct {
 	ResultList *UpdateOperatingHoursResponseDataResult `json:"result_list"` // [Required]
@@ -1047,7 +1047,7 @@ type UpdateTrackingStatusRequest struct {
 }
 type UpdateTrackingStatusResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     UpdateTrackingStatusResponseData `json:"response"` // <p>Response body<br /></p>
+	Response     UpdateTrackingStatusResponseData `json:"response"` // Response data
 }
 type UpdateTrackingStatusResponseData struct {
 	UpdateResult string `json:"update_result"` // [Required] <p>Update results:</p><p>- succeed</p><p>- failed</p>
@@ -1057,7 +1057,7 @@ type UploadServiceablePolygonRequest struct {
 }
 type UploadServiceablePolygonResponse struct {
 	BaseResponse                                      // Common response fields
-	Response     UploadServiceablePolygonResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     UploadServiceablePolygonResponseData `json:"response"` // Response data
 }
 type UploadServiceablePolygonResponseData struct {
 	TaskId string `json:"task_id"` // [Required] <p>Use the task_id to call v2.logistics.check_polygon_update_status to check if the upload job has been completed.</p>

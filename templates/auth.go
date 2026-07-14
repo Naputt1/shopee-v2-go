@@ -71,7 +71,7 @@ func (s *AuthServiceOp[T]) GetAccessToken(ctx context.Context, sid uint64, aid u
 		params["main_account_id"] = aid
 	}
 	resp := new(AccessTokenResponse)
-	err := s.client.Post(ctx, path, params, resp, 0, "")
+	err := s.client.Post(ctx, path, params, resp, 0, 0, "")
 	return resp, err
 }
 
@@ -87,6 +87,6 @@ func (s *AuthServiceOp[T]) RefreshAccessToken(ctx context.Context, sid uint64, a
 		params["main_account_id"] = aid
 	}
 	resp := new(RefreshAccessTokenResponse)
-	err := s.client.Post(ctx, path, params, resp, 0, "")
+	err := s.client.Post(ctx, path, params, resp, 0, 0, "")
 	return resp, err
 }

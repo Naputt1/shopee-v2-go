@@ -17,7 +17,7 @@ type GetAuthorisedResellerBrandRequest struct {
 }
 type GetAuthorisedResellerBrandResponse struct {
 	BaseResponse                                        // Common response fields
-	Response     GetAuthorisedResellerBrandResponseData `json:"response"` //
+	Response     GetAuthorisedResellerBrandResponseData `json:"response"` // Response data
 }
 type GetAuthorisedResellerBrandResponseData struct {
 	IsAuthorisedReseller bool              `json:"is_authorised_reseller"` // [Required] <p>This is to indicate whether the shop is authorised reseller.</p>
@@ -27,7 +27,7 @@ type GetAuthorisedResellerBrandResponseData struct {
 }
 type GetBrShopOnboardingInfoResponse struct {
 	BaseResponse                                     // Common response fields
-	Response     GetBrShopOnboardingInfoResponseData `json:"response"` // <p>Onboarding information of the Shop.</p>
+	Response     GetBrShopOnboardingInfoResponseData `json:"response"` // Response data
 }
 type GetBrShopOnboardingInfoResponseData struct {
 	TaxIdType         int64           `json:"tax_id_type"`        // [Required] <p>Type of the shop’s tax ID. Applicable values:&nbsp;</p><p> </p><p>1: Personal seller (CPF)<br /> 2: Company seller (CNPJ)</p>
@@ -50,7 +50,7 @@ type GetBrShopOnboardingInfoResponseData struct {
 }
 type GetProfileResponse struct {
 	BaseResponse                        // Common response fields
-	Response     GetProfileResponseData `json:"response"` // The information about shop logo, shop name, shop description.
+	Response     GetProfileResponseData `json:"response"` // Response data
 }
 type GetProfileResponseData struct {
 	ShopLogo      string `json:"shop_logo"`      // [Required] The Image URL of the shop logo.
@@ -60,7 +60,7 @@ type GetProfileResponseData struct {
 }
 type GetShopHolidayModeResponse struct {
 	BaseResponse                                // Common response fields
-	Response     GetShopHolidayModeResponseData `json:"response"` //
+	Response     GetShopHolidayModeResponseData `json:"response"` // Response data
 }
 type GetShopHolidayModeResponseData struct {
 	HolidayModeOn          bool   `json:"holiday_mode_on"`          // [Required] <p>Indicate whether the shop has enabled holiday mode. true means ON, false means OFF.</p>
@@ -109,7 +109,7 @@ type GetWarehouseDetailRequest struct {
 }
 type GetWarehouseDetailResponse struct {
 	BaseResponse                                // Common response fields
-	Response     GetWarehouseDetailResponseData `json:"response"` //
+	Response     GetWarehouseDetailResponseData `json:"response"` // Response data
 }
 type GetWarehouseDetailResponseData struct {
 	WarehouseId      int64  `json:"warehouse_id"`       // [Required] <p>Warehouse address identifier. It should be unique for every warehouse address<br /></p>
@@ -149,7 +149,7 @@ type SetShopHolidayModeRequest struct {
 }
 type SetShopHolidayModeResponse struct {
 	BaseResponse                                // Common response fields
-	Response     SetShopHolidayModeResponseData `json:"response"` //
+	Response     SetShopHolidayModeResponseData `json:"response"` // Response data
 }
 type SetShopHolidayModeResponseData struct {
 	DebugMsg string `json:"debug_msg"` // [Required] <p>Debug message.</p>
@@ -165,7 +165,7 @@ type UpdateProfileRequest struct {
 }
 type UpdateProfileResponse struct {
 	BaseResponse                           // Common response fields
-	Response     UpdateProfileResponseData `json:"response"` // If update successfully, the information is about shop logo, shop name, shop description.
+	Response     UpdateProfileResponseData `json:"response"` // Response data
 }
 type UpdateProfileResponseData struct {
 	ShopLogo    string `json:"shop_logo"`   // [Required] The Image URL of the shop logo after updated.

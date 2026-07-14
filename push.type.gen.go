@@ -8,7 +8,7 @@ type ConfirmConsumedLostPushMessageResponse struct {
 }
 type GetAppPushConfigResponse struct {
 	BaseResponse                              // Common response fields
-	Response     GetAppPushConfigResponseData `json:"response"` // <p>Detail informations you are querying.<br /></p>
+	Response     GetAppPushConfigResponseData `json:"response"` // Response data
 }
 type GetAppPushConfigResponseData struct {
 	CallbackUrl       string  `json:"callback_url"`         // [Required] <p>The callback url of push mechanism. It is the address where the Shopee will send the push message to. If you don't set any callback_url before, this parameters is required.<br /></p>
@@ -20,7 +20,7 @@ type GetAppPushConfigResponseData struct {
 }
 type GetLostPushMessageResponse struct {
 	BaseResponse                                // Common response fields
-	Response     GetLostPushMessageResponseData `json:"response"` //
+	Response     GetLostPushMessageResponseData `json:"response"` // Response data
 }
 type GetLostPushMessageResponseData struct {
 	PushMessageList []PushMessage `json:"push_message_list"` // [Required] <p>Returns the earliest 100 lost push messages that were lost within 3 days of the current time and not confirmed to have been consumed.</p>
@@ -41,7 +41,7 @@ type SetAppPushConfigRequest struct {
 }
 type SetAppPushConfigResponse struct {
 	BaseResponse                              // Common response fields
-	Response     SetAppPushConfigResponseData `json:"response"` // <p>Detail informations you are querying.<br /></p>
+	Response     SetAppPushConfigResponseData `json:"response"` // Response data
 }
 type SetAppPushConfigResponseData struct {
 	Result string `json:"result"` // [Required] <p>Use this field to indicate whether the configuration is set successfully.<br /></p>

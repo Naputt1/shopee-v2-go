@@ -7,7 +7,7 @@ type BindCourierDeliveryFirstMileTrackingNumberRequest struct {
 }
 type BindCourierDeliveryFirstMileTrackingNumberResponse struct {
 	BaseResponse                                                        // Common response fields
-	Response     BindCourierDeliveryFirstMileTrackingNumberResponseData `json:"response"` //
+	Response     BindCourierDeliveryFirstMileTrackingNumberResponseData `json:"response"` // Response data
 }
 type BindCourierDeliveryFirstMileTrackingNumberResponseData struct {
 	BindingId   string  `json:"binding_id"`   // [Required] <p>Binding ID<br /></p>
@@ -30,7 +30,7 @@ type BindFirstMileTrackingNumberRequest struct {
 }
 type BindFirstMileTrackingNumberResponse struct {
 	BaseResponse                                         // Common response fields
-	Response     BindFirstMileTrackingNumberResponseData `json:"response"` // Detail informations you are querying.
+	Response     BindFirstMileTrackingNumberResponseData `json:"response"` // Response data
 }
 type BindFirstMileTrackingNumberResponseData struct {
 	FirstMileTrackingNumber string `json:"first_mile_tracking_number"` // [Required] The first mile tracking number
@@ -61,7 +61,7 @@ type GenerateAndBindFirstMileTrackingNumberRequest struct {
 }
 type GenerateAndBindFirstMileTrackingNumberResponse struct {
 	BaseResponse                                                    // Common response fields
-	Response     GenerateAndBindFirstMileTrackingNumberResponseData `json:"response"` //
+	Response     GenerateAndBindFirstMileTrackingNumberResponseData `json:"response"` // Response data
 }
 type GenerateAndBindFirstMileTrackingNumberResponseData struct {
 	BindingId   string  `json:"binding_id"`   // [Required] <p>Binding ID</p>
@@ -74,7 +74,7 @@ type GenerateFirstMileTrackingNumberRequest struct {
 }
 type GenerateFirstMileTrackingNumberResponse struct {
 	BaseResponse                                             // Common response fields
-	Response     GenerateFirstMileTrackingNumberResponseData `json:"response"` // Detail informations you are querying.
+	Response     GenerateFirstMileTrackingNumberResponseData `json:"response"` // Response data
 }
 type GenerateFirstMileTrackingNumberResponseData struct {
 	FirstMileTrackingNumberList []string `json:"first_mile_tracking_number_list"` // [Required] The list of first mile tracking number that you generate
@@ -84,7 +84,7 @@ type GetChannelListRequest struct {
 }
 type GetChannelListResponse struct {
 	BaseResponse                            // Common response fields
-	Response     GetChannelListResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetChannelListResponseData `json:"response"` // Response data
 }
 type GetChannelListResponseData struct {
 	LogisticsChannelList []LogisticsChannel `json:"logistics_channel_list"` // [Required]
@@ -94,7 +94,7 @@ type GetCourierDeliveryChannelListRequest struct {
 }
 type GetCourierDeliveryChannelListResponse struct {
 	BaseResponse                                           // Common response fields
-	Response     GetCourierDeliveryChannelListResponseData `json:"response"` //
+	Response     GetCourierDeliveryChannelListResponseData `json:"response"` // Response data
 }
 type GetCourierDeliveryChannelListResponseData struct {
 	LogisticsChannelList []ResponseDataLogisticsChannel `json:"logistics_channel_list"` // [Required]
@@ -106,7 +106,7 @@ type GetCourierDeliveryDetailRequest struct {
 }
 type GetCourierDeliveryDetailResponse struct {
 	BaseResponse                                      // Common response fields
-	Response     GetCourierDeliveryDetailResponseData `json:"response"` //
+	Response     GetCourierDeliveryDetailResponseData `json:"response"` // Response data
 }
 type GetCourierDeliveryDetailResponseData struct {
 	BindingId               string              `json:"binding_id"`                 // [Required] <p>Binding ID<br /></p>
@@ -125,7 +125,7 @@ type GetCourierDeliveryTrackingNumberListRequest struct {
 }
 type GetCourierDeliveryTrackingNumberListResponse struct {
 	BaseResponse                                                  // Common response fields
-	Response     GetCourierDeliveryTrackingNumberListResponseData `json:"response"` //
+	Response     GetCourierDeliveryTrackingNumberListResponseData `json:"response"` // Response data
 }
 type GetCourierDeliveryTrackingNumberListResponseData struct {
 	TrackingNumberList []TrackingNumber `json:"tracking_number_list"` // [Required]
@@ -137,7 +137,7 @@ type GetCourierDeliveryWaybillRequest struct {
 }
 type GetCourierDeliveryWaybillResponse struct {
 	BaseResponse                                       // Common response fields
-	Response     GetCourierDeliveryWaybillResponseData `json:"response"` //
+	Response     GetCourierDeliveryWaybillResponseData `json:"response"` // Response data
 }
 type GetCourierDeliveryWaybillResponseData struct {
 	WaybillList []Waybill `json:"waybill_list"` // [Required]
@@ -148,7 +148,7 @@ type GetDetailRequest struct {
 }
 type GetDetailResponse struct {
 	BaseResponse                       // Common response fields
-	Response     GetDetailResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetDetailResponseData `json:"response"` // Response data
 }
 type GetDetailResponseData struct {
 	LogisticsChannelId      int64               `json:"logistics_channel_id"`       // [Required] The identity of logistic channel.
@@ -168,7 +168,7 @@ type GetTrackingNumberListRequest struct {
 }
 type GetTrackingNumberListResponse struct {
 	BaseResponse                                   // Common response fields
-	Response     GetTrackingNumberListResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetTrackingNumberListResponseData `json:"response"` // Response data
 }
 type GetTrackingNumberListResponseData struct {
 	More                        bool                      `json:"more"`                            // [Required] This is to indicate whether the order list is more than one page. If this value is true, you may want to continue to check next page to retrieve orders.
@@ -181,7 +181,7 @@ type GetTransitWarehouseListRequest struct {
 }
 type GetTransitWarehouseListResponse struct {
 	BaseResponse                                     // Common response fields
-	Response     GetTransitWarehouseListResponseData `json:"response"` //
+	Response     GetTransitWarehouseListResponseData `json:"response"` // Response data
 }
 type GetTransitWarehouseListResponseData struct {
 	TransitWarehouseList []TransitWarehouse `json:"transit_warehouse_list"` // [Required]
@@ -193,7 +193,7 @@ type GetUnbindOrderListRequest struct {
 }
 type GetUnbindOrderListResponse struct {
 	BaseResponse                                // Common response fields
-	Response     GetUnbindOrderListResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetUnbindOrderListResponseData `json:"response"` // Response data
 }
 type GetUnbindOrderListResponseData struct {
 	More       bool                                  `json:"more"`        // [Required] This is to indicate whether the item list is more than one page. If this value is true, you may want to continue to check next page to retrieve the rest of items.
@@ -253,7 +253,7 @@ type UnbindFirstMileTrackingNumberAllRequest struct {
 }
 type UnbindFirstMileTrackingNumberAllResponse struct {
 	BaseResponse                                              // Common response fields
-	Response     UnbindFirstMileTrackingNumberAllResponseData `json:"response"` //
+	Response     UnbindFirstMileTrackingNumberAllResponseData `json:"response"` // Response data
 }
 type UnbindFirstMileTrackingNumberAllResponseData struct {
 	SuccessList []Success `json:"success_list"` // [Required]
@@ -265,7 +265,7 @@ type UnbindFirstMileTrackingNumberRequest struct {
 }
 type UnbindFirstMileTrackingNumberResponse struct {
 	BaseResponse                                           // Common response fields
-	Response     UnbindFirstMileTrackingNumberResponseData `json:"response"` // Detail informations you are querying.
+	Response     UnbindFirstMileTrackingNumberResponseData `json:"response"` // Response data
 }
 type UnbindFirstMileTrackingNumberResponseData struct {
 	FirstMileTrackingNumber string `json:"first_mile_tracking_number"` // [Required] The first mile tracking number.

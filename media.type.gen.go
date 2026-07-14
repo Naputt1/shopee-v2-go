@@ -17,7 +17,7 @@ type GetVideoUploadResultRequest struct {
 }
 type GetVideoUploadResultResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     GetVideoUploadResultResponseData `json:"response"` //
+	Response     GetVideoUploadResultResponseData `json:"response"` // Response data
 }
 type GetVideoUploadResultResponseData struct {
 	Status     string     `json:"status"`      // [Required] <p>Current status of the upload task. Possible values:<br /></p><p>- INITIATED: Upload task has been created (via init_video_upload) but no parts have been uploaded yet.</p><p>- UPLOADING: Video file parts are being uploaded. The upload has started but is not yet completed.</p><p>- UPLOADED: All video parts have been uploaded successfully, waiting for complete_video_upload to trigger processing.</p><p>- PROCESSING: Video is being transcoded/validated by the system (duration, format, resolution checks).</p><p>- SUCCEEDED: Video upload and transcoding completed successfully. Video URL and cover URL are available for use.</p><p>- FAILED: Upload or processing failed (e.g., invalid format, duration not within allowed range, transcoding error).</p><p>- CANCELLED: Upload task was explicitly canceled by the client (cancel_video_upload), and the video is discarded.</p>
@@ -34,7 +34,7 @@ type InitVideoUploadRequest struct {
 }
 type InitVideoUploadResponse struct {
 	BaseResponse                             // Common response fields
-	Response     InitVideoUploadResponseData `json:"response"` //
+	Response     InitVideoUploadResponseData `json:"response"` // Response data
 }
 type InitVideoUploadResponseData struct {
 	VideoUploadId string `json:"video_upload_id"` // [Required] <p>Unique upload session ID.</p>
@@ -47,7 +47,7 @@ type MediaUploadImageRequest struct {
 }
 type MediaUploadImageResponse struct {
 	BaseResponse                              // Common response fields
-	Response     MediaUploadImageResponseData `json:"response"` //
+	Response     MediaUploadImageResponseData `json:"response"` // Response data
 }
 type MediaUploadImageResponseData struct {
 	ImageList []FieldImageInfo `json:"image_list"` // [Required] <p>List of uploaded images.</p>

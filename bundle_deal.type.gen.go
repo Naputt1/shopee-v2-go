@@ -6,7 +6,7 @@ type AddBundleDealItemRequest struct {
 }
 type AddBundleDealItemResponse struct {
 	BaseResponse                               // Common response fields
-	Response     AddBundleDealItemResponseData `json:"response"` // Detail informations you are querying.
+	Response     AddBundleDealItemResponseData `json:"response"` // Response data
 }
 type AddBundleDealItemResponseData struct {
 	FailedList  []Failed      `json:"failed_list"`  // [Required] Indicate error details.
@@ -26,7 +26,7 @@ type AddBundleDealRequest struct {
 }
 type AddBundleDealResponse struct {
 	BaseResponse                           // Common response fields
-	Response     AddBundleDealResponseData `json:"response"` //
+	Response     AddBundleDealResponseData `json:"response"` // Response data
 }
 type AddBundleDealResponseData struct {
 	BundleDealId int64 `json:"bundle_deal_id"` // [Required] Shopee's unique identifier for a bundle deal activity.
@@ -67,7 +67,7 @@ type DeleteBundleDealItemRequest struct {
 }
 type DeleteBundleDealItemResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     DeleteBundleDealItemResponseData `json:"response"` // Detail informations you are querying.
+	Response     DeleteBundleDealItemResponseData `json:"response"` // Response data
 }
 type DeleteBundleDealItemResponseData struct {
 	FailedList  []Failed      `json:"failed_list"`  // [Required] Indicate error details.
@@ -78,7 +78,7 @@ type DeleteBundleDealRequest struct {
 }
 type DeleteBundleDealResponse struct {
 	BaseResponse                              // Common response fields
-	Response     DeleteBundleDealResponseData `json:"response"` // Detail informations you are querying.
+	Response     DeleteBundleDealResponseData `json:"response"` // Response data
 }
 type DeleteBundleDealResponseData struct {
 	BundleDealId int64 `json:"bundle_deal_id"` // [Required] Shopee's unique identifier for a bundle deal activity.
@@ -88,7 +88,7 @@ type EndBundleDealRequest struct {
 }
 type EndBundleDealResponse struct {
 	BaseResponse                           // Common response fields
-	Response     EndBundleDealResponseData `json:"response"` // Detail informations you are querying.
+	Response     EndBundleDealResponseData `json:"response"` // Response data
 }
 type EndBundleDealResponseData struct {
 	BundleDealId int64 `json:"bundle_deal_id"` // [Required] Shopee's unique identifier for a bundle deal activity.
@@ -98,7 +98,7 @@ type GetBundleDealItemRequest struct {
 }
 type GetBundleDealItemResponse struct {
 	BaseResponse                               // Common response fields
-	Response     GetBundleDealItemResponseData `json:"response"` //
+	Response     GetBundleDealItemResponseData `json:"response"` // Response data
 }
 type GetBundleDealItemResponseData struct {
 	ItemList   []MainItem `json:"item_list"`   // [Required] The list of bundle deal item
@@ -111,7 +111,7 @@ type GetBundleDealListRequest struct {
 }
 type GetBundleDealListResponse struct {
 	BaseResponse                               // Common response fields
-	Response     GetBundleDealListResponseData `json:"response"` //
+	Response     GetBundleDealListResponseData `json:"response"` // Response data
 }
 type GetBundleDealListResponseData struct {
 	BundleDealList []BundleDeal `json:"bundle_deal_list"` // [Required] The list of bundle deal id
@@ -122,7 +122,7 @@ type GetBundleDealRequest struct {
 }
 type GetBundleDealResponse struct {
 	BaseResponse                           // Common response fields
-	Response     GetBundleDealResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetBundleDealResponseData `json:"response"` // Response data
 }
 type GetBundleDealResponseData struct {
 	BundleDealId   int64           `json:"bundle_deal_id"`   // [Required] Shopee's unique identifier for a bundle deal activity.
@@ -136,13 +136,16 @@ type MainItem struct {
 	ItemId int64 `json:"item_id"` // [Required] Shopee's unique identifier for an item.
 	Status int64 `json:"status"`  // [Required] The status of bundle deal item：enable = 1；disable =0
 }
+type TopSellingProducts struct {
+	ItemId int64 `json:"item_id"` // [Required] Shopee's unique identifier for an item.
+}
 type UpdateBundleDealItemRequest struct {
 	BundleDealId int64      `json:"bundle_deal_id"` // [Required] Shopee's unique identifier for a bundle deal activity.
 	ItemList     []MainItem `json:"item_list"`      // [Required] The items added in this bundle deal promotion.
 }
 type UpdateBundleDealItemResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     UpdateBundleDealItemResponseData `json:"response"` //  Detail informations you are querying.
+	Response     UpdateBundleDealItemResponseData `json:"response"` // Response data
 }
 type UpdateBundleDealItemResponseData struct {
 	FailedList  []Failed      `json:"failed_list"`  // [Required] Indicate error details.
@@ -163,7 +166,7 @@ type UpdateBundleDealRequest struct {
 }
 type UpdateBundleDealResponse struct {
 	BaseResponse                              // Common response fields
-	Response     UpdateBundleDealResponseData `json:"response"` //
+	Response     UpdateBundleDealResponseData `json:"response"` // Response data
 }
 type UpdateBundleDealResponseData struct {
 	BundleDealId   int64                     `json:"bundle_deal_id"`   // [Required] Shopee's unique identifier for a bundle deal activity.

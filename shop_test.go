@@ -26,7 +26,7 @@ func Test_Shop_GetAuthorisedResellerBrand(t *testing.T) {
 
 	var req GetAuthorisedResellerBrandRequest
 	ctx := context.Background()
-	res, err := client.Shop.GetAuthorisedResellerBrand(ctx, shopID, req, accessToken)
+	res, err := client.Shop.GetAuthorisedResellerBrand(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Shop.GetAuthorisedResellerBrand returned error (possibly expected with mock data): %s", err)
 	}
@@ -50,7 +50,7 @@ func Test_Shop_GetBrShopOnboardingInfo(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/shop/get_br_shop_onboarding_info", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Shop.GetBrShopOnboardingInfo(ctx, shopID, accessToken)
+	res, err := client.Shop.GetBrShopOnboardingInfo(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("Shop.GetBrShopOnboardingInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -74,7 +74,7 @@ func Test_Shop_GetProfile(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/shop/get_profile", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Shop.GetProfile(ctx, shopID, accessToken)
+	res, err := client.Shop.GetProfile(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("Shop.GetProfile returned error (possibly expected with mock data): %s", err)
 	}
@@ -98,7 +98,7 @@ func Test_Shop_GetShopHolidayMode(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/shop/get_shop_holiday_mode", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Shop.GetShopHolidayMode(ctx, shopID, accessToken)
+	res, err := client.Shop.GetShopHolidayMode(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("Shop.GetShopHolidayMode returned error (possibly expected with mock data): %s", err)
 	}
@@ -122,7 +122,7 @@ func Test_Shop_GetShopInfo(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/shop/get_shop_info", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Shop.GetShopInfo(ctx, shopID, accessToken)
+	res, err := client.Shop.GetShopInfo(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("Shop.GetShopInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -147,7 +147,7 @@ func Test_Shop_GetShopNotification(t *testing.T) {
 
 	var req GetShopNotificationRequest
 	ctx := context.Background()
-	res, err := client.Shop.GetShopNotification(ctx, shopID, req, accessToken)
+	res, err := client.Shop.GetShopNotification(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Shop.GetShopNotification returned error (possibly expected with mock data): %s", err)
 	}
@@ -172,7 +172,7 @@ func Test_Shop_GetWarehouseDetail(t *testing.T) {
 
 	var req GetWarehouseDetailRequest
 	ctx := context.Background()
-	res, err := client.Shop.GetWarehouseDetail(ctx, shopID, req, accessToken)
+	res, err := client.Shop.GetWarehouseDetail(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Shop.GetWarehouseDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -197,7 +197,7 @@ func Test_Shop_SetShopHolidayMode(t *testing.T) {
 
 	var req SetShopHolidayModeRequest
 	ctx := context.Background()
-	res, err := client.Shop.SetShopHolidayMode(ctx, shopID, req, accessToken)
+	res, err := client.Shop.SetShopHolidayMode(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Shop.SetShopHolidayMode returned error (possibly expected with mock data): %s", err)
 	}
@@ -222,7 +222,7 @@ func Test_Shop_UpdateProfile(t *testing.T) {
 
 	var req UpdateProfileRequest
 	ctx := context.Background()
-	res, err := client.Shop.UpdateProfile(ctx, shopID, req, accessToken)
+	res, err := client.Shop.UpdateProfile(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Shop.UpdateProfile returned error (possibly expected with mock data): %s", err)
 	}

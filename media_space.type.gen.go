@@ -19,7 +19,7 @@ type MediaSpaceGetVideoUploadResultRequest struct {
 }
 type MediaSpaceGetVideoUploadResultResponse struct {
 	BaseResponse                                            // Common response fields
-	Response     MediaSpaceGetVideoUploadResultResponseData `json:"response"` //
+	Response     MediaSpaceGetVideoUploadResultResponseData `json:"response"` // Response data
 }
 type MediaSpaceGetVideoUploadResultResponseData struct {
 	Status    string                 `json:"status"`     // [Required] Current status of this video upload session. could be: INITIATED(waiting for part uploading and/or the complete_video_upload API call), TRANSCODING(has received all video parts, and is transcoding the video file), SUCCEEDED(transcoding completed, and this upload_id can now be used for item adding/updating), FAILED(this upload failed, see the message filed for some info), CANCELLED(this upload is cancelled)
@@ -32,7 +32,7 @@ type MediaSpaceInitVideoUploadRequest struct {
 }
 type MediaSpaceInitVideoUploadResponse struct {
 	BaseResponse                                       // Common response fields
-	Response     MediaSpaceInitVideoUploadResponseData `json:"response"` //
+	Response     MediaSpaceInitVideoUploadResponseData `json:"response"` // Response data
 }
 type MediaSpaceInitVideoUploadResponseData struct {
 	VideoUploadId string `json:"video_upload_id"` // [Required] The identifier of this upload session, used in following video upload request and item creating and/or updating
@@ -44,7 +44,7 @@ type MediaSpaceUploadImageRequest struct {
 }
 type MediaSpaceUploadImageResponse struct {
 	BaseResponse                                   // Common response fields
-	Response     MediaSpaceUploadImageResponseData `json:"response"` //
+	Response     MediaSpaceUploadImageResponseData `json:"response"` // Response data
 }
 type MediaSpaceUploadImageResponseData struct {
 	ImageInfo     *ResponseDataImageInfo             `json:"image_info"`      // [Required]

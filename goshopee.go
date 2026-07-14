@@ -153,7 +153,6 @@ func NewClient[T any](app App, opts ...Option[T]) *Client[T] {
 	c.TopPicks = &TopPicksServiceOp[T]{client: c}
 	c.Video = &VideoServiceOp[T]{client: c}
 	c.Voucher = &VoucherServiceOp[T]{client: c}
-
 	for _, opt := range opts {
 		opt(c)
 	}
@@ -349,6 +348,7 @@ func (c *Client[T]) doGetHeaders(req *http.Request, v interface{}, skipBody bool
 	var err error
 
 	retries := c.retries
+	refreshAttempts := 0
 	c.attempts = 0
 	c.logRequest(req, skipBody)
 
@@ -386,6 +386,7 @@ func (c *Client[T]) doGetHeaders(req *http.Request, v interface{}, skipBody bool
 					c.mu.Unlock()
 					c.makeSignature(req, a.shopID, a.merchantID, refreshRes.AccessToken)
 					resp.Body.Close()
+					refreshAttempts++
 					continue
 				}
 			}
@@ -535,24 +536,24 @@ func (c *Client[T]) createAndDoGetHeaders(ctx context.Context, method, relPath s
 	return c.doGetHeaders(req, resource, false)
 }
 
-func (c *Client[T]) Get(ctx context.Context, path string, resource, options interface{}, sid uint64, tok string) error {
-	return c.CreateAndDo(ctx, "GET", path, nil, options, nil, resource, sid, 0, tok)
+func (c *Client[T]) Get(ctx context.Context, path string, resource, options interface{}, sid uint64, mid uint64, tok string) error {
+	return c.CreateAndDo(ctx, "GET", path, nil, options, nil, resource, sid, mid, tok)
 }
 
-func (c *Client[T]) Post(ctx context.Context, path string, data, resource interface{}, sid uint64, tok string) error {
-	return c.CreateAndDo(ctx, "POST", path, data, nil, nil, resource, sid, 0, tok)
+func (c *Client[T]) Post(ctx context.Context, path string, data, resource interface{}, sid uint64, mid uint64, tok string) error {
+	return c.CreateAndDo(ctx, "POST", path, data, nil, nil, resource, sid, mid, tok)
 }
 
-func (c *Client[T]) Put(ctx context.Context, path string, data, resource interface{}, sid uint64, tok string) error {
-	return c.CreateAndDo(ctx, "PUT", path, data, nil, nil, resource, sid, 0, tok)
+func (c *Client[T]) Put(ctx context.Context, path string, data, resource interface{}, sid uint64, mid uint64, tok string) error {
+	return c.CreateAndDo(ctx, "PUT", path, data, nil, nil, resource, sid, mid, tok)
 }
 
-func (c *Client[T]) Delete(ctx context.Context, path string, sid uint64, tok string) error {
-	return c.CreateAndDo(ctx, "DELETE", path, nil, nil, nil, nil, sid, 0, tok)
+func (c *Client[T]) Delete(ctx context.Context, path string, sid uint64, mid uint64, tok string) error {
+	return c.CreateAndDo(ctx, "DELETE", path, nil, nil, nil, nil, sid, mid, tok)
 }
 
-func (c *Client[T]) Upload(ctx context.Context, relPath, fieldname, filename string, resource interface{}, sid uint64, tok string) error {
-	req, err := c.NewfileUploadRequest(ctx, relPath, fieldname, filename, sid, tok)
+func (c *Client[T]) Upload(ctx context.Context, relPath, fieldname, filename string, resource interface{}, sid uint64, mid uint64, tok string) error {
+	req, err := c.NewfileUploadRequest(ctx, relPath, fieldname, filename, sid, mid, tok)
 	if err != nil {
 		return err
 	}
@@ -560,8 +561,8 @@ func (c *Client[T]) Upload(ctx context.Context, relPath, fieldname, filename str
 	return err
 }
 
-func (c *Client[T]) UploadFromReader(ctx context.Context, relPath, fieldname, filename string, reader io.Reader, resource interface{}, sid uint64, tok string) error {
-	req, err := c.NewUploadFromReaderRequest(ctx, relPath, fieldname, filename, reader, sid, tok)
+func (c *Client[T]) UploadFromReader(ctx context.Context, relPath, fieldname, filename string, reader io.Reader, resource interface{}, sid uint64, mid uint64, tok string) error {
+	req, err := c.NewUploadFromReaderRequest(ctx, relPath, fieldname, filename, reader, sid, mid, tok)
 	if err != nil {
 		return err
 	}
@@ -569,7 +570,7 @@ func (c *Client[T]) UploadFromReader(ctx context.Context, relPath, fieldname, fi
 	return err
 }
 
-func (c *Client[T]) NewfileUploadRequest(ctx context.Context, relPath, paramName, filename string, sid uint64, tok string) (*http.Request, error) {
+func (c *Client[T]) NewfileUploadRequest(ctx context.Context, relPath, paramName, filename string, sid uint64, mid uint64, tok string) (*http.Request, error) {
 	if strings.HasPrefix(relPath, "/") {
 		relPath = strings.TrimLeft(relPath, "/")
 	}
@@ -601,7 +602,7 @@ func (c *Client[T]) NewfileUploadRequest(ctx context.Context, relPath, paramName
 		return nil, err
 	}
 
-	ctx = context.WithValue(ctx, authKey, requestAuth{shopID: sid, token: tok})
+	ctx = context.WithValue(ctx, authKey, requestAuth{shopID: sid, merchantID: mid, token: tok})
 	req, err := http.NewRequestWithContext(ctx, "POST", uri, body)
 	if err != nil {
 		return nil, err
@@ -609,12 +610,12 @@ func (c *Client[T]) NewfileUploadRequest(ctx context.Context, relPath, paramName
 	req.Header.Set("Content-Type", writer.FormDataContentType())
 	req.Header.Add("Accept", "application/json")
 	req.Header.Add("User-Agent", UserAgent)
-	c.makeSignature(req, sid, 0, tok)
+	c.makeSignature(req, sid, mid, tok)
 
 	return req, nil
 }
 
-func (c *Client[T]) NewUploadFromReaderRequest(ctx context.Context, relPath, paramName, filename string, reader io.Reader, sid uint64, tok string) (*http.Request, error) {
+func (c *Client[T]) NewUploadFromReaderRequest(ctx context.Context, relPath, paramName, filename string, reader io.Reader, sid uint64, mid uint64, tok string) (*http.Request, error) {
 	if strings.HasPrefix(relPath, "/") {
 		relPath = strings.TrimLeft(relPath, "/")
 	}
@@ -640,7 +641,7 @@ func (c *Client[T]) NewUploadFromReaderRequest(ctx context.Context, relPath, par
 		return nil, err
 	}
 
-	ctx = context.WithValue(ctx, authKey, requestAuth{shopID: sid, token: tok})
+	ctx = context.WithValue(ctx, authKey, requestAuth{shopID: sid, merchantID: mid, token: tok})
 	req, err := http.NewRequestWithContext(ctx, "POST", uri, body)
 	if err != nil {
 		return nil, err
@@ -648,7 +649,7 @@ func (c *Client[T]) NewUploadFromReaderRequest(ctx context.Context, relPath, par
 	req.Header.Set("Content-Type", writer.FormDataContentType())
 	req.Header.Add("Accept", "application/json")
 	req.Header.Add("User-Agent", UserAgent)
-	c.makeSignature(req, sid, 0, tok)
+	c.makeSignature(req, sid, mid, tok)
 
 	return req, nil
 }

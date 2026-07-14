@@ -1,12 +1,11 @@
 package goshopee
 
 type AddItemListRequest struct {
-	ItemList  []TopSellingProducts `json:"item_list"`  // [Required] <p>The list of item to add.</p>
-	SessionId int64                `json:"session_id"` // [Required] <p>The identifier of livestream session.</p>
+	ItemList  []FailureDeleteItem `json:"item_list"`  // [Required] <p>The list of item to add.</p>
+	SessionId int64               `json:"session_id"` // [Required] <p>The identifier of livestream session.</p>
 }
 type AddItemListResponse struct {
-	BaseResponse             // Common response fields
-	Response     interface{} `json:"response"` // Actual response data
+	BaseResponse // Common response fields
 }
 type AffiliateInfo struct {
 	CommissionRate    float64 `json:"commission_rate"`     // [Required] <p>The commission rate that the streamer can get, for example, 0.1 means 10%.</p>
@@ -20,16 +19,14 @@ type ApplyItemSetRequest struct {
 	SessionId  int64   `json:"session_id"`   // [Required] <p>The identifier of livestream session.</p>
 }
 type ApplyItemSetResponse struct {
-	BaseResponse             // Common response fields
-	Response     interface{} `json:"response"` // Actual response data
+	BaseResponse // Common response fields
 }
 type BanUserCommentRequest struct {
 	BanUserId int64 `json:"ban_user_id"` // [Required] <p>The user id that will be banned from posting comments.</p>
 	SessionId int64 `json:"session_id"`  // [Required] <p>The identifier of livestream session.</p>
 }
 type BanUserCommentResponse struct {
-	BaseResponse             // Common response fields
-	Response     interface{} `json:"response"` // Actual response data
+	BaseResponse // Common response fields
 }
 type CreateSessionRequest struct {
 	CoverImageUrl string  `json:"cover_image_url"`       // [Required] <p>The cover image URL of livestream session.</p><p>Please call the v2.livestream.upload_image to upload the cover image file and get the cover_image_url.</p>
@@ -39,39 +36,40 @@ type CreateSessionRequest struct {
 }
 type CreateSessionResponse struct {
 	BaseResponse                           // Common response fields
-	Response     CreateSessionResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     CreateSessionResponseData `json:"response"` // Response data
 }
 type CreateSessionResponseData struct {
 	SessionId int64 `json:"session_id"` // [Required] <p>The identifier of livestream session.</p>
 }
 type DeleteItemListRequest struct {
-	ItemList  []TopSellingProducts `json:"item_list"`  // [Required] <p>The list of item to delete.</p>
-	SessionId int64                `json:"session_id"` // [Required] <p>The identifier of livestream session.</p>
+	ItemList  []FailureDeleteItem `json:"item_list"`  // [Required] <p>The list of item to delete.</p>
+	SessionId int64               `json:"session_id"` // [Required] <p>The identifier of livestream session.</p>
 }
 type DeleteItemListResponse struct {
-	BaseResponse             // Common response fields
-	Response     interface{} `json:"response"` // Actual response data
+	BaseResponse // Common response fields
 }
 type DeleteShowItemRequest struct {
 	SessionId int64 `json:"session_id"` // [Required] <p>The identifier of livestream session.</p>
 }
 type DeleteShowItemResponse struct {
-	BaseResponse             // Common response fields
-	Response     interface{} `json:"response"` // Actual response data
+	BaseResponse // Common response fields
 }
 type EndSessionRequest struct {
 	SessionId int64 `json:"session_id"` // [Required] <p>The identifier of livestream session.</p>
 }
 type EndSessionResponse struct {
-	BaseResponse             // Common response fields
-	Response     interface{} `json:"response"` // Actual response data
+	BaseResponse // Common response fields
+}
+type FailureDeleteItem struct {
+	ItemId int64 `json:"item_id"` // [Required] <p>Shopee's unique identifier for an item.</p>
+	ShopId int64 `json:"shop_id"` // [Required] <p>The shop id of this item.</p>
 }
 type GetItemCountRequest struct {
 	SessionId int64 `json:"session_id" url:"session_id"` // [Required] <p>The identifier of livestream session.</p>
 }
 type GetItemCountResponse struct {
 	BaseResponse                          // Common response fields
-	Response     GetItemCountResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetItemCountResponseData `json:"response"` // Response data
 }
 type GetItemCountResponseData struct {
 	ItemCount    int64 `json:"item_count"`     // [Required] <p>The number of items in the shopping bag of this session.</p>
@@ -84,7 +82,7 @@ type GetItemListRequest struct {
 }
 type GetItemListResponse struct {
 	BaseResponse                         // Common response fields
-	Response     GetItemListResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetItemListResponseData `json:"response"` // Response data
 }
 type GetItemListResponseData struct {
 	More       bool                          `json:"more"`        // [Required] <p>This is to indicate whether the list is more than one page. If this value is true, you may want to continue to check next page to retrieve the rest of data.</p>
@@ -107,7 +105,7 @@ type GetItemSetItemListRequest struct {
 }
 type GetItemSetItemListResponse struct {
 	BaseResponse                                // Common response fields
-	Response     GetItemSetItemListResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetItemSetItemListResponseData `json:"response"` // Response data
 }
 type GetItemSetItemListResponseData struct {
 	More       bool                                 `json:"more"`        // [Required] <p>This is to indicate whether the list is more than one page. If this value is true, you may want to continue to check next page to retrieve the rest of data.</p>
@@ -129,7 +127,7 @@ type GetItemSetListRequest struct {
 }
 type GetItemSetListResponse struct {
 	BaseResponse                            // Common response fields
-	Response     GetItemSetListResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetItemSetListResponseData `json:"response"` // Response data
 }
 type GetItemSetListResponseData struct {
 	More       bool                             `json:"more"`        // [Required] <p>This is to indicate whether the list is more than one page. If this value is true, you may want to continue to check next page to retrieve the rest of data.</p>
@@ -147,7 +145,7 @@ type GetLatestCommentListRequest struct {
 }
 type GetLatestCommentListResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     GetLatestCommentListResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetLatestCommentListResponseData `json:"response"` // Response data
 }
 type GetLatestCommentListResponseData struct {
 	NextOffset int64                                  `json:"next_offset"` // [Required] <p>The offset for next page request.</p>
@@ -167,7 +165,7 @@ type GetLikeItemListRequest struct {
 }
 type GetLikeItemListResponse struct {
 	BaseResponse                             // Common response fields
-	Response     GetLikeItemListResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetLikeItemListResponseData `json:"response"` // Response data
 }
 type GetLikeItemListResponseData struct {
 	More       bool                                 `json:"more"`        // [Required] <p>This is to indicate whether the list is more than one page. If this value is true, you may want to continue to check next page to retrieve the rest of data.</p>
@@ -180,7 +178,7 @@ type GetRecentItemListRequest struct {
 }
 type GetRecentItemListResponse struct {
 	BaseResponse                               // Common response fields
-	Response     GetRecentItemListResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetRecentItemListResponseData `json:"response"` // Response data
 }
 type GetRecentItemListResponseData struct {
 	More       bool                                 `json:"more"`        // [Required] <p>This is to indicate whether the list is more than one page. If this value is true, you may want to continue to check next page to retrieve the rest of data.</p>
@@ -192,7 +190,7 @@ type GetSessionDetailRequest struct {
 }
 type GetSessionDetailResponse struct {
 	BaseResponse                              // Common response fields
-	Response     GetSessionDetailResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetSessionDetailResponseData `json:"response"` // Response data
 }
 type GetSessionDetailResponseData struct {
 	SessionId     int64      `json:"session_id"`      // [Required] <p>The identifier of livestream session.</p>
@@ -215,7 +213,7 @@ type GetSessionItemMetricRequest struct {
 }
 type GetSessionItemMetricResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     GetSessionItemMetricResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetSessionItemMetricResponseData `json:"response"` // Response data
 }
 type GetSessionItemMetricResponseData struct {
 	More       bool                                   `json:"more"`        // [Required] <p>This is to indicate whether the list is more than one page. If this value is true, you may want to continue to check next page to retrieve the rest of data.</p>
@@ -231,7 +229,7 @@ type GetSessionMetricRequest struct {
 }
 type GetSessionMetricResponse struct {
 	BaseResponse                              // Common response fields
-	Response     GetSessionMetricResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetSessionMetricResponseData `json:"response"` // Response data
 }
 type GetSessionMetricResponseData struct {
 	Gmv                float64 `json:"gmv"`                  // [Required] <p>Value of placed orders (paid and unpaid) during Livestream, including sales from cancelled orders.<br /></p>
@@ -253,7 +251,7 @@ type GetShowItemRequest struct {
 }
 type GetShowItemResponse struct {
 	BaseResponse                         // Common response fields
-	Response     GetShowItemResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetShowItemResponseData `json:"response"` // Response data
 }
 type GetShowItemResponseData struct {
 	HasShowItem bool                         `json:"has_show_item"` // [Required] <p>Whether has the showing item.</p>
@@ -290,7 +288,7 @@ type PostCommentRequest struct {
 }
 type PostCommentResponse struct {
 	BaseResponse                         // Common response fields
-	Response     PostCommentResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     PostCommentResponseData `json:"response"` // Response data
 }
 type PostCommentResponseData struct {
 	CommentId int64 `json:"comment_id"` // [Required] <p>The identifier of the comment.</p>
@@ -300,8 +298,7 @@ type StartSessionRequest struct {
 	SessionId int64 `json:"session_id"` // [Required] <p>The identifier of livestream session.</p>
 }
 type StartSessionResponse struct {
-	BaseResponse             // Common response fields
-	Response     interface{} `json:"response"` // Actual response data
+	BaseResponse // Common response fields
 }
 type StreamUrl struct {
 	PushUrl  string `json:"push_url"`  // [Required] <p>The push stream url for the livestream session.</p>
@@ -309,24 +306,19 @@ type StreamUrl struct {
 	PlayUrl  string `json:"play_url"`  // [Required] <p>The pull stream url of the livestream session.</p>
 	DomainId int64  `json:"domain_id"` // [Required] <p>The identifier of the stream domain, need to be passed in request for v2.livestream.start_session.</p>
 }
-type TopSellingProducts struct {
-	ItemId int64 `json:"item_id"` // [Required] <p>Shopee's unique identifier for an item.</p>
-}
 type UnbanUserCommentRequest struct {
 	SessionId   int64 `json:"session_id"`    // [Required] <p>The identifier of livestream session.</p>
 	UnbanUserId int64 `json:"unban_user_id"` // [Required] <p>The user ID that will be unbanned from posting comments.</p>
 }
 type UnbanUserCommentResponse struct {
-	BaseResponse             // Common response fields
-	Response     interface{} `json:"response"` // Actual response data
+	BaseResponse // Common response fields
 }
 type UpdateItemListRequest struct {
-	ItemList  []TopSellingProducts `json:"item_list"`  // [Required] <p>The list of item with updated order.</p>
-	SessionId int64                `json:"session_id"` // [Required] <p>The identifier of livestream session.</p>
+	ItemList  []FailureDeleteItem `json:"item_list"`  // [Required] <p>The list of item with updated order.</p>
+	SessionId int64               `json:"session_id"` // [Required] <p>The identifier of livestream session.</p>
 }
 type UpdateItemListResponse struct {
-	BaseResponse             // Common response fields
-	Response     interface{} `json:"response"` // Actual response data
+	BaseResponse // Common response fields
 }
 type UpdateSessionRequest struct {
 	CoverImageUrl string  `json:"cover_image_url"`       // [Required] <p>The cover image url of the livestream session.</p><p>Please call the v2.livestream.upload_image to upload the cover image file and get the cover_image_url.</p>
@@ -336,23 +328,21 @@ type UpdateSessionRequest struct {
 	Title         string  `json:"title"`                 // [Required] <p>The title of the livestream session, cannot exceed 200 characters.</p>
 }
 type UpdateSessionResponse struct {
-	BaseResponse             // Common response fields
-	Response     interface{} `json:"response"` // Actual response data
+	BaseResponse // Common response fields
 }
 type UpdateShowItemRequest struct {
 	ItemId    int64 `json:"item_id"`    // [Required] <p>Shopee's unique identifier for an item.</p>
 	SessionId int64 `json:"session_id"` // [Required] <p>The identifier of livestream session.</p>
 }
 type UpdateShowItemResponse struct {
-	BaseResponse             // Common response fields
-	Response     interface{} `json:"response"` // Actual response data
+	BaseResponse // Common response fields
 }
 type UploadImageRequest struct {
 	Image interface{} `json:"image"` // [Required] <p>The image file to upload.</p>
 }
 type UploadImageResponse struct {
 	BaseResponse                         // Common response fields
-	Response     UploadImageResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     UploadImageResponseData `json:"response"` // Response data
 }
 type UploadImageResponseData struct {
 	ImageUrl string `json:"image_url"` // [Required] <p>The image URL</p>

@@ -26,7 +26,7 @@ func Test_Product_AddItem(t *testing.T) {
 
 	var req AddItemRequest
 	ctx := context.Background()
-	res, err := client.Product.AddItem(ctx, shopID, req, accessToken)
+	res, err := client.Product.AddItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.AddItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -51,7 +51,7 @@ func Test_Product_AddKitItem(t *testing.T) {
 
 	var req AddKitItemRequest
 	ctx := context.Background()
-	res, err := client.Product.AddKitItem(ctx, shopID, req, accessToken)
+	res, err := client.Product.AddKitItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.AddKitItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -76,7 +76,7 @@ func Test_Product_AddModel(t *testing.T) {
 
 	var req AddModelRequest
 	ctx := context.Background()
-	res, err := client.Product.AddModel(ctx, shopID, req, accessToken)
+	res, err := client.Product.AddModel(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.AddModel returned error (possibly expected with mock data): %s", err)
 	}
@@ -101,7 +101,7 @@ func Test_Product_BatchAddItem(t *testing.T) {
 
 	var req BatchAddItemRequest
 	ctx := context.Background()
-	res, err := client.Product.BatchAddItem(ctx, shopID, req, accessToken)
+	res, err := client.Product.BatchAddItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.BatchAddItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -126,7 +126,7 @@ func Test_Product_BatchPublishItemToOutletShop(t *testing.T) {
 
 	var req BatchPublishItemToOutletShopRequest
 	ctx := context.Background()
-	res, err := client.Product.BatchPublishItemToOutletShop(ctx, shopID, req, accessToken)
+	res, err := client.Product.BatchPublishItemToOutletShop(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.BatchPublishItemToOutletShop returned error (possibly expected with mock data): %s", err)
 	}
@@ -151,7 +151,7 @@ func Test_Product_BatchUpdateOutletPrice(t *testing.T) {
 
 	var req BatchUpdateOutletPriceRequest
 	ctx := context.Background()
-	res, err := client.Product.BatchUpdateOutletPrice(ctx, shopID, req, accessToken)
+	res, err := client.Product.BatchUpdateOutletPrice(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.BatchUpdateOutletPrice returned error (possibly expected with mock data): %s", err)
 	}
@@ -176,7 +176,7 @@ func Test_Product_BatchUpdateOutletStock(t *testing.T) {
 
 	var req BatchUpdateOutletStockRequest
 	ctx := context.Background()
-	res, err := client.Product.BatchUpdateOutletStock(ctx, shopID, req, accessToken)
+	res, err := client.Product.BatchUpdateOutletStock(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.BatchUpdateOutletStock returned error (possibly expected with mock data): %s", err)
 	}
@@ -201,7 +201,7 @@ func Test_Product_BoostItem(t *testing.T) {
 
 	var req BoostItemRequest
 	ctx := context.Background()
-	res, err := client.Product.BoostItem(ctx, shopID, req, accessToken)
+	res, err := client.Product.BoostItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.BoostItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -226,7 +226,7 @@ func Test_Product_CategoryRecommend(t *testing.T) {
 
 	var req ProductCategoryRecommendRequest
 	ctx := context.Background()
-	res, err := client.Product.CategoryRecommend(ctx, shopID, req, accessToken)
+	res, err := client.Product.CategoryRecommend(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.CategoryRecommend returned error (possibly expected with mock data): %s", err)
 	}
@@ -251,7 +251,7 @@ func Test_Product_DeleteItem(t *testing.T) {
 
 	var req DeleteItemRequest
 	ctx := context.Background()
-	res, err := client.Product.DeleteItem(ctx, shopID, req, accessToken)
+	res, err := client.Product.DeleteItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.DeleteItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -276,7 +276,7 @@ func Test_Product_DeleteModel(t *testing.T) {
 
 	var req DeleteModelRequest
 	ctx := context.Background()
-	res, err := client.Product.DeleteModel(ctx, shopID, req, accessToken)
+	res, err := client.Product.DeleteModel(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.DeleteModel returned error (possibly expected with mock data): %s", err)
 	}
@@ -301,7 +301,7 @@ func Test_Product_GenerateKitImage(t *testing.T) {
 
 	var req GenerateKitImageRequest
 	ctx := context.Background()
-	res, err := client.Product.GenerateKitImage(ctx, shopID, req, accessToken)
+	res, err := client.Product.GenerateKitImage(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GenerateKitImage returned error (possibly expected with mock data): %s", err)
 	}
@@ -326,7 +326,7 @@ func Test_Product_GetAitemByPitemId(t *testing.T) {
 
 	var req GetAitemByPitemIdRequest
 	ctx := context.Background()
-	res, err := client.Product.GetAitemByPitemId(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetAitemByPitemId(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetAitemByPitemId returned error (possibly expected with mock data): %s", err)
 	}
@@ -351,7 +351,7 @@ func Test_Product_GetAllVehicleList(t *testing.T) {
 
 	var req GetAllVehicleListRequest
 	ctx := context.Background()
-	res, err := client.Product.GetAllVehicleList(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetAllVehicleList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetAllVehicleList returned error (possibly expected with mock data): %s", err)
 	}
@@ -376,7 +376,7 @@ func Test_Product_GetAttributeTree(t *testing.T) {
 
 	var req ProductGetAttributeTreeRequest
 	ctx := context.Background()
-	res, err := client.Product.GetAttributeTree(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetAttributeTree(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetAttributeTree returned error (possibly expected with mock data): %s", err)
 	}
@@ -401,7 +401,7 @@ func Test_Product_GetBatchTaskResult(t *testing.T) {
 
 	var req GetBatchTaskResultRequest
 	ctx := context.Background()
-	res, err := client.Product.GetBatchTaskResult(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetBatchTaskResult(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetBatchTaskResult returned error (possibly expected with mock data): %s", err)
 	}
@@ -425,7 +425,7 @@ func Test_Product_GetBoostedList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_boosted_list", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Product.GetBoostedList(ctx, shopID, accessToken)
+	res, err := client.Product.GetBoostedList(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("Product.GetBoostedList returned error (possibly expected with mock data): %s", err)
 	}
@@ -450,7 +450,7 @@ func Test_Product_GetBrandList(t *testing.T) {
 
 	var req ProductGetBrandListRequest
 	ctx := context.Background()
-	res, err := client.Product.GetBrandList(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetBrandList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetBrandList returned error (possibly expected with mock data): %s", err)
 	}
@@ -475,7 +475,7 @@ func Test_Product_GetCategory(t *testing.T) {
 
 	var req ProductGetCategoryRequest
 	ctx := context.Background()
-	res, err := client.Product.GetCategory(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetCategory(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetCategory returned error (possibly expected with mock data): %s", err)
 	}
@@ -500,7 +500,7 @@ func Test_Product_GetComment(t *testing.T) {
 
 	var req GetCommentRequest
 	ctx := context.Background()
-	res, err := client.Product.GetComment(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetComment(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetComment returned error (possibly expected with mock data): %s", err)
 	}
@@ -525,7 +525,7 @@ func Test_Product_GetDirectItemList(t *testing.T) {
 
 	var req GetDirectItemListRequest
 	ctx := context.Background()
-	res, err := client.Product.GetDirectItemList(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetDirectItemList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetDirectItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -550,7 +550,7 @@ func Test_Product_GetDirectShopRecommendedPrice(t *testing.T) {
 
 	var req GetDirectShopRecommendedPriceRequest
 	ctx := context.Background()
-	res, err := client.Product.GetDirectShopRecommendedPrice(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetDirectShopRecommendedPrice(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetDirectShopRecommendedPrice returned error (possibly expected with mock data): %s", err)
 	}
@@ -575,7 +575,7 @@ func Test_Product_GetItemBaseInfo(t *testing.T) {
 
 	var req GetItemBaseInfoRequest
 	ctx := context.Background()
-	res, err := client.Product.GetItemBaseInfo(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetItemBaseInfo(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetItemBaseInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -600,7 +600,7 @@ func Test_Product_GetItemContentDiagnosisResult(t *testing.T) {
 
 	var req GetItemContentDiagnosisResultRequest
 	ctx := context.Background()
-	res, err := client.Product.GetItemContentDiagnosisResult(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetItemContentDiagnosisResult(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetItemContentDiagnosisResult returned error (possibly expected with mock data): %s", err)
 	}
@@ -625,7 +625,7 @@ func Test_Product_GetItemExtraInfo(t *testing.T) {
 
 	var req GetItemExtraInfoRequest
 	ctx := context.Background()
-	res, err := client.Product.GetItemExtraInfo(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetItemExtraInfo(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetItemExtraInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -650,7 +650,7 @@ func Test_Product_GetItemLimit(t *testing.T) {
 
 	var req GetItemLimitRequest
 	ctx := context.Background()
-	res, err := client.Product.GetItemLimit(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetItemLimit(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetItemLimit returned error (possibly expected with mock data): %s", err)
 	}
@@ -675,7 +675,7 @@ func Test_Product_GetItemList(t *testing.T) {
 
 	var req ProductGetItemListRequest
 	ctx := context.Background()
-	res, err := client.Product.GetItemList(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetItemList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -700,7 +700,7 @@ func Test_Product_GetItemListByContentDiagnosis(t *testing.T) {
 
 	var req GetItemListByContentDiagnosisRequest
 	ctx := context.Background()
-	res, err := client.Product.GetItemListByContentDiagnosis(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetItemListByContentDiagnosis(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetItemListByContentDiagnosis returned error (possibly expected with mock data): %s", err)
 	}
@@ -725,7 +725,7 @@ func Test_Product_GetItemPromotion(t *testing.T) {
 
 	var req GetItemPromotionRequest
 	ctx := context.Background()
-	res, err := client.Product.GetItemPromotion(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetItemPromotion(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetItemPromotion returned error (possibly expected with mock data): %s", err)
 	}
@@ -750,7 +750,7 @@ func Test_Product_GetItemViolationInfo(t *testing.T) {
 
 	var req GetItemViolationInfoRequest
 	ctx := context.Background()
-	res, err := client.Product.GetItemViolationInfo(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetItemViolationInfo(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetItemViolationInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -775,7 +775,7 @@ func Test_Product_GetKitItemInfo(t *testing.T) {
 
 	var req GetKitItemInfoRequest
 	ctx := context.Background()
-	res, err := client.Product.GetKitItemInfo(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetKitItemInfo(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetKitItemInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -800,7 +800,7 @@ func Test_Product_GetKitItemLimit(t *testing.T) {
 
 	var req GetKitItemLimitRequest
 	ctx := context.Background()
-	res, err := client.Product.GetKitItemLimit(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetKitItemLimit(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetKitItemLimit returned error (possibly expected with mock data): %s", err)
 	}
@@ -825,7 +825,7 @@ func Test_Product_GetMainItemList(t *testing.T) {
 
 	var req GetMainItemListRequest
 	ctx := context.Background()
-	res, err := client.Product.GetMainItemList(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetMainItemList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetMainItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -850,7 +850,7 @@ func Test_Product_GetMartItemByOutletItemId(t *testing.T) {
 
 	var req GetMartItemByOutletItemIdRequest
 	ctx := context.Background()
-	res, err := client.Product.GetMartItemByOutletItemId(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetMartItemByOutletItemId(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetMartItemByOutletItemId returned error (possibly expected with mock data): %s", err)
 	}
@@ -875,7 +875,7 @@ func Test_Product_GetMartItemMappingById(t *testing.T) {
 
 	var req GetMartItemMappingByIdRequest
 	ctx := context.Background()
-	res, err := client.Product.GetMartItemMappingById(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetMartItemMappingById(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetMartItemMappingById returned error (possibly expected with mock data): %s", err)
 	}
@@ -900,7 +900,7 @@ func Test_Product_GetModelList(t *testing.T) {
 
 	var req GetModelListRequest
 	ctx := context.Background()
-	res, err := client.Product.GetModelList(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetModelList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetModelList returned error (possibly expected with mock data): %s", err)
 	}
@@ -925,7 +925,7 @@ func Test_Product_GetProductCertificationRule(t *testing.T) {
 
 	var req GetProductCertificationRuleRequest
 	ctx := context.Background()
-	res, err := client.Product.GetProductCertificationRule(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetProductCertificationRule(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetProductCertificationRule returned error (possibly expected with mock data): %s", err)
 	}
@@ -950,7 +950,7 @@ func Test_Product_GetRecommendAttribute(t *testing.T) {
 
 	var req ProductGetRecommendAttributeRequest
 	ctx := context.Background()
-	res, err := client.Product.GetRecommendAttribute(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetRecommendAttribute(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetRecommendAttribute returned error (possibly expected with mock data): %s", err)
 	}
@@ -975,7 +975,7 @@ func Test_Product_GetSizeChartDetail(t *testing.T) {
 
 	var req ProductGetSizeChartDetailRequest
 	ctx := context.Background()
-	res, err := client.Product.GetSizeChartDetail(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetSizeChartDetail(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetSizeChartDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -1000,7 +1000,7 @@ func Test_Product_GetSizeChartList(t *testing.T) {
 
 	var req ProductGetSizeChartListRequest
 	ctx := context.Background()
-	res, err := client.Product.GetSizeChartList(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetSizeChartList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetSizeChartList returned error (possibly expected with mock data): %s", err)
 	}
@@ -1025,7 +1025,7 @@ func Test_Product_GetVariations(t *testing.T) {
 
 	var req ProductGetVariationsRequest
 	ctx := context.Background()
-	res, err := client.Product.GetVariations(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetVariations(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetVariations returned error (possibly expected with mock data): %s", err)
 	}
@@ -1050,7 +1050,7 @@ func Test_Product_GetVehicleListByCompatibilityDetail(t *testing.T) {
 
 	var req GetVehicleListByCompatibilityDetailRequest
 	ctx := context.Background()
-	res, err := client.Product.GetVehicleListByCompatibilityDetail(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetVehicleListByCompatibilityDetail(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetVehicleListByCompatibilityDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -1075,7 +1075,7 @@ func Test_Product_GetWeightRecommendation(t *testing.T) {
 
 	var req GetWeightRecommendationRequest
 	ctx := context.Background()
-	res, err := client.Product.GetWeightRecommendation(ctx, shopID, req, accessToken)
+	res, err := client.Product.GetWeightRecommendation(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.GetWeightRecommendation returned error (possibly expected with mock data): %s", err)
 	}
@@ -1100,7 +1100,7 @@ func Test_Product_InitTierVariation(t *testing.T) {
 
 	var req ProductInitTierVariationRequest
 	ctx := context.Background()
-	res, err := client.Product.InitTierVariation(ctx, shopID, req, accessToken)
+	res, err := client.Product.InitTierVariation(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.InitTierVariation returned error (possibly expected with mock data): %s", err)
 	}
@@ -1124,7 +1124,7 @@ func Test_Product_PublishItemToOutletShop(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Product.PublishItemToOutletShop(ctx, shopID, accessToken)
+	res, err := client.Product.PublishItemToOutletShop(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("Product.PublishItemToOutletShop returned error (possibly expected with mock data): %s", err)
 	}
@@ -1149,7 +1149,7 @@ func Test_Product_RegisterBrand(t *testing.T) {
 
 	var req RegisterBrandRequest
 	ctx := context.Background()
-	res, err := client.Product.RegisterBrand(ctx, shopID, req, accessToken)
+	res, err := client.Product.RegisterBrand(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.RegisterBrand returned error (possibly expected with mock data): %s", err)
 	}
@@ -1174,7 +1174,7 @@ func Test_Product_ReplyComment(t *testing.T) {
 
 	var req ReplyCommentRequest
 	ctx := context.Background()
-	res, err := client.Product.ReplyComment(ctx, shopID, req, accessToken)
+	res, err := client.Product.ReplyComment(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.ReplyComment returned error (possibly expected with mock data): %s", err)
 	}
@@ -1199,7 +1199,7 @@ func Test_Product_SearchAttributeValueList(t *testing.T) {
 
 	var req SearchAttributeValueListRequest
 	ctx := context.Background()
-	res, err := client.Product.SearchAttributeValueList(ctx, shopID, req, accessToken)
+	res, err := client.Product.SearchAttributeValueList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.SearchAttributeValueList returned error (possibly expected with mock data): %s", err)
 	}
@@ -1224,7 +1224,7 @@ func Test_Product_SearchItem(t *testing.T) {
 
 	var req SearchItemRequest
 	ctx := context.Background()
-	res, err := client.Product.SearchItem(ctx, shopID, req, accessToken)
+	res, err := client.Product.SearchItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.SearchItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -1249,7 +1249,7 @@ func Test_Product_SearchUnpackagedModelList(t *testing.T) {
 
 	var req SearchUnpackagedModelListRequest
 	ctx := context.Background()
-	res, err := client.Product.SearchUnpackagedModelList(ctx, shopID, req, accessToken)
+	res, err := client.Product.SearchUnpackagedModelList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.SearchUnpackagedModelList returned error (possibly expected with mock data): %s", err)
 	}
@@ -1274,7 +1274,7 @@ func Test_Product_UnlistItem(t *testing.T) {
 
 	var req UnlistItemRequest
 	ctx := context.Background()
-	res, err := client.Product.UnlistItem(ctx, shopID, req, accessToken)
+	res, err := client.Product.UnlistItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.UnlistItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -1299,7 +1299,7 @@ func Test_Product_UpdateItem(t *testing.T) {
 
 	var req UpdateItemRequest
 	ctx := context.Background()
-	res, err := client.Product.UpdateItem(ctx, shopID, req, accessToken)
+	res, err := client.Product.UpdateItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.UpdateItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -1324,7 +1324,7 @@ func Test_Product_UpdateKitItem(t *testing.T) {
 
 	var req UpdateKitItemRequest
 	ctx := context.Background()
-	res, err := client.Product.UpdateKitItem(ctx, shopID, req, accessToken)
+	res, err := client.Product.UpdateKitItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.UpdateKitItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -1349,7 +1349,7 @@ func Test_Product_UpdateModel(t *testing.T) {
 
 	var req UpdateModelRequest
 	ctx := context.Background()
-	res, err := client.Product.UpdateModel(ctx, shopID, req, accessToken)
+	res, err := client.Product.UpdateModel(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.UpdateModel returned error (possibly expected with mock data): %s", err)
 	}
@@ -1374,7 +1374,7 @@ func Test_Product_UpdatePrice(t *testing.T) {
 
 	var req ProductUpdatePriceRequest
 	ctx := context.Background()
-	res, err := client.Product.UpdatePrice(ctx, shopID, req, accessToken)
+	res, err := client.Product.UpdatePrice(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.UpdatePrice returned error (possibly expected with mock data): %s", err)
 	}
@@ -1399,7 +1399,7 @@ func Test_Product_UpdateSipItemPrice(t *testing.T) {
 
 	var req UpdateSipItemPriceRequest
 	ctx := context.Background()
-	res, err := client.Product.UpdateSipItemPrice(ctx, shopID, req, accessToken)
+	res, err := client.Product.UpdateSipItemPrice(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.UpdateSipItemPrice returned error (possibly expected with mock data): %s", err)
 	}
@@ -1424,7 +1424,7 @@ func Test_Product_UpdateStock(t *testing.T) {
 
 	var req ProductUpdateStockRequest
 	ctx := context.Background()
-	res, err := client.Product.UpdateStock(ctx, shopID, req, accessToken)
+	res, err := client.Product.UpdateStock(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.UpdateStock returned error (possibly expected with mock data): %s", err)
 	}
@@ -1449,7 +1449,7 @@ func Test_Product_UpdateTierVariation(t *testing.T) {
 
 	var req ProductUpdateTierVariationRequest
 	ctx := context.Background()
-	res, err := client.Product.UpdateTierVariation(ctx, shopID, req, accessToken)
+	res, err := client.Product.UpdateTierVariation(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Product.UpdateTierVariation returned error (possibly expected with mock data): %s", err)
 	}

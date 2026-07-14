@@ -7,7 +7,7 @@ type AddTopPicksRequest struct {
 }
 type AddTopPicksResponse struct {
 	BaseResponse                         // Common response fields
-	Response     AddTopPicksResponseData `json:"response"` // Detail informations you are querying.
+	Response     AddTopPicksResponseData `json:"response"` // Response data
 }
 type AddTopPicksResponseData struct {
 	CollectionList []Collection `json:"collection_list"` // [Required] The top picks list in this shop.
@@ -30,14 +30,14 @@ type DeleteTopPicksRequest struct {
 }
 type DeleteTopPicksResponse struct {
 	BaseResponse                            // Common response fields
-	Response     DeleteTopPicksResponseData `json:"response"` // Detail informations you are querying.
+	Response     DeleteTopPicksResponseData `json:"response"` // Response data
 }
 type DeleteTopPicksResponseData struct {
 	TopPicksId int64 `json:"top_picks_id"` // [Required] collection id
 }
 type GetTopPicksListResponse struct {
 	BaseResponse                             // Common response fields
-	Response     GetTopPicksListResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetTopPicksListResponseData `json:"response"` // Response data
 }
 type GetTopPicksListResponseData struct {
 	CollectionList []Collection `json:"collection_list"` // [Required] The top picks list in this shop.
@@ -50,7 +50,7 @@ type UpdateTopPicksRequest struct {
 }
 type UpdateTopPicksResponse struct {
 	BaseResponse                            // Common response fields
-	Response     UpdateTopPicksResponseData `json:"response"` // Detail informations you are querying.
+	Response     UpdateTopPicksResponseData `json:"response"` // Response data
 }
 type UpdateTopPicksResponseData struct {
 	CollectionList []Collection `json:"collection_list"` // [Required] The top picks list in this shop.

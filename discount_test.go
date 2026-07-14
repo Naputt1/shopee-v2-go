@@ -26,7 +26,7 @@ func Test_Discount_AddDiscount(t *testing.T) {
 
 	var req AddDiscountRequest
 	ctx := context.Background()
-	res, err := client.Discount.AddDiscount(ctx, shopID, req, accessToken)
+	res, err := client.Discount.AddDiscount(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Discount.AddDiscount returned error (possibly expected with mock data): %s", err)
 	}
@@ -51,7 +51,7 @@ func Test_Discount_AddDiscountItem(t *testing.T) {
 
 	var req AddDiscountItemRequest
 	ctx := context.Background()
-	res, err := client.Discount.AddDiscountItem(ctx, shopID, req, accessToken)
+	res, err := client.Discount.AddDiscountItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Discount.AddDiscountItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -76,7 +76,7 @@ func Test_Discount_DeleteDiscount(t *testing.T) {
 
 	var req DeleteDiscountRequest
 	ctx := context.Background()
-	res, err := client.Discount.DeleteDiscount(ctx, shopID, req, accessToken)
+	res, err := client.Discount.DeleteDiscount(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Discount.DeleteDiscount returned error (possibly expected with mock data): %s", err)
 	}
@@ -101,7 +101,7 @@ func Test_Discount_DeleteDiscountItem(t *testing.T) {
 
 	var req DeleteDiscountItemRequest
 	ctx := context.Background()
-	res, err := client.Discount.DeleteDiscountItem(ctx, shopID, req, accessToken)
+	res, err := client.Discount.DeleteDiscountItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Discount.DeleteDiscountItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -126,7 +126,7 @@ func Test_Discount_DeleteSipDiscount(t *testing.T) {
 
 	var req DeleteSipDiscountRequest
 	ctx := context.Background()
-	res, err := client.Discount.DeleteSipDiscount(ctx, shopID, req, accessToken)
+	res, err := client.Discount.DeleteSipDiscount(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Discount.DeleteSipDiscount returned error (possibly expected with mock data): %s", err)
 	}
@@ -151,7 +151,7 @@ func Test_Discount_EndDiscount(t *testing.T) {
 
 	var req EndDiscountRequest
 	ctx := context.Background()
-	res, err := client.Discount.EndDiscount(ctx, shopID, req, accessToken)
+	res, err := client.Discount.EndDiscount(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Discount.EndDiscount returned error (possibly expected with mock data): %s", err)
 	}
@@ -176,7 +176,7 @@ func Test_Discount_GetDiscount(t *testing.T) {
 
 	var req GetDiscountRequest
 	ctx := context.Background()
-	res, err := client.Discount.GetDiscount(ctx, shopID, req, accessToken)
+	res, err := client.Discount.GetDiscount(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Discount.GetDiscount returned error (possibly expected with mock data): %s", err)
 	}
@@ -201,7 +201,7 @@ func Test_Discount_GetDiscountList(t *testing.T) {
 
 	var req GetDiscountListRequest
 	ctx := context.Background()
-	res, err := client.Discount.GetDiscountList(ctx, shopID, req, accessToken)
+	res, err := client.Discount.GetDiscountList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Discount.GetDiscountList returned error (possibly expected with mock data): %s", err)
 	}
@@ -226,7 +226,7 @@ func Test_Discount_GetSipDiscounts(t *testing.T) {
 
 	var req GetSipDiscountsRequest
 	ctx := context.Background()
-	res, err := client.Discount.GetSipDiscounts(ctx, shopID, req, accessToken)
+	res, err := client.Discount.GetSipDiscounts(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Discount.GetSipDiscounts returned error (possibly expected with mock data): %s", err)
 	}
@@ -251,7 +251,7 @@ func Test_Discount_SetSipDiscount(t *testing.T) {
 
 	var req SetSipDiscountRequest
 	ctx := context.Background()
-	res, err := client.Discount.SetSipDiscount(ctx, shopID, req, accessToken)
+	res, err := client.Discount.SetSipDiscount(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Discount.SetSipDiscount returned error (possibly expected with mock data): %s", err)
 	}
@@ -276,7 +276,7 @@ func Test_Discount_UpdateDiscount(t *testing.T) {
 
 	var req UpdateDiscountRequest
 	ctx := context.Background()
-	res, err := client.Discount.UpdateDiscount(ctx, shopID, req, accessToken)
+	res, err := client.Discount.UpdateDiscount(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Discount.UpdateDiscount returned error (possibly expected with mock data): %s", err)
 	}
@@ -301,7 +301,7 @@ func Test_Discount_UpdateDiscountItem(t *testing.T) {
 
 	var req UpdateDiscountItemRequest
 	ctx := context.Background()
-	res, err := client.Discount.UpdateDiscountItem(ctx, shopID, req, accessToken)
+	res, err := client.Discount.UpdateDiscountItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Discount.UpdateDiscountItem returned error (possibly expected with mock data): %s", err)
 	}

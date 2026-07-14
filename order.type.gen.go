@@ -37,7 +37,7 @@ type CancelOrderRequest struct {
 }
 type CancelOrderResponse struct {
 	BaseResponse                         // Common response fields
-	Response     CancelOrderResponseData `json:"response"` // Detail informations you are querying.
+	Response     CancelOrderResponseData `json:"response"` // Response data
 }
 type CancelOrderResponseData struct {
 	UpdateTime int64 `json:"update_time"` // [Required] <p>The time when the order is updated.</p>
@@ -58,8 +58,8 @@ type DownloadFbsInvoicesRequest struct {
 }
 type DownloadFbsInvoicesResponse struct {
 	BaseResponse                                 // Common response fields
+	Response     DownloadFbsInvoicesResponseData `json:"response"`            // Response data
 	ErrorMsg     string                          `json:"error_msg,omitempty"` //
-	Response     DownloadFbsInvoicesResponseData `json:"response"`            //
 	Timestamp    int64                           `json:"timestamp,omitempty"` //
 }
 type DownloadFbsInvoicesResponseData struct {
@@ -117,7 +117,7 @@ type GetBookingDetailRequest struct {
 }
 type GetBookingDetailResponse struct {
 	BaseResponse                              // Common response fields
-	Response     GetBookingDetailResponseData `json:"response"` // <p>Detail information you are querying.<br /></p>
+	Response     GetBookingDetailResponseData `json:"response"` // Response data
 }
 type GetBookingDetailResponseData struct {
 	BookingList []ResponseDataBooking `json:"booking_list"` // [Required] <p>The list of bookings.<br /></p>
@@ -132,7 +132,7 @@ type GetBookingListRequest struct {
 }
 type GetBookingListResponse struct {
 	BaseResponse                            // Common response fields
-	Response     GetBookingListResponseData `json:"response"` // <p>Detail information you are querying.<br /></p>
+	Response     GetBookingListResponseData `json:"response"` // Response data
 }
 type GetBookingListResponseData struct {
 	More        bool                                `json:"more"`         // [Required] <p>This is to indicate whether the booking list is more than one page. If this value is true, you may want to continue to check next page to retrieve bookings.<br /></p>
@@ -179,7 +179,7 @@ type GetOrderDetailRequest struct {
 }
 type GetOrderDetailResponse struct {
 	BaseResponse                            // Common response fields
-	Response     GetOrderDetailResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetOrderDetailResponseData `json:"response"` // Response data
 }
 type GetOrderDetailResponseData struct {
 	OrderList []GetOrderDetailResponseDataOrder `json:"order_list"` // [Required] The list of orders.
@@ -258,7 +258,7 @@ type GetOrderListRequest struct {
 }
 type GetOrderListResponse struct {
 	BaseResponse                          // Common response fields
-	Response     GetOrderListResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetOrderListResponseData `json:"response"` // Response data
 }
 type GetOrderListResponseData struct {
 	More       bool                            `json:"more"`        // [Required] This is to indicate whether the order list is more than one page. If this value is true, you may want to continue to check next page to retrieve orders.
@@ -275,7 +275,7 @@ type GetPackageDetailRequest struct {
 }
 type GetPackageDetailResponse struct {
 	BaseResponse                              // Common response fields
-	Response     GetPackageDetailResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetPackageDetailResponseData `json:"response"` // Response data
 }
 type GetPackageDetailResponseData struct {
 	PackageList []ResponseDataPackage `json:"package_list"` // [Required] <p>The list of packages.</p>
@@ -286,7 +286,7 @@ type GetPendingBuyerInvoiceOrderListRequest struct {
 }
 type GetPendingBuyerInvoiceOrderListResponse struct {
 	BaseResponse                                             // Common response fields
-	Response     GetPendingBuyerInvoiceOrderListResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetPendingBuyerInvoiceOrderListResponseData `json:"response"` // Response data
 }
 type GetPendingBuyerInvoiceOrderListResponseData struct {
 	More       bool      `json:"more"`        // [Required] This is to indicate whether the order list is more than one page. If this value is true, you may want to continue to check next page to retrieve orders.
@@ -299,7 +299,7 @@ type GetShipmentListRequest struct {
 }
 type GetShipmentListResponse struct {
 	BaseResponse                             // Common response fields
-	Response     GetShipmentListResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetShipmentListResponseData `json:"response"` // Response data
 }
 type GetShipmentListResponseData struct {
 	OrderList  []Order `json:"order_list"`  // [Required] The list of  shipment orders
@@ -308,7 +308,7 @@ type GetShipmentListResponseData struct {
 }
 type GetWarehouseFilterConfigResponse struct {
 	BaseResponse                                      // Common response fields
-	Response     GetWarehouseFilterConfigResponseData `json:"response"` //
+	Response     GetWarehouseFilterConfigResponseData `json:"response"` // Response data
 }
 type GetWarehouseFilterConfigResponseData struct {
 	WarehouseFilters []WarehouseFilters `json:"warehouse_filters"` // [Required]
@@ -319,7 +319,7 @@ type HandleBuyerCancellationRequest struct {
 }
 type HandleBuyerCancellationResponse struct {
 	BaseResponse                                     // Common response fields
-	Response     HandleBuyerCancellationResponseData `json:"response"` // Detail informations you are querying.
+	Response     HandleBuyerCancellationResponseData `json:"response"` // Response data
 }
 type HandleBuyerCancellationResponseData struct {
 	UpdateTime int64 `json:"update_time"` // [Required] The time when the order is updated.
@@ -334,7 +334,7 @@ type HandlePrescriptionCheckRequest struct {
 }
 type HandlePrescriptionCheckResponse struct {
 	BaseResponse                                     // Common response fields
-	Response     HandlePrescriptionCheckResponseData `json:"response"` // <p>Detail informations you are querying.<br /></p>
+	Response     HandlePrescriptionCheckResponseData `json:"response"` // Response data
 }
 type HandlePrescriptionCheckResponseData struct {
 	IsSuccess bool `json:"is_success"` // [Required] <p>This is to indicate whether the request has been executed successfully.<br /></p>
@@ -595,8 +595,8 @@ type SearchPackageListRequest struct {
 }
 type SearchPackageListResponse struct {
 	BaseResponse                               // Common response fields
+	Response     SearchPackageListResponseData `json:"response"`         // Response data
 	Mesage       string                        `json:"mesage,omitempty"` // <p>Indicate error details if hit error. Empty if no error happened.</p>
-	Response     SearchPackageListResponseData `json:"response"`         //
 }
 type SearchPackageListResponseData struct {
 	PackagesList []Packages              `json:"packages_list"` // [Required]
@@ -623,7 +623,7 @@ type SplitOrderRequestPackage struct {
 }
 type SplitOrderResponse struct {
 	BaseResponse                        // Common response fields
-	Response     SplitOrderResponseData `json:"response"` // Detail informations you are querying.
+	Response     SplitOrderResponseData `json:"response"` // Response data
 }
 type SplitOrderResponseData struct {
 	OrderSn     string                          `json:"order_sn"`     // [Required] Shopee's unique identifier for an order.

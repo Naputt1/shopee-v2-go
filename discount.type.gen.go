@@ -6,7 +6,7 @@ type AddDiscountItemRequest struct {
 }
 type AddDiscountItemResponse struct {
 	BaseResponse                             // Common response fields
-	Response     AddDiscountItemResponseData `json:"response"` // Detail informations you are querying.
+	Response     AddDiscountItemResponseData `json:"response"` // Response data
 }
 type AddDiscountItemResponseData struct {
 	DiscountId int64                                       `json:"discount_id"` // [Required] Shopee's unique identifier for a discount activity.
@@ -20,7 +20,7 @@ type AddDiscountRequest struct {
 }
 type AddDiscountResponse struct {
 	BaseResponse                         // Common response fields
-	Response     AddDiscountResponseData `json:"response"` //
+	Response     AddDiscountResponseData `json:"response"` // Response data
 }
 type AddDiscountResponseData struct {
 	DiscountId int64 `json:"discount_id"` // [Required] Shopee's unique identifier for a discount activity.
@@ -38,7 +38,7 @@ type DeleteDiscountItemRequest struct {
 }
 type DeleteDiscountItemResponse struct {
 	BaseResponse                                // Common response fields
-	Response     DeleteDiscountItemResponseData `json:"response"` // Detail informations you are querying.
+	Response     DeleteDiscountItemResponseData `json:"response"` // Response data
 }
 type DeleteDiscountItemResponseData struct {
 	DiscountId int64                                       `json:"discount_id"` // [Required] Shopee's unique identifier for a discount activity.
@@ -49,7 +49,7 @@ type DeleteDiscountRequest struct {
 }
 type DeleteDiscountResponse struct {
 	BaseResponse                            // Common response fields
-	Response     DeleteDiscountResponseData `json:"response"` //
+	Response     DeleteDiscountResponseData `json:"response"` // Response data
 }
 type DeleteDiscountResponseData struct {
 	DiscountId int64 `json:"discount_id"` // [Required] Shopee's unique identifier for a discount activity.
@@ -60,7 +60,7 @@ type DeleteSipDiscountRequest struct {
 }
 type DeleteSipDiscountResponse struct {
 	BaseResponse                               // Common response fields
-	Response     DeleteSipDiscountResponseData `json:"response"` //
+	Response     DeleteSipDiscountResponseData `json:"response"` // Response data
 }
 type DeleteSipDiscountResponseData struct {
 	Region string `json:"region"` // [Required] <p>The region of SIP affiliate shop that needs to delete discount.<br /></p>
@@ -78,7 +78,7 @@ type EndDiscountRequest struct {
 }
 type EndDiscountResponse struct {
 	BaseResponse                         // Common response fields
-	Response     EndDiscountResponseData `json:"response"` // Detail informations you are querying.
+	Response     EndDiscountResponseData `json:"response"` // Response data
 }
 type EndDiscountResponseData struct {
 	DiscountId int64 `json:"discount_id"` // [Required] Shopee's unique identifier for a discount activity.
@@ -93,7 +93,7 @@ type GetDiscountListRequest struct {
 }
 type GetDiscountListResponse struct {
 	BaseResponse                             // Common response fields
-	Response     GetDiscountListResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetDiscountListResponseData `json:"response"` // Response data
 }
 type GetDiscountListResponseData struct {
 	DiscountList []Discount `json:"discount_list"` // [Required] The discounts created in this shop.
@@ -106,7 +106,7 @@ type GetDiscountRequest struct {
 }
 type GetDiscountResponse struct {
 	BaseResponse                         // Common response fields
-	Response     GetDiscountResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetDiscountResponseData `json:"response"` // Response data
 }
 type GetDiscountResponseData struct {
 	Status       string                        `json:"status"`        // [Required] The status of discount promotion
@@ -138,7 +138,7 @@ type GetSipDiscountsRequest struct {
 }
 type GetSipDiscountsResponse struct {
 	BaseResponse                             // Common response fields
-	Response     GetSipDiscountsResponseData `json:"response"` //
+	Response     GetSipDiscountsResponseData `json:"response"` // Response data
 }
 type GetSipDiscountsResponseData struct {
 	DiscountList []ResponseDataDiscount `json:"discount_list"` // [Required] <p>List of discounts in each region. Will be filtered based on the "region" request parameter.<br /></p>
@@ -188,7 +188,7 @@ type SetSipDiscountRequest struct {
 }
 type SetSipDiscountResponse struct {
 	BaseResponse                            // Common response fields
-	Response     SetSipDiscountResponseData `json:"response"` //
+	Response     SetSipDiscountResponseData `json:"response"` // Response data
 }
 type SetSipDiscountResponseData struct {
 	Region          string `json:"region"`            // [Required] <p>The region of SIP affiliate shop.<br /></p>
@@ -211,7 +211,7 @@ type UpdateDiscountItemRequestItem struct {
 }
 type UpdateDiscountItemResponse struct {
 	BaseResponse                                // Common response fields
-	Response     UpdateDiscountItemResponseData `json:"response"` // Detail informations you are querying.
+	Response     UpdateDiscountItemResponseData `json:"response"` // Response data
 }
 type UpdateDiscountItemResponseData struct {
 	DiscountId int64                                       `json:"discount_id"` // [Required] Shopee's unique identifier for a discount activity.
@@ -226,7 +226,7 @@ type UpdateDiscountRequest struct {
 }
 type UpdateDiscountResponse struct {
 	BaseResponse                            // Common response fields
-	Response     UpdateDiscountResponseData `json:"response"` // Detail informations you are querying.
+	Response     UpdateDiscountResponseData `json:"response"` // Response data
 }
 type UpdateDiscountResponseData struct {
 	DiscountId int64 `json:"discount_id"` // [Required] Shopee's unique identifier for a discount activity.

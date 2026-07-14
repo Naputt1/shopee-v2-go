@@ -25,7 +25,7 @@ func Test_Ads_CheckCreateGmsProductCampaignEligibility(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ads/check_create_gms_product_campaign_eligibility", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Ads.CheckCreateGmsProductCampaignEligibility(ctx, shopID, accessToken)
+	res, err := client.Ads.CheckCreateGmsProductCampaignEligibility(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("Ads.CheckCreateGmsProductCampaignEligibility returned error (possibly expected with mock data): %s", err)
 	}
@@ -50,7 +50,7 @@ func Test_Ads_CreateGmsProductCampaign(t *testing.T) {
 
 	var req CreateGmsProductCampaignRequest
 	ctx := context.Background()
-	res, err := client.Ads.CreateGmsProductCampaign(ctx, shopID, req, accessToken)
+	res, err := client.Ads.CreateGmsProductCampaign(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.CreateGmsProductCampaign returned error (possibly expected with mock data): %s", err)
 	}
@@ -75,7 +75,7 @@ func Test_Ads_CreateManualProductAds(t *testing.T) {
 
 	var req CreateManualProductAdsRequest
 	ctx := context.Background()
-	res, err := client.Ads.CreateManualProductAds(ctx, shopID, req, accessToken)
+	res, err := client.Ads.CreateManualProductAds(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.CreateManualProductAds returned error (possibly expected with mock data): %s", err)
 	}
@@ -100,7 +100,7 @@ func Test_Ads_EditGmsItemProductCampaign(t *testing.T) {
 
 	var req EditGmsItemProductCampaignRequest
 	ctx := context.Background()
-	res, err := client.Ads.EditGmsItemProductCampaign(ctx, shopID, req, accessToken)
+	res, err := client.Ads.EditGmsItemProductCampaign(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.EditGmsItemProductCampaign returned error (possibly expected with mock data): %s", err)
 	}
@@ -125,7 +125,7 @@ func Test_Ads_EditGmsProductCampaign(t *testing.T) {
 
 	var req EditGmsProductCampaignRequest
 	ctx := context.Background()
-	res, err := client.Ads.EditGmsProductCampaign(ctx, shopID, req, accessToken)
+	res, err := client.Ads.EditGmsProductCampaign(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.EditGmsProductCampaign returned error (possibly expected with mock data): %s", err)
 	}
@@ -150,7 +150,7 @@ func Test_Ads_EditManualProductAdKeywords(t *testing.T) {
 
 	var req EditManualProductAdKeywordsRequest
 	ctx := context.Background()
-	res, err := client.Ads.EditManualProductAdKeywords(ctx, shopID, req, accessToken)
+	res, err := client.Ads.EditManualProductAdKeywords(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.EditManualProductAdKeywords returned error (possibly expected with mock data): %s", err)
 	}
@@ -175,7 +175,7 @@ func Test_Ads_EditManualProductAds(t *testing.T) {
 
 	var req EditManualProductAdsRequest
 	ctx := context.Background()
-	res, err := client.Ads.EditManualProductAds(ctx, shopID, req, accessToken)
+	res, err := client.Ads.EditManualProductAds(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.EditManualProductAds returned error (possibly expected with mock data): %s", err)
 	}
@@ -199,7 +199,7 @@ func Test_Ads_GetAdsFcilShopRate(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/ads/get_ads_facil_shop_rate", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Ads.GetAdsFcilShopRate(ctx, shopID, accessToken)
+	res, err := client.Ads.GetAdsFcilShopRate(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("Ads.GetAdsFcilShopRate returned error (possibly expected with mock data): %s", err)
 	}
@@ -224,7 +224,7 @@ func Test_Ads_GetAllCpcAdsDailyPerformance(t *testing.T) {
 
 	var req GetAllCpcAdsDailyPerformanceRequest
 	ctx := context.Background()
-	res, err := client.Ads.GetAllCpcAdsDailyPerformance(ctx, shopID, req, accessToken)
+	res, err := client.Ads.GetAllCpcAdsDailyPerformance(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.GetAllCpcAdsDailyPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -249,7 +249,7 @@ func Test_Ads_GetAllCpcAdsHourlyPerformance(t *testing.T) {
 
 	var req GetAllCpcAdsHourlyPerformanceRequest
 	ctx := context.Background()
-	res, err := client.Ads.GetAllCpcAdsHourlyPerformance(ctx, shopID, req, accessToken)
+	res, err := client.Ads.GetAllCpcAdsHourlyPerformance(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.GetAllCpcAdsHourlyPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -274,7 +274,7 @@ func Test_Ads_GetCreateProductAdBudgetSuggestion(t *testing.T) {
 
 	var req GetCreateProductAdBudgetSuggestionRequest
 	ctx := context.Background()
-	res, err := client.Ads.GetCreateProductAdBudgetSuggestion(ctx, shopID, req, accessToken)
+	res, err := client.Ads.GetCreateProductAdBudgetSuggestion(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.GetCreateProductAdBudgetSuggestion returned error (possibly expected with mock data): %s", err)
 	}
@@ -299,7 +299,7 @@ func Test_Ads_GetGmsCampaignPerformance(t *testing.T) {
 
 	var req GetGmsCampaignPerformanceRequest
 	ctx := context.Background()
-	res, err := client.Ads.GetGmsCampaignPerformance(ctx, shopID, req, accessToken)
+	res, err := client.Ads.GetGmsCampaignPerformance(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.GetGmsCampaignPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -324,7 +324,7 @@ func Test_Ads_GetGmsItemPerformance(t *testing.T) {
 
 	var req GetGmsItemPerformanceRequest
 	ctx := context.Background()
-	res, err := client.Ads.GetGmsItemPerformance(ctx, shopID, req, accessToken)
+	res, err := client.Ads.GetGmsItemPerformance(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.GetGmsItemPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -349,7 +349,7 @@ func Test_Ads_GetProductCampaignDailyPerformance(t *testing.T) {
 
 	var req GetProductCampaignDailyPerformanceRequest
 	ctx := context.Background()
-	res, err := client.Ads.GetProductCampaignDailyPerformance(ctx, shopID, req, accessToken)
+	res, err := client.Ads.GetProductCampaignDailyPerformance(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.GetProductCampaignDailyPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -374,7 +374,7 @@ func Test_Ads_GetProductCampaignHourlyPerformance(t *testing.T) {
 
 	var req GetProductCampaignHourlyPerformanceRequest
 	ctx := context.Background()
-	res, err := client.Ads.GetProductCampaignHourlyPerformance(ctx, shopID, req, accessToken)
+	res, err := client.Ads.GetProductCampaignHourlyPerformance(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.GetProductCampaignHourlyPerformance returned error (possibly expected with mock data): %s", err)
 	}
@@ -399,7 +399,7 @@ func Test_Ads_GetProductLevelCampaignIdList(t *testing.T) {
 
 	var req GetProductLevelCampaignIdListRequest
 	ctx := context.Background()
-	res, err := client.Ads.GetProductLevelCampaignIdList(ctx, shopID, req, accessToken)
+	res, err := client.Ads.GetProductLevelCampaignIdList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.GetProductLevelCampaignIdList returned error (possibly expected with mock data): %s", err)
 	}
@@ -424,7 +424,7 @@ func Test_Ads_GetProductLevelCampaignSettingInfo(t *testing.T) {
 
 	var req GetProductLevelCampaignSettingInfoRequest
 	ctx := context.Background()
-	res, err := client.Ads.GetProductLevelCampaignSettingInfo(ctx, shopID, req, accessToken)
+	res, err := client.Ads.GetProductLevelCampaignSettingInfo(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.GetProductLevelCampaignSettingInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -449,7 +449,7 @@ func Test_Ads_GetProductRecommendedRoiTarget(t *testing.T) {
 
 	var req GetProductRecommendedRoiTargetRequest
 	ctx := context.Background()
-	res, err := client.Ads.GetProductRecommendedRoiTarget(ctx, shopID, req, accessToken)
+	res, err := client.Ads.GetProductRecommendedRoiTarget(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.GetProductRecommendedRoiTarget returned error (possibly expected with mock data): %s", err)
 	}
@@ -473,7 +473,7 @@ func Test_Ads_GetRecommendedItemList(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ads/get_recommended_item_list", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Ads.GetRecommendedItemList(ctx, shopID, accessToken)
+	res, err := client.Ads.GetRecommendedItemList(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("Ads.GetRecommendedItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -498,7 +498,7 @@ func Test_Ads_GetRecommendedKeywordList(t *testing.T) {
 
 	var req GetRecommendedKeywordListRequest
 	ctx := context.Background()
-	res, err := client.Ads.GetRecommendedKeywordList(ctx, shopID, req, accessToken)
+	res, err := client.Ads.GetRecommendedKeywordList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.GetRecommendedKeywordList returned error (possibly expected with mock data): %s", err)
 	}
@@ -522,7 +522,7 @@ func Test_Ads_GetShopToggleInfo(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ads/get_shop_toggle_info", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Ads.GetShopToggleInfo(ctx, shopID, accessToken)
+	res, err := client.Ads.GetShopToggleInfo(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("Ads.GetShopToggleInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -546,7 +546,7 @@ func Test_Ads_GetTotalBalance(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/ads/get_total_balance", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Ads.GetTotalBalance(ctx, shopID, accessToken)
+	res, err := client.Ads.GetTotalBalance(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("Ads.GetTotalBalance returned error (possibly expected with mock data): %s", err)
 	}
@@ -571,7 +571,7 @@ func Test_Ads_ListGmsUserDeletedItem(t *testing.T) {
 
 	var req ListGmsUserDeletedItemRequest
 	ctx := context.Background()
-	res, err := client.Ads.ListGmsUserDeletedItem(ctx, shopID, req, accessToken)
+	res, err := client.Ads.ListGmsUserDeletedItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Ads.ListGmsUserDeletedItem returned error (possibly expected with mock data): %s", err)
 	}

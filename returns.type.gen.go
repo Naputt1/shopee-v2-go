@@ -5,7 +5,7 @@ type AcceptOfferRequest struct {
 }
 type AcceptOfferResponse struct {
 	BaseResponse                         // Common response fields
-	Response     AcceptOfferResponseData `json:"response"` //
+	Response     AcceptOfferResponseData `json:"response"` // Response data
 }
 type AcceptOfferResponseData struct {
 	ReturnSn string `json:"return_sn"` // [Required] <p>The serial number of return.</p>
@@ -34,7 +34,7 @@ type CancelDisputeRequest struct {
 }
 type CancelDisputeResponse struct {
 	BaseResponse                           // Common response fields
-	Response     CancelDisputeResponseData `json:"response"` //
+	Response     CancelDisputeResponseData `json:"response"` // Response data
 }
 type CancelDisputeResponseData struct {
 	ReturnSn string `json:"return_sn"` // [Required] <p>Shopee's unique serial number identifier for a Return Refund request.</p>
@@ -45,7 +45,7 @@ type ConfirmRequest struct {
 }
 type ConfirmResponse struct {
 	BaseResponse                     // Common response fields
-	Response     ConfirmResponseData `json:"response"` //
+	Response     ConfirmResponseData `json:"response"` // Response data
 }
 type ConfirmResponseData struct {
 	ReturnSn string `json:"return_sn"` // [Required] The identifier for an API request for error tracking
@@ -56,7 +56,7 @@ type ConvertImageRequest struct {
 }
 type ConvertImageResponse struct {
 	BaseResponse                          // Common response fields
-	Response     ConvertImageResponseData `json:"response"` //
+	Response     ConvertImageResponseData `json:"response"` // Response data
 }
 type ConvertImageResponseData struct {
 	Url       string `json:"url"`       // [Required] <p>The link uploaded to the image server can be used with the upload_proof interface.</p>
@@ -82,7 +82,7 @@ type DisputeRequestImage struct {
 }
 type DisputeResponse struct {
 	BaseResponse                     // Common response fields
-	Response     DisputeResponseData `json:"response"` //
+	Response     DisputeResponseData `json:"response"` // Response data
 }
 type DisputeResponseData struct {
 	ReturnSn string `json:"return_sn"` // [Required] <p>The serial number of return.</p>
@@ -106,7 +106,7 @@ type GetAvailableSolutionsRequest struct {
 }
 type GetAvailableSolutionsResponse struct {
 	BaseResponse                                   // Common response fields
-	Response     GetAvailableSolutionsResponseData `json:"response"` //
+	Response     GetAvailableSolutionsResponseData `json:"response"` // Response data
 }
 type GetAvailableSolutionsResponseData struct {
 	ReturnSn          string             `json:"return_sn"`           // [Required] <p>The serial number of return.<br /></p>
@@ -118,7 +118,7 @@ type GetReturnDetailRequest struct {
 }
 type GetReturnDetailResponse struct {
 	BaseResponse                             // Common response fields
-	Response     GetReturnDetailResponseData `json:"response"` // Amount of the refund.
+	Response     GetReturnDetailResponseData `json:"response"` // Response data
 }
 type GetReturnDetailResponseData struct {
 	Image                               []string                          `json:"image"`                                   // [Required] Image URLs of return.
@@ -184,7 +184,7 @@ type GetReturnDisputeReasonRequest struct {
 }
 type GetReturnDisputeReasonResponse struct {
 	BaseResponse                                    // Common response fields
-	Response     GetReturnDisputeReasonResponseData `json:"response"` // <p>Detail informations you are querying.<br /></p>
+	Response     GetReturnDisputeReasonResponseData `json:"response"` // Response data
 }
 type GetReturnDisputeReasonResponseData struct {
 	DisputeReasonList []DisputeReason `json:"dispute_reason_list"` // [Required] <p>The dispute_reason and associated evidence list.<br /></p>
@@ -203,7 +203,7 @@ type GetReturnListRequest struct {
 }
 type GetReturnListResponse struct {
 	BaseResponse                           // Common response fields
-	Response     GetReturnListResponseData `json:"response"` // Amount of the refund.
+	Response     GetReturnListResponseData `json:"response"` // Response data
 }
 type GetReturnListResponseData struct {
 	More   bool     `json:"more"`   // [Required] Whether has next page
@@ -214,7 +214,7 @@ type GetReverseTrackingInfoRequest struct {
 }
 type GetReverseTrackingInfoResponse struct {
 	BaseResponse                                    // Common response fields
-	Response     GetReverseTrackingInfoResponseData `json:"response"` //
+	Response     GetReverseTrackingInfoResponseData `json:"response"` // Response data
 }
 type GetReverseTrackingInfoResponseData struct {
 	ReturnSn                        string                                           `json:"return_sn"`                           // [Required] <p>Shopee's unique identifier for a return/refund request (serial number of return).<br /></p>
@@ -243,7 +243,7 @@ type GetShippingCarrierRequest struct {
 }
 type GetShippingCarrierResponse struct {
 	BaseResponse                                // Common response fields
-	Response     GetShippingCarrierResponseData `json:"response"` //
+	Response     GetShippingCarrierResponseData `json:"response"` // Response data
 }
 type GetShippingCarrierResponseData struct {
 	IsShippingProofMandatory      bool                      `json:"is_shipping_proof_mandatory"`       // [Required] <p>To indicate whether uploading shipping proof is mandatory for seller to confirm "Arrange Pickup" when is_seller_arrange = true.</p>
@@ -269,7 +269,7 @@ type OfferRequest struct {
 }
 type OfferResponse struct {
 	BaseResponse                   // Common response fields
-	Response     OfferResponseData `json:"response"` //
+	Response     OfferResponseData `json:"response"` // Response data
 }
 type OfferResponseData struct {
 	ReturnSn string `json:"return_sn"` // [Required] <p>The serial number of return.</p>
@@ -285,7 +285,7 @@ type QueryProofRequest struct {
 }
 type QueryProofResponse struct {
 	BaseResponse                        // Common response fields
-	Response     QueryProofResponseData `json:"response"` //
+	Response     QueryProofResponseData `json:"response"` // Response data
 }
 type QueryProofResponseData struct {
 	Image       []ResponseDataImage `json:"image"`       // [Required]
@@ -385,8 +385,7 @@ type UploadProofRequest struct {
 	ReturnSn    string              `json:"return_sn"`             // [Required] <p>The serial number of return.</p>
 }
 type UploadProofResponse struct {
-	BaseResponse             // Common response fields
-	Response     interface{} `json:"response"` // Actual response data
+	BaseResponse // Common response fields
 }
 type UploadShippingProofRequest struct {
 	ImageIdList                 []ImageInfo `json:"image_id_list,omitempty"`                  // [Optional] <p>List of image_id of shipping proof image. Required when&nbsp;is_shipping_image_file_mandatory = true in v2.returns.get_shipping_carrier. Max: 3.</p><p>You can call the v2.media.upload_image to upload image and get the image_id, for this scenario, please pass the business = 2 and scene = 1.</p>
@@ -397,8 +396,7 @@ type UploadShippingProofRequest struct {
 	TrackingNumber              *string     `json:"tracking_number,omitempty"`                // [Optional] <p>Tracking number used in seller arrange. Required when&nbsp;is_tracking_number_required = true in v2.returns.get_shipping_carrier.</p>
 }
 type UploadShippingProofResponse struct {
-	BaseResponse             // Common response fields
-	Response     interface{} `json:"response"` // Actual response data
+	BaseResponse // Common response fields
 }
 type User struct {
 	Username string `json:"username"` // [Required] <p>Buyer's nickname, will be masked as "****" if it is a non-integrated return in TW region.</p>

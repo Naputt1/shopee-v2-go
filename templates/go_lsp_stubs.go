@@ -9,8 +9,8 @@ type BaseResponse struct{}
 type LeveledLogger struct{}
 
 func (l *LeveledLogger) Debugf(format string, v ...interface{}) {}
-func (l *LeveledLogger) Infof(format string, v ...interface{}) {}
-func (l *LeveledLogger) Warnf(format string, v ...interface{}) {}
+func (l *LeveledLogger) Infof(format string, v ...interface{})  {}
+func (l *LeveledLogger) Warnf(format string, v ...interface{})  {}
 func (l *LeveledLogger) Errorf(format string, v ...interface{}) {}
 
 type LeveledLoggerInterface interface {

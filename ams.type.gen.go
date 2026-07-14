@@ -7,7 +7,7 @@ type AddAllProductsToOpenCampaignRequest struct {
 }
 type AddAllProductsToOpenCampaignResponse struct {
 	BaseResponse                                          // Common response fields
-	Response     AddAllProductsToOpenCampaignResponseData `json:"response"` //
+	Response     AddAllProductsToOpenCampaignResponseData `json:"response"` // Response data
 }
 type AddAllProductsToOpenCampaignResponseData struct {
 	TaskType string `json:"task_type"` // [Required] <p>Task type. Applicable values:&nbsp;</p><p>batch_add_open_campaigns</p><p>batch_remove_open_campaigns</p><p>batch_update_open_campaigns</p><p><br /></p><p>For this API, task type will be&nbsp;batch_add_open_campaigns</p>
@@ -18,7 +18,7 @@ type Affiliate struct {
 }
 type AMSGetShopPerformanceResponse struct {
 	BaseResponse                                   // Common response fields
-	Response     AMSGetShopPerformanceResponseData `json:"response"` //
+	Response     AMSGetShopPerformanceResponseData `json:"response"` // Response data
 }
 type AMSGetShopPerformanceResponseData struct {
 	Sales            string `json:"sales"`              // [Required] <p>Total value of orders generated through affiliate marketing during the selected period.</p>
@@ -39,7 +39,7 @@ type BatchAddProductsToOpenCampaignRequest struct {
 }
 type BatchAddProductsToOpenCampaignResponse struct {
 	BaseResponse                                            // Common response fields
-	Response     BatchAddProductsToOpenCampaignResponseData `json:"response"` //
+	Response     BatchAddProductsToOpenCampaignResponseData `json:"response"` // Response data
 }
 type BatchAddProductsToOpenCampaignResponseData struct {
 	FailedList  []Failed `json:"failed_list"`  // [Required]
@@ -53,7 +53,7 @@ type BatchEditProductsOpenCampaignSettingRequest struct {
 }
 type BatchEditProductsOpenCampaignSettingResponse struct {
 	BaseResponse                                                  // Common response fields
-	Response     BatchEditProductsOpenCampaignSettingResponseData `json:"response"` //
+	Response     BatchEditProductsOpenCampaignSettingResponseData `json:"response"` // Response data
 }
 type BatchEditProductsOpenCampaignSettingResponseData struct {
 	FailedList  []ResponseDataFailed `json:"failed_list"`  // [Required]
@@ -64,7 +64,7 @@ type BatchGetProductsSuggestedRateRequest struct {
 }
 type BatchGetProductsSuggestedRateResponse struct {
 	BaseResponse                                           // Common response fields
-	Response     BatchGetProductsSuggestedRateResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     BatchGetProductsSuggestedRateResponseData `json:"response"` // Response data
 }
 type BatchGetProductsSuggestedRateResponseData struct {
 	Rates []Rates `json:"rates"` // [Required]
@@ -74,7 +74,7 @@ type BatchRemoveProductsOpenCampaignSettingRequest struct {
 }
 type BatchRemoveProductsOpenCampaignSettingResponse struct {
 	BaseResponse                                                    // Common response fields
-	Response     BatchRemoveProductsOpenCampaignSettingResponseData `json:"response"` //
+	Response     BatchRemoveProductsOpenCampaignSettingResponseData `json:"response"` // Response data
 }
 type BatchRemoveProductsOpenCampaignSettingResponseData struct {
 	FailedList  *ResponseDataFailed `json:"failed_list"`  // [Required]
@@ -96,7 +96,7 @@ type CreateNewTargetedCampaignRequest struct {
 }
 type CreateNewTargetedCampaignResponse struct {
 	BaseResponse                                       // Common response fields
-	Response     CreateNewTargetedCampaignResponseData `json:"response"` // <p>Successful elements will not be returned.&nbsp;</p><p>If error and message are not empty, it means that all settings have failed.&nbsp;</p><p>If error and message are empty,&nbsp;but fail_xx_list has content, it means that the element in the fail_xx_list setting failed and the rest were successful.</p><p>If error, message, fail_xx_list are all empty, it means that all settings are successful.</p>
+	Response     CreateNewTargetedCampaignResponseData `json:"response"` // Response data
 }
 type CreateNewTargetedCampaignResponseData struct {
 	CampaignId        int64           `json:"campaign_id"`         // [Required] <p>The unique key for campaign.</p>
@@ -110,7 +110,7 @@ type EditAffiliateListOfTargetedCampaignRequest struct {
 }
 type EditAffiliateListOfTargetedCampaignResponse struct {
 	BaseResponse                                                 // Common response fields
-	Response     EditAffiliateListOfTargetedCampaignResponseData `json:"response"` // <p>Successful elements will not be returned.&nbsp;</p><p>If error and message are not empty, it means that all settings have failed.&nbsp;</p><p>If error and message are empty,&nbsp;but fail_xx_list has content, it means that the element in the fail_xx_list setting failed and the rest were successful.</p><p>If error, message, fail_xx_list are all empty, it means that all settings are successful.</p>
+	Response     EditAffiliateListOfTargetedCampaignResponseData `json:"response"` // Response data
 }
 type EditAffiliateListOfTargetedCampaignResponseData struct {
 	FailAffiliateList []FailAffiliate `json:"fail_affiliate_list"` // [Required] <p>Failed Affiliate List.</p>
@@ -122,7 +122,7 @@ type EditAllProductsOpenCampaignSettingRequest struct {
 }
 type EditAllProductsOpenCampaignSettingResponse struct {
 	BaseResponse                                                // Common response fields
-	Response     EditAllProductsOpenCampaignSettingResponseData `json:"response"` //
+	Response     EditAllProductsOpenCampaignSettingResponseData `json:"response"` // Response data
 }
 type EditAllProductsOpenCampaignSettingResponseData struct {
 	TaskType string `json:"task_type"` // [Required] <p>Task type. Applicable values:&nbsp;</p><p>batch_add_open_campaigns</p><p>batch_remove_open_campaigns</p><p>batch_update_open_campaigns</p><p><br /></p><p>For this API, task type will be&nbsp;batch_update_open_campaigns</p>
@@ -135,7 +135,7 @@ type EditProductListOfTargetedCampaignRequest struct {
 }
 type EditProductListOfTargetedCampaignResponse struct {
 	BaseResponse                                               // Common response fields
-	Response     EditProductListOfTargetedCampaignResponseData `json:"response"` // <p>Successful elements will not be returned.&nbsp;</p><p>If error and message are not empty, it means that all settings have failed.&nbsp;</p><p>If error and message are empty,&nbsp;but fail_xx_list has content, it means that the element in the fail_xx_list setting failed and the rest were successful.</p><p>If error, message, fail_xx_list are all empty, it means that all settings are successful.</p>
+	Response     EditProductListOfTargetedCampaignResponseData `json:"response"` // Response data
 }
 type EditProductListOfTargetedCampaignResponseData struct {
 	FailItemList []Failed `json:"fail_item_list"` // [Required] <p>Failed Item List.</p>
@@ -157,7 +157,7 @@ type GetAffiliatePerformanceRequest struct {
 }
 type GetAffiliatePerformanceResponse struct {
 	BaseResponse                                     // Common response fields
-	Response     GetAffiliatePerformanceResponseData `json:"response"` //
+	Response     GetAffiliatePerformanceResponseData `json:"response"` // Response data
 }
 type GetAffiliatePerformanceResponseData struct {
 	List             []List `json:"list"`               // [Required]
@@ -167,7 +167,7 @@ type GetAffiliatePerformanceResponseData struct {
 }
 type GetAutoAddNewProductToggleStatusResponse struct {
 	BaseResponse                                              // Common response fields
-	Response     GetAutoAddNewProductToggleStatusResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetAutoAddNewProductToggleStatusResponseData `json:"response"` // Response data
 }
 type GetAutoAddNewProductToggleStatusResponseData struct {
 	IsOpen         bool    `json:"is_open"`         // [Required] <p>If auto-add new product is currently enabled</p>
@@ -180,7 +180,7 @@ type GetCampaignKeyMetricsPerformanceRequest struct {
 }
 type GetCampaignKeyMetricsPerformanceResponse struct {
 	BaseResponse                                              // Common response fields
-	Response     GetCampaignKeyMetricsPerformanceResponseData `json:"response"` //
+	Response     GetCampaignKeyMetricsPerformanceResponseData `json:"response"` // Response data
 }
 type GetCampaignKeyMetricsPerformanceResponseData struct {
 	OpenCampaignKeyMetircs     *OpenCampaignKeyMetircs `json:"open_campaign_key_metircs"`     // [Required] <p>Performance data of Open Campaign.</p>
@@ -200,7 +200,7 @@ type GetContentPerformanceRequest struct {
 }
 type GetContentPerformanceResponse struct {
 	BaseResponse                                   // Common response fields
-	Response     GetContentPerformanceResponseData `json:"response"` //
+	Response     GetContentPerformanceResponseData `json:"response"` // Response data
 }
 type GetContentPerformanceResponseData struct {
 	List             []ResponseDataList `json:"list"`               // [Required]
@@ -237,7 +237,7 @@ type GetConversionReportRequest struct {
 }
 type GetConversionReportResponse struct {
 	BaseResponse                                 // Common response fields
-	Response     GetConversionReportResponseData `json:"response"` // <p>Response payload containing result data.</p>
+	Response     GetConversionReportResponseData `json:"response"` // Response data
 }
 type GetConversionReportResponseData struct {
 	List       []GetConversionReportResponseDataList `json:"list"`        // [Required] <p>Array of order records. Each object contains order and commission details.</p>
@@ -268,7 +268,7 @@ type GetManagedAffiliateListRequest struct {
 }
 type GetManagedAffiliateListResponse struct {
 	BaseResponse                                     // Common response fields
-	Response     GetManagedAffiliateListResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetManagedAffiliateListResponseData `json:"response"` // Response data
 }
 type GetManagedAffiliateListResponseData struct {
 	TotalCount    int64                   `json:"total_count"`    // [Required] <p>The total count of affiliates that managed by this seller.</p>
@@ -283,7 +283,7 @@ type GetOpenCampaignAddedProductRequest struct {
 }
 type GetOpenCampaignAddedProductResponse struct {
 	BaseResponse                                         // Common response fields
-	Response     GetOpenCampaignAddedProductResponseData `json:"response"` //
+	Response     GetOpenCampaignAddedProductResponseData `json:"response"` // Response data
 }
 type GetOpenCampaignAddedProductResponseData struct {
 	ItemList   []ResponseDataItem `json:"item_list"`   // [Required]
@@ -296,7 +296,7 @@ type GetOpenCampaignBatchTaskResultRequest struct {
 }
 type GetOpenCampaignBatchTaskResultResponse struct {
 	BaseResponse                                            // Common response fields
-	Response     GetOpenCampaignBatchTaskResultResponseData `json:"response"` //
+	Response     GetOpenCampaignBatchTaskResultResponseData `json:"response"` // Response data
 }
 type GetOpenCampaignBatchTaskResultResponseData struct {
 	Status       string `json:"status"`        // [Required] <p>Task status. Applicable values:</p><p>Doing</p><p>Done</p><p>Fail</p><p><br /></p><p>Note: Please&nbsp;note that task&nbsp;<b>Done</b>&nbsp;here refers to the completion of scanning all products in the shop, but not the successful execution of all products. Some products may fail, but due to the unpredictable huge volume of data, detailed information will not returned in the&nbsp;fail_reason. After the task is&nbsp;<b>Done</b>, you need to retrieve the list again by GET API and compare it with the before list to confirm the execution details</p>
@@ -312,7 +312,7 @@ type GetOpenCampaignNotAddedProductRequest struct {
 }
 type GetOpenCampaignNotAddedProductResponse struct {
 	BaseResponse                                            // Common response fields
-	Response     GetOpenCampaignNotAddedProductResponseData `json:"response"` //
+	Response     GetOpenCampaignNotAddedProductResponseData `json:"response"` // Response data
 }
 type GetOpenCampaignNotAddedProductResponseData struct {
 	ItemList   []GetOpenCampaignNotAddedProductResponseDataItem `json:"item_list"`   // [Required]
@@ -339,7 +339,7 @@ type GetOpenCampaignPerformanceRequest struct {
 }
 type GetOpenCampaignPerformanceResponse struct {
 	BaseResponse                                        // Common response fields
-	Response     GetOpenCampaignPerformanceResponseData `json:"response"` //
+	Response     GetOpenCampaignPerformanceResponseData `json:"response"` // Response data
 }
 type GetOpenCampaignPerformanceResponseData struct {
 	List             []GetOpenCampaignPerformanceResponseDataList `json:"list"`               // [Required]
@@ -362,7 +362,7 @@ type GetOptimizationSuggestionProductRequest struct {
 }
 type GetOptimizationSuggestionProductResponse struct {
 	BaseResponse                                              // Common response fields
-	Response     GetOptimizationSuggestionProductResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetOptimizationSuggestionProductResponseData `json:"response"` // Response data
 }
 type GetOptimizationSuggestionProductResponseData struct {
 	ItemList []GetOptimizationSuggestionProductResponseDataItem `json:"item_list"` // [Required]
@@ -393,7 +393,7 @@ type GetPerformanceDataUpdateTimeRequest struct {
 }
 type GetPerformanceDataUpdateTimeResponse struct {
 	BaseResponse                                          // Common response fields
-	Response     GetPerformanceDataUpdateTimeResponseData `json:"response"` //
+	Response     GetPerformanceDataUpdateTimeResponseData `json:"response"` // Response data
 }
 type GetPerformanceDataUpdateTimeResponseData struct {
 	LastReportDate string `json:"last_report_date"` // [Required] <p>The latest date of AMS dashboard data metrics update.</p>
@@ -410,7 +410,7 @@ type GetProductPerformanceRequest struct {
 }
 type GetProductPerformanceResponse struct {
 	BaseResponse                                   // Common response fields
-	Response     GetProductPerformanceResponseData `json:"response"` //
+	Response     GetProductPerformanceResponseData `json:"response"` // Response data
 }
 type GetProductPerformanceResponseData struct {
 	List             []GetProductPerformanceResponseDataList `json:"list"`               // [Required]
@@ -435,7 +435,7 @@ type GetRecommendedAffiliateListRequest struct {
 }
 type GetRecommendedAffiliateListResponse struct {
 	BaseResponse                                         // Common response fields
-	Response     GetRecommendedAffiliateListResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetRecommendedAffiliateListResponseData `json:"response"` // Response data
 }
 type GetRecommendedAffiliateListResponseData struct {
 	TotalCount    int64                   `json:"total_count"`    // [Required] <p>The total count of affiliates that recommended for shop id.&nbsp;</p>
@@ -450,7 +450,7 @@ type GetShopPerformanceRequest struct {
 }
 type GetShopSuggestedRateResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     GetShopSuggestedRateResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetShopSuggestedRateResponseData `json:"response"` // Response data
 }
 type GetShopSuggestedRateResponseData struct {
 	MinRate float64 `json:"min_rate"` // [Required] <p>Minimum suggested commission rate, 1.1 means 1.1%, support two decimal places</p>
@@ -465,7 +465,7 @@ type GetTargetedCampaignAddableProductListRequest struct {
 }
 type GetTargetedCampaignAddableProductListResponse struct {
 	BaseResponse                                                   // Common response fields
-	Response     GetTargetedCampaignAddableProductListResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetTargetedCampaignAddableProductListResponseData `json:"response"` // Response data
 }
 type GetTargetedCampaignAddableProductListResponseData struct {
 	ItemList   []GetTargetedCampaignAddableProductListResponseDataItem `json:"item_list"`   // [Required] <p>Item list.</p>
@@ -493,7 +493,7 @@ type GetTargetedCampaignListRequest struct {
 }
 type GetTargetedCampaignListResponse struct {
 	BaseResponse                                     // Common response fields
-	Response     GetTargetedCampaignListResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetTargetedCampaignListResponseData `json:"response"` // Response data
 }
 type GetTargetedCampaignListResponseData struct {
 	TotalCount   int64                                         `json:"total_count"`   // [Required] <p>The total count of targeted campaigns that meet the query criteria.</p>
@@ -523,7 +523,7 @@ type GetTargetedCampaignPerformanceRequest struct {
 }
 type GetTargetedCampaignPerformanceResponse struct {
 	BaseResponse                                            // Common response fields
-	Response     GetTargetedCampaignPerformanceResponseData `json:"response"` //
+	Response     GetTargetedCampaignPerformanceResponseData `json:"response"` // Response data
 }
 type GetTargetedCampaignPerformanceResponseData struct {
 	List             []GetTargetedCampaignPerformanceResponseDataList `json:"list"`               // [Required]
@@ -544,7 +544,7 @@ type GetTargetedCampaignSettingsRequest struct {
 }
 type GetTargetedCampaignSettingsResponse struct {
 	BaseResponse                                         // Common response fields
-	Response     GetTargetedCampaignSettingsResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetTargetedCampaignSettingsResponseData `json:"response"` // Response data
 }
 type GetTargetedCampaignSettingsResponseData struct {
 	CampaignName          string                                        `json:"campaign_name"`           // [Required] <p>The name of the current campaign.</p>
@@ -568,7 +568,7 @@ type GetTargetedCampaignSettingsResponseDataItem struct {
 }
 type GetValidationListResponse struct {
 	BaseResponse                               // Common response fields
-	Response     GetValidationListResponseData `json:"response"` //
+	Response     GetValidationListResponseData `json:"response"` // Response data
 }
 type GetValidationListResponseData struct {
 	ValidationList []Validation `json:"validation_list"` // [Required]
@@ -592,7 +592,7 @@ type GetValidationReportRequest struct {
 }
 type GetValidationReportResponse struct {
 	BaseResponse                                 // Common response fields
-	Response     GetValidationReportResponseData `json:"response"` // <p>Response payload containing result data.</p>
+	Response     GetValidationReportResponseData `json:"response"` // Response data
 }
 type GetValidationReportResponseData struct {
 	List       []GetConversionReportResponseDataList `json:"list"`        // [Required] <p>Array of order records. Each object contains order and commission details.</p>
@@ -667,7 +667,7 @@ type QueryAffiliateListRequest struct {
 }
 type QueryAffiliateListResponse struct {
 	BaseResponse                                // Common response fields
-	Response     QueryAffiliateListResponseData `json:"response"` //
+	Response     QueryAffiliateListResponseData `json:"response"` // Response data
 }
 type QueryAffiliateListResponseData struct {
 	TotalCount    int64                                    `json:"total_count"`    // [Required] <p>The total count of affiliates by this query.</p><p>Max is 200.</p>
@@ -696,7 +696,7 @@ type Rates struct {
 }
 type RemoveAllProductsOpenCampaignSettingResponse struct {
 	BaseResponse                                                  // Common response fields
-	Response     RemoveAllProductsOpenCampaignSettingResponseData `json:"response"` //
+	Response     RemoveAllProductsOpenCampaignSettingResponseData `json:"response"` // Response data
 }
 type RemoveAllProductsOpenCampaignSettingResponseData struct {
 	TaskType string `json:"task_type"` // [Required] <p>Task type. Applicable values:&nbsp;</p><p>batch_add_open_campaigns</p><p>batch_remove_open_campaigns</p><p>batch_update_open_campaigns</p><p><br /></p><p>For this API, task type will be&nbsp;batch_remove_open_campaigns</p>

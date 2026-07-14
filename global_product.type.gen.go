@@ -23,7 +23,7 @@ type AddGlobalItemRequest struct {
 }
 type AddGlobalItemResponse struct {
 	BaseResponse                           // Common response fields
-	Response     AddGlobalItemResponseData `json:"response"` //
+	Response     AddGlobalItemResponseData `json:"response"` // Response data
 }
 type AddGlobalItemResponseData struct {
 	GlobalItemId int64 `json:"global_item_id"` // [Required] Id of added global item.
@@ -68,7 +68,7 @@ type CategoryRecommendRequest struct {
 }
 type CategoryRecommendResponse struct {
 	BaseResponse                               // Common response fields
-	Response     CategoryRecommendResponseData `json:"response"` //
+	Response     CategoryRecommendResponseData `json:"response"` // Response data
 }
 type CategoryRecommendResponseData struct {
 	CategoryId []int64 `json:"category_id"` // [Required] Shopee's unique identifier for a category.
@@ -98,7 +98,7 @@ type CreatePublishTaskRequestItemModel struct {
 }
 type CreatePublishTaskResponse struct {
 	BaseResponse                               // Common response fields
-	Response     CreatePublishTaskResponseData `json:"response"` //
+	Response     CreatePublishTaskResponseData `json:"response"` // Response data
 }
 type CreatePublishTaskResponseData struct {
 	PublishTaskId int64 `json:"publish_task_id"` // [Required] The id of publish task.
@@ -108,7 +108,7 @@ type DeleteGlobalItemRequest struct {
 }
 type DeleteGlobalItemResponse struct {
 	BaseResponse                              // Common response fields
-	Response     DeleteGlobalItemResponseData `json:"response"` //
+	Response     DeleteGlobalItemResponseData `json:"response"` // Response data
 }
 type DeleteGlobalItemResponseData struct {
 	FailureDeleteItem []FailureDeleteItem `json:"failure_delete_item"` // [Required] If delete failed, this field shows the details.
@@ -119,7 +119,7 @@ type DeleteGlobalModelRequest struct {
 }
 type DeleteGlobalModelResponse struct {
 	BaseResponse                               // Common response fields
-	Response     DeleteGlobalModelResponseData `json:"response"` //
+	Response     DeleteGlobalModelResponseData `json:"response"` // Response data
 }
 type DeleteGlobalModelResponseData struct {
 	GlobalModelId int64      `json:"global_model_id"` // [Required] Global model id.
@@ -128,17 +128,13 @@ type DeleteGlobalModelResponseData struct {
 type DtsLimit struct {
 	DaysToShipRangeList []StockLimit `json:"days_to_ship_range_list"` // [Required] <p>Allowed limit scope for Pre order</p>
 }
-type FailureDeleteItem struct {
-	ShopId int64 `json:"shop_id"` // [Required] The id of shop corresponding to the related item failed to delete.
-	ItemId int64 `json:"item_id"` // [Required] The id of related item failed to delete.
-}
 type GetAttributeTreeRequest struct {
 	CategoryIdList []int64 `json:"category_id_list" url:"category_id_list"`     // [Required] <p>Max count is 20</p>
 	Language       *string `json:"language,omitempty" url:"language,omitempty"` // [Optional] <p>Language</p><p>Support Lanuage:</p><p>"SG": [ "en", "zh-Hans", "ms" ],&nbsp;</p><p>"MY": [ "en", "zh-Hans", "ms" ],</p><p>"PH": [ "en", "zh-Hans" ],</p><p>"VN": [ "vn", "en" ],</p><p>"ID": [ "id", "en" ],</p><p>"TH": [ "th", "en" ],</p><p>"BR": [ "pt-BR", "en" ],</p><p>"MX": [ "es-MX", "en" ],</p><p>"CO": [ "es-CO", "en" ],</p><p>"CL": [ "es-CL", "en" ],</p><p>"TW": [ "zh-Hant", "zh-Hans", "en" ],</p><p>"IN": [ "en", "hi" ]</p>
 }
 type GetAttributeTreeResponse struct {
 	BaseResponse                              // Common response fields
-	Response     GetAttributeTreeResponseData `json:"response"` // <p>Resopnse<br /></p>
+	Response     GetAttributeTreeResponseData `json:"response"` // Response data
 }
 type GetAttributeTreeResponseData struct {
 	List []GetAttributeTreeResponseDataList `json:"list"` // [Required] <p>Each result corresponds to one category in category_ids<br /></p>
@@ -156,7 +152,7 @@ type GetBrandListRequest struct {
 }
 type GetBrandListResponse struct {
 	BaseResponse                          // Common response fields
-	Response     GetBrandListResponseData `json:"response"` //
+	Response     GetBrandListResponseData `json:"response"` // Response data
 }
 type GetBrandListResponseData struct {
 	BrandList   []ResponseDataBrand `json:"brand_list"`    // [Required]
@@ -170,7 +166,7 @@ type GetCategoryRequest struct {
 }
 type GetCategoryResponse struct {
 	BaseResponse                         // Common response fields
-	Response     GetCategoryResponseData `json:"response"` //
+	Response     GetCategoryResponseData `json:"response"` // Response data
 }
 type GetCategoryResponseData struct {
 	CategoryList []Category `json:"category_list"` // [Required]
@@ -180,7 +176,7 @@ type GetGlobalItemIdRequest struct {
 }
 type GetGlobalItemIdResponse struct {
 	BaseResponse                             // Common response fields
-	Response     GetGlobalItemIdResponseData `json:"response"` //
+	Response     GetGlobalItemIdResponseData `json:"response"` // Response data
 }
 type GetGlobalItemIdResponseData struct {
 	ItemIdMap []ItemIdMap `json:"item_id_map"` // [Required]
@@ -190,7 +186,7 @@ type GetGlobalItemInfoRequest struct {
 }
 type GetGlobalItemInfoResponse struct {
 	BaseResponse                               // Common response fields
-	Response     GetGlobalItemInfoResponseData `json:"response"` //
+	Response     GetGlobalItemInfoResponseData `json:"response"` // Response data
 }
 type GetGlobalItemInfoResponseData struct {
 	GlobalItemList []GlobalItem `json:"global_item_list"` // [Required]
@@ -200,7 +196,7 @@ type GetGlobalItemLimitRequest struct {
 }
 type GetGlobalItemLimitResponse struct {
 	BaseResponse                                  // Common response fields
-	Response       GetGlobalItemLimitResponseData `json:"response"`                   //
+	Response       GetGlobalItemLimitResponseData `json:"response"`                   // Response data
 	SizeChartLimit *SizeChartLimit                `json:"size_chart_limit,omitempty"` //
 }
 type GetGlobalItemLimitResponseData struct {
@@ -225,7 +221,7 @@ type GetGlobalItemListRequest struct {
 }
 type GetGlobalItemListResponse struct {
 	BaseResponse                               // Common response fields
-	Response     GetGlobalItemListResponseData `json:"response"` //
+	Response     GetGlobalItemListResponseData `json:"response"` // Response data
 }
 type GetGlobalItemListResponseData struct {
 	GlobalItemList []ResponseDataGlobalItem `json:"global_item_list"` // [Required]
@@ -238,7 +234,7 @@ type GetGlobalModelListRequest struct {
 }
 type GetGlobalModelListResponse struct {
 	BaseResponse                                // Common response fields
-	Response     GetGlobalModelListResponseData `json:"response"` //
+	Response     GetGlobalModelListResponseData `json:"response"` // Response data
 }
 type GetGlobalModelListResponseData struct {
 	TierVariation            []TierVariation                        `json:"tier_variation"`             // [Required] Tier variation information of global item.
@@ -247,7 +243,7 @@ type GetGlobalModelListResponseData struct {
 }
 type GetLocalAdjustmentRateResponse struct {
 	BaseResponse                                    // Common response fields
-	Response     GetLocalAdjustmentRateResponseData `json:"response"` //
+	Response     GetLocalAdjustmentRateResponseData `json:"response"` // Response data
 }
 type GetLocalAdjustmentRateResponseData struct {
 	LocalAdjustmentRate float64 `json:"local_adjustment_rate"` // [Required] <p>The multiplier used to adjust the cross-border original price to local price</p>
@@ -258,7 +254,7 @@ type GetPublishableShopRequest struct {
 }
 type GetPublishableShopResponse struct {
 	BaseResponse                                // Common response fields
-	Response     GetPublishableShopResponseData `json:"response"` //
+	Response     GetPublishableShopResponseData `json:"response"` // Response data
 }
 type GetPublishableShopResponseData struct {
 	PublishableShop []PublishableShop `json:"publishable_shop"` // [Required] Detail of publishable shops.
@@ -269,7 +265,7 @@ type GetPublishedListRequest struct {
 }
 type GetPublishedListResponse struct {
 	BaseResponse                              // Common response fields
-	Response     GetPublishedListResponseData `json:"response"` //
+	Response     GetPublishedListResponseData `json:"response"` // Response data
 }
 type GetPublishedListResponseData struct {
 	PublishedItem []PublishedItem `json:"published_item"` // [Required] Detail of published items.
@@ -279,7 +275,7 @@ type GetPublishTaskResultRequest struct {
 }
 type GetPublishTaskResultResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     GetPublishTaskResultResponseData `json:"response"` //
+	Response     GetPublishTaskResultResponseData `json:"response"` // Response data
 }
 type GetPublishTaskResultResponseData struct {
 	PublishStatus string                                  `json:"publish_status"` // [Required] Status of publish task.
@@ -296,7 +292,7 @@ type GetRecommendAttributeRequest struct {
 }
 type GetRecommendAttributeResponse struct {
 	BaseResponse                                   // Common response fields
-	Response     GetRecommendAttributeResponseData `json:"response"` //
+	Response     GetRecommendAttributeResponseData `json:"response"` // Response data
 }
 type GetRecommendAttributeResponseData struct {
 	AttributeList []ResponseDataAttribute `json:"attribute_list"` // [Required] Attribute info list.
@@ -308,7 +304,7 @@ type GetShopPublishableStatusRequest struct {
 }
 type GetShopPublishableStatusResponse struct {
 	BaseResponse                                      // Common response fields
-	Response     GetShopPublishableStatusResponseData `json:"response"` // <p>Detail informations you are querying.<br /></p>
+	Response     GetShopPublishableStatusResponseData `json:"response"` // Response data
 }
 type GetShopPublishableStatusResponseData struct {
 	ShopPublishableStatusList []ShopPublishableStatus `json:"shop_publishable_status_list"` // [Required] <p>Detail of publishable shops.<br /></p>
@@ -321,7 +317,7 @@ type GetSizeChartDetailRequest struct {
 }
 type GetSizeChartDetailResponse struct {
 	BaseResponse                                // Common response fields
-	Response     GetSizeChartDetailResponseData `json:"response"` //
+	Response     GetSizeChartDetailResponseData `json:"response"` // Response data
 }
 type GetSizeChartDetailResponseData struct {
 	SizeChartId    int64           `json:"size_chart_id"`    // [Required] <p>ID of new size chart<br /></p>
@@ -335,7 +331,7 @@ type GetSizeChartListRequest struct {
 }
 type GetSizeChartListResponse struct {
 	BaseResponse                              // Common response fields
-	Response     GetSizeChartListResponseData `json:"response"` //
+	Response     GetSizeChartListResponseData `json:"response"` // Response data
 }
 type GetSizeChartListResponseData struct {
 	SizeChartList []SizeChart `json:"size_chart_list"` // [Required]
@@ -469,9 +465,9 @@ type SearchGlobalAttributeValueListRequest struct {
 }
 type SearchGlobalAttributeValueListResponse struct {
 	BaseResponse                                            // Common response fields
+	Response     SearchGlobalAttributeValueListResponseData `json:"response"`                // Response data
 	DebugMessage string                                     `json:"debug_message,omitempty"` //
 	Msg          string                                     `json:"msg,omitempty"`           //
-	Response     SearchGlobalAttributeValueListResponseData `json:"response"`                //
 }
 type SearchGlobalAttributeValueListResponseData struct {
 	ValueList []Value   `json:"value_list"` // [Required]
@@ -490,6 +486,7 @@ type ShopPublishableStatus struct {
 	UnpublishableReason   string `json:"unpublishable_reason"`    // [Required] <p>Return the unpublishable reason. If the shop is publishable, will return empty for this field.<br /></p>
 }
 type ShopSync struct {
+	ShopId                     int64  `json:"shop_id"`                        // [Required] Id of shop.
 	ShopRegion                 string `json:"shop_region"`                    // [Required] TW TH MY BR IN SG VN
 	NameAndDescription         bool   `json:"name_and_description"`           // [Required] sync name and description
 	MediaInformation           bool   `json:"media_information"`              // [Required] sync media information
@@ -512,7 +509,7 @@ type SupportSizeChartRequest struct {
 }
 type SupportSizeChartResponse struct {
 	BaseResponse                              // Common response fields
-	Response     SupportSizeChartResponseData `json:"response"` //
+	Response     SupportSizeChartResponseData `json:"response"` // Response data
 }
 type SupportSizeChartResponseData struct {
 	SupportSizeChart bool `json:"support_size_chart"` // [Required] If category support size chart.
@@ -537,7 +534,7 @@ type UpdateGlobalItemRequest struct {
 }
 type UpdateGlobalItemResponse struct {
 	BaseResponse                              // Common response fields
-	Response     UpdateGlobalItemResponseData `json:"response"` //
+	Response     UpdateGlobalItemResponseData `json:"response"` // Response data
 }
 type UpdateGlobalItemResponseData struct {
 	GlobalItemId int64 `json:"global_item_id"` // [Required] Id of updated global item.

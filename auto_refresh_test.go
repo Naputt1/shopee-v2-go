@@ -49,7 +49,7 @@ func TestAutoTokenRefresh(t *testing.T) {
 		}
 	}
 
-	res, err := client.Shop.GetShopInfo(context.Background(), shopID, accessToken)
+	res, err := client.Shop.GetShopInfo(context.Background(), shopID, 0, accessToken)
 	if err != nil {
 		t.Fatalf("Expected no error, got %v", err)
 	}

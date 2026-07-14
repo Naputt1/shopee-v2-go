@@ -13,7 +13,7 @@ type AddFollowPrizeRequest struct {
 }
 type AddFollowPrizeResponse struct {
 	BaseResponse                            // Common response fields
-	Response     AddFollowPrizeResponseData `json:"response"` // <p>Detailed informations you are querying.<br /></p>
+	Response     AddFollowPrizeResponseData `json:"response"` // Response data
 }
 type AddFollowPrizeResponseData struct {
 	CampaginId int64 `json:"campagin_id"` // [Required] <p>The unique identifier for the created follow prize.<br /></p>
@@ -23,7 +23,7 @@ type DeleteFollowPrizeRequest struct {
 }
 type DeleteFollowPrizeResponse struct {
 	BaseResponse                               // Common response fields
-	Response     DeleteFollowPrizeResponseData `json:"response"` // <p>Detailed informations you are querying.<br /></p>
+	Response     DeleteFollowPrizeResponseData `json:"response"` // Response data
 }
 type DeleteFollowPrizeResponseData struct {
 	CampaginId int64 `json:"campagin_id"` // [Required] <p>The unique identifier for the created follow prize.<br /></p>
@@ -33,7 +33,7 @@ type EndFollowPrizeRequest struct {
 }
 type EndFollowPrizeResponse struct {
 	BaseResponse                            // Common response fields
-	Response     EndFollowPrizeResponseData `json:"response"` // <p>Detailed informations you are querying.<br /></p>
+	Response     EndFollowPrizeResponseData `json:"response"` // Response data
 }
 type EndFollowPrizeResponseData struct {
 	CampaignId int64 `json:"campaign_id"` // [Required] <p>The unique identifier for the created follow prize.<br /></p>
@@ -52,7 +52,7 @@ type GetFollowPrizeDetailRequest struct {
 }
 type GetFollowPrizeDetailResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     GetFollowPrizeDetailResponseData `json:"response"` // <p>Detailed informations you are querying.<br /></p>
+	Response     GetFollowPrizeDetailResponseData `json:"response"` // Response data
 }
 type GetFollowPrizeDetailResponseData struct {
 	CampaignStatus  CampaignStatus `json:"campaign_status"`   // [Required] <p>The status of follow prize,the campagin status have upcoming/ongoing/expired.<br /></p>
@@ -74,7 +74,7 @@ type GetFollowPrizeListRequest struct {
 }
 type GetFollowPrizeListResponse struct {
 	BaseResponse                                // Common response fields
-	Response     GetFollowPrizeListResponseData `json:"response"` // <p>Detailed informations you are querying.<br /></p>
+	Response     GetFollowPrizeListResponseData `json:"response"` // Response data
 }
 type GetFollowPrizeListResponseData struct {
 	More            bool         `json:"more"`              // [Required] <p>This is to indicate whether the comment list is more than one page. If this value is true, you may want to continue to check next page to retrieve the rest of comments.<br /></p>
@@ -90,7 +90,7 @@ type UpdateFollowPrizeRequest struct {
 }
 type UpdateFollowPrizeResponse struct {
 	BaseResponse                               // Common response fields
-	Response     UpdateFollowPrizeResponseData `json:"response"` // <p>Detailed informations you are querying.<br /></p>
+	Response     UpdateFollowPrizeResponseData `json:"response"` // Response data
 }
 type UpdateFollowPrizeResponseData struct {
 	CampaginId int64 `json:"campagin_id"` // [Required] <p>The unique identifier for the created follow prize.<br /></p>

@@ -35,7 +35,7 @@ type GetLateOrdersRequest struct {
 }
 type GetLateOrdersResponse struct {
 	BaseResponse                           // Common response fields
-	Response     GetLateOrdersResponseData `json:"response"` //
+	Response     GetLateOrdersResponseData `json:"response"` // Response data
 }
 type GetLateOrdersResponseData struct {
 	LateOrderList []LateOrder `json:"late_order_list"` // [Required] <p>Late Orders.</p>
@@ -47,7 +47,7 @@ type GetListingsWithIssuesRequest struct {
 }
 type GetListingsWithIssuesResponse struct {
 	BaseResponse                                   // Common response fields
-	Response     GetListingsWithIssuesResponseData `json:"response"` //
+	Response     GetListingsWithIssuesResponseData `json:"response"` // Response data
 }
 type GetListingsWithIssuesResponseData struct {
 	ListingList []Listing `json:"listing_list"` // [Required] <p>Listing with issues.</p>
@@ -60,7 +60,7 @@ type GetMetricSourceDetailRequest struct {
 }
 type GetMetricSourceDetailResponse struct {
 	BaseResponse                                   // Common response fields
-	Response     GetMetricSourceDetailResponseData `json:"response"` //
+	Response     GetMetricSourceDetailResponseData `json:"response"` // Response data
 }
 type GetMetricSourceDetailResponseData struct {
 	MetricId                         int64                          `json:"metric_id"`                             // [Required] <p>ID of metric.</p>
@@ -88,7 +88,7 @@ type GetPenaltyPointHistoryRequest struct {
 }
 type GetPenaltyPointHistoryResponse struct {
 	BaseResponse                                    // Common response fields
-	Response     GetPenaltyPointHistoryResponseData `json:"response"` //
+	Response     GetPenaltyPointHistoryResponseData `json:"response"` // Response data
 }
 type GetPenaltyPointHistoryResponseData struct {
 	PenaltyPointList []PenaltyPoint `json:"penalty_point_list"` // [Required] <p>The penalty point records generated in the current quarter.<br /></p>
@@ -101,7 +101,7 @@ type GetPunishmentHistoryRequest struct {
 }
 type GetPunishmentHistoryResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     GetPunishmentHistoryResponseData `json:"response"` //
+	Response     GetPunishmentHistoryResponseData `json:"response"` // Response data
 }
 type GetPunishmentHistoryResponseData struct {
 	PunishmentList []Punishment `json:"punishment_list"` // [Required] <p>The punishment records generated in the current quarter.<br /></p>
@@ -109,7 +109,7 @@ type GetPunishmentHistoryResponseData struct {
 }
 type GetShopPerformanceResponse struct {
 	BaseResponse                                // Common response fields
-	Response     GetShopPerformanceResponseData `json:"response"` //
+	Response     GetShopPerformanceResponseData `json:"response"` // Response data
 }
 type GetShopPerformanceResponseData struct {
 	OverallPerformance *OverallPerformance `json:"overall_performance"` // [Required]

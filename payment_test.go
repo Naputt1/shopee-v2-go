@@ -26,7 +26,7 @@ func Test_Payment_GenerateIncomeReport(t *testing.T) {
 
 	var req GenerateIncomeReportRequest
 	ctx := context.Background()
-	res, err := client.Payment.GenerateIncomeReport(ctx, shopID, req, accessToken)
+	res, err := client.Payment.GenerateIncomeReport(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Payment.GenerateIncomeReport returned error (possibly expected with mock data): %s", err)
 	}
@@ -51,7 +51,7 @@ func Test_Payment_GenerateIncomeStatement(t *testing.T) {
 
 	var req GenerateIncomeStatementRequest
 	ctx := context.Background()
-	res, err := client.Payment.GenerateIncomeStatement(ctx, shopID, req, accessToken)
+	res, err := client.Payment.GenerateIncomeStatement(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Payment.GenerateIncomeStatement returned error (possibly expected with mock data): %s", err)
 	}
@@ -76,7 +76,7 @@ func Test_Payment_GetBillingTransactionInfo(t *testing.T) {
 
 	var req GetBillingTransactionInfoRequest
 	ctx := context.Background()
-	res, err := client.Payment.GetBillingTransactionInfo(ctx, shopID, req, accessToken)
+	res, err := client.Payment.GetBillingTransactionInfo(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Payment.GetBillingTransactionInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -101,7 +101,7 @@ func Test_Payment_GetEscrowDetail(t *testing.T) {
 
 	var req GetEscrowDetailRequest
 	ctx := context.Background()
-	res, err := client.Payment.GetEscrowDetail(ctx, shopID, req, accessToken)
+	res, err := client.Payment.GetEscrowDetail(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Payment.GetEscrowDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -126,7 +126,7 @@ func Test_Payment_GetEscrowDetailBatch(t *testing.T) {
 
 	var req GetEscrowDetailBatchRequest
 	ctx := context.Background()
-	res, err := client.Payment.GetEscrowDetailBatch(ctx, shopID, req, accessToken)
+	res, err := client.Payment.GetEscrowDetailBatch(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Payment.GetEscrowDetailBatch returned error (possibly expected with mock data): %s", err)
 	}
@@ -151,7 +151,7 @@ func Test_Payment_GetEscrowList(t *testing.T) {
 
 	var req GetEscrowListRequest
 	ctx := context.Background()
-	res, err := client.Payment.GetEscrowList(ctx, shopID, req, accessToken)
+	res, err := client.Payment.GetEscrowList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Payment.GetEscrowList returned error (possibly expected with mock data): %s", err)
 	}
@@ -176,7 +176,7 @@ func Test_Payment_GetIncomeDetail(t *testing.T) {
 
 	var req GetIncomeDetailRequest
 	ctx := context.Background()
-	res, err := client.Payment.GetIncomeDetail(ctx, shopID, req, accessToken)
+	res, err := client.Payment.GetIncomeDetail(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Payment.GetIncomeDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -201,7 +201,7 @@ func Test_Payment_GetIncomeOverview(t *testing.T) {
 
 	var req GetIncomeOverviewRequest
 	ctx := context.Background()
-	res, err := client.Payment.GetIncomeOverview(ctx, shopID, req, accessToken)
+	res, err := client.Payment.GetIncomeOverview(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Payment.GetIncomeOverview returned error (possibly expected with mock data): %s", err)
 	}
@@ -226,7 +226,7 @@ func Test_Payment_GetIncomeReport(t *testing.T) {
 
 	var req GetIncomeReportRequest
 	ctx := context.Background()
-	res, err := client.Payment.GetIncomeReport(ctx, shopID, req, accessToken)
+	res, err := client.Payment.GetIncomeReport(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Payment.GetIncomeReport returned error (possibly expected with mock data): %s", err)
 	}
@@ -251,7 +251,7 @@ func Test_Payment_GetIncomeStatement(t *testing.T) {
 
 	var req GetIncomeStatementRequest
 	ctx := context.Background()
-	res, err := client.Payment.GetIncomeStatement(ctx, shopID, req, accessToken)
+	res, err := client.Payment.GetIncomeStatement(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Payment.GetIncomeStatement returned error (possibly expected with mock data): %s", err)
 	}
@@ -276,7 +276,7 @@ func Test_Payment_GetItemInstallmentStatus(t *testing.T) {
 
 	var req GetItemInstallmentStatusRequest
 	ctx := context.Background()
-	res, err := client.Payment.GetItemInstallmentStatus(ctx, shopID, req, accessToken)
+	res, err := client.Payment.GetItemInstallmentStatus(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Payment.GetItemInstallmentStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -300,7 +300,7 @@ func Test_Payment_GetPaymentMethodList(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/payment/get_payment_method_list", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Payment.GetPaymentMethodList(ctx, shopID, accessToken)
+	res, err := client.Payment.GetPaymentMethodList(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("Payment.GetPaymentMethodList returned error (possibly expected with mock data): %s", err)
 	}
@@ -325,7 +325,7 @@ func Test_Payment_GetPayoutDetail(t *testing.T) {
 
 	var req GetPayoutDetailRequest
 	ctx := context.Background()
-	res, err := client.Payment.GetPayoutDetail(ctx, shopID, req, accessToken)
+	res, err := client.Payment.GetPayoutDetail(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Payment.GetPayoutDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -350,7 +350,7 @@ func Test_Payment_GetPayoutInfo(t *testing.T) {
 
 	var req GetPayoutInfoRequest
 	ctx := context.Background()
-	res, err := client.Payment.GetPayoutInfo(ctx, shopID, req, accessToken)
+	res, err := client.Payment.GetPayoutInfo(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Payment.GetPayoutInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -374,7 +374,7 @@ func Test_Payment_GetShopInstallmentStatus(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/payment/get_shop_installment_status", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.Payment.GetShopInstallmentStatus(ctx, shopID, accessToken)
+	res, err := client.Payment.GetShopInstallmentStatus(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("Payment.GetShopInstallmentStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -399,7 +399,7 @@ func Test_Payment_GetWalletTransactionList(t *testing.T) {
 
 	var req GetWalletTransactionListRequest
 	ctx := context.Background()
-	res, err := client.Payment.GetWalletTransactionList(ctx, shopID, req, accessToken)
+	res, err := client.Payment.GetWalletTransactionList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Payment.GetWalletTransactionList returned error (possibly expected with mock data): %s", err)
 	}
@@ -424,7 +424,7 @@ func Test_Payment_SetItemInstallmentStatus(t *testing.T) {
 
 	var req SetItemInstallmentStatusRequest
 	ctx := context.Background()
-	res, err := client.Payment.SetItemInstallmentStatus(ctx, shopID, req, accessToken)
+	res, err := client.Payment.SetItemInstallmentStatus(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Payment.SetItemInstallmentStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -449,7 +449,7 @@ func Test_Payment_SetShopInstallmentStatus(t *testing.T) {
 
 	var req SetShopInstallmentStatusRequest
 	ctx := context.Background()
-	res, err := client.Payment.SetShopInstallmentStatus(ctx, shopID, req, accessToken)
+	res, err := client.Payment.SetShopInstallmentStatus(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Payment.SetShopInstallmentStatus returned error (possibly expected with mock data): %s", err)
 	}

@@ -26,7 +26,7 @@ func Test_BundleDeal_AddBundleDeal(t *testing.T) {
 
 	var req AddBundleDealRequest
 	ctx := context.Background()
-	res, err := client.BundleDeal.AddBundleDeal(ctx, shopID, req, accessToken)
+	res, err := client.BundleDeal.AddBundleDeal(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("BundleDeal.AddBundleDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -51,7 +51,7 @@ func Test_BundleDeal_AddBundleDealItem(t *testing.T) {
 
 	var req AddBundleDealItemRequest
 	ctx := context.Background()
-	res, err := client.BundleDeal.AddBundleDealItem(ctx, shopID, req, accessToken)
+	res, err := client.BundleDeal.AddBundleDealItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("BundleDeal.AddBundleDealItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -76,7 +76,7 @@ func Test_BundleDeal_DeleteBundleDeal(t *testing.T) {
 
 	var req DeleteBundleDealRequest
 	ctx := context.Background()
-	res, err := client.BundleDeal.DeleteBundleDeal(ctx, shopID, req, accessToken)
+	res, err := client.BundleDeal.DeleteBundleDeal(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("BundleDeal.DeleteBundleDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -101,7 +101,7 @@ func Test_BundleDeal_DeleteBundleDealItem(t *testing.T) {
 
 	var req DeleteBundleDealItemRequest
 	ctx := context.Background()
-	res, err := client.BundleDeal.DeleteBundleDealItem(ctx, shopID, req, accessToken)
+	res, err := client.BundleDeal.DeleteBundleDealItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("BundleDeal.DeleteBundleDealItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -126,7 +126,7 @@ func Test_BundleDeal_EndBundleDeal(t *testing.T) {
 
 	var req EndBundleDealRequest
 	ctx := context.Background()
-	res, err := client.BundleDeal.EndBundleDeal(ctx, shopID, req, accessToken)
+	res, err := client.BundleDeal.EndBundleDeal(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("BundleDeal.EndBundleDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -151,7 +151,7 @@ func Test_BundleDeal_GetBundleDeal(t *testing.T) {
 
 	var req GetBundleDealRequest
 	ctx := context.Background()
-	res, err := client.BundleDeal.GetBundleDeal(ctx, shopID, req, accessToken)
+	res, err := client.BundleDeal.GetBundleDeal(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("BundleDeal.GetBundleDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -176,7 +176,7 @@ func Test_BundleDeal_GetBundleDealItem(t *testing.T) {
 
 	var req GetBundleDealItemRequest
 	ctx := context.Background()
-	res, err := client.BundleDeal.GetBundleDealItem(ctx, shopID, req, accessToken)
+	res, err := client.BundleDeal.GetBundleDealItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("BundleDeal.GetBundleDealItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -201,7 +201,7 @@ func Test_BundleDeal_GetBundleDealList(t *testing.T) {
 
 	var req GetBundleDealListRequest
 	ctx := context.Background()
-	res, err := client.BundleDeal.GetBundleDealList(ctx, shopID, req, accessToken)
+	res, err := client.BundleDeal.GetBundleDealList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("BundleDeal.GetBundleDealList returned error (possibly expected with mock data): %s", err)
 	}
@@ -226,7 +226,7 @@ func Test_BundleDeal_UpdateBundleDeal(t *testing.T) {
 
 	var req UpdateBundleDealRequest
 	ctx := context.Background()
-	res, err := client.BundleDeal.UpdateBundleDeal(ctx, shopID, req, accessToken)
+	res, err := client.BundleDeal.UpdateBundleDeal(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("BundleDeal.UpdateBundleDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -251,7 +251,7 @@ func Test_BundleDeal_UpdateBundleDealItem(t *testing.T) {
 
 	var req UpdateBundleDealItemRequest
 	ctx := context.Background()
-	res, err := client.BundleDeal.UpdateBundleDealItem(ctx, shopID, req, accessToken)
+	res, err := client.BundleDeal.UpdateBundleDealItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("BundleDeal.UpdateBundleDealItem returned error (possibly expected with mock data): %s", err)
 	}

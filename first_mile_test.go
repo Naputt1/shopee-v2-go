@@ -26,7 +26,7 @@ func Test_FirstMile_BindCourierDeliveryFirstMileTrackingNumber(t *testing.T) {
 
 	var req BindCourierDeliveryFirstMileTrackingNumberRequest
 	ctx := context.Background()
-	res, err := client.FirstMile.BindCourierDeliveryFirstMileTrackingNumber(ctx, shopID, req, accessToken)
+	res, err := client.FirstMile.BindCourierDeliveryFirstMileTrackingNumber(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FirstMile.BindCourierDeliveryFirstMileTrackingNumber returned error (possibly expected with mock data): %s", err)
 	}
@@ -51,7 +51,7 @@ func Test_FirstMile_BindFirstMileTrackingNumber(t *testing.T) {
 
 	var req BindFirstMileTrackingNumberRequest
 	ctx := context.Background()
-	res, err := client.FirstMile.BindFirstMileTrackingNumber(ctx, shopID, req, accessToken)
+	res, err := client.FirstMile.BindFirstMileTrackingNumber(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FirstMile.BindFirstMileTrackingNumber returned error (possibly expected with mock data): %s", err)
 	}
@@ -76,7 +76,7 @@ func Test_FirstMile_GenerateAndBindFirstMileTrackingNumber(t *testing.T) {
 
 	var req GenerateAndBindFirstMileTrackingNumberRequest
 	ctx := context.Background()
-	res, err := client.FirstMile.GenerateAndBindFirstMileTrackingNumber(ctx, shopID, req, accessToken)
+	res, err := client.FirstMile.GenerateAndBindFirstMileTrackingNumber(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FirstMile.GenerateAndBindFirstMileTrackingNumber returned error (possibly expected with mock data): %s", err)
 	}
@@ -101,7 +101,7 @@ func Test_FirstMile_GenerateFirstMileTrackingNumber(t *testing.T) {
 
 	var req GenerateFirstMileTrackingNumberRequest
 	ctx := context.Background()
-	res, err := client.FirstMile.GenerateFirstMileTrackingNumber(ctx, shopID, req, accessToken)
+	res, err := client.FirstMile.GenerateFirstMileTrackingNumber(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FirstMile.GenerateFirstMileTrackingNumber returned error (possibly expected with mock data): %s", err)
 	}
@@ -126,7 +126,7 @@ func Test_FirstMile_GetChannelList(t *testing.T) {
 
 	var req GetChannelListRequest
 	ctx := context.Background()
-	res, err := client.FirstMile.GetChannelList(ctx, shopID, req, accessToken)
+	res, err := client.FirstMile.GetChannelList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FirstMile.GetChannelList returned error (possibly expected with mock data): %s", err)
 	}
@@ -151,7 +151,7 @@ func Test_FirstMile_GetCourierDeliveryChannelList(t *testing.T) {
 
 	var req GetCourierDeliveryChannelListRequest
 	ctx := context.Background()
-	res, err := client.FirstMile.GetCourierDeliveryChannelList(ctx, shopID, req, accessToken)
+	res, err := client.FirstMile.GetCourierDeliveryChannelList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FirstMile.GetCourierDeliveryChannelList returned error (possibly expected with mock data): %s", err)
 	}
@@ -176,7 +176,7 @@ func Test_FirstMile_GetCourierDeliveryDetail(t *testing.T) {
 
 	var req GetCourierDeliveryDetailRequest
 	ctx := context.Background()
-	res, err := client.FirstMile.GetCourierDeliveryDetail(ctx, shopID, req, accessToken)
+	res, err := client.FirstMile.GetCourierDeliveryDetail(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FirstMile.GetCourierDeliveryDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -201,7 +201,7 @@ func Test_FirstMile_GetCourierDeliveryTrackingNumberList(t *testing.T) {
 
 	var req GetCourierDeliveryTrackingNumberListRequest
 	ctx := context.Background()
-	res, err := client.FirstMile.GetCourierDeliveryTrackingNumberList(ctx, shopID, req, accessToken)
+	res, err := client.FirstMile.GetCourierDeliveryTrackingNumberList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FirstMile.GetCourierDeliveryTrackingNumberList returned error (possibly expected with mock data): %s", err)
 	}
@@ -226,7 +226,7 @@ func Test_FirstMile_GetCourierDeliveryWaybill(t *testing.T) {
 
 	var req GetCourierDeliveryWaybillRequest
 	ctx := context.Background()
-	res, err := client.FirstMile.GetCourierDeliveryWaybill(ctx, shopID, req, accessToken)
+	res, err := client.FirstMile.GetCourierDeliveryWaybill(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FirstMile.GetCourierDeliveryWaybill returned error (possibly expected with mock data): %s", err)
 	}
@@ -251,7 +251,7 @@ func Test_FirstMile_GetDetail(t *testing.T) {
 
 	var req GetDetailRequest
 	ctx := context.Background()
-	res, err := client.FirstMile.GetDetail(ctx, shopID, req, accessToken)
+	res, err := client.FirstMile.GetDetail(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FirstMile.GetDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -276,7 +276,7 @@ func Test_FirstMile_GetTrackingNumberList(t *testing.T) {
 
 	var req GetTrackingNumberListRequest
 	ctx := context.Background()
-	res, err := client.FirstMile.GetTrackingNumberList(ctx, shopID, req, accessToken)
+	res, err := client.FirstMile.GetTrackingNumberList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FirstMile.GetTrackingNumberList returned error (possibly expected with mock data): %s", err)
 	}
@@ -301,7 +301,7 @@ func Test_FirstMile_GetTransitWarehouseList(t *testing.T) {
 
 	var req GetTransitWarehouseListRequest
 	ctx := context.Background()
-	res, err := client.FirstMile.GetTransitWarehouseList(ctx, shopID, req, accessToken)
+	res, err := client.FirstMile.GetTransitWarehouseList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FirstMile.GetTransitWarehouseList returned error (possibly expected with mock data): %s", err)
 	}
@@ -326,7 +326,7 @@ func Test_FirstMile_GetUnbindOrderList(t *testing.T) {
 
 	var req GetUnbindOrderListRequest
 	ctx := context.Background()
-	res, err := client.FirstMile.GetUnbindOrderList(ctx, shopID, req, accessToken)
+	res, err := client.FirstMile.GetUnbindOrderList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FirstMile.GetUnbindOrderList returned error (possibly expected with mock data): %s", err)
 	}
@@ -351,7 +351,7 @@ func Test_FirstMile_GetWaybill(t *testing.T) {
 
 	var req GetWaybillRequest
 	ctx := context.Background()
-	res, err := client.FirstMile.GetWaybill(ctx, shopID, req, accessToken)
+	res, err := client.FirstMile.GetWaybill(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FirstMile.GetWaybill returned error (possibly expected with mock data): %s", err)
 	}
@@ -376,7 +376,7 @@ func Test_FirstMile_UnbindFirstMileTrackingNumber(t *testing.T) {
 
 	var req UnbindFirstMileTrackingNumberRequest
 	ctx := context.Background()
-	res, err := client.FirstMile.UnbindFirstMileTrackingNumber(ctx, shopID, req, accessToken)
+	res, err := client.FirstMile.UnbindFirstMileTrackingNumber(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FirstMile.UnbindFirstMileTrackingNumber returned error (possibly expected with mock data): %s", err)
 	}
@@ -401,7 +401,7 @@ func Test_FirstMile_UnbindFirstMileTrackingNumberAll(t *testing.T) {
 
 	var req UnbindFirstMileTrackingNumberAllRequest
 	ctx := context.Background()
-	res, err := client.FirstMile.UnbindFirstMileTrackingNumberAll(ctx, shopID, req, accessToken)
+	res, err := client.FirstMile.UnbindFirstMileTrackingNumberAll(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FirstMile.UnbindFirstMileTrackingNumberAll returned error (possibly expected with mock data): %s", err)
 	}

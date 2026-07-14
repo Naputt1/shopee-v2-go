@@ -36,7 +36,7 @@ type AddItemRequest struct {
 }
 type AddItemResponse struct {
 	BaseResponse                     // Common response fields
-	Response     AddItemResponseData `json:"response"` //
+	Response     AddItemResponseData `json:"response"` // Response data
 }
 type AddItemResponseData struct {
 	Description     string                 `json:"description"`      // [Required] Description of item
@@ -67,7 +67,7 @@ type AddKitItemRequest struct {
 }
 type AddKitItemResponse struct {
 	BaseResponse                        // Common response fields
-	Response     AddKitItemResponseData `json:"response"` //
+	Response     AddKitItemResponseData `json:"response"` // Response data
 }
 type AddKitItemResponseData struct {
 	ItemId int64 `json:"item_id"` // [Required]
@@ -88,7 +88,7 @@ type AddModelRequestModel struct {
 }
 type AddModelResponse struct {
 	BaseResponse                      // Common response fields
-	Response     AddModelResponseData `json:"response"` //
+	Response     AddModelResponseData `json:"response"` // Response data
 }
 type AddModelResponseData struct {
 	Model []ResponseDataModel `json:"model"` // [Required]
@@ -165,7 +165,7 @@ type BatchAddItemRequestItem struct {
 }
 type BatchAddItemResponse struct {
 	BaseResponse                          // Common response fields
-	Response     BatchAddItemResponseData `json:"response"` //
+	Response     BatchAddItemResponseData `json:"response"` // Response data
 }
 type BatchAddItemResponseData struct {
 	TaskId int64 `json:"task_id"` // [Required] <p>The task ID of the batch add item task.</p>
@@ -180,7 +180,7 @@ type BatchPublishItemToOutletShopRequestItem struct {
 }
 type BatchPublishItemToOutletShopResponse struct {
 	BaseResponse                                          // Common response fields
-	Response     BatchPublishItemToOutletShopResponseData `json:"response"` //
+	Response     BatchPublishItemToOutletShopResponseData `json:"response"` // Response data
 }
 type BatchPublishItemToOutletShopResponseData struct {
 	TaskId int64 `json:"task_id"` // [Required] <p>The task ID of the batch publish outlet item task.</p>
@@ -195,7 +195,7 @@ type BatchUpdateOutletPriceRequestItem struct {
 }
 type BatchUpdateOutletPriceResponse struct {
 	BaseResponse                                    // Common response fields
-	Response     BatchUpdateOutletPriceResponseData `json:"response"` //
+	Response     BatchUpdateOutletPriceResponseData `json:"response"` // Response data
 }
 type BatchUpdateOutletPriceResponseData struct {
 	TaskId int64 `json:"task_id"` // [Required] <p>The task ID of the batch update price task.</p>
@@ -210,7 +210,7 @@ type BatchUpdateOutletStockRequestItem struct {
 }
 type BatchUpdateOutletStockResponse struct {
 	BaseResponse                                    // Common response fields
-	Response     BatchUpdateOutletStockResponseData `json:"response"` //
+	Response     BatchUpdateOutletStockResponseData `json:"response"` // Response data
 }
 type BatchUpdateOutletStockResponseData struct {
 	TaskId int64 `json:"task_id"` // [Required] <p>The task ID of the batch update stock task.</p>
@@ -220,7 +220,7 @@ type BoostItemRequest struct {
 }
 type BoostItemResponse struct {
 	BaseResponse                       // Common response fields
-	Response     BoostItemResponseData `json:"response"` //
+	Response     BoostItemResponseData `json:"response"` // Response data
 }
 type BoostItemResponseData struct {
 	FailureList []Failure                     `json:"failure_list"` // [Required]
@@ -406,7 +406,7 @@ type GenerateKitImageRequest struct {
 }
 type GenerateKitImageResponse struct {
 	BaseResponse                              // Common response fields
-	Response     GenerateKitImageResponseData `json:"response"` //
+	Response     GenerateKitImageResponseData `json:"response"` // Response data
 }
 type GenerateKitImageResponseData struct {
 	KitImage string `json:"kit_image"` // [Required] <p>generated kit image</p>
@@ -416,7 +416,7 @@ type GetAitemByPitemIdRequest struct {
 }
 type GetAitemByPitemIdResponse struct {
 	BaseResponse                               // Common response fields
-	Response     GetAitemByPitemIdResponseData `json:"response"` //
+	Response     GetAitemByPitemIdResponseData `json:"response"` // Response data
 }
 type GetAitemByPitemIdResponseData struct {
 	AitemList []Aitem `json:"aitem_list"` // [Required]
@@ -428,7 +428,7 @@ type GetAllVehicleListRequest struct {
 }
 type GetAllVehicleListResponse struct {
 	BaseResponse                               // Common response fields
-	Response     GetAllVehicleListResponseData `json:"response"` //
+	Response     GetAllVehicleListResponseData `json:"response"` // Response data
 }
 type GetAllVehicleListResponseData struct {
 	VehicleList []Vehicle `json:"vehicle_list"`  // [Required]
@@ -441,7 +441,7 @@ type GetBatchTaskResultRequest struct {
 }
 type GetBatchTaskResultResponse struct {
 	BaseResponse                                // Common response fields
-	Response     GetBatchTaskResultResponseData `json:"response"` //
+	Response     GetBatchTaskResultResponseData `json:"response"` // Response data
 }
 type GetBatchTaskResultResponseData struct {
 	PublishStatus int64                                  `json:"publish_status"` // [Required] <p>The publish status. 1: ongoing; 2: finished.</p>
@@ -456,7 +456,7 @@ type GetBatchTaskResultResponseDataFailed struct {
 }
 type GetBoostedListResponse struct {
 	BaseResponse                            // Common response fields
-	Response     GetBoostedListResponseData `json:"response"` //
+	Response     GetBoostedListResponseData `json:"response"` // Response data
 }
 type GetBoostedListResponseData struct {
 	ItemList []GetBoostedListResponseDataItem `json:"item_list"` // [Required]
@@ -473,7 +473,7 @@ type GetCommentRequest struct {
 }
 type GetCommentResponse struct {
 	BaseResponse                        // Common response fields
-	Response     GetCommentResponseData `json:"response"` // Detail informations you are querying.
+	Response     GetCommentResponseData `json:"response"` // Response data
 }
 type GetCommentResponseData struct {
 	More            bool          `json:"more"`              // [Required] <p>This is to indicate whether the comment list is more than one page. If this value is true, you may want to continue to check next page to retrieve the rest of comments. But only respond 500 comments at most through OpenAPI, if there are more than 500, this field "more" also respond "true".</p>
@@ -485,7 +485,7 @@ type GetDirectItemListRequest struct {
 }
 type GetDirectItemListResponse struct {
 	BaseResponse                               // Common response fields
-	Response     GetDirectItemListResponseData `json:"response"` //
+	Response     GetDirectItemListResponseData `json:"response"` // Response data
 }
 type GetDirectItemListResponseData struct {
 	List []GetDirectItemListResponseDataList `json:"list"` // [Required]
@@ -509,7 +509,7 @@ type GetDirectShopRecommendedPriceRequestModel struct {
 }
 type GetDirectShopRecommendedPriceResponse struct {
 	BaseResponse                                           // Common response fields
-	Response     GetDirectShopRecommendedPriceResponseData `json:"response"` //
+	Response     GetDirectShopRecommendedPriceResponseData `json:"response"` // Response data
 }
 type GetDirectShopRecommendedPriceResponseData struct {
 	DirectItemPrice []DirectItemPrice `json:"direct_item_price"` // [Required]
@@ -521,7 +521,7 @@ type GetItemBaseInfoRequest struct {
 }
 type GetItemBaseInfoResponse struct {
 	BaseResponse                             // Common response fields
-	Response     GetItemBaseInfoResponseData `json:"response"` //
+	Response     GetItemBaseInfoResponseData `json:"response"` // Response data
 }
 type GetItemBaseInfoResponseData struct {
 	ItemList        []GetItemBaseInfoResponseDataItem `json:"item_list"`        // [Required]
@@ -574,7 +574,7 @@ type GetItemContentDiagnosisResultRequest struct {
 }
 type GetItemContentDiagnosisResultResponse struct {
 	BaseResponse                                           // Common response fields
-	Response     GetItemContentDiagnosisResultResponseData `json:"response"` //
+	Response     GetItemContentDiagnosisResultResponseData `json:"response"` // Response data
 }
 type GetItemContentDiagnosisResultResponseData struct {
 	SuccessItemList []SuccessItem `json:"success_item_list"` // [Required]
@@ -585,7 +585,7 @@ type GetItemExtraInfoRequest struct {
 }
 type GetItemExtraInfoResponse struct {
 	BaseResponse                              // Common response fields
-	Response     GetItemExtraInfoResponseData `json:"response"` //
+	Response     GetItemExtraInfoResponseData `json:"response"` // Response data
 }
 type GetItemExtraInfoResponseData struct {
 	ItemList []GetItemExtraInfoResponseDataItem `json:"item_list"` // [Required] extra info of item list.
@@ -603,8 +603,8 @@ type GetItemLimitRequest struct {
 }
 type GetItemLimitResponse struct {
 	BaseResponse                          // Common response fields
+	Response     GetItemLimitResponseData `json:"response"`             // Response data
 	GtinLimit    *GtinLimit               `json:"gtin_limit,omitempty"` //
-	Response     GetItemLimitResponseData `json:"response"`             //
 }
 type GetItemLimitResponseData struct {
 	PriceLimit                        *PriceLimit               `json:"price_limit"`                          // [Required]
@@ -630,7 +630,7 @@ type GetItemListByContentDiagnosisRequest struct {
 }
 type GetItemListByContentDiagnosisResponse struct {
 	BaseResponse                                           // Common response fields
-	Response     GetItemListByContentDiagnosisResponseData `json:"response"` //
+	Response     GetItemListByContentDiagnosisResponseData `json:"response"` // Response data
 }
 type GetItemListByContentDiagnosisResponseData struct {
 	ItemList    []SuccessItem `json:"item_list"`     // [Required]
@@ -649,7 +649,7 @@ type GetItemPromotionRequest struct {
 }
 type GetItemPromotionResponse struct {
 	BaseResponse                              // Common response fields
-	Response     GetItemPromotionResponseData `json:"response"` //
+	Response     GetItemPromotionResponseData `json:"response"` // Response data
 }
 type GetItemPromotionResponseData struct {
 	SuccessList []GetItemPromotionResponseDataSuccess `json:"success_list"` // [Required] Success item promotion info.
@@ -664,7 +664,7 @@ type GetItemViolationInfoRequest struct {
 }
 type GetItemViolationInfoResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     GetItemViolationInfoResponseData `json:"response"` //
+	Response     GetItemViolationInfoResponseData `json:"response"` // Response data
 }
 type GetItemViolationInfoResponseData struct {
 	ItemList []GetItemViolationInfoResponseDataItem `json:"item_list"` // [Required]
@@ -684,7 +684,7 @@ type GetKitItemInfoRequest struct {
 }
 type GetKitItemInfoResponse struct {
 	BaseResponse                            // Common response fields
-	Response     GetKitItemInfoResponseData `json:"response"` //
+	Response     GetKitItemInfoResponseData `json:"response"` // Response data
 }
 type GetKitItemInfoResponseData struct {
 	ProductInfo *ProductInfo `json:"product_info"` // [Required]
@@ -694,7 +694,7 @@ type GetKitItemLimitRequest struct {
 }
 type GetKitItemLimitResponse struct {
 	BaseResponse                             // Common response fields
-	Response     GetKitItemLimitResponseData `json:"response"` //
+	Response     GetKitItemLimitResponseData `json:"response"` // Response data
 }
 type GetKitItemLimitResponseData struct {
 	PriceLimit                       *PriceLimit                          `json:"price_limit"`                           // [Required]
@@ -718,7 +718,7 @@ type GetMainItemListRequest struct {
 }
 type GetMainItemListResponse struct {
 	BaseResponse                             // Common response fields
-	Response     GetMainItemListResponseData `json:"response"` //
+	Response     GetMainItemListResponseData `json:"response"` // Response data
 }
 type GetMainItemListResponseData struct {
 	List []GetMainItemListResponseDataList `json:"list"` // [Required]
@@ -733,7 +733,7 @@ type GetMartItemByOutletItemIdRequest struct {
 }
 type GetMartItemByOutletItemIdResponse struct {
 	BaseResponse                                       // Common response fields
-	Response     GetMartItemByOutletItemIdResponseData `json:"response"` //
+	Response     GetMartItemByOutletItemIdResponseData `json:"response"` // Response data
 }
 type GetMartItemByOutletItemIdResponseData struct {
 	ItemMappingList []ItemMapping `json:"item_mapping_list"` // [Required] <p>A list of item mapping records between the Mart item and its corresponding outlet items.</p>
@@ -744,7 +744,7 @@ type GetMartItemMappingByIdRequest struct {
 }
 type GetMartItemMappingByIdResponse struct {
 	BaseResponse                                    // Common response fields
-	Response     GetMartItemMappingByIdResponseData `json:"response"` //
+	Response     GetMartItemMappingByIdResponseData `json:"response"` // Response data
 }
 type GetMartItemMappingByIdResponseData struct {
 	ItemMappingList []ItemMapping `json:"item_mapping_list"` // [Required] <p>A list of item mapping records between the Mart item and its corresponding outlet items.</p>
@@ -754,7 +754,7 @@ type GetModelListRequest struct {
 }
 type GetModelListResponse struct {
 	BaseResponse                          // Common response fields
-	Response     GetModelListResponseData `json:"response"` //
+	Response     GetModelListResponseData `json:"response"` // Response data
 }
 type GetModelListResponseData struct {
 	TierVariation            []TierVariation                        `json:"tier_variation"`             // [Required] Variation config of item.
@@ -782,7 +782,7 @@ type GetProductCertificationRuleRequest struct {
 }
 type GetProductCertificationRuleResponse struct {
 	BaseResponse                                         // Common response fields
-	Response     GetProductCertificationRuleResponseData `json:"response"` //
+	Response     GetProductCertificationRuleResponseData `json:"response"` // Response data
 }
 type GetProductCertificationRuleResponseData struct {
 	CertificationRuleList []CertificationRule `json:"certification_rule_list"` // [Required] New description field. Only whitelist sellers can use it. If you use the field, please upload the description_type=extended otherwise api will return error. If you don't use this field, you don't need to upload the description_type or upload description_type=normal
@@ -796,7 +796,7 @@ type GetVehicleListByCompatibilityDetailRequest struct {
 }
 type GetVehicleListByCompatibilityDetailResponse struct {
 	BaseResponse                                                 // Common response fields
-	Response     GetVehicleListByCompatibilityDetailResponseData `json:"response"` //
+	Response     GetVehicleListByCompatibilityDetailResponseData `json:"response"` // Response data
 }
 type GetVehicleListByCompatibilityDetailResponseData struct {
 	VehicleList []Vehicle `json:"vehicle_list"` // [Required]
@@ -813,7 +813,7 @@ type GetWeightRecommendationRequest struct {
 }
 type GetWeightRecommendationResponse struct {
 	BaseResponse                                     // Common response fields
-	Response     GetWeightRecommendationResponseData `json:"response"` //
+	Response     GetWeightRecommendationResponseData `json:"response"` // Response data
 }
 type GetWeightRecommendationResponseData struct {
 	NormalWeightRange []float64 `json:"normal_weight_range"` // [Required] <p>Recommended weight range, in kg. If there are no recommended results, return empty.<br /></p>
@@ -1079,7 +1079,7 @@ type ProductCategoryRecommendRequest struct {
 }
 type ProductCategoryRecommendResponse struct {
 	BaseResponse                                      // Common response fields
-	Response     ProductCategoryRecommendResponseData `json:"response"` //
+	Response     ProductCategoryRecommendResponseData `json:"response"` // Response data
 }
 type ProductCategoryRecommendResponseData struct {
 	CategoryId []int64 `json:"category_id"` // [Required] Shopee's unique identifier for a category.
@@ -1090,7 +1090,7 @@ type ProductGetAttributeTreeRequest struct {
 }
 type ProductGetAttributeTreeResponse struct {
 	BaseResponse                                     // Common response fields
-	Response     ProductGetAttributeTreeResponseData `json:"response"` // <p>Resopnse</p>
+	Response     ProductGetAttributeTreeResponseData `json:"response"` // Response data
 }
 type ProductGetAttributeTreeResponseData struct {
 	List []ProductGetAttributeTreeResponseDataList `json:"list"` // [Required] <p>Each result corresponds to one category in category_ids<br /></p>
@@ -1109,7 +1109,7 @@ type ProductGetBrandListRequest struct {
 }
 type ProductGetBrandListResponse struct {
 	BaseResponse                                 // Common response fields
-	Response     ProductGetBrandListResponseData `json:"response"` //
+	Response     ProductGetBrandListResponseData `json:"response"` // Response data
 }
 type ProductGetBrandListResponseData struct {
 	BrandList   []ResponseDataBrand `json:"brand_list"`    // [Required]
@@ -1123,7 +1123,7 @@ type ProductGetCategoryRequest struct {
 }
 type ProductGetCategoryResponse struct {
 	BaseResponse                                // Common response fields
-	Response     ProductGetCategoryResponseData `json:"response"` //
+	Response     ProductGetCategoryResponseData `json:"response"` // Response data
 }
 type ProductGetCategoryResponseData struct {
 	CategoryList []Category `json:"category_list"` // [Required]
@@ -1137,7 +1137,7 @@ type ProductGetItemListRequest struct {
 }
 type ProductGetItemListResponse struct {
 	BaseResponse                                // Common response fields
-	Response     ProductGetItemListResponseData `json:"response"` //
+	Response     ProductGetItemListResponseData `json:"response"` // Response data
 }
 type ProductGetItemListResponseData struct {
 	Item        []GetItemListResponseDataItem `json:"item"`          // [Required] list of item info with item_id/ item_status/ update_time
@@ -1152,7 +1152,7 @@ type ProductGetRecommendAttributeRequest struct {
 }
 type ProductGetRecommendAttributeResponse struct {
 	BaseResponse                                          // Common response fields
-	Response     ProductGetRecommendAttributeResponseData `json:"response"` //
+	Response     ProductGetRecommendAttributeResponseData `json:"response"` // Response data
 }
 type ProductGetRecommendAttributeResponseData struct {
 	AttributeList []ResponseDataAttribute `json:"attribute_list"` // [Required] Attribute info list.
@@ -1162,7 +1162,7 @@ type ProductGetSizeChartDetailRequest struct {
 }
 type ProductGetSizeChartDetailResponse struct {
 	BaseResponse                                       // Common response fields
-	Response     ProductGetSizeChartDetailResponseData `json:"response"` //
+	Response     ProductGetSizeChartDetailResponseData `json:"response"` // Response data
 }
 type ProductGetSizeChartDetailResponseData struct {
 	SizeChartId    int64           `json:"size_chart_id"`    // [Required] <p>ID of new size chart<br /></p>
@@ -1176,7 +1176,7 @@ type ProductGetSizeChartListRequest struct {
 }
 type ProductGetSizeChartListResponse struct {
 	BaseResponse                                     // Common response fields
-	Response     ProductGetSizeChartListResponseData `json:"response"` //
+	Response     ProductGetSizeChartListResponseData `json:"response"` // Response data
 }
 type ProductGetSizeChartListResponseData struct {
 	SizeChartList []SizeChart `json:"size_chart_list"` // [Required]
@@ -1232,7 +1232,7 @@ type ProductInitTierVariationRequest struct {
 }
 type ProductInitTierVariationResponse struct {
 	BaseResponse                               // Common response fields
-	Response     InitTierVariationResponseData `json:"response"` //
+	Response     InitTierVariationResponseData `json:"response"` // Response data
 }
 type ProductUpdatePriceRequest struct {
 	ItemId    int64       `json:"item_id"`    // [Required] ID of item.
@@ -1240,7 +1240,7 @@ type ProductUpdatePriceRequest struct {
 }
 type ProductUpdatePriceResponse struct {
 	BaseResponse                         // Common response fields
-	Response     UpdatePriceResponseData `json:"response"` //
+	Response     UpdatePriceResponseData `json:"response"` // Response data
 }
 type ProductUpdateStockRequest struct {
 	ItemId    int64       `json:"item_id"`    // [Required] ID of item.
@@ -1248,7 +1248,7 @@ type ProductUpdateStockRequest struct {
 }
 type ProductUpdateStockResponse struct {
 	BaseResponse                         // Common response fields
-	Response     UpdateStockResponseData `json:"response"` //
+	Response     UpdateStockResponseData `json:"response"` // Response data
 }
 type ProductUpdateTierVariationRequest struct {
 	ItemId                   int64                             `json:"item_id"`                              // [Required] ID of item.
@@ -1300,7 +1300,7 @@ type RegisterBrandRequest struct {
 }
 type RegisterBrandResponse struct {
 	BaseResponse                           // Common response fields
-	Response     RegisterBrandResponseData `json:"response"` //
+	Response     RegisterBrandResponseData `json:"response"` // Response data
 }
 type RegisterBrandResponseData struct {
 	BrandId           int64  `json:"brand_id"`            // [Required] The identity of brand.
@@ -1311,7 +1311,7 @@ type ReplyCommentRequest struct {
 }
 type ReplyCommentResponse struct {
 	BaseResponse                          // Common response fields
-	Response     ReplyCommentResponseData `json:"response"` // Detail informations you are querying.
+	Response     ReplyCommentResponseData `json:"response"` // Response data
 }
 type ReplyCommentResponseData struct {
 	ResultList []ReplyCommentResponseDataResult `json:"result_list"` // [Required] The result list of the request comment list.
@@ -1477,9 +1477,9 @@ type SearchAttributeValueListRequest struct {
 }
 type SearchAttributeValueListResponse struct {
 	BaseResponse                                      // Common response fields
+	Response     SearchAttributeValueListResponseData `json:"response"`                // Response data
 	DebugMessage string                               `json:"debug_message,omitempty"` //
 	Msg          string                               `json:"msg,omitempty"`           //
-	Response     SearchAttributeValueListResponseData `json:"response"`                //
 }
 type SearchAttributeValueListResponseData struct {
 	ValueList []Value   `json:"value_list"` // [Required]
@@ -1496,7 +1496,7 @@ type SearchItemRequest struct {
 }
 type SearchItemResponse struct {
 	BaseResponse                        // Common response fields
-	Response     SearchItemResponseData `json:"response"` //
+	Response     SearchItemResponseData `json:"response"` // Response data
 }
 type SearchItemResponseData struct {
 	ItemIdList []int64 `json:"item_id_list"` // [Required] List of  item ID.
@@ -1513,7 +1513,7 @@ type SearchUnpackagedModelListRequest struct {
 }
 type SearchUnpackagedModelListResponse struct {
 	BaseResponse                                       // Common response fields
-	Response     SearchUnpackagedModelListResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     SearchUnpackagedModelListResponseData `json:"response"` // Response data
 }
 type SearchUnpackagedModelListResponseData struct {
 	TotalCount int64                                        `json:"total_count"` // [Required] <p>Total number of models that match the condition.</p>
@@ -1653,7 +1653,7 @@ type UnlistItemRequestItem struct {
 }
 type UnlistItemResponse struct {
 	BaseResponse                        // Common response fields
-	Response     UnlistItemResponseData `json:"response"` //
+	Response     UnlistItemResponseData `json:"response"` // Response data
 }
 type UnlistItemResponseData struct {
 	FailureList []Failure               `json:"failure_list"` // [Required]
@@ -1697,7 +1697,7 @@ type UpdateItemRequestImage struct {
 }
 type UpdateItemResponse struct {
 	BaseResponse                        // Common response fields
-	Response     UpdateItemResponseData `json:"response"` //
+	Response     UpdateItemResponseData `json:"response"` // Response data
 }
 type UpdateItemResponseData struct {
 	Description     string                       `json:"description"`      // [Required] Item description.

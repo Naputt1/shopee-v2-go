@@ -26,7 +26,7 @@ func Test_AddOnDeal_AddAddOnDeal(t *testing.T) {
 
 	var req AddAddOnDealRequest
 	ctx := context.Background()
-	res, err := client.AddOnDeal.AddAddOnDeal(ctx, shopID, req, accessToken)
+	res, err := client.AddOnDeal.AddAddOnDeal(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AddOnDeal.AddAddOnDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -51,7 +51,7 @@ func Test_AddOnDeal_AddAddOnDealMainItem(t *testing.T) {
 
 	var req AddAddOnDealMainItemRequest
 	ctx := context.Background()
-	res, err := client.AddOnDeal.AddAddOnDealMainItem(ctx, shopID, req, accessToken)
+	res, err := client.AddOnDeal.AddAddOnDealMainItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AddOnDeal.AddAddOnDealMainItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -76,7 +76,7 @@ func Test_AddOnDeal_AddAddOnDealSubItem(t *testing.T) {
 
 	var req AddAddOnDealSubItemRequest
 	ctx := context.Background()
-	res, err := client.AddOnDeal.AddAddOnDealSubItem(ctx, shopID, req, accessToken)
+	res, err := client.AddOnDeal.AddAddOnDealSubItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AddOnDeal.AddAddOnDealSubItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -101,7 +101,7 @@ func Test_AddOnDeal_DeleteAddOnDeal(t *testing.T) {
 
 	var req DeleteAddOnDealRequest
 	ctx := context.Background()
-	res, err := client.AddOnDeal.DeleteAddOnDeal(ctx, shopID, req, accessToken)
+	res, err := client.AddOnDeal.DeleteAddOnDeal(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AddOnDeal.DeleteAddOnDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -126,7 +126,7 @@ func Test_AddOnDeal_DeleteAddOnDealMainItem(t *testing.T) {
 
 	var req DeleteAddOnDealMainItemRequest
 	ctx := context.Background()
-	res, err := client.AddOnDeal.DeleteAddOnDealMainItem(ctx, shopID, req, accessToken)
+	res, err := client.AddOnDeal.DeleteAddOnDealMainItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AddOnDeal.DeleteAddOnDealMainItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -151,7 +151,7 @@ func Test_AddOnDeal_DeleteAddOnDealSubItem(t *testing.T) {
 
 	var req DeleteAddOnDealSubItemRequest
 	ctx := context.Background()
-	res, err := client.AddOnDeal.DeleteAddOnDealSubItem(ctx, shopID, req, accessToken)
+	res, err := client.AddOnDeal.DeleteAddOnDealSubItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AddOnDeal.DeleteAddOnDealSubItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -176,7 +176,7 @@ func Test_AddOnDeal_EndAddOnDeal(t *testing.T) {
 
 	var req EndAddOnDealRequest
 	ctx := context.Background()
-	res, err := client.AddOnDeal.EndAddOnDeal(ctx, shopID, req, accessToken)
+	res, err := client.AddOnDeal.EndAddOnDeal(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AddOnDeal.EndAddOnDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -201,7 +201,7 @@ func Test_AddOnDeal_GetAddOnDeal(t *testing.T) {
 
 	var req GetAddOnDealRequest
 	ctx := context.Background()
-	res, err := client.AddOnDeal.GetAddOnDeal(ctx, shopID, req, accessToken)
+	res, err := client.AddOnDeal.GetAddOnDeal(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AddOnDeal.GetAddOnDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -226,7 +226,7 @@ func Test_AddOnDeal_GetAddOnDealList(t *testing.T) {
 
 	var req GetAddOnDealListRequest
 	ctx := context.Background()
-	res, err := client.AddOnDeal.GetAddOnDealList(ctx, shopID, req, accessToken)
+	res, err := client.AddOnDeal.GetAddOnDealList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AddOnDeal.GetAddOnDealList returned error (possibly expected with mock data): %s", err)
 	}
@@ -251,7 +251,7 @@ func Test_AddOnDeal_GetAddOnDealMainItem(t *testing.T) {
 
 	var req GetAddOnDealMainItemRequest
 	ctx := context.Background()
-	res, err := client.AddOnDeal.GetAddOnDealMainItem(ctx, shopID, req, accessToken)
+	res, err := client.AddOnDeal.GetAddOnDealMainItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AddOnDeal.GetAddOnDealMainItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -276,7 +276,7 @@ func Test_AddOnDeal_GetAddOnDealSubItem(t *testing.T) {
 
 	var req GetAddOnDealSubItemRequest
 	ctx := context.Background()
-	res, err := client.AddOnDeal.GetAddOnDealSubItem(ctx, shopID, req, accessToken)
+	res, err := client.AddOnDeal.GetAddOnDealSubItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AddOnDeal.GetAddOnDealSubItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -301,7 +301,7 @@ func Test_AddOnDeal_UpdateAddOnDeal(t *testing.T) {
 
 	var req UpdateAddOnDealRequest
 	ctx := context.Background()
-	res, err := client.AddOnDeal.UpdateAddOnDeal(ctx, shopID, req, accessToken)
+	res, err := client.AddOnDeal.UpdateAddOnDeal(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AddOnDeal.UpdateAddOnDeal returned error (possibly expected with mock data): %s", err)
 	}
@@ -326,7 +326,7 @@ func Test_AddOnDeal_UpdateAddOnDealMainItem(t *testing.T) {
 
 	var req UpdateAddOnDealMainItemRequest
 	ctx := context.Background()
-	res, err := client.AddOnDeal.UpdateAddOnDealMainItem(ctx, shopID, req, accessToken)
+	res, err := client.AddOnDeal.UpdateAddOnDealMainItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AddOnDeal.UpdateAddOnDealMainItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -351,7 +351,7 @@ func Test_AddOnDeal_UpdateAddOnDealSubItem(t *testing.T) {
 
 	var req UpdateAddOnDealSubItemRequest
 	ctx := context.Background()
-	res, err := client.AddOnDeal.UpdateAddOnDealSubItem(ctx, shopID, req, accessToken)
+	res, err := client.AddOnDeal.UpdateAddOnDealSubItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("AddOnDeal.UpdateAddOnDealSubItem returned error (possibly expected with mock data): %s", err)
 	}

@@ -8,63 +8,63 @@ type VideoService interface {
 	// DeleteVideo Use this API to delete video. You can delete the video for both draft and post status.
 	// Path: /api/v2/video/delete_video
 	// https://open.shopee.com/documents/v2/v2.video.delete_video?module=129&type=1
-	DeleteVideo(ctx context.Context, sid uint64, req DeleteVideoRequest, tok string) (*DeleteVideoResponse, error)
+	DeleteVideo(ctx context.Context, sid uint64, mid uint64, tok string, req DeleteVideoRequest) (*DeleteVideoResponse, error)
 	// EditVideoInfo You need to call v2.media.init_video_upload, v2.media.upload_video_part, and v2.media.complete_video_upload to upload the video, and call the v2.media.get_video_upload_result to get the video_upload_id of uploaded video first, then call this API to set video post information. After submit, the video is still draft status, you need to call v2.video.post_video to post the video to Shopee Video. You can only set and update post information before the video is post.
 	// Path: /api/v2/video/edit_video_info
 	// https://open.shopee.com/documents/v2/v2.video.edit_video_info?module=129&type=1
-	EditVideoInfo(ctx context.Context, sid uint64, req EditVideoInfoRequest, tok string) (*EditVideoInfoResponse, error)
+	EditVideoInfo(ctx context.Context, sid uint64, mid uint64, tok string, req EditVideoInfoRequest) (*EditVideoInfoResponse, error)
 	// GetCoverList You need to call v2.media.init_video_upload, v2.media.upload_video_part, and v2.media.complete_video_upload to upload the video, and call the v2.media.get_video_upload_result to get the video_upload_id of uploaded video. After the video is uploaded, obtain the frame-by-frame results and select a specific frame as the video cover.
 	// Path: /api/v2/video/get_cover_list
 	// https://open.shopee.com/documents/v2/v2.video.get_cover_list?module=129&type=1
-	GetCoverList(ctx context.Context, sid uint64, opt GetCoverListRequest, tok string) (*GetCoverListResponse, error)
+	GetCoverList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetCoverListRequest) (*GetCoverListResponse, error)
 	// GetMetricTrend Query video data indicator trends.
 	// Path: /api/v2/video/get_metric_trend
 	// https://open.shopee.com/documents/v2/v2.video.get_metric_trend?module=129&type=1
-	GetMetricTrend(ctx context.Context, sid uint64, opt GetMetricTrendRequest, tok string) (*GetMetricTrendResponse, error)
+	GetMetricTrend(ctx context.Context, sid uint64, mid uint64, tok string, opt GetMetricTrendRequest) (*GetMetricTrendResponse, error)
 	// GetOverviewPerformance Get overall performance data for all post Shopee Video. There is at least a one-day delay.
 	// Path: /api/v2/video/get_overview_performance
 	// https://open.shopee.com/documents/v2/v2.video.get_overview_performance?module=129&type=1
-	GetOverviewPerformance(ctx context.Context, sid uint64, opt GetOverviewPerformanceRequest, tok string) (*GetOverviewPerformanceResponse, error)
+	GetOverviewPerformance(ctx context.Context, sid uint64, mid uint64, tok string, opt GetOverviewPerformanceRequest) (*GetOverviewPerformanceResponse, error)
 	// GetProdcutPerformanceList Get specific performance data for products linked with Shopee Video. There is at least a one-day delay.
 	// Path: /api/v2/video/get_prodcut_performance_list
 	// https://open.shopee.com/documents/v2/v2.video.get_prodcut_performance_list?module=129&type=1
-	GetProdcutPerformanceList(ctx context.Context, sid uint64, opt GetProdcutPerformanceListRequest, tok string) (*GetProdcutPerformanceListResponse, error)
+	GetProdcutPerformanceList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetProdcutPerformanceListRequest) (*GetProdcutPerformanceListResponse, error)
 	// GetUserDemographics Get user demographics data to better understand the types of viewers that watch your Shopee Video.
 	// Path: /api/v2/video/get_user_demographics
 	// https://open.shopee.com/documents/v2/v2.video.get_user_demographics?module=129&type=1
-	GetUserDemographics(ctx context.Context, sid uint64, tok string) (*GetUserDemographicsResponse, error)
+	GetUserDemographics(ctx context.Context, sid uint64, mid uint64, tok string) (*GetUserDemographicsResponse, error)
 	// GetVideoDetail Get the detail information of video.
 	// Path: /api/v2/video/get_video_detail
 	// https://open.shopee.com/documents/v2/v2.video.get_video_detail?module=129&type=1
-	GetVideoDetail(ctx context.Context, sid uint64, opt GetVideoDetailRequest, tok string) (*GetVideoDetailResponse, error)
+	GetVideoDetail(ctx context.Context, sid uint64, mid uint64, tok string, opt GetVideoDetailRequest) (*GetVideoDetailResponse, error)
 	// GetVideoDetailAudienceDistribution Get detailed audience distribution data for individual post Shopee Video. There is at least a one-day delay.
 	// Path: /api/v2/video/get_video_detail_audience_distribution
 	// https://open.shopee.com/documents/v2/v2.video.get_video_detail_audience_distribution?module=129&type=1
-	GetVideoDetailAudienceDistribution(ctx context.Context, sid uint64, opt GetVideoDetailAudienceDistributionRequest, tok string) (*GetVideoDetailAudienceDistributionResponse, error)
+	GetVideoDetailAudienceDistribution(ctx context.Context, sid uint64, mid uint64, tok string, opt GetVideoDetailAudienceDistributionRequest) (*GetVideoDetailAudienceDistributionResponse, error)
 	// GetVideoDetailMetricTrend Get detailed metric trend data for individual post Shopee Video. There is at least a one-day delay.
 	// Path: /api/v2/video/get_video_detail_metric_trend
 	// https://open.shopee.com/documents/v2/v2.video.get_video_detail_metric_trend?module=129&type=1
-	GetVideoDetailMetricTrend(ctx context.Context, sid uint64, opt GetVideoDetailMetricTrendRequest, tok string) (*GetVideoDetailMetricTrendResponse, error)
+	GetVideoDetailMetricTrend(ctx context.Context, sid uint64, mid uint64, tok string, opt GetVideoDetailMetricTrendRequest) (*GetVideoDetailMetricTrendResponse, error)
 	// GetVideoDetailPerformance Get detailed performance data for individual post Shopee Video. There is at least a one-day delay.
 	// Path: /api/v2/video/get_video_detail_performance
 	// https://open.shopee.com/documents/v2/v2.video.get_video_detail_performance?module=129&type=1
-	GetVideoDetailPerformance(ctx context.Context, sid uint64, opt GetVideoDetailPerformanceRequest, tok string) (*GetVideoDetailPerformanceResponse, error)
+	GetVideoDetailPerformance(ctx context.Context, sid uint64, mid uint64, tok string, opt GetVideoDetailPerformanceRequest) (*GetVideoDetailPerformanceResponse, error)
 	// GetVideoDetailProductPerformance Get performance data for products linked with individual post Shopee Video. There is at least a one-day delay.
 	// Path: /api/v2/video/get_video_detail_product_performance
 	// https://open.shopee.com/documents/v2/v2.video.get_video_detail_product_performance?module=129&type=1
-	GetVideoDetailProductPerformance(ctx context.Context, sid uint64, opt GetVideoDetailProductPerformanceRequest, tok string) (*GetVideoDetailProductPerformanceResponse, error)
+	GetVideoDetailProductPerformance(ctx context.Context, sid uint64, mid uint64, tok string, opt GetVideoDetailProductPerformanceRequest) (*GetVideoDetailProductPerformanceResponse, error)
 	// GetVideoList Get the list of video in draft status or video already post to Shopee Video.
 	// Path: /api/v2/video/get_video_list
 	// https://open.shopee.com/documents/v2/v2.video.get_video_list?module=129&type=1
-	GetVideoList(ctx context.Context, sid uint64, opt GetVideoListRequest, tok string) (*GetVideoListResponse, error)
+	GetVideoList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetVideoListRequest) (*GetVideoListResponse, error)
 	// GetVideoPerformanceList Get specific performance data for individual post Shopee Video. There is at least a one-day delay.
 	// Path: /api/v2/video/get_video_performance_list
 	// https://open.shopee.com/documents/v2/v2.video.get_video_performance_list?module=129&type=1
-	GetVideoPerformanceList(ctx context.Context, sid uint64, opt GetVideoPerformanceListRequest, tok string) (*GetVideoPerformanceListResponse, error)
+	GetVideoPerformanceList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetVideoPerformanceListRequest) (*GetVideoPerformanceListResponse, error)
 	// PostVideo You need to call v2.media.init_video_upload, v2.media.upload_video_part, and v2.media.complete_video_upload to upload the video, then call the v2.video.edit_video_info API to set video post information, finally call this API to post the video to Shopee Video.
 	// Path: /api/v2/video/post_video
 	// https://open.shopee.com/documents/v2/v2.video.post_video?module=129&type=1
-	PostVideo(ctx context.Context, sid uint64, req PostVideoRequest, tok string) (*PostVideoResponse, error)
+	PostVideo(ctx context.Context, sid uint64, mid uint64, tok string, req PostVideoRequest) (*PostVideoResponse, error)
 }
 
 type VideoServiceOp[T any] struct {
@@ -74,149 +74,149 @@ type VideoServiceOp[T any] struct {
 // DeleteVideo Use this API to delete video. You can delete the video for both draft and post status.
 // Path: /api/v2/video/delete_video
 // https://open.shopee.com/documents/v2/v2.video.delete_video?module=129&type=1
-func (s *VideoServiceOp[T]) DeleteVideo(ctx context.Context, sid uint64, req DeleteVideoRequest, tok string) (*DeleteVideoResponse, error) {
+func (s *VideoServiceOp[T]) DeleteVideo(ctx context.Context, sid uint64, mid uint64, tok string, req DeleteVideoRequest) (*DeleteVideoResponse, error) {
 	path := "/video/delete_video"
 	resp := new(DeleteVideoResponse)
-	err := s.client.Post(ctx, path, req, resp, sid, tok)
+	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
 	return resp, err
 }
 
 // EditVideoInfo You need to call v2.media.init_video_upload, v2.media.upload_video_part, and v2.media.complete_video_upload to upload the video, and call the v2.media.get_video_upload_result to get the video_upload_id of uploaded video first, then call this API to set video post information. After submit, the video is still draft status, you need to call v2.video.post_video to post the video to Shopee Video. You can only set and update post information before the video is post.
 // Path: /api/v2/video/edit_video_info
 // https://open.shopee.com/documents/v2/v2.video.edit_video_info?module=129&type=1
-func (s *VideoServiceOp[T]) EditVideoInfo(ctx context.Context, sid uint64, req EditVideoInfoRequest, tok string) (*EditVideoInfoResponse, error) {
+func (s *VideoServiceOp[T]) EditVideoInfo(ctx context.Context, sid uint64, mid uint64, tok string, req EditVideoInfoRequest) (*EditVideoInfoResponse, error) {
 	path := "/video/edit_video_info"
 	resp := new(EditVideoInfoResponse)
-	err := s.client.Post(ctx, path, req, resp, sid, tok)
+	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
 	return resp, err
 }
 
 // GetCoverList You need to call v2.media.init_video_upload, v2.media.upload_video_part, and v2.media.complete_video_upload to upload the video, and call the v2.media.get_video_upload_result to get the video_upload_id of uploaded video. After the video is uploaded, obtain the frame-by-frame results and select a specific frame as the video cover.
 // Path: /api/v2/video/get_cover_list
 // https://open.shopee.com/documents/v2/v2.video.get_cover_list?module=129&type=1
-func (s *VideoServiceOp[T]) GetCoverList(ctx context.Context, sid uint64, opt GetCoverListRequest, tok string) (*GetCoverListResponse, error) {
+func (s *VideoServiceOp[T]) GetCoverList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetCoverListRequest) (*GetCoverListResponse, error) {
 	path := "/video/get_cover_list"
 	resp := new(GetCoverListResponse)
-	err := s.client.Get(ctx, path, resp, opt, sid, tok)
+	err := s.client.Get(ctx, path, resp, opt, sid, mid, tok)
 	return resp, err
 }
 
 // GetMetricTrend Query video data indicator trends.
 // Path: /api/v2/video/get_metric_trend
 // https://open.shopee.com/documents/v2/v2.video.get_metric_trend?module=129&type=1
-func (s *VideoServiceOp[T]) GetMetricTrend(ctx context.Context, sid uint64, opt GetMetricTrendRequest, tok string) (*GetMetricTrendResponse, error) {
+func (s *VideoServiceOp[T]) GetMetricTrend(ctx context.Context, sid uint64, mid uint64, tok string, opt GetMetricTrendRequest) (*GetMetricTrendResponse, error) {
 	path := "/video/get_metric_trend"
 	resp := new(GetMetricTrendResponse)
-	err := s.client.Get(ctx, path, resp, opt, sid, tok)
+	err := s.client.Get(ctx, path, resp, opt, sid, mid, tok)
 	return resp, err
 }
 
 // GetOverviewPerformance Get overall performance data for all post Shopee Video. There is at least a one-day delay.
 // Path: /api/v2/video/get_overview_performance
 // https://open.shopee.com/documents/v2/v2.video.get_overview_performance?module=129&type=1
-func (s *VideoServiceOp[T]) GetOverviewPerformance(ctx context.Context, sid uint64, opt GetOverviewPerformanceRequest, tok string) (*GetOverviewPerformanceResponse, error) {
+func (s *VideoServiceOp[T]) GetOverviewPerformance(ctx context.Context, sid uint64, mid uint64, tok string, opt GetOverviewPerformanceRequest) (*GetOverviewPerformanceResponse, error) {
 	path := "/video/get_overview_performance"
 	resp := new(GetOverviewPerformanceResponse)
-	err := s.client.Get(ctx, path, resp, opt, sid, tok)
+	err := s.client.Get(ctx, path, resp, opt, sid, mid, tok)
 	return resp, err
 }
 
 // GetProdcutPerformanceList Get specific performance data for products linked with Shopee Video. There is at least a one-day delay.
 // Path: /api/v2/video/get_prodcut_performance_list
 // https://open.shopee.com/documents/v2/v2.video.get_prodcut_performance_list?module=129&type=1
-func (s *VideoServiceOp[T]) GetProdcutPerformanceList(ctx context.Context, sid uint64, opt GetProdcutPerformanceListRequest, tok string) (*GetProdcutPerformanceListResponse, error) {
+func (s *VideoServiceOp[T]) GetProdcutPerformanceList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetProdcutPerformanceListRequest) (*GetProdcutPerformanceListResponse, error) {
 	path := "/video/get_prodcut_performance_list"
 	resp := new(GetProdcutPerformanceListResponse)
-	err := s.client.Get(ctx, path, resp, opt, sid, tok)
+	err := s.client.Get(ctx, path, resp, opt, sid, mid, tok)
 	return resp, err
 }
 
 // GetUserDemographics Get user demographics data to better understand the types of viewers that watch your Shopee Video.
 // Path: /api/v2/video/get_user_demographics
 // https://open.shopee.com/documents/v2/v2.video.get_user_demographics?module=129&type=1
-func (s *VideoServiceOp[T]) GetUserDemographics(ctx context.Context, sid uint64, tok string) (*GetUserDemographicsResponse, error) {
+func (s *VideoServiceOp[T]) GetUserDemographics(ctx context.Context, sid uint64, mid uint64, tok string) (*GetUserDemographicsResponse, error) {
 	path := "/video/get_user_demographics"
 	resp := new(GetUserDemographicsResponse)
-	err := s.client.Get(ctx, path, resp, nil, sid, tok)
+	err := s.client.Get(ctx, path, resp, nil, sid, mid, tok)
 	return resp, err
 }
 
 // GetVideoDetail Get the detail information of video.
 // Path: /api/v2/video/get_video_detail
 // https://open.shopee.com/documents/v2/v2.video.get_video_detail?module=129&type=1
-func (s *VideoServiceOp[T]) GetVideoDetail(ctx context.Context, sid uint64, opt GetVideoDetailRequest, tok string) (*GetVideoDetailResponse, error) {
+func (s *VideoServiceOp[T]) GetVideoDetail(ctx context.Context, sid uint64, mid uint64, tok string, opt GetVideoDetailRequest) (*GetVideoDetailResponse, error) {
 	path := "/video/get_video_detail"
 	resp := new(GetVideoDetailResponse)
-	err := s.client.Get(ctx, path, resp, opt, sid, tok)
+	err := s.client.Get(ctx, path, resp, opt, sid, mid, tok)
 	return resp, err
 }
 
 // GetVideoDetailAudienceDistribution Get detailed audience distribution data for individual post Shopee Video. There is at least a one-day delay.
 // Path: /api/v2/video/get_video_detail_audience_distribution
 // https://open.shopee.com/documents/v2/v2.video.get_video_detail_audience_distribution?module=129&type=1
-func (s *VideoServiceOp[T]) GetVideoDetailAudienceDistribution(ctx context.Context, sid uint64, opt GetVideoDetailAudienceDistributionRequest, tok string) (*GetVideoDetailAudienceDistributionResponse, error) {
+func (s *VideoServiceOp[T]) GetVideoDetailAudienceDistribution(ctx context.Context, sid uint64, mid uint64, tok string, opt GetVideoDetailAudienceDistributionRequest) (*GetVideoDetailAudienceDistributionResponse, error) {
 	path := "/video/get_video_detail_audience_distribution"
 	resp := new(GetVideoDetailAudienceDistributionResponse)
-	err := s.client.Get(ctx, path, resp, opt, sid, tok)
+	err := s.client.Get(ctx, path, resp, opt, sid, mid, tok)
 	return resp, err
 }
 
 // GetVideoDetailMetricTrend Get detailed metric trend data for individual post Shopee Video. There is at least a one-day delay.
 // Path: /api/v2/video/get_video_detail_metric_trend
 // https://open.shopee.com/documents/v2/v2.video.get_video_detail_metric_trend?module=129&type=1
-func (s *VideoServiceOp[T]) GetVideoDetailMetricTrend(ctx context.Context, sid uint64, opt GetVideoDetailMetricTrendRequest, tok string) (*GetVideoDetailMetricTrendResponse, error) {
+func (s *VideoServiceOp[T]) GetVideoDetailMetricTrend(ctx context.Context, sid uint64, mid uint64, tok string, opt GetVideoDetailMetricTrendRequest) (*GetVideoDetailMetricTrendResponse, error) {
 	path := "/video/get_video_detail_metric_trend"
 	resp := new(GetVideoDetailMetricTrendResponse)
-	err := s.client.Get(ctx, path, resp, opt, sid, tok)
+	err := s.client.Get(ctx, path, resp, opt, sid, mid, tok)
 	return resp, err
 }
 
 // GetVideoDetailPerformance Get detailed performance data for individual post Shopee Video. There is at least a one-day delay.
 // Path: /api/v2/video/get_video_detail_performance
 // https://open.shopee.com/documents/v2/v2.video.get_video_detail_performance?module=129&type=1
-func (s *VideoServiceOp[T]) GetVideoDetailPerformance(ctx context.Context, sid uint64, opt GetVideoDetailPerformanceRequest, tok string) (*GetVideoDetailPerformanceResponse, error) {
+func (s *VideoServiceOp[T]) GetVideoDetailPerformance(ctx context.Context, sid uint64, mid uint64, tok string, opt GetVideoDetailPerformanceRequest) (*GetVideoDetailPerformanceResponse, error) {
 	path := "/video/get_video_detail_performance"
 	resp := new(GetVideoDetailPerformanceResponse)
-	err := s.client.Get(ctx, path, resp, opt, sid, tok)
+	err := s.client.Get(ctx, path, resp, opt, sid, mid, tok)
 	return resp, err
 }
 
 // GetVideoDetailProductPerformance Get performance data for products linked with individual post Shopee Video. There is at least a one-day delay.
 // Path: /api/v2/video/get_video_detail_product_performance
 // https://open.shopee.com/documents/v2/v2.video.get_video_detail_product_performance?module=129&type=1
-func (s *VideoServiceOp[T]) GetVideoDetailProductPerformance(ctx context.Context, sid uint64, opt GetVideoDetailProductPerformanceRequest, tok string) (*GetVideoDetailProductPerformanceResponse, error) {
+func (s *VideoServiceOp[T]) GetVideoDetailProductPerformance(ctx context.Context, sid uint64, mid uint64, tok string, opt GetVideoDetailProductPerformanceRequest) (*GetVideoDetailProductPerformanceResponse, error) {
 	path := "/video/get_video_detail_product_performance"
 	resp := new(GetVideoDetailProductPerformanceResponse)
-	err := s.client.Get(ctx, path, resp, opt, sid, tok)
+	err := s.client.Get(ctx, path, resp, opt, sid, mid, tok)
 	return resp, err
 }
 
 // GetVideoList Get the list of video in draft status or video already post to Shopee Video.
 // Path: /api/v2/video/get_video_list
 // https://open.shopee.com/documents/v2/v2.video.get_video_list?module=129&type=1
-func (s *VideoServiceOp[T]) GetVideoList(ctx context.Context, sid uint64, opt GetVideoListRequest, tok string) (*GetVideoListResponse, error) {
+func (s *VideoServiceOp[T]) GetVideoList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetVideoListRequest) (*GetVideoListResponse, error) {
 	path := "/video/get_video_list"
 	resp := new(GetVideoListResponse)
-	err := s.client.Get(ctx, path, resp, opt, sid, tok)
+	err := s.client.Get(ctx, path, resp, opt, sid, mid, tok)
 	return resp, err
 }
 
 // GetVideoPerformanceList Get specific performance data for individual post Shopee Video. There is at least a one-day delay.
 // Path: /api/v2/video/get_video_performance_list
 // https://open.shopee.com/documents/v2/v2.video.get_video_performance_list?module=129&type=1
-func (s *VideoServiceOp[T]) GetVideoPerformanceList(ctx context.Context, sid uint64, opt GetVideoPerformanceListRequest, tok string) (*GetVideoPerformanceListResponse, error) {
+func (s *VideoServiceOp[T]) GetVideoPerformanceList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetVideoPerformanceListRequest) (*GetVideoPerformanceListResponse, error) {
 	path := "/video/get_video_performance_list"
 	resp := new(GetVideoPerformanceListResponse)
-	err := s.client.Get(ctx, path, resp, opt, sid, tok)
+	err := s.client.Get(ctx, path, resp, opt, sid, mid, tok)
 	return resp, err
 }
 
 // PostVideo You need to call v2.media.init_video_upload, v2.media.upload_video_part, and v2.media.complete_video_upload to upload the video, then call the v2.video.edit_video_info API to set video post information, finally call this API to post the video to Shopee Video.
 // Path: /api/v2/video/post_video
 // https://open.shopee.com/documents/v2/v2.video.post_video?module=129&type=1
-func (s *VideoServiceOp[T]) PostVideo(ctx context.Context, sid uint64, req PostVideoRequest, tok string) (*PostVideoResponse, error) {
+func (s *VideoServiceOp[T]) PostVideo(ctx context.Context, sid uint64, mid uint64, tok string, req PostVideoRequest) (*PostVideoResponse, error) {
 	path := "/video/post_video"
 	resp := new(PostVideoResponse)
-	err := s.client.Post(ctx, path, req, resp, sid, tok)
+	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
 	return resp, err
 }

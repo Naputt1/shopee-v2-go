@@ -25,7 +25,7 @@ func Test_SBS_GetBoundWhsInfo(t *testing.T) {
 	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/sbs/get_bound_whs_info", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.SBS.GetBoundWhsInfo(ctx, shopID, accessToken)
+	res, err := client.SBS.GetBoundWhsInfo(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("SBS.GetBoundWhsInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -50,7 +50,7 @@ func Test_SBS_GetCurrentInventory(t *testing.T) {
 
 	var req GetCurrentInventoryRequest
 	ctx := context.Background()
-	res, err := client.SBS.GetCurrentInventory(ctx, shopID, req, accessToken)
+	res, err := client.SBS.GetCurrentInventory(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("SBS.GetCurrentInventory returned error (possibly expected with mock data): %s", err)
 	}
@@ -75,7 +75,7 @@ func Test_SBS_GetExpiryReport(t *testing.T) {
 
 	var req GetExpiryReportRequest
 	ctx := context.Background()
-	res, err := client.SBS.GetExpiryReport(ctx, shopID, req, accessToken)
+	res, err := client.SBS.GetExpiryReport(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("SBS.GetExpiryReport returned error (possibly expected with mock data): %s", err)
 	}
@@ -100,7 +100,7 @@ func Test_SBS_GetStockAging(t *testing.T) {
 
 	var req GetStockAgingRequest
 	ctx := context.Background()
-	res, err := client.SBS.GetStockAging(ctx, shopID, req, accessToken)
+	res, err := client.SBS.GetStockAging(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("SBS.GetStockAging returned error (possibly expected with mock data): %s", err)
 	}
@@ -125,7 +125,7 @@ func Test_SBS_GetStockMovement(t *testing.T) {
 
 	var req GetStockMovementRequest
 	ctx := context.Background()
-	res, err := client.SBS.GetStockMovement(ctx, shopID, req, accessToken)
+	res, err := client.SBS.GetStockMovement(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("SBS.GetStockMovement returned error (possibly expected with mock data): %s", err)
 	}

@@ -26,7 +26,7 @@ func Test_FollowPrize_AddFollowPrize(t *testing.T) {
 
 	var req AddFollowPrizeRequest
 	ctx := context.Background()
-	res, err := client.FollowPrize.AddFollowPrize(ctx, shopID, req, accessToken)
+	res, err := client.FollowPrize.AddFollowPrize(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FollowPrize.AddFollowPrize returned error (possibly expected with mock data): %s", err)
 	}
@@ -51,7 +51,7 @@ func Test_FollowPrize_DeleteFollowPrize(t *testing.T) {
 
 	var req DeleteFollowPrizeRequest
 	ctx := context.Background()
-	res, err := client.FollowPrize.DeleteFollowPrize(ctx, shopID, req, accessToken)
+	res, err := client.FollowPrize.DeleteFollowPrize(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FollowPrize.DeleteFollowPrize returned error (possibly expected with mock data): %s", err)
 	}
@@ -76,7 +76,7 @@ func Test_FollowPrize_EndFollowPrize(t *testing.T) {
 
 	var req EndFollowPrizeRequest
 	ctx := context.Background()
-	res, err := client.FollowPrize.EndFollowPrize(ctx, shopID, req, accessToken)
+	res, err := client.FollowPrize.EndFollowPrize(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FollowPrize.EndFollowPrize returned error (possibly expected with mock data): %s", err)
 	}
@@ -101,7 +101,7 @@ func Test_FollowPrize_GetFollowPrizeDetail(t *testing.T) {
 
 	var req GetFollowPrizeDetailRequest
 	ctx := context.Background()
-	res, err := client.FollowPrize.GetFollowPrizeDetail(ctx, shopID, req, accessToken)
+	res, err := client.FollowPrize.GetFollowPrizeDetail(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FollowPrize.GetFollowPrizeDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -126,7 +126,7 @@ func Test_FollowPrize_GetFollowPrizeList(t *testing.T) {
 
 	var req GetFollowPrizeListRequest
 	ctx := context.Background()
-	res, err := client.FollowPrize.GetFollowPrizeList(ctx, shopID, req, accessToken)
+	res, err := client.FollowPrize.GetFollowPrizeList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FollowPrize.GetFollowPrizeList returned error (possibly expected with mock data): %s", err)
 	}
@@ -151,7 +151,7 @@ func Test_FollowPrize_UpdateFollowPrize(t *testing.T) {
 
 	var req UpdateFollowPrizeRequest
 	ctx := context.Background()
-	res, err := client.FollowPrize.UpdateFollowPrize(ctx, shopID, req, accessToken)
+	res, err := client.FollowPrize.UpdateFollowPrize(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("FollowPrize.UpdateFollowPrize returned error (possibly expected with mock data): %s", err)
 	}

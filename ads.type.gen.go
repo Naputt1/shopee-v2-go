@@ -48,7 +48,7 @@ type CampaignMetrics struct {
 }
 type CheckCreateGmsProductCampaignEligibilityResponse struct {
 	BaseResponse                                                      // Common response fields
-	Response     CheckCreateGmsProductCampaignEligibilityResponseData `json:"response"` // <p><br /></p>
+	Response     CheckCreateGmsProductCampaignEligibilityResponseData `json:"response"` // Response data
 }
 type CheckCreateGmsProductCampaignEligibilityResponseData struct {
 	IsEligible bool   `json:"is_eligible"` // [Required] <p>Indicates if the seller is eligible to create a GMS Campaign</p>
@@ -73,7 +73,7 @@ type CreateGmsProductCampaignRequest struct {
 }
 type CreateGmsProductCampaignResponse struct {
 	BaseResponse                                      // Common response fields
-	Response     CreateGmsProductCampaignResponseData `json:"response"` //
+	Response     CreateGmsProductCampaignResponseData `json:"response"` // Response data
 }
 type CreateGmsProductCampaignResponseData struct {
 	CampaignId int64 `json:"campaign_id"` // [Required] <p>GMS Campaign ID.<br /></p>
@@ -93,7 +93,7 @@ type CreateManualProductAdsRequest struct {
 }
 type CreateManualProductAdsResponse struct {
 	BaseResponse                                    // Common response fields
-	Response     CreateManualProductAdsResponseData `json:"response"` // <p>response body<br /></p>
+	Response     CreateManualProductAdsResponseData `json:"response"` // Response data
 }
 type CreateManualProductAdsResponseData struct {
 	CampaignId int64 `json:"campaign_id"` // [Required] <p>The unique identifier for a campaign<br /></p>
@@ -109,7 +109,7 @@ type EditGmsItemProductCampaignRequest struct {
 }
 type EditGmsItemProductCampaignResponse struct {
 	BaseResponse                                        // Common response fields
-	Response     EditGmsItemProductCampaignResponseData `json:"response"` //
+	Response     EditGmsItemProductCampaignResponseData `json:"response"` // Response data
 }
 type EditGmsItemProductCampaignResponseData struct {
 	CampaignId int64 `json:"campaign_id"` // [Required] <p>GMS Campaign ID<br /></p>
@@ -125,7 +125,7 @@ type EditGmsProductCampaignRequest struct {
 }
 type EditGmsProductCampaignResponse struct {
 	BaseResponse                                    // Common response fields
-	Response     EditGmsProductCampaignResponseData `json:"response"` //
+	Response     EditGmsProductCampaignResponseData `json:"response"` // Response data
 }
 type EditGmsProductCampaignResponseData struct {
 	CampaignId int64 `json:"campaign_id"` // [Required] <p>GMS Campaign ID<br /></p>
@@ -137,7 +137,7 @@ type EditManualProductAdKeywordsRequest struct {
 }
 type EditManualProductAdKeywordsResponse struct {
 	BaseResponse                                         // Common response fields
-	Response     EditManualProductAdKeywordsResponseData `json:"response"` // <p>response body<br /></p>
+	Response     EditManualProductAdKeywordsResponseData `json:"response"` // Response data
 }
 type EditManualProductAdKeywordsResponseData struct {
 	CampaignId  int64         `json:"campaign_id"`  // [Required] <p>The unique identifier for a campaign<br /></p>
@@ -157,7 +157,7 @@ type EditManualProductAdsRequest struct {
 }
 type EditManualProductAdsResponse struct {
 	BaseResponse                                  // Common response fields
-	Response     EditManualProductAdsResponseData `json:"response"` // <p>response body<br /></p>
+	Response     EditManualProductAdsResponseData `json:"response"` // Response data
 }
 type EditManualProductAdsResponseData struct {
 	CampaignId int64 `json:"campaign_id"` // [Required] <p>The unique identifier for a campaign<br /></p>
@@ -178,7 +178,7 @@ type GetAllCpcAdsDailyPerformanceRequest struct {
 }
 type GetAllCpcAdsDailyPerformanceResponse struct {
 	BaseResponse                                          // Common response fields
-	Response     GetAllCpcAdsDailyPerformanceResponseData `json:"response"` // <p>response body<br /></p>
+	Response     GetAllCpcAdsDailyPerformanceResponseData `json:"response"` // Response data
 }
 type GetAllCpcAdsDailyPerformanceResponseData struct {
 	Date              string  `json:"date"`                // [Required] <p>This is the parameter to indicate which date the performance record belongs to.<br /></p>
@@ -203,7 +203,7 @@ type GetAllCpcAdsHourlyPerformanceRequest struct {
 }
 type GetAllCpcAdsHourlyPerformanceResponse struct {
 	BaseResponse                                           // Common response fields
-	Response     GetAllCpcAdsHourlyPerformanceResponseData `json:"response"` // <p>response body<br /></p>
+	Response     GetAllCpcAdsHourlyPerformanceResponseData `json:"response"` // Response data
 }
 type GetAllCpcAdsHourlyPerformanceResponseData struct {
 	Hour              int64   `json:"hour"`                // [Required] <p>This is the parameter to indicate each hour the performance record belongs to.<br /></p>
@@ -236,7 +236,7 @@ type GetCreateProductAdBudgetSuggestionRequest struct {
 }
 type GetCreateProductAdBudgetSuggestionResponse struct {
 	BaseResponse                                                // Common response fields
-	Response     GetCreateProductAdBudgetSuggestionResponseData `json:"response"` // <p>response body<br /></p>
+	Response     GetCreateProductAdBudgetSuggestionResponseData `json:"response"` // Response data
 }
 type GetCreateProductAdBudgetSuggestionResponseData struct {
 	Budget *Budget `json:"budget"` // [Required] <p>Budget data</p>
@@ -248,7 +248,7 @@ type GetGmsCampaignPerformanceRequest struct {
 }
 type GetGmsCampaignPerformanceResponse struct {
 	BaseResponse                                       // Common response fields
-	Response     GetGmsCampaignPerformanceResponseData `json:"response"` //
+	Response     GetGmsCampaignPerformanceResponseData `json:"response"` // Response data
 }
 type GetGmsCampaignPerformanceResponseData struct {
 	CampaignId int64   `json:"campaign_id"` // [Required] <p>GMS Campaign ID<br /></p>
@@ -263,7 +263,7 @@ type GetGmsItemPerformanceRequest struct {
 }
 type GetGmsItemPerformanceResponse struct {
 	BaseResponse                                   // Common response fields
-	Response     GetGmsItemPerformanceResponseData `json:"response"` //
+	Response     GetGmsItemPerformanceResponseData `json:"response"` // Response data
 }
 type GetGmsItemPerformanceResponseData struct {
 	CampaignId  int64    `json:"campaign_id"`   // [Required] <p>GMS Campaign ID<br /></p>
@@ -278,7 +278,7 @@ type GetProductCampaignDailyPerformanceRequest struct {
 }
 type GetProductCampaignDailyPerformanceResponse struct {
 	BaseResponse                                                // Common response fields
-	Response     GetProductCampaignDailyPerformanceResponseData `json:"response"` // <p>response body<br /></p>
+	Response     GetProductCampaignDailyPerformanceResponseData `json:"response"` // Response data
 }
 type GetProductCampaignDailyPerformanceResponseData struct {
 	ShopId       int64      `json:"shop_id"`       // [Required] <p>the unique id per shop&nbsp;</p>
@@ -291,7 +291,7 @@ type GetProductCampaignHourlyPerformanceRequest struct {
 }
 type GetProductCampaignHourlyPerformanceResponse struct {
 	BaseResponse                                                 // Common response fields
-	Response     GetProductCampaignHourlyPerformanceResponseData `json:"response"` // <p>response body<br /></p>
+	Response     GetProductCampaignHourlyPerformanceResponseData `json:"response"` // Response data
 }
 type GetProductCampaignHourlyPerformanceResponseData struct {
 	ShopId       int64                  `json:"shop_id"`       // [Required] <p>Shopee's unique identifier for a shop<br /></p>
@@ -305,7 +305,7 @@ type GetProductLevelCampaignIdListRequest struct {
 }
 type GetProductLevelCampaignIdListResponse struct {
 	BaseResponse                                           // Common response fields
-	Response     GetProductLevelCampaignIdListResponseData `json:"response"` // <p>response body<br /></p>
+	Response     GetProductLevelCampaignIdListResponseData `json:"response"` // Response data
 }
 type GetProductLevelCampaignIdListResponseData struct {
 	ShopId       int64                                               `json:"shop_id"`       // [Required] <p>Shopee's unique identifier for a shop.<br /></p>
@@ -323,7 +323,7 @@ type GetProductLevelCampaignSettingInfoRequest struct {
 }
 type GetProductLevelCampaignSettingInfoResponse struct {
 	BaseResponse                                                // Common response fields
-	Response     GetProductLevelCampaignSettingInfoResponseData `json:"response"` // <p>response body<br /></p>
+	Response     GetProductLevelCampaignSettingInfoResponseData `json:"response"` // Response data
 }
 type GetProductLevelCampaignSettingInfoResponseData struct {
 	ShopId       int64                                                    `json:"shop_id"`       // [Required] <p>Shopee's unique identifier for a shop.<br /></p>
@@ -343,7 +343,7 @@ type GetProductRecommendedRoiTargetRequest struct {
 }
 type GetProductRecommendedRoiTargetResponse struct {
 	BaseResponse                                            // Common response fields
-	Response     GetProductRecommendedRoiTargetResponseData `json:"response"` // <p>Response body.</p>
+	Response     GetProductRecommendedRoiTargetResponseData `json:"response"` // Response data
 }
 type GetProductRecommendedRoiTargetResponseData struct {
 	LowerBound *LowerBound `json:"lower_bound"` // [Required] <pre><span style="font-family:Roboto, &quot;Helvetica Neue&quot;, Helvetica, &quot;Droid Sans&quot;, Arial, sans-serif;">Lower bound recommendation.  e.g., value=3.5 and percentile=80 mean that setting an ROI target of 3.5 </span></pre><pre><span style="font-family:Roboto, &quot;Helvetica Neue&quot;, Helvetica, &quot;Droid Sans&quot;, Arial, sans-serif;">makes the ads more competitive than 80% of similar ads.</span></pre>
@@ -352,7 +352,7 @@ type GetProductRecommendedRoiTargetResponseData struct {
 }
 type GetRecommendedItemListResponse struct {
 	BaseResponse                                    // Common response fields
-	Response     GetRecommendedItemListResponseData `json:"response"` // <p>response body<br /></p>
+	Response     GetRecommendedItemListResponseData `json:"response"` // Response data
 }
 type GetRecommendedItemListResponseData struct {
 	ItemId            int64    `json:"item_id"`              // [Required] <p>Recommended SKU's item id<br /></p>
@@ -366,7 +366,7 @@ type GetRecommendedKeywordListRequest struct {
 }
 type GetRecommendedKeywordListResponse struct {
 	BaseResponse                                       // Common response fields
-	Response     GetRecommendedKeywordListResponseData `json:"response"` // <p>response body<br /></p>
+	Response     GetRecommendedKeywordListResponseData `json:"response"` // Response data
 }
 type GetRecommendedKeywordListResponseData struct {
 	ItemId            int64               `json:"item_id"`            // [Required] <p>Shopee's unique identifier for an item.<br /></p>
@@ -375,7 +375,7 @@ type GetRecommendedKeywordListResponseData struct {
 }
 type GetShopToggleInfoResponse struct {
 	BaseResponse                               // Common response fields
-	Response     GetShopToggleInfoResponseData `json:"response"` // <p>response body<br /></p>
+	Response     GetShopToggleInfoResponseData `json:"response"` // Response data
 }
 type GetShopToggleInfoResponseData struct {
 	DataTimestamp int64 `json:"data_timestamp"` // [Required] <p>Timestamp of data in response<br /></p>
@@ -384,7 +384,7 @@ type GetShopToggleInfoResponseData struct {
 }
 type GetTotalBalanceResponse struct {
 	BaseResponse                             // Common response fields
-	Response     GetTotalBalanceResponseData `json:"response"` // <p>response body<br /></p>
+	Response     GetTotalBalanceResponseData `json:"response"` // Response data
 }
 type GetTotalBalanceResponseData struct {
 	DataTimestamp int64   `json:"data_timestamp"` // [Required] <p>This is param to indicate the time of the snapshot of total balance<br /></p>
@@ -396,7 +396,7 @@ type ListGmsUserDeletedItemRequest struct {
 }
 type ListGmsUserDeletedItemResponse struct {
 	BaseResponse                                    // Common response fields
-	Response     ListGmsUserDeletedItemResponseData `json:"response"` //
+	Response     ListGmsUserDeletedItemResponseData `json:"response"` // Response data
 }
 type ListGmsUserDeletedItemResponseData struct {
 	CampaignId  int64   `json:"campaign_id"`   // [Required] <p>GMS Campaign ID</p>

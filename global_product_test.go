@@ -26,7 +26,7 @@ func Test_GlobalProduct_AddGlobalItem(t *testing.T) {
 
 	var req AddGlobalItemRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.AddGlobalItem(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.AddGlobalItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.AddGlobalItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -51,7 +51,7 @@ func Test_GlobalProduct_AddGlobalModel(t *testing.T) {
 
 	var req AddGlobalModelRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.AddGlobalModel(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.AddGlobalModel(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.AddGlobalModel returned error (possibly expected with mock data): %s", err)
 	}
@@ -76,7 +76,7 @@ func Test_GlobalProduct_CategoryRecommend(t *testing.T) {
 
 	var req CategoryRecommendRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.CategoryRecommend(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.CategoryRecommend(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.CategoryRecommend returned error (possibly expected with mock data): %s", err)
 	}
@@ -101,7 +101,7 @@ func Test_GlobalProduct_CreatePublishTask(t *testing.T) {
 
 	var req CreatePublishTaskRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.CreatePublishTask(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.CreatePublishTask(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.CreatePublishTask returned error (possibly expected with mock data): %s", err)
 	}
@@ -126,7 +126,7 @@ func Test_GlobalProduct_DeleteGlobalItem(t *testing.T) {
 
 	var req DeleteGlobalItemRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.DeleteGlobalItem(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.DeleteGlobalItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.DeleteGlobalItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -151,7 +151,7 @@ func Test_GlobalProduct_DeleteGlobalModel(t *testing.T) {
 
 	var req DeleteGlobalModelRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.DeleteGlobalModel(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.DeleteGlobalModel(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.DeleteGlobalModel returned error (possibly expected with mock data): %s", err)
 	}
@@ -176,7 +176,7 @@ func Test_GlobalProduct_GetAttributeTree(t *testing.T) {
 
 	var req GetAttributeTreeRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.GetAttributeTree(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.GetAttributeTree(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.GetAttributeTree returned error (possibly expected with mock data): %s", err)
 	}
@@ -201,7 +201,7 @@ func Test_GlobalProduct_GetBrandList(t *testing.T) {
 
 	var req GetBrandListRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.GetBrandList(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.GetBrandList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.GetBrandList returned error (possibly expected with mock data): %s", err)
 	}
@@ -226,7 +226,7 @@ func Test_GlobalProduct_GetCategory(t *testing.T) {
 
 	var req GetCategoryRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.GetCategory(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.GetCategory(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.GetCategory returned error (possibly expected with mock data): %s", err)
 	}
@@ -251,7 +251,7 @@ func Test_GlobalProduct_GetGlobalItemId(t *testing.T) {
 
 	var req GetGlobalItemIdRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.GetGlobalItemId(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.GetGlobalItemId(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.GetGlobalItemId returned error (possibly expected with mock data): %s", err)
 	}
@@ -276,7 +276,7 @@ func Test_GlobalProduct_GetGlobalItemInfo(t *testing.T) {
 
 	var req GetGlobalItemInfoRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.GetGlobalItemInfo(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.GetGlobalItemInfo(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.GetGlobalItemInfo returned error (possibly expected with mock data): %s", err)
 	}
@@ -301,7 +301,7 @@ func Test_GlobalProduct_GetGlobalItemLimit(t *testing.T) {
 
 	var req GetGlobalItemLimitRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.GetGlobalItemLimit(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.GetGlobalItemLimit(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.GetGlobalItemLimit returned error (possibly expected with mock data): %s", err)
 	}
@@ -326,7 +326,7 @@ func Test_GlobalProduct_GetGlobalItemList(t *testing.T) {
 
 	var req GetGlobalItemListRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.GetGlobalItemList(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.GetGlobalItemList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.GetGlobalItemList returned error (possibly expected with mock data): %s", err)
 	}
@@ -351,7 +351,7 @@ func Test_GlobalProduct_GetGlobalModelList(t *testing.T) {
 
 	var req GetGlobalModelListRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.GetGlobalModelList(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.GetGlobalModelList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.GetGlobalModelList returned error (possibly expected with mock data): %s", err)
 	}
@@ -375,7 +375,7 @@ func Test_GlobalProduct_GetLocalAdjustmentRate(t *testing.T) {
 	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/get_local_adjustment_rate", app.APIURL), responder)
 
 	ctx := context.Background()
-	res, err := client.GlobalProduct.GetLocalAdjustmentRate(ctx, shopID, accessToken)
+	res, err := client.GlobalProduct.GetLocalAdjustmentRate(ctx, sid, mid, tok)
 	if err != nil {
 		t.Logf("GlobalProduct.GetLocalAdjustmentRate returned error (possibly expected with mock data): %s", err)
 	}
@@ -400,7 +400,7 @@ func Test_GlobalProduct_GetPublishableShop(t *testing.T) {
 
 	var req GetPublishableShopRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.GetPublishableShop(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.GetPublishableShop(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.GetPublishableShop returned error (possibly expected with mock data): %s", err)
 	}
@@ -425,7 +425,7 @@ func Test_GlobalProduct_GetPublishedList(t *testing.T) {
 
 	var req GetPublishedListRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.GetPublishedList(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.GetPublishedList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.GetPublishedList returned error (possibly expected with mock data): %s", err)
 	}
@@ -450,7 +450,7 @@ func Test_GlobalProduct_GetPublishTaskResult(t *testing.T) {
 
 	var req GetPublishTaskResultRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.GetPublishTaskResult(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.GetPublishTaskResult(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.GetPublishTaskResult returned error (possibly expected with mock data): %s", err)
 	}
@@ -475,7 +475,7 @@ func Test_GlobalProduct_GetRecommendAttribute(t *testing.T) {
 
 	var req GetRecommendAttributeRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.GetRecommendAttribute(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.GetRecommendAttribute(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.GetRecommendAttribute returned error (possibly expected with mock data): %s", err)
 	}
@@ -500,7 +500,7 @@ func Test_GlobalProduct_GetShopPublishableStatus(t *testing.T) {
 
 	var req GetShopPublishableStatusRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.GetShopPublishableStatus(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.GetShopPublishableStatus(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.GetShopPublishableStatus returned error (possibly expected with mock data): %s", err)
 	}
@@ -525,7 +525,7 @@ func Test_GlobalProduct_GetSizeChartDetail(t *testing.T) {
 
 	var req GetSizeChartDetailRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.GetSizeChartDetail(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.GetSizeChartDetail(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.GetSizeChartDetail returned error (possibly expected with mock data): %s", err)
 	}
@@ -550,7 +550,7 @@ func Test_GlobalProduct_GetSizeChartList(t *testing.T) {
 
 	var req GetSizeChartListRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.GetSizeChartList(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.GetSizeChartList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.GetSizeChartList returned error (possibly expected with mock data): %s", err)
 	}
@@ -575,7 +575,7 @@ func Test_GlobalProduct_GetVariations(t *testing.T) {
 
 	var req GetVariationsRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.GetVariations(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.GetVariations(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.GetVariations returned error (possibly expected with mock data): %s", err)
 	}
@@ -600,7 +600,7 @@ func Test_GlobalProduct_InitTierVariation(t *testing.T) {
 
 	var req InitTierVariationRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.InitTierVariation(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.InitTierVariation(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.InitTierVariation returned error (possibly expected with mock data): %s", err)
 	}
@@ -625,7 +625,7 @@ func Test_GlobalProduct_SearchGlobalAttributeValueList(t *testing.T) {
 
 	var req SearchGlobalAttributeValueListRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.SearchGlobalAttributeValueList(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.SearchGlobalAttributeValueList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.SearchGlobalAttributeValueList returned error (possibly expected with mock data): %s", err)
 	}
@@ -650,7 +650,7 @@ func Test_GlobalProduct_SetSyncField(t *testing.T) {
 
 	var req SetSyncFieldRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.SetSyncField(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.SetSyncField(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.SetSyncField returned error (possibly expected with mock data): %s", err)
 	}
@@ -675,7 +675,7 @@ func Test_GlobalProduct_SupportSizeChart(t *testing.T) {
 
 	var req SupportSizeChartRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.SupportSizeChart(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.SupportSizeChart(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.SupportSizeChart returned error (possibly expected with mock data): %s", err)
 	}
@@ -700,7 +700,7 @@ func Test_GlobalProduct_UpdateGlobalItem(t *testing.T) {
 
 	var req UpdateGlobalItemRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.UpdateGlobalItem(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.UpdateGlobalItem(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.UpdateGlobalItem returned error (possibly expected with mock data): %s", err)
 	}
@@ -725,7 +725,7 @@ func Test_GlobalProduct_UpdateGlobalModel(t *testing.T) {
 
 	var req UpdateGlobalModelRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.UpdateGlobalModel(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.UpdateGlobalModel(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.UpdateGlobalModel returned error (possibly expected with mock data): %s", err)
 	}
@@ -750,7 +750,7 @@ func Test_GlobalProduct_UpdateLocalAdjustmentRate(t *testing.T) {
 
 	var req UpdateLocalAdjustmentRateRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.UpdateLocalAdjustmentRate(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.UpdateLocalAdjustmentRate(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.UpdateLocalAdjustmentRate returned error (possibly expected with mock data): %s", err)
 	}
@@ -775,7 +775,7 @@ func Test_GlobalProduct_UpdatePrice(t *testing.T) {
 
 	var req UpdatePriceRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.UpdatePrice(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.UpdatePrice(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.UpdatePrice returned error (possibly expected with mock data): %s", err)
 	}
@@ -800,7 +800,7 @@ func Test_GlobalProduct_UpdateSizeChart(t *testing.T) {
 
 	var req UpdateSizeChartRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.UpdateSizeChart(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.UpdateSizeChart(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.UpdateSizeChart returned error (possibly expected with mock data): %s", err)
 	}
@@ -825,7 +825,7 @@ func Test_GlobalProduct_UpdateStock(t *testing.T) {
 
 	var req UpdateStockRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.UpdateStock(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.UpdateStock(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.UpdateStock returned error (possibly expected with mock data): %s", err)
 	}
@@ -850,7 +850,7 @@ func Test_GlobalProduct_UpdateTierVariation(t *testing.T) {
 
 	var req UpdateTierVariationRequest
 	ctx := context.Background()
-	res, err := client.GlobalProduct.UpdateTierVariation(ctx, shopID, req, accessToken)
+	res, err := client.GlobalProduct.UpdateTierVariation(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("GlobalProduct.UpdateTierVariation returned error (possibly expected with mock data): %s", err)
 	}

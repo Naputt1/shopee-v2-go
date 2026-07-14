@@ -26,7 +26,7 @@ func Test_Voucher_AddVoucher(t *testing.T) {
 
 	var req AddVoucherRequest
 	ctx := context.Background()
-	res, err := client.Voucher.AddVoucher(ctx, shopID, req, accessToken)
+	res, err := client.Voucher.AddVoucher(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Voucher.AddVoucher returned error (possibly expected with mock data): %s", err)
 	}
@@ -51,7 +51,7 @@ func Test_Voucher_DeleteVoucher(t *testing.T) {
 
 	var req DeleteVoucherRequest
 	ctx := context.Background()
-	res, err := client.Voucher.DeleteVoucher(ctx, shopID, req, accessToken)
+	res, err := client.Voucher.DeleteVoucher(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Voucher.DeleteVoucher returned error (possibly expected with mock data): %s", err)
 	}
@@ -76,7 +76,7 @@ func Test_Voucher_EndVoucher(t *testing.T) {
 
 	var req EndVoucherRequest
 	ctx := context.Background()
-	res, err := client.Voucher.EndVoucher(ctx, shopID, req, accessToken)
+	res, err := client.Voucher.EndVoucher(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Voucher.EndVoucher returned error (possibly expected with mock data): %s", err)
 	}
@@ -101,7 +101,7 @@ func Test_Voucher_GetVoucher(t *testing.T) {
 
 	var req GetVoucherRequest
 	ctx := context.Background()
-	res, err := client.Voucher.GetVoucher(ctx, shopID, req, accessToken)
+	res, err := client.Voucher.GetVoucher(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Voucher.GetVoucher returned error (possibly expected with mock data): %s", err)
 	}
@@ -126,7 +126,7 @@ func Test_Voucher_GetVoucherList(t *testing.T) {
 
 	var req GetVoucherListRequest
 	ctx := context.Background()
-	res, err := client.Voucher.GetVoucherList(ctx, shopID, req, accessToken)
+	res, err := client.Voucher.GetVoucherList(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Voucher.GetVoucherList returned error (possibly expected with mock data): %s", err)
 	}
@@ -151,7 +151,7 @@ func Test_Voucher_UpdateVoucher(t *testing.T) {
 
 	var req UpdateVoucherRequest
 	ctx := context.Background()
-	res, err := client.Voucher.UpdateVoucher(ctx, shopID, req, accessToken)
+	res, err := client.Voucher.UpdateVoucher(ctx, sid, mid, tok, req)
 	if err != nil {
 		t.Logf("Voucher.UpdateVoucher returned error (possibly expected with mock data): %s", err)
 	}

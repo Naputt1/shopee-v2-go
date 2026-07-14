@@ -117,11 +117,11 @@ type ResponseError struct {
 	RequestID   string
 }
 
-func (e ResponseError) GetStatus() int    { return e.Status }
-func (e ResponseError) GetMessage() string { return e.Message }
-func (e ResponseError) GetErrors() []string { return e.Errors }
+func (e ResponseError) GetStatus() int         { return e.Status }
+func (e ResponseError) GetMessage() string     { return e.Message }
+func (e ResponseError) GetErrors() []string    { return e.Errors }
 func (e ResponseError) GetShopeeError() string { return e.ShopeeError }
-func (e ResponseError) GetRequestID() string { return e.RequestID }
+func (e ResponseError) GetRequestID() string   { return e.RequestID }
 
 func (e ResponseError) Error() string {
 	msg := e.Message
@@ -319,7 +319,7 @@ func (c *Client[T]) doGetHeaders(req *http.Request, v interface{}, skipBody bool
 				shopeeErr = re.ShopeeError
 			}
 
-			if refreshAttempts < c.retries && (shopeeErr == "error_invalid_access_token" || shopeeErr == "error_access_token_expired" || shopeeErr == "invalid_access_token" || shopeeErr == "invalid_acceess_token") {
+			if shopeeErr == "error_invalid_access_token" || shopeeErr == "error_access_token_expired" || shopeeErr == "invalid_access_token" || shopeeErr == "invalid_acceess_token" {
 				a := authFromContext(req.Context())
 				refreshRes, err := c.Auth.RefreshAccessToken(req.Context(), a.shopID, a.merchantID, c.RefreshToken)
 				if err == nil {
@@ -381,21 +381,33 @@ func (c *Client[T]) doGetHeaders(req *http.Request, v interface{}, skipBody bool
 }
 
 func (c *Client[T]) logRequest(req *http.Request, skipBody bool) {
-	if req == nil { return }
-	if req.URL != nil { c.log.Debugf("%s: %s", req.Method, req.URL.String()) }
-	if !skipBody { c.logBody(&req.Body, "SENT: %s") }
+	if req == nil {
+		return
+	}
+	if req.URL != nil {
+		c.log.Debugf("%s: %s", req.Method, req.URL.String())
+	}
+	if !skipBody {
+		c.logBody(&req.Body, "SENT: %s")
+	}
 }
 
 func (c *Client[T]) logResponse(res *http.Response) {
-	if res == nil { return }
+	if res == nil {
+		return
+	}
 	c.log.Debugf("RECV %d: %s", res.StatusCode, res.Status)
 	c.logBody(&res.Body, "RESP: %s")
 }
 
 func (c *Client[T]) logBody(body *io.ReadCloser, format string) {
-	if body == nil || *body == nil { return }
+	if body == nil || *body == nil {
+		return
+	}
 	b, _ := io.ReadAll(*body)
-	if len(b) > 0 { c.log.Debugf(format, string(b)) }
+	if len(b) > 0 {
+		c.log.Debugf(format, string(b))
+	}
 	*body = io.NopCloser(bytes.NewBuffer(b))
 }
 
@@ -421,7 +433,9 @@ func CheckResponseError(r *http.Response) error {
 	}{}
 
 	bodyBytes, err := io.ReadAll(r.Body)
-	if err != nil { return err }
+	if err != nil {
+		return err
+	}
 
 	defer func() {
 		r.Body = io.NopCloser(bytes.NewBuffer(bodyBytes))
@@ -430,7 +444,9 @@ func CheckResponseError(r *http.Response) error {
 	if len(bodyBytes) > 0 {
 		err := json.Unmarshal(bodyBytes, &shopeeError)
 		if err != nil {
-			if r.StatusCode == http.StatusOK { return nil }
+			if r.StatusCode == http.StatusOK {
+				return nil
+			}
 			return ResponseDecodingError{Body: bodyBytes, Message: err.Error(), Status: r.StatusCode}
 		}
 	}
@@ -459,36 +475,42 @@ func (c *Client[T]) createAndDoGetHeaders(ctx context.Context, method, relPath s
 	}
 	relPath = path.Join("api/v2", relPath)
 	req, err := c.NewRequest(ctx, method, relPath, data, options, headers, sid, mid, tok)
-	if err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
 	return c.doGetHeaders(req, resource, false)
 }
 
-func (c *Client[T]) Get(ctx context.Context, path string, resource, options interface{}, sid uint64, tok string) error {
-	return c.CreateAndDo(ctx, "GET", path, nil, options, nil, resource, sid, 0, tok)
+func (c *Client[T]) Get(ctx context.Context, path string, resource, options interface{}, sid uint64, mid uint64, tok string) error {
+	return c.CreateAndDo(ctx, "GET", path, nil, options, nil, resource, sid, mid, tok)
 }
 
-func (c *Client[T]) Post(ctx context.Context, path string, data, resource interface{}, sid uint64, tok string) error {
-	return c.CreateAndDo(ctx, "POST", path, data, nil, nil, resource, sid, 0, tok)
+func (c *Client[T]) Post(ctx context.Context, path string, data, resource interface{}, sid uint64, mid uint64, tok string) error {
+	return c.CreateAndDo(ctx, "POST", path, data, nil, nil, resource, sid, mid, tok)
 }
 
-func (c *Client[T]) Put(ctx context.Context, path string, data, resource interface{}, sid uint64, tok string) error {
-	return c.CreateAndDo(ctx, "PUT", path, data, nil, nil, resource, sid, 0, tok)
+func (c *Client[T]) Put(ctx context.Context, path string, data, resource interface{}, sid uint64, mid uint64, tok string) error {
+	return c.CreateAndDo(ctx, "PUT", path, data, nil, nil, resource, sid, mid, tok)
 }
 
-func (c *Client[T]) Delete(ctx context.Context, path string, sid uint64, tok string) error {
-	return c.CreateAndDo(ctx, "DELETE", path, nil, nil, nil, nil, sid, 0, tok)
+func (c *Client[T]) Delete(ctx context.Context, path string, sid uint64, mid uint64, tok string) error {
+	return c.CreateAndDo(ctx, "DELETE", path, nil, nil, nil, nil, sid, mid, tok)
 }
 
 func (c *Client[T]) Upload(ctx context.Context, relPath, fieldname, filename string, resource interface{}, sid uint64, mid uint64, tok string) error {
 	req, err := c.NewfileUploadRequest(ctx, relPath, fieldname, filename, sid, mid, tok)
-	if err != nil { return err }
+	if err != nil {
+		return err
+	}
 	_, err = c.doGetHeaders(req, resource, true)
 	return err
 }
 
 func (c *Client[T]) UploadFromReader(ctx context.Context, relPath, fieldname, filename string, reader io.Reader, resource interface{}, sid uint64, mid uint64, tok string) error {
 	req, err := c.NewUploadFromReaderRequest(ctx, relPath, fieldname, filename, reader, sid, mid, tok)
-	if err != nil { return err }
+	if err != nil {
+		return err
+	}
 	_, err = c.doGetHeaders(req, resource, true)
 	return err
 }
@@ -499,25 +521,37 @@ func (c *Client[T]) NewfileUploadRequest(ctx context.Context, relPath, paramName
 	}
 	relPath = path.Join("api/v2", relPath)
 	rel, err := url.Parse(relPath)
-	if err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
 	u := c.baseURL.ResolveReference(rel)
 	uri := u.String()
 
 	file, err := os.Open(filename)
-	if err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
 	defer file.Close()
 
 	body := &bytes.Buffer{}
 	writer := multipart.NewWriter(body)
 	part, err := writer.CreateFormFile(paramName, filepath.Base(filename))
-	if err != nil { return nil, err }
-	if _, err = io.Copy(part, file); err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
+	if _, err = io.Copy(part, file); err != nil {
+		return nil, err
+	}
 	err = writer.Close()
-	if err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
 
 	ctx = context.WithValue(ctx, authKey, requestAuth{shopID: sid, merchantID: mid, token: tok})
 	req, err := http.NewRequestWithContext(ctx, "POST", uri, body)
-	if err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
 	req.Header.Set("Content-Type", writer.FormDataContentType())
 	req.Header.Add("Accept", "application/json")
 	req.Header.Add("User-Agent", UserAgent)
@@ -532,21 +566,31 @@ func (c *Client[T]) NewUploadFromReaderRequest(ctx context.Context, relPath, par
 	}
 	relPath = path.Join("api/v2", relPath)
 	rel, err := url.Parse(relPath)
-	if err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
 	u := c.baseURL.ResolveReference(rel)
 	uri := u.String()
 
 	body := &bytes.Buffer{}
 	writer := multipart.NewWriter(body)
 	part, err := writer.CreateFormFile(paramName, filepath.Base(filename))
-	if err != nil { return nil, err }
-	if _, err = io.Copy(part, reader); err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
+	if _, err = io.Copy(part, reader); err != nil {
+		return nil, err
+	}
 	err = writer.Close()
-	if err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
 
 	ctx = context.WithValue(ctx, authKey, requestAuth{shopID: sid, merchantID: mid, token: tok})
 	req, err := http.NewRequestWithContext(ctx, "POST", uri, body)
-	if err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
 	req.Header.Set("Content-Type", writer.FormDataContentType())
 	req.Header.Add("Accept", "application/json")
 	req.Header.Add("User-Agent", UserAgent)
@@ -559,15 +603,25 @@ type BoolString bool
 
 func (bs *BoolString) UnmarshalJSON(data []byte) error {
 	s := strings.Trim(string(data), "\"")
-	if strings.ToUpper(s) == "TRUE" { *bs = true; return nil }
-	if strings.ToUpper(s) == "FALSE" { *bs = false; return nil }
+	if strings.ToUpper(s) == "TRUE" {
+		*bs = true
+		return nil
+	}
+	if strings.ToUpper(s) == "FALSE" {
+		*bs = false
+		return nil
+	}
 	var b bool
-	if err := json.Unmarshal(data, &b); err != nil { return err }
+	if err := json.Unmarshal(data, &b); err != nil {
+		return err
+	}
 	*bs = BoolString(b)
 	return nil
 }
 
 func (bs BoolString) String() string {
-	if bs { return "TRUE" }
+	if bs {
+		return "TRUE"
+	}
 	return "FALSE"
 }

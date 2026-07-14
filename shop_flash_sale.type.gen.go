@@ -13,7 +13,7 @@ type AddShopFlashSaleItemsRequestItems struct {
 }
 type AddShopFlashSaleItemsResponse struct {
 	BaseResponse                                   // Common response fields
-	Response     AddShopFlashSaleItemsResponseData `json:"response"` //
+	Response     AddShopFlashSaleItemsResponseData `json:"response"` // Response data
 }
 type AddShopFlashSaleItemsResponseData struct {
 	FailedItems []FailedItems `json:"failed_items"` // [Required]
@@ -23,7 +23,7 @@ type CreateShopFlashSaleRequest struct {
 }
 type CreateShopFlashSaleResponse struct {
 	BaseResponse                                 // Common response fields
-	Response     CreateShopFlashSaleResponseData `json:"response"` //
+	Response     CreateShopFlashSaleResponseData `json:"response"` // Response data
 }
 type CreateShopFlashSaleResponseData struct {
 	TimeslotId  int64 `json:"timeslot_id"`   // [Required]
@@ -52,7 +52,7 @@ type DeleteShopFlashSaleItemsRequest struct {
 }
 type DeleteShopFlashSaleItemsResponse struct {
 	BaseResponse                                      // Common response fields
-	Response     DeleteShopFlashSaleItemsResponseData `json:"response"` //
+	Response     DeleteShopFlashSaleItemsResponseData `json:"response"` // Response data
 }
 type DeleteShopFlashSaleItemsResponseData struct {
 	FailedItems []FailedItems `json:"failed_items"` // [Required]
@@ -62,7 +62,7 @@ type DeleteShopFlashSaleRequest struct {
 }
 type DeleteShopFlashSaleResponse struct {
 	BaseResponse                                 // Common response fields
-	Response     DeleteShopFlashSaleResponseData `json:"response"` //
+	Response     DeleteShopFlashSaleResponseData `json:"response"` // Response data
 }
 type DeleteShopFlashSaleResponseData struct {
 	TimeslotId  int64 `json:"timeslot_id"`   // [Required]
@@ -90,7 +90,7 @@ type FlashSale struct {
 }
 type GetItemCriteriaResponse struct {
 	BaseResponse                             // Common response fields
-	Response     GetItemCriteriaResponseData `json:"response"` //
+	Response     GetItemCriteriaResponseData `json:"response"` // Response data
 }
 type GetItemCriteriaResponseData struct {
 	Criteria                []Criteria `json:"criteria"`                   // [Required] <p>criteria detail</p>
@@ -104,7 +104,7 @@ type GetShopFlashSaleItemsRequest struct {
 }
 type GetShopFlashSaleItemsResponse struct {
 	BaseResponse                                   // Common response fields
-	Response     GetShopFlashSaleItemsResponseData `json:"response"` //
+	Response     GetShopFlashSaleItemsResponseData `json:"response"` // Response data
 }
 type GetShopFlashSaleItemsResponseData struct {
 	TotalCount int64                `json:"total_count"` // [Required]
@@ -120,8 +120,8 @@ type GetShopFlashSaleListRequest struct {
 }
 type GetShopFlashSaleListResponse struct {
 	BaseResponse                                   // Common response fields
+	Response      GetShopFlashSaleListResponseData `json:"response"`                  // Response data
 	FlashSaleList []FlashSale                      `json:"flash_sale_list,omitempty"` //
-	Response      GetShopFlashSaleListResponseData `json:"response"`                  //
 }
 type GetShopFlashSaleListResponseData struct {
 	TotalCount int64 `json:"total_count"` // [Required] <p>the number of shop flash sale that the shop has</p>
@@ -131,7 +131,7 @@ type GetShopFlashSaleRequest struct {
 }
 type GetShopFlashSaleResponse struct {
 	BaseResponse                              // Common response fields
-	Response     GetShopFlashSaleResponseData `json:"response"` //
+	Response     GetShopFlashSaleResponseData `json:"response"` // Response data
 }
 type GetShopFlashSaleResponseData struct {
 	TimeslotId       int64 `json:"timeslot_id"`        // [Required]
@@ -149,7 +149,7 @@ type GetTimeSlotIdRequest struct {
 }
 type GetTimeSlotIdResponse struct {
 	BaseResponse                           // Common response fields
-	Response     GetTimeSlotIdResponseData `json:"response"` //
+	Response     GetTimeSlotIdResponseData `json:"response"` // Response data
 }
 type GetTimeSlotIdResponseData struct {
 	TimeslotId int64 `json:"timeslot_id"` // [Required]
@@ -223,7 +223,7 @@ type UpdateShopFlashSaleItemsRequestItems struct {
 }
 type UpdateShopFlashSaleItemsResponse struct {
 	BaseResponse                                      // Common response fields
-	Response     UpdateShopFlashSaleItemsResponseData `json:"response"` //
+	Response     UpdateShopFlashSaleItemsResponseData `json:"response"` // Response data
 }
 type UpdateShopFlashSaleItemsResponseData struct {
 	FailedItems []FailedItems `json:"failed_items"` // [Required]
@@ -234,7 +234,7 @@ type UpdateShopFlashSaleRequest struct {
 }
 type UpdateShopFlashSaleResponse struct {
 	BaseResponse                                 // Common response fields
-	Response     UpdateShopFlashSaleResponseData `json:"response"` //
+	Response     UpdateShopFlashSaleResponseData `json:"response"` // Response data
 }
 type UpdateShopFlashSaleResponseData struct {
 	TimeslotId  int64 `json:"timeslot_id"`   // [Required]

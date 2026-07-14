@@ -18,7 +18,7 @@ type AddVoucherRequest struct {
 }
 type AddVoucherResponse struct {
 	BaseResponse                        // Common response fields
-	Response     AddVoucherResponseData `json:"response"` // Detailed informations you are querying.
+	Response     AddVoucherResponseData `json:"response"` // Response data
 }
 type AddVoucherResponseData struct {
 	VoucherId int64 `json:"voucher_id"` // [Required] The unique identifier for the created voucher.
@@ -28,7 +28,7 @@ type DeleteVoucherRequest struct {
 }
 type DeleteVoucherResponse struct {
 	BaseResponse                           // Common response fields
-	Response     DeleteVoucherResponseData `json:"response"` // Detail informations you are querying.
+	Response     DeleteVoucherResponseData `json:"response"` // Response data
 }
 type DeleteVoucherResponseData struct {
 	VoucherId int64 `json:"voucher_id"` // [Required] The unique identifier for the voucher it is being deleted.
@@ -38,7 +38,7 @@ type EndVoucherRequest struct {
 }
 type EndVoucherResponse struct {
 	BaseResponse                        // Common response fields
-	Response     EndVoucherResponseData `json:"response"` // Detailed informations you are querying.
+	Response     EndVoucherResponseData `json:"response"` // Response data
 }
 type EndVoucherResponseData struct {
 	VoucherId int64 `json:"voucher_id"` // [Required] The unique identifier for the voucher it is being ended.
@@ -50,7 +50,7 @@ type GetVoucherListRequest struct {
 }
 type GetVoucherListResponse struct {
 	BaseResponse                            // Common response fields
-	Response     GetVoucherListResponseData `json:"response"` // Detailed informations you are querying.
+	Response     GetVoucherListResponseData `json:"response"` // Response data
 }
 type GetVoucherListResponseData struct {
 	More        bool      `json:"more"`         // [Required] This is to indicate whether the comment list is more than one page. If this value is true, you may want to continue to check next page to retrieve the rest of comments.
@@ -61,7 +61,7 @@ type GetVoucherRequest struct {
 }
 type GetVoucherResponse struct {
 	BaseResponse                        // Common response fields
-	Response     GetVoucherResponseData `json:"response"` // Detailed informations you are querying.
+	Response     GetVoucherResponseData `json:"response"` // Response data
 }
 type GetVoucherResponseData struct {
 	VoucherId          int64   `json:"voucher_id"`           // [Required] The unique identifier of the voucher whose details are returned.
@@ -102,7 +102,7 @@ type UpdateVoucherRequest struct {
 }
 type UpdateVoucherResponse struct {
 	BaseResponse                           // Common response fields
-	Response     UpdateVoucherResponseData `json:"response"` // Detailed informations you are querying.
+	Response     UpdateVoucherResponseData `json:"response"` // Response data
 }
 type UpdateVoucherResponseData struct {
 	VoucherId int64 `json:"voucher_id"` // [Required] The unique identifier of the voucher which is being updated.

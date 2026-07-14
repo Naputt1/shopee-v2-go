@@ -26,7 +26,7 @@ type GetMerchantPrepaidAccountListRequest struct {
 }
 type GetMerchantPrepaidAccountListResponse struct {
 	BaseResponse                                           // Common response fields
-	Response     GetMerchantPrepaidAccountListResponseData `json:"response"` // <p>Detail informations you are querying.</p>
+	Response     GetMerchantPrepaidAccountListResponseData `json:"response"` // Response data
 }
 type GetMerchantPrepaidAccountListResponseData struct {
 	Total int64                                           `json:"total"` // [Required]
@@ -52,7 +52,7 @@ type GetMerchantWarehouseListRequest struct {
 }
 type GetMerchantWarehouseListResponse struct {
 	BaseResponse                                      // Common response fields
-	Response     GetMerchantWarehouseListResponseData `json:"response"` //
+	Response     GetMerchantWarehouseListResponseData `json:"response"` // Response data
 }
 type GetMerchantWarehouseListResponseData struct {
 	TotalCount    int64       `json:"total_count"`    // [Required] <p>Total count of all warehouses.<br /></p>
@@ -61,7 +61,7 @@ type GetMerchantWarehouseListResponseData struct {
 }
 type GetMerchantWarehouseLocationListResponse struct {
 	BaseResponse                                              // Common response fields
-	Response     GetMerchantWarehouseLocationListResponseData `json:"response"` //
+	Response     GetMerchantWarehouseLocationListResponseData `json:"response"` // Response data
 }
 type GetMerchantWarehouseLocationListResponseData struct {
 	LocationId    string `json:"location_id"`    // [Required] <p>Location identifier for stocks. Different location_ids represent that your addresses are in different item stocks<br /></p>
@@ -83,7 +83,7 @@ type GetWarehouseEligibleShopListRequest struct {
 }
 type GetWarehouseEligibleShopListResponse struct {
 	BaseResponse                                          // Common response fields
-	Response     GetWarehouseEligibleShopListResponseData `json:"response"` //
+	Response     GetWarehouseEligibleShopListResponseData `json:"response"` // Response data
 }
 type GetWarehouseEligibleShopListResponseData struct {
 	ShopList []ResponseDataShop `json:"shop_list"` // [Required] <p>Eligible shop list of the warehouse</p>

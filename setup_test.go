@@ -1,8 +1,8 @@
 package goshopee
 
 import (
-	"fmt"
 	"encoding/json"
+	"fmt"
 	"io"
 	"os"
 	"sync"
@@ -16,6 +16,9 @@ var (
 	shopID        uint64 = 123456
 	merchantID    uint64 = 789012
 	accessToken          = "test_access_token"
+	sid           uint64 = shopID
+	mid           uint64 = merchantID
+	tok                  = accessToken
 	skippedMu     sync.Mutex
 	skippedRoutes []string
 )
@@ -29,6 +32,7 @@ func setup() {
 		APIURL:      "https://open-api.test.com",
 	}
 	client = NewDefaultClient(app)
+
 }
 
 func teardown() {

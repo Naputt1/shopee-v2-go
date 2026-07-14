@@ -17,7 +17,7 @@ type EndQty struct {
 }
 type GetBoundWhsInfoResponse struct {
 	BaseResponse                             // Common response fields
-	Response     GetBoundWhsInfoResponseData `json:"response"` //
+	Response     GetBoundWhsInfoResponseData `json:"response"` // Response data
 }
 type GetBoundWhsInfoResponseData struct {
 	List []GetBoundWhsInfoResponseDataList `json:"list"` // [Required]
@@ -41,7 +41,7 @@ type GetCurrentInventoryRequest struct {
 }
 type GetCurrentInventoryResponse struct {
 	BaseResponse                                 // Common response fields
-	Response     GetCurrentInventoryResponseData `json:"response"` // <p>Detail informations you are querying.<br /></p>
+	Response     GetCurrentInventoryResponseData `json:"response"` // Response data
 }
 type GetCurrentInventoryResponseData struct {
 	ItemList []GetCurrentInventoryResponseDataItem `json:"item_list"` // [Required] <p>Data list of item sku</p>
@@ -66,7 +66,7 @@ type GetExpiryReportRequest struct {
 }
 type GetExpiryReportResponse struct {
 	BaseResponse                             // Common response fields
-	Response     GetExpiryReportResponseData `json:"response"` // <p>Detail informations you are querying.<br /></p>
+	Response     GetExpiryReportResponseData `json:"response"` // Response data
 }
 type GetExpiryReportResponseData struct {
 	ItemList []GetExpiryReportResponseDataItem `json:"item_list"` // [Required]
@@ -90,7 +90,7 @@ type GetStockAgingRequest struct {
 }
 type GetStockAgingResponse struct {
 	BaseResponse                           // Common response fields
-	Response     GetStockAgingResponseData `json:"response"` // <p>Detail informations you are querying.<br /></p>
+	Response     GetStockAgingResponseData `json:"response"` // Response data
 }
 type GetStockAgingResponseData struct {
 	ItemList []GetStockAgingResponseDataItem `json:"item_list"` // [Required] <p>Data list of item sku<br /></p>
@@ -116,7 +116,7 @@ type GetStockMovementRequest struct {
 }
 type GetStockMovementResponse struct {
 	BaseResponse                              // Common response fields
-	Response     GetStockMovementResponseData `json:"response"` // <p>Detail informations you are querying.<br /></p>
+	Response     GetStockMovementResponseData `json:"response"` // Response data
 }
 type GetStockMovementResponseData struct {
 	Total        int64                              `json:"total"`          // [Required]
