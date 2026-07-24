@@ -1,0 +1,36 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "labels": ["dependencies"],
+  "schedule": ["before 9am on monday"],
+  "postUpdateOptions": ["gomodTidy"],
+  "gomod": {
+    "updateGoVersion": true
+  },
+  "packageRules": [
+    {
+      "matchManagers": ["gomod"],
+      "groupName": "Go dependencies",
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchPackageNames": ["@doclient/cli", "@doclient/renderer-go"],
+      "groupName": "Doclient tooling",
+      "followLatestTag": true,
+      "separateMajorMinor": true
+    },
+    {
+      "matchManagers": ["npm"],
+      "excludePackageNames": ["@doclient/cli", "@doclient/renderer-go"],
+      "groupName": "Other codegen tooling",
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions",
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    }
+  ]
+}
