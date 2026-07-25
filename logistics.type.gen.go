@@ -286,7 +286,7 @@ type GetChannelListResponseDataLogisticsChannel struct {
 	AutoCallDriverSetting          *AutoCallDriverSetting       `json:"auto_call_driver_setting"`          // [Required]
 	SupportPause                   bool                         `json:"support_pause"`                     // [Required] <p>Indicates whether this channel supports the pause operation (Pausing allows the shop to temporarily prevent buyers from placing orders through this logistics channel).</p><p>- true: This channel is affected by the pause function.<br />- false: This channel is not affected by the pause function.<br /><br />Note: Please first call v2.logistics.get_pause_status to get the current pause status of logistics channels under the shop. If is_paused = true, then call v2.logistics.get_channel_list and identify the range of channels affected by the pause function through support_pause = true.</p>
 	CompulsoryChannel              bool                         `json:"compulsory_channel"`                // [Required] <p>Indicates if the channel is compulsory. If the value is true, at least one such channel must be enabled.</p>
-	ChannelRelationRules           []ChannelRelationRules       `json:"channel_relation_rules"`            // [Required] <p>Indicate the related rules &amp; channels of this logistic channel.</p>
+	ChannelRelationRules           *ChannelRelationRules        `json:"channel_relation_rules"`            // [Required] <p>Indicate the related rules &amp; channels of this logistic channel.</p>
 }
 type GetMartPackagingInfoResponse struct {
 	BaseResponse                                  // Common response fields

@@ -234,7 +234,6 @@ func (c *Client[T]) NewRequest(ctx context.Context, method, relPath string, body
 		}
 
 		jsonListParams := []string{
-			"category_id_list",
 			"main_item_id",
 			"direct_item_id",
 			"shop_id_list",
@@ -256,6 +255,10 @@ func (c *Client[T]) NewRequest(ctx context.Context, method, relPath string, body
 
 		if values, ok := optionsQuery["item_id_list"]; ok && len(values) > 0 {
 			optionsQuery.Set("item_id_list", strings.Join(values, ","))
+		}
+
+		if values, ok := optionsQuery["category_id_list"]; ok && len(values) > 0 {
+			optionsQuery.Set("category_id_list", strings.Join(values, ","))
 		}
 
 		for k, values := range u.Query() {
