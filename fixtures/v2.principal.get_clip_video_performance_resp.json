@@ -1,0 +1,49 @@
+{
+	"request_id": "0b9847f8-9091-44ea-9eb1-59f3ce3bdf83",
+	"error": "",
+	"message": "",
+	"response": {
+		"summary": [
+			{
+				"currency": "USD",
+				"total_views": 575,
+				"unique_viewers": 441,
+				"video_duration": 2.5,
+				"average_views_duration": 44.3968253968254,
+				"likes": 89,
+				"comments": 3,
+				"share": 2,
+				"total_unique_buyers": 2,
+				"atc_units": 14,
+				"units_sold": 2,
+				"orders": 2,
+				"sales": 420,
+				"conversion_rate": 0.0034782608695652175
+			}
+		],
+		"details": [
+			{
+				"region": "SG",
+				"currency": "LOCAL",
+				"shop_id": 181050132,
+				"shop_name": "Huawei Official Store",
+				"video_id": 1453493,
+				"video_name": "HUAWEI Mid-Month Madness",
+				"total_views": 575,
+				"unique_viewers": 441,
+				"video_duration": 2.5,
+				"average_views_duration": 44.3968253968254,
+				"likes": 89,
+				"comments": 3,
+				"share": 2,
+				"total_unique_buyers": 2,
+				"atc_units": 14,
+				"units_sold": 2,
+				"orders": 2,
+				"sales": 420,
+				"conversion_rate": 0.0034782608695652175
+			}
+		],
+		"next_cursor": 100
+	}
+}

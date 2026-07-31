@@ -1,0 +1,51 @@
+{
+	"request_id": "bb8d45e5-db10-4de4-8fb6-56d2fb316996",
+	"error": "",
+	"message": "",
+	"response": {
+		"summary": [
+			{
+				"currency": "USD",
+				"likes": 11841,
+				"comments": 2007,
+				"buyers": 448,
+				"orders": 508,
+				"total_views": 201558,
+				"unique_viewers": 141232,
+				"total_live_duration": 1025729,
+				"average_views_duration": 47.39170301348136,
+				"new_followers": 468,
+				"atc_units": 4402,
+				"units_sold": 523,
+				"sales_gross": 120130.36750199998,
+				"sales_net": 90505.17313499999,
+				"conversion_rate": 0.002520366346163387
+			}
+		],
+		"details": [
+			{
+				"region": "SG",
+				"currency": "LOCAL",
+				"likes": 89,
+				"comments": 3,
+				"buyers": 2,
+				"orders": 2,
+				"shop_id": 181050132,
+				"shop_name": "Huawei Official Store",
+				"session_id": 1453493,
+				"session_name": "HUAWEI Mid-Month Madness",
+				"total_views": 575,
+				"unique_viewers": 441,
+				"total_live_duration": 7262,
+				"average_views_duration": 44.3968253968254,
+				"new_followers": 1,
+				"atc_units": 14,
+				"units_sold": 2,
+				"sales_gross": 420,
+				"sales_net": 420,
+				"conversion_rate": 0.0034782608695652175
+			}
+		],
+		"next_cursor": 100
+	}
+}

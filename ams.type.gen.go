@@ -622,6 +622,8 @@ type Items struct {
 	ItemBrandCommissionToAffiliate     string `json:"item_brand_commission_to_affiliate"`      // [Required] <p>Commission (amount) allocated to the affiliate for the item.</p>
 	ItemBrandCommissionRateToMcn       string `json:"item_brand_commission_rate_to_mcn"`       // [Required] <p>Commission rate allocated to the MCN for the item.</p>
 	ItemBrandCommissionToMcn           string `json:"item_brand_commission_to_mcn"`            // [Required] <p>Commission (amount) allocated to the MCN for the item.</p>
+	SellerServiceFeeRate               string `json:"seller_service_fee_rate"`                 // [Required] <p>Seller service fee rate applied to the item.&nbsp;</p>
+	SellerServiceFee                   string `json:"seller_service_fee"`                      // [Required] <p>Seller service fee amount charged for the item. seller_service_fee = item_brand_commission *  seller_service_fee_rate</p>
 }
 type List struct {
 	AffiliateId       int64  `json:"affiliate_id"`       // [Required] <p>Unique identifier assigned to the affiliate. Used as a reference key in the system.</p>

@@ -161,7 +161,7 @@ type ProductService interface {
 	// Path: /api/v2/product/get_size_chart_detail
 	// https://open.shopee.com/documents/v2/v2.product.get_size_chart_detail?module=89&type=1
 	GetSizeChartDetail(ctx context.Context, sid uint64, mid uint64, tok string, opt ProductGetSizeChartDetailRequest) (*ProductGetSizeChartDetailResponse, error)
-	// GetSizeChartList Get new size chat list. Now only support local shop to use new size chart.
+	// GetSizeChartList {"content":"<p>Get new size chart list. Now only support local shop to use new size chart.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Get new size chart list. Now only support local shop to use new size chart."}]}]}
 	// Path: /api/v2/product/get_size_chart_list
 	// https://open.shopee.com/documents/v2/v2.product.get_size_chart_list?module=89&type=1
 	GetSizeChartList(ctx context.Context, sid uint64, mid uint64, tok string, opt ProductGetSizeChartListRequest) (*ProductGetSizeChartListResponse, error)
@@ -634,7 +634,7 @@ func (s *ProductServiceOp[T]) GetSizeChartDetail(ctx context.Context, sid uint64
 	return resp, err
 }
 
-// GetSizeChartList Get new size chat list. Now only support local shop to use new size chart.
+// GetSizeChartList {"content":"<p>Get new size chart list. Now only support local shop to use new size chart.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Get new size chart list. Now only support local shop to use new size chart."}]}]}
 // Path: /api/v2/product/get_size_chart_list
 // https://open.shopee.com/documents/v2/v2.product.get_size_chart_list?module=89&type=1
 func (s *ProductServiceOp[T]) GetSizeChartList(ctx context.Context, sid uint64, mid uint64, tok string, opt ProductGetSizeChartListRequest) (*ProductGetSizeChartListResponse, error) {

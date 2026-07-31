@@ -52,7 +52,7 @@ type AddItemResponseData struct {
 	CategoryId      int64                  `json:"category_id"`      // [Required] Category ID
 	Dimension       *Dimension             `json:"dimension"`        // [Required] <p>The dimension of this item.<br /></p>
 	Condition       string                 `json:"condition"`        // [Required] Item condition, could be NEW or USED
-	VideoInfo       []Video                `json:"video_info"`       // [Required] Item video
+	VideoInfo       []GlobalItemVideo      `json:"video_info"`       // [Required] Item video
 	Wholesale       []Wholesale            `json:"wholesale"`        // [Required] Wholesale setting
 	Brand           *Brand                 `json:"brand"`            // [Required]
 	ItemDangerous   int64                  `json:"item_dangerous"`   // [Required] This field is only applicable for local sellers in Indonesia and Malaysia. Use this field to identify whether a product is a dangerous product. 0 for non-dangerous product and 1 for dangerous product. For more information, please visit the market's respective Seller Education Hub.
@@ -553,7 +553,7 @@ type GetItemBaseInfoResponseDataItem struct {
 	Deboost               bool                   `json:"deboost"`                  // [Required] <p>If deboost is true, means that the item's search ranking is lowered.<br /></p>
 	HasModel              bool                   `json:"has_model"`                // [Required] Does it contain model.
 	HasPromotion          bool                   `json:"has_promotion"`            // [Required] <p>Indicates whether the item is currently under any ongoing promotion.</p>
-	VideoInfo             []Video                `json:"video_info"`               // [Required] Info of video list.
+	VideoInfo             []GlobalItemVideo      `json:"video_info"`               // [Required] Info of video list.
 	Brand                 *Brand                 `json:"brand"`                    // [Required]
 	ItemDangerous         int64                  `json:"item_dangerous"`           // [Required] This field is only applicable for local sellers in Indonesia and Malaysia. Use this field to identify whether a product is a dangerous product. 0 for non-dangerous product and 1 for dangerous product. For more information, please visit the market's respective Seller Education Hub.
 	GtinCode              string                 `json:"gtin_code"`                // [Required] <p>gtin code for br region, will return this code only item has default model</p><p><br /></p><p>Note: gtin_code = "00" means that this item is&nbsp;“Item without GTIN”<br /></p>
@@ -829,6 +829,11 @@ type GlobalItemDescriptionInfo struct {
 type GlobalItemImage struct {
 	ImageIdList  []string `json:"image_id_list"`  // [Required] ID list of item image.
 	ImageUrlList []string `json:"image_url_list"` // [Required] URL list of item image
+}
+type GlobalItemVideo struct {
+	VideoUrl     string `json:"video_url"`     // [Required] <p>Url of video.<br /></p>
+	ThumbnailUrl string `json:"thumbnail_url"` // [Required] <p>Thumbnail of video.<br /></p>
+	Duration     int64  `json:"duration"`      // [Required] <p>Duration of video.<br /></p>
 }
 type GlobalModelPriceInfo struct {
 	OriginalPrice float64 `json:"original_price"` // [Required] Original price
@@ -1170,18 +1175,18 @@ type ProductGetSizeChartDetailResponseData struct {
 	SizeChartTable *SizeChartTable `json:"size_chart_table"` // [Required] <p>new size chart is a table format which include multiple columns. each column has column header (measurement) and multiple values (measurement value) of this column.<br /></p>
 }
 type ProductGetSizeChartListRequest struct {
-	CategoryId int64   `json:"category_id" url:"category_id"`           // [Required] <p>category id under this shop<br /></p>
+	CategoryId string  `json:"category_id" url:"category_id"`           // [Required] <p>category id under this shop<br /></p>
 	Cursor     *string `json:"cursor,omitempty" url:"cursor,omitempty"` // [Optional] <p>Specifies the starting entry of data to return in the current call. Default is "". If data is more than one page, the cursor can be some entry to start next call.<br /></p>
-	PageSize   int64   `json:"page_size" url:"page_size"`               // [Required] <p>the size of one page.&nbsp;Max=50.<br /></p>
+	PageSize   string  `json:"page_size" url:"page_size"`               // [Required] <p>the size of one page.&nbsp;Max=50.<br /></p>
 }
 type ProductGetSizeChartListResponse struct {
 	BaseResponse                                     // Common response fields
 	Response     ProductGetSizeChartListResponseData `json:"response"` // Response data
 }
 type ProductGetSizeChartListResponseData struct {
-	SizeChartList []SizeChart `json:"size_chart_list"` // [Required]
-	TotalCount    int64       `json:"total_count"`     // [Required] <p>total number of new size chart under requested category_id<br /></p>
-	NextCursor    string      `json:"next_cursor"`     // [Required] <p>if next_cursor has value, this value need set to next request.cursor<br /></p>
+	SizeChartList []ResponseDataSizeChart `json:"size_chart_list"` // [Required]
+	TotalCount    string                  `json:"total_count"`     // [Required] <p>total number of new size chart under requested category_id<br /></p>
+	NextCursor    string                  `json:"next_cursor"`     // [Required] <p>if next_cursor has value, this value need set to next request.cursor<br /></p>
 }
 type ProductGetVariationsRequest struct {
 	CategoryId int64 `json:"category_id" url:"category_id"` // [Required] <p>Leaf category id</p>
@@ -1201,7 +1206,7 @@ type ProductInfo struct {
 	DescriptionInfo   *GlobalItemDescriptionInfo `json:"description_info"`    // [Required] <p>Rich text description field. Only whitelist sellers can use it.<br /></p>
 	Description       string                     `json:"description"`         // [Required] <p>If description_type is normal, description information will be returned through this field, else description will be empty.<br /></p>
 	DescriptionType   DescriptionType            `json:"description_type"`    // [Required] <p>Type of description : values: See Data Definition- description_type (normal , extended).<br /></p>
-	VideoList         *Video                     `json:"video_list"`          // [Required] <p>Info of video list.<br /></p>
+	VideoList         *GlobalItemVideo           `json:"video_list"`          // [Required] <p>Info of video list.<br /></p>
 	Attributes        []GlobalItemAttribute      `json:"attributes"`          // [Required] <p>The attributes of this kit item, sync from the attributes of the main component of this kit item.<br /></p>
 	Weight            string                     `json:"weight"`              // [Required] <p>The weight of this kit item, the unit is KG.</p>
 	Dimension         *Dimension                 `json:"dimension"`           // [Required] <p>The dimension of this kit item.</p>
@@ -1430,6 +1435,9 @@ type ResponseDataPriceInfo struct {
 	CurrentPrice  float64 `json:"current_price"`  // [Required] Current price of item
 	OriginalPrice float64 `json:"original_price"` // [Required] Original price of item
 }
+type ResponseDataSizeChart struct {
+	SizeChartId string `json:"size_chart_id"` // [Required] <p>ID of new size chart<br /></p>
+}
 type ResponseDataStandardiseTierVariation struct {
 	VariationId         int64                                     `json:"variation_id"`          // [Required] <p>Standardise Variation ID<br /></p>
 	VariationName       string                                    `json:"variation_name"`        // [Required] <p>Standardise Variation Name<br /></p>
@@ -1533,9 +1541,6 @@ type SellerStock struct {
 type SipItemPrice struct {
 	ModelId      *int64  `json:"model_id,omitempty"` // [Optional] 0 for no model item.
 	SipItemPrice float64 `json:"sip_item_price"`     // [Required] SIP item price.
-}
-type SizeChart struct {
-	SizeChartId int64 `json:"size_chart_id"` // [Required] <p>ID of new size chart<br /></p>
 }
 type SizeChartInfo struct {
 	SizeChart   *string `json:"size_chart,omitempty"`    // [Optional] <p>ID of size chart image. If you want to remove the image size chart of the item, please pass the "size_chart" empty.<br /></p><p><br /></p><p>You only need to fill out either the image or template. If both are filled, only the template will be kept.<br /></p><p><br /></p><p>Notes: Both CB shops and local shops are supported to set "size_chart".</p>
@@ -1798,11 +1803,6 @@ type VehicleInfo struct {
 	ModelId   int64  `json:"model_id"`             // [Required] <p>ID of the model.</p>
 	YearId    *int64 `json:"year_id,omitempty"`    // [Optional] <p>ID of the year.</p>
 	VersionId *int64 `json:"version_id,omitempty"` // [Optional] <p>ID of the version.</p>
-}
-type Video struct {
-	VideoUrl     string `json:"video_url"`     // [Required] <p>Url of video.<br /></p>
-	ThumbnailUrl string `json:"thumbnail_url"` // [Required] <p>Thumbnail of video.<br /></p>
-	Duration     int64  `json:"duration"`      // [Required] <p>Duration of video.<br /></p>
 }
 type WeightLimit struct {
 	WeightMandatory bool `json:"weight_mandatory"` // [Required] <p>Whether weight is mandatory or not for the category.</p>

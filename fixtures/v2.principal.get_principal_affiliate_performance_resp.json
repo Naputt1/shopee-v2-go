@@ -1,0 +1,64 @@
+{
+    "error": "",
+    "message": "",
+    "response": {
+        "summary": [
+            {
+                "currency": "USD",
+                "sales_placed": 2638975.3032753896,
+                "sales_confirmed": 2614407.688750359,
+                "units_sold_placed": 20118,
+                "units_sold_confirmed": 19926,
+                "orders_placed": 22174,
+                "orders_confirmed": 19456,
+                "estimated_commission_placed": 76814.87132010002,
+                "estimated_commission_confirmed": 76075.89821397001,
+                "roi_placed": 34.355005195261626,
+                "roi_confirmed": 34.36578141209865,
+                "buyers_placed": 20676,
+                "buyers_confirmed": 18836,
+                "new_buyers_placed": 15175,
+                "new_buyers_confirmed": 13618
+            }
+        ],
+        "details": [
+            {
+                "region": "MY",
+                "currency": "USD",
+                "sales_placed": 2196698.681816249,
+                "sales_confirmed": 2176115.5220428193,
+                "units_sold_placed": 17366,
+                "units_sold_confirmed": 17202,
+                "orders_placed": 19287,
+                "orders_confirmed": 16802,
+                "estimated_commission_placed": 57418.763793350015,
+                "estimated_commission_confirmed": 56850.331386400016,
+                "roi_placed": 38.257505677450006,
+                "roi_confirmed": 38.27797426988084,
+                "buyers_placed": 18003,
+                "buyers_confirmed": 16301,
+                "new_buyers_placed": 13300,
+                "new_buyers_confirmed": 11889
+            },
+            {
+                "region": "SG",
+                "currency": "LOCAL",
+                "sales_placed": 567144.2500000002,
+                "sales_confirmed": 562035.1700000002,
+                "units_sold_placed": 2752,
+                "units_sold_confirmed": 2724,
+                "orders_placed": 2887,
+                "orders_confirmed": 2654,
+                "estimated_commission_placed": 24868.776899999997,
+                "estimated_commission_confirmed": 24649.923740000006,
+                "roi_placed": 22.80547420086431,
+                "roi_confirmed": 22.800685954576508,
+                "buyers_placed": 2673,
+                "buyers_confirmed": 2535,
+                "new_buyers_placed": 1875,
+                "new_buyers_confirmed": 1729
+            }
+        ]
+    },
+    "request_id": "d518f85d-e0af-41b8-aa72-2e43598031a1"
+}

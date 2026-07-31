@@ -1,0 +1,62 @@
+{
+	"request_id": "d9572a36-1f32-4a81-8703-2626839661ff",
+	"error": "",
+	"message": "",
+	"response": {
+		"summary": [
+			{
+				"currency": "USD",
+				"sales": 308731.453553,
+				"orders": 1672,
+				"units_sold": 1718,
+				"average_basket_size": 184.64799853648324,
+				"items_per_order": 1.027511961722488,
+				"average_selling_price": 179.70398926251454,
+				"product_clicks": 168951,
+				"product_views": 302274,
+				"unique_visitors": 381436,
+				"item_conversion_rate": 0.005683585091671795,
+				"order_conversion_rate": 0.009896360483217027,
+				"flash_sale_sales": 25065.505308,
+				"flash_sale_orders": 239,
+				"flash_sale_units_sold": 242,
+				"voucher_sales": 270680.340725,
+				"voucher_buyers": 1411,
+				"voucher_usage_rate": 0.019406593960154143,
+				"voucher_cir": 0.057889526978686705,
+				"voucher_cost": 15669.556886999999
+			}
+		],
+		"details": [
+			{
+				"shop_id": 123456789,
+				"shop_name": "OFFICIAL STORE",
+				"shop_region_code": "MY",
+				"currency": "USD",
+				"sales": 264223.328658,
+				"orders": 1483,
+				"units_sold": 123793634,
+				"average_basket_size": 178.16812451652055,
+				"items_per_order": 1.0296695886716116,
+				"average_selling_price": 173.0342689312377,
+				"product_clicks": 144826,
+				"product_views": 267188,
+				"unique_visitors": 297432,
+				"item_conversion_rate": 0.005715077024417264,
+				"order_conversion_rate": 0.010239874055763468,
+				"atp_top_skus_l1d": 0.9790209790209791,
+				"atp_top_skus_l30d": 0.8980855855855856,
+				"atp_live_skus_l1d": 0.9644097222222222,
+				"atp_live_skus_l30d": 0.7195289206917114,
+				"flash_sale_sales": 17250.836517,
+				"flash_sale_orders": 200,
+				"flash_sale_units_sold": 202,
+				"voucher_sales": 236492.24125199998,
+				"voucher_buyers": 1229,
+				"voucher_usage_rate": 0.018527764658255178,
+				"voucher_cir": 0.057245252027419355,
+				"voucher_cost": 13538.057953
+			}
+		]
+	}
+}

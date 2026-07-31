@@ -632,7 +632,7 @@ const (
 	ErrLogisticsInvalidError                                  = "logistics.invalid_error"                                          // The order is not exist.
 	ErrLogisticsInvalidSize                                   = "logistics.invalid_size"                                           // Size is invalid. Please check the
 	ErrLogisticsItemIsInBundle                                = "logistics.item_is_in_bundle"                                      // Channel is not allow to disable due to there is item in the bundle.
-	ErrLogisticsLackOfInvoiceData                             = "logistics.lack_of_invoice_data"                                   // Pending invoice data, can not arrange shipment.
+	ErrLogisticsLackOfInvoiceData                             = "logistics.lack_of_invoice_data"                                   // Please upload the invoice or verify the details of the document already submitted, which is currently flagged as invalid by SEFAZ. Correction is required to release the shipment.
 	ErrLogisticsLogisticOrderIsLockedOnCreating               = "logistics.logistic_order_is_locked_on_creating"                   // Fail to get the lock.
 	ErrLogisticsMaxDimensionIsLimited                         = "logistics.max dimension is limited"                               // Max dimension or weight is limited.
 	ErrLogisticsMinimumActivationRule                         = "logistics.minimum_activation_rule"                                // {parent_channel} cannot be turned off. Please enable at least 1 of the following channel(s): {seller channel name list}

@@ -92,7 +92,7 @@ type GlobalProductService interface {
 	// Path: /api/v2/global_product/get_size_chart_detail
 	// https://open.shopee.com/documents/v2/v2.global_product.get_size_chart_detail?module=90&type=1
 	GetSizeChartDetail(ctx context.Context, sid uint64, mid uint64, tok string, req GetSizeChartDetailRequest) (*GetSizeChartDetailResponse, error)
-	// GetSizeChartList Get size chat list
+	// GetSizeChartList {"content":"<p>Get size chart list</p>","raw_content":[{"name":"paragraph","children":[{"data":"Get size chart list"}]}]}
 	// Path: /api/v2/global_product/get_size_chart_list
 	// https://open.shopee.com/documents/v2/v2.global_product.get_size_chart_list?module=90&type=1
 	GetSizeChartList(ctx context.Context, sid uint64, mid uint64, tok string, req GetSizeChartListRequest) (*GetSizeChartListResponse, error)
@@ -366,7 +366,7 @@ func (s *GlobalProductServiceOp[T]) GetSizeChartDetail(ctx context.Context, sid 
 	return resp, err
 }
 
-// GetSizeChartList Get size chat list
+// GetSizeChartList {"content":"<p>Get size chart list</p>","raw_content":[{"name":"paragraph","children":[{"data":"Get size chart list"}]}]}
 // Path: /api/v2/global_product/get_size_chart_list
 // https://open.shopee.com/documents/v2/v2.global_product.get_size_chart_list?module=90&type=1
 func (s *GlobalProductServiceOp[T]) GetSizeChartList(ctx context.Context, sid uint64, mid uint64, tok string, req GetSizeChartListRequest) (*GetSizeChartListResponse, error) {

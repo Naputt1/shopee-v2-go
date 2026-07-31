@@ -82,7 +82,7 @@ type LivestreamService interface {
 	// Path: /api/v2/livestream/post_comment
 	// https://open.shopee.com/documents/v2/v2.livestream.post_comment?module=125&type=1
 	PostComment(ctx context.Context, sid uint64, mid uint64, tok string, req PostCommentRequest) (*PostCommentResponse, error)
-	// StartSession Start Live. (For TW, ID, TH, PH, MY, SG, VN)
+	// StartSession {"content":"<p>Start Live. (For TW, ID, TH, PH, MY, SG, VN)</p>","raw_content":[{"name":"paragraph","children":[{"data":"Start Live. (For TW, ID, TH, PH, MY, SG, VN)"}]}]}
 	// Path: /api/v2/livestream/start_session
 	// https://open.shopee.com/documents/v2/v2.livestream.start_session?module=125&type=1
 	StartSession(ctx context.Context, sid uint64, mid uint64, tok string, req StartSessionRequest) (*StartSessionResponse, error)
@@ -303,7 +303,7 @@ func (s *LivestreamServiceOp[T]) PostComment(ctx context.Context, sid uint64, mi
 	return resp, err
 }
 
-// StartSession Start Live. (For TW, ID, TH, PH, MY, SG, VN)
+// StartSession {"content":"<p>Start Live. (For TW, ID, TH, PH, MY, SG, VN)</p>","raw_content":[{"name":"paragraph","children":[{"data":"Start Live. (For TW, ID, TH, PH, MY, SG, VN)"}]}]}
 // Path: /api/v2/livestream/start_session
 // https://open.shopee.com/documents/v2/v2.livestream.start_session?module=125&type=1
 func (s *LivestreamServiceOp[T]) StartSession(ctx context.Context, sid uint64, mid uint64, tok string, req StartSessionRequest) (*StartSessionResponse, error) {

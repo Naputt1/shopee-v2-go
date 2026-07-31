@@ -1,0 +1,45 @@
+{
+	"request_id": "0b9847f8-9091-44ea-9eb1-59f3ce3bdf83",
+	"error": "",
+	"message": "",
+	"response": {
+		"summary": [
+			{
+				"currency": "USD",
+				"orders": 5,
+				"likes": 2,
+				"comments": 0,
+				"share": 3,
+				"sales": 853.395968,
+				"units_sold": 5,
+				"effective_views": 651,
+				"unique_viewers": 771,
+				"total_video_duration": 0.1,
+				"atc_units": 31,
+				"average_video_duration": 0.1,
+				"average_views_duration": 2.1,
+				"total_unique_buyers": 4,
+				"conversion_rate": 0.0020601565718994645
+			}
+		],
+		"details": [
+			{
+				"region": "SG",
+				"currency": "LOCAL",
+				"orders": 5,
+				"likes": 2,
+				"comments": 0,
+				"share": 3,
+				"sales": 1090,
+				"units_sold": 5,
+				"effective_views": 651,
+				"unique_viewers": 771,
+				"atc_units": 31,
+				"average_video_duration": 0.1,
+				"average_views_duration": 2.63,
+				"total_unique_buyers": 4,
+				"conversion_rate": 0.0020601565718994645
+			}
+		]
+	}
+}

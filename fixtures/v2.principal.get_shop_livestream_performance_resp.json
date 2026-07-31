@@ -1,0 +1,80 @@
+{
+    "error": "",
+    "message": "",
+    "response": {
+        "summary": [
+            {
+                "currency": "USD",
+                "orders": 24544,
+                "buyers": 20011,
+                "likes": 822271,
+                "comments": 122356,
+                "sales_gross": 4939417.062404577,
+                "units_sold": 25027,
+                "total_views": 6041612,
+                "total_live_duration": 8061951,
+                "unique_viewers": 3850270,
+                "atc_units": 220831,
+                "total_livestreams": 472,
+                "average_live_duration": 17080.40466101695,
+                "average_views_duration": 47.91673441083353,
+                "new_followers": 30726,
+                "new_buyers": 19188,
+                "existing_buyers": 823,
+                "sales_net": 3478017.9173450004,
+                "conversion_rate": 0.004062491930961472
+            }
+        ],
+        "details": [
+            {
+                "region": "MY",
+                "currency": "USD",
+                "orders": 23767,
+                "buyers": 19345,
+                "likes": 800789,
+                "comments": 119351,
+                "shop_id": 123793634,
+                "shop_name": "HUAWEI OFFICIAL STORE",
+                "sales_gross": 4747505.5402737735,
+                "units_sold": 24226,
+                "total_views": 5702168,
+                "total_live_duration": 6565127,
+                "unique_viewers": 3616306,
+                "atc_units": 214603,
+                "total_livestreams": 313,
+                "average_live_duration": 20974.846645367412,
+                "average_views_duration": 47.33443242911413,
+                "new_followers": 30022,
+                "new_buyers": 18535,
+                "existing_buyers": 810,
+                "sales_net": 3332254.597736,
+                "conversion_rate": 0.00416806379608598
+            },
+            {
+                "region": "SG",
+                "currency": "LOCAL",
+                "orders": 777,
+                "buyers": 666,
+                "likes": 21482,
+                "comments": 3005,
+                "shop_id": 181050132,
+                "shop_name": "Huawei Official Store",
+                "sales_gross": 245043.32999999996,
+                "units_sold": 801,
+                "total_views": 339444,
+                "total_live_duration": 1496824,
+                "unique_viewers": 233964,
+                "atc_units": 6228,
+                "total_livestreams": 159,
+                "average_live_duration": 9413.987421383648,
+                "average_views_duration": 56.91718811441076,
+                "new_followers": 704,
+                "new_buyers": 653,
+                "existing_buyers": 13,
+                "sales_net": 186087.52,
+                "conversion_rate": 0.0022890373669883692
+            }
+        ]
+    },
+    "request_id": "ad13785b-402c-4896-84df-6dc6c008f90d"
+}

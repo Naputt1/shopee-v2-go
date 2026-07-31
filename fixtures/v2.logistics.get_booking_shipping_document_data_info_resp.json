@@ -8,6 +8,8 @@
 			"image": "data:image/png;base64,/9j/4AAQSkZJRgABAgEASABIAAD/……"
 		},
 		"shipping_document_info": {
+			"booking_weight": 500,
+			"logistics_channel_id": 28016,
 			"shipping_carrier": "Standard Delivery",
 			"recipient_sort_code": {
 				"first_recipient_sort_code": "B-151-ATP-ATP-010",
@@ -30,13 +32,15 @@
 			"create_date_ymd_sl": "2022/12/05",
 			"manufacturers_name": "-",
 			"manufacturers_website": "-",
+			"is_lm_dg_bool": 0,
 			"spx_sub_district": "-",
 			"spx_receive_station": {
 				"spx_first_receive_station": "-"
 			},
 			"zone": "-",
 			"zone_code": "-",
-			"destination_base_code": "-"
+			"destination_base_code": "-",
+			"dg_specific_type": 0
 		}
 	}
 }

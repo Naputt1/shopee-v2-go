@@ -32,7 +32,7 @@ type ReturnsService interface {
 	// Path: /api/v2/returns/get_available_solutions
 	// https://open.shopee.com/documents/v2/v2.returns.get_available_solutions?module=102&type=1
 	GetAvailableSolutions(ctx context.Context, sid uint64, mid uint64, tok string, opt GetAvailableSolutionsRequest) (*GetAvailableSolutionsResponse, error)
-	// GetReturnDetail Use this api to get detail information of a return by return sn.
+	// GetReturnDetail {"content":"<p>Use this api to get detail information of a return by return sn.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this api to get detail information of a return by return sn."}]}]}
 	// Path: /api/v2/returns/get_return_detail
 	// https://open.shopee.com/documents/v2/v2.returns.get_return_detail?module=102&type=1
 	GetReturnDetail(ctx context.Context, sid uint64, mid uint64, tok string, opt GetReturnDetailRequest) (*GetReturnDetailResponse, error)
@@ -138,7 +138,7 @@ func (s *ReturnsServiceOp[T]) GetAvailableSolutions(ctx context.Context, sid uin
 	return resp, err
 }
 
-// GetReturnDetail Use this api to get detail information of a return by return sn.
+// GetReturnDetail {"content":"<p>Use this api to get detail information of a return by return sn.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this api to get detail information of a return by return sn."}]}]}
 // Path: /api/v2/returns/get_return_detail
 // https://open.shopee.com/documents/v2/v2.returns.get_return_detail?module=102&type=1
 func (s *ReturnsServiceOp[T]) GetReturnDetail(ctx context.Context, sid uint64, mid uint64, tok string, opt GetReturnDetailRequest) (*GetReturnDetailResponse, error) {

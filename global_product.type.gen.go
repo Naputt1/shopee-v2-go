@@ -363,7 +363,7 @@ type GlobalItem struct {
 	SizeChart             string                     `json:"size_chart"`               // [Required] Url of size chart image.
 	Condition             string                     `json:"condition"`                // [Required] Is it second-hand.
 	HasModel              bool                       `json:"has_model"`                // [Required] Does it contain model.
-	Video                 *Video                     `json:"video"`                    // [Required]
+	Video                 *GlobalItemVideo           `json:"video"`                    // [Required]
 	CategoryId            int64                      `json:"category_id"`              // [Required] Shopee's unique identifier for a category.
 	Brand                 *Brand                     `json:"brand"`                    // [Required]
 	AttributeList         []GlobalItemAttribute      `json:"attribute_list"`           // [Required]
@@ -493,6 +493,9 @@ type ShopSync struct {
 	TierVariationNameAndOption bool   `json:"tier_variation_name_and_option"` // [Required] sync tier variation
 	Price                      bool   `json:"price"`                          // [Required] sync price
 	DaysToShip                 bool   `json:"days_to_ship"`                   // [Required] sync days to ship info
+}
+type SizeChart struct {
+	SizeChartId int64 `json:"size_chart_id"` // [Required]
 }
 type Stock struct {
 	GlobalModelId *int64        `json:"global_model_id,omitempty"` // [Optional] ID of global model.

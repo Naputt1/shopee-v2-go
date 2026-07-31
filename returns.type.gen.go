@@ -16,7 +16,7 @@ type Activity struct {
 	OriginalPrice   string          `json:"original_price"`   // [Required] activity's origin price
 	DiscountedPrice string          `json:"discounted_price"` // [Required] activity's discount price
 	Items           []ActivityItems `json:"items"`            // [Required]
-	RefundAmount    float64         `json:"refund_amount"`    // [Required] <p>item's refund amount for bundle deal cases, only for shops whitelisted for Partial Qty RR.</p>
+	RefundAmount    string          `json:"refund_amount"`    // [Required] <p>item's refund amount for bundle deal cases, only for shops whitelisted for Partial Qty RR.</p>
 }
 type ActivityItems struct {
 	ItemId            int64  `json:"item_id"`            // [Required] The id of item.
@@ -39,6 +39,10 @@ type CancelDisputeResponse struct {
 type CancelDisputeResponseData struct {
 	ReturnSn string `json:"return_sn"` // [Required] <p>Shopee's unique serial number identifier for a Return Refund request.</p>
 	Message  string `json:"message"`   // [Required] <p>To indicate whether the cancel dispute operation is successful or failed.</p>
+}
+type CompensationAmount struct {
+	CompensationType   string  `json:"compensation_type"`   // [Required] <p>To indicate the type of return-related compensation</p><p>Applicable values: See Data Definition - Compensation Type</p>
+	CompensationAmount float64 `json:"compensation_amount"` // [Required]
 }
 type ConfirmRequest struct {
 	ReturnSn string `json:"return_sn"` // [Required] The serial number of return.
@@ -134,8 +138,8 @@ type GetReturnDetailResponseData struct {
 	Status                              string                            `json:"status"`                                  // [Required] Enumerated type that defines the current status of the return. Applicable values: See Data Definition- ReturnStatus.
 	DueDate                             int64                             `json:"due_date"`                                // [Required] The last time seller deal with this return.
 	TrackingNumber                      string                            `json:"tracking_number"`                         // [Required] The tracking number assigned by the shipping carrier for item shipment.
-	DisputeReason                       int64                             `json:"dispute_reason"`                          // [Required] The reason of seller dispute return. While the return has been disputed, this field is useful. Applicable values: See Data Definition- ReturnDisputeReason.
-	DisputeTextReason                   string                            `json:"dispute_text_reason"`                     // [Required] The reason that seller provide. While the return has been disputed, this field is useful.
+	DisputeReason                       []string                          `json:"dispute_reason"`                          // [Required] The reason of seller dispute return. While the return has been disputed, this field is useful. Applicable values: See Data Definition- ReturnDisputeReason.
+	DisputeTextReason                   []string                          `json:"dispute_text_reason"`                     // [Required] The reason that seller provide. While the return has been disputed, this field is useful.
 	NeedsLogistics                      bool                              `json:"needs_logistics"`                         // [Required] Items to be sent back to seller. Can be either integrated/non-integrated.
 	AmountBeforeDiscount                float64                           `json:"amount_before_discount"`                  // [Required] Order price before discount.
 	User                                *User                             `json:"user"`                                    // [Required]
@@ -148,7 +152,7 @@ type GetReturnDetailResponseData struct {
 	SellerCompensation                  *SellerCompensation               `json:"seller_compensation"`                     // [Required]
 	Negotiation                         *Negotiation                      `json:"negotiation"`                             // [Required]
 	LogisticsStatus                     LogisticsStatus                   `json:"logistics_status"`                        // [Required] <p>To indicate the reverse logistics status. See "Data Definition - LogisticsStatus".</p><p><br /></p><p>Note:&nbsp;</p><p>- This is a legacy field that only reflects the reverse logistics status of Normal RR. To determine whether the RR is a Normal RR, check if return_refund_request_type = 0.</p><p>- If you need the reverse logistics status for Normal RR, In-transit RR, or Return-on-the-Spot, please use the newly released field reverse_logistic_status instead.</p>
-	ReverseLogisticStatus               string                            `json:"reverse_logistic_status"`                 // [Required] <p>To indicate the latest reverse logistic status of a return, referring to the current status of the buyer shipping the return parcel back to the validation point (seller or warehouse),&nbsp;including Normal RR, In-transit RR, and Return-on-the-Spot.</p><p><br /></p><p>See "Data Definition - ReverseLogisticsStatus" as status displayed for Normal RR and In-transit RR or Return-on-the-Spot are different.</p>
+	ReverseLogisticsStatus              string                            `json:"reverse_logistics_status"`                // [Required] <p>To indicate the latest reverse logistic status of a return, referring to the current status of the buyer shipping the return parcel back to the validation point (seller or warehouse),&nbsp;including Normal RR, In-transit RR, and Return-on-the-Spot.</p><p><br /></p><p>See "Data Definition - ReverseLogisticsStatus" as status displayed for Normal RR and In-transit RR or Return-on-the-Spot are different.</p>
 	ReturnPickupAddress                 *ReturnPickupAddress              `json:"return_pickup_address"`                   // [Required] To indicate the buyer's pickup address
 	VirtualContactNumber                string                            `json:"virtual_contact_number"`                  // [Required] <p>[Only for TW non-integrated channel] The virtual phone number to contact the recipient.</p>
 	PackageQueryNumber                  string                            `json:"package_query_number"`                    // [Required] <p>[Only for TW non-integrated channel] The query number used in virtual phone number calls to contact the recipient of this return.</p>
@@ -159,7 +163,7 @@ type GetReturnDetailResponseData struct {
 	IsShippingProofMandatory            bool                              `json:"is_shipping_proof_mandatory"`             // [Required] <p>To indicate whether uploading shipping proof is mandatory for seller to confirm "Arrange Pickup" when is_seller_arrange = true.</p>
 	HasUploadedShippingProof            bool                              `json:"has_uploaded_shipping_proof"`             // [Required] <p>To indicate whether seller has already uploaded shipping proof for this return.</p>
 	IsReverseLogisticsChannelIntegrated bool                              `json:"is_reverse_logistics_channel_integrated"` // [Required] <p>To indicate whether the reverse logistic channel type selected is integrated or non-integrated.</p>
-	ReverseLogisticChannelName          string                            `json:"reverse_logistic_channel_name"`           // [Required] <p>To indicate reverse logistic carrier name.</p>
+	ReverseLogisticsChannelName         string                            `json:"reverse_logistics_channel_name"`          // [Required] <p>To indicate reverse logistic carrier name.</p>
 	ReturnRefundRequestType             int64                             `json:"return_refund_request_type"`              // [Required] <p>To indicate the type of return refund request, whether it is a Normal RR request, an In-transit RR request, and a Return on the Spot:&nbsp;</p><p>0:&nbsp;Normal RR (RR is raised by the buyer after delivery done / estimated delivery date)</p><p>1: In-transit RR (RR is raised by the buyer while item is still in-transit to buyer)</p><p>2: Return-on-the-Spot (RR is raised by the driver after buyer rejected parcel at delivery)</p><p><br /></p><p>For more details, see Data Definition- Return Refund Request Type.</p>
 	ValidationType                      string                            `json:"validation_type"`                         // [Required] <p>To indicate whether seller or warehouse will expect to receive the return parcel from buyer and validate the condition of the parcel:&nbsp;</p><p>- seller_validation&nbsp;</p><p>- warehouse_validation</p><p><br /></p><p>For more details, see Data Definition- ValidationType.</p>
 	IsArrivedAtWarehouse                int64                             `json:"is_arrived_at_warehouse"`                 // [Required] <p><b>[Only for validation_type =&nbsp;warehouse_validation]</b> Indicates the parcel’s check-in status at the warehouse. This field helps sellers quickly determine whether the parcel has arrived at the warehouse or has been rejected.&nbsp;</p><p><br /></p><p>Applicable values:</p><p>1: Pending Inbound</p><p>2: Rejected</p><p>3: Inbound</p><p>4: Cancelled</p>
@@ -367,9 +371,10 @@ type SampleEvidence struct {
 	Thumbnail string `json:"thumbnail"` // [Required] <p>The link of the thumbnail of sample evidence.</p>
 }
 type SellerCompensation struct {
-	SellerCompensationStatus  string  `json:"seller_compensation_status"`   // [Required] To indicate whether the seller is eligible for raising a compensation request. See "Data Definition - SellerCompensationStatus"
-	SellerCompensationDueDate int64   `json:"seller_compensation_due_date"` // [Required] To indicate the deadline for requesting the compensation
-	CompensationAmount        float64 `json:"compensation_amount"`          // [Required] To indicate the compensation amount that the agent decided
+	SellerCompensationStatus  string              `json:"seller_compensation_status"`   // [Required] To indicate whether the seller is eligible for raising a compensation request. See "Data Definition - SellerCompensationStatus"
+	SellerCompensationDueDate int64               `json:"seller_compensation_due_date"` // [Required] To indicate the deadline for requesting the compensation
+	CompensationAmount        float64             `json:"compensation_amount"`          // [Required] To indicate the compensation amount that the agent decided
+	CompensationAmountList    *CompensationAmount `json:"compensation_amount_list"`     // [Required]
 }
 type SellerProof struct {
 	SellerProofStatus      string `json:"seller_proof_status"`      // [Required] <p>To indicate whether the seller needs to provide evidence when the return status is RETURN_JUDING, RETURN_SELLER_DISPUTE and RETURN_ACCEPTED. Applicable values: See Data Definition- SellerProofStatus.</p>

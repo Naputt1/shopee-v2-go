@@ -1,0 +1,41 @@
+{
+	"request_id": "f40a50aa-a1fe-466a-b1b4-0a145590db52",
+	"error": "",
+	"message": "",
+	"response": {
+		"summary": [
+			{
+				"currency": "LOCAL",
+				"views": 57843,
+				"likes": 10278,
+				"comments": 459,
+				"sales_placed": 6792.25,
+				"sales_confirmed": 6792.25,
+				"units_sold_placed": 24,
+				"units_sold_confirmed": 24,
+				"orders_placed": 26,
+				"orders_confirmed": 24
+			}
+		],
+		"details": [
+			{
+				"region": "SG",
+				"currency": "LOCAL",
+				"shop_id": 181050132,
+				"shop_name": "Huawei Official Store",
+				"content_id": 1388859,
+				"content_name": "Huawei Brand Day sale!",
+				"views": 57843,
+				"likes": 10278,
+				"comments": 459,
+				"sales_placed": 6792.25,
+				"sales_confirmed": 6792.25,
+				"units_sold_placed": 24,
+				"units_sold_confirmed": 24,
+				"orders_placed": 26,
+				"orders_confirmed": 24
+			}
+		],
+		"next_cursor": 100
+	}
+}

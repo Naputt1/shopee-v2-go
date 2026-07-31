@@ -57,7 +57,7 @@ type AMSService interface {
 	// Path: /api/v2/ams/get_content_performance
 	// https://open.shopee.com/documents/v2/v2.ams.get_content_performance?module=127&type=1
 	GetContentPerformance(ctx context.Context, sid uint64, mid uint64, tok string, opt GetContentPerformanceRequest) (*GetContentPerformanceResponse, error)
-	// GetConversionReport Retrieve the shop's conversion report with details about each order, item, affiliate, campaign.You can filter results using one or multiple time ranges, and the final result will be the intersection of these ranges. Due to data volume limitations, the maximum queryable time span is three months, etc.Maximum data can be viewed is 500 pages, please export data for more details.
+	// GetConversionReport {"content":"<p>Retrieve the shop's conversion report with details about each order, item, affiliate, campaign.You can filter results using one or multiple time ranges, and the final result will be the intersection of these ranges. Due to data volume limitations, the maximum queryable time span is three months, etc.Maximum data can be viewed is 500 pages, please export data for more details.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Retrieve the shop's conversion report with details about each order, item, affiliate, campaign.You can filter results using one or multiple time ranges, and the final result will be the intersection of these ranges. Due to data volume limitations, the maximum queryable time span is three months, etc.Maximum data can be viewed is 500 pages, please export data for more details."}]}]}
 	// Path: /api/v2/ams/get_conversion_report
 	// https://open.shopee.com/documents/v2/v2.ams.get_conversion_report?module=127&type=1
 	GetConversionReport(ctx context.Context, sid uint64, mid uint64, tok string, opt GetConversionReportRequest) (*GetConversionReportResponse, error)
@@ -125,7 +125,7 @@ type AMSService interface {
 	// Path: /api/v2/ams/get_validation_list
 	// https://open.shopee.com/documents/v2/v2.ams.get_validation_list?module=127&type=1
 	GetValidationList(ctx context.Context, sid uint64, mid uint64, tok string) (*GetValidationListResponse, error)
-	// GetValidationReport Retrieve detailed information for a specific validation bill
+	// GetValidationReport {"content":"<p>Retrieve detailed information for a specific validation bill</p>","raw_content":[{"name":"paragraph","children":[{"data":"Retrieve detailed information for a specific validation bill"}]}]}
 	// Path: /api/v2/ams/get_validation_report
 	// https://open.shopee.com/documents/v2/v2.ams.get_validation_report?module=127&type=1
 	GetValidationReport(ctx context.Context, sid uint64, mid uint64, tok string, opt GetValidationReportRequest) (*GetValidationReportResponse, error)
@@ -285,7 +285,7 @@ func (s *AMSServiceOp[T]) GetContentPerformance(ctx context.Context, sid uint64,
 	return resp, err
 }
 
-// GetConversionReport Retrieve the shop's conversion report with details about each order, item, affiliate, campaign.You can filter results using one or multiple time ranges, and the final result will be the intersection of these ranges. Due to data volume limitations, the maximum queryable time span is three months, etc.Maximum data can be viewed is 500 pages, please export data for more details.
+// GetConversionReport {"content":"<p>Retrieve the shop's conversion report with details about each order, item, affiliate, campaign.You can filter results using one or multiple time ranges, and the final result will be the intersection of these ranges. Due to data volume limitations, the maximum queryable time span is three months, etc.Maximum data can be viewed is 500 pages, please export data for more details.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Retrieve the shop's conversion report with details about each order, item, affiliate, campaign.You can filter results using one or multiple time ranges, and the final result will be the intersection of these ranges. Due to data volume limitations, the maximum queryable time span is three months, etc.Maximum data can be viewed is 500 pages, please export data for more details."}]}]}
 // Path: /api/v2/ams/get_conversion_report
 // https://open.shopee.com/documents/v2/v2.ams.get_conversion_report?module=127&type=1
 func (s *AMSServiceOp[T]) GetConversionReport(ctx context.Context, sid uint64, mid uint64, tok string, opt GetConversionReportRequest) (*GetConversionReportResponse, error) {
@@ -455,7 +455,7 @@ func (s *AMSServiceOp[T]) GetValidationList(ctx context.Context, sid uint64, mid
 	return resp, err
 }
 
-// GetValidationReport Retrieve detailed information for a specific validation bill
+// GetValidationReport {"content":"<p>Retrieve detailed information for a specific validation bill</p>","raw_content":[{"name":"paragraph","children":[{"data":"Retrieve detailed information for a specific validation bill"}]}]}
 // Path: /api/v2/ams/get_validation_report
 // https://open.shopee.com/documents/v2/v2.ams.get_validation_report?module=127&type=1
 func (s *AMSServiceOp[T]) GetValidationReport(ctx context.Context, sid uint64, mid uint64, tok string, opt GetValidationReportRequest) (*GetValidationReportResponse, error) {

@@ -72,9 +72,9 @@ type GetShopListByMerchantRequest struct {
 	PageSize int64 `json:"page_size" url:"page_size"` // [Required] Each result set is returned as a page of entries. Use the "page_size" filters to control the maximum number of entries to retrieve per page (i.e., per call), and the "page_no" to start next call. This integer value is used to specify the maximum number of entries to return in a single "page" of data.No more than 500.
 }
 type GetShopListByMerchantResponse struct {
-	BaseResponse        // Common response fields
-	More         bool   `json:"more,omitempty"`      // This is to indicate whether the list is more than one page. If this value is true, you may want to continue to check next page to retrieve the rest of datas.
-	ShopList     []Shop `json:"shop_list,omitempty"` // list of shop authorized to the partner and bound to the merchant.
+	BaseResponse                    // Common response fields
+	More         bool               `json:"more,omitempty"`      // This is to indicate whether the list is more than one page. If this value is true, you may want to continue to check next page to retrieve the rest of datas.
+	ShopList     []ResponseDataShop `json:"shop_list,omitempty"` // list of shop authorized to the partner and bound to the merchant.
 }
 type GetWarehouseEligibleShopListRequest struct {
 	Cursor        *Cursor `json:"cursor"`         // [Required] <p>// how to use DoubleSidedCursor</p><p>// Get data for the first page: Please pass next_id = 0 or nil, page_size = {your page size}.</p><p>// Get data for the next page: Please pass the Cursor from the previous response, and set prev_id=nil;</p><p>// Get data for the prev page: Please pass the Cursor from the previous response, and set next_id=nil;</p><p>// Stop fetching next data: The Cursor.next_id in the previous response is nil.</p><p>// Stop fetching prev data: The Cursor.prev_id in the previous response is nil.<br /></p>
@@ -86,14 +86,14 @@ type GetWarehouseEligibleShopListResponse struct {
 	Response     GetWarehouseEligibleShopListResponseData `json:"response"` // Response data
 }
 type GetWarehouseEligibleShopListResponseData struct {
-	ShopList []ResponseDataShop `json:"shop_list"` // [Required] <p>Eligible shop list of the warehouse</p>
-	Cursor   *Cursor            `json:"cursor"`    // [Required]
+	ShopList []GetWarehouseEligibleShopListResponseDataShop `json:"shop_list"` // [Required] <p>Eligible shop list of the warehouse</p>
+	Cursor   *Cursor                                        `json:"cursor"`    // [Required]
 }
-type ResponseDataShop struct {
+type GetWarehouseEligibleShopListResponseDataShop struct {
 	ShopId   int64  `json:"shop_id"`   // [Required] <p>Shopee's unique identifier for a shop.<br /></p>
 	ShopName string `json:"shop_name"` // [Required] <p>Name of the shop.<br /></p>
 }
-type Shop struct {
+type ResponseDataShop struct {
 	ShopId       int64          `json:"shop_id"`        // [Required] Shopee's unique identifier for a shop.
 	SipAffiShops []SipAffiShops `json:"sip_affi_shops"` // [Required] List of SIP affiliate shops.Only primary shop will return this parameter
 }

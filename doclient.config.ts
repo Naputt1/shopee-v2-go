@@ -35,6 +35,7 @@ export default defineConfig({
     structTypeOverrides: {
       GetItemBaseInfoResponseDataItem: { deboost: 'BoolString' },
       ShopeeStock: { stock: 'int64' },
+      Item: { product_location_id: 'StringSlice' },
     },
     enums: {
       ItemStatus: {

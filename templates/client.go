@@ -625,3 +625,14 @@ func (bs BoolString) String() string {
 	}
 	return "FALSE"
 }
+
+type StringSlice []string
+
+func (ss *StringSlice) UnmarshalJSON(data []byte) error {
+	var s string
+	if err := json.Unmarshal(data, &s); err == nil {
+		*ss = []string{s}
+		return nil
+	}
+	return json.Unmarshal(data, (*[]string)(ss))
+}
