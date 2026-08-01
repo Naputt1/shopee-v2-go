@@ -4,9 +4,6 @@
   "labels": ["dependencies"],
   "schedule": ["before 9am on monday"],
   "postUpdateOptions": ["gomodTidy"],
-  "gomod": {
-    "updateGoVersion": true
-  },
   "packageRules": [
     {
       "matchManagers": ["gomod"],
@@ -17,7 +14,7 @@
     {
       "matchPackageNames": ["@doclient/cli", "@doclient/renderer-go"],
       "groupName": "Doclient tooling",
-      "followLatestTag": true,
+      "followTag": "latest",
       "separateMajorMinor": true
     },
     {
