@@ -8,7 +8,6 @@ export default defineConfig({
   source: shopeeSource,
   output: createGoRenderer(shopeeProfile, {
     package: 'goshopee',
-    module: 'github.com/naputt1/shopee-v2-go',
   }),
   cacheDir: '.cache/shopee',
   outputDir: '.',

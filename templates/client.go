@@ -115,6 +115,7 @@ type ResponseError struct {
 	Errors      []string
 	ShopeeError string
 	RequestID   string
+	Body        []byte
 }
 
 func (e ResponseError) GetStatus() int         { return e.Status }
@@ -149,6 +150,29 @@ func IsShopeeError(err error, shopeeErrCode string) bool {
 		return re.ShopeeError == shopeeErrCode
 	}
 	return false
+}
+
+// UnmarshalErrorBody decodes the raw Shopee response body attached to err (if any) into v.
+// Shopee batch APIs often return the top-level error field alongside a response.result_list
+// containing per-item failure details. This helper exposes those details on error.
+func UnmarshalErrorBody(err error, v interface{}) error {
+	var body []byte
+	switch e := err.(type) {
+	case ResponseError:
+		body = e.Body
+	case *ResponseError:
+		body = e.Body
+	case RateLimitError:
+		body = e.Body
+	case *RateLimitError:
+		if e != nil {
+			body = e.Body
+		}
+	}
+	if len(body) == 0 {
+		return fmt.Errorf("no error body available")
+	}
+	return json.Unmarshal(body, v)
 }
 
 type ResponseDecodingError struct {
@@ -370,10 +394,12 @@ func (c *Client[T]) doGetHeaders(req *http.Request, v interface{}, skipBody bool
 	defer resp.Body.Close()
 
 	if v != nil {
-		decoder := json.NewDecoder(resp.Body)
-		err := decoder.Decode(v)
+		bodyBytes, err := io.ReadAll(resp.Body)
 		if err != nil {
 			return nil, err
+		}
+		if err := json.Unmarshal(bodyBytes, v); err != nil {
+			return nil, ResponseDecodingError{Body: bodyBytes, Message: err.Error(), Status: resp.StatusCode}
 		}
 	}
 
@@ -460,6 +486,7 @@ func CheckResponseError(r *http.Response) error {
 		Message:     shopeeError.Message,
 		ShopeeError: shopeeError.Error,
 		RequestID:   shopeeError.RequestID,
+		Body:        bodyBytes,
 	}
 	return wrapSpecificError(r, responseError)
 }

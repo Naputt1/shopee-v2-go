@@ -121,7 +121,9 @@ function getFixtureContent(responseSample: string): string | undefined {
   try {
     const samples: ShopeeSample[] = JSON.parse(responseSample);
     const json = samples.find((s) => s.type === 'JSON');
-    return json?.value;
+    if (!json?.value) return undefined;
+    JSON.parse(json.value);
+    return json.value;
   } catch {
     return undefined;
   }

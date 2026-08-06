@@ -3,10 +3,19 @@ package goshopee
 import (
 	"context"
 	"fmt"
+	"os"
 	"testing"
 
 	"github.com/jarcoal/httpmock"
 )
+
+func loadFixture(filename string) []byte {
+	f, err := os.ReadFile("fixtures/" + filename)
+	if err != nil {
+		panic(fmt.Sprintf("Cannot load fixture %v", filename))
+	}
+	return f
+}
 
 func Test_Auth_GetAuthURL(t *testing.T) {
 	setup()

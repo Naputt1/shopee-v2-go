@@ -38,10 +38,10 @@ export const shopeeProfile = defineProfile({
 
   testSetup: {
     appVars:
-      '\tshopID      uint64 = 123456\n\tmerchantID  uint64 = 789012\n\taccessToken        = "test_access_token"',
+      '\tshopID      uint64 = 123456\n\tmerchantID  uint64 = 789012\n\taccessToken        = "test_access_token"\n\tsid           uint64 = shopID\n\tmid           uint64 = merchantID\n\ttok                  = accessToken',
     appLiteral:
       'App{\n\t\tPartnerID:  123456,\n\t\tPartnerKey: "test_partner_key",\n\t\tRedirectURL: "https://example.com/callback",\n\t\tAPIURL:     "https://open-api.test.com",\n\t}',
   },
 
-  dependencies: ['github.com/google/go-querystring v1.1.0', 'github.com/jarcoal/httpmock v1.3.1'],
+  dependencies: ['github.com/google/go-querystring v1.2.0', 'github.com/jarcoal/httpmock v1.4.2'],
 });

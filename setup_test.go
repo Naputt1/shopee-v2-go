@@ -2,7 +2,6 @@ package goshopee
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"os"
 	"sync"
@@ -37,14 +36,6 @@ func setup() {
 
 func teardown() {
 	httpmock.DeactivateAndReset()
-}
-
-func loadFixture(filename string) []byte {
-	f, err := os.ReadFile("fixtures/" + filename)
-	if err != nil {
-		panic(fmt.Sprintf("Cannot load fixture %v", filename))
-	}
-	return f
 }
 
 func loadFixtureSafe(path string) (interface{}, error) {
