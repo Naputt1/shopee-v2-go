@@ -21,7 +21,8 @@
       "matchManagers": ["npm"],
       "excludePackageNames": ["@doclient/cli", "@doclient/renderer-go"],
       "groupName": "Other codegen tooling",
-      "matchUpdateTypes": ["minor", "patch"]
+      "matchUpdateTypes": ["minor", "patch"],
+      "minimumReleaseAge": "1 day"
     },
     {
       "matchManagers": ["github-actions"],
