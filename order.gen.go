@@ -33,7 +33,7 @@ type OrderService interface {
 	// Path: /api/v2/order/get_booking_list
 	// https://open.shopee.com/documents/v2/v2.order.get_booking_list?module=94&type=1
 	GetBookingList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetBookingListRequest) (*GetBookingListResponse, error)
-	// GetBuyerInvoiceInfo API to obtain buyer submitted invoice info for VN, TH and PH local sellers only.
+	// GetBuyerInvoiceInfo {"content":"<p>API to obtain buyer submitted invoice info for VN, TH and PH local sellers only.</p>","raw_content":[{"name":"paragraph","children":[{"data":"API to obtain buyer submitted invoice info for VN, TH and PH local sellers only."}]}]}
 	// Path: /api/v2/order/get_buyer_invoice_info
 	// https://open.shopee.com/documents/v2/v2.order.get_buyer_invoice_info?module=94&type=1
 	GetBuyerInvoiceInfo(ctx context.Context, sid uint64, mid uint64, tok string, req GetBuyerInvoiceInfoRequest) (*GetBuyerInvoiceInfoResponse, error)
@@ -168,7 +168,7 @@ func (s *OrderServiceOp[T]) GetBookingList(ctx context.Context, sid uint64, mid 
 	return resp, err
 }
 
-// GetBuyerInvoiceInfo API to obtain buyer submitted invoice info for VN, TH and PH local sellers only.
+// GetBuyerInvoiceInfo {"content":"<p>API to obtain buyer submitted invoice info for VN, TH and PH local sellers only.</p>","raw_content":[{"name":"paragraph","children":[{"data":"API to obtain buyer submitted invoice info for VN, TH and PH local sellers only."}]}]}
 // Path: /api/v2/order/get_buyer_invoice_info
 // https://open.shopee.com/documents/v2/v2.order.get_buyer_invoice_info?module=94&type=1
 func (s *OrderServiceOp[T]) GetBuyerInvoiceInfo(ctx context.Context, sid uint64, mid uint64, tok string, req GetBuyerInvoiceInfoRequest) (*GetBuyerInvoiceInfoResponse, error) {

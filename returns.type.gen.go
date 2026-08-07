@@ -11,7 +11,7 @@ type AcceptOfferResponseData struct {
 	ReturnSn string `json:"return_sn"` // [Required] <p>The serial number of return.</p>
 }
 type Activity struct {
-	ActivityId      int64           `json:"activity_id"`      // [Required] The id of activity.
+	ActivityId      interface{}     `json:"activity_id"`      // [Required] The id of activity.
 	ActivityType    string          `json:"activity_type"`    // [Required] The type of activity.
 	OriginalPrice   string          `json:"original_price"`   // [Required] activity's origin price
 	DiscountedPrice string          `json:"discounted_price"` // [Required] activity's discount price

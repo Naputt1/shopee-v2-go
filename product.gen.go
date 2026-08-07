@@ -117,7 +117,7 @@ type ProductService interface {
 	// Path: /api/v2/product/get_item_list_by_content_diagnosis
 	// https://open.shopee.com/documents/v2/v2.product.get_item_list_by_content_diagnosis?module=89&type=1
 	GetItemListByContentDiagnosis(ctx context.Context, sid uint64, mid uint64, tok string, req GetItemListByContentDiagnosisRequest) (*GetItemListByContentDiagnosisResponse, error)
-	// GetItemPromotion Get item promotion info.
+	// GetItemPromotion {"content":"<p>Get item promotion info.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Get item promotion info."}]}]}
 	// Path: /api/v2/product/get_item_promotion
 	// https://open.shopee.com/documents/v2/v2.product.get_item_promotion?module=89&type=1
 	GetItemPromotion(ctx context.Context, sid uint64, mid uint64, tok string, opt GetItemPromotionRequest) (*GetItemPromotionResponse, error)
@@ -145,7 +145,7 @@ type ProductService interface {
 	// Path: /api/v2/product/get_mart_item_mapping_by_id
 	// https://open.shopee.com/documents/v2/v2.product.get_mart_item_mapping_by_id?module=89&type=1
 	GetMartItemMappingById(ctx context.Context, sid uint64, mid uint64, tok string, req GetMartItemMappingByIdRequest) (*GetMartItemMappingByIdResponse, error)
-	// GetModelList Get model list of an item.
+	// GetModelList {"content":"<p>Get model list of an item.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Get model list of an item."}]}]}
 	// Path: /api/v2/product/get_model_list
 	// https://open.shopee.com/documents/v2/v2.product.get_model_list?module=89&type=1
 	GetModelList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetModelListRequest) (*GetModelListResponse, error)
@@ -524,7 +524,7 @@ func (s *ProductServiceOp[T]) GetItemListByContentDiagnosis(ctx context.Context,
 	return resp, err
 }
 
-// GetItemPromotion Get item promotion info.
+// GetItemPromotion {"content":"<p>Get item promotion info.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Get item promotion info."}]}]}
 // Path: /api/v2/product/get_item_promotion
 // https://open.shopee.com/documents/v2/v2.product.get_item_promotion?module=89&type=1
 func (s *ProductServiceOp[T]) GetItemPromotion(ctx context.Context, sid uint64, mid uint64, tok string, opt GetItemPromotionRequest) (*GetItemPromotionResponse, error) {
@@ -594,7 +594,7 @@ func (s *ProductServiceOp[T]) GetMartItemMappingById(ctx context.Context, sid ui
 	return resp, err
 }
 
-// GetModelList Get model list of an item.
+// GetModelList {"content":"<p>Get model list of an item.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Get model list of an item."}]}]}
 // Path: /api/v2/product/get_model_list
 // https://open.shopee.com/documents/v2/v2.product.get_model_list?module=89&type=1
 func (s *ProductServiceOp[T]) GetModelList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetModelListRequest) (*GetModelListResponse, error) {

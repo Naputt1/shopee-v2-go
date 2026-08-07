@@ -765,7 +765,7 @@ type GetModelListResponseDataModel struct {
 	PriceInfo             []ModelPriceInfo `json:"price_info"`               // [Required] <p>Price info.</p><p>For&nbsp;<b><font color="#c24f4a">SG/MY/BR/MX/PL/ES/AR</font></b> seller:&nbsp;Sellers can set the price with two decimal place,&nbsp;other regions can only set the price as an integer.<br /></p>
 	ModelId               int64            `json:"model_id"`                 // [Required] Model ID.
 	TierIndex             []int64          `json:"tier_index"`               // [Required] Tier index of this model.
-	PromotionId           int64            `json:"promotion_id"`             // [Required] Current promotion ID of this model.
+	PromotionId           interface{}      `json:"promotion_id"`             // [Required] Current promotion ID of this model.
 	HasPromotion          bool             `json:"has_promotion"`            // [Required] <p>Indicates whether the model is currently under any ongoing promotion.</p><p>  </p><p><br /></p>
 	ModelSku              string           `json:"model_sku"`                // [Required] SKU of this model. the length should be under 100.
 	ModelStatus           string           `json:"model_status"`             // [Required] <p>The model status. Should be&nbsp;MODEL_NORMAL or&nbsp;MODEL_UNAVAILABLE.&nbsp;MODEL_NORMAL models can be sold on the buyer's side, and MODEL_UNAVAILABLE models cannot be sold on the buyer's side.</p>
@@ -1593,7 +1593,7 @@ type SuccessItem struct {
 }
 type SuccessPromotion struct {
 	PromotionType        string                `json:"promotion_type"`          // [Required] Promotion type, Applicable values: See Data Definition- PromotionType.
-	PromotionId          int64                 `json:"promotion_id"`            // [Required] The identity of item promotion.
+	PromotionId          interface{}           `json:"promotion_id"`            // [Required] The identity of item promotion.
 	ModelId              int64                 `json:"model_id"`                // [Required] The identity of product model.
 	StartTime            int64                 `json:"start_time"`              // [Required] Promotion start tiem.
 	EndTime              int64                 `json:"end_time"`                // [Required] Promotion end item.
