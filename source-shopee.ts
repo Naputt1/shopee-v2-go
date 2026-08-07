@@ -63,6 +63,7 @@ function normalizeType(shopeeType: string): string {
     case 'int':
     case 'int32':
     case 'int64':
+    case 'uint64':
     case 'timestamp':
       return 'integer';
     case 'float':

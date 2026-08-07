@@ -12,8 +12,8 @@ importers:
         specifier: ^0.0.3
         version: 0.0.3
       '@doclient/renderer-go':
-        specifier: ^0.0.6
-        version: 0.0.6
+        specifier: ^0.0.7
+        version: 0.0.7
       tsx:
         specifier: ^4.19.0
         version: 4.23.9
@@ -30,8 +30,8 @@ packages:
   '@doclient/renderer-go@0.0.3':
     resolution: {integrity: sha512-KEM7GpbJO9HAPolcz/n6DakQ3rgt8YcU0K255dwilPIOb2yzy08U7b1fMmhfIFTYQPJ0tXsfjLZK+ZfJracFIg==}
 
-  '@doclient/renderer-go@0.0.6':
-    resolution: {integrity: sha512-ZInhclPeeUAlWfU/+jBIEvA/Xpy1JlIHb5uxZzubm+JQ616Vrt7vhu52Zz8zsjOFscgzoAYqpwvBjsHnRVcVLg==}
+  '@doclient/renderer-go@0.0.7':
+    resolution: {integrity: sha512-xnd+HLQvnQ79RiGwW02bf3iJjRrv0eswxwS4hH1zi2wvp+bytz/1HtnO0y/I+iQXRNe7uPjCtat98h9apRwn7Q==}
 
   '@esbuild/aix-ppc64@0.28.1':
     resolution: {integrity: sha512-Svl7tq8k/08+p6CXPpRjQ1fKX+1odH/BQbb48fV6fj3CWHhsoIOoY87w1oHXm0qEpkIK3ZfVgp0hed3XBXzXMQ==}
@@ -223,7 +223,7 @@ snapshots:
     dependencies:
       '@doclient/core': 0.0.2
 
-  '@doclient/renderer-go@0.0.6':
+  '@doclient/renderer-go@0.0.7':
     dependencies:
       '@doclient/core': 0.0.2
 

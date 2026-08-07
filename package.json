@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "@doclient/cli": "^0.0.3",
-    "@doclient/renderer-go": "^0.0.6",
+    "@doclient/renderer-go": "^0.0.7",
     "tsx": "^4.19.0"
   }
 }
