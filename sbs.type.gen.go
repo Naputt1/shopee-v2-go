@@ -77,6 +77,27 @@ type GetExpiryReportResponseDataItem struct {
 	ItemImage       string    `json:"item_image"`        // [Required]
 	SkuList         []ItemSku `json:"sku_list"`          // [Required]
 }
+type GetFulfillmentMappingInventoryListRequest struct {
+	MtskuIds   *string `json:"mtsku_ids,omitempty" url:"mtsku_ids,omitempty"`     // [Optional] <p>The MTSKU ID of either a Bundle SKU or a Parent SKU in a fulfillment mapping relationship.</p><p>Up to 100 comma-separated MTSKU IDs can be queried in one request.</p><p>All MTSKU IDs must belong to the specified&nbsp;shop_id.</p><p>When&nbsp;mtsku_ids&nbsp;is omitted, the API returns all fulfillment mapping records with available Bundle SKU stock under the shop.&nbsp;</p><p>When&nbsp;mtsku_ids&nbsp;is provided, the API returns all matching fulfillment mapping records for the specified Bundle or Parent MTSKUs.For example, given the mapping relationship&nbsp;MTSKU A = MTSKU B + MTSKU C, MTSKU A is the Bundle SKU, while MTSKU B and MTSKU C are its Parent SKUs. The API can be queried using the MTSKU ID of A, B, or C. Regardless of which SKU is queried, the API returns the fulfillment mapping inventory information of MTSKU A and its Parent SKUs.</p>
+	NextCursor *string `json:"next_cursor,omitempty" url:"next_cursor,omitempty"` // [Optional] <p>The cursor for the next page query.&nbsp;The next_cursor will be returned from the response. If this field is not provided, the query starts from the first page by default.</p>
+	PageSize   *int64  `json:"page_size,omitempty" url:"page_size,omitempty"`     // [Optional] <p>The number of records returned by each query.&nbsp;You can fill in value from&nbsp;[1-100].If not filled in, the default value is 100.</p>
+}
+type GetFulfillmentMappingInventoryListResponse struct {
+	BaseResponse                                                // Common response fields
+	Response     GetFulfillmentMappingInventoryListResponseData `json:"response"` // Response data
+}
+type GetFulfillmentMappingInventoryListResponseData struct {
+	List       []GetFulfillmentMappingInventoryListResponseDataList `json:"list"`        // [Required]
+	Total      int64                                                `json:"total"`       // [Required] <p>The amount of data that meets the query conditions.</p>
+	NextCursor string                                               `json:"next_cursor"` // [Required] <p>If the returned value is a non-empty string, it indicates that there is more data available. Include this returned value in the next query request to continue retrieving data starting from the corresponding position indicated by the cursor.</p>
+}
+type GetFulfillmentMappingInventoryListResponseDataList struct {
+	BundleMtskuId  string        `json:"bundle_mtsku_id"` // [Required] <p>Bundle SKU.</p>
+	MappingType    int64         `json:"mapping_type"`    // [Required] <p>Fulfillment mapping&nbsp;type. (Enum:1-group; 2-lucky bag; 3-mapping list).</p>
+	WhsId          string        `json:"whs_id"`          // [Required] <p>Shopee warehouse id.</p>
+	StockContext   *StockContext `json:"stock_context"`   // [Required] <p>Stock detail.</p>
+	MappingFormula string        `json:"mapping_formula"` // [Required] <p>The fulfillment mapping formula of the Bundle MTSKU. It describes the Parent MTSKU composition or alternative mapping relationships.<br /><br />Formatting rules:<br />- The quantity before an MTSKU ID indicates the required quantity of that Parent MTSKU.<br />- Within one mapping formula,&nbsp;+&nbsp;indicates that all listed Parent MTSKUs are required together.<br />- For a Mapping List,&nbsp;[]&nbsp;encloses alternative mapping formulas, and&nbsp;,&nbsp;separates each alternative formula.<br /><br />Examples:<br />- Group:&nbsp;2 * MTSKU_A + 1 * MTSKU_B<br />- Mapping List:&nbsp;[2 * MTSKU_A + 1 * MTSKU_B, 1 * MTSKU_C]<br />- Lucky Bag:&nbsp;2 * MTSKU_A</p>
+}
 type GetStockAgingRequest struct {
 	AgingStorageTag  *int64  `json:"aging_storage_tag,omitempty"`  // [Optional] <p>0-false；1-true<br /></p>
 	CategoryId       *int64  `json:"category_id,omitempty"`        // [Optional] <p>L1-level product category ID. You need to call the get_category API to obtain the first-level category_id<br /></p>
@@ -175,6 +196,10 @@ type OutboundQty struct {
 	OutboundReturned int64 `json:"outbound_returned"` // [Required] <p>Total merchant return quantity during the selected time period.</p>
 	OutboundDisposed int64 `json:"outbound_disposed"` // [Required] <p>Total disposal quantity during the selected time period.</p>
 }
+type ParentMtsku struct {
+	ParentMtskuId    string `json:"parent_mtsku_id"`    // [Required] <p>The MTSKU ID of a Parent SKU involved in the fulfillment mapping relationship.</p>
+	ParentMtskuStock int64  `json:"parent_mtsku_stock"` // [Required] <p>Physical sellable stock of the parent MTSKU in the specified warehouse. It is the original quantity, not multiplied by mapping_formula. Example: mapping_formula = 2*MTSKU_A + 1*MTSKU_B; MTSKU_A stock = 14; returned parent_mtsku_stock = 14. Each Bundle SKU needs two MTSKU_A, so it supports floor(14/2)=7 bundles. The returned stock remains 14, not 28.</p>
+}
 type ResponseDataItemSku struct {
 	MtskuId            string       `json:"mtsku_id"`             // [Required] <p>mtsku id<br /></p>
 	ModelId            string       `json:"model_id"`             // [Required] <p>Warehouse model SKU ID</p><p>For CB global items, this is equal to the global model_id.</p><p>For local items, it differs from model_id; use shop_model_id to match the model_id</p>
@@ -220,6 +245,11 @@ type StartQty struct {
 	StartSellable    int64 `json:"start_sellable"`      // [Required] <p>Number of sellable SKUs at the start time<br /></p>
 	StartReserved    int64 `json:"start_reserved"`      // [Required] <p>Number of reserved SKUs at the start time.<br /></p>
 	StartUnsellable  int64 `json:"start_unsellable"`    // [Required]
+}
+type StockContext struct {
+	PhysicalSellableStock int64         `json:"physical_sellable_stock"` // [Required] <p>The physical sellable stock for bundle MTSKU without any mapping convert stock.</p>
+	MappingSellableStock  int64         `json:"mapping_sellable_stock"`  // [Required] <p>The calculated mapping sellable stock that convert from Parent MTSKUs.</p>
+	ParentMtskuList       []ParentMtsku `json:"parent_mtsku_list"`       // [Required]
 }
 type Whs struct {
 	WhsId                      string  `json:"whs_id"`                         // [Required] <p>&nbsp;Warehouse ID</p>

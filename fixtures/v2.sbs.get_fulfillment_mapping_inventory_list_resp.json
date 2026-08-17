@@ -1,0 +1,32 @@
+{
+    "request_id": "d3756fbb-29f0-4fe7-aa1e-0e019f552e59",
+    "error": "",
+    "message": "",
+    "warning": "",
+    "response": {
+        "list": [
+            {
+                "bundle_mtsku_id": "58165469687_282851615192",
+                "mapping_type": 3,
+                "mapping_formula": "[1 * 26050058034_240828857424, 1 * 58165469687_282851615192]",
+                "whs_id": "MYS",
+                "stock_context": {
+                    "physical_sellable_stock": 0,
+                    "parent_mtsku_list": [
+                        {
+                            "parent_mtsku_id": "26050058034_240828857424",
+                            "parent_mtsku_stock": 0
+                        },
+                        {
+                            "parent_mtsku_id": "58165469687_282851615192",
+                            "parent_mtsku_stock": 0
+                        }
+                    ],
+                    "mapping_sellable_stock": 0
+                }
+            }
+        ],
+        "total": 2,
+        "next_cursor": ""
+    }
+}

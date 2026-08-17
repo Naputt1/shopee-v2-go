@@ -82,6 +82,31 @@ func Test_SBS_GetExpiryReport(t *testing.T) {
 
 	t.Logf("SBS.GetExpiryReport response: %#v", res)
 }
+func Test_SBS_GetFulfillmentMappingInventoryList(t *testing.T) {
+	setup()
+	defer teardown()
+
+	fixture := "v2.sbs.get_fulfillment_mapping_inventory_list_resp.json"
+	data, err := loadFixtureSafe(fixture)
+	if err != nil {
+		t.Skipf("Skipping GetFulfillmentMappingInventoryList due to missing fixture: %v", err)
+	}
+	responder, err := httpmock.NewJsonResponder(200, data)
+	if err != nil {
+		t.Skipf("Skipping GetFulfillmentMappingInventoryList due to invalid fixture: %v", err)
+	}
+
+	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/sbs/get_fulfillment_mapping_inventory_list", app.APIURL), responder)
+
+	var req GetFulfillmentMappingInventoryListRequest
+	ctx := context.Background()
+	res, err := client.SBS.GetFulfillmentMappingInventoryList(ctx, sid, mid, tok, req)
+	if err != nil {
+		t.Logf("SBS.GetFulfillmentMappingInventoryList returned error (possibly expected with mock data): %s", err)
+	}
+
+	t.Logf("SBS.GetFulfillmentMappingInventoryList response: %#v", res)
+}
 func Test_SBS_GetStockAging(t *testing.T) {
 	setup()
 	defer teardown()

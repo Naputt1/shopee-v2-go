@@ -17,6 +17,10 @@ type SBSService interface {
 	// Path: /api/v2/sbs/get_expiry_report
 	// https://open.shopee.com/documents/v2/v2.sbs.get_expiry_report?module=124&type=1
 	GetExpiryReport(ctx context.Context, sid uint64, mid uint64, tok string, req GetExpiryReportRequest) (*GetExpiryReportResponse, error)
+	// GetFulfillmentMappingInventoryList {"content":"<p><span style=\"color:rgb(23,43,77);\">This API is designed for sellers using Fulfillment Mapping and their ERP systems.</span><br><span style=\"color:rgb(23,43,77);\">It allows callers to query the corresponding mapping and inventory information using the MTSKU ID of either a Bundle SKU or a Parent SKU, supporting automated inventory reconciliation and planning, improving Parent SKU inventory visibility, and reducing manual operations and cross-channel overselling risks.</span></p>","raw_content":[{"name":"paragraph","children":[{"attributes":{"fontColor":"rgb(23,43,77)"},"data":"This API is designed for sellers using Fulfillment Mapping and their ERP systems."},{"name":"softBreak"},{"attributes":{"fontColor":"rgb(23,43,77)"},"data":"It allows callers to query the corresponding mapping and inventory information using the MTSKU ID of either a Bundle SKU or a Parent SKU, supporting automated inventory reconciliation and planning, improving Parent SKU inventory visibility, and reducing manual operations and cross-channel overselling risks."}]}]}
+	// Path: /api/v2/sbs/get_fulfillment_mapping_inventory_list
+	// https://open.shopee.com/documents/v2/v2.sbs.get_fulfillment_mapping_inventory_list?module=124&type=1
+	GetFulfillmentMappingInventoryList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetFulfillmentMappingInventoryListRequest) (*GetFulfillmentMappingInventoryListResponse, error)
 	// GetStockAging Get Seller Center Stock Aging page data
 	// Path: /api/v2/sbs/get_stock_aging
 	// https://open.shopee.com/documents/v2/v2.sbs.get_stock_aging?module=124&type=1
@@ -58,6 +62,16 @@ func (s *SBSServiceOp[T]) GetExpiryReport(ctx context.Context, sid uint64, mid u
 	path := "/sbs/get_expiry_report"
 	resp := new(GetExpiryReportResponse)
 	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
+	return resp, err
+}
+
+// GetFulfillmentMappingInventoryList {"content":"<p><span style=\"color:rgb(23,43,77);\">This API is designed for sellers using Fulfillment Mapping and their ERP systems.</span><br><span style=\"color:rgb(23,43,77);\">It allows callers to query the corresponding mapping and inventory information using the MTSKU ID of either a Bundle SKU or a Parent SKU, supporting automated inventory reconciliation and planning, improving Parent SKU inventory visibility, and reducing manual operations and cross-channel overselling risks.</span></p>","raw_content":[{"name":"paragraph","children":[{"attributes":{"fontColor":"rgb(23,43,77)"},"data":"This API is designed for sellers using Fulfillment Mapping and their ERP systems."},{"name":"softBreak"},{"attributes":{"fontColor":"rgb(23,43,77)"},"data":"It allows callers to query the corresponding mapping and inventory information using the MTSKU ID of either a Bundle SKU or a Parent SKU, supporting automated inventory reconciliation and planning, improving Parent SKU inventory visibility, and reducing manual operations and cross-channel overselling risks."}]}]}
+// Path: /api/v2/sbs/get_fulfillment_mapping_inventory_list
+// https://open.shopee.com/documents/v2/v2.sbs.get_fulfillment_mapping_inventory_list?module=124&type=1
+func (s *SBSServiceOp[T]) GetFulfillmentMappingInventoryList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetFulfillmentMappingInventoryListRequest) (*GetFulfillmentMappingInventoryListResponse, error) {
+	path := "/sbs/get_fulfillment_mapping_inventory_list"
+	resp := new(GetFulfillmentMappingInventoryListResponse)
+	err := s.client.Get(ctx, path, resp, opt, sid, mid, tok)
 	return resp, err
 }
 
