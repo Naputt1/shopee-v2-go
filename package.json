@@ -1,7 +1,7 @@
 {
   "name": "shopee-v2-go",
   "type": "module",
-  "packageManager": "pnpm@11.20.0",
+  "packageManager": "pnpm@11.22.0",
   "scripts": {
     "generate": "doclient"
   },
