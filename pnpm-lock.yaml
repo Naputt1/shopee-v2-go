@@ -16,7 +16,7 @@ importers:
         version: 0.0.7
       tsx:
         specifier: ^4.19.0
-        version: 4.23.9
+        version: 4.23.13
 
 packages:
 
@@ -199,13 +199,8 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  tsx@4.23.7:
-    resolution: {integrity: sha512-3f/u/+UDCNQ7iwUZW9FCMnNGIHzElGJYh0S/yy8IvWSsn5O7fEO/897FaG7FA2W8yryiRyuwXZ1PYLAKYaqSuQ==}
-    engines: {node: '>=18.0.0'}
-    hasBin: true
-
-  tsx@4.23.9:
-    resolution: {integrity: sha512-6q8uTORRGauQVjqMQnKUucLFoeXZAfw6zKvG35GLbdKWbLdeOtZ3H4mhyA5mxuUd2o2cRTskhj59nLLQseUvUw==}
+  tsx@4.23.13:
+    resolution: {integrity: sha512-BL5MGkRln6aDYhb0xbQlEAGw743BaZYWdbWtdJOBriYJboKgUUYCadFp2/FpBBZquBC/ezNBn7wMMPx7FDZUDw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -215,7 +210,7 @@ snapshots:
     dependencies:
       '@doclient/core': 0.0.2
       '@doclient/renderer-go': 0.0.3
-      tsx: 4.23.7
+      tsx: 4.23.13
 
   '@doclient/core@0.0.2': {}
 
@@ -337,13 +332,7 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  tsx@4.23.7:
-    dependencies:
-      esbuild: 0.28.1
-    optionalDependencies:
-      fsevents: 2.3.3
-
-  tsx@4.23.9:
+  tsx@4.23.13:
     dependencies:
       esbuild: 0.28.1
     optionalDependencies:
