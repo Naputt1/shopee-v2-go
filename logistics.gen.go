@@ -32,7 +32,7 @@ type LogisticsService interface {
 	// Path: /api/v2/logistics/create_shipping_document
 	// https://open.shopee.com/documents/v2/v2.logistics.create_shipping_document?module=95&type=1
 	CreateShippingDocument(ctx context.Context, sid uint64, mid uint64, tok string, req CreateShippingDocumentRequest) (*CreateShippingDocumentResponse, error)
-	// CreateShippingDocumentJob This API creates a shipping document job for selected documents. The system receives requests and returns a job ID along with success and failure details.
+	// CreateShippingDocumentJob {"content":"<p>This API creates a shipping document job for selected documents. The system receives requests and returns a job ID along with success and failure details.</p>","raw_content":[{"name":"paragraph","children":[{"data":"This API creates a shipping document job for selected documents. The system receives requests and returns a job ID along with success and failure details."}]}]}
 	// Path: /api/v2/logistics/create_shipping_document_job
 	// https://open.shopee.com/documents/v2/v2.logistics.create_shipping_document_job?module=95&type=1
 	CreateShippingDocumentJob(ctx context.Context, sid uint64, mid uint64, tok string, req CreateShippingDocumentJobRequest) (*CreateShippingDocumentJobResponse, error)
@@ -48,7 +48,7 @@ type LogisticsService interface {
 	// Path: /api/v2/logistics/download_booking_shipping_document
 	// https://open.shopee.com/documents/v2/v2.logistics.download_booking_shipping_document?module=95&type=1
 	DownloadBookingShippingDocument(ctx context.Context, sid uint64, mid uint64, tok string, req DownloadBookingShippingDocumentRequest) (*DownloadBookingShippingDocumentResponse, error)
-	// DownloadShippingDocument Use this api to download shipping_document. You have to call v2.logistics.create_shipping_document to create a new shipping document task first and call v2.logistics.get_shipping_document_resut to get the task status second. If the task is READY, you can download this shipping document.
+	// DownloadShippingDocument {"content":"<p>Use this api to download shipping_document. You have to call v2.logistics.create_shipping_document to create a new shipping document task first and call v2.logistics.get_shipping_document_resut to get the task status second. If the task is READY, you can download this shipping document.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this api to download shipping_document. You have to call v2.logistics.create_shipping_document to create a new shipping document task first and call v2.logistics.get_shipping_document_resut to get the task status second. If the task is READY, you can download this shipping document."}]}]}
 	// Path: /api/v2/logistics/download_shipping_document
 	// https://open.shopee.com/documents/v2/v2.logistics.download_shipping_document?module=95&type=1
 	DownloadShippingDocument(ctx context.Context, sid uint64, mid uint64, tok string, req DownloadShippingDocumentRequest) (*DownloadShippingDocumentResponse, error)
@@ -260,7 +260,7 @@ func (s *LogisticsServiceOp[T]) CreateShippingDocument(ctx context.Context, sid 
 	return resp, err
 }
 
-// CreateShippingDocumentJob This API creates a shipping document job for selected documents. The system receives requests and returns a job ID along with success and failure details.
+// CreateShippingDocumentJob {"content":"<p>This API creates a shipping document job for selected documents. The system receives requests and returns a job ID along with success and failure details.</p>","raw_content":[{"name":"paragraph","children":[{"data":"This API creates a shipping document job for selected documents. The system receives requests and returns a job ID along with success and failure details."}]}]}
 // Path: /api/v2/logistics/create_shipping_document_job
 // https://open.shopee.com/documents/v2/v2.logistics.create_shipping_document_job?module=95&type=1
 func (s *LogisticsServiceOp[T]) CreateShippingDocumentJob(ctx context.Context, sid uint64, mid uint64, tok string, req CreateShippingDocumentJobRequest) (*CreateShippingDocumentJobResponse, error) {
@@ -300,7 +300,7 @@ func (s *LogisticsServiceOp[T]) DownloadBookingShippingDocument(ctx context.Cont
 	return resp, err
 }
 
-// DownloadShippingDocument Use this api to download shipping_document. You have to call v2.logistics.create_shipping_document to create a new shipping document task first and call v2.logistics.get_shipping_document_resut to get the task status second. If the task is READY, you can download this shipping document.
+// DownloadShippingDocument {"content":"<p>Use this api to download shipping_document. You have to call v2.logistics.create_shipping_document to create a new shipping document task first and call v2.logistics.get_shipping_document_resut to get the task status second. If the task is READY, you can download this shipping document.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this api to download shipping_document. You have to call v2.logistics.create_shipping_document to create a new shipping document task first and call v2.logistics.get_shipping_document_resut to get the task status second. If the task is READY, you can download this shipping document."}]}]}
 // Path: /api/v2/logistics/download_shipping_document
 // https://open.shopee.com/documents/v2/v2.logistics.download_shipping_document?module=95&type=1
 func (s *LogisticsServiceOp[T]) DownloadShippingDocument(ctx context.Context, sid uint64, mid uint64, tok string, req DownloadShippingDocumentRequest) (*DownloadShippingDocumentResponse, error) {

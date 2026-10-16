@@ -5,7 +5,7 @@ import (
 )
 
 type GlobalProductService interface {
-	// AddGlobalItem Add global item. Only for China mainland sellers using China Seller Centre(CNSC). More details in https://shopee.cn/cooperate/46/53/926.
+	// AddGlobalItem {"content":"<p>Add global item. Only for China mainland sellers using China Seller Centre(CNSC). More details in https://shopee.cn/cooperate/46/53/926.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Add global item. Only for China mainland sellers using China Seller Centre(CNSC). More details in https://shopee.cn/cooperate/46/53/926."}]}]}
 	// Path: /api/v2/global_product/add_global_item
 	// https://open.shopee.com/documents/v2/v2.global_product.add_global_item?module=90&type=1
 	AddGlobalItem(ctx context.Context, sid uint64, mid uint64, tok string, req AddGlobalItemRequest) (*AddGlobalItemResponse, error)
@@ -153,7 +153,7 @@ type GlobalProductServiceOp[T any] struct {
 	client *Client[T]
 }
 
-// AddGlobalItem Add global item. Only for China mainland sellers using China Seller Centre(CNSC). More details in https://shopee.cn/cooperate/46/53/926.
+// AddGlobalItem {"content":"<p>Add global item. Only for China mainland sellers using China Seller Centre(CNSC). More details in https://shopee.cn/cooperate/46/53/926.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Add global item. Only for China mainland sellers using China Seller Centre(CNSC). More details in https://shopee.cn/cooperate/46/53/926."}]}]}
 // Path: /api/v2/global_product/add_global_item
 // https://open.shopee.com/documents/v2/v2.global_product.add_global_item?module=90&type=1
 func (s *GlobalProductServiceOp[T]) AddGlobalItem(ctx context.Context, sid uint64, mid uint64, tok string, req AddGlobalItemRequest) (*AddGlobalItemResponse, error) {

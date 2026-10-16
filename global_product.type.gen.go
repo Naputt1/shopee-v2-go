@@ -4,7 +4,7 @@ type AddGlobalItemRequest struct {
 	AttributeList   []Attribute      `json:"attribute_list,omitempty"`   // [Optional] Item attributes.
 	Brand           *Brand           `json:"brand,omitempty"`            // [Optional]
 	CategoryId      int64            `json:"category_id"`                // [Required] Category id of global item.
-	Condition       *string          `json:"condition,omitempty"`        // [Optional] Condition of global item, "NEW" or "USED" is available.
+	Condition       string           `json:"condition"`                  // [Required] <p>Condition of global item, USED、Used and used will be mapped to Used; NEW、New and new will be mapped to New.</p>
 	Description     string           `json:"description"`                // [Required] Description of global item.
 	DescriptionInfo *DescriptionInfo `json:"description_info,omitempty"` // [Optional] New description field. New description field. Only whitelist sellers can use it. If you use the field, please upload the description_type=extended otherwise api will return error. If you don't use this field, you don't need to upload the description_type or upload description_type=normal
 	DescriptionType *DescriptionType `json:"description_type,omitempty"` // [Optional] Values: See Data Definition- description_type (normal , extended). If you want to use extended_description, this field must be inputed
@@ -470,8 +470,8 @@ type SearchGlobalAttributeValueListResponse struct {
 	Msg          string                                     `json:"msg,omitempty"`           //
 }
 type SearchGlobalAttributeValueListResponseData struct {
-	ValueList []Value   `json:"value_list"` // [Required]
-	PageInfo  *PageInfo `json:"page_info"`  // [Required]
+	ValueList []Value               `json:"value_list"` // [Required]
+	PageInfo  *ResponseDataPageInfo `json:"page_info"`  // [Required]
 }
 type SetSyncFieldRequest struct {
 	ShopSyncList []ShopSync `json:"shop_sync_list"` // [Required] Length limit is [1,50].

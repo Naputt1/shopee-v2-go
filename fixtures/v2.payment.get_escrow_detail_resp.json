@@ -16,6 +16,7 @@
 			"shopee_discount": 10,
 			"voucher_from_seller": 10,
 			"voucher_from_shopee": 10,
+			"voucher_from_external_party": 0.1,
 			"coins": 0.1,
 			"buyer_paid_shipping_fee": 0.1,
 			"buyer_transaction_fee": 0.1,
@@ -49,6 +50,7 @@
 					"model_id": 0,
 					"model_name": " ",
 					"model_sku": " ",
+					"line_item_id": 2600144043,
 					"original_price": 139,
 					"original_price_pri": 110,
 					"selling_price": 100,
@@ -67,11 +69,11 @@
 					"ams_commission_fee": 0.1,
 					"is_kit": true,
 					"kit_items": {
-						"mt_item_id": 0.1,
-						"mt_model_id": 0.1,
+						"original_product_id": 0.1,
+						"original_model_id": 0.1,
 						"total_qty": 0.1,
-						"parent_item_price": 0.1,
-						"item_price_prorated": 0.1
+						"original_price": 0.1,
+						"proportional_price": 0.1
 					},
 					"promotion_list": [
 						{
@@ -136,6 +138,7 @@
 			},
 			"withholding_vat_tax": 1,
 			"withholding_pit_tax": 2,
+			"withholding_cit_tax": 3,
 			"tax_registration_code": "8881234567-888",
 			"seller_order_processing_fee": 3,
 			"buyer_paid_packaging_fee": 0.1,
@@ -188,7 +191,9 @@
 			"trade_in_bonus": 0.1,
 			"bulky_handling_fee": 0.1,
 			"discount_pix": 0.1,
-			"bcrs_deposit": 0.1
+			"bcrs_deposit": 0.1,
+			"ads_voucher_discount": 0.1,
+			"buyer_instant_fee": 0.1
 		}
 	},
 	"request_id": "10fff653c945a390f8e1323c6bdffff4",

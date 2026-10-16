@@ -1,0 +1,31 @@
+{
+	"error": "-",
+	"message": "-",
+	"warning": "-",
+	"request_id": "98eae35efff24dd0974c21a847127184",
+	"response": {
+		"auto_enroll_items": [
+			{
+				"item_id": 1000000000,
+				"ssp_id": 1000000000,
+				"model_cssp": {
+					"model_id": 1000000001,
+					"cssp_id": 1000000000,
+					"ssp_id": 1000000000
+				}
+			}
+		],
+		"possible_to_be_enroll_items": [
+			{
+				"item_id": 1000000000,
+				"ssp_id": 1000000000,
+				"model_cssp": {
+					"model_id": 1000000001,
+					"cssp_id": 1000000000,
+					"ssp_id": 1000000000
+				}
+			}
+		],
+		"auto_enroll_time": 1786588000
+	}
+}

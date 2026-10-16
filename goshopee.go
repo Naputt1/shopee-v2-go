@@ -78,36 +78,38 @@ type Client[T any] struct {
 	OnTokenRefresh func(res *RefreshAccessTokenResponse, meta T)
 	Meta           T
 
-	AccountHealth AccountHealthService
-	AddOnDeal     AddOnDealService
-	Ads           AdsService
-	AMS           AMSService
-	Auth          AuthService
-	BrandPortal   BrandPortalService
-	BundleDeal    BundleDealService
-	Discount      DiscountService
-	FBS           FBSService
-	FirstMile     FirstMileService
-	FollowPrize   FollowPrizeService
-	GlobalProduct GlobalProductService
-	Livestream    LivestreamService
-	Logistics     LogisticsService
-	Media         MediaService
-	MediaSpace    MediaSpaceService
-	Merchant      MerchantService
-	Order         OrderService
-	Payment       PaymentService
-	Product       ProductService
-	Public        PublicService
-	Push          PushService
-	Returns       ReturnsService
-	SBS           SBSService
-	Shop          ShopService
-	ShopCategory  ShopCategoryService
-	ShopFlashSale ShopFlashSaleService
-	TopPicks      TopPicksService
-	Video         VideoService
-	Voucher       VoucherService
+	AccountHealth    AccountHealthService
+	AddOnDeal        AddOnDealService
+	Ads              AdsService
+	AMS              AMSService
+	Auth             AuthService
+	BrandPortal      BrandPortalService
+	BundleDeal       BundleDealService
+	BusinessInsights BusinessInsightsService
+	Buybox           BuyboxService
+	Discount         DiscountService
+	FBS              FBSService
+	FirstMile        FirstMileService
+	FollowPrize      FollowPrizeService
+	GlobalProduct    GlobalProductService
+	Livestream       LivestreamService
+	Logistics        LogisticsService
+	Media            MediaService
+	MediaSpace       MediaSpaceService
+	Merchant         MerchantService
+	Order            OrderService
+	Payment          PaymentService
+	Product          ProductService
+	Public           PublicService
+	Push             PushService
+	Returns          ReturnsService
+	SBS              SBSService
+	Shop             ShopService
+	ShopCategory     ShopCategoryService
+	ShopFlashSale    ShopFlashSaleService
+	TopPicks         TopPicksService
+	Video            VideoService
+	Voucher          VoucherService
 }
 
 type DefaultClient = Client[any]
@@ -132,6 +134,8 @@ func NewClient[T any](app App, opts ...Option[T]) *Client[T] {
 	c.Auth = &AuthServiceOp[T]{client: c}
 	c.BrandPortal = &BrandPortalServiceOp[T]{client: c}
 	c.BundleDeal = &BundleDealServiceOp[T]{client: c}
+	c.BusinessInsights = &BusinessInsightsServiceOp[T]{client: c}
+	c.Buybox = &BuyboxServiceOp[T]{client: c}
 	c.Discount = &DiscountServiceOp[T]{client: c}
 	c.FBS = &FBSServiceOp[T]{client: c}
 	c.FirstMile = &FirstMileServiceOp[T]{client: c}

@@ -1,0 +1,106 @@
+{
+	"error": "-",
+	"message": "-",
+	"warning": "-",
+	"request_id": "98eae35efff24dd0974c21a847127184",
+	"response": {
+		"ssp_list": [
+			{
+				"ssp_id": 1000000000,
+				"title": "wireless headphones",
+				"images": [
+					"sg-11134201-example"
+				],
+				"category_path": [
+					{
+						"category_id": 100001,
+						"category_name": "Audio",
+						"display_name": "Audio"
+					}
+				],
+				"description": "Standardized product description",
+				"attributes": [
+					{
+						"attr_id": 10001,
+						"attr_name": "Color",
+						"attr_display_name": "Color",
+						"attr_val_info": [
+							{
+								"attr_val_id": 10002,
+								"attr_val": "Black",
+								"attr_val_display_name": "Black",
+								"custom_value": "-"
+							}
+						],
+						"input_type": 0,
+						"input_validator": 0,
+						"format_type": 0,
+						"datetime_format": 0
+					}
+				],
+				"brand": {
+					"brand_id": 10001,
+					"display_name": "Audio"
+				},
+				"tier_variation": [
+					{
+						"name": "Color",
+						"options": [
+							"Black"
+						],
+						"images": [
+							"sg-11134201-example"
+						]
+					}
+				],
+				"cssps": [
+					{
+						"ssp_id": 1000000000,
+						"cssp_id": 1000000000,
+						"title": "wireless headphones",
+						"images": [
+							"sg-11134201-example"
+						],
+						"tier_indices": [
+							0
+						],
+						"desc": "Country-specific product description",
+						"brand_id": 10001,
+						"attributes": [
+							{
+								"attr_id": 10001,
+								"attr_name": "Color",
+								"attr_display_name": "Color",
+								"attr_val_info": [
+									{
+										"attr_val_id": 10002,
+										"attr_val": "Black",
+										"attr_val_display_name": "Black",
+										"custom_value": "-"
+									}
+								],
+								"input_type": 0,
+								"input_validator": 0,
+								"format_type": 0,
+								"datetime_format": 0
+							}
+						],
+						"tier_variation": [
+							{
+								"name": "Color",
+								"options": [
+									"Black"
+								],
+								"images": [
+									"sg-11134201-example"
+								]
+							}
+						],
+						"brand_name": "Example Brand"
+					}
+				],
+				"profile_type": 0
+			}
+		]
+	}
+}

@@ -8,7 +8,8 @@ type AddItemRequest struct {
 	CertificationInfo    *CertificationInfo `json:"certification_info,omitempty"`     // [Optional] <p>For PH product certification input<br />Required for some category and attribute option</p>
 	CompatibilityInfo    *CompatibilityInfo `json:"compatibility_info,omitempty"`     // [Optional]
 	ComplaintPolicy      *ComplaintPolicy   `json:"complaint_policy,omitempty"`       // [Optional] Complaint Policy for item. Only required for local PL sellers, ignored otherwise.
-	Condition            *string            `json:"condition,omitempty"`              // [Optional] Condition of item, could be USED or NEW
+	Condition            *string            `json:"condition,omitempty"`              // [Optional] <p>Condition of item, USED、Used and used will be mapped to Used; NEW、New and new will be mapped to New. Required for BR.</p>
+	CsspId               *int64             `json:"cssp_id,omitempty"`                // [Optional] <p>The ID of the country-specific Standardized Shop Product (CSSP) to associate with the default model of the new item. The value must be greater than 0 when provided. This field is required when ssp_id is provided.</p>
 	Description          string             `json:"description"`                      // [Required] if description_type is normal , Description information should be set by this field.
 	DescriptionInfo      *DescriptionInfo   `json:"description_info,omitempty"`       // [Optional] New description field. Only whitelist sellers can use it. If you use the field, please upload the description_type=extended otherwise api will return error. If you don't use this field, you don't need to upload the description_type or upload description_type=normal
 	DescriptionType      *DescriptionType   `json:"description_type,omitempty"`       // [Optional] Values: See Data Definition- description_type (normal , extended). If you want to use extended_description, this field must be inputed
@@ -29,6 +30,7 @@ type AddItemRequest struct {
 	ScheduledPublishTime *int64             `json:"scheduled_publish_time,omitempty"` // [Optional] <p>Scheduled publish time of this item:&nbsp;</p><p>1) Can only set scheduled_publish_time for item with UNLIST status</p><p>2) Can only set the time from current time +1hour to current time +90days, and the time is only allowed to be accurate to the minute</p>
 	SellerStock          []SellerStock      `json:"seller_stock,omitempty"`           // [Optional] <p>seller stock（Please notice that stock(including Seller Stock and Shopee Stock) should be larger than or equal to real-time reserved stock）</p>
 	SizeChartInfo        *SizeChartInfo     `json:"size_chart_info,omitempty"`        // [Optional]
+	SspId                *int64             `json:"ssp_id,omitempty"`                 // [Optional] <p>The ID of the Standardized Shop Product (SSP) to associate with the default model of the new item. The value must be greater than 0 when provided. If ssp_id is provided, cssp_id must also be provided.</p>
 	TaxInfo              *TaxInfo           `json:"tax_info,omitempty"`               // [Optional] Tax information
 	VideoUploadId        []string           `json:"video_upload_id,omitempty"`        // [Optional] Video upload ID returned from video uploading API. Only accept one video_upload_id.
 	Weight               float64            `json:"weight"`                           // [Required] <p>The weight of this item, the unit is KG.</p>
@@ -85,6 +87,8 @@ type AddModelRequestModel struct {
 	Weight        *float64      `json:"weight,omitempty"`    // [Optional] <p>The weight of this model, the unit is KG.</p><p>If don't set the weight of this model, will use the weight of item by default.</p><p>If set the dimension of this model, them must set the weight of this model.</p>
 	Dimension     *Dimension    `json:"dimension,omitempty"` // [Optional] <p>The dimension of this model.</p><p>If don't set the dimension of this model, will use the dimension of item by default.</p>
 	PreOrder      *ItemPreOrder `json:"pre_order,omitempty"` // [Optional] <p>Pre-order information of this model.</p><p><br /></p><p>Notes:&nbsp;</p><p>If don't set the DTS of this model, will use the DTS of the item by default.</p>
+	SspId         *int64        `json:"ssp_id,omitempty"`    // [Optional] <p>The ID of the Standardized Shop Product (SSP) to associate with the default model of the new item. The value must be greater than 0 when provided. If ssp_id is provided, cssp_id must also be provided.</p>
+	CsspId        *int64        `json:"cssp_id,omitempty"`   // [Optional] <p>The ID of the country-specific Standardized Shop Product (CSSP) to associate with the default model of the new item. The value must be greater than 0 when provided. This field is required when ssp_id is provided.</p>
 }
 type AddModelResponse struct {
 	BaseResponse                      // Common response fields
@@ -110,6 +114,16 @@ type Attribute struct {
 type AttributeAttributeValue struct {
 	ValueId int64 `json:"value_id"` // [Required] ID of attribute value.
 }
+type Attributes struct {
+	AttrId          *int64        `json:"attr_id,omitempty"`           // [Optional] <p>The attribute ID.</p>
+	AttrName        *string       `json:"attr_name,omitempty"`         // [Optional] <p>Attribute metadata that may be omitted by the current search converter.</p>
+	AttrDisplayName *string       `json:"attr_display_name,omitempty"` // [Optional] <p>Attribute metadata that may be omitted by the current search converter.</p>
+	AttrValInfo     []AttrValInfo `json:"attr_val_info,omitempty"`     // [Optional] <p>The values of the attribute.</p>
+	InputType       *int64        `json:"input_type,omitempty"`        // [Optional] <p>Attribute metadata that may be omitted by the current search converter.</p>
+	InputValidator  *int64        `json:"input_validator,omitempty"`   // [Optional] <p>Attribute metadata that may be omitted by the current search converter.</p>
+	FormatType      *int64        `json:"format_type,omitempty"`       // [Optional] <p>Attribute metadata that may be omitted by the current search converter.</p>
+	DatetimeFormat  *int64        `json:"datetime_format,omitempty"`   // [Optional] <p>Attribute metadata that may be omitted by the current search converter.</p>
+}
 type AttributeTreeAttributeInfo struct {
 	InputType           int64    `json:"input_type"`            // [Required] <p>SINGLE_DROP_DOWN = 1 <br />SINGLE_COMBO_BOX = 2 <br />FREE_TEXT_FILED&nbsp; &nbsp; &nbsp; &nbsp; = 3 <br />MULTI_DROP_DOWN&nbsp; &nbsp;= 4 <br />MULTI_COMBO_BOX&nbsp; &nbsp;= 5&nbsp;<br /></p>
 	InputValidationType int64    `json:"input_validation_type"` // [Required] <p>VALIDATOR_NO_VALIDATE_TYPE =&nbsp; 0 <br />VALIDATOR_INT_TYPE = 1&nbsp;</p><p>VALIDATOR_STRING_TYPE = 2</p><p>VALIDATOR_FLOAT_TYPE = 3&nbsp;</p><p>VALIDATOR_DATE_TYPE = 4<br /></p>
@@ -125,6 +139,17 @@ type AttributeValue struct {
 	ValueId           int64   `json:"value_id"`                      // [Required] ID of attribute value. In the following cases, the value id needs to be uploaded as 0, and original_value_name is mandatory, needs to be filled in customized value. (1) AttributeInputType is TEXT_FILED; (2) AttributeInputType is COMBO_BOX or MULTIPLE_SELECT_COMBO_BOX, and the seller want to fill in a customized value.
 	OriginalValueName *string `json:"original_value_name,omitempty"` // [Optional] Value name. original_value_name from produc.get_attributes api. If value id=0, this field is required. If AttributeType is DATE_TYPE or TIMESTAMP_TYPE, you can upload timestamp(string type) as the original_value_name.
 	ValueUnit         *string `json:"value_unit,omitempty"`          // [Optional] Unit of attribute value (quantitative attribute only).
+}
+type AttrValInfo struct {
+	AttrValId          *int64  `json:"attr_val_id,omitempty"`           // [Optional] <p>The attribute value ID.</p>
+	AttrVal            *string `json:"attr_val,omitempty"`              // [Optional] <p>Attribute metadata that may be omitted by the current search converter.</p>
+	AttrValDisplayName *string `json:"attr_val_display_name,omitempty"` // [Optional] <p>Attribute metadata that may be omitted by the current search converter.</p>
+	CustomValue        *string `json:"custom_value,omitempty"`          // [Optional] <p>A custom attribute value when applicable.</p>
+}
+type AutoEnrollItems struct {
+	ItemId    *int64     `json:"item_id,omitempty"`    // [Optional] <p>The ID of the item.</p>
+	SspId     *int64     `json:"ssp_id,omitempty"`     // [Optional] <p>The ID of the Standardized Shop Product (SSP).</p>
+	ModelCssp *ModelCssp `json:"model_cssp,omitempty"` // [Optional] <p>The model and CSSP mapping recommended for the item.</p>
 }
 type BatchAddItemRequest struct {
 	ItemList []BatchAddItemRequestItem `json:"item_list"` // [Required] <p>The item list to batch add. The list size must be between 1 and 100.</p>
@@ -162,6 +187,8 @@ type BatchAddItemRequestItem struct {
 	CertificationInfo    *CertificationInfo `json:"certification_info,omitempty"`     // [Optional] <p>For PH product certification input<br />Required for some category and attribute option</p>
 	PurchaseLimitInfo    *PurchaseLimitInfo `json:"purchase_limit_info,omitempty"`    // [Optional] <p>purchase limit info</p>
 	MedicineId           *int64             `json:"medicine_id,omitempty"`            // [Optional] <p>[Only for ID local sellers] as a unique identifier for each standardized medicine, the medicine id can only be obtained offline</p>
+	SspId                *int64             `json:"ssp_id,omitempty"`                 // [Optional] <p>The ID of the Standardized Shop Product (SSP) to associate with the default model of the new item. The value must be greater than 0 when provided. If ssp_id is provided, cssp_id must also be provided.</p>
+	CsspId               *int64             `json:"cssp_id,omitempty"`                // [Optional] <p>The ID of the country-specific Standardized Shop Product (CSSP) to associate with the default model of the new item. The value must be greater than 0 when provided. This field is required when ssp_id is provided.</p>
 }
 type BatchAddItemResponse struct {
 	BaseResponse                          // Common response fields
@@ -240,6 +267,11 @@ type Category struct {
 	DisplayCategoryName  string `json:"display_category_name"`  // [Required] Display name dependent on display name.
 	HasChildren          bool   `json:"has_children"`           // [Required] Whether this category has active children category.
 }
+type CategoryPath struct {
+	CategoryId   *int64  `json:"category_id,omitempty"`   // [Optional] <p>The category ID.</p>
+	CategoryName *string `json:"category_name,omitempty"` // [Optional] <p>The category name.</p>
+	DisplayName  *string `json:"display_name,omitempty"`  // [Optional] <p>The localized display name.</p>
+}
 type Certification struct {
 	CertificationNo     string                `json:"certification_no"`      // [Required] <p>Certification No.</p>
 	PermitId            int64                 `json:"permit_id"`             // [Required] <p>Permit ID, get from&nbsp;<span style="font-size:14px;">v2.product.get_product_certification_rule</span></p><br />
@@ -304,6 +336,18 @@ type Component struct {
 	ComponentModelId *int64 `json:"component_model_id,omitempty"` // [Optional] <p>ID of the model that composes this kit model.<br /></p>
 	Quantity         int64  `json:"quantity"`                     // [Required] <p>The amount of the item/model that composes this kit model.<br /></p>
 	MainComponent    *bool  `json:"main_component,omitempty"`     // [Optional] <p>Whether this item/model is the main component for this kit.</p><p>One kit item can only have one item/model as main component.</p>
+}
+type Cssps struct {
+	SspId         *int64                 `json:"ssp_id,omitempty"`         // [Optional] <p>The ID of the Standardized Shop Product (SSP).</p>
+	CsspId        *int64                 `json:"cssp_id,omitempty"`        // [Optional] <p>The ID of the country-specific Standardized Shop Product (CSSP).</p>
+	Title         *string                `json:"title,omitempty"`          // [Optional] <p>The display title of the CSSP returned by the search.</p>
+	Images        []string               `json:"images,omitempty"`         // [Optional] <p>Image identifiers associated with the SSP or CSSP.</p>
+	TierIndices   []int64                `json:"tier_indices,omitempty"`   // [Optional] <p>The tier option indices identifying the CSSP variation.</p>
+	Desc          *string                `json:"desc,omitempty"`           // [Optional] <p>The CSSP description.</p>
+	BrandId       *int64                 `json:"brand_id,omitempty"`       // [Optional] <p>The brand ID.</p>
+	Attributes    []Attributes           `json:"attributes,omitempty"`     // [Optional] <p>The attributes associated with the SSP or CSSP.</p>
+	TierVariation []SspInfoTierVariation `json:"tier_variation,omitempty"` // [Optional] <p>The tier variation definitions.</p>
+	BrandName     *string                `json:"brand_name,omitempty"`     // [Optional] <p>The brand name.</p>
 }
 type Data struct {
 	StandardiseVariationList []StandardiseVariation `json:"standardise_variation_list"` // [Required] <p>standardized tier variation tree<br /></p>
@@ -775,6 +819,8 @@ type GetModelListResponseDataModel struct {
 	Weight                string           `json:"weight"`                   // [Required] <p>The weight of this model, the unit is KG.</p><p>If don't set the weight of this model, will use the weight of item by default.</p>
 	Dimension             *Dimension       `json:"dimension"`                // [Required] <p>The dimension of this model.</p><p>If don't set the dimension of this model, will use the dimension of item by default.</p>
 	IsFulfillmentByShopee bool             `json:"is_fulfillment_by_shopee"` // [Required] <p>whether model is fulfillment by shopee</p>
+	SspId                 int64            `json:"ssp_id"`                   // [Required] <p>The ID of the Standardized Shop Product (SSP) to associate with the default model of the new item. The value must be greater than 0 when provided. If ssp_id is provided, cssp_id must also be provided.</p>
+	CsspId                int64            `json:"cssp_id"`                  // [Required] <p>The ID of the country-specific Standardized Shop Product (CSSP) to associate with the default model of the new item. The value must be greater than 0 when provided. This field is required when ssp_id is provided.</p>
 }
 type GetProductCertificationRuleRequest struct {
 	AttributeList []Attribute `json:"attribute_list,omitempty"` // [Optional] Item attributes.
@@ -786,6 +832,26 @@ type GetProductCertificationRuleResponse struct {
 }
 type GetProductCertificationRuleResponseData struct {
 	CertificationRuleList []CertificationRule `json:"certification_rule_list"` // [Required] New description field. Only whitelist sellers can use it. If you use the field, please upload the description_type=extended otherwise api will return error. If you don't use this field, you don't need to upload the description_type or upload description_type=normal
+}
+type GetSspDetailRequest struct {
+	CsspId *int64 `json:"cssp_id,omitempty" url:"cssp_id,omitempty"` // [Optional] <p>The ID of the country-specific Standardized Shop Product (CSSP).</p>
+	SspId  *int64 `json:"ssp_id,omitempty" url:"ssp_id,omitempty"`   // [Optional] <p>The ID of the Standardized Shop Product (SSP).</p>
+}
+type GetSspDetailResponse struct {
+	BaseResponse                          // Common response fields
+	Response     GetSspDetailResponseData `json:"response"` // Response data
+}
+type GetSspDetailResponseData struct {
+	SspInfo *SspInfo `json:"ssp_info,omitempty"` // [Optional] <p>The requested SSP details.</p>
+}
+type GetSspRecommendationResponse struct {
+	BaseResponse                                  // Common response fields
+	Response     GetSspRecommendationResponseData `json:"response"` // Response data
+}
+type GetSspRecommendationResponseData struct {
+	AutoEnrollItems         []AutoEnrollItems `json:"auto_enroll_items,omitempty"`           // [Optional] <p>Items that are eligible for automatic SSP enrollment.</p>
+	PossibleToBeEnrollItems []AutoEnrollItems `json:"possible_to_be_enroll_items,omitempty"` // [Optional] <p>Items that may be eligible for SSP enrollment.</p>
+	AutoEnrollTime          *int64            `json:"auto_enroll_time,omitempty"`            // [Optional] <p>The automatic enrollment end time as a Unix timestamp in seconds. This field is meaningful for automatic-enrollment items and may be zero or absent otherwise.</p>
 }
 type GetVehicleListByCompatibilityDetailRequest struct {
 	BrandId              *int64  `json:"brand_id,omitempty" url:"brand_id,omitempty"`       // [Optional] <p>ID of the brand.<br /></p>
@@ -865,6 +931,8 @@ type InitTierVariationResponseDataModel struct {
 	SellerStock []SellerStock          `json:"seller_stock"` // [Required] <p>new stock info<br /></p>
 	Weight      float64                `json:"weight"`       // [Required] <p>The weight of this model, the unit is KG.</p><p>If don't set the weight of this model, will use the weight of item by default.</p><p>If set the dimension of this model, them must set the weight of this model.</p>
 	Dimension   *Dimension             `json:"dimension"`    // [Required] <p>The dimension of this model.</p><p>If don't set the dimension of this model, will use the dimension of item by default.</p>
+	SspId       int64                  `json:"ssp_id"`       // [Required] <p>The ID of the Standardized Shop Product (SSP) to associate with the default model of the new item. The value must be greater than 0 when provided. If ssp_id is provided, cssp_id must also be provided.</p>
+	CsspId      int64                  `json:"cssp_id"`      // [Required] <p>The ID of the country-specific Standardized Shop Product (CSSP) to associate with the default model of the new item. The value must be greater than 0 when provided. This field is required when ssp_id is provided.</p>
 }
 type ItemAttribute struct {
 	AttributeId           int64            `json:"attribute_id"`            // [Required] The Identify of each category.
@@ -989,6 +1057,13 @@ type Licenses struct {
 	FileName *string `json:"file_name,omitempty"` // [Optional] <p>Brand registration certificate image name, len &lt;&nbsp;254<br /></p>
 	FileHash *string `json:"file_hash,omitempty"` // [Optional] <p>Image id of brand registration certificate image , max input num of file = 1 , each file's length&lt;=498<br /></p>
 }
+type LinkItemToSspRequest struct {
+	ItemId         int64       `json:"item_id"`          // [Required] <p>The ID of the item.</p>
+	ModelCsspPairs []ModelCssp `json:"model_cssp_pairs"` // [Required] <p>Non-empty mappings between item models and CSSPs. Each mapping requires model_id and cssp_id; ssp_id is optional.</p>
+}
+type LinkItemToSspResponse struct {
+	BaseResponse // Common response fields
+}
 type ListAttributeTree struct {
 	AttributeId        int64                             `json:"attribute_id"`         // [Required] <p>Attribute ID</p>
 	Mandatory          bool                              `json:"mandatory"`            // [Required] <p>Is mandatory or not</p>
@@ -1046,6 +1121,11 @@ type ModelComponent struct {
 	ComponentItemOrModelImage string `json:"component_item_or_model_image"` // [Required]
 	ComponentItemOrModelSku   string `json:"component_item_or_model_sku"`   // [Required]
 }
+type ModelCssp struct {
+	ModelId int64  `json:"model_id"`         // [Required] <p>The ID of the item model.</p>
+	CsspId  int64  `json:"cssp_id"`          // [Required] <p>The ID of the country-specific Standardized Shop Product (CSSP).</p>
+	SspId   *int64 `json:"ssp_id,omitempty"` // [Optional] <p>The optional ID of the parent Standardized Shop Product (SSP).</p>
+}
 type ModelMapping struct {
 	PmodelId int64 `json:"pmodel_id"` // [Required] <p>ID of model for the P Item.</p>
 	AmodelId int64 `json:"amodel_id"` // [Required] <p>ID of model for the A Item.<br /></p>
@@ -1069,10 +1149,6 @@ type ModelPriceInfo struct {
 type MultiLang struct {
 	Language string `json:"language"` // [Required] <p>Language</p>
 	Value    string `json:"value"`    // [Required] <p>Translate result</p>
-}
-type PageInfo struct {
-	Cursor  int64 `json:"cursor"`   // [Required]
-	HasNext bool  `json:"has_next"` // [Required]
 }
 type PriceLimit struct {
 	MinLimit float64 `json:"min_limit"` // [Required] Item price max limit.
@@ -1431,6 +1507,10 @@ type ResponseDataModel struct {
 	Weight      float64                `json:"weight"`       // [Required] <p>The weight of this model, the unit is KG.</p><p>If don't set the weight of this model, will use the weight of item by default.</p><p>If set the dimension of this model, them must set the weight of this model.</p>
 	Dimension   *Dimension             `json:"dimension"`    // [Required] <p>The dimension of this model.</p><p>If don't set the dimension of this model, will use the dimension of item by default.</p>
 }
+type ResponseDataPageInfo struct {
+	Cursor  int64 `json:"cursor"`   // [Required]
+	HasNext bool  `json:"has_next"` // [Required]
+}
 type ResponseDataPriceInfo struct {
 	CurrentPrice  float64 `json:"current_price"`  // [Required] Current price of item
 	OriginalPrice float64 `json:"original_price"` // [Required] Original price of item
@@ -1490,8 +1570,8 @@ type SearchAttributeValueListResponse struct {
 	Msg          string                               `json:"msg,omitempty"`           //
 }
 type SearchAttributeValueListResponseData struct {
-	ValueList []Value   `json:"value_list"` // [Required]
-	PageInfo  *PageInfo `json:"page_info"`  // [Required]
+	ValueList []Value               `json:"value_list"` // [Required]
+	PageInfo  *ResponseDataPageInfo `json:"page_info"`  // [Required]
 }
 type SearchItemRequest struct {
 	AttributeStatus *int64       `json:"attribute_status,omitempty" url:"attribute_status,omitempty"` // [Optional] 1:get item lack of requires attribute.   2:get item lack of optional attribute.
@@ -1510,6 +1590,17 @@ type SearchItemResponseData struct {
 	ItemIdList []int64 `json:"item_id_list"` // [Required] List of  item ID.
 	TotalCount int64   `json:"total_count"`  // [Required] Total num of items match condation.
 	NextOffset string  `json:"next_offset"`  // [Required] If has_next_page is true, this value need set to next request.offset
+}
+type SearchSspListRequest struct {
+	ImageIdList []string `json:"image_id_list,omitempty"` // [Optional] <p>Image IDs used for visually similar SSP search. When at least one image ID is supplied, title is ignored.</p>
+	Title       *string  `json:"title,omitempty"`         // [Optional] <p>Title text for SSP search. Required when image_id_list is empty and must contain at least three Unicode characters.</p>
+}
+type SearchSspListResponse struct {
+	BaseResponse                           // Common response fields
+	Response     SearchSspListResponseData `json:"response"` // Response data
+}
+type SearchSspListResponseData struct {
+	SspList []SspInfo `json:"ssp_list,omitempty"` // [Optional] <p>The list of SSPs matching the search criteria.</p>
 }
 type SearchUnpackagedModelListRequest struct {
 	Cursor          *string `json:"cursor,omitempty"`            // [Optional] <p>Specifies the starting entry of data to return in the current call. Default is "". If data is more than one page, the cursor can be some entry to start next call.</p>
@@ -1553,6 +1644,27 @@ type SizeChartLimit struct {
 }
 type SizeChartTable struct {
 	ColumnList []Column `json:"column_list"` // [Required] <p>column list of new size chart table. it include one column (measurement) and multiple values (measurement value)<br /></p>
+}
+type SspInfo struct {
+	SspId         *int64                 `json:"ssp_id,omitempty"`         // [Optional] <p>The ID of the Standardized Shop Product (SSP).</p>
+	Title         *string                `json:"title,omitempty"`          // [Optional] <p>The display title of the SSP returned by the search.</p>
+	Images        []string               `json:"images,omitempty"`         // [Optional] <p>Image identifiers associated with the SSP or CSSP.</p>
+	CategoryPath  []CategoryPath         `json:"category_path,omitempty"`  // [Optional] <p>The category hierarchy of the SSP.</p>
+	Description   *string                `json:"description,omitempty"`    // [Optional] <p>The SSP description.</p>
+	Attributes    []Attributes           `json:"attributes,omitempty"`     // [Optional] <p>The attributes associated with the SSP or CSSP.</p>
+	Brand         *SspInfoBrand          `json:"brand,omitempty"`          // [Optional] <p>The SSP brand information.</p>
+	TierVariation []SspInfoTierVariation `json:"tier_variation,omitempty"` // [Optional] <p>The tier variation definitions.</p>
+	Cssps         []Cssps                `json:"cssps,omitempty"`          // [Optional] <p>The country-specific products under the SSP.</p>
+	ProfileType   *int64                 `json:"profile_type,omitempty"`   // [Optional] <p>The SSP profile type.</p>
+}
+type SspInfoBrand struct {
+	BrandId     *int64  `json:"brand_id,omitempty"`     // [Optional] <p>The brand ID.</p>
+	DisplayName *string `json:"display_name,omitempty"` // [Optional] <p>The localized display name.</p>
+}
+type SspInfoTierVariation struct {
+	Name    *string  `json:"name,omitempty"`    // [Optional] <p>The tier variation name.</p>
+	Options []string `json:"options,omitempty"` // [Optional] <p>The available tier variation options.</p>
+	Images  []string `json:"images,omitempty"`  // [Optional] <p>Image identifiers associated with the SSP or CSSP.</p>
 }
 type StandardiseTierVariation struct {
 	VariationId         int64             `json:"variation_id"`                 // [Required] <p>standardise tier variation ID<br /></p>
@@ -1648,6 +1760,13 @@ type TierVariationOption struct {
 type UnfinishedTask struct {
 	IssueType  int64  `json:"issue_type"` // [Required] <p>Item's content issue. Applicable values:<br /></p><p>1: TOO_FEW_IMAGES<br />2: WRONG_CATEGORY<br />3: TOO_FEW_ATTRIBUTES_FOR_QUALIFIED<br />4: LACK_OF_SIZE_CHART<br />5: LACK_OF_STANDARD_VARIATION<br />6: LACK_BRAND<br />7: TOO_SHORT_DESCRIPTION<br />8: TOO_SHORT_OR_TOO_LONG_NAME<br />9: WRONG_WEIGHT<br />10: LACK_OF_VIDEO<br />11: TOO_FEW_ATTRIBUTES_FOR_EXCELLENT</p>
 	Suggestion string `json:"suggestion"` // [Required] <p>System&nbsp;suggestion for item's content issue. Applicable values:</p><p>Add at least 3 images</p><p>Adopt suggested category<br />Add at least 1 attributes<br />Add size chart<br />Adopt the color or size variation<br />Add brand info<br />Add at least 100 characters or 1 image for desc<br />Add characters for name to 25~100<br />Adopt suggested weight<br />Add video<br />Add at least 3 attributes</p>
+}
+type UnlinkItemFromSspRequest struct {
+	ItemId         int64       `json:"item_id"`          // [Required] <p>The ID of the item.</p>
+	ModelCsspPairs []ModelCssp `json:"model_cssp_pairs"` // [Required] <p>Non-empty mappings between item models and CSSPs. Each mapping requires model_id and cssp_id; ssp_id is optional.</p>
+}
+type UnlinkItemFromSspResponse struct {
+	BaseResponse // Common response fields
 }
 type UnlistItemRequest struct {
 	ItemList []UnlistItemRequestItem `json:"item_list"` // [Required] Length should be between 1 to 50.

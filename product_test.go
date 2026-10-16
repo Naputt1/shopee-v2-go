@@ -1007,6 +1007,55 @@ func Test_Product_GetSizeChartList(t *testing.T) {
 
 	t.Logf("Product.GetSizeChartList response: %#v", res)
 }
+func Test_Product_GetSspDetail(t *testing.T) {
+	setup()
+	defer teardown()
+
+	fixture := "v2.product.get_ssp_detail_resp.json"
+	data, err := loadFixtureSafe(fixture)
+	if err != nil {
+		t.Skipf("Skipping GetSspDetail due to missing fixture: %v", err)
+	}
+	responder, err := httpmock.NewJsonResponder(200, data)
+	if err != nil {
+		t.Skipf("Skipping GetSspDetail due to invalid fixture: %v", err)
+	}
+
+	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_ssp_detail", app.APIURL), responder)
+
+	var req GetSspDetailRequest
+	ctx := context.Background()
+	res, err := client.Product.GetSspDetail(ctx, sid, mid, tok, req)
+	if err != nil {
+		t.Logf("Product.GetSspDetail returned error (possibly expected with mock data): %s", err)
+	}
+
+	t.Logf("Product.GetSspDetail response: %#v", res)
+}
+func Test_Product_GetSspRecommendation(t *testing.T) {
+	setup()
+	defer teardown()
+
+	fixture := "v2.product.get_ssp_recommendation_resp.json"
+	data, err := loadFixtureSafe(fixture)
+	if err != nil {
+		t.Skipf("Skipping GetSspRecommendation due to missing fixture: %v", err)
+	}
+	responder, err := httpmock.NewJsonResponder(200, data)
+	if err != nil {
+		t.Skipf("Skipping GetSspRecommendation due to invalid fixture: %v", err)
+	}
+
+	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/product/get_ssp_recommendation", app.APIURL), responder)
+
+	ctx := context.Background()
+	res, err := client.Product.GetSspRecommendation(ctx, sid, mid, tok)
+	if err != nil {
+		t.Logf("Product.GetSspRecommendation returned error (possibly expected with mock data): %s", err)
+	}
+
+	t.Logf("Product.GetSspRecommendation response: %#v", res)
+}
 func Test_Product_GetVariations(t *testing.T) {
 	setup()
 	defer teardown()
@@ -1106,6 +1155,31 @@ func Test_Product_InitTierVariation(t *testing.T) {
 	}
 
 	t.Logf("Product.InitTierVariation response: %#v", res)
+}
+func Test_Product_LinkItemToSsp(t *testing.T) {
+	setup()
+	defer teardown()
+
+	fixture := "v2.product.link_item_to_ssp_resp.json"
+	data, err := loadFixtureSafe(fixture)
+	if err != nil {
+		t.Skipf("Skipping LinkItemToSsp due to missing fixture: %v", err)
+	}
+	responder, err := httpmock.NewJsonResponder(200, data)
+	if err != nil {
+		t.Skipf("Skipping LinkItemToSsp due to invalid fixture: %v", err)
+	}
+
+	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/link_item_to_ssp", app.APIURL), responder)
+
+	var req LinkItemToSspRequest
+	ctx := context.Background()
+	res, err := client.Product.LinkItemToSsp(ctx, sid, mid, tok, req)
+	if err != nil {
+		t.Logf("Product.LinkItemToSsp returned error (possibly expected with mock data): %s", err)
+	}
+
+	t.Logf("Product.LinkItemToSsp response: %#v", res)
 }
 func Test_Product_PublishItemToOutletShop(t *testing.T) {
 	setup()
@@ -1231,6 +1305,31 @@ func Test_Product_SearchItem(t *testing.T) {
 
 	t.Logf("Product.SearchItem response: %#v", res)
 }
+func Test_Product_SearchSspList(t *testing.T) {
+	setup()
+	defer teardown()
+
+	fixture := "v2.product.search_ssp_list_resp.json"
+	data, err := loadFixtureSafe(fixture)
+	if err != nil {
+		t.Skipf("Skipping SearchSspList due to missing fixture: %v", err)
+	}
+	responder, err := httpmock.NewJsonResponder(200, data)
+	if err != nil {
+		t.Skipf("Skipping SearchSspList due to invalid fixture: %v", err)
+	}
+
+	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/search_ssp_list", app.APIURL), responder)
+
+	var req SearchSspListRequest
+	ctx := context.Background()
+	res, err := client.Product.SearchSspList(ctx, sid, mid, tok, req)
+	if err != nil {
+		t.Logf("Product.SearchSspList returned error (possibly expected with mock data): %s", err)
+	}
+
+	t.Logf("Product.SearchSspList response: %#v", res)
+}
 func Test_Product_SearchUnpackagedModelList(t *testing.T) {
 	setup()
 	defer teardown()
@@ -1255,6 +1354,31 @@ func Test_Product_SearchUnpackagedModelList(t *testing.T) {
 	}
 
 	t.Logf("Product.SearchUnpackagedModelList response: %#v", res)
+}
+func Test_Product_UnlinkItemFromSsp(t *testing.T) {
+	setup()
+	defer teardown()
+
+	fixture := "v2.product.unlink_item_from_ssp_resp.json"
+	data, err := loadFixtureSafe(fixture)
+	if err != nil {
+		t.Skipf("Skipping UnlinkItemFromSsp due to missing fixture: %v", err)
+	}
+	responder, err := httpmock.NewJsonResponder(200, data)
+	if err != nil {
+		t.Skipf("Skipping UnlinkItemFromSsp due to invalid fixture: %v", err)
+	}
+
+	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/unlink_item_from_ssp", app.APIURL), responder)
+
+	var req UnlinkItemFromSspRequest
+	ctx := context.Background()
+	res, err := client.Product.UnlinkItemFromSsp(ctx, sid, mid, tok, req)
+	if err != nil {
+		t.Logf("Product.UnlinkItemFromSsp returned error (possibly expected with mock data): %s", err)
+	}
+
+	t.Logf("Product.UnlinkItemFromSsp response: %#v", res)
 }
 func Test_Product_UnlistItem(t *testing.T) {
 	setup()

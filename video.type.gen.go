@@ -41,6 +41,7 @@ type DeleteVideoResponseDataSuccess struct {
 	SuccessPostId        string `json:"success_post_id"`         // [Required] <p>The post_id delete successfully.</p>
 }
 type EditVideoInfoRequest struct {
+	AigcLabel       bool          `json:"aigc_label"`        // [Required] <p>Indicates whether the video contains AI-generated or AI-assisted content, such as visuals, voice, avatars, or scripts. Set to true if it does; otherwise, set to false. An AI label will be shown to viewers when set to true.</p>
 	VideoUploadList []VideoUpload `json:"video_upload_list"` // [Required] <p>Video information collection, no more than 5.</p>
 }
 type EditVideoInfoResponse struct {
@@ -230,7 +231,8 @@ type GetVideoDetailRequest struct {
 }
 type GetVideoDetailResponse struct {
 	BaseResponse                            // Common response fields
-	Response     GetVideoDetailResponseData `json:"response"` // Response data
+	Response     GetVideoDetailResponseData `json:"response"`             // Response data
+	AigcLabel    bool                       `json:"aigc_label,omitempty"` // <p>Whether the video contains AI-generated or AI-assisted content, such as visuals, voice, avatars, or scripts. Returns true if the video contains AI-generated or AI-assisted content, otherwise, returns false.</p>
 }
 type GetVideoDetailResponseData struct {
 	VideoUploadId  string                           `json:"video_upload_id"` // [Required] <p>ID of uploaded video.</p>

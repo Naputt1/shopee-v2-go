@@ -40,7 +40,7 @@ type ReturnsService interface {
 	// Path: /api/v2/returns/get_return_dispute_reason
 	// https://open.shopee.com/documents/v2/v2.returns.get_return_dispute_reason?module=102&type=1
 	GetReturnDisputeReason(ctx context.Context, sid uint64, mid uint64, tok string, opt GetReturnDisputeReasonRequest) (*GetReturnDisputeReasonResponse, error)
-	// GetReturnList Use this api to get detail information of many return by shop id.
+	// GetReturnList {"content":"<p>Use this api to get detail information of many return by shop id.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this api to get detail information of many return by shop id."}]}]}
 	// Path: /api/v2/returns/get_return_list
 	// https://open.shopee.com/documents/v2/v2.returns.get_return_list?module=102&type=1
 	GetReturnList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetReturnListRequest) (*GetReturnListResponse, error)
@@ -158,7 +158,7 @@ func (s *ReturnsServiceOp[T]) GetReturnDisputeReason(ctx context.Context, sid ui
 	return resp, err
 }
 
-// GetReturnList Use this api to get detail information of many return by shop id.
+// GetReturnList {"content":"<p>Use this api to get detail information of many return by shop id.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this api to get detail information of many return by shop id."}]}]}
 // Path: /api/v2/returns/get_return_list
 // https://open.shopee.com/documents/v2/v2.returns.get_return_list?module=102&type=1
 func (s *ReturnsServiceOp[T]) GetReturnList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetReturnListRequest) (*GetReturnListResponse, error) {

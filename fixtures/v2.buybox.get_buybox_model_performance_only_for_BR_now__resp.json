@@ -1,0 +1,14 @@
+{
+	"error": "error_param",
+	"message": "Invalid request parameters.",
+	"request_id": "b6b2c7a0f4d84f7f9a3f58c0d2e2f031",
+	"response": {
+		"performance_list": [
+			{
+				"model_id": 600000,
+				"past_7_days_sold_count": 100
+			}
+		],
+		"data_updated_time": "2026-01-19"
+	}
+}

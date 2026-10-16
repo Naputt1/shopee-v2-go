@@ -60,7 +60,7 @@ type MediaSpaceUploadVideoPartResponse struct {
 	BaseResponse // Common response fields
 }
 type ReportData struct {
-	UploadCost int64 `json:"upload_cost"` // [Required] Time used for uploading the video file via upload_video_part api, in milliseconds. For video upload performance tracking purpose.
+	UploadCost uint64 `json:"upload_cost"` // [Required] Time used for uploading the video file via upload_video_part api, in milliseconds. For video upload performance tracking purpose.
 }
 type ResponseDataImageInfo struct {
 	ImageId      string         `json:"image_id"`       // [Required] <p>Id of image</p>
@@ -69,7 +69,7 @@ type ResponseDataImageInfo struct {
 type ResponseDataVideoInfo struct {
 	VideoUrlList     []VideoUrl     `json:"video_url_list"`     // [Required] Video playback URL list.
 	ThumbnailUrlList []ThumbnailUrl `json:"thumbnail_url_list"` // [Required] Video thumbnail image URL list.
-	Duration         int64          `json:"duration"`           // [Required] Duration of this video, in seconds.
+	Duration         uint64         `json:"duration"`           // [Required] Duration of this video, in seconds.
 }
 type ThumbnailUrl struct {
 	ImageUrlRegion string `json:"image_url_region"` // [Required] <p>Region of image url<br /></p>

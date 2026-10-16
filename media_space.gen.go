@@ -11,19 +11,17 @@ type MediaSpaceService interface {
 	// https://open.shopee.com/documents/v2/v2.media_space.cancel_video_upload?module=91&type=1
 	CancelVideoUpload(ctx context.Context, sid uint64, mid uint64, tok string, filename string) (*MediaSpaceCancelVideoUploadResponse, error)
 	CancelVideoUploadFromReader(ctx context.Context, sid uint64, mid uint64, tok string, filename string, reader io.Reader) (*MediaSpaceCancelVideoUploadResponse, error)
-	// CompleteVideoUpload Complete the video upload and starts the transcoding process when all parts are uploaded successfully.
+	// CompleteVideoUpload {"content":"<p>Complete the video upload and starts the transcoding process when all parts are uploaded successfully.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Complete the video upload and starts the transcoding process when all parts are uploaded successfully."}]}]}
 	// Path: /api/v2/media_space/complete_video_upload
 	// https://open.shopee.com/documents/v2/v2.media_space.complete_video_upload?module=91&type=1
 	CompleteVideoUpload(ctx context.Context, sid uint64, mid uint64, tok string, filename string) (*MediaSpaceCompleteVideoUploadResponse, error)
 	CompleteVideoUploadFromReader(ctx context.Context, sid uint64, mid uint64, tok string, filename string, reader io.Reader) (*MediaSpaceCompleteVideoUploadResponse, error)
-	// GetVideoUploadResult Query the upload status and result of video upload.
+	// GetVideoUploadResult {"content":"<p>Query the upload status and result of video upload.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Query the upload status and result of video upload."}]}]}
 	// Path: /api/v2/media_space/get_video_upload_result
 	// https://open.shopee.com/documents/v2/v2.media_space.get_video_upload_result?module=91&type=1
 	GetVideoUploadResult(ctx context.Context, sid uint64, mid uint64, tok string, filename string) (*MediaSpaceGetVideoUploadResultResponse, error)
 	GetVideoUploadResultFromReader(ctx context.Context, sid uint64, mid uint64, tok string, filename string, reader io.Reader) (*MediaSpaceGetVideoUploadResultResponse, error)
-	// InitVideoUpload Initiate video upload session.
-	//
-	// Video duration should be between 10s and 60s (inclusive).
+	// InitVideoUpload {"content":"<p>Initiate video upload session.<br><br>Video duration should be between 10s and 60s (inclusive).</p>","raw_content":[{"name":"paragraph","children":[{"data":"Initiate video upload session."},{"name":"softBreak"},{"name":"softBreak"},{"data":"Video duration should be between 10s and 60s (inclusive)."}]}]}
 	// Path: /api/v2/media_space/init_video_upload
 	// https://open.shopee.com/documents/v2/v2.media_space.init_video_upload?module=91&type=1
 	InitVideoUpload(ctx context.Context, sid uint64, mid uint64, tok string, filename string) (*MediaSpaceInitVideoUploadResponse, error)
@@ -33,11 +31,7 @@ type MediaSpaceService interface {
 	// https://open.shopee.com/documents/v2/v2.media_space.upload_image?module=91&type=1
 	UploadImage(ctx context.Context, sid uint64, mid uint64, tok string, filename string) (*MediaSpaceUploadImageResponse, error)
 	UploadImageFromReader(ctx context.Context, sid uint64, mid uint64, tok string, filename string, reader io.Reader) (*MediaSpaceUploadImageResponse, error)
-	// UploadVideoPart Upload video file by part using the upload_id in initiate_video_upload.
-	//
-	// The request Content-Type of this API should be of multipart/form-data
-	//
-	//
+	// UploadVideoPart {"content":"<p>Upload video file by part using the upload_id in initiate_video_upload.<br><br>The request Content-Type of this API should be of multipart/form-data<br><br>&nbsp;</p>","raw_content":[{"name":"paragraph","children":[{"data":"Upload video file by part using the upload_id in initiate_video_upload."},{"name":"softBreak"},{"name":"softBreak"},{"data":"The request Content-Type of this API should be of multipart/form-data"},{"name":"softBreak"},{"name":"softBreak"},{"data":" "}]}]}
 	// Path: /api/v2/media_space/upload_video_part
 	// https://open.shopee.com/documents/v2/v2.media_space.upload_video_part?module=91&type=1
 	UploadVideoPart(ctx context.Context, sid uint64, mid uint64, tok string, filename string) (*MediaSpaceUploadVideoPartResponse, error)
@@ -65,7 +59,7 @@ func (s *MediaSpaceServiceOp[T]) CancelVideoUploadFromReader(ctx context.Context
 	return resp, err
 }
 
-// CompleteVideoUpload Complete the video upload and starts the transcoding process when all parts are uploaded successfully.
+// CompleteVideoUpload {"content":"<p>Complete the video upload and starts the transcoding process when all parts are uploaded successfully.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Complete the video upload and starts the transcoding process when all parts are uploaded successfully."}]}]}
 // Path: /api/v2/media_space/complete_video_upload
 // https://open.shopee.com/documents/v2/v2.media_space.complete_video_upload?module=91&type=1
 func (s *MediaSpaceServiceOp[T]) CompleteVideoUpload(ctx context.Context, sid uint64, mid uint64, tok string, filename string) (*MediaSpaceCompleteVideoUploadResponse, error) {
@@ -82,7 +76,7 @@ func (s *MediaSpaceServiceOp[T]) CompleteVideoUploadFromReader(ctx context.Conte
 	return resp, err
 }
 
-// GetVideoUploadResult Query the upload status and result of video upload.
+// GetVideoUploadResult {"content":"<p>Query the upload status and result of video upload.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Query the upload status and result of video upload."}]}]}
 // Path: /api/v2/media_space/get_video_upload_result
 // https://open.shopee.com/documents/v2/v2.media_space.get_video_upload_result?module=91&type=1
 func (s *MediaSpaceServiceOp[T]) GetVideoUploadResult(ctx context.Context, sid uint64, mid uint64, tok string, filename string) (*MediaSpaceGetVideoUploadResultResponse, error) {
@@ -99,9 +93,7 @@ func (s *MediaSpaceServiceOp[T]) GetVideoUploadResultFromReader(ctx context.Cont
 	return resp, err
 }
 
-// InitVideoUpload Initiate video upload session.
-//
-// Video duration should be between 10s and 60s (inclusive).
+// InitVideoUpload {"content":"<p>Initiate video upload session.<br><br>Video duration should be between 10s and 60s (inclusive).</p>","raw_content":[{"name":"paragraph","children":[{"data":"Initiate video upload session."},{"name":"softBreak"},{"name":"softBreak"},{"data":"Video duration should be between 10s and 60s (inclusive)."}]}]}
 // Path: /api/v2/media_space/init_video_upload
 // https://open.shopee.com/documents/v2/v2.media_space.init_video_upload?module=91&type=1
 func (s *MediaSpaceServiceOp[T]) InitVideoUpload(ctx context.Context, sid uint64, mid uint64, tok string, filename string) (*MediaSpaceInitVideoUploadResponse, error) {
@@ -135,10 +127,7 @@ func (s *MediaSpaceServiceOp[T]) UploadImageFromReader(ctx context.Context, sid 
 	return resp, err
 }
 
-// UploadVideoPart Upload video file by part using the upload_id in initiate_video_upload.
-//
-// The request Content-Type of this API should be of multipart/form-data
-//
+// UploadVideoPart {"content":"<p>Upload video file by part using the upload_id in initiate_video_upload.<br><br>The request Content-Type of this API should be of multipart/form-data<br><br>&nbsp;</p>","raw_content":[{"name":"paragraph","children":[{"data":"Upload video file by part using the upload_id in initiate_video_upload."},{"name":"softBreak"},{"name":"softBreak"},{"data":"The request Content-Type of this API should be of multipart/form-data"},{"name":"softBreak"},{"name":"softBreak"},{"data":" "}]}]}
 // Path: /api/v2/media_space/upload_video_part
 // https://open.shopee.com/documents/v2/v2.media_space.upload_video_part?module=91&type=1
 func (s *MediaSpaceServiceOp[T]) UploadVideoPart(ctx context.Context, sid uint64, mid uint64, tok string, filename string) (*MediaSpaceUploadVideoPartResponse, error) {

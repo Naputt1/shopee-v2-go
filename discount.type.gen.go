@@ -118,20 +118,20 @@ type GetDiscountResponseData struct {
 	More         bool                          `json:"more"`          // [Required] This is to indicate whether the item list is more than one page. If this value is true, you may want to continue to check next page to retrieve the rest of items.
 }
 type GetDiscountResponseDataItem struct {
-	ItemId                            int64       `json:"item_id"`                                // [Required] Shopee's unique identifier for an item.
-	ItemName                          string      `json:"item_name"`                              // [Required] Name of the item in local language.
-	NormalStock                       int64       `json:"normal_stock"`                           // [Required] The current stock quantity of the item.
-	ItemPromotionStock                int64       `json:"item_promotion_stock"`                   // [Required] <p>The reserved stock of the item. If the item has no variation, this param is necessary.</p>
-	ItemOriginalPrice                 float64     `json:"item_original_price"`                    // [Required] The original price before discount of the item. If there is variation, this value is 0.
-	ItemPromotionPrice                float64     `json:"item_promotion_price"`                   // [Required] The discount price of the item. If there is variation, this value is 0.
-	ItemInflatedPriceOfOriginalPrice  float64     `json:"item_inflated_price_of_original_price"`  // [Required] <p>The original price after tax of item (Only for taxable Shop).</p>
-	ItemInflatedPriceOfPromotionPrice float64     `json:"item_inflated_price_of_promotion_price"` // [Required] <p>The discount price after tax of item (Only for taxable Shop).</p>
-	ItemLocalPrice                    float64     `json:"item_local_price"`                       // [Required] <p>The local price of item calculated as: Local Price = CB Original Price × Local Adjustment Rate.<br />Reflects the final local price derived from shop-level adjustment rules and is denominated in local currency.</p>
-	ItemLocalPromotionPrice           float64     `json:"item_local_promotion_price"`             // [Required] <p>The local discount price of item calculated as: Local Discount Price = Local Price × Discount Rate.<br />Reflects the final local seller discount price derived from setting a seller discount&nbsp;and is denominated in local currency.</p>
-	ItemLocalPriceInflated            float64     `json:"item_local_price_inflated"`              // [Required] <p>The local price after tax of item (Only for taxable Shop).</p>
-	ItemLocalPromotionPriceInflated   float64     `json:"item_local_promotion_price_inflated"`    // [Required] <p>The local discount price after tax of item (Only for taxable Shop).</p>
-	ModelList                         []ItemModel `json:"model_list"`                             // [Required] The models belong to this item.
-	PurchaseLimit                     int64       `json:"purchase_limit"`                         // [Required] The max number of this product in the promotion price.
+	ItemId                            int64                   `json:"item_id"`                                // [Required] Shopee's unique identifier for an item.
+	ItemName                          string                  `json:"item_name"`                              // [Required] Name of the item in local language.
+	NormalStock                       int64                   `json:"normal_stock"`                           // [Required] The current stock quantity of the item.
+	ItemPromotionStock                int64                   `json:"item_promotion_stock"`                   // [Required] <p>The reserved stock of the item. If the item has no variation, this param is necessary.</p>
+	ItemOriginalPrice                 float64                 `json:"item_original_price"`                    // [Required] The original price before discount of the item. If there is variation, this value is 0.
+	ItemPromotionPrice                float64                 `json:"item_promotion_price"`                   // [Required] The discount price of the item. If there is variation, this value is 0.
+	ItemInflatedPriceOfOriginalPrice  float64                 `json:"item_inflated_price_of_original_price"`  // [Required] <p>The original price after tax of item (Only for taxable Shop).</p>
+	ItemInflatedPriceOfPromotionPrice float64                 `json:"item_inflated_price_of_promotion_price"` // [Required] <p>The discount price after tax of item (Only for taxable Shop).</p>
+	ItemLocalPrice                    float64                 `json:"item_local_price"`                       // [Required] <p>The local price of item calculated as: Local Price = CB Original Price × Local Adjustment Rate.<br />Reflects the final local price derived from shop-level adjustment rules and is denominated in local currency.</p>
+	ItemLocalPromotionPrice           float64                 `json:"item_local_promotion_price"`             // [Required] <p>The local discount price of item calculated as: Local Discount Price = Local Price × Discount Rate.<br />Reflects the final local seller discount price derived from setting a seller discount&nbsp;and is denominated in local currency.</p>
+	ItemLocalPriceInflated            float64                 `json:"item_local_price_inflated"`              // [Required] <p>The local price after tax of item (Only for taxable Shop).</p>
+	ItemLocalPromotionPriceInflated   float64                 `json:"item_local_promotion_price_inflated"`    // [Required] <p>The local discount price after tax of item (Only for taxable Shop).</p>
+	ModelList                         []ResponseDataItemModel `json:"model_list"`                             // [Required] The models belong to this item.
+	PurchaseLimit                     int64                   `json:"purchase_limit"`                         // [Required] The max number of this product in the promotion price.
 }
 type GetSipDiscountsRequest struct {
 	Region *string `json:"region,omitempty" url:"region,omitempty"` // [Optional] <p>The region of SIP affiliate shop that needs to get discount information.</p><p>If do not pass, will return the discount information set for all SIP affiliate shops.</p>
@@ -144,30 +144,16 @@ type GetSipDiscountsResponseData struct {
 	DiscountList []ResponseDataDiscount `json:"discount_list"` // [Required] <p>List of discounts in each region. Will be filtered based on the "region" request parameter.<br /></p>
 }
 type ItemModel struct {
-	ModelId                            int64   `json:"model_id"`                                // [Required] Shopee's unique identifier for a variation of an item.
-	ModelName                          string  `json:"model_name"`                              // [Required] Name of the variation that belongs to the same item.
-	ModelNormalStock                   int64   `json:"model_normal_stock"`                      // [Required] The current stock quantity of the variation.
-	ModelPromotionStock                int64   `json:"model_promotion_stock"`                   // [Required] The reserved stock of the model.
-	ModelOriginalPrice                 float64 `json:"model_original_price"`                    // [Required] The original price before discount of the variation.
-	ModelPromotionPrice                float64 `json:"model_promotion_price"`                   // [Required] The discount price of the variation.
-	ModelInflatedPriceOfOriginalPrice  float64 `json:"model_inflated_price_of_original_price"`  // [Required] <p>The original price after tax of model (Only for taxable Shop).</p>
-	ModelInflatedPriceOfPromotionPrice float64 `json:"model_inflated_price_of_promotion_price"` // [Required] <p>The discount price after tax of model (Only for taxable Shop).</p>
-	ModelLocalPrice                    float64 `json:"model_local_price"`                       // [Required] <p>The local price of model calculated as:&nbsp;Local Price = CB Original Price × Local Adjustment Rate.<br />Reflects the final local price derived from shop-level adjustment rules&nbsp;and is denominated in local currency.</p>
-	ModelLocalPromotionPrice           float64 `json:"model_local_promotion_price"`             // [Required] <p>The local discount price of model calculated as: Local Discount Price = Local Price × Discount Rate.<br />Reflects the final local seller discount price derived from setting a seller discount&nbsp;and is denominated in local currency.</p>
-	ModelLocalPriceInflated            float64 `json:"model_local_price_inflated"`              // [Required] <p>The local price after tax of model (Only for taxable Shop).</p>
-	ModelLocalPromotionPriceInflated   float64 `json:"model_local_promotion_price_inflated"`    // [Required] <p>The local discount price after tax of model (Only for taxable Shop).</p>
-}
-type Model struct {
 	ModelId             int64   `json:"model_id"`                        // [Required] Shopee's unique identifier for a variation of an item. If there is no variation of this item, you don't need to input this param. Dafault is 0.
 	ModelPromotionPrice float64 `json:"model_promotion_price"`           // [Required] The discount price of the item.
 	ModelPromotionStock *int64  `json:"model_promotion_stock,omitempty"` // [Optional] <p>The reserved stock of the model, default is no limit, and can not update. To edit the promotion stock, you need to delete the exist discount and re-add again.</p>
 }
 type RequestItem struct {
-	ItemId             int64    `json:"item_id"`                        // [Required] Shopee's unique identifier for an item.
-	ItemPromotionPrice *float64 `json:"item_promotion_price,omitempty"` // [Optional] The discount price of the item. If the item has no variation, this param is necessary.
-	ItemPromotionStock *int64   `json:"item_promotion_stock,omitempty"` // [Optional] The reserved stock of the item.
-	ModelList          []Model  `json:"model_list,omitempty"`           // [Optional] The models which belongs to this item.
-	PurchaseLimit      int64    `json:"purchase_limit"`                 // [Required] The max number of this product in the promotion price. If it's No Limit, please input the 0 for this request data.
+	ItemId             int64       `json:"item_id"`                        // [Required] Shopee's unique identifier for an item.
+	ItemPromotionPrice *float64    `json:"item_promotion_price,omitempty"` // [Optional] The discount price of the item. If the item has no variation, this param is necessary.
+	ItemPromotionStock *int64      `json:"item_promotion_stock,omitempty"` // [Optional] The reserved stock of the item.
+	ModelList          []ItemModel `json:"model_list,omitempty"`           // [Optional] The models which belongs to this item.
+	PurchaseLimit      int64       `json:"purchase_limit"`                 // [Required] The max number of this product in the promotion price. If it's No Limit, please input the 0 for this request data.
 }
 type RequestItemModel struct {
 	ModelId             int64   `json:"model_id"`              // [Required] Shopee's unique identifier for a variation of an item. If there is no variation of this item, you don't need to input this param. Dafault is 0.
@@ -181,6 +167,20 @@ type ResponseDataDiscount struct {
 	EndTime         int64  `json:"end_time"`          // [Required] <p>The end time of discount for SIP affiliate shop in current region,&nbsp;in UNIX seconds.</p>
 	CreateTime      int64  `json:"create_time"`       // [Required] <p>The create time of discount for SIP affiliate shop in current region,&nbsp;in UNIX seconds.</p>
 	UpdateTime      int64  `json:"update_time"`       // [Required] <p>The latest update time of discount for SIP affiliate shop in current region,&nbsp;in UNIX seconds.</p>
+}
+type ResponseDataItemModel struct {
+	ModelId                            int64   `json:"model_id"`                                // [Required] Shopee's unique identifier for a variation of an item.
+	ModelName                          string  `json:"model_name"`                              // [Required] Name of the variation that belongs to the same item.
+	ModelNormalStock                   int64   `json:"model_normal_stock"`                      // [Required] The current stock quantity of the variation.
+	ModelPromotionStock                int64   `json:"model_promotion_stock"`                   // [Required] The reserved stock of the model.
+	ModelOriginalPrice                 float64 `json:"model_original_price"`                    // [Required] The original price before discount of the variation.
+	ModelPromotionPrice                float64 `json:"model_promotion_price"`                   // [Required] The discount price of the variation.
+	ModelInflatedPriceOfOriginalPrice  float64 `json:"model_inflated_price_of_original_price"`  // [Required] <p>The original price after tax of model (Only for taxable Shop).</p>
+	ModelInflatedPriceOfPromotionPrice float64 `json:"model_inflated_price_of_promotion_price"` // [Required] <p>The discount price after tax of model (Only for taxable Shop).</p>
+	ModelLocalPrice                    float64 `json:"model_local_price"`                       // [Required] <p>The local price of model calculated as:&nbsp;Local Price = CB Original Price × Local Adjustment Rate.<br />Reflects the final local price derived from shop-level adjustment rules&nbsp;and is denominated in local currency.</p>
+	ModelLocalPromotionPrice           float64 `json:"model_local_promotion_price"`             // [Required] <p>The local discount price of model calculated as: Local Discount Price = Local Price × Discount Rate.<br />Reflects the final local seller discount price derived from setting a seller discount&nbsp;and is denominated in local currency.</p>
+	ModelLocalPriceInflated            float64 `json:"model_local_price_inflated"`              // [Required] <p>The local price after tax of model (Only for taxable Shop).</p>
+	ModelLocalPromotionPriceInflated   float64 `json:"model_local_promotion_price_inflated"`    // [Required] <p>The local discount price after tax of model (Only for taxable Shop).</p>
 }
 type SetSipDiscountRequest struct {
 	Region          string `json:"region"`            // [Required] <p>The region of SIP affiliate shop that needs to set discount.</p>

@@ -123,6 +123,17 @@ const (
 	ErrBundleBundleDealUnderMinAmountMultiTier                = "bundle.bundle_deal_under_min_amount_multi_tier"                   // The item amount should be greater than the previous tier
 	ErrBundleBundleExpired                                    = "bundle.bundle_expired"                                            // bundle deal expired can not update
 	ErrBundleProductNotExist                                  = "bundle.product_not_exist"                                         // product id not exists
+	ErrBuyboxDuplicateModelId                                 = "buybox_duplicate_model_id"                                        // The model ID list contains duplicate values. Remove the duplicate model IDs and try again.
+	ErrBuyboxEnrollmentUpdateFailed                           = "buybox_enrollment_update_failed"                                  // The model enrollment status could not be fully updated. Try again later.
+	ErrBuyboxInvalidEnrollmentStatus                          = "buybox_invalid_enrollment_status"                                 // The enrollment status is invalid. Provide a valid target enrollment status.
+	ErrBuyboxInvalidModelId                                   = "buybox_invalid_model_id"                                          // The model ID is invalid. Provide a valid positive model ID.
+	ErrBuyboxInvalidModelIdList                               = "buybox_invalid_model_id_list"                                     // The model ID list is invalid. Provide a valid list of positive model IDs.
+	ErrBuyboxInvalidPagination                                = "buybox_invalid_pagination"                                        // The pagination parameters are invalid. Provide a non-negative offset and a valid limit.
+	ErrBuyboxModelNotEligible                                 = "buybox_model_not_eligible"                                        // The model is not eligible to participate in Buybox. Review the eligibility requirements before trying again.
+	ErrBuyboxModelNotFound                                    = "buybox_model_not_found"                                           // The model was not found under the authorized shop. Check the model ID and try again.
+	ErrBuyboxModelNotMapped                                   = "buybox_model_not_mapped"                                          // The model does not have an active Buybox mapping and cannot be updated.
+	ErrBuyboxPerformanceUnavailable                           = "buybox_performance_unavailable"                                   // Buybox performance data is temporarily unavailable. Try again later.
+	ErrBuyboxSystemError                                      = "buybox_system_error"                                              // An unexpected system error occurred. Try again later.
 	ErrChannelErrorServer                                     = "channel_error_server"                                             // Get installment channel info failed.
 	ErrCommonBatchApiAllFailed                                = "common.batch_api_all_failed"                                      // Failed, please check result_list for more details.
 	ErrCommonErrorNotFound                                    = "common.error_not_found"                                           // The information you queried is not found.
@@ -717,7 +728,7 @@ const (
 	ErrOrderErrorPermission                                   = "order. error_permission"                                          // Please link shop and partner on seller center first.
 	ErrOrderCancelOrderInvalidStatus                          = "order.cancel_order_invalid_status"                                // Invalid order_status.The order status should be IN_CANCEL.
 	ErrOrderDownloadInvoiceError                              = "order.download_invoice_error"                                     // Download invoice failed.
-	ErrOrderErrorLimit                                        = "order.error_limit"                                                // Can not cancel this order
+	ErrOrderErrorLimit                                        = "order.error_limit"                                                // Can not cancel this order:{msg}
 	ErrOrderOrderCannotSplit                                  = "order.order_cannot_split"                                         // You don’t have the permission to split order.
 	ErrOrderOrderCannotSplitPff                               = "order.order_cannot_split_pff"                                     // Cannot split this warehouse order.
 	ErrOrderOrderCannotUndoSplit                              = "order.order_cannot_undo_split"                                    // Cannot undo split this order.

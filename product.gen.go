@@ -13,7 +13,7 @@ type ProductService interface {
 	// Path: /api/v2/product/add_kit_item
 	// https://open.shopee.com/documents/v2/v2.product.add_kit_item?module=89&type=1
 	AddKitItem(ctx context.Context, sid uint64, mid uint64, tok string, req AddKitItemRequest) (*AddKitItemResponse, error)
-	// AddModel Add model. More detail please check: https://open.shopee.com/developer-guide/219
+	// AddModel {"content":"<p>Add model. More detail please check: https://open.shopee.com/developer-guide/219</p>","raw_content":[{"name":"paragraph","children":[{"data":"Add model. More detail please check: https://open.shopee.com/developer-guide/219"}]}]}
 	// Path: /api/v2/product/add_model
 	// https://open.shopee.com/documents/v2/v2.product.add_model?module=89&type=1
 	AddModel(ctx context.Context, sid uint64, mid uint64, tok string, req AddModelRequest) (*AddModelResponse, error)
@@ -165,6 +165,14 @@ type ProductService interface {
 	// Path: /api/v2/product/get_size_chart_list
 	// https://open.shopee.com/documents/v2/v2.product.get_size_chart_list?module=89&type=1
 	GetSizeChartList(ctx context.Context, sid uint64, mid uint64, tok string, opt ProductGetSizeChartListRequest) (*ProductGetSizeChartListResponse, error)
+	// GetSspDetail {"content":"<p>Get the details of an SSP or CSSP. At least one of ssp_id and cssp_id is required, and cssp_id takes priority when both are provided.</p><p>The response covers the product content such as the category path, attributes, brand and variations. Each entry in cssps is a country-specific SSP under the SSP, and its tier_indices point to the selected options of the parent tier_variation.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Get the details of an SSP or CSSP. At least one of ssp_id and cssp_id is required, and cssp_id takes priority when both are provided."}]},{"name":"paragraph","children":[{"data":"The response covers the product content such as the category path, attributes, brand and variations. Each entry in cssps is a country-specific SSP under the SSP, and its tier_indices point to the selected options of the parent tier_variation."}]}]}
+	// Path: /api/v2/product/get_ssp_detail
+	// https://open.shopee.com/documents/v2/v2.product.get_ssp_detail?module=89&type=1
+	GetSspDetail(ctx context.Context, sid uint64, mid uint64, tok string, opt GetSspDetailRequest) (*GetSspDetailResponse, error)
+	// GetSspRecommendation {"content":"<p>Get the SSP enrollment recommendations of the authorized shop, separating items that can be enrolled automatically from items that may be enrolled after further action.</p><p>auto_enroll_time is the automatic enrollment time in seconds as a future timestamp, returned for automatic enrollment only.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Get the SSP enrollment recommendations of the authorized shop, separating items that can be enrolled automatically from items that may be enrolled after further action."}]},{"name":"paragraph","children":[{"data":"auto_enroll_time is the automatic enrollment time in seconds as a future timestamp, returned for automatic enrollment only."}]}]}
+	// Path: /api/v2/product/get_ssp_recommendation
+	// https://open.shopee.com/documents/v2/v2.product.get_ssp_recommendation?module=89&type=1
+	GetSspRecommendation(ctx context.Context, sid uint64, mid uint64, tok string) (*GetSspRecommendationResponse, error)
 	// GetVariations Get the standardized tier variation defined by Shopee, which is currently a three-layer tree structure.
 	// The top layer is variations, the second layer is groups, groups are used to divide options, and the third layer is options.
 	// Path: /api/v2/product/get_variation_tree
@@ -178,10 +186,14 @@ type ProductService interface {
 	// Path: /api/v2/product/get_weight_recommendation
 	// https://open.shopee.com/documents/v2/v2.product.get_weight_recommendation?module=89&type=1
 	GetWeightRecommendation(ctx context.Context, sid uint64, mid uint64, tok string, req GetWeightRecommendationRequest) (*GetWeightRecommendationResponse, error)
-	// InitTierVariation This API allows you to update the tier structure of a product. Defining only color creates one tier, while color + size creates two tiers (maximum supported). Supported changes include: no tier ↔ one/two tiers, one tier ↔ two/no tier, and two tiers ↔ one/no tier. For details, see Developer Guide.  Please wait at least 5 seconds after creating an item before creating variants, as processing may be delayed.
+	// InitTierVariation {"content":"<p>This API allows you to update the tier structure of a product. Defining only color creates one tier, while color + size creates two tiers (maximum supported). Supported changes include: no tier ↔ one/two tiers, one tier ↔ two/no tier, and two tiers ↔ one/no tier. For details, see Developer Guide. Please wait at least 5 seconds after creating an item before creating variants, as processing may be delayed.</p>","raw_content":[{"name":"paragraph","children":[{"data":"This API allows you to update the tier structure of a product. Defining only color creates one tier, while color + size creates two tiers (maximum supported). Supported changes include: no tier ↔ one/two tiers, one tier ↔ two/no tier, and two tiers ↔ one/no tier. For details, see Developer Guide. Please wait at least 5 seconds after creating an item before creating variants, as processing may be delayed."}]}]}
 	// Path: /api/v2/product/init_tier_variation
 	// https://open.shopee.com/documents/v2/v2.product.init_tier_variation?module=89&type=1
 	InitTierVariation(ctx context.Context, sid uint64, mid uint64, tok string, req ProductInitTierVariationRequest) (*ProductInitTierVariationResponse, error)
+	// LinkItemToSsp {"content":"<p>Link one or more models of an item to their country-specific SSPs. item_id and model_cssp_pairs are required, and each pair must contain model_id and cssp_id; ssp_id is optional.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Link one or more models of an item to their country-specific SSPs. item_id and model_cssp_pairs are required, and each pair must contain model_id and cssp_id; ssp_id is optional."}]}]}
+	// Path: /api/v2/product/link_item_to_ssp
+	// https://open.shopee.com/documents/v2/v2.product.link_item_to_ssp?module=89&type=1
+	LinkItemToSsp(ctx context.Context, sid uint64, mid uint64, tok string, req LinkItemToSspRequest) (*LinkItemToSspResponse, error)
 	// PublishItemToOutletShop
 	// Path: /api/v2/
 	// https://open.shopee.com/documents/v2/v2.product.publish_item_to_outlet_shop?module=89&type=1
@@ -202,10 +214,18 @@ type ProductService interface {
 	// Path: /api/v2/product/search_item
 	// https://open.shopee.com/documents/v2/v2.product.search_item?module=89&type=1
 	SearchItem(ctx context.Context, sid uint64, mid uint64, tok string, opt SearchItemRequest) (*SearchItemResponse, error)
+	// SearchSspList {"content":"<p>Search SSPs by title or by image. At most 50 results are returned.</p><p>When image_id_list is provided, the search is based on image similarity and title is ignored; otherwise title must contain at least three characters.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Search SSPs by title or by image. At most 50 results are returned."}]},{"name":"paragraph","children":[{"data":"When image_id_list is provided, the search is based on image similarity and title is ignored; otherwise title must contain at least three characters."}]}]}
+	// Path: /api/v2/product/search_ssp_list
+	// https://open.shopee.com/documents/v2/v2.product.search_ssp_list?module=89&type=1
+	SearchSspList(ctx context.Context, sid uint64, mid uint64, tok string, req SearchSspListRequest) (*SearchSspListResponse, error)
 	// SearchUnpackagedModelList Use this API to retrieve Unpackaged SKU ID information for items that toggle on logistics channel 30029.
 	// Path: /api/v2/product/search_unpackaged_model_list
 	// https://open.shopee.com/documents/v2/v2.product.search_unpackaged_model_list?module=89&type=1
 	SearchUnpackagedModelList(ctx context.Context, sid uint64, mid uint64, tok string, req SearchUnpackagedModelListRequest) (*SearchUnpackagedModelListResponse, error)
+	// UnlinkItemFromSsp {"content":"<p>Remove the SSP links of one or more models of an item. item_id and model_cssp_pairs are required, and each pair must contain model_id and cssp_id; ssp_id is optional.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Remove the SSP links of one or more models of an item. item_id and model_cssp_pairs are required, and each pair must contain model_id and cssp_id; ssp_id is optional."}]}]}
+	// Path: /api/v2/product/unlink_item_from_ssp
+	// https://open.shopee.com/documents/v2/v2.product.unlink_item_from_ssp?module=89&type=1
+	UnlinkItemFromSsp(ctx context.Context, sid uint64, mid uint64, tok string, req UnlinkItemFromSspRequest) (*UnlinkItemFromSspResponse, error)
 	// UnlistItem Unlist item.
 	// Path: /api/v2/product/unlist_item
 	// https://open.shopee.com/documents/v2/v2.product.unlist_item?module=89&type=1
@@ -264,7 +284,7 @@ func (s *ProductServiceOp[T]) AddKitItem(ctx context.Context, sid uint64, mid ui
 	return resp, err
 }
 
-// AddModel Add model. More detail please check: https://open.shopee.com/developer-guide/219
+// AddModel {"content":"<p>Add model. More detail please check: https://open.shopee.com/developer-guide/219</p>","raw_content":[{"name":"paragraph","children":[{"data":"Add model. More detail please check: https://open.shopee.com/developer-guide/219"}]}]}
 // Path: /api/v2/product/add_model
 // https://open.shopee.com/documents/v2/v2.product.add_model?module=89&type=1
 func (s *ProductServiceOp[T]) AddModel(ctx context.Context, sid uint64, mid uint64, tok string, req AddModelRequest) (*AddModelResponse, error) {
@@ -644,6 +664,26 @@ func (s *ProductServiceOp[T]) GetSizeChartList(ctx context.Context, sid uint64, 
 	return resp, err
 }
 
+// GetSspDetail {"content":"<p>Get the details of an SSP or CSSP. At least one of ssp_id and cssp_id is required, and cssp_id takes priority when both are provided.</p><p>The response covers the product content such as the category path, attributes, brand and variations. Each entry in cssps is a country-specific SSP under the SSP, and its tier_indices point to the selected options of the parent tier_variation.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Get the details of an SSP or CSSP. At least one of ssp_id and cssp_id is required, and cssp_id takes priority when both are provided."}]},{"name":"paragraph","children":[{"data":"The response covers the product content such as the category path, attributes, brand and variations. Each entry in cssps is a country-specific SSP under the SSP, and its tier_indices point to the selected options of the parent tier_variation."}]}]}
+// Path: /api/v2/product/get_ssp_detail
+// https://open.shopee.com/documents/v2/v2.product.get_ssp_detail?module=89&type=1
+func (s *ProductServiceOp[T]) GetSspDetail(ctx context.Context, sid uint64, mid uint64, tok string, opt GetSspDetailRequest) (*GetSspDetailResponse, error) {
+	path := "/product/get_ssp_detail"
+	resp := new(GetSspDetailResponse)
+	err := s.client.Get(ctx, path, resp, opt, sid, mid, tok)
+	return resp, err
+}
+
+// GetSspRecommendation {"content":"<p>Get the SSP enrollment recommendations of the authorized shop, separating items that can be enrolled automatically from items that may be enrolled after further action.</p><p>auto_enroll_time is the automatic enrollment time in seconds as a future timestamp, returned for automatic enrollment only.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Get the SSP enrollment recommendations of the authorized shop, separating items that can be enrolled automatically from items that may be enrolled after further action."}]},{"name":"paragraph","children":[{"data":"auto_enroll_time is the automatic enrollment time in seconds as a future timestamp, returned for automatic enrollment only."}]}]}
+// Path: /api/v2/product/get_ssp_recommendation
+// https://open.shopee.com/documents/v2/v2.product.get_ssp_recommendation?module=89&type=1
+func (s *ProductServiceOp[T]) GetSspRecommendation(ctx context.Context, sid uint64, mid uint64, tok string) (*GetSspRecommendationResponse, error) {
+	path := "/product/get_ssp_recommendation"
+	resp := new(GetSspRecommendationResponse)
+	err := s.client.Get(ctx, path, resp, nil, sid, mid, tok)
+	return resp, err
+}
+
 // GetVariations Get the standardized tier variation defined by Shopee, which is currently a three-layer tree structure.
 // The top layer is variations, the second layer is groups, groups are used to divide options, and the third layer is options.
 // Path: /api/v2/product/get_variation_tree
@@ -675,12 +715,22 @@ func (s *ProductServiceOp[T]) GetWeightRecommendation(ctx context.Context, sid u
 	return resp, err
 }
 
-// InitTierVariation This API allows you to update the tier structure of a product. Defining only color creates one tier, while color + size creates two tiers (maximum supported). Supported changes include: no tier ↔ one/two tiers, one tier ↔ two/no tier, and two tiers ↔ one/no tier. For details, see Developer Guide.  Please wait at least 5 seconds after creating an item before creating variants, as processing may be delayed.
+// InitTierVariation {"content":"<p>This API allows you to update the tier structure of a product. Defining only color creates one tier, while color + size creates two tiers (maximum supported). Supported changes include: no tier ↔ one/two tiers, one tier ↔ two/no tier, and two tiers ↔ one/no tier. For details, see Developer Guide. Please wait at least 5 seconds after creating an item before creating variants, as processing may be delayed.</p>","raw_content":[{"name":"paragraph","children":[{"data":"This API allows you to update the tier structure of a product. Defining only color creates one tier, while color + size creates two tiers (maximum supported). Supported changes include: no tier ↔ one/two tiers, one tier ↔ two/no tier, and two tiers ↔ one/no tier. For details, see Developer Guide. Please wait at least 5 seconds after creating an item before creating variants, as processing may be delayed."}]}]}
 // Path: /api/v2/product/init_tier_variation
 // https://open.shopee.com/documents/v2/v2.product.init_tier_variation?module=89&type=1
 func (s *ProductServiceOp[T]) InitTierVariation(ctx context.Context, sid uint64, mid uint64, tok string, req ProductInitTierVariationRequest) (*ProductInitTierVariationResponse, error) {
 	path := "/product/init_tier_variation"
 	resp := new(ProductInitTierVariationResponse)
+	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
+	return resp, err
+}
+
+// LinkItemToSsp {"content":"<p>Link one or more models of an item to their country-specific SSPs. item_id and model_cssp_pairs are required, and each pair must contain model_id and cssp_id; ssp_id is optional.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Link one or more models of an item to their country-specific SSPs. item_id and model_cssp_pairs are required, and each pair must contain model_id and cssp_id; ssp_id is optional."}]}]}
+// Path: /api/v2/product/link_item_to_ssp
+// https://open.shopee.com/documents/v2/v2.product.link_item_to_ssp?module=89&type=1
+func (s *ProductServiceOp[T]) LinkItemToSsp(ctx context.Context, sid uint64, mid uint64, tok string, req LinkItemToSspRequest) (*LinkItemToSspResponse, error) {
+	path := "/product/link_item_to_ssp"
+	resp := new(LinkItemToSspResponse)
 	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
 	return resp, err
 }
@@ -735,12 +785,32 @@ func (s *ProductServiceOp[T]) SearchItem(ctx context.Context, sid uint64, mid ui
 	return resp, err
 }
 
+// SearchSspList {"content":"<p>Search SSPs by title or by image. At most 50 results are returned.</p><p>When image_id_list is provided, the search is based on image similarity and title is ignored; otherwise title must contain at least three characters.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Search SSPs by title or by image. At most 50 results are returned."}]},{"name":"paragraph","children":[{"data":"When image_id_list is provided, the search is based on image similarity and title is ignored; otherwise title must contain at least three characters."}]}]}
+// Path: /api/v2/product/search_ssp_list
+// https://open.shopee.com/documents/v2/v2.product.search_ssp_list?module=89&type=1
+func (s *ProductServiceOp[T]) SearchSspList(ctx context.Context, sid uint64, mid uint64, tok string, req SearchSspListRequest) (*SearchSspListResponse, error) {
+	path := "/product/search_ssp_list"
+	resp := new(SearchSspListResponse)
+	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
+	return resp, err
+}
+
 // SearchUnpackagedModelList Use this API to retrieve Unpackaged SKU ID information for items that toggle on logistics channel 30029.
 // Path: /api/v2/product/search_unpackaged_model_list
 // https://open.shopee.com/documents/v2/v2.product.search_unpackaged_model_list?module=89&type=1
 func (s *ProductServiceOp[T]) SearchUnpackagedModelList(ctx context.Context, sid uint64, mid uint64, tok string, req SearchUnpackagedModelListRequest) (*SearchUnpackagedModelListResponse, error) {
 	path := "/product/search_unpackaged_model_list"
 	resp := new(SearchUnpackagedModelListResponse)
+	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
+	return resp, err
+}
+
+// UnlinkItemFromSsp {"content":"<p>Remove the SSP links of one or more models of an item. item_id and model_cssp_pairs are required, and each pair must contain model_id and cssp_id; ssp_id is optional.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Remove the SSP links of one or more models of an item. item_id and model_cssp_pairs are required, and each pair must contain model_id and cssp_id; ssp_id is optional."}]}]}
+// Path: /api/v2/product/unlink_item_from_ssp
+// https://open.shopee.com/documents/v2/v2.product.unlink_item_from_ssp?module=89&type=1
+func (s *ProductServiceOp[T]) UnlinkItemFromSsp(ctx context.Context, sid uint64, mid uint64, tok string, req UnlinkItemFromSspRequest) (*UnlinkItemFromSspResponse, error) {
+	path := "/product/unlink_item_from_ssp"
+	resp := new(UnlinkItemFromSspResponse)
 	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
 	return resp, err
 }

@@ -9,7 +9,7 @@ type VideoService interface {
 	// Path: /api/v2/video/delete_video
 	// https://open.shopee.com/documents/v2/v2.video.delete_video?module=129&type=1
 	DeleteVideo(ctx context.Context, sid uint64, mid uint64, tok string, req DeleteVideoRequest) (*DeleteVideoResponse, error)
-	// EditVideoInfo You need to call v2.media.init_video_upload, v2.media.upload_video_part, and v2.media.complete_video_upload to upload the video, and call the v2.media.get_video_upload_result to get the video_upload_id of uploaded video first, then call this API to set video post information. After submit, the video is still draft status, you need to call v2.video.post_video to post the video to Shopee Video. You can only set and update post information before the video is post.
+	// EditVideoInfo {"content":"<p>You need to call v2.media.init_video_upload, v2.media.upload_video_part, and v2.media.complete_video_upload to upload the video, and call the v2.media.get_video_upload_result to get the video_upload_id of uploaded video first, then call this API to set video post information. After submit, the video is still draft status, you need to call v2.video.post_video to post the video to Shopee Video. You can only set and update post information before the video is post.</p>","raw_content":[{"name":"paragraph","children":[{"data":"You need to call v2.media.init_video_upload, v2.media.upload_video_part, and v2.media.complete_video_upload to upload the video, and call the v2.media.get_video_upload_result to get the video_upload_id of uploaded video first, then call this API to set video post information. After submit, the video is still draft status, you need to call v2.video.post_video to post the video to Shopee Video. You can only set and update post information before the video is post."}]}]}
 	// Path: /api/v2/video/edit_video_info
 	// https://open.shopee.com/documents/v2/v2.video.edit_video_info?module=129&type=1
 	EditVideoInfo(ctx context.Context, sid uint64, mid uint64, tok string, req EditVideoInfoRequest) (*EditVideoInfoResponse, error)
@@ -33,7 +33,7 @@ type VideoService interface {
 	// Path: /api/v2/video/get_user_demographics
 	// https://open.shopee.com/documents/v2/v2.video.get_user_demographics?module=129&type=1
 	GetUserDemographics(ctx context.Context, sid uint64, mid uint64, tok string) (*GetUserDemographicsResponse, error)
-	// GetVideoDetail Get the detail information of video.
+	// GetVideoDetail {"content":"<p>Get the detail information of video.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Get the detail information of video."}]}]}
 	// Path: /api/v2/video/get_video_detail
 	// https://open.shopee.com/documents/v2/v2.video.get_video_detail?module=129&type=1
 	GetVideoDetail(ctx context.Context, sid uint64, mid uint64, tok string, opt GetVideoDetailRequest) (*GetVideoDetailResponse, error)
@@ -81,7 +81,7 @@ func (s *VideoServiceOp[T]) DeleteVideo(ctx context.Context, sid uint64, mid uin
 	return resp, err
 }
 
-// EditVideoInfo You need to call v2.media.init_video_upload, v2.media.upload_video_part, and v2.media.complete_video_upload to upload the video, and call the v2.media.get_video_upload_result to get the video_upload_id of uploaded video first, then call this API to set video post information. After submit, the video is still draft status, you need to call v2.video.post_video to post the video to Shopee Video. You can only set and update post information before the video is post.
+// EditVideoInfo {"content":"<p>You need to call v2.media.init_video_upload, v2.media.upload_video_part, and v2.media.complete_video_upload to upload the video, and call the v2.media.get_video_upload_result to get the video_upload_id of uploaded video first, then call this API to set video post information. After submit, the video is still draft status, you need to call v2.video.post_video to post the video to Shopee Video. You can only set and update post information before the video is post.</p>","raw_content":[{"name":"paragraph","children":[{"data":"You need to call v2.media.init_video_upload, v2.media.upload_video_part, and v2.media.complete_video_upload to upload the video, and call the v2.media.get_video_upload_result to get the video_upload_id of uploaded video first, then call this API to set video post information. After submit, the video is still draft status, you need to call v2.video.post_video to post the video to Shopee Video. You can only set and update post information before the video is post."}]}]}
 // Path: /api/v2/video/edit_video_info
 // https://open.shopee.com/documents/v2/v2.video.edit_video_info?module=129&type=1
 func (s *VideoServiceOp[T]) EditVideoInfo(ctx context.Context, sid uint64, mid uint64, tok string, req EditVideoInfoRequest) (*EditVideoInfoResponse, error) {
@@ -141,7 +141,7 @@ func (s *VideoServiceOp[T]) GetUserDemographics(ctx context.Context, sid uint64,
 	return resp, err
 }
 
-// GetVideoDetail Get the detail information of video.
+// GetVideoDetail {"content":"<p>Get the detail information of video.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Get the detail information of video."}]}]}
 // Path: /api/v2/video/get_video_detail
 // https://open.shopee.com/documents/v2/v2.video.get_video_detail?module=129&type=1
 func (s *VideoServiceOp[T]) GetVideoDetail(ctx context.Context, sid uint64, mid uint64, tok string, opt GetVideoDetailRequest) (*GetVideoDetailResponse, error) {

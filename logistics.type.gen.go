@@ -100,9 +100,10 @@ type CreateBookingShippingDocumentResponseData struct {
 	ResultList []ResponseDataResult `json:"result_list"` // [Required] <p>The list of the result data.<br /></p>
 }
 type CreateShippingDocumentJobRequest struct {
-	PackageList           []string                `json:"package_list,omitempty"`            // [Optional] <p>List of Package Numbers to generate labels for.&nbsp;(maximum 600 total)</p><p><br /></p><p>Note: The unpackaged_sku_requests and package_list cannot be populated at the same time, please select one.</p>
-	ShippingDocumentType  string                  `json:"shipping_document_type"`            // [Required] <p>The type of shipping document. Available values: THERMAL_UNPACKAGED_LABEL</p>
-	UnpackagedSkuRequests []UnpackagedSkuRequests `json:"unpackaged_sku_requests,omitempty"` // [Optional] <p>List of Unpackaged SKUs to generate labels for.</p><p><br /></p><p>Note: The unpackaged_sku_requests and package_list cannot be populated at the same time, please select one.</p>
+	BookingSn             []string                `json:"booking_sn,omitempty"`              // [Optional] <p>List of Booking SN to generate labels for.&nbsp;(maximum 600 total)</p><p><br /></p><p>Note: The unpackaged_sku_requests, package_list, and booking_sn cannot be populated at the same time, please select one.</p>
+	PackageList           []string                `json:"package_list,omitempty"`            // [Optional] <p>List of Package Numbers to generate labels for.&nbsp;(maximum 600 total)</p><p><br /></p><p>Note: The unpackaged_sku_requests, package_list, and booking_sn cannot be populated at the same time, please select one.</p>
+	ShippingDocumentType  string                  `json:"shipping_document_type"`            // [Required] <p>The type of shipping document. Available values: NORMAL_AIR_WAYBILL, THERMAL_AIR_WAYBILL, NORMAL_JOB_AIR_WAYBILL, THERMAL_JOB_AIR_WAYBILL, THERMAL_UNPACKAGED_LABEL</p>
+	UnpackagedSkuRequests []UnpackagedSkuRequests `json:"unpackaged_sku_requests,omitempty"` // [Optional] <p>List of Unpackaged SKUs to generate labels for.</p><p><br /></p><p>Note: The unpackaged_sku_requests, package_list, and booking_sn cannot be populated at the same time, please select one.</p>
 }
 type CreateShippingDocumentJobResponse struct {
 	BaseResponse                                       // Common response fields
@@ -110,7 +111,7 @@ type CreateShippingDocumentJobResponse struct {
 }
 type CreateShippingDocumentJobResponseData struct {
 	JobId         string             `json:"job_id"`          // [Required] <p>Generated Job ID which will be used for status tracking and download the Shipping Document</p>
-	SuccessIdList []string           `json:"success_id_list"` // [Required] <p>List of Package Number or Unpackaged SKU ID that succeeds in generating Shipping Document</p>
+	SuccessIdList []string           `json:"success_id_list"` // [Required] <p>List of Package Number, Unpackaged SKU ID, or Booking SN that succeeds in generating Shipping Document</p>
 	FailList      []ResponseDataFail `json:"fail_list"`       // [Required] <p>List of Package Numbers or Unpackaged SKUs that failed in generating Shipping Document</p>
 }
 type CreateShippingDocumentRequest struct {
@@ -151,7 +152,7 @@ type DownloadShippingDocumentJobResponse struct {
 	File         interface{} `json:"file,omitempty"` //
 }
 type DownloadShippingDocumentRequest struct {
-	OrderList            []Order `json:"order_list"`                       // [Required] The list of orders you need to download it's shipping document.
+	OrderList            []Order `json:"order_list"`                       // [Required] <p>The list of orders you need to download it's shipping document. Limit [1, 50]. Orders must be from the same courier</p>
 	ShippingDocumentType *string `json:"shipping_document_type,omitempty"` // [Optional] <p>The type of shipping document. Available values: NORMAL_AIR_WAYBILL, THERMAL_AIR_WAYBILL, NORMAL_JOB_AIR_WAYBILL, THERMAL_JOB_AIR_WAYBILL, THERMAL_UNPACKAGED_LABEL</p>
 }
 type DownloadShippingDocumentResponse struct {
