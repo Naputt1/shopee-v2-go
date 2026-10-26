@@ -442,6 +442,7 @@ type OrderItem struct {
 	CancelledQty                      int64          `json:"cancelled_qty"`                          // [Required] <p>The quantity of the item model that has already been successfully cancelled.</p>
 	ReturnRequestedQty                int64          `json:"return_requested_qty"`                   // [Required] <p>The quantity of the item model that is currently under a return/refund request.</p>
 	ReturnedQty                       int64          `json:"returned_qty"`                           // [Required] <p>The quantity of the item model that has already been successfully returned through the return/refund process.</p>
+	ImeiList                          []string       `json:"imei_list"`                              // [Required] <p>IMEI (International Mobile Equipment Identity) assigned to the item. Only for certain FBS shops.&nbsp; If item does not have IMEl or IMEl parcel is not yet outbound from warehouse, return empty.</p>
 }
 type OrderPackage struct {
 	PackageNumber          string          `json:"package_number"`           // [Required] Shopee's unique identifier for the package under an order.
@@ -605,6 +606,7 @@ type ResponseDataPackageItem struct {
 	ErrorInFetchingIsPrescriptionItem bool         `json:"error_in_fetching_is_prescription_item"` // [Required] <p>To indicate if there was an error when validating whether this item is prescription. Default false. If is_prescription_item=false and this field is true, the item's prescription status is uncertain (label service call failed).&nbsp;Only for PH, TH, ID whitelist shops.</p>
 	PrescriptionCheckStatus           int64        `json:"prescription_check_status"`              // [Required] <p>Prescription check status. For ID, PH whitelisted sellers, the applicable values:</p><p>0: NONE</p><p>1: PASSED</p><p>2: FAILED</p><p>For TH whitelisted sellers, the applicable values:</p><p>0: NONE</p><p>1: PASSED</p>
 	PrescriptionRejectReason          string       `json:"prescription_reject_reason"`             // [Required] <p>Return the reason why a prescription is rejected. If no rejection reason, return empty. Only for ID and PH whitelist sellers.</p>
+	ImeiList                          []string     `json:"imei_list"`                              // [Required] <p>IMEI (International Mobile Equipment Identity) assigned to the item. Only for certain FBS shops.&nbsp; If item does not have IMEl or IMEl parcel is not yet outbound from warehouse, return empty.</p>
 }
 type ResponseDataPagination struct {
 	TotalCount int64  `json:"total_count"` // [Required] <p>Total orders can be returned with your query<br /></p>

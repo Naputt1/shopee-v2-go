@@ -194,7 +194,7 @@ type LogisticsService interface {
 	// Path: /api/v2/logistics/update_tracking_status
 	// https://open.shopee.com/documents/v2/v2.logistics.update_tracking_status?module=95&type=1
 	UpdateTrackingStatus(ctx context.Context, sid uint64, mid uint64, tok string, req UpdateTrackingStatusRequest) (*UpdateTrackingStatusResponse, error)
-	// UploadServiceablePolygon Only available for Brazil sellers. Use this API to upload KML file for shop level serviceability setting for BR Entrega Turbo channel (Channel ID: 90026). Please note that multiple Outlet Shops under the same Mart Shop cannot have overlapping service areas.
+	// UploadServiceablePolygon {"content":"<p>Only available for Brazil sellers. Use this API to upload KML file for shop level serviceability setting for BR Entrega Turbo channel (Channel ID: 90026). Please note that multiple Outlet Shops under the same Mart Shop can have overlapping service areas.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Only available for Brazil sellers. Use this API to upload KML file for shop level serviceability setting for BR Entrega Turbo channel (Channel ID: 90026). Please note that multiple Outlet Shops under the same Mart Shop can have overlapping service areas."}]}]}
 	// Path: /api/v2/logistics/upload_serviceable_polygon
 	// https://open.shopee.com/documents/v2/v2.logistics.upload_serviceable_polygon?module=95&type=1
 	UploadServiceablePolygon(ctx context.Context, sid uint64, mid uint64, tok string, filename string) (*UploadServiceablePolygonResponse, error)
@@ -661,7 +661,7 @@ func (s *LogisticsServiceOp[T]) UpdateTrackingStatus(ctx context.Context, sid ui
 	return resp, err
 }
 
-// UploadServiceablePolygon Only available for Brazil sellers. Use this API to upload KML file for shop level serviceability setting for BR Entrega Turbo channel (Channel ID: 90026). Please note that multiple Outlet Shops under the same Mart Shop cannot have overlapping service areas.
+// UploadServiceablePolygon {"content":"<p>Only available for Brazil sellers. Use this API to upload KML file for shop level serviceability setting for BR Entrega Turbo channel (Channel ID: 90026). Please note that multiple Outlet Shops under the same Mart Shop can have overlapping service areas.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Only available for Brazil sellers. Use this API to upload KML file for shop level serviceability setting for BR Entrega Turbo channel (Channel ID: 90026). Please note that multiple Outlet Shops under the same Mart Shop can have overlapping service areas."}]}]}
 // Path: /api/v2/logistics/upload_serviceable_polygon
 // https://open.shopee.com/documents/v2/v2.logistics.upload_serviceable_polygon?module=95&type=1
 func (s *LogisticsServiceOp[T]) UploadServiceablePolygon(ctx context.Context, sid uint64, mid uint64, tok string, filename string) (*UploadServiceablePolygonResponse, error) {
