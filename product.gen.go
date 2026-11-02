@@ -93,7 +93,7 @@ type ProductService interface {
 	// Path: /api/v2/product/get_direct_shop_recommended_price
 	// https://open.shopee.com/documents/v2/v2.product.get_direct_shop_recommended_price?module=89&type=1
 	GetDirectShopRecommendedPrice(ctx context.Context, sid uint64, mid uint64, tok string, opt GetDirectShopRecommendedPriceRequest) (*GetDirectShopRecommendedPriceResponse, error)
-	// GetItemBaseInfo Use this api to get basic info of item by item_id list.
+	// GetItemBaseInfo {"content":"<p>Use this api to get basic info of item by item_id list.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this api to get basic info of item by item_id list."}]}]}
 	// Path: /api/v2/product/get_item_base_info
 	// https://open.shopee.com/documents/v2/v2.product.get_item_base_info?module=89&type=1
 	GetItemBaseInfo(ctx context.Context, sid uint64, mid uint64, tok string, opt GetItemBaseInfoRequest) (*GetItemBaseInfoResponse, error)
@@ -484,7 +484,7 @@ func (s *ProductServiceOp[T]) GetDirectShopRecommendedPrice(ctx context.Context,
 	return resp, err
 }
 
-// GetItemBaseInfo Use this api to get basic info of item by item_id list.
+// GetItemBaseInfo {"content":"<p>Use this api to get basic info of item by item_id list.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this api to get basic info of item by item_id list."}]}]}
 // Path: /api/v2/product/get_item_base_info
 // https://open.shopee.com/documents/v2/v2.product.get_item_base_info?module=89&type=1
 func (s *ProductServiceOp[T]) GetItemBaseInfo(ctx context.Context, sid uint64, mid uint64, tok string, opt GetItemBaseInfoRequest) (*GetItemBaseInfoResponse, error) {

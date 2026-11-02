@@ -596,12 +596,14 @@ type GetItemBaseInfoResponseDataItem struct {
 	ItemStatus            ItemStatus             `json:"item_status"`              // [Required] <p>Enumerated type that defines the current status of the item. Applicable values: NORMAL, BANNED, UNLIST,&nbsp;<b><font color="#c24f4a" style>SELLER_DELETE, SHOPEE_DELETE, REVIEWING</font></b>.<br /></p>
 	Deboost               bool                   `json:"deboost"`                  // [Required] <p>If deboost is true, means that the item's search ranking is lowered.<br /></p>
 	HasModel              bool                   `json:"has_model"`                // [Required] Does it contain model.
+	DefaultModelId        int64                  `json:"default_model_id"`         // [Required] <p>default model id</p>
 	HasPromotion          bool                   `json:"has_promotion"`            // [Required] <p>Indicates whether the item is currently under any ongoing promotion.</p>
 	VideoInfo             []GlobalItemVideo      `json:"video_info"`               // [Required] Info of video list.
 	Brand                 *Brand                 `json:"brand"`                    // [Required]
 	ItemDangerous         int64                  `json:"item_dangerous"`           // [Required] This field is only applicable for local sellers in Indonesia and Malaysia. Use this field to identify whether a product is a dangerous product. 0 for non-dangerous product and 1 for dangerous product. For more information, please visit the market's respective Seller Education Hub.
 	GtinCode              string                 `json:"gtin_code"`                // [Required] <p>gtin code for br region, will return this code only item has default model</p><p><br /></p><p>Note: gtin_code = "00" means that this item is&nbsp;“Item without GTIN”<br /></p>
 	SizeChartId           int64                  `json:"size_chart_id"`            // [Required] <p>id of new size chart.<br /></p>
+	MedicineId            int64                  `json:"medicine_id"`              // [Required] <p>[Only for ID local sellers] as a unique identifier for each standardized medicine.</p>
 	PromotionImage        *ItemImage             `json:"promotion_image"`          // [Required]
 	CompatibilityInfo     *CompatibilityInfo     `json:"compatibility_info"`       // [Required]
 	ScheduledPublishTime  int64                  `json:"scheduled_publish_time"`   // [Required] <p>Scheduled publish time of this item.</p>
@@ -610,7 +612,6 @@ type GetItemBaseInfoResponseDataItem struct {
 	IsFulfillmentByShopee bool                   `json:"is_fulfillment_by_shopee"` // [Required] <p>return true if the item only has a default model and it is FBS model</p>
 	Tag                   *Tag                   `json:"tag"`                      // [Required]
 	PurchaseLimitInfo     *PurchaseLimitInfo     `json:"purchase_limit_info"`      // [Required] <p>purchase limit info</p>
-	MedicineId            int64                  `json:"medicine_id"`              // [Required] <p>[Only for ID local sellers] as a unique identifier for each standardized medicine.</p>
 	CertificationInfo     *ItemCertificationInfo `json:"certification_info"`       // [Required] <p>For PH product certification input<br />Required for some category and attribute option</p>
 }
 type GetItemContentDiagnosisResultRequest struct {

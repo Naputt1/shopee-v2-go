@@ -19,9 +19,7 @@ type OrderService interface {
 	// Path: /api/v2/order/download_invoice_doc
 	// https://open.shopee.com/documents/v2/v2.order.download_invoice_doc?module=94&type=1
 	DownloadInvoiceDoc(ctx context.Context, sid uint64, mid uint64, tok string, opt DownloadInvoiceDocRequest) (*DownloadInvoiceDocResponse, error)
-	// GenerateFbsInvoices This API creates a task to download a specific tax document (e.g., sales invoice, remessa invoice) for the seller's account, available only after the document is issued by the system as part of the Fulfilled by Shopee (FBS) process.
-	// The workflow is as follows: (1) v2.order.generate_fbs_invoices; (2) v2.order.get_fbs_invoices_result; (3) v2.order.download_fbs_invoices.
-	// Please note: The download link for the document will expire 30 minutes after being generated.
+	// GenerateFbsInvoices {"content":"<p>This API creates a task to download a specific tax document (e.g., sales invoice, remessa invoice) for the seller's account, available only after the document is issued by the system as part of the Fulfilled by Shopee (FBS) process.<br>The workflow is as follows: (1) v2.order.generate_fbs_invoices; (2) v2.order.get_fbs_invoices_result; (3) v2.order.download_fbs_invoices.<br>Please note: The download link for the document will expire 30 minutes after being generated.</p>","raw_content":[{"name":"paragraph","children":[{"data":"This API creates a task to download a specific tax document (e.g., sales invoice, remessa invoice) for the seller's account, available only after the document is issued by the system as part of the Fulfilled by Shopee (FBS) process."},{"name":"softBreak"},{"data":"The workflow is as follows: (1) v2.order.generate_fbs_invoices; (2) v2.order.get_fbs_invoices_result; (3) v2.order.download_fbs_invoices."},{"name":"softBreak"},{"data":"Please note: The download link for the document will expire 30 minutes after being generated."}]}]}
 	// Path: /api/v2/order/generate_fbs_invoices
 	// https://open.shopee.com/documents/v2/v2.order.generate_fbs_invoices?module=94&type=1
 	GenerateFbsInvoices(ctx context.Context, sid uint64, mid uint64, tok string, req GenerateFbsInvoicesRequest) (*GenerateFbsInvoicesResponse, error)
@@ -136,9 +134,7 @@ func (s *OrderServiceOp[T]) DownloadInvoiceDoc(ctx context.Context, sid uint64, 
 	return resp, err
 }
 
-// GenerateFbsInvoices This API creates a task to download a specific tax document (e.g., sales invoice, remessa invoice) for the seller's account, available only after the document is issued by the system as part of the Fulfilled by Shopee (FBS) process.
-// The workflow is as follows: (1) v2.order.generate_fbs_invoices; (2) v2.order.get_fbs_invoices_result; (3) v2.order.download_fbs_invoices.
-// Please note: The download link for the document will expire 30 minutes after being generated.
+// GenerateFbsInvoices {"content":"<p>This API creates a task to download a specific tax document (e.g., sales invoice, remessa invoice) for the seller's account, available only after the document is issued by the system as part of the Fulfilled by Shopee (FBS) process.<br>The workflow is as follows: (1) v2.order.generate_fbs_invoices; (2) v2.order.get_fbs_invoices_result; (3) v2.order.download_fbs_invoices.<br>Please note: The download link for the document will expire 30 minutes after being generated.</p>","raw_content":[{"name":"paragraph","children":[{"data":"This API creates a task to download a specific tax document (e.g., sales invoice, remessa invoice) for the seller's account, available only after the document is issued by the system as part of the Fulfilled by Shopee (FBS) process."},{"name":"softBreak"},{"data":"The workflow is as follows: (1) v2.order.generate_fbs_invoices; (2) v2.order.get_fbs_invoices_result; (3) v2.order.download_fbs_invoices."},{"name":"softBreak"},{"data":"Please note: The download link for the document will expire 30 minutes after being generated."}]}]}
 // Path: /api/v2/order/generate_fbs_invoices
 // https://open.shopee.com/documents/v2/v2.order.generate_fbs_invoices?module=94&type=1
 func (s *OrderServiceOp[T]) GenerateFbsInvoices(ctx context.Context, sid uint64, mid uint64, tok string, req GenerateFbsInvoicesRequest) (*GenerateFbsInvoicesResponse, error) {

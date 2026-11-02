@@ -13,9 +13,10 @@ type AddressBreakdown struct {
 type BatchDownload struct {
 	Start          int64  `json:"start"`                     // [Required] <p>Format YYYYMMDD</p><p>e.g. 20240101</p>
 	End            int64  `json:"end"`                       // [Required] <p>Format YYYYMMDD</p><p>e.g. 20240101</p>
-	DocumentType   int64  `json:"document_type"`             // [Required] <p>1 = Remessa</p><p>2 = Return</p><p>3 = Symbolic Return</p><p>4 = Sale</p><p>5 = Entrada</p><p>6 = Symbolic Remessa</p><p>7 = all</p>
+	DocumentType   int64  `json:"document_type"`             // [Required] <p>REMESSA = 1;</p><p>RETURN = 2;</p><p>SYMBOLIC_RETURN = 3;</p><p>SALE = 4;</p><p>ENTRADA = 5;</p><p>SYMBOLIC_REMESSA = 6;</p><p>ALL = 7;</p><p>EXPORT = 8;</p><p>CANCELLATION = 9;</p><p>EXPORT_DEVOLUCAO = 10;</p><p>TRANSFER = 11;</p><p>TRANSFER_REMESSA = 12;</p><p>REVERSE_TRANSFER = 13;</p>
 	FileType       int64  `json:"file_type"`                 // [Required] <p>1 = xml only</p><p>2 = pdf only</p><p>3 = both</p>
-	DocumentStatus *int64 `json:"document_status,omitempty"` // [Optional] <p>1= authorized only</p><p>2= cancelled</p><p><br /></p><p>Default:&nbsp;If document_status not passed or passed empty, means documents under ALL status (both authorized and cancelled) must be included</p>
+	DocumentStatus *int64 `json:"document_status,omitempty"` // [Optional] <p>1= authorized only</p><p>2= cancelled<br />3= disable invoice</p><p><br /></p><p>Default:&nbsp;If document_status not passed or passed empty, means documents under ALL status (both authorized and cancelled) must be included</p>
+	Cnpj           string `json:"cnpj"`                      // [Required] <p>The CNPJ of the seller's branch used to filter the tax documents. Must match one of the CNPJ branches registered for the seller. Multiple selection is not allowed.</p>
 }
 type BookingItem struct {
 	ItemId                 int64          `json:"item_id"`                  // [Required] <p>Shopee's unique identifier for an item.<br /></p>
@@ -588,6 +589,8 @@ type ResponseDataPackage struct {
 	CanPartialCancelOrder                 bool                      `json:"can_partial_cancel_order"`                  // [Required] <p>Indicates whether the order is eligible for partial cancellation. This value is determined by both the system eligibility check and the buyer’s out-of-stock handling preference.&nbsp;</p><p>- If this value is true, seller can cancel selected out-of-stock item quantities while continuing to fulfill the remaining items.&nbsp;</p><p>- If this value is false, partial cancellation is not allowed.</p>
 	BuyerPreferenceForPartialCancellation int64                     `json:"buyer_preference_for_partial_cancellation"` // [Required] <p>Indicates the buyer’s preference for handling out-of-stock items in the order. Applicable values:</p><p>0 = Ship Available Items Only (The buyer allows the seller to cancel unavailable items and continue shipping the remaining available items)</p><p>1 = Cancel The Entire Order (The buyer does not allow partial cancellation. If any item is unavailable, the seller should cancel the entire order instead)</p>
 	InvoicePending                        *InvoicePending           `json:"invoice_pending"`                           // [Required]
+	LatestPickupTimeChangeSource          string                    `json:"latest_pickup_time_change_source"`          // [Required] <p>If the pickup time was last updated by seller or system. Not returned if not applicable.</p>
+	PickupTime                            int64                     `json:"pickup_time"`                               // [Required] <p>The pickup start time for this package. Not returned if not applicable.</p>
 }
 type ResponseDataPackageItem struct {
 	ItemId                            int64        `json:"item_id"`                                // [Required] <p>Shopee's unique identifier for an item.</p>

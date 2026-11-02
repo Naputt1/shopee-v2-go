@@ -13,6 +13,10 @@ type FirstMileService interface {
 	// Path: /api/v2/first_mile/bind_first_mile_tracking_number
 	// https://open.shopee.com/documents/v2/v2.first_mile.bind_first_mile_tracking_number?module=96&type=1
 	BindFirstMileTrackingNumber(ctx context.Context, sid uint64, mid uint64, tok string, req BindFirstMileTrackingNumberRequest) (*BindFirstMileTrackingNumberResponse, error)
+	// CancelCourierDeliveryFirstMileTrackingNumber {"content":"<p>Use this api to cancel first mile tracking number for courier delivery method.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this api to cancel first mile tracking number for courier delivery method."}]}]}
+	// Path: /api/v2/first_mile/cancel_courier_delivery_first_mile_tracking_number
+	// https://open.shopee.com/documents/v2/v2.first_mile.cancel_courier_delivery_first_mile_tracking_number?module=96&type=1
+	CancelCourierDeliveryFirstMileTrackingNumber(ctx context.Context, sid uint64, mid uint64, tok string, req CancelCourierDeliveryFirstMileTrackingNumberRequest) (*CancelCourierDeliveryFirstMileTrackingNumberResponse, error)
 	// GenerateAndBindFirstMileTrackingNumber Use this api to generate first mile tracking number for courier delivery method.
 	// Path: /api/v2/first_mile/generate_and_bind_first_mile_tracking_number
 	// https://open.shopee.com/documents/v2/v2.first_mile.generate_and_bind_first_mile_tracking_number?module=96&type=1
@@ -25,8 +29,7 @@ type FirstMileService interface {
 	// Path: /api/v2/first_mile/get_channel_list
 	// https://open.shopee.com/documents/v2/v2.first_mile.get_channel_list?module=96&type=1
 	GetChannelList(ctx context.Context, sid uint64, mid uint64, tok string, req GetChannelListRequest) (*GetChannelListResponse, error)
-	// GetCourierDeliveryChannelList Use this api to get courier information for courier delivery method.
-	//
+	// GetCourierDeliveryChannelList {"content":"<p>Use this api to get courier information for courier delivery method.<br>&nbsp;</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this api to get courier information for courier delivery method."},{"name":"softBreak"},{"data":" "}]}]}
 	// Path: /api/v2/first_mile/get_courier_delivery_channel_list
 	// https://open.shopee.com/documents/v2/v2.first_mile.get_courier_delivery_channel_list?module=96&type=1
 	GetCourierDeliveryChannelList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetCourierDeliveryChannelListRequest) (*GetCourierDeliveryChannelListResponse, error)
@@ -35,7 +38,7 @@ type FirstMileService interface {
 	// Path: /api/v2/first_mile/get_courier_delivery_detail
 	// https://open.shopee.com/documents/v2/v2.first_mile.get_courier_delivery_detail?module=96&type=1
 	GetCourierDeliveryDetail(ctx context.Context, sid uint64, mid uint64, tok string, opt GetCourierDeliveryDetailRequest) (*GetCourierDeliveryDetailResponse, error)
-	// GetCourierDeliveryTrackingNumberList Use this api to get tracking number for courier delivery method.
+	// GetCourierDeliveryTrackingNumberList {"content":"<p>Use this api to get tracking number for courier delivery method.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this api to get tracking number for courier delivery method."}]}]}
 	// Path: /api/v2/first_mile/get_courier_delivery_tracking_number_list
 	// https://open.shopee.com/documents/v2/v2.first_mile.get_courier_delivery_tracking_number_list?module=96&type=1
 	GetCourierDeliveryTrackingNumberList(ctx context.Context, sid uint64, mid uint64, tok string, req GetCourierDeliveryTrackingNumberListRequest) (*GetCourierDeliveryTrackingNumberListResponse, error)
@@ -63,6 +66,10 @@ type FirstMileService interface {
 	// Path: /api/v2/first_mile/get_waybill
 	// https://open.shopee.com/documents/v2/v2.first_mile.get_waybill?module=96&type=1
 	GetWaybill(ctx context.Context, sid uint64, mid uint64, tok string, req GetWaybillRequest) (*GetWaybillResponse, error)
+	// GetWaybillFilelink {"content":"<p><span style=\"color:rgb(51,51,51);\">Use this api to get first mile waybill file link.</span></p>","raw_content":[{"name":"paragraph","children":[{"attributes":{"fontColor":"rgb(51,51,51)"},"data":"Use this api to get first mile waybill file link."}]}]}
+	// Path: /api/v2/first_mile/get_waybill_filelink
+	// https://open.shopee.com/documents/v2/v2.first_mile.get_waybill_filelink?module=96&type=1
+	GetWaybillFilelink(ctx context.Context, sid uint64, mid uint64, tok string, req GetWaybillFilelinkRequest) (*GetWaybillFilelinkResponse, error)
 	// UnbindFirstMileTrackingNumber Use this api to unbind first mile.
 	// Path: /api/v2/first_mile/unbind_first_mile_tracking_number
 	// https://open.shopee.com/documents/v2/v2.first_mile.unbind_first_mile_tracking_number?module=96&type=1
@@ -98,6 +105,16 @@ func (s *FirstMileServiceOp[T]) BindFirstMileTrackingNumber(ctx context.Context,
 	return resp, err
 }
 
+// CancelCourierDeliveryFirstMileTrackingNumber {"content":"<p>Use this api to cancel first mile tracking number for courier delivery method.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this api to cancel first mile tracking number for courier delivery method."}]}]}
+// Path: /api/v2/first_mile/cancel_courier_delivery_first_mile_tracking_number
+// https://open.shopee.com/documents/v2/v2.first_mile.cancel_courier_delivery_first_mile_tracking_number?module=96&type=1
+func (s *FirstMileServiceOp[T]) CancelCourierDeliveryFirstMileTrackingNumber(ctx context.Context, sid uint64, mid uint64, tok string, req CancelCourierDeliveryFirstMileTrackingNumberRequest) (*CancelCourierDeliveryFirstMileTrackingNumberResponse, error) {
+	path := "/first_mile/cancel_courier_delivery_first_mile_tracking_number"
+	resp := new(CancelCourierDeliveryFirstMileTrackingNumberResponse)
+	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
+	return resp, err
+}
+
 // GenerateAndBindFirstMileTrackingNumber Use this api to generate first mile tracking number for courier delivery method.
 // Path: /api/v2/first_mile/generate_and_bind_first_mile_tracking_number
 // https://open.shopee.com/documents/v2/v2.first_mile.generate_and_bind_first_mile_tracking_number?module=96&type=1
@@ -128,8 +145,7 @@ func (s *FirstMileServiceOp[T]) GetChannelList(ctx context.Context, sid uint64, 
 	return resp, err
 }
 
-// GetCourierDeliveryChannelList Use this api to get courier information for courier delivery method.
-//
+// GetCourierDeliveryChannelList {"content":"<p>Use this api to get courier information for courier delivery method.<br>&nbsp;</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this api to get courier information for courier delivery method."},{"name":"softBreak"},{"data":" "}]}]}
 // Path: /api/v2/first_mile/get_courier_delivery_channel_list
 // https://open.shopee.com/documents/v2/v2.first_mile.get_courier_delivery_channel_list?module=96&type=1
 func (s *FirstMileServiceOp[T]) GetCourierDeliveryChannelList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetCourierDeliveryChannelListRequest) (*GetCourierDeliveryChannelListResponse, error) {
@@ -150,7 +166,7 @@ func (s *FirstMileServiceOp[T]) GetCourierDeliveryDetail(ctx context.Context, si
 	return resp, err
 }
 
-// GetCourierDeliveryTrackingNumberList Use this api to get tracking number for courier delivery method.
+// GetCourierDeliveryTrackingNumberList {"content":"<p>Use this api to get tracking number for courier delivery method.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this api to get tracking number for courier delivery method."}]}]}
 // Path: /api/v2/first_mile/get_courier_delivery_tracking_number_list
 // https://open.shopee.com/documents/v2/v2.first_mile.get_courier_delivery_tracking_number_list?module=96&type=1
 func (s *FirstMileServiceOp[T]) GetCourierDeliveryTrackingNumberList(ctx context.Context, sid uint64, mid uint64, tok string, req GetCourierDeliveryTrackingNumberListRequest) (*GetCourierDeliveryTrackingNumberListResponse, error) {
@@ -216,6 +232,16 @@ func (s *FirstMileServiceOp[T]) GetUnbindOrderList(ctx context.Context, sid uint
 func (s *FirstMileServiceOp[T]) GetWaybill(ctx context.Context, sid uint64, mid uint64, tok string, req GetWaybillRequest) (*GetWaybillResponse, error) {
 	path := "/first_mile/get_waybill"
 	resp := new(GetWaybillResponse)
+	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
+	return resp, err
+}
+
+// GetWaybillFilelink {"content":"<p><span style=\"color:rgb(51,51,51);\">Use this api to get first mile waybill file link.</span></p>","raw_content":[{"name":"paragraph","children":[{"attributes":{"fontColor":"rgb(51,51,51)"},"data":"Use this api to get first mile waybill file link."}]}]}
+// Path: /api/v2/first_mile/get_waybill_filelink
+// https://open.shopee.com/documents/v2/v2.first_mile.get_waybill_filelink?module=96&type=1
+func (s *FirstMileServiceOp[T]) GetWaybillFilelink(ctx context.Context, sid uint64, mid uint64, tok string, req GetWaybillFilelinkRequest) (*GetWaybillFilelinkResponse, error) {
+	path := "/first_mile/get_waybill_filelink"
+	resp := new(GetWaybillFilelinkResponse)
 	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
 	return resp, err
 }

@@ -58,6 +58,31 @@ func Test_FirstMile_BindFirstMileTrackingNumber(t *testing.T) {
 
 	t.Logf("FirstMile.BindFirstMileTrackingNumber response: %#v", res)
 }
+func Test_FirstMile_CancelCourierDeliveryFirstMileTrackingNumber(t *testing.T) {
+	setup()
+	defer teardown()
+
+	fixture := "v2.first_mile.cancel_courier_delivery_first_mile_tracking_number_resp.json"
+	data, err := loadFixtureSafe(fixture)
+	if err != nil {
+		t.Skipf("Skipping CancelCourierDeliveryFirstMileTrackingNumber due to missing fixture: %v", err)
+	}
+	responder, err := httpmock.NewJsonResponder(200, data)
+	if err != nil {
+		t.Skipf("Skipping CancelCourierDeliveryFirstMileTrackingNumber due to invalid fixture: %v", err)
+	}
+
+	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/first_mile/cancel_courier_delivery_first_mile_tracking_number", app.APIURL), responder)
+
+	var req CancelCourierDeliveryFirstMileTrackingNumberRequest
+	ctx := context.Background()
+	res, err := client.FirstMile.CancelCourierDeliveryFirstMileTrackingNumber(ctx, sid, mid, tok, req)
+	if err != nil {
+		t.Logf("FirstMile.CancelCourierDeliveryFirstMileTrackingNumber returned error (possibly expected with mock data): %s", err)
+	}
+
+	t.Logf("FirstMile.CancelCourierDeliveryFirstMileTrackingNumber response: %#v", res)
+}
 func Test_FirstMile_GenerateAndBindFirstMileTrackingNumber(t *testing.T) {
 	setup()
 	defer teardown()
@@ -357,6 +382,31 @@ func Test_FirstMile_GetWaybill(t *testing.T) {
 	}
 
 	t.Logf("FirstMile.GetWaybill response: %#v", res)
+}
+func Test_FirstMile_GetWaybillFilelink(t *testing.T) {
+	setup()
+	defer teardown()
+
+	fixture := "v2.first_mile.get_waybill_filelink_resp.json"
+	data, err := loadFixtureSafe(fixture)
+	if err != nil {
+		t.Skipf("Skipping GetWaybillFilelink due to missing fixture: %v", err)
+	}
+	responder, err := httpmock.NewJsonResponder(200, data)
+	if err != nil {
+		t.Skipf("Skipping GetWaybillFilelink due to invalid fixture: %v", err)
+	}
+
+	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/first_mile/get_waybill_filelink", app.APIURL), responder)
+
+	var req GetWaybillFilelinkRequest
+	ctx := context.Background()
+	res, err := client.FirstMile.GetWaybillFilelink(ctx, sid, mid, tok, req)
+	if err != nil {
+		t.Logf("FirstMile.GetWaybillFilelink returned error (possibly expected with mock data): %s", err)
+	}
+
+	t.Logf("FirstMile.GetWaybillFilelink response: %#v", res)
 }
 func Test_FirstMile_UnbindFirstMileTrackingNumber(t *testing.T) {
 	setup()

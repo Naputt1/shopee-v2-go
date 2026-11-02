@@ -144,6 +144,13 @@ type DownloadBookingShippingDocumentResponse struct {
 	BaseResponse             // Common response fields
 	Waybill      interface{} `json:"waybill,omitempty"` // <p>The waybill file.<br /></p>
 }
+type DownloadShippingDocumentJobFilelinkRequest struct {
+	JobId string `json:"job_id"` // [Required] <p>Generated Job ID for status tracking and download the Shipping Document</p>
+}
+type DownloadShippingDocumentJobFilelinkResponse struct {
+	BaseResponse        // Common response fields
+	FileLink     string `json:"file_link,omitempty"` // <p>The link to download the shipping document. The link will be valid for 30 minutes.</p>
+}
 type DownloadShippingDocumentJobRequest struct {
 	JobId string `json:"job_id"` // [Required] <p>Generated Job ID for status tracking and download the Shipping Document</p>
 }
@@ -159,8 +166,16 @@ type DownloadShippingDocumentResponse struct {
 	BaseResponse             // Common response fields
 	Waybill      interface{} `json:"waybill,omitempty"` // <p>The waybill file.</p>
 }
+type DownloadToLabelFilelinkRequest struct {
+	Quantity     *int64 `json:"quantity,omitempty"` // [Optional] <p>Specifies the TO quantity, up to a maximum of 100 per request. If not specified, the default value is 1</p>
+	SortingGroup int64  `json:"sorting_group"`      // [Required] <p>Sorting Group of the TO. Available value:</p><p>1:North</p><p>2:South</p>
+}
+type DownloadToLabelFilelinkResponse struct {
+	BaseResponse        // Common response fields
+	FileLink     string `json:"file_link,omitempty"` // <p>The download link to the waybill file. The link will be valid for 30 minutes.</p>
+}
 type DownloadToLabelRequest struct {
-	Quantity     *int64 `json:"quantity,omitempty"` // [Optional] <p>Specifies the TO quantity, up to a maximum of 20 per request. If not specified, the default value is 1</p>
+	Quantity     *int64 `json:"quantity,omitempty"` // [Optional] <p>Specifies the TO quantity, up to a maximum of 100 per request. If not specified, the default value is 1</p>
 	SortingGroup int64  `json:"sorting_group"`      // [Required] <p>Sorting Group of the TO. Available value:</p><p>1:North</p><p>2:South</p>
 }
 type DownloadToLabelResponse struct {
@@ -496,6 +511,11 @@ type InstantOperatingHour struct {
 	Sunday        *RegularOperatingHourMonday `json:"sunday,omitempty"`         // [Optional] <p>Operating hours for Sunday: You can skip this information if you want to mark the day as closed.</p>
 	PublicHoliday *RegularOperatingHourMonday `json:"public_holiday,omitempty"` // [Optional] <p>Operating hours for public holiday: You can skip this information if you want to mark the day as closed.</p>
 }
+type InstantOrderCutoffTimeBuffer struct {
+	Id          string `json:"id"`           // [Required] <p>Unique identifier for a buffer group.&nbsp;</p>
+	DisplayName string `json:"display_name"` // [Required] <p>Display name for a buffer group.&nbsp;</p>
+	Buffer      int64  `json:"buffer"`       // [Required] <p>Cutoff time, in minutes before the end of the shop's instant operating hour, after which new orders are no longer fulfilled on the same day for the given buffer group.</p>
+}
 type ItemMaxDimension struct {
 	Height       float64 `json:"height"`        // [Required] The max height limit.
 	Width        float64 `json:"width"`         // [Required] The max width limit.
@@ -609,10 +629,11 @@ type RegularOperatingHourRestrictions struct {
 	WorkingDayConfig         *WorkingDayConfig `json:"working_day_config"`           // [Required] <p>The restrictions specific to each day</p>
 }
 type Repsonse struct {
-	RegularOperatingHour        *RegularOperatingHour `json:"regular_operating_hour"`         // [Required] <p>The details of Pickup Operating Hours/Preferred Pickup Hours</p>
-	InstantOperatingHour        *RegularOperatingHour `json:"instant_operating_hour"`         // [Required] <p>The details of Instant Operating Hours</p>
-	SpecialOperatingHour        *SpecialOperatingHour `json:"special_operating_hour"`         // [Required] <p>The details of Special Operating Hours</p><p>&lt;path&gt;&lt;/path&gt;<br /></p>
-	ShopCollectionOperatingHour *RegularOperatingHour `json:"shop_collection_operating_hour"` // [Required] <p>The details of Shop Collection Operating Hours</p>
+	RegularOperatingHour             *RegularOperatingHour          `json:"regular_operating_hour"`                // [Required] <p>The details of Pickup Operating Hours/Preferred Pickup Hours</p>
+	InstantOperatingHour             *RegularOperatingHour          `json:"instant_operating_hour"`                // [Required] <p>The details of Instant Operating Hours</p>
+	SpecialOperatingHour             *SpecialOperatingHour          `json:"special_operating_hour"`                // [Required] <p>The details of Special Operating Hours</p><p>&lt;path&gt;&lt;/path&gt;<br /></p>
+	ShopCollectionOperatingHour      *RegularOperatingHour          `json:"shop_collection_operating_hour"`        // [Required] <p>The details of Shop Collection Operating Hours</p>
+	InstantOrderCutoffTimeBufferList []InstantOrderCutoffTimeBuffer `json:"instant_order_cutoff_time_buffer_list"` // [Required]
 }
 type RequestAutoCallDriverSetting struct {
 	AutoCallDriverEnabled bool  `json:"auto_call_driver_enabled"` // [Required] <p>Indicate whether Auto Call Driver is currently enabled for this channel.</p>

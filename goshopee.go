@@ -92,6 +92,7 @@ type Client[T any] struct {
 	FirstMile        FirstMileService
 	FollowPrize      FollowPrizeService
 	GlobalProduct    GlobalProductService
+	Installation     InstallationService
 	Livestream       LivestreamService
 	Logistics        LogisticsService
 	Media            MediaService
@@ -141,6 +142,7 @@ func NewClient[T any](app App, opts ...Option[T]) *Client[T] {
 	c.FirstMile = &FirstMileServiceOp[T]{client: c}
 	c.FollowPrize = &FollowPrizeServiceOp[T]{client: c}
 	c.GlobalProduct = &GlobalProductServiceOp[T]{client: c}
+	c.Installation = &InstallationServiceOp[T]{client: c}
 	c.Livestream = &LivestreamServiceOp[T]{client: c}
 	c.Logistics = &LogisticsServiceOp[T]{client: c}
 	c.Media = &MediaServiceOp[T]{client: c}

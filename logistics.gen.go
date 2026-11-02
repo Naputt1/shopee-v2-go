@@ -56,10 +56,18 @@ type LogisticsService interface {
 	// Path: /api/v2/logistics/download_shipping_document_job
 	// https://open.shopee.com/documents/v2/v2.logistics.download_shipping_document_job?module=95&type=1
 	DownloadShippingDocumentJob(ctx context.Context, sid uint64, mid uint64, tok string, req DownloadShippingDocumentJobRequest) (*DownloadShippingDocumentJobResponse, error)
-	// DownloadToLabel Use the API to download the TO label that should be attached to the carton before drop-off at the warehouse (Only for TW channel_id:30029).
+	// DownloadShippingDocumentJobFilelink {"content":"<p><span style=\"color:rgb(51,51,51);\">This API allows users to download the shipping document associated with a specific job ID. It checks the job status before proceeding with the download. The response will contain a link that can be used to download the shipping document.</span></p>","raw_content":[{"name":"paragraph","children":[{"attributes":{"fontColor":"rgb(51,51,51)"},"data":"This API allows users to download the shipping document associated with a specific job ID. It checks the job status before proceeding with the download. The response will contain a link that can be used to download the shipping document."}]}]}
+	// Path: /api/v2/logistics/download_shipping_document_job_filelink
+	// https://open.shopee.com/documents/v2/v2.logistics.download_shipping_document_job_filelink?module=95&type=1
+	DownloadShippingDocumentJobFilelink(ctx context.Context, sid uint64, mid uint64, tok string, req DownloadShippingDocumentJobFilelinkRequest) (*DownloadShippingDocumentJobFilelinkResponse, error)
+	// DownloadToLabel {"content":"<p>Use the API to download the TO label that should be attached to the carton before drop-off at the warehouse (Only for TW channel_id:30029).</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use the API to download the TO label that should be attached to the carton before drop-off at the warehouse (Only for TW channel_id:30029)."}]}]}
 	// Path: /api/v2/logistics/download_to_label
 	// https://open.shopee.com/documents/v2/v2.logistics.download_to_label?module=95&type=1
 	DownloadToLabel(ctx context.Context, sid uint64, mid uint64, tok string, req DownloadToLabelRequest) (*DownloadToLabelResponse, error)
+	// DownloadToLabelFilelink {"content":"<p><span style=\"color:rgb(51,51,51);\">Use the API to download the TO label that should be attached to the carton before drop-off at the warehouse (Only for TW channel_id:30029). This API will return file link instead of blob.</span></p>","raw_content":[{"name":"paragraph","children":[{"attributes":{"fontColor":"rgb(51,51,51)"},"data":"Use the API to download the TO label that should be attached to the carton before drop-off at the warehouse (Only for TW channel_id:30029). This API will return file link instead of blob."}]}]}
+	// Path: /api/v2/logistics/download_to_label_filelink
+	// https://open.shopee.com/documents/v2/v2.logistics.download_to_label_filelink?module=95&type=1
+	DownloadToLabelFilelink(ctx context.Context, sid uint64, mid uint64, tok string, req DownloadToLabelFilelinkRequest) (*DownloadToLabelFilelinkResponse, error)
 	// GetAddressList For integrated logistics channel, use this call to get pickup address for pickup mode order.
 	// Path: /api/v2/logistics/get_address_list
 	// https://open.shopee.com/documents/v2/v2.logistics.get_address_list?module=95&type=1
@@ -108,7 +116,7 @@ type LogisticsService interface {
 	// Path: /api/v2/logistics/get_operating_hour_restrictions
 	// https://open.shopee.com/documents/v2/v2.logistics.get_operating_hour_restrictions?module=95&type=1
 	GetOperatingHourRestrictions(ctx context.Context, sid uint64, mid uint64, tok string) (*GetOperatingHourRestrictionsResponse, error)
-	// GetOperatingHours This API is utilized to retrieve the existing operating hours of sellers including Pickup Operating Hours,  Special Hours, Instant Operating Hours, and Shop Collection Operating Hours.
+	// GetOperatingHours {"content":"<p>This API is utilized to retrieve the existing operating hours of sellers including Pickup Operating Hours, Special Hours, Instant Operating Hours, and Shop Collection Operating Hours.</p>","raw_content":[{"name":"paragraph","children":[{"data":"This API is utilized to retrieve the existing operating hours of sellers including Pickup Operating Hours, Special Hours, Instant Operating Hours, and Shop Collection Operating Hours."}]}]}
 	// Path: /api/v2/logistics/get_operating_hours
 	// https://open.shopee.com/documents/v2/v2.logistics.get_operating_hours?module=95&type=1
 	GetOperatingHours(ctx context.Context, sid uint64, mid uint64, tok string) (*GetOperatingHoursResponse, error)
@@ -320,12 +328,32 @@ func (s *LogisticsServiceOp[T]) DownloadShippingDocumentJob(ctx context.Context,
 	return resp, err
 }
 
-// DownloadToLabel Use the API to download the TO label that should be attached to the carton before drop-off at the warehouse (Only for TW channel_id:30029).
+// DownloadShippingDocumentJobFilelink {"content":"<p><span style=\"color:rgb(51,51,51);\">This API allows users to download the shipping document associated with a specific job ID. It checks the job status before proceeding with the download. The response will contain a link that can be used to download the shipping document.</span></p>","raw_content":[{"name":"paragraph","children":[{"attributes":{"fontColor":"rgb(51,51,51)"},"data":"This API allows users to download the shipping document associated with a specific job ID. It checks the job status before proceeding with the download. The response will contain a link that can be used to download the shipping document."}]}]}
+// Path: /api/v2/logistics/download_shipping_document_job_filelink
+// https://open.shopee.com/documents/v2/v2.logistics.download_shipping_document_job_filelink?module=95&type=1
+func (s *LogisticsServiceOp[T]) DownloadShippingDocumentJobFilelink(ctx context.Context, sid uint64, mid uint64, tok string, req DownloadShippingDocumentJobFilelinkRequest) (*DownloadShippingDocumentJobFilelinkResponse, error) {
+	path := "/logistics/download_shipping_document_job_filelink"
+	resp := new(DownloadShippingDocumentJobFilelinkResponse)
+	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
+	return resp, err
+}
+
+// DownloadToLabel {"content":"<p>Use the API to download the TO label that should be attached to the carton before drop-off at the warehouse (Only for TW channel_id:30029).</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use the API to download the TO label that should be attached to the carton before drop-off at the warehouse (Only for TW channel_id:30029)."}]}]}
 // Path: /api/v2/logistics/download_to_label
 // https://open.shopee.com/documents/v2/v2.logistics.download_to_label?module=95&type=1
 func (s *LogisticsServiceOp[T]) DownloadToLabel(ctx context.Context, sid uint64, mid uint64, tok string, req DownloadToLabelRequest) (*DownloadToLabelResponse, error) {
 	path := "/logistics/download_to_label"
 	resp := new(DownloadToLabelResponse)
+	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
+	return resp, err
+}
+
+// DownloadToLabelFilelink {"content":"<p><span style=\"color:rgb(51,51,51);\">Use the API to download the TO label that should be attached to the carton before drop-off at the warehouse (Only for TW channel_id:30029). This API will return file link instead of blob.</span></p>","raw_content":[{"name":"paragraph","children":[{"attributes":{"fontColor":"rgb(51,51,51)"},"data":"Use the API to download the TO label that should be attached to the carton before drop-off at the warehouse (Only for TW channel_id:30029). This API will return file link instead of blob."}]}]}
+// Path: /api/v2/logistics/download_to_label_filelink
+// https://open.shopee.com/documents/v2/v2.logistics.download_to_label_filelink?module=95&type=1
+func (s *LogisticsServiceOp[T]) DownloadToLabelFilelink(ctx context.Context, sid uint64, mid uint64, tok string, req DownloadToLabelFilelinkRequest) (*DownloadToLabelFilelinkResponse, error) {
+	path := "/logistics/download_to_label_filelink"
+	resp := new(DownloadToLabelFilelinkResponse)
 	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
 	return resp, err
 }
@@ -450,7 +478,7 @@ func (s *LogisticsServiceOp[T]) GetOperatingHourRestrictions(ctx context.Context
 	return resp, err
 }
 
-// GetOperatingHours This API is utilized to retrieve the existing operating hours of sellers including Pickup Operating Hours,  Special Hours, Instant Operating Hours, and Shop Collection Operating Hours.
+// GetOperatingHours {"content":"<p>This API is utilized to retrieve the existing operating hours of sellers including Pickup Operating Hours, Special Hours, Instant Operating Hours, and Shop Collection Operating Hours.</p>","raw_content":[{"name":"paragraph","children":[{"data":"This API is utilized to retrieve the existing operating hours of sellers including Pickup Operating Hours, Special Hours, Instant Operating Hours, and Shop Collection Operating Hours."}]}]}
 // Path: /api/v2/logistics/get_operating_hours
 // https://open.shopee.com/documents/v2/v2.logistics.get_operating_hours?module=95&type=1
 func (s *LogisticsServiceOp[T]) GetOperatingHours(ctx context.Context, sid uint64, mid uint64, tok string) (*GetOperatingHoursResponse, error) {

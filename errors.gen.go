@@ -135,6 +135,9 @@ const (
 	ErrBuyboxPerformanceUnavailable                           = "buybox_performance_unavailable"                                   // Buybox performance data is temporarily unavailable. Try again later.
 	ErrBuyboxSystemError                                      = "buybox_system_error"                                              // An unexpected system error occurred. Try again later.
 	ErrChannelErrorServer                                     = "channel_error_server"                                             // Get installment channel info failed.
+	ErrClassificationAttributeInmetroCertNotActive            = "classification.attribute.inmetro.cert_not_active"                 // This INMETRO certification is not active. Please provide a valid certification.
+	ErrClassificationAttributeInmetroCertNotFound             = "classification.attribute.inmetro.cert_not_found"                  // Invalid INMETRO certification number. Please provide a valid certification.
+	ErrClassificationCategoryInmetroMismatch                  = "classification.category.inmetro_mismatch"                         // The category does not match the INMETRO certification. Please verify.
 	ErrCommonBatchApiAllFailed                                = "common.batch_api_all_failed"                                      // Failed, please check result_list for more details.
 	ErrCommonErrorNotFound                                    = "common.error_not_found"                                           // The information you queried is not found.
 	ErrCommonErrorParam                                       = "common.error_param"                                               // Wrong parameters, detail: {msg}.
@@ -356,6 +359,7 @@ const (
 	ErrErrorInvalidPartSize                                   = "error_invalid_part_size"                                          // Invalid part_size.
 	ErrErrorInvalidPrice                                      = "error_invalid_price"                                              // Invalid price, please use the correct format
 	ErrErrorInvalidPriceForLogistic                           = "error_invalid_price_for_logistic"                                 // Shipping channel cannot be enabled as product price exceeds limit.
+	ErrErrorInvalidStatus                                     = "error_invalid_status"                                             // Invalid entity status.
 	ErrErrorInvalidUploadId                                   = "error_invalid_upload_id"                                          // Invalid upload_id.
 	ErrErrorInvitation                                        = "error_invitation"                                                 // Core server error.
 	ErrErrorItemInPromotion                                   = "error_item_in_promotion"                                          // item is in promotion can not set category
@@ -402,9 +406,11 @@ const (
 	ErrErrorNotExists                                         = "error_not_exists"                                                 // The user does not exist.
 	ErrErrorNotFound                                          = "error_not_found"                                                  // Wrong parameters, detail: {msg}.
 	ErrErrorNotLogin                                          = "error_not_login"                                                  // Core server error.
+	ErrErrorNotSupported                                      = "error_not_supported"                                              // Action is not supported.
 	ErrErrorOngoingDispute                                    = "error_ongoing_dispute"                                            // cannot offer refund to buyer when return has ongoing dispute
 	ErrErrorOrder                                             = "error_order"                                                      // Something wrong. Please try again later.
 	ErrErrorOther                                             = "error_other"                                                      // Rescheduling dependency error
+	ErrErrorOtpCodeIsInvalid                                  = "error_otp_code_is_invalid"                                        // OTP Code is invalid.
 	ErrErrorOutStockm                                         = "error_out_stockm"                                                 // Core server error.
 	ErrErrorParam                                             = "error_param"                                                      // Invalid cursor. The cursor of first page is not passed or blank string, and subsequent pages are passed to the cursor in the response.
 	ErrErrorParamCategoryNotSupportPreOrder                   = "error_param_category_not_support_pre_order"                       // Category does not support pre-order.
@@ -414,6 +420,7 @@ const (
 	ErrErrorParamNameItem                                     = "error_param_name_item"                                            // There's no 'item_list' parameter in the query, please check.
 	ErrErrorParamShopIdNotFound                               = "error_param_shop_id_not_found"                                    // Shop_id is not found.
 	ErrErrorParamValidate                                     = "error_param_validate"                                             // This is not a valid GTIN. Please, inform a valid number.
+	ErrErrorPassedStatus                                      = "error_passed_status"                                              // Requested entity status is already passed.
 	ErrErrorPasswordChange                                    = "error_password_change"                                            // Core server error.
 	ErrErrorPerm                                              = "error_perm"                                                       // Core server error.
 	ErrErrorPermNonAdmin                                      = "error_perm_non_admin"                                             // Don't have permission.

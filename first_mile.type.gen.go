@@ -36,10 +36,22 @@ type BindFirstMileTrackingNumberResponseData struct {
 	FirstMileTrackingNumber string `json:"first_mile_tracking_number"` // [Required] The first mile tracking number
 	OrderList               []Fail `json:"order_list"`                 // [Required] The list of orders.
 }
+type CancelCourierDeliveryFirstMileTrackingNumberRequest struct {
+	BindingId string `json:"binding_id"` // [Required]
+}
+type CancelCourierDeliveryFirstMileTrackingNumberResponse struct {
+	BaseResponse                                                          // Common response fields
+	Response     CancelCourierDeliveryFirstMileTrackingNumberResponseData `json:"response"` // Response data
+}
+type CancelCourierDeliveryFirstMileTrackingNumberResponseData struct {
+	BindingId         string  `json:"binding_id"`          // [Required] <p>Binding ID</p>
+	UnbindedOrderList []Order `json:"unbinded_order_list"` // [Required]
+}
 type Courier struct {
 	CourierName        string `json:"courier_name"`         // [Required] <p>The name of the courier.<br /></p>
 	CourierServiceId   string `json:"courier_service_id"`   // [Required] <p>The identity of the service provided by courier.<br /></p>
 	CourierServiceName string `json:"courier_service_name"` // [Required] <p>The name of the service provided by courier.<br /></p>
+	CourierCode        string `json:"courier_code"`         // [Required] <p>The code of the courier.</p>
 }
 type CourierDeliveryInfo struct {
 	AddressId          int64  `json:"address_id"`                   // [Required] <p>The identity of address. Retrieved from v2.logistics.get_address_list, address_type need to be FIRST_MILE_PICKUP_ADDRESS.</p>
@@ -118,10 +130,13 @@ type GetCourierDeliveryDetailResponseData struct {
 	OrderList               []ResponseDataOrder `json:"order_list"`                 // [Required]
 }
 type GetCourierDeliveryTrackingNumberListRequest struct {
-	Cursor   *string `json:"cursor,omitempty"`    // [Optional] <p>Specifies the starting entry of data to return in the current call. Default is "". If data is more than one page, the offset can be some entry to start next call.<br /></p>
-	FromDate string  `json:"from_date"`           // [Required] <p>The start time of creation time</p>
-	PageSize *int64  `json:"page_size,omitempty"` // [Optional] <p>Each result set is returned as a page of entries. Use the "page_size" filters to control the maximum number of entries to retrieve per page (i.e., per call). This integer value is used to specify the maximum number of entries to return in a single "page" of data. limit [1, 50]<br /></p>
-	ToDate   string  `json:"to_date"`             // [Required] <p>The end time of creation time</p>
+	Cursor        *string `json:"cursor,omitempty"`          // [Optional] <p>Specifies the starting entry of data to return in the current call. Default is "". If data is more than one page, the offset can be some entry to start next call.<br /></p>
+	FromDate      *string `json:"from_date,omitempty"`       // [Optional] <p>The start time of creation time. Format YYYY-MM-DD, in the shop region's local time. Required when from_timestamp and to_timestamp are not passed. Ignored when they are passed.</p>
+	FromTimestamp *int64  `json:"from_timestamp,omitempty"`  // [Optional] <p>Start of the query range, Unix timestamp in seconds. Must be passed together with to_timestamp. When passed, from_date and to_date are ignored.</p>
+	PageSize      *int64  `json:"page_size,omitempty"`       // [Optional] <p>Each result set is returned as a page of entries. Use the "page_size" filters to control the maximum number of entries to retrieve per page (i.e., per call). This integer value is used to specify the maximum number of entries to return in a single "page" of data. limit [1, 50]<br /></p>
+	TimeRangeType *string `json:"time_range_type,omitempty"` // [Optional] <p>The time field that the query range applies to and that results are sorted by. Available values: create_time, update_time. Defaults to create_time when not passed.</p>
+	ToDate        *string `json:"to_date,omitempty"`         // [Optional] <p>The end time of creation time. Format YYYY-MM-DD, in the shop region's local time. The whole day is included (until 23:59:59). Required when from_timestamp and to_timestamp are not passed. Ignored when they are passed.</p>
+	ToTimestamp   *int64  `json:"to_timestamp,omitempty"`    // [Optional] <p>End of the query range, Unix timestamp in seconds. Must be passed together with from_timestamp and must not be earlier than from_timestamp.</p>
 }
 type GetCourierDeliveryTrackingNumberListResponse struct {
 	BaseResponse                                                  // Common response fields
@@ -204,6 +219,13 @@ type GetUnbindOrderListResponseDataOrder struct {
 	OrderSn         string          `json:"order_sn"`         // [Required] Shopee's unique identifier for an order.
 	PackageNumber   string          `json:"package_number"`   // [Required] Shopee's unique identifier for the package under an order.
 	LogisticsStatus LogisticsStatus `json:"logistics_status"` // [Required] The Shopee logistics status for the order. Applicable values: See Data Definition- LogisticsStatus.
+}
+type GetWaybillFilelinkRequest struct {
+	FirstMileTrackingNumberList []string `json:"first_mile_tracking_number_list"` // [Required] <p>The first mile tracking number that you want to print waybill.limit [1, 50]</p>
+}
+type GetWaybillFilelinkResponse struct {
+	BaseResponse        // Common response fields
+	FileLink     string `json:"file_link,omitempty"` // <p>The download link to the waybill file. The link will be valid for 30 minutes.</p>
 }
 type GetWaybillRequest struct {
 	FirstMileTrackingNumberList []string `json:"first_mile_tracking_number_list"` // [Required] The first mile tracking number that you want to print waybill.limit [1, 50]

@@ -283,6 +283,31 @@ func Test_Logistics_DownloadShippingDocumentJob(t *testing.T) {
 
 	t.Logf("Logistics.DownloadShippingDocumentJob response: %#v", res)
 }
+func Test_Logistics_DownloadShippingDocumentJobFilelink(t *testing.T) {
+	setup()
+	defer teardown()
+
+	fixture := "v2.logistics.download_shipping_document_job_filelink_resp.json"
+	data, err := loadFixtureSafe(fixture)
+	if err != nil {
+		t.Skipf("Skipping DownloadShippingDocumentJobFilelink due to missing fixture: %v", err)
+	}
+	responder, err := httpmock.NewJsonResponder(200, data)
+	if err != nil {
+		t.Skipf("Skipping DownloadShippingDocumentJobFilelink due to invalid fixture: %v", err)
+	}
+
+	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/download_shipping_document_job_filelink", app.APIURL), responder)
+
+	var req DownloadShippingDocumentJobFilelinkRequest
+	ctx := context.Background()
+	res, err := client.Logistics.DownloadShippingDocumentJobFilelink(ctx, sid, mid, tok, req)
+	if err != nil {
+		t.Logf("Logistics.DownloadShippingDocumentJobFilelink returned error (possibly expected with mock data): %s", err)
+	}
+
+	t.Logf("Logistics.DownloadShippingDocumentJobFilelink response: %#v", res)
+}
 func Test_Logistics_DownloadToLabel(t *testing.T) {
 	setup()
 	defer teardown()
@@ -307,6 +332,31 @@ func Test_Logistics_DownloadToLabel(t *testing.T) {
 	}
 
 	t.Logf("Logistics.DownloadToLabel response: %#v", res)
+}
+func Test_Logistics_DownloadToLabelFilelink(t *testing.T) {
+	setup()
+	defer teardown()
+
+	fixture := "v2.logistics.download_to_label_filelink_resp.json"
+	data, err := loadFixtureSafe(fixture)
+	if err != nil {
+		t.Skipf("Skipping DownloadToLabelFilelink due to missing fixture: %v", err)
+	}
+	responder, err := httpmock.NewJsonResponder(200, data)
+	if err != nil {
+		t.Skipf("Skipping DownloadToLabelFilelink due to invalid fixture: %v", err)
+	}
+
+	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/download_to_label_filelink", app.APIURL), responder)
+
+	var req DownloadToLabelFilelinkRequest
+	ctx := context.Background()
+	res, err := client.Logistics.DownloadToLabelFilelink(ctx, sid, mid, tok, req)
+	if err != nil {
+		t.Logf("Logistics.DownloadToLabelFilelink returned error (possibly expected with mock data): %s", err)
+	}
+
+	t.Logf("Logistics.DownloadToLabelFilelink response: %#v", res)
 }
 func Test_Logistics_GetAddressList(t *testing.T) {
 	setup()

@@ -79,7 +79,8 @@
                 "size_chart": "-",
                 "item_status": "NORMAL",
                 "deboost": "false",
-                "has_model": true,
+                "has_model": false,
+                "default_model_id":13123,
                 "promotion_id": 13123,
                 "video_info": [
                     {
