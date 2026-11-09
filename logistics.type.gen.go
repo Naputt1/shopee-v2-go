@@ -371,6 +371,14 @@ type GetOperatingHoursResponse struct {
 	BaseResponse           // Common response fields
 	Repsonse     *Repsonse `json:"repsonse,omitempty"` //
 }
+type GetOrderCountLimitOutsideInstantOperatingTimeResponse struct {
+	BaseResponse                                                           // Common response fields
+	Response     GetOrderCountLimitOutsideInstantOperatingTimeResponseData `json:"response"` // Response data
+}
+type GetOrderCountLimitOutsideInstantOperatingTimeResponseData struct {
+	IsOrderLimitEnabled bool  `json:"is_order_limit_enabled"` // [Required] <p>Whether a daily order count limit is currently applied to orders outside Instant OPT.</p>
+	OrderCountLimit     int64 `json:"order_count_limit"`      // [Required] <p>The configured daily order count limit. Present only if is_order_limit_enabled&nbsp;= true</p>
+}
 type GetPauseStatusResponse struct {
 	BaseResponse                            // Common response fields
 	Response     GetPauseStatusResponseData `json:"response"` // Response data
@@ -800,6 +808,19 @@ type SetMartPackagingInfoResponseData struct {
 	Enable       bool                   `json:"enable"`        // [Required] <p>Indicates whether the seller has enabled or disabled the packaging fee configuration.</p><p><b>True:</b>&nbsp;The seller charges a packaging fee.</p><p><b>False:</b>&nbsp;The seller does not charge a packaging fee.</p>
 	Dimension    *ResponseDataDimension `json:"dimension"`     // [Required] <p>Returned only if&nbsp;enabled&nbsp;is set to&nbsp;True.</p>
 	PackagingFee *PackagingFee          `json:"packaging_fee"` // [Required] <p>Returned only if&nbsp;enabled&nbsp;is set to&nbsp;True.</p>
+}
+type SetOrderCountLimitOutsideInstantOperatingTimeRequest struct {
+	IsOrderLimitEnabled bool   `json:"is_order_limit_enabled"`      // [Required] <p>Whether a daily order count limit is applied to orders outside Instant OPT. Set to false to accept all such orders without restriction.</p>
+	OrderCountLimit     *int64 `json:"order_count_limit,omitempty"` // [Optional] <p>Maximum number of orders accepted outside Instant OPT per day. If the order_count_limit is set to 0, no orders will be accepted outside Instant OPT per day.</p>
+}
+type SetOrderCountLimitOutsideInstantOperatingTimeResponse struct {
+	BaseResponse                                                           // Common response fields
+	Response     SetOrderCountLimitOutsideInstantOperatingTimeResponseData `json:"response"` // Response data
+}
+type SetOrderCountLimitOutsideInstantOperatingTimeResponseData struct {
+	UpdateResult        string `json:"update_result"`          // [Required] <p>Update results: "succeed" OR "failed"</p>
+	IsOrderLimitEnabled bool   `json:"is_order_limit_enabled"` // [Required] <p>Whether a daily order count limit is currently applied to orders outside Instant OPT.</p>
+	OrderCountLimit     int64  `json:"order_count_limit"`      // [Required] <p>The configured daily order count limit. Present only if is_order_limit_enabled&nbsp;= true</p>
 }
 type SetPauseStatusRequest struct {
 	IsPaused bool `json:"is_paused"` // [Required] <p>The target pause status that seller wants to update to. Applicable values:&nbsp;<br /></p><p>- true: Trigger pause. All relevant channels will be paused and will not have any new incoming orders (fulfillment of existing orders will not be affected). Meanwhile, the system will start deducting the daily pause quota and automatically calculate the pause end time based on the remaining quota.</p><p>- false: Trigger manual resume. No channels are paused and may have new incoming orders. The remaining daily quota will stop being consumed and be retained until reset the next day.</p><p><br />Note: Due to the system cache synchronization mechanism, there may be an approximately 15-second delay before the pause/resume operation takes effect. It is recommended to call the v2.logistics.get_pause_status for confirmation after the update.</p>

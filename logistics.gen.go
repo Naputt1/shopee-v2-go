@@ -120,6 +120,10 @@ type LogisticsService interface {
 	// Path: /api/v2/logistics/get_operating_hours
 	// https://open.shopee.com/documents/v2/v2.logistics.get_operating_hours?module=95&type=1
 	GetOperatingHours(ctx context.Context, sid uint64, mid uint64, tok string) (*GetOperatingHoursResponse, error)
+	// GetOrderCountLimitOutsideInstantOperatingTime {"content":"<p><span style=\"color:rgb(23,43,77);\">Use this API to retrieve the current order count limit configuration for orders outside the Instant operating time window if the daily order count limit has been enabled.</span></p>","raw_content":[{"name":"paragraph","children":[{"attributes":{"fontColor":"rgb(23,43,77)"},"data":"Use this API to retrieve the current order count limit configuration for orders outside the Instant operating time window if the daily order count limit has been enabled."}]}]}
+	// Path: /api/v2/logistics/get_order_count_limit_outside_instant_operating_time
+	// https://open.shopee.com/documents/v2/v2.logistics.get_order_count_limit_outside_instant_operating_time?module=95&type=1
+	GetOrderCountLimitOutsideInstantOperatingTime(ctx context.Context, sid uint64, mid uint64, tok string) (*GetOrderCountLimitOutsideInstantOperatingTimeResponse, error)
 	// GetPauseStatus This API returns the pause status of logistics channels under the shop. Pausing allows the shop to temporarily prevent buyers from placing orders through specific logistics channels. The response includes whether a pause is currently active, the pause end time (if active), and the remaining daily pause quota in seconds (if inactive). Sellers need to refer to the support_pause field in v2.logistics.get_channel_list response to determine which channels are actually paused.
 	// Path: /api/v2/logistics/get_pause_status
 	// https://open.shopee.com/documents/v2/v2.logistics.get_pause_status?module=95&type=1
@@ -166,6 +170,10 @@ type LogisticsService interface {
 	// Path: /api/v2/logistics/set_mart_packaging_info
 	// https://open.shopee.com/documents/v2/v2.logistics.set_mart_packaging_info?module=95&type=1
 	SetMartPackagingInfo(ctx context.Context, sid uint64, mid uint64, tok string, req SetMartPackagingInfoRequest) (*SetMartPackagingInfoResponse, error)
+	// SetOrderCountLimitOutsideInstantOperatingTime {"content":"<p><span style=\"color:rgb(23,43,77);\">Use this API to configure how orders outside the Instant operating time window are accepted. This allows the shop to either accept all such orders without restriction, or limit them by setting a maximum daily order count. Note: The setting may take a few moments to take effect. Please check for any additional orders that may still be accepted under the previous configuration during this window.</span></p>","raw_content":[{"name":"paragraph","children":[{"attributes":{"fontColor":"rgb(23,43,77)"},"data":"Use this API to configure how orders outside the Instant operating time window are accepted. This allows the shop to either accept all such orders without restriction, or limit them by setting a maximum daily order count. Note: The setting may take a few moments to take effect. Please check for any additional orders that may still be accepted under the previous configuration during this window."}]}]}
+	// Path: /api/v2/logistics/set_order_count_limit_outside_instant_operating_time
+	// https://open.shopee.com/documents/v2/v2.logistics.set_order_count_limit_outside_instant_operating_time?module=95&type=1
+	SetOrderCountLimitOutsideInstantOperatingTime(ctx context.Context, sid uint64, mid uint64, tok string, req SetOrderCountLimitOutsideInstantOperatingTimeRequest) (*SetOrderCountLimitOutsideInstantOperatingTimeResponse, error)
 	// SetPauseStatus Use this API to set the pause status of logistics channels under the shop. Pausing allows the shop to temporarily prevent buyers from placing orders through specific logistics channels. The response includes whether a pause is currently active, the pause end time (if active), and the remaining daily pause quota in seconds (if inactive). Note: The pause may take a few moments to take effect. Please check for any additional orders that may still be placed during this window.
 	// Path: /api/v2/logistics/set_pause_status
 	// https://open.shopee.com/documents/v2/v2.logistics.set_pause_status?module=95&type=1
@@ -488,6 +496,16 @@ func (s *LogisticsServiceOp[T]) GetOperatingHours(ctx context.Context, sid uint6
 	return resp, err
 }
 
+// GetOrderCountLimitOutsideInstantOperatingTime {"content":"<p><span style=\"color:rgb(23,43,77);\">Use this API to retrieve the current order count limit configuration for orders outside the Instant operating time window if the daily order count limit has been enabled.</span></p>","raw_content":[{"name":"paragraph","children":[{"attributes":{"fontColor":"rgb(23,43,77)"},"data":"Use this API to retrieve the current order count limit configuration for orders outside the Instant operating time window if the daily order count limit has been enabled."}]}]}
+// Path: /api/v2/logistics/get_order_count_limit_outside_instant_operating_time
+// https://open.shopee.com/documents/v2/v2.logistics.get_order_count_limit_outside_instant_operating_time?module=95&type=1
+func (s *LogisticsServiceOp[T]) GetOrderCountLimitOutsideInstantOperatingTime(ctx context.Context, sid uint64, mid uint64, tok string) (*GetOrderCountLimitOutsideInstantOperatingTimeResponse, error) {
+	path := "/logistics/get_order_count_limit_outside_instant_operating_time"
+	resp := new(GetOrderCountLimitOutsideInstantOperatingTimeResponse)
+	err := s.client.Get(ctx, path, resp, nil, sid, mid, tok)
+	return resp, err
+}
+
 // GetPauseStatus This API returns the pause status of logistics channels under the shop. Pausing allows the shop to temporarily prevent buyers from placing orders through specific logistics channels. The response includes whether a pause is currently active, the pause end time (if active), and the remaining daily pause quota in seconds (if inactive). Sellers need to refer to the support_pause field in v2.logistics.get_channel_list response to determine which channels are actually paused.
 // Path: /api/v2/logistics/get_pause_status
 // https://open.shopee.com/documents/v2/v2.logistics.get_pause_status?module=95&type=1
@@ -595,6 +613,16 @@ func (s *LogisticsServiceOp[T]) SetAddressConfig(ctx context.Context, sid uint64
 func (s *LogisticsServiceOp[T]) SetMartPackagingInfo(ctx context.Context, sid uint64, mid uint64, tok string, req SetMartPackagingInfoRequest) (*SetMartPackagingInfoResponse, error) {
 	path := "/logistics/set_mart_packaging_info"
 	resp := new(SetMartPackagingInfoResponse)
+	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
+	return resp, err
+}
+
+// SetOrderCountLimitOutsideInstantOperatingTime {"content":"<p><span style=\"color:rgb(23,43,77);\">Use this API to configure how orders outside the Instant operating time window are accepted. This allows the shop to either accept all such orders without restriction, or limit them by setting a maximum daily order count. Note: The setting may take a few moments to take effect. Please check for any additional orders that may still be accepted under the previous configuration during this window.</span></p>","raw_content":[{"name":"paragraph","children":[{"attributes":{"fontColor":"rgb(23,43,77)"},"data":"Use this API to configure how orders outside the Instant operating time window are accepted. This allows the shop to either accept all such orders without restriction, or limit them by setting a maximum daily order count. Note: The setting may take a few moments to take effect. Please check for any additional orders that may still be accepted under the previous configuration during this window."}]}]}
+// Path: /api/v2/logistics/set_order_count_limit_outside_instant_operating_time
+// https://open.shopee.com/documents/v2/v2.logistics.set_order_count_limit_outside_instant_operating_time?module=95&type=1
+func (s *LogisticsServiceOp[T]) SetOrderCountLimitOutsideInstantOperatingTime(ctx context.Context, sid uint64, mid uint64, tok string, req SetOrderCountLimitOutsideInstantOperatingTimeRequest) (*SetOrderCountLimitOutsideInstantOperatingTimeResponse, error) {
+	path := "/logistics/set_order_count_limit_outside_instant_operating_time"
+	resp := new(SetOrderCountLimitOutsideInstantOperatingTimeResponse)
 	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
 	return resp, err
 }

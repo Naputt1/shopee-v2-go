@@ -678,6 +678,30 @@ func Test_Logistics_GetOperatingHours(t *testing.T) {
 
 	t.Logf("Logistics.GetOperatingHours response: %#v", res)
 }
+func Test_Logistics_GetOrderCountLimitOutsideInstantOperatingTime(t *testing.T) {
+	setup()
+	defer teardown()
+
+	fixture := "v2.logistics.get_order_count_limit_outside_instant_operating_time_resp.json"
+	data, err := loadFixtureSafe(fixture)
+	if err != nil {
+		t.Skipf("Skipping GetOrderCountLimitOutsideInstantOperatingTime due to missing fixture: %v", err)
+	}
+	responder, err := httpmock.NewJsonResponder(200, data)
+	if err != nil {
+		t.Skipf("Skipping GetOrderCountLimitOutsideInstantOperatingTime due to invalid fixture: %v", err)
+	}
+
+	httpmock.RegisterResponder("GET", fmt.Sprintf("%s/api/v2/logistics/get_order_count_limit_outside_instant_operating_time", app.APIURL), responder)
+
+	ctx := context.Background()
+	res, err := client.Logistics.GetOrderCountLimitOutsideInstantOperatingTime(ctx, sid, mid, tok)
+	if err != nil {
+		t.Logf("Logistics.GetOrderCountLimitOutsideInstantOperatingTime returned error (possibly expected with mock data): %s", err)
+	}
+
+	t.Logf("Logistics.GetOrderCountLimitOutsideInstantOperatingTime response: %#v", res)
+}
 func Test_Logistics_GetPauseStatus(t *testing.T) {
 	setup()
 	defer teardown()
@@ -951,6 +975,31 @@ func Test_Logistics_SetMartPackagingInfo(t *testing.T) {
 	}
 
 	t.Logf("Logistics.SetMartPackagingInfo response: %#v", res)
+}
+func Test_Logistics_SetOrderCountLimitOutsideInstantOperatingTime(t *testing.T) {
+	setup()
+	defer teardown()
+
+	fixture := "v2.logistics.set_order_count_limit_outside_instant_operating_time_resp.json"
+	data, err := loadFixtureSafe(fixture)
+	if err != nil {
+		t.Skipf("Skipping SetOrderCountLimitOutsideInstantOperatingTime due to missing fixture: %v", err)
+	}
+	responder, err := httpmock.NewJsonResponder(200, data)
+	if err != nil {
+		t.Skipf("Skipping SetOrderCountLimitOutsideInstantOperatingTime due to invalid fixture: %v", err)
+	}
+
+	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/logistics/set_order_count_limit_outside_instant_operating_time", app.APIURL), responder)
+
+	var req SetOrderCountLimitOutsideInstantOperatingTimeRequest
+	ctx := context.Background()
+	res, err := client.Logistics.SetOrderCountLimitOutsideInstantOperatingTime(ctx, sid, mid, tok, req)
+	if err != nil {
+		t.Logf("Logistics.SetOrderCountLimitOutsideInstantOperatingTime returned error (possibly expected with mock data): %s", err)
+	}
+
+	t.Logf("Logistics.SetOrderCountLimitOutsideInstantOperatingTime response: %#v", res)
 }
 func Test_Logistics_SetPauseStatus(t *testing.T) {
 	setup()

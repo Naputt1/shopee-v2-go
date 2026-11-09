@@ -47,7 +47,7 @@ type OrderService interface {
 	// Path: /api/v2/order/get_order_detail
 	// https://open.shopee.com/documents/v2/v2.order.get_order_detail?module=94&type=1
 	GetOrderDetail(ctx context.Context, sid uint64, mid uint64, tok string, opt GetOrderDetailRequest) (*GetOrderDetailResponse, error)
-	// GetOrderList Use this api to search orders. You may also filter them by status, if needed.
+	// GetOrderList {"content":"<p>Use this api to search orders. You may also filter them by status, if needed.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this api to search orders. You may also filter them by status, if needed."}]}]}
 	// Path: /api/v2/order/get_order_list
 	// https://open.shopee.com/documents/v2/v2.order.get_order_list?module=94&type=1
 	GetOrderList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetOrderListRequest) (*GetOrderListResponse, error)
@@ -75,7 +75,7 @@ type OrderService interface {
 	// Path: /api/v2/order/handle_prescription_check
 	// https://open.shopee.com/documents/v2/v2.order.handle_prescription_check?module=94&type=1
 	HandlePrescriptionCheck(ctx context.Context, sid uint64, mid uint64, tok string, req HandlePrescriptionCheckRequest) (*HandlePrescriptionCheckResponse, error)
-	// SearchPackageList Use this API to search the list of packages that have not been SHIPPED to proceed arranging shipment, and it supports various filters and sort fields.
+	// SearchPackageList {"content":"<p>Use this API to search the list of packages that have not been SHIPPED to proceed arranging shipment, and it supports various filters and sort fields.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this API to search the list of packages that have not been SHIPPED to proceed arranging shipment, and it supports various filters and sort fields."}]}]}
 	// Path: /api/v2/order/search_package_list
 	// https://open.shopee.com/documents/v2/v2.order.search_package_list?module=94&type=1
 	SearchPackageList(ctx context.Context, sid uint64, mid uint64, tok string, req SearchPackageListRequest) (*SearchPackageListResponse, error)
@@ -204,7 +204,7 @@ func (s *OrderServiceOp[T]) GetOrderDetail(ctx context.Context, sid uint64, mid 
 	return resp, err
 }
 
-// GetOrderList Use this api to search orders. You may also filter them by status, if needed.
+// GetOrderList {"content":"<p>Use this api to search orders. You may also filter them by status, if needed.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this api to search orders. You may also filter them by status, if needed."}]}]}
 // Path: /api/v2/order/get_order_list
 // https://open.shopee.com/documents/v2/v2.order.get_order_list?module=94&type=1
 func (s *OrderServiceOp[T]) GetOrderList(ctx context.Context, sid uint64, mid uint64, tok string, opt GetOrderListRequest) (*GetOrderListResponse, error) {
@@ -274,7 +274,7 @@ func (s *OrderServiceOp[T]) HandlePrescriptionCheck(ctx context.Context, sid uin
 	return resp, err
 }
 
-// SearchPackageList Use this API to search the list of packages that have not been SHIPPED to proceed arranging shipment, and it supports various filters and sort fields.
+// SearchPackageList {"content":"<p>Use this API to search the list of packages that have not been SHIPPED to proceed arranging shipment, and it supports various filters and sort fields.</p>","raw_content":[{"name":"paragraph","children":[{"data":"Use this API to search the list of packages that have not been SHIPPED to proceed arranging shipment, and it supports various filters and sort fields."}]}]}
 // Path: /api/v2/order/search_package_list
 // https://open.shopee.com/documents/v2/v2.order.search_package_list?module=94&type=1
 func (s *OrderServiceOp[T]) SearchPackageList(ctx context.Context, sid uint64, mid uint64, tok string, req SearchPackageListRequest) (*SearchPackageListResponse, error) {

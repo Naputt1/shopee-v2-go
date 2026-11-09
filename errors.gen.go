@@ -392,6 +392,7 @@ const (
 	ErrErrorModelUpdateNameModelInPromotion                   = "error_model_update_name_model_in_promotion"                       // tier_variation name and oprion cannot be editted when item/model is under promotion.
 	ErrErrorModelUpdateStatusModelInPromotion                 = "error_model_update_status_model_in_promotion"                     // Cannot change model's status when item/model is promotion.
 	ErrErrorModelUpdateStockModelInPromotion                  = "error_model_update_stock_model_in_promotion"                      // Model stock cannot be editted when item/model is promotion.
+	ErrErrorModificationInProgress                            = "error_modification_in_progress"                                   // Modification is currently in progress for this order.
 	ErrErrorNameLengthLimit                                   = "error_name_length_limit"                                          // Exceeded item_name length limitation.
 	ErrErrorNeedOtp                                           = "error_need_otp"                                                   // Core server error.
 	ErrErrorNeedVoiceOtp                                      = "error_need_voice_otp"                                             // Core server error.
@@ -715,7 +716,9 @@ const (
 	ErrLogisticsShippingDocumentTypeInvalid                   = "logistics.shipping_document_type_invalid"                         // The shipping_document_type is not invalid. Please check the shipping_document_type.
 	ErrLogisticsShopNotFound                                  = "logistics.shop_not_found"                                         // Shop is not found.
 	ErrLogisticsShopNotInFeatureToggle                        = "logistics.shop_not_in_feature_toggle"                             // Shop is not whitelisted for the pause feature
+	ErrLogisticsShopNotInSupportedRegion                      = "logistics.shop_not_in_supported_region"                           // The order count limit feature is currently not supported in this region.
 	ErrLogisticsShopNotSupportWms                             = "logistics.shop_not_support_wms"                                   // Wms is not supported for the shop.
+	ErrLogisticsShopWithNoInstantChannel                      = "logistics.shop_with_no_instant_channel"                           // Shop does not have any instant channels.
 	ErrLogisticsSlsCalculateFail                              = "logistics.sls calculate fail"                                     // Fail to calculate estimated shipping fee.
 	ErrLogisticsTrackingNumberInvalid                         = "logistics.tracking_number_invalid"                                // The tracking number is invalid. Please check the tracking number.
 	ErrLogisticsUnknownError                                  = "logistics.unknown_error"                                          // Unknown error, please contact Shopee to check. Detail: {msg}

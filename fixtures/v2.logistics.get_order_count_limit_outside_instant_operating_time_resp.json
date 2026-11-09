@@ -1,0 +1,7 @@
+{
+	"request_id": "df17f35abb4244938b22a675211dc99c",
+	"response": {
+		"is_order_limit_enabled": true,
+		"order_count_limit": 100
+	}
+}
