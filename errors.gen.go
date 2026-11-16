@@ -739,6 +739,9 @@ const (
 	ErrOrderCancelOrderInvalidStatus                          = "order.cancel_order_invalid_status"                                // Invalid order_status.The order status should be IN_CANCEL.
 	ErrOrderDownloadInvoiceError                              = "order.download_invoice_error"                                     // Download invoice failed.
 	ErrOrderErrorLimit                                        = "order.error_limit"                                                // Can not cancel this order:{msg}
+	ErrOrderInvalidPharmacistLicenseNumber                    = "order.invalid_pharmacist_license_number"                          // Pharmacist license number must be between 5-50 characters.
+	ErrOrderInvalidPharmacistNric                             = "order.invalid_pharmacist_nric"                                    // The NRIC is invalid. Please make sure that NRIC number only contains digits and have 12 digits inside.
+	ErrOrderInvalidTrustgatePin                               = "order.invalid_trustgate_pin"                                      // The trustgate PIN is empty
 	ErrOrderOrderCannotSplit                                  = "order.order_cannot_split"                                         // You don’t have the permission to split order.
 	ErrOrderOrderCannotSplitPff                               = "order.order_cannot_split_pff"                                     // Cannot split this warehouse order.
 	ErrOrderOrderCannotUndoSplit                              = "order.order_cannot_undo_split"                                    // Cannot undo split this order.
@@ -753,6 +756,7 @@ const (
 	ErrOrderOrderSplitWrongItemQuantity                       = "order.order_split_wrong_item_quantity"                            // Cannot split order with wrong model quantity
 	ErrOrderOrderStatusInvalid                                = "order.order_status_invalid"                                       // Invalid order_status.The order status should be IN_CANCEL.
 	ErrOrderOrderUnsplitFailed                                = "order.order_unsplit_failed"                                       // Undo split failed, please try again later.
+	ErrOrderPharmacistInfoInvalid                             = "order.pharmacist_info_invalid"                                    // The pharmacist info is invalid. Please check the pharmacist information supplied.
 	ErrOrderPrescriptionOrderStatusInvalid                    = "order.prescription_order_status_invalid"                          // Prescription order is already completed or canceled
 	ErrOrderUploadInvoiceError                                = "order.upload_invoice_error"                                       // Upload invoice failed, please try again later.
 	ErrProductCmtNotExist                                     = "product.cmt_not_exist"                                            // The comment is not exist. Please check the comment.

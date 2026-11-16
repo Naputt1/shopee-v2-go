@@ -164,8 +164,11 @@ type GetEstimateCancelValueRequest struct {
 	PartialCancelItemList []PartialCancelItem `json:"partial_cancel_item_list"` // [Required] <p>The list of item models and quantities for which the seller wants to estimate the cancellation value before submitting the actual partial cancellation request.</p>
 }
 type GetEstimateCancelValueResponse struct {
-	BaseResponse            // Common response fields
-	CancelValuePrice string `json:"cancel_value_price,omitempty"` // <p>The estimated cancellation value for the selected item quantities. This value is calculated before the actual cancellation is submitted and can be used by sellers to preview the expected cancellation amount and support partial cancellation confirmation.</p>
+	BaseResponse                                    // Common response fields
+	Response     GetEstimateCancelValueResponseData `json:"response"` // Response data
+}
+type GetEstimateCancelValueResponseData struct {
+	CancelValuePrice string `json:"cancel_value_price"` // [Required] <p>The estimated cancellation value for the selected item quantities. This value is calculated before the actual cancellation is submitted and can be used by sellers to preview the expected cancellation amount and support partial cancellation confirmation.</p>
 }
 type GetFbsInvoicesResultRequest struct {
 	RequestIdList *RequestId `json:"request_id_list"` // [Required] <p>-</p>
