@@ -740,7 +740,7 @@ const (
 	ErrOrderDownloadInvoiceError                              = "order.download_invoice_error"                                     // Download invoice failed.
 	ErrOrderErrorLimit                                        = "order.error_limit"                                                // Can not cancel this order:{msg}
 	ErrOrderInvalidPharmacistLicenseNumber                    = "order.invalid_pharmacist_license_number"                          // Pharmacist license number must be between 5-50 characters.
-	ErrOrderInvalidPharmacistNric                             = "order.invalid_pharmacist_nric"                                    // The NRIC is invalid. Please make sure that NRIC number only contains digits and have 12 digits inside.
+	ErrOrderInvalidPharmacistNric                             = "order.invalid_pharmacist_nric"                                    // The NRIC is invalid. Please make sure that the NRIC number only contains digits and has 12 digits inside.
 	ErrOrderInvalidTrustgatePin                               = "order.invalid_trustgate_pin"                                      // The trustgate PIN is empty
 	ErrOrderOrderCannotSplit                                  = "order.order_cannot_split"                                         // You don’t have the permission to split order.
 	ErrOrderOrderCannotSplitPff                               = "order.order_cannot_split_pff"                                     // Cannot split this warehouse order.

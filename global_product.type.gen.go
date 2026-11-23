@@ -549,12 +549,6 @@ type UpdateGlobalModelRequest struct {
 type UpdateGlobalModelResponse struct {
 	BaseResponse // Common response fields
 }
-type UpdateLocalAdjustmentRateRequest struct {
-	AdjustmentRate float64 `json:"adjustment_rate"` // [Required] <p>The multiplier used to adjust the cross-border original price to local price</p>
-}
-type UpdateLocalAdjustmentRateResponse struct {
-	BaseResponse // Common response fields
-}
 type UpdatePriceRequest struct {
 	GlobalItemId int64          `json:"global_item_id"` // [Required] ID of global item.
 	PriceList    []RequestPrice `json:"price_list"`     // [Required] Price setting for global model. Limit is [1,50].

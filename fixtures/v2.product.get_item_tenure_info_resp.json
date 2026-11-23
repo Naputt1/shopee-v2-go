@@ -1,0 +1,17 @@
+{
+  "error": "",
+  "message": "",
+  "warning": "",
+  "request_id": "6b0dcb3e7c2f4a3d9fbc8a52c42a36c1",
+  "response": {
+    "tenure_setting": {
+      "toggle_status": true,
+      "tenure_key": 12
+    },
+    "metadata": {
+      "allow_item_management": true,
+      "sspl_possible_tenures": [3, 6, 12],
+      "can_change_tenures": true
+    }
+  }
+}

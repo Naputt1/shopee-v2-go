@@ -732,6 +732,31 @@ func Test_Product_GetItemPromotion(t *testing.T) {
 
 	t.Logf("Product.GetItemPromotion response: %#v", res)
 }
+func Test_Product_GetItemTenureInfo(t *testing.T) {
+	setup()
+	defer teardown()
+
+	fixture := "v2.product.get_item_tenure_info_resp.json"
+	data, err := loadFixtureSafe(fixture)
+	if err != nil {
+		t.Skipf("Skipping GetItemTenureInfo due to missing fixture: %v", err)
+	}
+	responder, err := httpmock.NewJsonResponder(200, data)
+	if err != nil {
+		t.Skipf("Skipping GetItemTenureInfo due to invalid fixture: %v", err)
+	}
+
+	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/get_item_tenure_info", app.APIURL), responder)
+
+	var req GetItemTenureInfoRequest
+	ctx := context.Background()
+	res, err := client.Product.GetItemTenureInfo(ctx, sid, mid, tok, req)
+	if err != nil {
+		t.Logf("Product.GetItemTenureInfo returned error (possibly expected with mock data): %s", err)
+	}
+
+	t.Logf("Product.GetItemTenureInfo response: %#v", res)
+}
 func Test_Product_GetItemViolationInfo(t *testing.T) {
 	setup()
 	defer teardown()
@@ -1354,6 +1379,31 @@ func Test_Product_SearchUnpackagedModelList(t *testing.T) {
 	}
 
 	t.Logf("Product.SearchUnpackagedModelList response: %#v", res)
+}
+func Test_Product_SetItemTenureInfo(t *testing.T) {
+	setup()
+	defer teardown()
+
+	fixture := "v2.product.set_item_tenure_info_resp.json"
+	data, err := loadFixtureSafe(fixture)
+	if err != nil {
+		t.Skipf("Skipping SetItemTenureInfo due to missing fixture: %v", err)
+	}
+	responder, err := httpmock.NewJsonResponder(200, data)
+	if err != nil {
+		t.Skipf("Skipping SetItemTenureInfo due to invalid fixture: %v", err)
+	}
+
+	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/product/set_item_tenure_info", app.APIURL), responder)
+
+	var req SetItemTenureInfoRequest
+	ctx := context.Background()
+	res, err := client.Product.SetItemTenureInfo(ctx, sid, mid, tok, req)
+	if err != nil {
+		t.Logf("Product.SetItemTenureInfo returned error (possibly expected with mock data): %s", err)
+	}
+
+	t.Logf("Product.SetItemTenureInfo response: %#v", res)
 }
 func Test_Product_UnlinkItemFromSsp(t *testing.T) {
 	setup()

@@ -125,10 +125,6 @@ type GlobalProductService interface {
 	// Path: /api/v2/global_product/update_global_model
 	// https://open.shopee.com/documents/v2/v2.global_product.update_global_model?module=90&type=1
 	UpdateGlobalModel(ctx context.Context, sid uint64, mid uint64, tok string, req UpdateGlobalModelRequest) (*UpdateGlobalModelResponse, error)
-	// UpdateLocalAdjustmentRate A multiplier that automatically converts your CB stock price into the local-warehouse price. It ensures your local inventory prices reflect regional costs, currency factors, and margin targets.
-	// Path: /api/v2/global_product/update_local_adjustment_rate
-	// https://open.shopee.com/documents/v2/v2.global_product.update_local_adjustment_rate?module=90&type=1
-	UpdateLocalAdjustmentRate(ctx context.Context, sid uint64, mid uint64, tok string, req UpdateLocalAdjustmentRateRequest) (*UpdateLocalAdjustmentRateResponse, error)
 	// UpdatePrice Update global price. Only for China mainland sellers and Korean sellers.
 	// Path: /api/v2/global_product/update_price
 	// https://open.shopee.com/documents/v2/v2.global_product.update_price?module=90&type=1
@@ -443,16 +439,6 @@ func (s *GlobalProductServiceOp[T]) UpdateGlobalItem(ctx context.Context, sid ui
 func (s *GlobalProductServiceOp[T]) UpdateGlobalModel(ctx context.Context, sid uint64, mid uint64, tok string, req UpdateGlobalModelRequest) (*UpdateGlobalModelResponse, error) {
 	path := "/global_product/update_global_model"
 	resp := new(UpdateGlobalModelResponse)
-	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
-	return resp, err
-}
-
-// UpdateLocalAdjustmentRate A multiplier that automatically converts your CB stock price into the local-warehouse price. It ensures your local inventory prices reflect regional costs, currency factors, and margin targets.
-// Path: /api/v2/global_product/update_local_adjustment_rate
-// https://open.shopee.com/documents/v2/v2.global_product.update_local_adjustment_rate?module=90&type=1
-func (s *GlobalProductServiceOp[T]) UpdateLocalAdjustmentRate(ctx context.Context, sid uint64, mid uint64, tok string, req UpdateLocalAdjustmentRateRequest) (*UpdateLocalAdjustmentRateResponse, error) {
-	path := "/global_product/update_local_adjustment_rate"
-	resp := new(UpdateLocalAdjustmentRateResponse)
 	err := s.client.Post(ctx, path, req, resp, sid, mid, tok)
 	return resp, err
 }

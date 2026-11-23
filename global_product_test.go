@@ -732,31 +732,6 @@ func Test_GlobalProduct_UpdateGlobalModel(t *testing.T) {
 
 	t.Logf("GlobalProduct.UpdateGlobalModel response: %#v", res)
 }
-func Test_GlobalProduct_UpdateLocalAdjustmentRate(t *testing.T) {
-	setup()
-	defer teardown()
-
-	fixture := "v2.global_product.update_local_adjustment_rate_resp.json"
-	data, err := loadFixtureSafe(fixture)
-	if err != nil {
-		t.Skipf("Skipping UpdateLocalAdjustmentRate due to missing fixture: %v", err)
-	}
-	responder, err := httpmock.NewJsonResponder(200, data)
-	if err != nil {
-		t.Skipf("Skipping UpdateLocalAdjustmentRate due to invalid fixture: %v", err)
-	}
-
-	httpmock.RegisterResponder("POST", fmt.Sprintf("%s/api/v2/global_product/update_local_adjustment_rate", app.APIURL), responder)
-
-	var req UpdateLocalAdjustmentRateRequest
-	ctx := context.Background()
-	res, err := client.GlobalProduct.UpdateLocalAdjustmentRate(ctx, sid, mid, tok, req)
-	if err != nil {
-		t.Logf("GlobalProduct.UpdateLocalAdjustmentRate returned error (possibly expected with mock data): %s", err)
-	}
-
-	t.Logf("GlobalProduct.UpdateLocalAdjustmentRate response: %#v", res)
-}
 func Test_GlobalProduct_UpdatePrice(t *testing.T) {
 	setup()
 	defer teardown()

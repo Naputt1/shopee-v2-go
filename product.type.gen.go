@@ -3,6 +3,7 @@ package goshopee
 type AddItemRequest struct {
 	AttributeList        []Attribute        `json:"attribute_list,omitempty"`         // [Optional] This field is optional(expect Indonesia) depending on the specific attribute under different categories. Should call shopee.item.GetAttributes to get attribute first. Must contain all all mandatory attribute.
 	AuthorisedBrandId    *int64             `json:"authorised_brand_id,omitempty"`    // [Optional] <p>ID of authorised reseller brand.</p>
+	BcrsSetting          *BcrsSetting       `json:"bcrs_setting,omitempty"`           // [Optional] <p>BCRS container settings for the item's default model. To specify settings for variations created later, use model[].bcrs_setting in v2.product.init_tier_variation or model_list[].bcrs_setting in v2.product.add_model. An omitted setting, an empty object, or an empty container_unit_list is treated as not provided; it cannot clear existing BCRS settings. If is_bcrs is explicitly false, this setting is ignored. Do not submit total_refundable_container_quantity, which is not a request field.</p>
 	Brand                *Brand             `json:"brand,omitempty"`                  // [Optional]
 	CategoryId           int64              `json:"category_id"`                      // [Required] ID of category
 	CertificationInfo    *CertificationInfo `json:"certification_info,omitempty"`     // [Optional] <p>For PH product certification input<br />Required for some category and attribute option</p>
@@ -17,6 +18,7 @@ type AddItemRequest struct {
 	DsCatRcmdId          *string            `json:"ds_cat_rcmd_id,omitempty"`         // [Optional] <p>category recommendation service id</p>
 	GtinCode             *string            `json:"gtin_code,omitempty"`              // [Optional] <p>- GTIN is an identifier for trade items, developed by the international organization GS1.<br />- They have 8 to 14 digits. The most common are UPC, EAN, JAN and ISBN.<br />- GTIN will help boost positioning in online marketing channels like Google and Facebook.<br />- That incorporation with GTIN will also aid in Search and Recommendation in Shopee itself allowing buyers to have higher likelihood of finding one's listing.<br /></p><p><br /></p><p>Note: If you want to set “Item without GTIN”, please pass the gtin_code as "00".<br /><br />The validation rule is based on the value return in gtin_validation_rule" field in v2.product.get_item_limit API</p><p><b>- Mandatory</b>:&nbsp;This field is required and must contain a correctly formatted GTiN number.</p><p><b>- Flexible</b>: This field is required and must contain either a correctly formatted GTlN number or "00" to declare that the item/model has no valid GTlN.<br /><b>- Optional:</b> This field is optional and can contain a correctly formatted GTiN number, "00" or be omitted entirely.</p>
 	Image                *RequestImage      `json:"image"`                            // [Required] Item images
+	IsBcrs               *bool              `json:"is_bcrs,omitempty"`                // [Optional] <p>Whether the item is subject to the Beverage Container Return Scheme (BCRS). true: BCRS item; false: non-BCRS item. Applicable only to eligible shops and items in Singapore. Omit this field when BCRS is not applicable. Omitting this field does not set a default BCRS value; the applicable BCRS mandatory rule may require it when creating an eligible item. Setting false is subject to the shop's BCRS opt-out policy. If false is supplied, bcrs_setting in the same item request is ignored.</p>
 	ItemDangerous        *int64             `json:"item_dangerous,omitempty"`         // [Optional] This field is only applicable for local sellers in Indonesia and Malaysia. Use this field to identify whether a product is a dangerous product. 0 for non-dangerous product and 1 for dangerous product. For more information, please visit the market's respective Seller Education Hub.
 	ItemName             string             `json:"item_name"`                        // [Required] Item name
 	ItemSku              *string            `json:"item_sku,omitempty"`               // [Optional] SKU tag of item
@@ -79,16 +81,17 @@ type AddModelRequest struct {
 	ModelList []AddModelRequestModel `json:"model_list"` // [Required] Model list
 }
 type AddModelRequestModel struct {
-	TierIndex     []int64       `json:"tier_index"`          // [Required] <p>Tier index of this model.</p><p><br /></p><p>If you want to update one tier/two tier to no tier, can just pass the tier_variation and standardise_tier_variation as [], and pass the model &gt;&gt; tier_index as [], meanwhile pass the original_price, seller_stock, etc., to set the price and stock for the modified product with no tier structure.</p>
-	OriginalPrice float64       `json:"original_price"`      // [Required] <p>Original price of this model.</p><p><b><font color="#c24f4a">For CO local VAT responsible seller：</font></b>Please remember the price you set in here must be VAT inclusive. If you have any doubts on how to calculate VAT for your product please refer to the Seller Education Hub（https://seller.shopee.com.co/edu/article/13565）<br /></p>
-	ModelSku      *string       `json:"model_sku,omitempty"` // [Optional] Seller SKU of this model, model_sku length information needs to be no more than 100 characters.
-	SellerStock   []SellerStock `json:"seller_stock"`        // [Required] <p>new stock info（Please notice that stock(including Seller Stock and Shopee Stock) should be larger than or equal to real-time reserved stock）<br /></p>
-	GtinCode      *string       `json:"gtin_code,omitempty"` // [Optional] <p>- GTIN is an identifier for trade items, developed by the international organization GS1.</p><p>- They have 8 to 14 digits. The most common are UPC, EAN, JAN and ISBN.<br />- GTIN will help boost positioning in online marketing channels like Google and Facebook.<br />- That incorporation with GTIN will also aid in Search and Recommendation in Shopee itself allowing buyers to have higher likelihood of finding one's listing.<br /></p><p><br /></p><p>Note: If you want to set “Item without GTIN”, please pass the gtin_code as "00".<br /><br />The validation rule is based on the value return in gtin_validation_rule" field in v2.product.get_item_limit API</p><p>- <b>Mandatory</b>:&nbsp;This field is required and must contain a correctly formatted GTiN number.</p><p>- <b>Flexible</b>: This field is required and must contain either a correctly formatted GTlN number or "00" to declare that the item/model has no valid GTlN.<br />- <b>Optional</b>: This field is optional and can contain a correctly formatted GTiN number, "00" or be omitted entirely.</p>
-	Weight        *float64      `json:"weight,omitempty"`    // [Optional] <p>The weight of this model, the unit is KG.</p><p>If don't set the weight of this model, will use the weight of item by default.</p><p>If set the dimension of this model, them must set the weight of this model.</p>
-	Dimension     *Dimension    `json:"dimension,omitempty"` // [Optional] <p>The dimension of this model.</p><p>If don't set the dimension of this model, will use the dimension of item by default.</p>
-	PreOrder      *ItemPreOrder `json:"pre_order,omitempty"` // [Optional] <p>Pre-order information of this model.</p><p><br /></p><p>Notes:&nbsp;</p><p>If don't set the DTS of this model, will use the DTS of the item by default.</p>
-	SspId         *int64        `json:"ssp_id,omitempty"`    // [Optional] <p>The ID of the Standardized Shop Product (SSP) to associate with the default model of the new item. The value must be greater than 0 when provided. If ssp_id is provided, cssp_id must also be provided.</p>
-	CsspId        *int64        `json:"cssp_id,omitempty"`   // [Optional] <p>The ID of the country-specific Standardized Shop Product (CSSP) to associate with the default model of the new item. The value must be greater than 0 when provided. This field is required when ssp_id is provided.</p>
+	TierIndex     []int64       `json:"tier_index"`             // [Required] <p>Tier index of this model.</p><p><br /></p><p>If you want to update one tier/two tier to no tier, can just pass the tier_variation and standardise_tier_variation as [], and pass the model &gt;&gt; tier_index as [], meanwhile pass the original_price, seller_stock, etc., to set the price and stock for the modified product with no tier structure.</p>
+	OriginalPrice float64       `json:"original_price"`         // [Required] <p>Original price of this model.</p><p><b><font color="#c24f4a">For CO local VAT responsible seller：</font></b>Please remember the price you set in here must be VAT inclusive. If you have any doubts on how to calculate VAT for your product please refer to the Seller Education Hub（https://seller.shopee.com.co/edu/article/13565）<br /></p>
+	ModelSku      *string       `json:"model_sku,omitempty"`    // [Optional] Seller SKU of this model, model_sku length information needs to be no more than 100 characters.
+	SellerStock   []SellerStock `json:"seller_stock"`           // [Required] <p>new stock info（Please notice that stock(including Seller Stock and Shopee Stock) should be larger than or equal to real-time reserved stock）<br /></p>
+	GtinCode      *string       `json:"gtin_code,omitempty"`    // [Optional] <p>- GTIN is an identifier for trade items, developed by the international organization GS1.</p><p>- They have 8 to 14 digits. The most common are UPC, EAN, JAN and ISBN.<br />- GTIN will help boost positioning in online marketing channels like Google and Facebook.<br />- That incorporation with GTIN will also aid in Search and Recommendation in Shopee itself allowing buyers to have higher likelihood of finding one's listing.<br /></p><p><br /></p><p>Note: If you want to set “Item without GTIN”, please pass the gtin_code as "00".<br /><br />The validation rule is based on the value return in gtin_validation_rule" field in v2.product.get_item_limit API</p><p>- <b>Mandatory</b>:&nbsp;This field is required and must contain a correctly formatted GTiN number.</p><p>- <b>Flexible</b>: This field is required and must contain either a correctly formatted GTlN number or "00" to declare that the item/model has no valid GTlN.<br />- <b>Optional</b>: This field is optional and can contain a correctly formatted GTiN number, "00" or be omitted entirely.</p>
+	Weight        *float64      `json:"weight,omitempty"`       // [Optional] <p>The weight of this model, the unit is KG.</p><p>If don't set the weight of this model, will use the weight of item by default.</p><p>If set the dimension of this model, them must set the weight of this model.</p>
+	Dimension     *Dimension    `json:"dimension,omitempty"`    // [Optional] <p>The dimension of this model.</p><p>If don't set the dimension of this model, will use the dimension of item by default.</p>
+	PreOrder      *ItemPreOrder `json:"pre_order,omitempty"`    // [Optional] <p>Pre-order information of this model.</p><p><br /></p><p>Notes:&nbsp;</p><p>If don't set the DTS of this model, will use the DTS of the item by default.</p>
+	SspId         *int64        `json:"ssp_id,omitempty"`       // [Optional] <p>The ID of the Standardized Shop Product (SSP) to associate with the default model of the new item. The value must be greater than 0 when provided. If ssp_id is provided, cssp_id must also be provided.</p>
+	CsspId        *int64        `json:"cssp_id,omitempty"`      // [Optional] <p>The ID of the country-specific Standardized Shop Product (CSSP) to associate with the default model of the new item. The value must be greater than 0 when provided. This field is required when ssp_id is provided.</p>
+	BcrsSetting   *BcrsSetting  `json:"bcrs_setting,omitempty"` // [Optional] <p>BCRS container settings for this model. The item-level BCRS flag is set through is_bcrs in v2.product.add_item or v2.product.update_item. An omitted setting, an empty object, or an empty container_unit_list is treated as not provided; it cannot clear existing BCRS settings. Do not submit total_refundable_container_quantity, which is not a request field. For a BCRS item, provide valid container settings for each new model as required by the applicable BCRS rules.</p>
 }
 type AddModelResponse struct {
 	BaseResponse                      // Common response fields
@@ -172,7 +175,7 @@ type BatchAddItemRequestItem struct {
 	VideoUploadId        []string           `json:"video_upload_id,omitempty"`        // [Optional] Video upload ID returned from video uploading API. Only accept one video_upload_id.
 	Brand                *Brand             `json:"brand,omitempty"`                  // [Optional]
 	ItemDangerous        *int64             `json:"item_dangerous,omitempty"`         // [Optional] This field is only applicable for local sellers in Indonesia and Malaysia. Use this field to identify whether a product is a dangerous product. 0 for non-dangerous product and 1 for dangerous product. For more information, please visit the market's respective Seller Education Hub.
-	TaxInfo              *TaxInfo           `json:"tax_info,omitempty"`               // [Optional] Tax information
+	TaxInfo              *ItemTaxInfo       `json:"tax_info,omitempty"`               // [Optional] Tax information
 	ComplaintPolicy      *ComplaintPolicy   `json:"complaint_policy,omitempty"`       // [Optional] Complaint Policy for item. Only required for local PL sellers, ignored otherwise.
 	DescriptionInfo      *DescriptionInfo   `json:"description_info,omitempty"`       // [Optional] New description field. Only whitelist sellers can use it. If you use the field, please upload the description_type=extended otherwise api will return error. If you don't use this field, you don't need to upload the description_type or upload description_type=normal
 	DescriptionType      *DescriptionType   `json:"description_type,omitempty"`       // [Optional] Values: See Data Definition- description_type (normal , extended). If you want to use extended_description, this field must be inputed
@@ -189,6 +192,8 @@ type BatchAddItemRequestItem struct {
 	MedicineId           *int64             `json:"medicine_id,omitempty"`            // [Optional] <p>[Only for ID local sellers] as a unique identifier for each standardized medicine, the medicine id can only be obtained offline</p>
 	SspId                *int64             `json:"ssp_id,omitempty"`                 // [Optional] <p>The ID of the Standardized Shop Product (SSP) to associate with the default model of the new item. The value must be greater than 0 when provided. If ssp_id is provided, cssp_id must also be provided.</p>
 	CsspId               *int64             `json:"cssp_id,omitempty"`                // [Optional] <p>The ID of the country-specific Standardized Shop Product (CSSP) to associate with the default model of the new item. The value must be greater than 0 when provided. This field is required when ssp_id is provided.</p>
+	IsBcrs               *bool              `json:"is_bcrs,omitempty"`                // [Optional] <p>Whether the item is subject to the Beverage Container Return Scheme (BCRS). true: BCRS item; false: non-BCRS item. Applicable only to eligible shops and items in Singapore. Omit this field when BCRS is not applicable. Omitting this field does not set a default BCRS value; the applicable BCRS mandatory rule may require it when creating an eligible item. Setting false is subject to the shop's BCRS opt-out policy. If false is supplied, bcrs_setting in the same item request is ignored.</p>
+	BcrsSetting          *BcrsSetting       `json:"bcrs_setting,omitempty"`           // [Optional] <p>BCRS container settings for the item's default model. To specify settings for variations created later, use model[].bcrs_setting in v2.product.init_tier_variation or model_list[].bcrs_setting in v2.product.add_model. An omitted setting, an empty object, or an empty container_unit_list is treated as not provided; it cannot clear existing BCRS settings. If is_bcrs is explicitly false, this setting is ignored. Do not submit total_refundable_container_quantity, which is not a request field.</p>
 }
 type BatchAddItemResponse struct {
 	BaseResponse                          // Common response fields
@@ -241,6 +246,9 @@ type BatchUpdateOutletStockResponse struct {
 }
 type BatchUpdateOutletStockResponseData struct {
 	TaskId int64 `json:"task_id"` // [Required] <p>The task ID of the batch update stock task.</p>
+}
+type BcrsSetting struct {
+	ContainerUnitList []ContainerUnit `json:"container_unit_list"` // [Required] <p>Container units in one sales pack of this model. Provide at least one entry when submitting BCRS container settings. Each entry describes containers of the same volume. An empty list is treated as not provided and cannot clear existing settings.</p>
 }
 type BoostItemRequest struct {
 	ItemIdList []int64 `json:"item_id_list"` // [Required] Shopee's unique identifier for an item, limit:[1,5]
@@ -336,6 +344,10 @@ type Component struct {
 	ComponentModelId *int64 `json:"component_model_id,omitempty"` // [Optional] <p>ID of the model that composes this kit model.<br /></p>
 	Quantity         int64  `json:"quantity"`                     // [Required] <p>The amount of the item/model that composes this kit model.<br /></p>
 	MainComponent    *bool  `json:"main_component,omitempty"`     // [Optional] <p>Whether this item/model is the main component for this kit.</p><p>One kit item can only have one item/model as main component.</p>
+}
+type ContainerUnit struct {
+	QuantityPerPack int64 `json:"quantity_per_pack"` // [Required] <p>Number of containers of this volume in one sales pack. Required for each submitted container unit. Use a non-negative integer; applicable BCRS quantity limits are validated by the service.</p>
+	Volume          int64 `json:"volume"`            // [Required] <p>Volume of each beverage container in millilitres (ml). Required for each submitted container unit. Use a non-negative integer; applicable BCRS volume limits are validated by the service.</p>
 }
 type Cssps struct {
 	SspId         *int64                 `json:"ssp_id,omitempty"`         // [Optional] <p>The ID of the Standardized Shop Product (SSP).</p>
@@ -704,6 +716,17 @@ type GetItemPromotionResponseDataSuccess struct {
 	ItemId    int64              `json:"item_id"`   // [Required] The identity of product item.
 	Promotion []SuccessPromotion `json:"promotion"` // [Required] Item promotion info list
 }
+type GetItemTenureInfoRequest struct {
+	ItemId *int64 `json:"item_id,omitempty"` // [Optional] <p>Need fill in item_id, if not fill in item_id or item_id = 0, will only return shop tenure info.</p>
+}
+type GetItemTenureInfoResponse struct {
+	BaseResponse                               // Common response fields
+	Response     GetItemTenureInfoResponseData `json:"response"` // Response data
+}
+type GetItemTenureInfoResponseData struct {
+	TenureSetting []TenureSetting `json:"tenure_setting"` // [Required]
+	Metadata      []Metadata      `json:"metadata"`       // [Required]
+}
 type GetItemViolationInfoRequest struct {
 	ItemIdList []int64 `json:"item_id_list"` // [Required] <p>item_id list; limit [0,50]</p>
 }
@@ -1054,6 +1077,28 @@ type ItemStock struct {
 	ModelId     *int64        `json:"model_id,omitempty"` // [Optional] 0 for no model item.
 	SellerStock []SellerStock `json:"seller_stock"`       // [Required] <p>new stock info（Please notice that stock(including Seller Stock and Shopee Stock) should be larger than or equal to real-time reserved stock）<br /></p>
 }
+type ItemTaxInfo struct {
+	Ncm               *string        `json:"ncm,omitempty"`                 // [Optional] <p>Mercosur Common Nomenclature, it is a convention between Mercosur member countries to easily recognize goods, services and productive factors negotiated among themselves.&nbsp;(BR region)<br /></p><p><br />NCM must have 8 digits, OR, if your item doesn't have a NCM enter the value "00"<br /></p>
+	SameStateCfop     *string        `json:"same_state_cfop,omitempty"`     // [Optional] Tax Code of Operations and Installments for orders that seller and buyer are in the same state. It identifies a specific operation by category at the time of issuing the invoice.(BR region)
+	DiffStateCfop     *string        `json:"diff_state_cfop,omitempty"`     // [Optional] Tax Code of Operations and Installments for orders that seller and buyer are in different states. It identifies a specific operation by category at the time of issuing the invoice.(BR region)
+	Csosn             *string        `json:"csosn,omitempty"`               // [Optional] Code of Operation Status – Simples Nacional, code for company operations to identify the origin of the goods and the taxation regime of the operations.(BR region)
+	Origin            *string        `json:"origin,omitempty"`              // [Optional] <p>Product source, domestic or foreig (BR region).</p><p>|0 - National, except for those indicated in codes 3, 4, 5, and 8|<br /> |1 - Foreign: Direct import, except for that indicated in code 6|<br /> |2 - Foreign: Acquired in the domestic market, except for that indicated in code 7|<br /> |3 - National: Goods or products with Import Content greater than 40% and less than or equal to 70%|<br /> |4 - National: Produced in compliance with the basic production processes outlined in the legislations cited in the Agreements|<br /> |5 - National: Goods or products with Import Content less than or equal to 40%|<br /> |6 - Foreign: Direct import, without a national equivalent, listed by CAMEX and natural gas|<br /> |7 - Foreign: Acquired in the domestic market, without a national equivalent, listed by CAMEX and natural gas|<br /> |8 - National: Goods or products with Import Content greater than 70%|</p>
+	Cest              *string        `json:"cest,omitempty"`                // [Optional] <p>Tax Replacement Specifying Code (CEST), to separate within the same NCM products that do or do not have ICMS tax substitution. (BR region)<br /><br />CEST must have 7 digits, OR, if your item doesn't have a CEST enter the value "00".<br /></p>
+	MeasureUnit       *string        `json:"measure_unit,omitempty"`        // [Optional] (BR region)
+	TaxType           *TaxType       `json:"tax_type,omitempty"`            // [Optional] <p>tax_type only for TW whitelist shop. Shopee will referred Tax type when substitute sellers for issuing e-receipts to buyers. All variations share the same tax type. The meaning of value:&nbsp;</p><p>0: no tax type</p><p>1: tax-able</p><p>2: tax-free<br /></p>
+	Pis               *string        `json:"pis,omitempty"`                 // [Optional] <p>Only for BR shop.</p><p>PIS - Programa de Integração Social (Social Integration Program). It is a government tax to collect resources for the payment of unemployment insurance and other employee related rights.</p><p>PIS % - the tax applied to this product</p>
+	Cofins            *string        `json:"cofins,omitempty"`              // [Optional] <p>Only for BR shop.<br /></p><p>COFINS – Contribuição para Financiamento da Seguridade Social (Contribution for Social Security Funding). It&nbsp;is a government tax to collect resources for public health system and social security.</p><p>COFINS&nbsp;% - the tax applied to this product</p>
+	IcmsCst           *string        `json:"icms_cst,omitempty"`            // [Optional] <p>Only for BR shop.<br /></p><p>ICMS - Imposto sobre Circulação de Mercadorias e Serviços (Circulation of Goods and Services Tax).&nbsp;</p><p>CST - Código da Situação Tributária (Tax Situation Code) is represented by a combination of 3 numbers with the purpose of demonstrating the origin of a product and determining the form of taxation that will apply to it. Therefore, each digit in the CST Table has a specific meaning: the first digit indicates the origin of the operation, the second digit represents the ICMS taxation on the operation and the third digit provides additional information about the form of taxation.</p>
+	PisCofinsCst      *string        `json:"pis_cofins_cst,omitempty"`      // [Optional] <p>Only for BR shop.</p><p>The CST PIS/Cofins is a code on the Electronic Invoice (NF-e) that identifies the tax situation of PIS (Programa de Integração Social) and Cofins (Contribuição para o Financiamento da Seguridade Social) in sales of goods.</p>
+	FederalStateTaxes *string        `json:"federal_state_taxes,omitempty"` // [Optional] <p>Only for BR shop.</p><p>Enter the total percentage of the combination of federal, state, and municipal taxes, using up to two decimals.<br /></p>
+	OperationType     *OperationType `json:"operation_type,omitempty"`      // [Optional] <p>Only for BR shop.</p><p>1: Retailer</p><p>2: Manufacturer</p>
+	ExTipi            *string        `json:"ex_tipi,omitempty"`             // [Optional] <p>Only for BR shop.<br /></p><p>The EXTIPI field in the NF-e (Nota Fiscal Eletrônica) is used to indicate if there's an exception to the IPI (Imposto sobre Produtos Industrializados) tax rate for a specific product.<br /></p>
+	FciNum            *string        `json:"fci_num,omitempty"`             // [Optional] <p>Only for BR shop.<br /></p><p>The FCI Control Number is a unique identifier assigned to each import FCI (Import Content Form). It's mandatory on the corresponding NF-e (electronic invoice) to ensure compliance with Brazilian import tax regulations.<br /></p>
+	RecopiNum         *string        `json:"recopi_num,omitempty"`          // [Optional] <p>Only for BR shop.</p><p>RECOPI NACIONAL is a Brazilian government system that facilitates the registration and management of tax-exempt operations involving paper destined for printing books, newspapers, and periodicals (known as "papel imune" in Portuguese).</p>
+	AdditionalInfo    *string        `json:"additional_info,omitempty"`     // [Optional] <p>Only for BR shop.</p><p>Include relevant information to display on Invoice.</p>
+	GroupItemInfo     *GroupItemInfo `json:"group_item_info,omitempty"`     // [Optional] <p>Only for BR shop.</p><p>Required if the item is a group item.</p>
+	ExportCfop        *string        `json:"export_cfop,omitempty"`         // [Optional] <p>[BR region]</p><p>7101 - for sales of self-produced goods</p><p>7102 - resale of third-party goods</p>
+}
 type Licenses struct {
 	FileName *string `json:"file_name,omitempty"` // [Optional] <p>Brand registration certificate image name, len &lt;&nbsp;254<br /></p>
 	FileHash *string `json:"file_hash,omitempty"` // [Optional] <p>Image id of brand registration certificate image , max input num of file = 1 , each file's length&lt;=498<br /></p>
@@ -1111,6 +1156,11 @@ type MeasurementValue struct {
 type Media struct {
 	ImageUrlList []string `json:"image_url_list"` // [Required] <p>List of image url uploaded by the buyer in the comment.</p>
 	VideoUrlList []string `json:"video_url_list"` // [Required] <p>List of video url uploaded by the buyer in the comment.</p>
+}
+type Metadata struct {
+	AllowItemManagment  bool    `json:"allow_item_managment"`  // [Required] <p>Indicate whether item can change tenrue (shop-level setting).</p>
+	SsplPossibleTenures []int64 `json:"sspl_possible_tenures"` // [Required] <p>Indicate which tenure item can set (shop-level setting).</p>
+	CanChangeTenures    bool    `json:"can_change_tenures"`    // [Required]
 }
 type ModelComponent struct {
 	ComponentItemId           int64  `json:"component_item_id"`             // [Required] <p>ID of the item that composes this kit model.<br /></p>
@@ -1630,6 +1680,17 @@ type SellerStock struct {
 	LocationId *string `json:"location_id,omitempty"` // [Optional] <p>location id, you can get the location id from v2.shop.get_warehouse_detail api, if seller don't have any warehouse, you don't need to upload this field.<br /></p>
 	Stock      int64   `json:"stock"`                 // [Required] <p>stock</p>
 }
+type SetItemTenureInfoRequest struct {
+	ItemId    int64  `json:"item_id"`              // [Required] <p>ID of item which need change tenure.</p>
+	TenureKey *int64 `json:"tenure_key,omitempty"` // [Optional] <p>Indicate whether change item sspl tenure, if not pass this field, will not update item sspl tenure.</p>
+}
+type SetItemTenureInfoResponse struct {
+	BaseResponse                               // Common response fields
+	Response     SetItemTenureInfoResponseData `json:"response"` // Response data
+}
+type SetItemTenureInfoResponseData struct {
+	ItemId int64 `json:"item_id"` // [Required] <p>Return success update item_id.</p>
+}
 type SipItemPrice struct {
 	ModelId      *int64  `json:"model_id,omitempty"` // [Optional] 0 for no model item.
 	SipItemPrice float64 `json:"sip_item_price"`     // [Required] SIP item price.
@@ -1735,7 +1796,7 @@ type TaxInfo struct {
 	Csosn             *string        `json:"csosn,omitempty"`               // [Optional] Code of Operation Status – Simples Nacional, code for company operations to identify the origin of the goods and the taxation regime of the operations.(BR region)
 	Origin            *string        `json:"origin,omitempty"`              // [Optional] <p>Product source, domestic or foreig (BR region).</p><p>|0 - National, except for those indicated in codes 3, 4, 5, and 8|<br /> |1 - Foreign: Direct import, except for that indicated in code 6|<br /> |2 - Foreign: Acquired in the domestic market, except for that indicated in code 7|<br /> |3 - National: Goods or products with Import Content greater than 40% and less than or equal to 70%|<br /> |4 - National: Produced in compliance with the basic production processes outlined in the legislations cited in the Agreements|<br /> |5 - National: Goods or products with Import Content less than or equal to 40%|<br /> |6 - Foreign: Direct import, without a national equivalent, listed by CAMEX and natural gas|<br /> |7 - Foreign: Acquired in the domestic market, without a national equivalent, listed by CAMEX and natural gas|<br /> |8 - National: Goods or products with Import Content greater than 70%|</p>
 	Cest              *string        `json:"cest,omitempty"`                // [Optional] <p>Tax Replacement Specifying Code (CEST), to separate within the same NCM products that do or do not have ICMS tax substitution. (BR region)<br /><br />CEST must have 7 digits, OR, if your item doesn't have a CEST enter the value "00".<br /></p>
-	MeasureUnit       *string        `json:"measure_unit,omitempty"`        // [Optional] (BR region)
+	MeasureUnit       *string        `json:"measure_unit,omitempty"`        // [Optional] <p>(BR region)<br /><br /></p><p>The value must be provided in uppercase and must match one of the supported units below:<br /><br /></p><p> </p><p>AMPOLA, BALDE, BANDEJ, BARRA, BISNAG, BLOCO, BOBINA, BOMB, CAPS, CART, CENTO, CJ, CM, CM2, CX, CX2, CX3, CX5, CX10, CX15, CX20, CX25, CX50, CX100, DISP, DUZIA, EMBAL, FARDO, FOLHA, FRASCO, GALAO, GF, GRAMAS, JOGO, KG, KIT, LATA, LITRO, M, M2, M3, MILHEI, ML, MWH, PACOTE, PALETE, PARES, PC, POTE, K, RESMA, ROLO, SACO, SACOLA, TAMBOR, TANQUE, TON, TUBO, UN, VASIL, VIDRO.</p>
 	TaxType           *TaxType       `json:"tax_type,omitempty"`            // [Optional] <p>tax_type only for TW whitelist shop. Shopee will referred Tax type when substitute sellers for issuing e-receipts to buyers. All variations share the same tax type. The meaning of value:&nbsp;</p><p>0: no tax type</p><p>1: tax-able</p><p>2: tax-free<br /></p>
 	Pis               *string        `json:"pis,omitempty"`                 // [Optional] <p>Only for BR shop.</p><p>PIS - Programa de Integração Social (Social Integration Program). It is a government tax to collect resources for the payment of unemployment insurance and other employee related rights.</p><p>PIS % - the tax applied to this product</p>
 	Cofins            *string        `json:"cofins,omitempty"`              // [Optional] <p>Only for BR shop.<br /></p><p>COFINS – Contribuição para Financiamento da Seguridade Social (Contribution for Social Security Funding). It&nbsp;is a government tax to collect resources for public health system and social security.</p><p>COFINS&nbsp;% - the tax applied to this product</p>
@@ -1749,6 +1810,11 @@ type TaxInfo struct {
 	AdditionalInfo    *string        `json:"additional_info,omitempty"`     // [Optional] <p>Only for BR shop.</p><p>Include relevant information to display on Invoice.</p>
 	GroupItemInfo     *GroupItemInfo `json:"group_item_info,omitempty"`     // [Optional] <p>Only for BR shop.</p><p>Required if the item is a group item.</p>
 	ExportCfop        *string        `json:"export_cfop,omitempty"`         // [Optional] <p>[BR region]</p><p>7101 - for sales of self-produced goods</p><p>7102 - resale of third-party goods</p>
+	VatRate           *string        `json:"vat_rate,omitempty"`            // [Optional] <p>[AR region]</p>
+}
+type TenureSetting struct {
+	ToggleStatus bool  `json:"toggle_status"` // [Required] <p>Indicate item current open tenure or not, false means not open tenure, true means open tenure.</p>
+	TenureKey    int64 `json:"tenure_key"`    // [Required] <p>Indicate item current tenure.</p>
 }
 type TierVariation struct {
 	OptionList []TierVariationOption `json:"option_list"` // [Required] Option list.
@@ -1787,6 +1853,7 @@ type UnlistItemResponseData struct {
 type UpdateItemRequest struct {
 	AttributeList        []Attribute               `json:"attribute_list,omitempty"`         // [Optional] Item attributes.
 	AuthorisedBrandId    *int64                    `json:"authorised_brand_id,omitempty"`    // [Optional] <p>ID of authorised reseller brand.<br /></p>
+	BcrsSetting          *BcrsSetting              `json:"bcrs_setting,omitempty"`           // [Optional] <p>BCRS container settings for an item without variations, applied to its default model. This field can be updated without sending gtin_code. For an item with variations, a nonempty item-level bcrs_setting returns a parameter error; use v2.product.update_model with model_id and bcrs_setting for each existing model instead. An omitted setting, an empty object, or an empty container_unit_list is treated as not provided and cannot clear existing settings. If is_bcrs is explicitly false, this setting is ignored and the BCRS opt-out policy still applies. Do not submit total_refundable_container_quantity, which is not a request field.</p>
 	Brand                *Brand                    `json:"brand,omitempty"`                  // [Optional]
 	CategoryId           *int64                    `json:"category_id,omitempty"`            // [Optional] ID of category.
 	CertificationInfo    *RequestCertificationInfo `json:"certification_info,omitempty"`     // [Optional] <p>For PH product certification input<br />Required for some category and attribute option</p>
@@ -1800,6 +1867,7 @@ type UpdateItemRequest struct {
 	DsCatRcmdId          *string                   `json:"ds_cat_rcmd_id,omitempty"`         // [Optional] <p>category recommendation service id<br /></p>
 	GtinCode             *string                   `json:"gtin_code,omitempty"`              // [Optional] <p>- GTIN is an identifier for trade items, developed by the international organization GS1.<br />- They have 8 to 14 digits. The most common are UPC, EAN, JAN and ISBN.<br />- GTIN will help boost positioning in online marketing channels like Google and Facebook.<br />- That incorporation with GTIN will also aid in Search and Recommendation in Shopee itself allowing buyers to have higher likelihood of finding one's listing.<br /></p><p><br /></p><p>Note: If you want to set “Item without GTIN”, please pass the gtin_code as "00".<br /><br />The validation rule is based on the value return in gtin_validation_rule" field in v2.product.get_item_limit API</p><p>- Mandatory:&nbsp;This field is required and must contain a correctly formatted GTiN number.</p><p>- Flexible: This field is required and must contain either a correctly formatted GTlN number or "00" to declare that the item/model has no valid GTlN.<br />- Optional: This field is optional and can contain a correctly formatted GTiN number, "00" or be omitted entirely.</p>
 	Image                *UpdateItemRequestImage   `json:"image,omitempty"`                  // [Optional] Images of item.
+	IsBcrs               *bool                     `json:"is_bcrs,omitempty"`                // [Optional] <p>Whether the item is subject to the Beverage Container Return Scheme (BCRS). true: BCRS item; false: non-BCRS item. Applicable only to eligible shops and items in Singapore. Omit this field when BCRS is not applicable. On an existing item, omission retains the current BCRS value. Setting false is subject to the shop's BCRS opt-out policy; if the update is allowed, existing BCRS container settings are cleared. When false is supplied, bcrs_setting in the same request is ignored. Setting is_bcrs alone does not provide container settings for the item's models.</p>
 	ItemDangerous        *int64                    `json:"item_dangerous,omitempty"`         // [Optional] This field is only applicable for local sellers in Indonesia and Malaysia. Use this field to identify whether a product is a dangerous product. 0 for non-dangerous product and 1 for dangerous product. For more information, please visit the market's respective Seller Education Hub.
 	ItemId               int64                     `json:"item_id"`                          // [Required] ID of item.
 	ItemName             *string                   `json:"item_name,omitempty"`              // [Optional] Item name.
@@ -1862,6 +1930,7 @@ type UpdateModelRequestModel struct {
 	ModelStatus *string       `json:"model_status,omitempty"` // [Optional] <p>can be&nbsp;"NORMAL" or "UNAVAILABLE". <b><font color="#c24f4a">Only CNSC and KRSC sellers can set the model_status.</font></b>&nbsp;Normal models can be sold on the buyer's side, and UNAVAILABLE models cannot be sold on the buyer's side.</p>
 	Weight      *float64      `json:"weight,omitempty"`       // [Optional] <p>The weight of this model, the unit is KG.</p><p>If don't set the weight of this model, will use the weight of item by default.</p><p>If set the dimension of this model, them must set the weight of this model.</p>
 	Dimension   *Dimension    `json:"dimension,omitempty"`    // [Optional] <p>The dimension of this model.</p><p>If don't set the dimension of this model, will use the dimension of item by default.</p>
+	BcrsSetting *BcrsSetting  `json:"bcrs_setting,omitempty"` // [Optional] <p>BCRS container settings for this model. The item-level BCRS flag is set through is_bcrs in v2.product.add_item or v2.product.update_item. An omitted setting, an empty object, or an empty container_unit_list is treated as not provided; it cannot clear existing BCRS settings. Do not submit total_refundable_container_quantity, which is not a request field. Identify each existing model by model_id. Use this API to update BCRS container settings for an item with variations; v2.product.update_item only accepts item-level bcrs_setting for an item without variations.</p>
 }
 type UpdateModelResponse struct {
 	BaseResponse // Common response fields
